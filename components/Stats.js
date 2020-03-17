@@ -3,6 +3,19 @@ import StatBlock from './StatBlock'
 import React from 'react'
 import styled from 'styled-components'
 import Spinner from './Spinner'
+import Bar from './Bar'
+import LineChart from './LineChart'
+
+const vocab = {
+  'cases': 'infected',
+  'recovered': 'recovered',
+  'country': 'country',
+  'deaths': 'deaths',
+  'todayCases': 'new today',
+  'critical': 'critical'
+}
+const prop = o => k => o[k]
+const switchToVocab = word => vocab[word]
 
 const Container = styled.div`
   max-width: 760px;
@@ -33,11 +46,24 @@ export default function Stats({ url, cn = '', search }) {
     critical
   } = stats
 
-  console.log(stats)
+  const o = {
+    cases, todayCases, recovered, critical, deaths
+  }
+
+  const organizeData = d => {
+    const mapToKeyword = (k) => ({[switchToVocab(k)]: prop(d)(k)})
+    return Object.keys(d).map(mapToKeyword)
+  }
+  const organizedData = organizeData(o)
+
   return (
     <Container>
 
       <h1>Country: {country}</h1>
+
+      <Bar info={organizedData} />
+      <LineChart info={organizedData} />
+
       <Grid>
         <StatBlock 
           title="Infected"

@@ -17,6 +17,7 @@ export default () => {
   const [country, setCountry] = useState('')
   const [inputValue, setInput] = useState('')
   const url = 'https://corona.lmao.ninja/countries/'
+  // const url = 'https://corona.lmao.ninj/'
   const handleChange = e => setInput(e.target.value)
   const handleSubmit = e => {
     e.preventDefault();

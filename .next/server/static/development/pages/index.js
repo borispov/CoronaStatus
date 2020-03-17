@@ -88,10 +88,169 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Bar.js":
+/*!***************************!*\
+  !*** ./components/Bar.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-chartjs-2 */ "react-chartjs-2");
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Bar.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const prop = o => k => o[k];
+
+const popVal = o => Object.values(o)[0];
+
+const popKey = o => Object.keys(o)[0];
+
+/* harmony default export */ __webpack_exports__["default"] = (({
+  info
+}) => {
+  const data = {
+    labels: info.map(popKey),
+    datasets: [{
+      label: 'Outbreak Info',
+      backgroundColor: ['rgba(112, 120, 176, 1)', 'rgba(233,233,100,1)', 'rgba(213, 199, 23, 1)', 'rgba(245, 55, 66, 1)', 'rgba(18, 18, 21, 1)'],
+      borderColor: 'rgba(255,99,132,0.8)',
+      borderWidth: 1.5,
+      barPercentage: 0.7,
+      categoryPercentage: 0.8,
+      minBarLength: 10,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data: info.map(popVal)
+    }]
+  };
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, "Outbreak Information"), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Bar"], {
+    data: data,
+    width: 40,
+    height: 12,
+    options: {
+      maintainAspectRatio: true,
+      scales: {
+        xAxes: [{
+          gridLines: {
+            offsetGridLines: true
+          }
+        }]
+      }
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }));
+});
+
+/***/ }),
+
+/***/ "./components/LineChart.js":
+/*!*********************************!*\
+  !*** ./components/LineChart.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-chartjs-2 */ "react-chartjs-2");
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const popVal = o => Object.values(o)[0];
+
+/* harmony default export */ __webpack_exports__["default"] = (({
+  info
+}) => {
+  const data = {
+    labels: ['Infected', 'new', 'recovered', 'critical', 'deaths'],
+    datasets: [{
+      label: 'Outbreak info',
+      fill: true,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      backgroundColor: ['rgba(112, 120, 176, 1)', 'rgba(233,233,100,1)', 'rgba(213, 199, 23, 1)', 'rgba(245, 55, 66, 1)', 'rgba(18, 18, 21, 1)'],
+      borderColor: ['rgba(75,192,192,1)'],
+      borderCapStyle: 'butt',
+      options: {
+        scales: {
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      },
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: info.map(popVal)
+    }]
+  };
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "Line Example"), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+    data: data,
+    width: 40,
+    height: 12,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }));
+});
+
+/***/ }),
 
 /***/ "./components/SearchCountry.js":
 /*!*************************************!*\
@@ -133,7 +292,7 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
     0: inputValue,
     1: setInput
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const url = 'https://corona.lmao.ninja/countries/';
+  const url = 'https://corona.lmao.ninja/countries/'; // const url = 'https://corona.lmao.ninj/'
 
   const handleChange = e => setInput(e.target.value);
 
@@ -145,7 +304,7 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: undefined
   }, __jsx(_Stats__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -153,20 +312,20 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
     cn: country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: undefined
   }), __jsx("form", {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: undefined
   }, __jsx("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
   }, "Search For Country:", __jsx(Input, {
@@ -175,7 +334,7 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   })), __jsx("input", {
@@ -183,7 +342,7 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
     value: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 35
     },
     __self: undefined
   })));
@@ -292,12 +451,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
+/* harmony import */ var _Bar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Bar */ "./components/Bar.js");
+/* harmony import */ var _LineChart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LineChart */ "./components/LineChart.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
 
+
+
+
+const vocab = {
+  'cases': 'infected',
+  'recovered': 'recovered',
+  'country': 'country',
+  'deaths': 'deaths',
+  'todayCases': 'new today',
+  'critical': 'critical'
+};
+
+const prop = o => k => o[k];
+
+const switchToVocab = word => vocab[word];
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div`
   max-width: 760px;
@@ -323,20 +499,20 @@ function Stats({
   if (error) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 37
     },
     __self: this
   }, " We've encountered an Error. Maybe you typed wrong country");
   if (!stats) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 38
     },
     __self: this
   }));
@@ -348,23 +524,53 @@ function Stats({
     todayCases,
     critical
   } = stats;
-  console.log(stats);
+  const o = {
+    cases,
+    todayCases,
+    recovered,
+    critical,
+    deaths
+  };
+
+  const organizeData = d => {
+    const mapToKeyword = k => ({
+      [switchToVocab(k)]: prop(d)(k)
+    });
+
+    return Object.keys(d).map(mapToKeyword);
+  };
+
+  const organizedData = organizeData(o);
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 60
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 62
     },
     __self: this
-  }, "Country: ", country), __jsx(Grid, {
+  }, "Country: ", country), __jsx(_Bar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    info: organizedData,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 64
+    },
+    __self: this
+  }), __jsx(_LineChart__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    info: organizedData,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }), __jsx(Grid, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -372,7 +578,7 @@ function Stats({
     data: cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 68
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -380,7 +586,7 @@ function Stats({
     data: recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 72
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -388,7 +594,7 @@ function Stats({
     data: deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 76
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -396,7 +602,7 @@ function Stats({
     data: critical,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 80
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -404,7 +610,7 @@ function Stats({
     data: todayCases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 84
     },
     __self: this
   })));
@@ -595,7 +801,7 @@ function useStats(url, country) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -626,6 +832,17 @@ module.exports = require("axios");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-chartjs-2":
+/*!**********************************!*\
+  !*** external "react-chartjs-2" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-chartjs-2");
 
 /***/ }),
 
