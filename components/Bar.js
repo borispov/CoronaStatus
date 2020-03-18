@@ -1,52 +1,53 @@
-import { Bar } from 'react-chartjs-2';
+import { Bar, defaults } from 'react-chartjs-2';
+
+defaults.global.animation = false
+defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
 
 const prop = o => k => o[k]
 const popVal = o => Object.values(o)[0]
 const popKey = o => Object.keys(o)[0]
 
-export default ({ info }) => {
+export default ( props ) => {
 
   const data = {
-    labels: info.map(popKey),
+    labels: props.info.map(popKey),
     datasets: [
       {
-        label: 'Outbreak Info',
+        label: props.label,
         backgroundColor: [
-          'rgba(112, 120, 176, 1)',
-          'rgba(233,233,100,1)',
-          'rgba(213, 199, 23, 1)',
-          'rgba(245, 55, 66, 1)',
+          'rgba(112, 120, 176, 0.7)',
+          'rgba(233,233,100,0.7)',
+          'rgba(213, 199, 23, 0.7)',
+          'rgba(245, 55, 66, 0.7)',
           'rgba(18, 18, 21, 1)'
         ],
         borderColor: 'rgba(255,99,132,0.8)',
         borderWidth: 1.5,
-        barPercentage: 0.7,
-        categoryPercentage: 0.8,
+        barPercentage: 0.9,
+        categoryPercentage: 1,
         minBarLength: 10,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: info.map(popVal)
+        data: props.info.map(popVal)
       }
     ]
   };
 
+  const options = {
+    defaultFontFamily: "monospace",
+    legend: {
+      display: true,
+      position: 'right'
+    }
+  }
+
   return (
     <div>
-      <h2>Outbreak Information</h2>
       <Bar
         data={data}
-        width={40}
-        height={12}
-        options = {{
-          maintainAspectRatio: true,
-          scales: {
-            xAxes: [{
-              gridLines: {
-                offsetGridLines: true
-              }
-            }]
-          }
-        }}
+        width={4}
+        height={1}
+        options={options}
       />
     </div>
   )

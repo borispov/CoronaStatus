@@ -1,31 +1,46 @@
-import SearchCountry from '../components/SearchCountry'
-import styled from 'styled-components'
+import CoronaApp from '../components/CoronaApp'
+import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from './Global'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { themes } from '../utils/themes'
 
-// Seems like it's not UP TO DATE
-// fetch('https://covid19.mathdro.id/api/countries/Italy')
+const lightTheme = () => ({
+  ...themes['common'],
+  ...themes['light'],
+})
 
-// const url = 'https://corona.lmao.ninja/countries'
+const darkTheme = () => ({
+  ...themes['common'],
+  ...themes['dark'],
+})
 
-const Container = styled.div`
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-`
-
-const Grid = styled.div`
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+const Btn = styled.button`
+  color: ${props => props.theme.bgColor};
+  background-color: ${props => props.theme.color};
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  padding: 6px 2px;
+  outline: none;
 `
 
 export default function IndexPage() {
+  const [theme, setTheme] = useState(darkTheme())
+  const setDarkTheme = () => setTheme(darkTheme())
+  const setLightTheme = () => setTheme(lightTheme())
+
+  const isLight = theme.type === 'light'
+
   return (
-    <Container>
-      <GlobalStyle />
-      <SearchCountry />
-    </Container>
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <CoronaApp />
+        <Btn onClick={!isLight ? setLightTheme : setDarkTheme}>
+          {!isLight ? 'Light' : 'Dark'}
+        </Btn>
+      </ThemeProvider>
+    </>
   )
 }

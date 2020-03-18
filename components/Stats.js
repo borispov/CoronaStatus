@@ -1,10 +1,12 @@
-import useStats from '../utils/useStats'
+import useTodayStats from '../utils/useTodayStats'
+import useTime from '../utils/useTime'
 import StatBlock from './StatBlock'
 import React from 'react'
 import styled from 'styled-components'
 import Spinner from './Spinner'
 import Bar from './Bar'
 import LineChart from './LineChart'
+import Chart from './Chart'
 
 const vocab = {
   'cases': 'infected',
@@ -12,7 +14,6 @@ const vocab = {
   'country': 'country',
   'deaths': 'deaths',
   'todayCases': 'new today',
-  'critical': 'critical'
 }
 const prop = o => k => o[k]
 const switchToVocab = word => vocab[word]
@@ -32,10 +33,11 @@ const Grid = styled.div`
 
 export default function Stats({ url, cn = '', search }) {
 
-  const { stats, error, loading } = useStats(url, cn);
+  const { todayStats, error, loading } = useTodayStats(url, cn);
+  const { worldStats } = useTime()
 
   if (error) return <div> We've encountered an Error. Maybe you typed wrong country</div>
-  if (!stats) return <div><Spinner /></div>
+  if (!todayStats) return <div><Spinner /></div>
 
   const {
     country,
@@ -43,11 +45,10 @@ export default function Stats({ url, cn = '', search }) {
     recovered,
     deaths,
     todayCases,
-    critical
-  } = stats
+  } = todayStats
 
   const o = {
-    cases, todayCases, recovered, critical, deaths
+    cases, todayCases, recovered, deaths
   }
 
   const organizeData = d => {
@@ -59,10 +60,9 @@ export default function Stats({ url, cn = '', search }) {
   return (
     <Container>
 
-      <h1>Country: {country}</h1>
+      <h1 style={{fontSize: '20px'}}>Status for:   <span style={{fontWeight: 'bold'}}>{country}</span></h1>
 
-      <Bar info={organizedData} />
-      <LineChart info={organizedData} />
+      <Chart type='bar' info={organizedData} label={country + '\'s Outbreak'} />
 
       <Grid>
         <StatBlock 
@@ -78,14 +78,11 @@ export default function Stats({ url, cn = '', search }) {
           data={deaths}
         />
         <StatBlock 
-          title="Critical Cases"
-          data={critical}
-        />
-        <StatBlock 
           title="New Cases Today"
           data={todayCases}
         />
       </Grid>
+
     </Container>
   )
 }
