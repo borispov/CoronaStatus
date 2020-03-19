@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
+      position: relative;
       height: 100vh;
       max-width: 100%;
       font-size: 62.5%;

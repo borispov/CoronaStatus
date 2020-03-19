@@ -14,11 +14,10 @@ const Container = styled.div`
   text-align: center;
 `
 
-const Grid = styled.div`
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+const Flex = styled.div`
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-evenly;
 `
 
 export default function Stats({ cn = '', isWorld, timeData, todayWorld, todayStats }) {
@@ -35,9 +34,9 @@ export default function Stats({ cn = '', isWorld, timeData, todayWorld, todaySta
       <h1 style={{fontSize: '20px'}}>Status for:   <span style={{fontWeight: 'bold'}}>{cn}</span></h1>
       {
         todayStats &&
-          <>
+          <div style={{ border: '1px solid rgba(255, 60, 60, 0.12)', borderRadius: '6px', marginBottom: '16px' }}>
           <Chart type='bar' info={todayStats} label={cn + '\'s Outbreak'} />
-          <Grid>
+          <Flex>
             <StatBlock 
               title="Infected"
               data={todayStats.cases}
@@ -54,8 +53,8 @@ export default function Stats({ cn = '', isWorld, timeData, todayWorld, todaySta
               title="New Cases Today"
               data={todayStats.todayCases}
             />
-          </Grid>
-        </>
+          </Flex>
+        </div>
       }
       {renderTimeGraph}
 

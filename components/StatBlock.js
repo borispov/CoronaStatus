@@ -3,16 +3,16 @@ import styled from 'styled-components'
 
 const Block = styled.div`
   margin: 0;
-  padding: 0;
-  background: grey;
-  font-size: 1rem;
+  padding: 2rem;
+  background: ${props => props.theme.bgColor};
+  font-size: 1.125rem;
   text-align: center;
-  border-radius: 8px;
-  max-width: 10rem;
+  border-radius: 6px;
+  max-width: 12rem;
   align-content: center;
   justify-content: center;
-  background: #d9d9d9;
-  color: #014014;
+  box-shadow: ${props => props.theme.boxShadow};
+  color: ${props => props.theme.color};
 `
 
 const Title = styled.h3`
@@ -24,7 +24,7 @@ const StatBlock = ({ title, data }) => {
   return (
     <Block>
       <Title>{title}:</Title>
-      <span>{data}</span>
+      <span style={{fontSize: '1.125rem'}}>{data}</span>
     </ Block>
   )
 }

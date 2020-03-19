@@ -6,9 +6,9 @@ import useTime from '../utils/useTime'
 import useTodayStats from '../utils/useTodayStats'
 import Chart from './Chart'
 import Container from './Container'
+import HeaderDescription from './HeaderDescription'
 import sortForChart from '../utils/sortForChart'
 import mapDataForTodayGraph from '../utils/mapDataForTodayGraph'
-
 
 export default () => {
   const [country, setCountry] = useState('')
@@ -17,14 +17,6 @@ export default () => {
 
   const { todayStats } = useTodayStats(url, country)
   const { worldStats, timeError, timeLoading } = useTime()
-
-  // const todayStatsSorted = todayStats && 
-  //   mapDataForTodayGraph({
-  //     cases: todayStats.cases,
-  //     todayCases: todayStats.todayCases,
-  //     recovered: todayStats.recovered,
-  //     deaths: todayStats.deaths
-  //   }) || ''
 
   const todayStatsSorted = todayStats && 
     {
@@ -48,8 +40,9 @@ export default () => {
   return (
     <div>
       <Header>Covid19 Feed</Header>
+      <HeaderDescription />
 
-      <Stats 
+      <Stats
         isWorld={true}
         cn={country || todayStats && todayStats.country}
         timeData={worldStats}
@@ -57,19 +50,17 @@ export default () => {
       />
 
       <form 
-        style={{
-          width: '100%',
-          margin: '54px 0 auto',
-          display: 'flex',
-          justifyContent: 'center'
-
-        }}
+        style={{ maxWidth: '520px', margin: '54px auto'}}
         onSubmit={handleSubmit}>
+
         <label style={{fontSize: '16px'}}>
           Search For Country:
-          <Input type="text" value={inputValue} onChange={handleChange} />
         </label>
-        <input type="submit" value="submit" />
+
+        <div style={{ display: 'flex', margin: '0 auto' }}>
+          <Input type="text" value={inputValue} onChange={handleChange} />
+          <Input type="submit" value="submit" btn={true}/>
+        </div>
       </form>
 
     </div>

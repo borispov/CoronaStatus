@@ -85,8 +85,8 @@ export default ( props ) => {
 };
 
   return (
-    <div>
-      <h2>{props.label}</h2>
+    <div style={{marginTop: '32px'}}>
+      <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
       <Line
         data={data}
         width={100}

@@ -258,11 +258,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
 /* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var _utils_mapDataForTodayGraph__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/mapDataForTodayGraph */ "./utils/mapDataForTodayGraph.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var _utils_mapDataForTodayGraph__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/mapDataForTodayGraph */ "./utils/mapDataForTodayGraph.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -290,14 +292,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     worldStats,
     timeError,
     timeLoading
-  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(); // const todayStatsSorted = todayStats && 
-  //   mapDataForTodayGraph({
-  //     cases: todayStats.cases,
-  //     todayCases: todayStats.todayCases,
-  //     recovered: todayStats.recovered,
-  //     deaths: todayStats.deaths
-  //   }) || ''
-
+  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])();
   const todayStatsSorted = todayStats && {
     cases: todayStats.cases,
     todayCases: todayStats.todayCases,
@@ -316,50 +311,54 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   if (timeLoading || timeError) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 37
     },
     __self: undefined
   }, " Loading....");
   if (timeError) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 38
     },
     __self: undefined
   }, " We've encountered an Error. Maybe you typed wrong country");
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 42
     },
     __self: undefined
-  }, "Covid19 Feed"), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     isWorld: true,
     cn: country || todayStats && todayStats.country,
     timeData: worldStats,
     todayStats: todayStatsSorted,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 45
     },
     __self: undefined
   }), __jsx("form", {
     style: {
-      width: '100%',
-      margin: '54px 0 auto',
-      display: 'flex',
-      justifyContent: 'center'
+      maxWidth: '520px',
+      margin: '54px auto'
     },
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("label", {
@@ -368,27 +367,38 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 56
     },
     __self: undefined
-  }, "Search For Country:", __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Search For Country:"), __jsx("div", {
+    style: {
+      display: 'flex',
+      margin: '0 auto'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     type: "text",
     value: inputValue,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 61
     },
     __self: undefined
-  })), __jsx("input", {
+  }), __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     type: "submit",
     value: "submit",
+    btn: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 62
     },
     __self: undefined
-  })));
+  }))));
 });
 
 /***/ }),
@@ -412,33 +422,104 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1`
   align-self: center;
-  padding-top: 6px;
   color: #e6e6e6;
+  font-size: 4rem;
+  font-family: monospace;
 `;
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: flex;
+  justify-content: center;
   position: relative;
-  height: 64px;
+  height: 82px;
   width: 100%;
   background: linear-gradient(45deg, #cc0404, #000000d6);
   text-align: center;
   border-bottom: 1px solid darkblue;
   margin-bottom: 48px;
+  // padding: 8px 0;
 `;
 /* harmony default export */ __webpack_exports__["default"] = (({
   children
 }) => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 20
+    lineNumber: 24
   },
   __self: undefined
 }, __jsx(Title, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 21
+    lineNumber: 25
   },
   __self: undefined
 }, children)));
+
+/***/ }),
+
+/***/ "./components/HeaderDescription.js":
+/*!*****************************************!*\
+  !*** ./components/HeaderDescription.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/HeaderDescription.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int';
+const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p`
+  color: ${props => props.theme.categoryColor};
+  font-size: 14px;
+  font-family: 'Open Sans';
+  line-height: 1.6;
+`;
+const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: block;
+  width: 620px;
+
+  max-width: 620px;
+  margin: 0 auto 24px;
+`;
+const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
+  outline: none;
+  text-decoration: none;
+  font-weight: bold;
+  color: ${props => props.theme.categoryHoverColor};
+`;
+/* harmony default export */ __webpack_exports__["default"] = (() => __jsx(Wrap, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 28
+  },
+  __self: undefined
+}, __jsx(Text, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 29
+  },
+  __self: undefined
+}, "This website makes use of public health data, specifically ", __jsx(Href, {
+  href: "https://www.ourworldindata.org",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 29
+  },
+  __self: undefined
+}, "www.ourworldindata.org"), " and ", __jsx(Href, {
+  href: "https://WHO.int",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 29
+  },
+  __self: undefined
+}, "WHO.int"))));
 
 /***/ }),
 
@@ -463,30 +544,23 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
-  margin: 0 auto;
-margin: 12px;
   outline: none;
-  max-width: 720px;
-  width: 100%;
+  max-width: 420px;
+  width: ${props => props.btn ? '62px' : '85%'};
+  margin: ${props => props.btn ? '0 8px' : 0};
   text-align: center;
   border-radius: 6px;
-  background: #f1f1f1;
+  background: ${props => props.theme.categoryColor};
   font-size: 1.1rem;
   padding: 8px 4px;
 `;
-/* harmony default export */ __webpack_exports__["default"] = (props => __jsx("div", {
+/* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Input, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 15
   },
   __self: undefined
-}, __jsx(Input, _extends({}, props, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}))));
+})));
 
 /***/ }),
 
@@ -584,12 +658,18 @@ const parseDatasets = arrayOfSets => {
     }
   };
   return __jsx("div", {
+    style: {
+      marginTop: '32px'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 88
     },
     __self: undefined
-  }, __jsx("h2", {
+  }, __jsx("h1", {
+    style: {
+      fontSize: '1.65rem'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 89
@@ -654,16 +734,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Block = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   margin: 0;
-  padding: 0;
-  background: grey;
-  font-size: 1rem;
+  padding: 2rem;
+  background: ${props => props.theme.bgColor};
+  font-size: 1.125rem;
   text-align: center;
-  border-radius: 8px;
-  max-width: 10rem;
+  border-radius: 6px;
+  max-width: 12rem;
   align-content: center;
   justify-content: center;
-  background: #d9d9d9;
-  color: #014014;
+  box-shadow: ${props => props.theme.boxShadow};
+  color: ${props => props.theme.color};
 `;
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3`
   font: 'Helvetica';
@@ -687,6 +767,9 @@ const StatBlock = ({
     },
     __self: undefined
   }, title, ":"), __jsx("span", {
+    style: {
+      fontSize: '1.125rem'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
@@ -737,11 +820,10 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
   margin: 0 auto;
   text-align: center;
 `;
-const Grid = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-evenly;
 `;
 function Stats({
   cn = '',
@@ -756,13 +838,13 @@ function Stats({
     label: isWorld && 'World' + '\'s Outbreak Over Time',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   })) || __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 27
     },
     __self: this
   }, " Loading Time Graph ... ");
@@ -771,7 +853,7 @@ function Stats({
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }, __jsx("h1", {
@@ -780,7 +862,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, "Status for:   ", __jsx("span", {
@@ -789,22 +871,33 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
-  }, cn)), todayStats && __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, cn)), todayStats && __jsx("div", {
+    style: {
+      border: '1px solid rgba(255, 60, 60, 0.12)',
+      borderRadius: '6px',
+      marginBottom: '16px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
     type: "bar",
     info: todayStats,
     label: cn + '\'s Outbreak',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: this
-  }), __jsx(Grid, {
+  }), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -812,7 +905,7 @@ function Stats({
     data: todayStats.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -820,7 +913,7 @@ function Stats({
     data: todayStats.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -828,7 +921,7 @@ function Stats({
     data: todayStats.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -836,7 +929,7 @@ function Stats({
     data: todayStats.todayCases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: this
   }))), renderTimeGraph);
@@ -865,6 +958,7 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
   }
 
   html, body {
+      position: relative;
       height: 100vh;
       max-width: 100%;
       font-size: 62.5%;
@@ -1111,9 +1205,10 @@ const themes = {
     headerBg: '#3d444b',
     color: '#E4E7EB',
     searchBgColor: '#E4E7EB',
-    boxShadow: '0.4rem 0.4rem 1.5rem #111111',
+    boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
-    categoryHoverColor: '#9AA5B1'
+    categoryHoverColor: '#9AA5B1',
+    textColor: '#eee'
   }
 };
 
