@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import sortForChart from './sortForChart'
 
 const baseURL = `http://46.101.156.51:3003/api/v1/alltime/`
 
@@ -11,7 +12,7 @@ async function currentCountry(){
 }
 
 function useTime(url = baseURL, country = 'world') {
-  const [data, setData] = useState();
+  const [worldStats, setData] = useState();
   const [timeLoading, setLoading] = useState(false);
   const [timeError, setError] = useState(false);
 
@@ -21,17 +22,18 @@ function useTime(url = baseURL, country = 'world') {
       setError()
 
       const URL = country === 'world' ? baseURL : baseURL+country
+
       const data = await axios.get(URL)
         .then(res => res.data)
         .catch(err => setError(err))
-      setData(data)
+      const worldStats = sortForChart(data);
+      setData(worldStats)
       setLoading(false)
     }
 
     fetchData();
   }, [country])
 
-  const worldStats = data;
 
   return {
     worldStats, timeLoading, timeError

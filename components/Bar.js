@@ -9,8 +9,10 @@ const popKey = o => Object.keys(o)[0]
 
 export default ( props ) => {
 
+
+  console.log(props);
   const data = {
-    labels: props.info.map(popKey),
+    labels: Object.keys(props.info),
     datasets: [
       {
         label: props.label,
@@ -25,10 +27,11 @@ export default ( props ) => {
         borderWidth: 1.5,
         barPercentage: 0.9,
         categoryPercentage: 1,
-        minBarLength: 10,
+        minBarLength: 0,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: props.info.map(popVal)
+        // data: props.info.map(popVal)
+        data: Object.values(props.info)
       }
     ]
   };

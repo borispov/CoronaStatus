@@ -7,7 +7,7 @@ const parseCn = str => {
     ? 'USA' 
       : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain'
     ? 'UK' 
-    : capitalize(str)
+    : str.toLowerCase();
 }
 
 function getCountry(list){
@@ -37,7 +37,7 @@ function useTodayStats(url, country) {
       let searchCountry = country || await currentCountry();
 
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + searchCountry
+      const URL = url + 'today/' + searchCountry.toLowerCase()
       console.log(URL);
       const data = await fetch(URL)
           .then(res => res.json())

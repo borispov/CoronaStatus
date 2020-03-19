@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -120,8 +120,9 @@ const popVal = o => Object.values(o)[0];
 const popKey = o => Object.keys(o)[0];
 
 /* harmony default export */ __webpack_exports__["default"] = (props => {
+  console.log(props);
   const data = {
-    labels: props.info.map(popKey),
+    labels: Object.keys(props.info),
     datasets: [{
       label: props.label,
       backgroundColor: ['rgba(112, 120, 176, 0.7)', 'rgba(233,233,100,0.7)', 'rgba(213, 199, 23, 0.7)', 'rgba(245, 55, 66, 0.7)', 'rgba(18, 18, 21, 1)'],
@@ -129,10 +130,11 @@ const popKey = o => Object.keys(o)[0];
       borderWidth: 1.5,
       barPercentage: 0.9,
       categoryPercentage: 1,
-      minBarLength: 10,
+      minBarLength: 0,
       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
       hoverBorderColor: 'rgba(255,99,132,1)',
-      data: props.info.map(popVal)
+      // data: props.info.map(popVal)
+      data: Object.values(props.info)
     }]
   };
   const options = {
@@ -145,7 +147,7 @@ const popKey = o => Object.keys(o)[0];
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Bar"], {
@@ -155,7 +157,7 @@ const popKey = o => Object.keys(o)[0];
     options: options,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 49
     },
     __self: undefined
   }));
@@ -253,11 +255,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var _utils_mapDataForTodayGraph__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/mapDataForTodayGraph */ "./utils/mapDataForTodayGraph.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
 
 
 
@@ -276,10 +284,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const url = 'http://covid19.borisky.me:3003/api/v1/';
   const {
+    todayStats
+  } = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, country);
+  const {
     worldStats,
     timeError,
     timeLoading
-  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(); // <Chart type='bar' info={organizedData} label={country + '\'s Outbreak Over Time'} />
+  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(); // const todayStatsSorted = todayStats && 
+  //   mapDataForTodayGraph({
+  //     cases: todayStats.cases,
+  //     todayCases: todayStats.todayCases,
+  //     recovered: todayStats.recovered,
+  //     deaths: todayStats.deaths
+  //   }) || ''
+
+  const todayStatsSorted = todayStats && {
+    cases: todayStats.cases,
+    todayCases: todayStats.todayCases,
+    recovered: todayStats.recovered,
+    deaths: todayStats.deaths
+  } || '';
 
   const handleChange = e => setInput(e.target.value);
 
@@ -288,25 +312,41 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     setCountry(inputValue);
   };
 
-  const sortTimeStats = worldStats;
+  console.log(todayStats);
+  if (timeLoading || timeError) return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, " Loading....");
+  if (timeError) return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, " We've encountered an Error. Maybe you typed wrong country");
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 50
     },
     __self: undefined
   }, "Covid19 Feed"), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    url: url,
-    cn: country,
+    isWorld: true,
+    cn: country || todayStats && todayStats.country,
+    timeData: worldStats,
+    todayStats: todayStatsSorted,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 52
     },
     __self: undefined
   }), __jsx("form", {
@@ -319,7 +359,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("label", {
@@ -328,7 +368,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 68
     },
     __self: undefined
   }, "Search For Country:", __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -337,7 +377,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 70
     },
     __self: undefined
   })), __jsx("input", {
@@ -345,7 +385,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     value: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 72
     },
     __self: undefined
   })));
@@ -466,64 +506,103 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 const popVal = o => Object.values(o)[0];
 
-/* harmony default export */ __webpack_exports__["default"] = (({
-  info
-}) => {
+const defaultColors = ['rgba(112, 120, 176, 1)', 'rgba(233,233,100,1)', 'rgba(213, 199, 23, 1)', 'rgba(245, 55, 66, 1)', 'rgba(18, 18, 21, 1)'];
+const defaultSettings = {// fillColor: "rgba(220,220,220,0.2)",
+  // strokeColor: "rgba(220,220,220,1)",
+  // pointColor: "rgba(220,220,220,1)",
+  // pointStrokeColor: "#fff",
+  // pointHighlightFill: "#fff",
+  // pointHighlightStroke: "rgba(220,220,220,1)",
+  // pointBackgroundColor: '#fff',
+  // pointBorderWidth: 1,
+  // pointHoverRadius: 5,
+  // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+  // pointHoverBorderColor: 'rgba(220,220,220,1)',
+  // pointHoverBorderWidth: 2,
+  // pointRadius: 1,
+  // pointHitRadius: 10,
+};
+
+const parseDatasets = arrayOfSets => {
+  return arrayOfSets.map(set => _objectSpread({}, defaultSettings, {}, set));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (props => {
   const data = {
-    labels: ['Infected', 'new', 'recovered', 'critical', 'deaths'],
-    datasets: [{
-      label: 'Outbreak info',
-      fill: true,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
-      backgroundColor: ['rgba(112, 120, 176, 1)', 'rgba(233,233,100,1)', 'rgba(213, 199, 23, 1)', 'rgba(245, 55, 66, 1)', 'rgba(18, 18, 21, 1)'],
-      borderColor: ['rgba(75,192,192,1)'],
-      borderCapStyle: 'butt',
-      options: {
-        scales: {
-          yAxes: [{
-            stacked: true
-          }]
+    labels: props.labels,
+    datasets: props.datasets && parseDatasets(props.datasets)
+  };
+  console.log(data);
+  var options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    animation: {
+      easing: 'easeInOutQuad',
+      duration: 520
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          color: 'rgba(200, 200, 200, 0.05)',
+          lineWidth: 1
         }
-      },
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(75,192,192,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-      pointHoverBorderColor: 'rgba(220,220,220,1)',
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: info.map(popVal)
-    }]
+      }],
+      yAxes: [{
+        gridLines: {
+          color: 'rgba(200, 200, 200, 0.08)',
+          lineWidth: 1
+        }
+      }]
+    },
+    elements: {
+      line: {
+        tension: 0.4
+      }
+    },
+    legend: {
+      display: true
+    },
+    tooltips: {
+      titleFontFamily: 'Open Sans',
+      // backgroundColor: 'rgba(0,0,0,0.3)',
+      titleFontColor: 'black',
+      caretSize: 5,
+      cornerRadius: 3,
+      xPadding: 10,
+      yPadding: 10
+    }
   };
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 89
     },
     __self: undefined
-  }, "Line Example"), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+  }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
     data: data,
-    width: 40,
-    height: 12,
+    width: 100,
+    options: options,
+    height: 30,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 90
     },
     __self: undefined
   }));
@@ -639,11 +718,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
 /* harmony import */ var _Bar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Bar */ "./components/Bar.js");
-/* harmony import */ var _LineChart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LineChart */ "./components/LineChart.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
@@ -652,17 +731,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 
-const vocab = {
-  'cases': 'infected',
-  'recovered': 'recovered',
-  'country': 'country',
-  'deaths': 'deaths',
-  'todayCases': 'new today'
-};
-
-const prop = o => k => o[k];
-
-const switchToVocab = word => vocab[word];
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
   max-width: 760px;
@@ -676,65 +744,34 @@ const Grid = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
   grid-gap: 1.5rem;
 `;
 function Stats({
-  url,
   cn = '',
-  search
+  isWorld,
+  timeData,
+  todayWorld,
+  todayStats
 }) {
-  const {
-    todayStats,
-    error,
-    loading
-  } = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_0__["default"])(url, cn);
-  const {
-    worldStats
-  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  if (error) return __jsx("div", {
+  const renderTimeGraph = timeData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], _extends({
+    type: "line"
+  }, timeData, {
+    label: isWorld && 'World' + '\'s Outbreak Over Time',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 27
     },
     __self: this
-  }, " We've encountered an Error. Maybe you typed wrong country");
-  if (!todayStats) return __jsx("div", {
+  })) || __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 28
     },
     __self: this
-  }, __jsx(_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }));
-  const {
-    country,
-    cases,
-    recovered,
-    deaths,
-    todayCases
-  } = todayStats;
-  const o = {
-    cases,
-    todayCases,
-    recovered,
-    deaths
-  };
+  }, " Loading Time Graph ... ");
 
-  const organizeData = d => {
-    const mapToKeyword = k => ({
-      [switchToVocab(k)]: prop(d)(k)
-    });
-
-    return Object.keys(d).map(mapToKeyword);
-  };
-
-  const organizedData = organizeData(o);
+  console.log(todayStats);
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 34
     },
     __self: this
   }, __jsx("h1", {
@@ -743,7 +780,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 35
     },
     __self: this
   }, "Status for:   ", __jsx("span", {
@@ -752,57 +789,57 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 35
     },
     __self: this
-  }, country)), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, cn)), todayStats && __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
     type: "bar",
-    info: organizedData,
-    label: country + '\'s Outbreak',
+    info: todayStats,
+    label: cn + '\'s Outbreak',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 39
     },
     __self: this
   }), __jsx(Grid, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 40
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Infected",
-    data: cases,
+    data: todayStats.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 41
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Recovered",
-    data: recovered,
+    data: todayStats.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 45
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Total Deaths",
-    data: deaths,
+    data: todayStats.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 49
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "New Cases Today",
-    data: todayCases,
+    data: todayStats.todayCases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 53
     },
     __self: this
-  })));
+  }))), renderTimeGraph);
 }
 
 /***/ }),
@@ -965,6 +1002,85 @@ function IndexPage() {
 
 /***/ }),
 
+/***/ "./utils/mapDataForTodayGraph.js":
+/*!***************************************!*\
+  !*** ./utils/mapDataForTodayGraph.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const vocab = {
+  'cases': 'infected',
+  'recovered': 'recovered',
+  'country': 'country',
+  'deaths': 'deaths',
+  'todayCases': 'today'
+};
+
+const prop = o => k => o[k];
+
+const switchToVocab = word => vocab[word];
+
+const mapDataForTodayGraph = d => {
+  const mapToKeyword = k => ({
+    [switchToVocab(k)]: prop(d)(k)
+  });
+
+  return Object.keys(d).map(mapToKeyword);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (mapDataForTodayGraph);
+
+/***/ }),
+
+/***/ "./utils/sortForChart.js":
+/*!*******************************!*\
+  !*** ./utils/sortForChart.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// meant for Line Chart Cases/Deaths Chart
+const sortForChart = obj => {
+  const labels = obj.map(o => o.date);
+  const deaths = obj.map(o => o.total_deaths);
+  const cases = obj.map(o => o.total_cases);
+  const newCases = obj.map(o => o.new_cases);
+  const label = obj.location;
+  const datasets = [{
+    label: 'new cases',
+    data: newCases,
+    backgroundColor: '#fcfb11',
+    strokeColor: '#301934',
+    pointRadius: 0
+  }, {
+    label: 'deaths',
+    data: deaths,
+    backgroundColor: 'rgba(29,82,209,1) 100%)',
+    strokeColor: "rgba(222, 222, 34, 1)",
+    pointRadius: 0
+  }, {
+    label: 'cases',
+    data: cases,
+    backgroundColor: 'rgba(208,42,144,1)',
+    strokeColor: "rgba(200, 200, 200, 0.3)",
+    pointRadius: 0
+  }];
+  return {
+    datasets,
+    labels,
+    label
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (sortForChart);
+
+/***/ }),
+
 /***/ "./utils/themes.js":
 /*!*************************!*\
   !*** ./utils/themes.js ***!
@@ -1016,6 +1132,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _sortForChart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sortForChart */ "./utils/sortForChart.js");
+
 
 
 const baseURL = `http://46.101.156.51:3003/api/v1/alltime/`;
@@ -1026,7 +1144,7 @@ async function currentCountry() {
 
 function useTime(url = baseURL, country = 'world') {
   const {
-    0: data,
+    0: worldStats,
     1: setData
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
   const {
@@ -1043,13 +1161,13 @@ function useTime(url = baseURL, country = 'world') {
       setError();
       const URL = country === 'world' ? baseURL : baseURL + country;
       const data = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL).then(res => res.data).catch(err => setError(err));
-      setData(data);
+      const worldStats = Object(_sortForChart__WEBPACK_IMPORTED_MODULE_2__["default"])(data);
+      setData(worldStats);
       setLoading(false);
     }
 
     fetchData();
   }, [country]);
-  const worldStats = data;
   return {
     worldStats,
     timeLoading,
@@ -1080,7 +1198,7 @@ __webpack_require__.r(__webpack_exports__);
 const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const parseCn = str => {
-  return str === 'usa' || str === 'Usa' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : capitalize(str);
+  return str === 'usa' || str === 'Usa' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : str.toLowerCase();
 };
 
 function getCountry(list) {
@@ -1113,7 +1231,7 @@ function useTodayStats(url, country) {
       setError();
       let searchCountry = country || (await currentCountry());
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + searchCountry;
+      const URL = url + 'today/' + searchCountry.toLowerCase();
       console.log(URL);
       const data = await fetch(URL).then(res => res.json()).catch(err => setError(err));
       console.log(data);
@@ -1141,7 +1259,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
