@@ -22,13 +22,6 @@ const Flex = styled.div`
 
 export default function Stats({ cn = '', isWorld, timeData, todayWorld, todayStats }) {
 
-  const renderTimeGraph = timeData 
-    && (<Chart type='line' {...timeData} label={isWorld && 'World' + '\'s Outbreak Over Time'} />)
-    || (<div> Loading Time Graph ... </div>)
-
-  console.log(todayStats);
-
-
   return (
     <Container>
       <h1 style={{fontSize: '20px'}}>Status for:   <span style={{fontWeight: 'bold'}}>{cn}</span></h1>
@@ -56,7 +49,6 @@ export default function Stats({ cn = '', isWorld, timeData, todayWorld, todaySta
           </Flex>
         </div>
       }
-      {renderTimeGraph}
 
 
     </Container>

@@ -9,8 +9,6 @@ const popKey = o => Object.keys(o)[0]
 
 export default ( props ) => {
 
-
-  console.log(props);
   const data = {
     labels: Object.keys(props.info),
     datasets: [

@@ -6,4 +6,4 @@ const Container = styled.div`
   text-align: center;
 `
 
-export default () => <Container />
+export default (props) => <Container>{props.children}</Container>

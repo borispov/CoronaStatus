@@ -26,7 +26,7 @@ const Btn = styled.button`
 `
 
 export default function IndexPage() {
-  const [theme, setTheme] = useState(darkTheme())
+  const [theme, setTheme] = useState(lightTheme())
   const setDarkTheme = () => setTheme(darkTheme())
   const setLightTheme = () => setTheme(lightTheme())
 

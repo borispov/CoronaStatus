@@ -7,6 +7,7 @@ const Text = styled.p`
   font-size: 14px;
   font-family: 'Open Sans';
   line-height: 1.6;
+  max-width: 520px;
 `
 
 const Wrap = styled.div`

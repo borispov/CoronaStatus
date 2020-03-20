@@ -8,35 +8,46 @@ async function currentCountry(){
   return await axios
     .get('https://extreme-ip-lookup.com/json/')
     .then(res => res.data.country)
-    .catch(e => 'Israel')
+    .catch(e => 'israel')
 }
 
-function useTime(url = baseURL, country = 'world') {
-  const [worldStats, setData] = useState();
+function useTime(country = 'world', url = baseURL) {
+  const [timeStats, setData] = useState();
   const [timeLoading, setLoading] = useState(false);
   const [timeError, setError] = useState(false);
 
   useEffect(() => {
+    console.log('use time triggered');
     async function fetchData() {
       setLoading(true)
       setError()
 
-      const URL = country === 'world' ? baseURL : baseURL+country
+      const URL = country === 'init' 
+        ? baseURL + await currentCountry() 
+        : country !== 'world' 
+          ? baseURL+country 
+          : baseURL
 
       const data = await axios.get(URL)
         .then(res => res.data)
         .catch(err => setError(err))
-      const worldStats = sortForChart(data);
-      setData(worldStats)
+      const timeStats = sortForChart(data);
+      setData(timeStats)
       setLoading(false)
     }
 
     fetchData();
   }, [country])
 
+  if ( country !== 'world' ) {
+    const countryStats = timeStats
+    const countryLoading = timeLoading
+    const countryError = timeError
+    return { countryStats, countryLoading, countryError }
+  }
 
   return {
-    worldStats, timeLoading, timeError
+    timeStats, timeLoading, timeError
   }
 }
 

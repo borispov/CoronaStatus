@@ -3,46 +3,41 @@ import {Line} from 'react-chartjs-2';
 
 const popVal = o => Object.values(o)[0]
 
-const defaultColors = [
-  'rgba(112, 120, 176, 1)',
-  'rgba(233,233,100,1)',
-  'rgba(213, 199, 23, 1)',
-  'rgba(245, 55, 66, 1)',
-  'rgba(18, 18, 21, 1)'
-]
-
 const defaultSettings = {
   // fillColor: "rgba(220,220,220,0.2)",
-  // strokeColor: "rgba(220,220,220,1)",
-  // pointColor: "rgba(220,220,220,1)",
-  // pointStrokeColor: "#fff",
-  // pointHighlightFill: "#fff",
-  // pointHighlightStroke: "rgba(220,220,220,1)",
-  // pointBackgroundColor: '#fff',
-  // pointBorderWidth: 1,
-  // pointHoverRadius: 5,
-  // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-  // pointHoverBorderColor: 'rgba(220,220,220,1)',
-  // pointHoverBorderWidth: 2,
-  // pointRadius: 1,
-  // pointHitRadius: 10,
+  strokeColor: "rgba(220,220,220,1)",
+  pointColor: "rgba(220,220,220,1)",
+  pointStrokeColor: "#fff",
+  pointHighlightFill: "#fff",
+  pointHighlightStroke: "rgba(220,220,220,1)",
+  pointBackgroundColor: '#111',
+  pointBorderWidth: 1,
+  pointHoverRadius: 5,
+  pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+  pointHoverBorderColor: 'rgba(220,220,220,1)',
+  pointHoverBorderWidth: 2,
+  pointHitRadius: 10,
+  fill: false
 }
+
+const filterBy5 = (x, i) => !(i % 2)
+const subtractArray = arr => arr.filter(filterBy5)
 
 const parseDatasets = arrayOfSets => {
   return arrayOfSets.map(set => ({
     ...defaultSettings,
-    ...set
+    ...set,
+    // data: subtractArray(set.data)
   }))
 }
 
 export default ( props ) => {
 
   const data = {
+    // labels: subtractArray(props.labels),
     labels: props.labels,
     datasets: props.datasets && parseDatasets(props.datasets)
   };
-
-  console.log(data);
 
   var options = {
     responsive: true,
@@ -59,6 +54,11 @@ export default ( props ) => {
             }
         }],
         yAxes: [{
+          ticks: {
+            max: 700,
+            min: 0,
+            stepSize: 10
+          },
             gridLines: {
                 color: 'rgba(200, 200, 200, 0.08)',
                 lineWidth: 1
@@ -71,11 +71,12 @@ export default ( props ) => {
         }
     },
     legend: {
-        display: true
+      display: true,
+      position: 'bottom'
     },
     tooltips: {
         titleFontFamily: 'Open Sans',
-        // backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(0,0,0,0.3)',
         titleFontColor: 'black',
         caretSize: 5,
         cornerRadius: 3,
