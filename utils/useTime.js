@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
 import sortForChart from './sortForChart'
 
-const baseURL = `http://46.101.156.51:3003/api/v1/alltime/`
+const baseURL = `http://covid19.borisky.me:3003/api/v1/alltime/`
 
 async function currentCountry(){
   return await axios
@@ -11,43 +11,36 @@ async function currentCountry(){
     .catch(e => 'israel')
 }
 
-function useTime(country = 'world', url = baseURL) {
-  const [timeStats, setData] = useState();
-  const [timeLoading, setLoading] = useState(false);
-  const [timeError, setError] = useState(false);
+// function useTime(loc, url = baseURL) {
+function useTime(loc) {
+
+
+  const [countryStats, setCountryStats] = useState();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
 
   useEffect(() => {
-    console.log('use time triggered');
-    async function fetchData() {
+    async function fetchData(cn) {
+
       setLoading(true)
       setError()
-
-      const URL = country === 'init' 
-        ? baseURL + await currentCountry() 
-        : country !== 'world' 
-          ? baseURL+country 
-          : baseURL
-
+      const country = loc || await currentCountry()
+      const URL = baseURL + country
+      // console.log(URL);
       const data = await axios.get(URL)
         .then(res => res.data)
         .catch(err => setError(err))
       const timeStats = sortForChart(data);
-      setData(timeStats)
+      setCountryStats(timeStats)
       setLoading(false)
     }
+    fetchData(loc)
 
-    fetchData();
-  }, [country])
-
-  if ( country !== 'world' ) {
-    const countryStats = timeStats
-    const countryLoading = timeLoading
-    const countryError = timeError
-    return { countryStats, countryLoading, countryError }
-  }
+  }, [loc])
 
   return {
-    timeStats, timeLoading, timeError
+    countryStats, loading, error
   }
 }
 

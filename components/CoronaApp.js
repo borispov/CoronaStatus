@@ -7,21 +7,49 @@ import useTodayStats from '../utils/useTodayStats'
 import Chart from './Chart'
 import Container from './Container'
 import HeaderDescription from './HeaderDescription'
-import sortForChart from '../utils/sortForChart'
-import mapDataForTodayGraph from '../utils/mapDataForTodayGraph'
-import Button from './Button'
+import CaseChart from './CaseChart'
 
-export default () => {
-  const [showWorld, setTimeData] = useState(true)
+const allCountries = {
+  israel: '',
+  usa: '',
+  uk: '',
+  france: '',
+  lebanon: '',
+  germany: '',
+  poland: '',
+  russia: '',
+  india: '',
+  ukraine: '',
+  moldova: '',
+  spain: '',
+  italy: '',
+}
+const translateCountries = countries => cn => countries[Object.keys(countries).filter(c => c === 'cn')]
+
+
+export default ({ theme, lang}) => {
+
+  const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState('')
   const [inputValue, setInput] = useState('')
-  const [isWorld, setWorld] = useState(true)
 
   const url = 'http://covid19.borisky.me:3003/api/v1/'
 
+  const { countryStats } = useTime(country)
+
   const { todayStats } = useTodayStats(url, country)
-  const { timeStats, timeError, timeLoading } = useTime('world')
-  const { countryStats, countryLoading, countryError } = useTime('init')
+
+  const worldToday = useTodayStats(url, 'world').todayStats
+
+  const worldTodaySorted = worldToday &&
+    {
+      cases: worldToday.cases,
+      todayCases: worldToday.todayCases,
+      recovered: worldToday.recovered,
+      deaths: worldToday.deaths
+    } || ''
+
+  console.log(worldToday && worldToday);
 
   const todayStatsSorted = todayStats && 
     {
@@ -31,59 +59,62 @@ export default () => {
       deaths: todayStats.deaths
     } || ''
 
-
-  const changeData = k => setTimeData(!showWorld)
   const handleChange = e => setInput(e.target.value)
   const handleSubmit = e => {
     e.preventDefault();
     setCountry(inputValue)
   }
 
-  if (timeLoading || timeError) return <div> Loading....</div>
-  if (timeError) return <div> We've encountered an Error. Maybe you typed wrong country</div>
-
-  const timeChart = showWorld ? timeStats : countryStats
-
-  console.log(`
-    Suppose to showWorld: ${showWorld}
-    ------------
-    ${!showWorld && countryStats}
-  `);
-
   return (
     <div>
       <Header>Covid19 Feed</Header>
       <HeaderDescription />
 
+      {
+        countryStats &&
+          (
+            <Container>
+              <Chart
+                isHeb={lang === 'heb'}
+                type='line'
+                labels={countryStats.labels}
+                data={countryStats.datasets.filter(a => a.label === 'cases')}
+                label={country || 'israel'}
+                theme={theme}
+                fill={true}
+              />
+            </Container>
+          )
+      }
       <Stats
-        isWorld={isWorld}
         cn={country || todayStats && todayStats.country}
-        timeData={timeStats}
         todayStats={todayStatsSorted}
+        isHeb={lang === 'heb'}
       />
-      <Container>
 
-      <div style={{display: 'flex', justifyContent: 'center', padding: '34px 32px'}}>
-        <Button onClick={changeData}>World</Button><span> | </span>
-        <Button onClick={changeData}>{country || 'Israel'}</Button>
-      </div>
-        {
-          timeChart && (
-            <Chart 
-              type='line' 
-              {...timeChart} 
-                label='Outbreak Over Time'
-              />) || <div> Loading Charts.............. </div>
-        }
+      <Stats
+        cn={'World'}
+        todayWorld={worldTodaySorted}
+        isHeb={lang==='heb'}
+      />
 
-      </Container>
+      <CaseChart
+        showWorld={showWorld} 
+        theme={theme}
+        country={country}
+        isHeb={lang === 'heb'}
+      />
 
       <form 
         style={{ maxWidth: '520px', margin: '54px auto'}}
         onSubmit={handleSubmit}>
 
         <label style={{fontSize: '16px'}}>
-          Search For Country:
+          {
+            lang === 'eng'
+            ? `Search For Country:`
+            : `חיפוש לפי מדינה`
+          }
         </label>
 
         <div style={{ display: 'flex', margin: '0 auto' }}>

@@ -8,6 +8,7 @@ const Text = styled.p`
   font-family: 'Open Sans';
   line-height: 1.6;
   max-width: 520px;
+  text-align: center;
 `
 
 const Wrap = styled.div`

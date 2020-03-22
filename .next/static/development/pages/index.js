@@ -127,6 +127,365 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_temp
 
 /***/ }),
 
+/***/ "./components/CaseChart.js":
+/*!*********************************!*\
+  !*** ./components/CaseChart.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CaseChart.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+
+
+
+
+
+
+
+
+var baseURL = "http://covid19.borisky.me:3003/api/v1/alltime/";
+
+var countryTimeData = function countryTimeData(cn) {
+  var loc, data, dataRes;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function countryTimeData$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          console.log('fetchinGGGGG');
+          _context.t0 = cn;
+
+          if (_context.t0) {
+            _context.next = 6;
+            break;
+          }
+
+          _context.next = 5;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(currentCountry());
+
+        case 5:
+          _context.t0 = _context.sent;
+
+        case 6:
+          loc = _context.t0;
+          _context.next = 9;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(baseURL + loc));
+
+        case 9:
+          data = _context.sent;
+          _context.next = 12;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_12__["default"])(data.data));
+
+        case 12:
+          dataRes = _context.sent;
+          return _context.abrupt("return", dataRes);
+
+        case 14:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+};
+
+var worldTimeData = function worldTimeData() {
+  var data, dataRes;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function worldTimeData$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(baseURL));
+
+        case 2:
+          data = _context2.sent;
+          _context2.next = 5;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_12__["default"])(data.data));
+
+        case 5:
+          dataRes = _context2.sent;
+          return _context2.abrupt("return", dataRes);
+
+        case 7:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, null, null, null, Promise);
+};
+
+function currentCountry() {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function currentCountry$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
+            return res.data.country;
+          })["catch"](function (e) {
+            return 'israel';
+          }));
+
+        case 2:
+          return _context3.abrupt("return", _context3.sent);
+
+        case 3:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+var CaseChart = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(CaseChart, _React$Component);
+
+  function CaseChart(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CaseChart);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CaseChart).call(this, props));
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "present", function (val) {
+      return _this.setState({
+        dataToPresent: val
+      });
+    });
+
+    _this.state = {
+      dataToPresent: 'worldCases',
+      worldData: [],
+      countryData: [],
+      worldLabels: [],
+      countryLabels: [],
+      worldCases: [],
+      deathCases: [],
+      newCases: [],
+      countryCases: [],
+      showWorld: true,
+      loading: false
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CaseChart, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var timeStats, countryStats, worldCases, deathCases, newCases, countryCases, countryLabels, worldLabels, worldDeaths;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function componentDidMount$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              this.setState({
+                loading: true
+              });
+              console.log(this.props);
+              _context4.prev = 2;
+              _context4.next = 5;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(worldTimeData());
+
+            case 5:
+              timeStats = _context4.sent;
+              _context4.next = 8;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(countryTimeData(this.props.country));
+
+            case 8:
+              countryStats = _context4.sent;
+              worldCases = timeStats && timeStats.datasets.filter(function (a) {
+                return a.label === 'cases';
+              });
+              deathCases = timeStats && timeStats.datasets.filter(function (a) {
+                return a.label === 'deaths';
+              });
+              newCases = timeStats && timeStats.datasets.filter(function (a) {
+                return a.label === 'new cases';
+              });
+              countryCases = countryStats && countryStats.datasets.filter(function (a) {
+                return a.label === 'cases';
+              });
+              countryLabels = countryStats && countryStats.labels;
+              worldLabels = timeStats && timeStats.labels;
+              worldDeaths = timeStats && timeStats.datasets.filter(function (a) {
+                return a.label === 'deaths';
+              });
+              this.setState({
+                worldData: timeStats,
+                countryData: countryStats,
+                worldCases: worldCases,
+                deathCases: deathCases,
+                newCases: newCases,
+                countryCases: countryCases,
+                worldLabels: worldLabels,
+                countryLabels: countryLabels,
+                loading: false
+              });
+              _context4.next = 22;
+              break;
+
+            case 19:
+              _context4.prev = 19;
+              _context4.t0 = _context4["catch"](2);
+              this.setState({
+                loading: false,
+                error: _context4.t0
+              });
+
+            case 22:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, null, this, [[2, 19]], Promise);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      if (this.state.loading) {
+        return __jsx(_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94
+          },
+          __self: this
+        }, __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94
+          },
+          __self: this
+        }, "Loading Data . . ."));
+      }
+
+      if (this.state.error) {
+        return __jsx(_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          },
+          __self: this
+        }, __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          },
+          __self: this
+        }, this.state.error));
+      } // console.log(this.state.worldCases);
+
+
+      return __jsx(_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, __jsx("p", {
+        style: {
+          margin: '82px 0 0 0'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }, this.props.isHeb && 'שיעור התפשטות הנגיף בעולם, מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        type: "line",
+        labels: this.state.worldLabels,
+        data: this.state[this.state.dataToPresent],
+        label: "Global Statistics",
+        theme: this.props.theme,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }) || __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }, " Loading Charts ... "), __jsx("div", {
+        style: {
+          display: 'flex',
+          justifyContent: 'space-around',
+          padding: '34px 32px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        onClick: function onClick() {
+          return _this2.present('worldCases');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        onClick: function onClick() {
+          return _this2.present('deathCases');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        onClick: function onClick() {
+          return _this2.present('newCases');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }, this.props.isHeb && 'מקרים חדשים' || 'New cases')));
+    }
+  }]);
+
+  return CaseChart;
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CaseChart);
+
+/***/ }),
+
 /***/ "./components/Chart.js":
 /*!*****************************!*\
   !*** ./components/Chart.js ***!
@@ -218,24 +577,20 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_t
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
-/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var _utils_mapDataForTodayGraph__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/mapDataForTodayGraph */ "./utils/mapDataForTodayGraph.js");
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
+/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
+/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -246,50 +601,68 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+var allCountries = {
+  israel: '',
+  usa: '',
+  uk: '',
+  france: '',
+  lebanon: '',
+  germany: '',
+  poland: '',
+  russia: '',
+  india: '',
+  ukraine: '',
+  moldova: '',
+  spain: '',
+  italy: ''
+};
 
+var translateCountries = function translateCountries(countries) {
+  return function (cn) {
+    return countries[Object.keys(countries).filter(function (c) {
+      return c === 'cn';
+    })];
+  };
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var theme = _ref.theme,
+      lang = _ref.lang;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       showWorld = _useState[0],
-      setTimeData = _useState[1];
+      setShowWorld = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       country = _useState2[0],
       setCountry = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       inputValue = _useState3[0],
       setInput = _useState3[1];
 
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
-      isWorld = _useState4[0],
-      setWorld = _useState4[1];
-
   var url = 'http://covid19.borisky.me:3003/api/v1/';
 
-  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_6__["default"])(url, country),
+  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(country),
+      countryStats = _useTime.countryStats;
+
+  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, country),
       todayStats = _useTodayStats.todayStats;
 
-  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_5__["default"])('world'),
-      timeStats = _useTime.timeStats,
-      timeError = _useTime.timeError,
-      timeLoading = _useTime.timeLoading;
-
-  var _useTime2 = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_5__["default"])('init'),
-      countryStats = _useTime2.countryStats,
-      countryLoading = _useTime2.countryLoading,
-      countryError = _useTime2.countryError;
-
+  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, 'world').todayStats;
+  var worldTodaySorted = worldToday && {
+    cases: worldToday.cases,
+    todayCases: worldToday.todayCases,
+    recovered: worldToday.recovered,
+    deaths: worldToday.deaths
+  } || '';
+  console.log(worldToday && worldToday);
   var todayStatsSorted = todayStats && {
     cases: todayStats.cases,
     todayCases: todayStats.todayCases,
     recovered: todayStats.recovered,
     deaths: todayStats.deaths
   } || '';
-
-  var changeData = function changeData(k) {
-    return setTimeData(!showWorld);
-  };
 
   var handleChange = function handleChange(e) {
     return setInput(e.target.value);
@@ -300,103 +673,74 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     setCountry(inputValue);
   };
 
-  if (timeLoading || timeError) return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, " Loading....");
-  if (timeError) return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, " We've encountered an Error. Maybe you typed wrong country");
-  var timeChart = showWorld ? timeStats : countryStats;
-  console.log("\n    Suppose to showWorld: ".concat(showWorld, "\n    ------------\n    ").concat(!showWorld && countryStats, "\n  "));
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 69
     },
     __self: this
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 70
     },
     __self: this
-  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 71
     },
     __self: this
-  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    isWorld: isWorld,
-    cn: country || todayStats && todayStats.country,
-    timeData: timeStats,
-    todayStats: todayStatsSorted,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
-  }, __jsx("div", {
-    style: {
-      display: 'flex',
-      justifyContent: 'center',
-      padding: '34px 32px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: this
-  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    onClick: changeData,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }, "World"), __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }, " | "), __jsx(_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    onClick: changeData,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: this
-  }, country || 'Israel')), timeChart && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    type: "line"
-  }, timeChart, {
-    label: "Outbreak Over Time",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: this
-  })) || __jsx("div", {
+  }), countryStats && __jsx(_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 76
     },
     __self: this
-  }, " Loading Charts.............. ")), __jsx("form", {
+  }, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    isHeb: lang === 'heb',
+    type: "line",
+    labels: countryStats.labels,
+    data: countryStats.datasets.filter(function (a) {
+      return a.label === 'cases';
+    }),
+    label: country || 'israel',
+    theme: theme,
+    fill: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    cn: country || todayStats && todayStats.country,
+    todayStats: todayStatsSorted,
+    isHeb: lang === 'heb',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    cn: 'World',
+    todayWorld: worldTodaySorted,
+    isHeb: lang === 'heb',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
+    },
+    __self: this
+  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    showWorld: showWorld,
+    theme: theme,
+    country: country,
+    isHeb: lang === 'heb',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: this
+  }), __jsx("form", {
     style: {
       maxWidth: '520px',
       margin: '54px auto'
@@ -404,7 +748,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 108
     },
     __self: this
   }, __jsx("label", {
@@ -413,35 +757,35 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 112
     },
     __self: this
-  }, "Search For Country:"), __jsx("div", {
+  }, lang === 'eng' ? "Search For Country:" : "\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4"), __jsx("div", {
     style: {
       display: 'flex',
       margin: '0 auto'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 120
     },
     __self: this
-  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     type: "text",
     value: inputValue,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 121
     },
     __self: this
-  }), __jsx(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     type: "submit",
     value: "submit",
     btn: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 122
     },
     __self: this
   }))));
@@ -468,7 +812,7 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Heade
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  justify-content: center;\n  position: relative;\n  height: 82px;\n  width: 100%;\n  background: linear-gradient(45deg, #cc0404, #000000d6);\n  text-align: center;\n  border-bottom: 1px solid darkblue;\n  margin-bottom: 48px;\n  // padding: 8px 0;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  justify-content: center;\n  position: relative;\n  height: 82px;\n  width: 100%;\n  background: linear-gradient(45deg, #cc0404, #000000d6);\n  text-align: center;\n  border-bottom: 1px solid darkblue;\n  margin-bottom: 48px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -488,20 +832,20 @@ function _templateObject() {
 }
 
 
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject());
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].span(_templateObject());
 var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children;
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 24
     },
     __self: this
   }, children));
@@ -548,7 +892,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n  font-size: 14px;\n  font-family: 'Open Sans';\n  line-height: 1.6;\n  max-width: 520px;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n  font-size: 14px;\n  font-family: 'Open Sans';\n  line-height: 1.6;\n  max-width: 520px;\n  text-align: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -570,27 +914,27 @@ var Href = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a(_template
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: this
   }, __jsx(Text, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }, "This website makes use of public health data, specifically ", __jsx(Href, {
     href: "https://www.ourworldindata.org",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }, "www.ourworldindata.org"), " and ", __jsx(Href, {
     href: "https://WHO.int",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }, "WHO.int")));
@@ -661,6 +1005,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
+/* harmony import */ var chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! chartjs-plugin-datalabels */ "./node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js");
+/* harmony import */ var chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -672,53 +1019,48 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var popVal = function popVal(o) {
-  return Object.values(o)[0];
-};
 
-var defaultSettings = {
-  // fillColor: "rgba(220,220,220,0.2)",
-  strokeColor: "rgba(220,220,220,1)",
-  pointColor: "rgba(220,220,220,1)",
-  pointStrokeColor: "#fff",
-  pointHighlightFill: "#fff",
-  pointHighlightStroke: "rgba(220,220,220,1)",
-  pointBackgroundColor: '#111',
-  pointBorderWidth: 1,
-  pointHoverRadius: 5,
-  pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-  pointHoverBorderColor: 'rgba(220,220,220,1)',
-  pointHoverBorderWidth: 2,
-  pointHitRadius: 10,
-  fill: false
-};
 
 var filterBy5 = function filterBy5(x, i) {
-  return !(i % 2);
+  return !(i % 4);
 };
 
 var subtractArray = function subtractArray(arr) {
   return arr.filter(filterBy5);
 };
 
-var parseDatasets = function parseDatasets(arrayOfSets) {
+var subCases = function subCases(arr) {
+  return arr[0];
+};
+
+var defaultSettings = {
+  fill: true
+};
+
+var parseDatasets = function parseDatasets(arrayOfSets, fill) {
   return arrayOfSets.map(function (set) {
-    return _objectSpread({}, defaultSettings, {}, set);
+    return _objectSpread({}, set, {
+      data: set.data.length > 30 ? subtractArray(set.data) : set.data,
+      fill: fill || false
+    });
   });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
+  console.log(props.fill);
   var data = {
-    // labels: subtractArray(props.labels),
-    labels: props.labels,
-    datasets: props.datasets && parseDatasets(props.datasets)
+    labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
+    datasets: parseDatasets(props.data, props.fill)
   };
   var options = {
     responsive: true,
     maintainAspectRatio: true,
+    onAnimationComplete: function onAnimationComplete() {
+      this.showTooltip(this.datasets[0].points, true);
+    },
     animation: {
       easing: 'easeInOutQuad',
-      duration: 520
+      duration: 1050
     },
     scales: {
       xAxes: [{
@@ -729,9 +1071,7 @@ var parseDatasets = function parseDatasets(arrayOfSets) {
       }],
       yAxes: [{
         ticks: {
-          max: 700,
-          min: 0,
-          stepSize: 10
+          maxTicksLimit: 6
         },
         gridLines: {
           color: 'rgba(200, 200, 200, 0.08)',
@@ -750,12 +1090,28 @@ var parseDatasets = function parseDatasets(arrayOfSets) {
     },
     tooltips: {
       titleFontFamily: 'Open Sans',
-      backgroundColor: 'rgba(0,0,0,0.3)',
-      titleFontColor: 'black',
-      caretSize: 5,
-      cornerRadius: 3,
-      xPadding: 10,
-      yPadding: 10
+      backgroundColor: 'rgba(20,20,20, 0.3)',
+      titleFontColor: '#fff',
+      caretSize: 10,
+      cornerRadius: 5,
+      xPadding: 15,
+      yPadding: 15
+    },
+    plugins: {
+      datalabels: {
+        display: true,
+        // color: '#292929CC',
+        color: props.theme.color,
+        labels: {
+          title: {
+            font: {
+              weight: 'bold',
+              style: 'italic',
+              family: 'monospace'
+            }
+          }
+        }
+      }
     }
   };
   return __jsx("div", {
@@ -764,7 +1120,7 @@ var parseDatasets = function parseDatasets(arrayOfSets) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 90
     },
     __self: this
   }, __jsx("h1", {
@@ -773,17 +1129,18 @@ var parseDatasets = function parseDatasets(arrayOfSets) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 91
     },
     __self: this
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
+    label: props.label,
     data: data,
     width: 100,
     options: options,
-    height: 30,
+    height: 40,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 92
     },
     __self: this
   }));
@@ -836,7 +1193,7 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/StatB
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font: 'Helvetica';\n  letter-spacing: 1px;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font: 'Helvetica';\n  text-decoration: underline;\n  letter-spacing: 1px;\n  color: ", ";\n  margin-bottom: 6px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -846,7 +1203,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin: 0;\n  padding: 2rem;\n  background: ", ";\n  font-size: 1.125rem;\n  text-align: center;\n  border-radius: 6px;\n  max-width: 12rem;\n  align-content: center;\n  justify-content: center;\n  box-shadow: ", ";\n  color: ", ";\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  position: relative;\n  margin: 0;\n  padding: 16px 12px;\n  background: ", ";\n  font-size: 18px;\n  text-align: center;\n  border-radius: 6px;\n  align-content: center;\n  justify-content: space-between;\n  // box-shadow: 0 1px 12px 2px rgba(20,20,20,0.1);\n  color: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -860,11 +1217,11 @@ function _templateObject() {
 var Block = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), function (props) {
   return props.theme.bgColor;
 }, function (props) {
-  return props.theme.boxShadow;
-}, function (props) {
   return props.theme.color;
 });
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2());
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2(), function (props) {
+  return props.theme.textColor;
+});
 
 var StatBlock = function StatBlock(_ref) {
   var title = _ref.title,
@@ -872,22 +1229,24 @@ var StatBlock = function StatBlock(_ref) {
   return __jsx(Block, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 28
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: this
   }, title, ":"), __jsx("span", {
     style: {
-      fontSize: '1.125rem'
+      fontSize: '18px',
+      fontWeight: 'bold',
+      margin: '12px 0 0 0'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 30
     },
     __self: this
   }, data));
@@ -922,7 +1281,7 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats
 var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-top: 32px;\n  display: flex;\n  justify-content: space-evenly;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  background-color: ", ";\n  border-radius: 12px;\n  & > div {\n    background-color: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -932,7 +1291,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 760px;\n  margin: 0 auto;\n  text-align: center;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 760px;\n  margin: 24px auto 0;\n  text-align: center;\n  margin-top: 16px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -950,18 +1309,32 @@ function _templateObject() {
 
 
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
-var Flex = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2());
+var Flex = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2(), function (props) {
+  return props.bg || '';
+}, function (props) {
+  return props.bg || '';
+});
 function Stats(_ref) {
   var _ref$cn = _ref.cn,
       cn = _ref$cn === void 0 ? '' : _ref$cn,
-      isWorld = _ref.isWorld,
-      timeData = _ref.timeData,
       todayWorld = _ref.todayWorld,
-      todayStats = _ref.todayStats;
+      todayStats = _ref.todayStats,
+      isHeb = _ref.isHeb;
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 31
+    },
+    __self: this
+  }, todayStats && __jsx("div", {
+    style: {
+      border: '1px solid rgba(255, 60, 60, 0.022)',
+      borderRadius: '6px',
+      marginBottom: '16px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
     },
     __self: this
   }, __jsx("h1", {
@@ -970,77 +1343,182 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 35
     },
     __self: this
-  }, "Status for:   ", __jsx("span", {
+  }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
     style: {
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      textDecoration: 'underline'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 36
     },
     __self: this
-  }, cn)), todayStats && __jsx("div", {
-    style: {
-      border: '1px solid rgba(255, 60, 60, 0.12)',
-      borderRadius: '6px',
-      marginBottom: '16px'
-    },
+  }, " ", cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    type: "bar",
-    info: todayStats,
-    label: cn + '\'s Outbreak',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }), __jsx(Flex, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "Infected",
+    title: isHeb && 'נדבקים' || "Infected",
     data: todayStats.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 39
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "Recovered",
+    title: isHeb && 'החלימו' || "Recovered",
     data: todayStats.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 43
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "Total Deaths",
+    title: isHeb && 'מקרי מוות' || "Total Deaths",
     data: todayStats.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 47
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "New Cases Today",
+    title: isHeb && 'מקרים חדשים' || "New Cases Today",
     data: todayStats.todayCases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 51
+    },
+    __self: this
+  }))) || todayWorld && __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }, __jsx("h1", {
+    style: {
+      fontSize: '20px',
+      backgroundColor: 'beige',
+      paddingTop: '18px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
+    style: {
+      fontWeight: 'bold',
+      textDecoration: 'underline'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, " ", cn)), __jsx(Flex, {
+    bg: "beige",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: isHeb && 'נדבקים' || "Infected",
+    data: todayWorld.cases,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: isHeb && 'החלימו' || "Recovered",
+    data: todayWorld.recovered,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: isHeb && 'מקרי מוות' || "Total Deaths",
+    data: todayWorld.deaths,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
     },
     __self: this
   }))));
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _assertThisInitialized; });
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _classCallCheck; });
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/createClass.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/createClass.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _createClass; });
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
 }
 
 /***/ }),
@@ -1102,6 +1580,99 @@ function _extends() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _getPrototypeOf; });
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/inherits.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inherits.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inherits; });
+/* harmony import */ var _setPrototypeOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object(_setPrototypeOf__WEBPACK_IMPORTED_MODULE_0__["default"])(subClass, superClass);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _possibleConstructorReturn; });
+/* harmony import */ var _helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (Object(_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return Object(_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__["default"])(self);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _setPrototypeOf; });
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js ***!
@@ -1122,6 +1693,34 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _typeof; });
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
 }
 
 /***/ }),
@@ -19850,6 +20449,1401 @@ core_controller.helpers.each(
 return src;
 
 })));
+
+
+/***/ }),
+
+/***/ "./node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * chartjs-plugin-datalabels v0.7.0
+ * https://chartjs-plugin-datalabels.netlify.com
+ * (c) 2019 Chart.js Contributors
+ * Released under the MIT license
+ */
+(function (global, factory) {
+ true ? module.exports = factory(__webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js")) :
+undefined;
+}(this, function (Chart) { 'use strict';
+
+Chart = Chart && Chart.hasOwnProperty('default') ? Chart['default'] : Chart;
+
+var helpers = Chart.helpers;
+
+var devicePixelRatio = (function() {
+	if (typeof window !== 'undefined') {
+		if (window.devicePixelRatio) {
+			return window.devicePixelRatio;
+		}
+
+		// devicePixelRatio is undefined on IE10
+		// https://stackoverflow.com/a/20204180/8837887
+		// https://github.com/chartjs/chartjs-plugin-datalabels/issues/85
+		var screen = window.screen;
+		if (screen) {
+			return (screen.deviceXDPI || 1) / (screen.logicalXDPI || 1);
+		}
+	}
+
+	return 1;
+}());
+
+var utils = {
+	// @todo move this in Chart.helpers.toTextLines
+	toTextLines: function(inputs) {
+		var lines = [];
+		var input;
+
+		inputs = [].concat(inputs);
+		while (inputs.length) {
+			input = inputs.pop();
+			if (typeof input === 'string') {
+				lines.unshift.apply(lines, input.split('\n'));
+			} else if (Array.isArray(input)) {
+				inputs.push.apply(inputs, input);
+			} else if (!helpers.isNullOrUndef(inputs)) {
+				lines.unshift('' + input);
+			}
+		}
+
+		return lines;
+	},
+
+	// @todo move this method in Chart.helpers.canvas.toFont (deprecates helpers.fontString)
+	// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font
+	toFontString: function(font) {
+		if (!font || helpers.isNullOrUndef(font.size) || helpers.isNullOrUndef(font.family)) {
+			return null;
+		}
+
+		return (font.style ? font.style + ' ' : '')
+			+ (font.weight ? font.weight + ' ' : '')
+			+ font.size + 'px '
+			+ font.family;
+	},
+
+	// @todo move this in Chart.helpers.canvas.textSize
+	// @todo cache calls of measureText if font doesn't change?!
+	textSize: function(ctx, lines, font) {
+		var items = [].concat(lines);
+		var ilen = items.length;
+		var prev = ctx.font;
+		var width = 0;
+		var i;
+
+		ctx.font = font.string;
+
+		for (i = 0; i < ilen; ++i) {
+			width = Math.max(ctx.measureText(items[i]).width, width);
+		}
+
+		ctx.font = prev;
+
+		return {
+			height: ilen * font.lineHeight,
+			width: width
+		};
+	},
+
+	// @todo move this method in Chart.helpers.options.toFont
+	parseFont: function(value) {
+		var global = Chart.defaults.global;
+		var size = helpers.valueOrDefault(value.size, global.defaultFontSize);
+		var font = {
+			family: helpers.valueOrDefault(value.family, global.defaultFontFamily),
+			lineHeight: helpers.options.toLineHeight(value.lineHeight, size),
+			size: size,
+			style: helpers.valueOrDefault(value.style, global.defaultFontStyle),
+			weight: helpers.valueOrDefault(value.weight, null),
+			string: ''
+		};
+
+		font.string = utils.toFontString(font);
+		return font;
+	},
+
+	/**
+	 * Returns value bounded by min and max. This is equivalent to max(min, min(value, max)).
+	 * @todo move this method in Chart.helpers.bound
+	 * https://doc.qt.io/qt-5/qtglobal.html#qBound
+	 */
+	bound: function(min, value, max) {
+		return Math.max(min, Math.min(value, max));
+	},
+
+	/**
+	 * Returns an array of pair [value, state] where state is:
+	 * * -1: value is only in a0 (removed)
+	 * *  1: value is only in a1 (added)
+	 */
+	arrayDiff: function(a0, a1) {
+		var prev = a0.slice();
+		var updates = [];
+		var i, j, ilen, v;
+
+		for (i = 0, ilen = a1.length; i < ilen; ++i) {
+			v = a1[i];
+			j = prev.indexOf(v);
+
+			if (j === -1) {
+				updates.push([v, 1]);
+			} else {
+				prev.splice(j, 1);
+			}
+		}
+
+		for (i = 0, ilen = prev.length; i < ilen; ++i) {
+			updates.push([prev[i], -1]);
+		}
+
+		return updates;
+	},
+
+	/**
+	 * https://github.com/chartjs/chartjs-plugin-datalabels/issues/70
+	 */
+	rasterize: function(v) {
+		return Math.round(v * devicePixelRatio) / devicePixelRatio;
+	}
+};
+
+function orient(point, origin) {
+	var x0 = origin.x;
+	var y0 = origin.y;
+
+	if (x0 === null) {
+		return {x: 0, y: -1};
+	}
+	if (y0 === null) {
+		return {x: 1, y: 0};
+	}
+
+	var dx = point.x - x0;
+	var dy = point.y - y0;
+	var ln = Math.sqrt(dx * dx + dy * dy);
+
+	return {
+		x: ln ? dx / ln : 0,
+		y: ln ? dy / ln : -1
+	};
+}
+
+function aligned(x, y, vx, vy, align) {
+	switch (align) {
+	case 'center':
+		vx = vy = 0;
+		break;
+	case 'bottom':
+		vx = 0;
+		vy = 1;
+		break;
+	case 'right':
+		vx = 1;
+		vy = 0;
+		break;
+	case 'left':
+		vx = -1;
+		vy = 0;
+		break;
+	case 'top':
+		vx = 0;
+		vy = -1;
+		break;
+	case 'start':
+		vx = -vx;
+		vy = -vy;
+		break;
+	case 'end':
+		// keep natural orientation
+		break;
+	default:
+		// clockwise rotation (in degree)
+		align *= (Math.PI / 180);
+		vx = Math.cos(align);
+		vy = Math.sin(align);
+		break;
+	}
+
+	return {
+		x: x,
+		y: y,
+		vx: vx,
+		vy: vy
+	};
+}
+
+// Line clipping (Cohen–Sutherland algorithm)
+// https://en.wikipedia.org/wiki/Cohen–Sutherland_algorithm
+
+var R_INSIDE = 0;
+var R_LEFT = 1;
+var R_RIGHT = 2;
+var R_BOTTOM = 4;
+var R_TOP = 8;
+
+function region(x, y, rect) {
+	var res = R_INSIDE;
+
+	if (x < rect.left) {
+		res |= R_LEFT;
+	} else if (x > rect.right) {
+		res |= R_RIGHT;
+	}
+	if (y < rect.top) {
+		res |= R_TOP;
+	} else if (y > rect.bottom) {
+		res |= R_BOTTOM;
+	}
+
+	return res;
+}
+
+function clipped(segment, area) {
+	var x0 = segment.x0;
+	var y0 = segment.y0;
+	var x1 = segment.x1;
+	var y1 = segment.y1;
+	var r0 = region(x0, y0, area);
+	var r1 = region(x1, y1, area);
+	var r, x, y;
+
+	// eslint-disable-next-line no-constant-condition
+	while (true) {
+		if (!(r0 | r1) || (r0 & r1)) {
+			// both points inside or on the same side: no clipping
+			break;
+		}
+
+		// at least one point is outside
+		r = r0 || r1;
+
+		if (r & R_TOP) {
+			x = x0 + (x1 - x0) * (area.top - y0) / (y1 - y0);
+			y = area.top;
+		} else if (r & R_BOTTOM) {
+			x = x0 + (x1 - x0) * (area.bottom - y0) / (y1 - y0);
+			y = area.bottom;
+		} else if (r & R_RIGHT) {
+			y = y0 + (y1 - y0) * (area.right - x0) / (x1 - x0);
+			x = area.right;
+		} else if (r & R_LEFT) {
+			y = y0 + (y1 - y0) * (area.left - x0) / (x1 - x0);
+			x = area.left;
+		}
+
+		if (r === r0) {
+			x0 = x;
+			y0 = y;
+			r0 = region(x0, y0, area);
+		} else {
+			x1 = x;
+			y1 = y;
+			r1 = region(x1, y1, area);
+		}
+	}
+
+	return {
+		x0: x0,
+		x1: x1,
+		y0: y0,
+		y1: y1
+	};
+}
+
+function compute(range, config) {
+	var anchor = config.anchor;
+	var segment = range;
+	var x, y;
+
+	if (config.clamp) {
+		segment = clipped(segment, config.area);
+	}
+
+	if (anchor === 'start') {
+		x = segment.x0;
+		y = segment.y0;
+	} else if (anchor === 'end') {
+		x = segment.x1;
+		y = segment.y1;
+	} else {
+		x = (segment.x0 + segment.x1) / 2;
+		y = (segment.y0 + segment.y1) / 2;
+	}
+
+	return aligned(x, y, range.vx, range.vy, config.align);
+}
+
+var positioners = {
+	arc: function(vm, config) {
+		var angle = (vm.startAngle + vm.endAngle) / 2;
+		var vx = Math.cos(angle);
+		var vy = Math.sin(angle);
+		var r0 = vm.innerRadius;
+		var r1 = vm.outerRadius;
+
+		return compute({
+			x0: vm.x + vx * r0,
+			y0: vm.y + vy * r0,
+			x1: vm.x + vx * r1,
+			y1: vm.y + vy * r1,
+			vx: vx,
+			vy: vy
+		}, config);
+	},
+
+	point: function(vm, config) {
+		var v = orient(vm, config.origin);
+		var rx = v.x * vm.radius;
+		var ry = v.y * vm.radius;
+
+		return compute({
+			x0: vm.x - rx,
+			y0: vm.y - ry,
+			x1: vm.x + rx,
+			y1: vm.y + ry,
+			vx: v.x,
+			vy: v.y
+		}, config);
+	},
+
+	rect: function(vm, config) {
+		var v = orient(vm, config.origin);
+		var x = vm.x;
+		var y = vm.y;
+		var sx = 0;
+		var sy = 0;
+
+		if (vm.horizontal) {
+			x = Math.min(vm.x, vm.base);
+			sx = Math.abs(vm.base - vm.x);
+		} else {
+			y = Math.min(vm.y, vm.base);
+			sy = Math.abs(vm.base - vm.y);
+		}
+
+		return compute({
+			x0: x,
+			y0: y + sy,
+			x1: x + sx,
+			y1: y,
+			vx: v.x,
+			vy: v.y
+		}, config);
+	},
+
+	fallback: function(vm, config) {
+		var v = orient(vm, config.origin);
+
+		return compute({
+			x0: vm.x,
+			y0: vm.y,
+			x1: vm.x,
+			y1: vm.y,
+			vx: v.x,
+			vy: v.y
+		}, config);
+	}
+};
+
+var helpers$1 = Chart.helpers;
+var rasterize = utils.rasterize;
+
+function boundingRects(model) {
+	var borderWidth = model.borderWidth || 0;
+	var padding = model.padding;
+	var th = model.size.height;
+	var tw = model.size.width;
+	var tx = -tw / 2;
+	var ty = -th / 2;
+
+	return {
+		frame: {
+			x: tx - padding.left - borderWidth,
+			y: ty - padding.top - borderWidth,
+			w: tw + padding.width + borderWidth * 2,
+			h: th + padding.height + borderWidth * 2
+		},
+		text: {
+			x: tx,
+			y: ty,
+			w: tw,
+			h: th
+		}
+	};
+}
+
+function getScaleOrigin(el) {
+	var horizontal = el._model.horizontal;
+	var scale = el._scale || (horizontal && el._xScale) || el._yScale;
+
+	if (!scale) {
+		return null;
+	}
+
+	if (scale.xCenter !== undefined && scale.yCenter !== undefined) {
+		return {x: scale.xCenter, y: scale.yCenter};
+	}
+
+	var pixel = scale.getBasePixel();
+	return horizontal ?
+		{x: pixel, y: null} :
+		{x: null, y: pixel};
+}
+
+function getPositioner(el) {
+	if (el instanceof Chart.elements.Arc) {
+		return positioners.arc;
+	}
+	if (el instanceof Chart.elements.Point) {
+		return positioners.point;
+	}
+	if (el instanceof Chart.elements.Rectangle) {
+		return positioners.rect;
+	}
+	return positioners.fallback;
+}
+
+function drawFrame(ctx, rect, model) {
+	var bgColor = model.backgroundColor;
+	var borderColor = model.borderColor;
+	var borderWidth = model.borderWidth;
+
+	if (!bgColor && (!borderColor || !borderWidth)) {
+		return;
+	}
+
+	ctx.beginPath();
+
+	helpers$1.canvas.roundedRect(
+		ctx,
+		rasterize(rect.x) + borderWidth / 2,
+		rasterize(rect.y) + borderWidth / 2,
+		rasterize(rect.w) - borderWidth,
+		rasterize(rect.h) - borderWidth,
+		model.borderRadius);
+
+	ctx.closePath();
+
+	if (bgColor) {
+		ctx.fillStyle = bgColor;
+		ctx.fill();
+	}
+
+	if (borderColor && borderWidth) {
+		ctx.strokeStyle = borderColor;
+		ctx.lineWidth = borderWidth;
+		ctx.lineJoin = 'miter';
+		ctx.stroke();
+	}
+}
+
+function textGeometry(rect, align, font) {
+	var h = font.lineHeight;
+	var w = rect.w;
+	var x = rect.x;
+	var y = rect.y + h / 2;
+
+	if (align === 'center') {
+		x += w / 2;
+	} else if (align === 'end' || align === 'right') {
+		x += w;
+	}
+
+	return {
+		h: h,
+		w: w,
+		x: x,
+		y: y
+	};
+}
+
+function drawTextLine(ctx, text, cfg) {
+	var shadow = ctx.shadowBlur;
+	var stroked = cfg.stroked;
+	var x = rasterize(cfg.x);
+	var y = rasterize(cfg.y);
+	var w = rasterize(cfg.w);
+
+	if (stroked) {
+		ctx.strokeText(text, x, y, w);
+	}
+
+	if (cfg.filled) {
+		if (shadow && stroked) {
+			// Prevent drawing shadow on both the text stroke and fill, so
+			// if the text is stroked, remove the shadow for the text fill.
+			ctx.shadowBlur = 0;
+		}
+
+		ctx.fillText(text, x, y, w);
+
+		if (shadow && stroked) {
+			ctx.shadowBlur = shadow;
+		}
+	}
+}
+
+function drawText(ctx, lines, rect, model) {
+	var align = model.textAlign;
+	var color = model.color;
+	var filled = !!color;
+	var font = model.font;
+	var ilen = lines.length;
+	var strokeColor = model.textStrokeColor;
+	var strokeWidth = model.textStrokeWidth;
+	var stroked = strokeColor && strokeWidth;
+	var i;
+
+	if (!ilen || (!filled && !stroked)) {
+		return;
+	}
+
+	// Adjust coordinates based on text alignment and line height
+	rect = textGeometry(rect, align, font);
+
+	ctx.font = font.string;
+	ctx.textAlign = align;
+	ctx.textBaseline = 'middle';
+	ctx.shadowBlur = model.textShadowBlur;
+	ctx.shadowColor = model.textShadowColor;
+
+	if (filled) {
+		ctx.fillStyle = color;
+	}
+	if (stroked) {
+		ctx.lineJoin = 'round';
+		ctx.lineWidth = strokeWidth;
+		ctx.strokeStyle = strokeColor;
+	}
+
+	for (i = 0, ilen = lines.length; i < ilen; ++i) {
+		drawTextLine(ctx, lines[i], {
+			stroked: stroked,
+			filled: filled,
+			w: rect.w,
+			x: rect.x,
+			y: rect.y + rect.h * i
+		});
+	}
+}
+
+var Label = function(config, ctx, el, index) {
+	var me = this;
+
+	me._config = config;
+	me._index = index;
+	me._model = null;
+	me._rects = null;
+	me._ctx = ctx;
+	me._el = el;
+};
+
+helpers$1.extend(Label.prototype, {
+	/**
+	 * @private
+	 */
+	_modelize: function(display, lines, config, context) {
+		var me = this;
+		var index = me._index;
+		var resolve = helpers$1.options.resolve;
+		var font = utils.parseFont(resolve([config.font, {}], context, index));
+		var color = resolve([config.color, Chart.defaults.global.defaultFontColor], context, index);
+
+		return {
+			align: resolve([config.align, 'center'], context, index),
+			anchor: resolve([config.anchor, 'center'], context, index),
+			area: context.chart.chartArea,
+			backgroundColor: resolve([config.backgroundColor, null], context, index),
+			borderColor: resolve([config.borderColor, null], context, index),
+			borderRadius: resolve([config.borderRadius, 0], context, index),
+			borderWidth: resolve([config.borderWidth, 0], context, index),
+			clamp: resolve([config.clamp, false], context, index),
+			clip: resolve([config.clip, false], context, index),
+			color: color,
+			display: display,
+			font: font,
+			lines: lines,
+			offset: resolve([config.offset, 0], context, index),
+			opacity: resolve([config.opacity, 1], context, index),
+			origin: getScaleOrigin(me._el),
+			padding: helpers$1.options.toPadding(resolve([config.padding, 0], context, index)),
+			positioner: getPositioner(me._el),
+			rotation: resolve([config.rotation, 0], context, index) * (Math.PI / 180),
+			size: utils.textSize(me._ctx, lines, font),
+			textAlign: resolve([config.textAlign, 'start'], context, index),
+			textShadowBlur: resolve([config.textShadowBlur, 0], context, index),
+			textShadowColor: resolve([config.textShadowColor, color], context, index),
+			textStrokeColor: resolve([config.textStrokeColor, color], context, index),
+			textStrokeWidth: resolve([config.textStrokeWidth, 0], context, index)
+		};
+	},
+
+	update: function(context) {
+		var me = this;
+		var model = null;
+		var rects = null;
+		var index = me._index;
+		var config = me._config;
+		var value, label, lines;
+
+		// We first resolve the display option (separately) to avoid computing
+		// other options in case the label is hidden (i.e. display: false).
+		var display = helpers$1.options.resolve([config.display, true], context, index);
+
+		if (display) {
+			value = context.dataset.data[index];
+			label = helpers$1.valueOrDefault(helpers$1.callback(config.formatter, [value, context]), value);
+			lines = helpers$1.isNullOrUndef(label) ? [] : utils.toTextLines(label);
+
+			if (lines.length) {
+				model = me._modelize(display, lines, config, context);
+				rects = boundingRects(model);
+			}
+		}
+
+		me._model = model;
+		me._rects = rects;
+	},
+
+	geometry: function() {
+		return this._rects ? this._rects.frame : {};
+	},
+
+	rotation: function() {
+		return this._model ? this._model.rotation : 0;
+	},
+
+	visible: function() {
+		return this._model && this._model.opacity;
+	},
+
+	model: function() {
+		return this._model;
+	},
+
+	draw: function(chart, center) {
+		var me = this;
+		var ctx = chart.ctx;
+		var model = me._model;
+		var rects = me._rects;
+		var area;
+
+		if (!this.visible()) {
+			return;
+		}
+
+		ctx.save();
+
+		if (model.clip) {
+			area = model.area;
+			ctx.beginPath();
+			ctx.rect(
+				area.left,
+				area.top,
+				area.right - area.left,
+				area.bottom - area.top);
+			ctx.clip();
+		}
+
+		ctx.globalAlpha = utils.bound(0, model.opacity, 1);
+		ctx.translate(rasterize(center.x), rasterize(center.y));
+		ctx.rotate(model.rotation);
+
+		drawFrame(ctx, rects.frame, model);
+		drawText(ctx, model.lines, rects.text, model);
+
+		ctx.restore();
+	}
+});
+
+var helpers$2 = Chart.helpers;
+
+var MIN_INTEGER = Number.MIN_SAFE_INTEGER || -9007199254740991; // eslint-disable-line es/no-number-minsafeinteger
+var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;  // eslint-disable-line es/no-number-maxsafeinteger
+
+function rotated(point, center, angle) {
+	var cos = Math.cos(angle);
+	var sin = Math.sin(angle);
+	var cx = center.x;
+	var cy = center.y;
+
+	return {
+		x: cx + cos * (point.x - cx) - sin * (point.y - cy),
+		y: cy + sin * (point.x - cx) + cos * (point.y - cy)
+	};
+}
+
+function projected(points, axis) {
+	var min = MAX_INTEGER;
+	var max = MIN_INTEGER;
+	var origin = axis.origin;
+	var i, pt, vx, vy, dp;
+
+	for (i = 0; i < points.length; ++i) {
+		pt = points[i];
+		vx = pt.x - origin.x;
+		vy = pt.y - origin.y;
+		dp = axis.vx * vx + axis.vy * vy;
+		min = Math.min(min, dp);
+		max = Math.max(max, dp);
+	}
+
+	return {
+		min: min,
+		max: max
+	};
+}
+
+function toAxis(p0, p1) {
+	var vx = p1.x - p0.x;
+	var vy = p1.y - p0.y;
+	var ln = Math.sqrt(vx * vx + vy * vy);
+
+	return {
+		vx: (p1.x - p0.x) / ln,
+		vy: (p1.y - p0.y) / ln,
+		origin: p0,
+		ln: ln
+	};
+}
+
+var HitBox = function() {
+	this._rotation = 0;
+	this._rect = {
+		x: 0,
+		y: 0,
+		w: 0,
+		h: 0
+	};
+};
+
+helpers$2.extend(HitBox.prototype, {
+	center: function() {
+		var r = this._rect;
+		return {
+			x: r.x + r.w / 2,
+			y: r.y + r.h / 2
+		};
+	},
+
+	update: function(center, rect, rotation) {
+		this._rotation = rotation;
+		this._rect = {
+			x: rect.x + center.x,
+			y: rect.y + center.y,
+			w: rect.w,
+			h: rect.h
+		};
+	},
+
+	contains: function(point) {
+		var me = this;
+		var margin = 1;
+		var rect = me._rect;
+
+		point = rotated(point, me.center(), -me._rotation);
+
+		return !(point.x < rect.x - margin
+			|| point.y < rect.y - margin
+			|| point.x > rect.x + rect.w + margin * 2
+			|| point.y > rect.y + rect.h + margin * 2);
+	},
+
+	// Separating Axis Theorem
+	// https://gamedevelopment.tutsplus.com/tutorials/collision-detection-using-the-separating-axis-theorem--gamedev-169
+	intersects: function(other) {
+		var r0 = this._points();
+		var r1 = other._points();
+		var axes = [
+			toAxis(r0[0], r0[1]),
+			toAxis(r0[0], r0[3])
+		];
+		var i, pr0, pr1;
+
+		if (this._rotation !== other._rotation) {
+			// Only separate with r1 axis if the rotation is different,
+			// else it's enough to separate r0 and r1 with r0 axis only!
+			axes.push(
+				toAxis(r1[0], r1[1]),
+				toAxis(r1[0], r1[3])
+			);
+		}
+
+		for (i = 0; i < axes.length; ++i) {
+			pr0 = projected(r0, axes[i]);
+			pr1 = projected(r1, axes[i]);
+
+			if (pr0.max < pr1.min || pr1.max < pr0.min) {
+				return false;
+			}
+		}
+
+		return true;
+	},
+
+	/**
+	 * @private
+	 */
+	_points: function() {
+		var me = this;
+		var rect = me._rect;
+		var angle = me._rotation;
+		var center = me.center();
+
+		return [
+			rotated({x: rect.x, y: rect.y}, center, angle),
+			rotated({x: rect.x + rect.w, y: rect.y}, center, angle),
+			rotated({x: rect.x + rect.w, y: rect.y + rect.h}, center, angle),
+			rotated({x: rect.x, y: rect.y + rect.h}, center, angle)
+		];
+	}
+});
+
+function coordinates(view, model, geometry) {
+	var point = model.positioner(view, model);
+	var vx = point.vx;
+	var vy = point.vy;
+
+	if (!vx && !vy) {
+		// if aligned center, we don't want to offset the center point
+		return {x: point.x, y: point.y};
+	}
+
+	var w = geometry.w;
+	var h = geometry.h;
+
+	// take in account the label rotation
+	var rotation = model.rotation;
+	var dx = Math.abs(w / 2 * Math.cos(rotation)) + Math.abs(h / 2 * Math.sin(rotation));
+	var dy = Math.abs(w / 2 * Math.sin(rotation)) + Math.abs(h / 2 * Math.cos(rotation));
+
+	// scale the unit vector (vx, vy) to get at least dx or dy equal to
+	// w or h respectively (else we would calculate the distance to the
+	// ellipse inscribed in the bounding rect)
+	var vs = 1 / Math.max(Math.abs(vx), Math.abs(vy));
+	dx *= vx * vs;
+	dy *= vy * vs;
+
+	// finally, include the explicit offset
+	dx += model.offset * vx;
+	dy += model.offset * vy;
+
+	return {
+		x: point.x + dx,
+		y: point.y + dy
+	};
+}
+
+function collide(labels, collider) {
+	var i, j, s0, s1;
+
+	// IMPORTANT Iterate in the reverse order since items at the end of the
+	// list have an higher weight/priority and thus should be less impacted
+	// by the overlapping strategy.
+
+	for (i = labels.length - 1; i >= 0; --i) {
+		s0 = labels[i].$layout;
+
+		for (j = i - 1; j >= 0 && s0._visible; --j) {
+			s1 = labels[j].$layout;
+
+			if (s1._visible && s0._box.intersects(s1._box)) {
+				collider(s0, s1);
+			}
+		}
+	}
+
+	return labels;
+}
+
+function compute$1(labels) {
+	var i, ilen, label, state, geometry, center;
+
+	// Initialize labels for overlap detection
+	for (i = 0, ilen = labels.length; i < ilen; ++i) {
+		label = labels[i];
+		state = label.$layout;
+
+		if (state._visible) {
+			geometry = label.geometry();
+			center = coordinates(label._el._model, label.model(), geometry);
+			state._box.update(center, geometry, label.rotation());
+		}
+	}
+
+	// Auto hide overlapping labels
+	return collide(labels, function(s0, s1) {
+		var h0 = s0._hidable;
+		var h1 = s1._hidable;
+
+		if ((h0 && h1) || h1) {
+			s1._visible = false;
+		} else if (h0) {
+			s0._visible = false;
+		}
+	});
+}
+
+var layout = {
+	prepare: function(datasets) {
+		var labels = [];
+		var i, j, ilen, jlen, label;
+
+		for (i = 0, ilen = datasets.length; i < ilen; ++i) {
+			for (j = 0, jlen = datasets[i].length; j < jlen; ++j) {
+				label = datasets[i][j];
+				labels.push(label);
+				label.$layout = {
+					_box: new HitBox(),
+					_hidable: false,
+					_visible: true,
+					_set: i,
+					_idx: j
+				};
+			}
+		}
+
+		// TODO New `z` option: labels with a higher z-index are drawn
+		// of top of the ones with a lower index. Lowest z-index labels
+		// are also discarded first when hiding overlapping labels.
+		labels.sort(function(a, b) {
+			var sa = a.$layout;
+			var sb = b.$layout;
+
+			return sa._idx === sb._idx
+				? sb._set - sa._set
+				: sb._idx - sa._idx;
+		});
+
+		this.update(labels);
+
+		return labels;
+	},
+
+	update: function(labels) {
+		var dirty = false;
+		var i, ilen, label, model, state;
+
+		for (i = 0, ilen = labels.length; i < ilen; ++i) {
+			label = labels[i];
+			model = label.model();
+			state = label.$layout;
+			state._hidable = model && model.display === 'auto';
+			state._visible = label.visible();
+			dirty |= state._hidable;
+		}
+
+		if (dirty) {
+			compute$1(labels);
+		}
+	},
+
+	lookup: function(labels, point) {
+		var i, state;
+
+		// IMPORTANT Iterate in the reverse order since items at the end of
+		// the list have an higher z-index, thus should be picked first.
+
+		for (i = labels.length - 1; i >= 0; --i) {
+			state = labels[i].$layout;
+
+			if (state && state._visible && state._box.contains(point)) {
+				return labels[i];
+			}
+		}
+
+		return null;
+	},
+
+	draw: function(chart, labels) {
+		var i, ilen, label, state, geometry, center;
+
+		for (i = 0, ilen = labels.length; i < ilen; ++i) {
+			label = labels[i];
+			state = label.$layout;
+
+			if (state._visible) {
+				geometry = label.geometry();
+				center = coordinates(label._el._view, label.model(), geometry);
+				state._box.update(center, geometry, label.rotation());
+				label.draw(chart, center);
+			}
+		}
+	}
+};
+
+var helpers$3 = Chart.helpers;
+
+var formatter = function(value) {
+	if (helpers$3.isNullOrUndef(value)) {
+		return null;
+	}
+
+	var label = value;
+	var keys, klen, k;
+	if (helpers$3.isObject(value)) {
+		if (!helpers$3.isNullOrUndef(value.label)) {
+			label = value.label;
+		} else if (!helpers$3.isNullOrUndef(value.r)) {
+			label = value.r;
+		} else {
+			label = '';
+			keys = Object.keys(value);
+			for (k = 0, klen = keys.length; k < klen; ++k) {
+				label += (k !== 0 ? ', ' : '') + keys[k] + ': ' + value[keys[k]];
+			}
+		}
+	}
+
+	return '' + label;
+};
+
+/**
+ * IMPORTANT: make sure to also update tests and TypeScript definition
+ * files (`/test/specs/defaults.spec.js` and `/types/options.d.ts`)
+ */
+
+var defaults = {
+	align: 'center',
+	anchor: 'center',
+	backgroundColor: null,
+	borderColor: null,
+	borderRadius: 0,
+	borderWidth: 0,
+	clamp: false,
+	clip: false,
+	color: undefined,
+	display: true,
+	font: {
+		family: undefined,
+		lineHeight: 1.2,
+		size: undefined,
+		style: undefined,
+		weight: null
+	},
+	formatter: formatter,
+	labels: undefined,
+	listeners: {},
+	offset: 4,
+	opacity: 1,
+	padding: {
+		top: 4,
+		right: 4,
+		bottom: 4,
+		left: 4
+	},
+	rotation: 0,
+	textAlign: 'start',
+	textStrokeColor: undefined,
+	textStrokeWidth: 0,
+	textShadowBlur: 0,
+	textShadowColor: undefined
+};
+
+/**
+ * @see https://github.com/chartjs/Chart.js/issues/4176
+ */
+
+var helpers$4 = Chart.helpers;
+var EXPANDO_KEY = '$datalabels';
+var DEFAULT_KEY = '$default';
+
+function configure(dataset, options) {
+	var override = dataset.datalabels;
+	var listeners = {};
+	var configs = [];
+	var labels, keys;
+
+	if (override === false) {
+		return null;
+	}
+	if (override === true) {
+		override = {};
+	}
+
+	options = helpers$4.merge({}, [options, override]);
+	labels = options.labels || {};
+	keys = Object.keys(labels);
+	delete options.labels;
+
+	if (keys.length) {
+		keys.forEach(function(key) {
+			if (labels[key]) {
+				configs.push(helpers$4.merge({}, [
+					options,
+					labels[key],
+					{_key: key}
+				]));
+			}
+		});
+	} else {
+		// Default label if no "named" label defined.
+		configs.push(options);
+	}
+
+	// listeners: {<event-type>: {<label-key>: <fn>}}
+	listeners = configs.reduce(function(target, config) {
+		helpers$4.each(config.listeners || {}, function(fn, event) {
+			target[event] = target[event] || {};
+			target[event][config._key || DEFAULT_KEY] = fn;
+		});
+
+		delete config.listeners;
+		return target;
+	}, {});
+
+	return {
+		labels: configs,
+		listeners: listeners
+	};
+}
+
+function dispatchEvent(chart, listeners, label) {
+	if (!listeners) {
+		return;
+	}
+
+	var context = label.$context;
+	var groups = label.$groups;
+	var callback;
+
+	if (!listeners[groups._set]) {
+		return;
+	}
+
+	callback = listeners[groups._set][groups._key];
+	if (!callback) {
+		return;
+	}
+
+	if (helpers$4.callback(callback, [context]) === true) {
+		// Users are allowed to tweak the given context by injecting values that can be
+		// used in scriptable options to display labels differently based on the current
+		// event (e.g. highlight an hovered label). That's why we update the label with
+		// the output context and schedule a new chart render by setting it dirty.
+		chart[EXPANDO_KEY]._dirty = true;
+		label.update(context);
+	}
+}
+
+function dispatchMoveEvents(chart, listeners, previous, label) {
+	var enter, leave;
+
+	if (!previous && !label) {
+		return;
+	}
+
+	if (!previous) {
+		enter = true;
+	} else if (!label) {
+		leave = true;
+	} else if (previous !== label) {
+		leave = enter = true;
+	}
+
+	if (leave) {
+		dispatchEvent(chart, listeners.leave, previous);
+	}
+	if (enter) {
+		dispatchEvent(chart, listeners.enter, label);
+	}
+}
+
+function handleMoveEvents(chart, event) {
+	var expando = chart[EXPANDO_KEY];
+	var listeners = expando._listeners;
+	var previous, label;
+
+	if (!listeners.enter && !listeners.leave) {
+		return;
+	}
+
+	if (event.type === 'mousemove') {
+		label = layout.lookup(expando._labels, event);
+	} else if (event.type !== 'mouseout') {
+		return;
+	}
+
+	previous = expando._hovered;
+	expando._hovered = label;
+	dispatchMoveEvents(chart, listeners, previous, label);
+}
+
+function handleClickEvents(chart, event) {
+	var expando = chart[EXPANDO_KEY];
+	var handlers = expando._listeners.click;
+	var label = handlers && layout.lookup(expando._labels, event);
+	if (label) {
+		dispatchEvent(chart, handlers, label);
+	}
+}
+
+// https://github.com/chartjs/chartjs-plugin-datalabels/issues/108
+function invalidate(chart) {
+	if (chart.animating) {
+		return;
+	}
+
+	// `chart.animating` can be `false` even if there is animation in progress,
+	// so let's iterate all animations to find if there is one for the `chart`.
+	var animations = Chart.animationService.animations;
+	for (var i = 0, ilen = animations.length; i < ilen; ++i) {
+		if (animations[i].chart === chart) {
+			return;
+		}
+	}
+
+	// No render scheduled: trigger a "lazy" render that can be canceled in case
+	// of hover interactions. The 1ms duration is a workaround to make sure an
+	// animation is created so the controller can stop it before any transition.
+	chart.render({duration: 1, lazy: true});
+}
+
+Chart.defaults.global.plugins.datalabels = defaults;
+
+var plugin = {
+	id: 'datalabels',
+
+	beforeInit: function(chart) {
+		chart[EXPANDO_KEY] = {
+			_actives: []
+		};
+	},
+
+	beforeUpdate: function(chart) {
+		var expando = chart[EXPANDO_KEY];
+		expando._listened = false;
+		expando._listeners = {};     // {<event-type>: {<dataset-index>: {<label-key>: <fn>}}}
+		expando._datasets = [];      // per dataset labels: [Label[]]
+		expando._labels = [];        // layouted labels: Label[]
+	},
+
+	afterDatasetUpdate: function(chart, args, options) {
+		var datasetIndex = args.index;
+		var expando = chart[EXPANDO_KEY];
+		var labels = expando._datasets[datasetIndex] = [];
+		var visible = chart.isDatasetVisible(datasetIndex);
+		var dataset = chart.data.datasets[datasetIndex];
+		var config = configure(dataset, options);
+		var elements = args.meta.data || [];
+		var ctx = chart.ctx;
+		var i, j, ilen, jlen, cfg, key, el, label;
+
+		ctx.save();
+
+		for (i = 0, ilen = elements.length; i < ilen; ++i) {
+			el = elements[i];
+			el[EXPANDO_KEY] = [];
+
+			if (visible && el && !el.hidden && !el._model.skip) {
+				for (j = 0, jlen = config.labels.length; j < jlen; ++j) {
+					cfg = config.labels[j];
+					key = cfg._key;
+
+					label = new Label(cfg, ctx, el, i);
+					label.$groups = {
+						_set: datasetIndex,
+						_key: key || DEFAULT_KEY
+					};
+					label.$context = {
+						active: false,
+						chart: chart,
+						dataIndex: i,
+						dataset: dataset,
+						datasetIndex: datasetIndex
+					};
+
+					label.update(label.$context);
+					el[EXPANDO_KEY].push(label);
+					labels.push(label);
+				}
+			}
+		}
+
+		ctx.restore();
+
+		// Store listeners at the chart level and per event type to optimize
+		// cases where no listeners are registered for a specific event.
+		helpers$4.merge(expando._listeners, config.listeners, {
+			merger: function(event, target, source) {
+				target[event] = target[event] || {};
+				target[event][args.index] = source[event];
+				expando._listened = true;
+			}
+		});
+	},
+
+	afterUpdate: function(chart, options) {
+		chart[EXPANDO_KEY]._labels = layout.prepare(
+			chart[EXPANDO_KEY]._datasets,
+			options);
+	},
+
+	// Draw labels on top of all dataset elements
+	// https://github.com/chartjs/chartjs-plugin-datalabels/issues/29
+	// https://github.com/chartjs/chartjs-plugin-datalabels/issues/32
+	afterDatasetsDraw: function(chart) {
+		layout.draw(chart, chart[EXPANDO_KEY]._labels);
+	},
+
+	beforeEvent: function(chart, event) {
+		// If there is no listener registered for this chart, `listened` will be false,
+		// meaning we can immediately ignore the incoming event and avoid useless extra
+		// computation for users who don't implement label interactions.
+		if (chart[EXPANDO_KEY]._listened) {
+			switch (event.type) {
+			case 'mousemove':
+			case 'mouseout':
+				handleMoveEvents(chart, event);
+				break;
+			case 'click':
+				handleClickEvents(chart, event);
+				break;
+			default:
+			}
+		}
+	},
+
+	afterEvent: function(chart) {
+		var expando = chart[EXPANDO_KEY];
+		var previous = expando._actives;
+		var actives = expando._actives = chart.lastActive || [];  // public API?!
+		var updates = utils.arrayDiff(previous, actives);
+		var i, ilen, j, jlen, update, label, labels;
+
+		for (i = 0, ilen = updates.length; i < ilen; ++i) {
+			update = updates[i];
+			if (update[1]) {
+				labels = update[0][EXPANDO_KEY] || [];
+				for (j = 0, jlen = labels.length; j < jlen; ++j) {
+					label = labels[j];
+					label.$context.active = (update[1] === 1);
+					label.update(label.$context);
+				}
+			}
+		}
+
+		if (expando._dirty || updates.length) {
+			layout.update(expando._labels);
+			invalidate(chart);
+		}
+
+		delete expando._dirty;
+	}
+};
+
+// TODO Remove at version 1, we shouldn't automatically register plugins.
+// https://github.com/chartjs/chartjs-plugin-datalabels/issues/42
+Chart.plugins.register(plugin);
+
+return plugin;
+
+}));
 
 
 /***/ }),
@@ -46753,7 +48747,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -46769,6 +48763,8 @@ var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createG
   return props.theme.color;
 }, function (props) {
   return props.theme.fontFamily;
+}, function (props) {
+  return props.lang === 'heb' ? 'rtl' : '';
 });
 /* harmony default export */ __webpack_exports__["default"] = (GlobalStyle);
 
@@ -46798,8 +48794,18 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
+function _templateObject2() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\nbackground: ", ";\ncolor: ", ";\nfont-size: 14px;\nfont-weight: 600;\npadding: 6px 10px;\nwidth: 45px;\noutline: none;\ntext-align: center;\nborder: none;\nborder-radius: 6px;\n\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n  background-color: ", ";\n  border-radius: 50%;\n  position: absolute;\n  top: 5%;\n  left: 1%;\n  padding: 6px 2px;\n  outline: none;\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n  background-color: ", ";\n  border-radius: 50%;\n  position: absolute;\n  top: ", ";\n  right: ", ";\n  left: ", ";\n  padding: 6px 2px;\n  outline: none;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -46830,6 +48836,17 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].button(_temp
   return props.theme.bgColor;
 }, function (props) {
   return props.theme.color;
+}, function (props) {
+  return props.top;
+}, function (props) {
+  return props.right;
+}, function (props) {
+  return props.left;
+});
+var LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].button(_templateObject2(), function (props) {
+  return props.theme.searchBgColor;
+}, function (props) {
+  return props.theme.color;
 });
 function IndexPage() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(lightTheme()),
@@ -46844,76 +48861,82 @@ function IndexPage() {
     return setTheme(lightTheme());
   };
 
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('heb'),
+      lang = _useState2[0],
+      setLang = _useState2[1];
+
+  var setHeb = function setHeb() {
+    return setLang('heb');
+  };
+
+  var setEng = function setEng() {
+    return setLang('eng');
+  };
+
   var isLight = theme.type === 'light';
   return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 55
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 56
     },
     __self: this
   }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    theme: theme,
+    lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 57
     },
     __self: this
-  }), __jsx(Btn, {
+  }), __jsx("div", {
+    style: {
+      position: 'absolute',
+      top: '5%',
+      right: '3%',
+      padding: '0 12px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, __jsx(LangBtn, {
+    style: {
+      position: 'relative',
+      margin: '0 12px'
+    },
+    onClick: lang === 'heb' ? setEng : function () {},
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, "En"), __jsx(LangBtn, {
+    onClick: lang === 'eng' ? setHeb : function () {},
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, "\u05E2\u05D1\u05E8")), __jsx(Btn, {
+    top: "5%",
+    left: "2%",
     onClick: !isLight ? setLightTheme : setDarkTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 68
     },
     __self: this
-  }, !isLight ? 'Light' : 'Dark')));
+  }, " ", !isLight ? 'Light' : 'Dark')));
 }
-
-/***/ }),
-
-/***/ "./utils/mapDataForTodayGraph.js":
-/*!***************************************!*\
-  !*** ./utils/mapDataForTodayGraph.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-
-var vocab = {
-  'cases': 'infected',
-  'recovered': 'recovered',
-  'country': 'country',
-  'deaths': 'deaths',
-  'todayCases': 'today'
-};
-
-var prop = function prop(o) {
-  return function (k) {
-    return o[k];
-  };
-};
-
-var switchToVocab = function switchToVocab(word) {
-  return vocab[word];
-};
-
-var mapDataForTodayGraph = function mapDataForTodayGraph(d) {
-  var mapToKeyword = function mapToKeyword(k) {
-    return Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, switchToVocab(k), prop(d)(k));
-  };
-
-  return Object.keys(d).map(mapToKeyword);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (mapDataForTodayGraph);
 
 /***/ }),
 
@@ -46927,6 +48950,19 @@ var mapDataForTodayGraph = function mapDataForTodayGraph(d) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // meant for Line Chart Cases/Deaths Chart
+var firstWhole = function firstWhole(arr) {
+  var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  if (arr[n] > 0) return n;
+  if (arr[n] == undefined) return 0;
+  n++;
+  return firstWhole(arr, n);
+};
+
+var parseLabel = function parseLabel(label) {
+  var d = new Date(label);
+  return d.getDate() + '.' + ('0' + (d.getMonth() + 1)).toString();
+};
+
 var sortForChart = function sortForChart(obj) {
   var zeroNull = function zeroNull(c) {
     return c === null ? 0 : c;
@@ -46935,17 +48971,22 @@ var sortForChart = function sortForChart(obj) {
   var sortedObj = obj.sort(function (a, b) {
     return new Date(a.date) - new Date(b.date);
   });
-  console.log(sortedObj);
-  var labels = obj.map(function (o) {
-    return o.date;
+  var initCasesArray = sortedObj.map(function (o) {
+    return o.total_cases;
+  }); // console.log(initCasesArray);
+
+  var firstNumIndex = firstWhole(initCasesArray);
+  var fObj = sortedObj.slice(firstNumIndex);
+  var cases = fObj.map(function (o) {
+    return o.total_cases;
   });
-  var deaths = obj.map(function (o) {
+  var labels = fObj.map(function (o) {
+    return parseLabel(o.date);
+  });
+  var deaths = fObj.map(function (o) {
     return zeroNull(o.total_deaths);
   });
-  var cases = obj.map(function (o) {
-    return zeroNull(o.total_cases);
-  });
-  var newCases = obj.map(function (o) {
+  var newCases = fObj.map(function (o) {
     return zeroNull(o.new_cases);
   });
   var label = obj[0].location;
@@ -46956,7 +48997,15 @@ var sortForChart = function sortForChart(obj) {
     borderColor: '#fc3111',
     strokeColor: '#301934',
     pointRadius: 2,
-    borderWidth: 2
+    borderWidth: 2,
+    fill: true,
+    datalabels: {
+      display: function display(ctx) {
+        return ctx.dataIndex % 2;
+      },
+      align: 'end',
+      anchor: 'end'
+    }
   }, {
     label: 'deaths',
     data: deaths,
@@ -46964,15 +49013,33 @@ var sortForChart = function sortForChart(obj) {
     borderColor: 'rgba(21, 21, 21, 1)',
     strokeColor: "rgba(222, 222, 34, 1)",
     pointRadius: 3,
-    borderWidth: 3
+    borderWidth: 3,
+    datalabels: {
+      display: function display(ctx) {
+        return ctx.dataIndex % 2;
+      },
+      align: 'end',
+      anchor: 'end'
+    }
   }, {
     label: 'cases',
     data: cases,
-    backgroundColor: 'rgba(208,42,144,1)',
-    borderColor: 'rgba(186, 50, 213, 1)',
+    backgroundColor: 'rgba(208,42,55,1)',
+    borderColor: 'rgba(210, 50, 120, 1)',
     strokeColor: "rgba(200, 200, 200, 1)",
+    pointBorderColor: 'rgba(75,10,192,1)',
+    pointBackgroundColor: '#fff',
+    pointHoverBackgroundColor: 'rgba(45, 20, 19, 1)',
     pointRadius: 2,
-    borderWidth: 2
+    borderWidth: 3,
+    fillColor: 'rgba(230, 15, 66, 1)',
+    datalabels: {
+      display: function display(ctx) {
+        return ctx.dataIndex % 2;
+      },
+      align: 'end',
+      anchor: 'end'
+    }
   }];
   return {
     datasets: datasets,
@@ -47007,7 +49074,8 @@ var themes = {
     searchBgColor: '#E4E7EB',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
-    categoryHoverColor: '#333'
+    categoryHoverColor: '#333',
+    textColor: '#ED3833'
   },
   dark: {
     type: 'dark',
@@ -47018,7 +49086,7 @@ var themes = {
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#eee'
+    textColor: '#ED3833'
   }
 };
 
@@ -47044,7 +49112,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var baseURL = "http://46.101.156.51:3003/api/v1/alltime/";
+var baseURL = "http://covid19.borisky.me:3003/api/v1/alltime/";
 
 function currentCountry() {
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
@@ -47067,70 +49135,62 @@ function currentCountry() {
       }
     }
   }, null, null, null, Promise);
-}
+} // function useTime(loc, url = baseURL) {
 
-function useTime() {
-  var country = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'world';
-  var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : baseURL;
 
+function useTime(loc) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      timeStats = _useState[0],
-      setData = _useState[1];
+      countryStats = _useState[0],
+      setCountryStats = _useState[1];
 
   var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      timeLoading = _useState2[0],
+      loading = _useState2[0],
       setLoading = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      timeError = _useState3[0],
+      error = _useState3[0],
       setError = _useState3[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    console.log('use time triggered');
-
-    function fetchData() {
-      var URL, data, timeStats;
+    function fetchData(cn) {
+      var country, URL, data, timeStats;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               setLoading(true);
               setError();
+              _context2.t0 = loc;
 
-              if (!(country === 'init')) {
-                _context2.next = 10;
+              if (_context2.t0) {
+                _context2.next = 7;
                 break;
               }
 
-              _context2.t1 = baseURL;
               _context2.next = 6;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry());
 
             case 6:
-              _context2.t2 = _context2.sent;
-              _context2.t0 = _context2.t1 + _context2.t2;
+              _context2.t0 = _context2.sent;
+
+            case 7:
+              country = _context2.t0;
+              URL = baseURL + country; // console.log(URL);
+
               _context2.next = 11;
-              break;
-
-            case 10:
-              _context2.t0 = country !== 'world' ? baseURL + country : baseURL;
-
-            case 11:
-              URL = _context2.t0;
-              _context2.next = 14;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL).then(function (res) {
                 return res.data;
               })["catch"](function (err) {
                 return setError(err);
               }));
 
-            case 14:
+            case 11:
               data = _context2.sent;
               timeStats = Object(_sortForChart__WEBPACK_IMPORTED_MODULE_3__["default"])(data);
-              setData(timeStats);
+              setCountryStats(timeStats);
               setLoading(false);
 
-            case 18:
+            case 15:
             case "end":
               return _context2.stop();
           }
@@ -47138,24 +49198,12 @@ function useTime() {
       }, null, null, null, Promise);
     }
 
-    fetchData();
-  }, [country]);
-
-  if (country !== 'world') {
-    var countryStats = timeStats;
-    var countryLoading = timeLoading;
-    var countryError = timeError;
-    return {
-      countryStats: countryStats,
-      countryLoading: countryLoading,
-      countryError: countryError
-    };
-  }
-
+    fetchData(loc);
+  }, [loc]);
   return {
-    timeStats: timeStats,
-    timeLoading: timeLoading,
-    timeError: timeError
+    countryStats: countryStats,
+    loading: loading,
+    error: error
   };
 }
 
@@ -47271,7 +49319,6 @@ function useTodayStats(url, country) {
 
             case 14:
               data = _context2.sent;
-              console.log(data);
               relevant = {
                 cases: data.cases,
                 todayCases: data.todayCases,
@@ -47282,7 +49329,7 @@ function useTodayStats(url, country) {
               setStats(relevant);
               setLoading(false);
 
-            case 19:
+            case 18:
             case "end":
               return _context2.stop();
           }

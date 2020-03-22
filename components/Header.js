@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Title = styled.h1`
+const Title = styled.span`
   align-self: center;
   color: #e6e6e6;
   font-size: 4rem;
@@ -17,7 +17,6 @@ const Wrap = styled.div`
   text-align: center;
   border-bottom: 1px solid darkblue;
   margin-bottom: 48px;
-  // padding: 8px 0;
 `
 
 export default ({ children }) => (

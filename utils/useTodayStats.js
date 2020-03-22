@@ -42,7 +42,6 @@ function useTodayStats(url, country) {
       const data = await fetch(URL)
           .then(res => res.json())
           .catch(err => setError(err))
-      console.log(data);
       const relevant = {
         cases: data.cases,
         todayCases: data.todayCases,

@@ -12,6 +12,7 @@ export const themes = {
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
+    textColor: '#ED3833'
   },
   dark: {
     type: 'dark',
@@ -22,6 +23,6 @@ export const themes = {
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#eee'
+    textColor: '#ED3833'
   },
 }

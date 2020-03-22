@@ -1,50 +1,43 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
+import 'chartjs-plugin-datalabels';
+import styled from 'styled-components'
 
-const popVal = o => Object.values(o)[0]
-
-const defaultSettings = {
-  // fillColor: "rgba(220,220,220,0.2)",
-  strokeColor: "rgba(220,220,220,1)",
-  pointColor: "rgba(220,220,220,1)",
-  pointStrokeColor: "#fff",
-  pointHighlightFill: "#fff",
-  pointHighlightStroke: "rgba(220,220,220,1)",
-  pointBackgroundColor: '#111',
-  pointBorderWidth: 1,
-  pointHoverRadius: 5,
-  pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-  pointHoverBorderColor: 'rgba(220,220,220,1)',
-  pointHoverBorderWidth: 2,
-  pointHitRadius: 10,
-  fill: false
-}
-
-const filterBy5 = (x, i) => !(i % 2)
+const filterBy5 = (x, i) => !(i % 4)
 const subtractArray = arr => arr.filter(filterBy5)
 
-const parseDatasets = arrayOfSets => {
+const subCases = arr => arr[0]
+
+const defaultSettings = {
+  fill: true
+}
+
+const parseDatasets = (arrayOfSets, fill) => {
   return arrayOfSets.map(set => ({
-    ...defaultSettings,
     ...set,
-    // data: subtractArray(set.data)
+    data: set.data.length > 30 ? subtractArray(set.data) : set.data,
+    fill: fill || false
   }))
 }
 
 export default ( props ) => {
 
+  console.log(props.fill);
+
   const data = {
-    // labels: subtractArray(props.labels),
-    labels: props.labels,
-    datasets: props.datasets && parseDatasets(props.datasets)
+    labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
+    datasets: parseDatasets(props.data, props.fill)
   };
 
   var options = {
     responsive: true,
     maintainAspectRatio: true,
+    onAnimationComplete: function(){
+      this.showTooltip(this.datasets[0].points, true)
+    },
     animation: {
         easing: 'easeInOutQuad',
-        duration: 520
+        duration: 1050
     },
     scales: {
         xAxes: [{
@@ -55,9 +48,7 @@ export default ( props ) => {
         }],
         yAxes: [{
           ticks: {
-            max: 700,
-            min: 0,
-            stepSize: 10
+            maxTicksLimit: 6,
           },
             gridLines: {
                 color: 'rgba(200, 200, 200, 0.08)',
@@ -76,12 +67,22 @@ export default ( props ) => {
     },
     tooltips: {
         titleFontFamily: 'Open Sans',
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        titleFontColor: 'black',
-        caretSize: 5,
-        cornerRadius: 3,
-        xPadding: 10,
-        yPadding: 10
+        backgroundColor: 'rgba(20,20,20, 0.3)',
+        titleFontColor: '#fff',
+        caretSize: 10,
+        cornerRadius: 5,
+        xPadding: 15,
+        yPadding: 15
+    },
+    plugins: {
+       datalabels: {
+          display: true,
+         // color: '#292929CC',
+        color: props.theme.color,
+         labels: {
+           title: { font: { weight: 'bold', style: 'italic', family: 'monospace' } }
+         }
+       }
     }
 };
 
@@ -89,10 +90,11 @@ export default ( props ) => {
     <div style={{marginTop: '32px'}}>
       <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
       <Line
+        label={props.label}
         data={data}
         width={100}
         options={options}
-        height={30}
+        height={40}
       />
     </div>
   )

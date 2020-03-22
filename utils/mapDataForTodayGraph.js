@@ -1,5 +1,5 @@
 const vocab = {
-  'cases': 'infected',
+  'cases': 'נדבקים',
   'recovered': 'recovered',
   'country': 'country',
   'deaths': 'deaths',

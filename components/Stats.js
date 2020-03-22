@@ -10,44 +10,71 @@ import Chart from './Chart'
 
 const Container = styled.div`
   max-width: 760px;
-  margin: 0 auto;
+  margin: 24px auto 0;
   text-align: center;
+  margin-top: 16px;
 `
 
 const Flex = styled.div`
-  margin-top: 32px;
   display: flex;
   justify-content: space-evenly;
+  background-color: ${props => props.bg || ''};
+  border-radius: 12px;
+  & > div {
+    background-color: ${props => props.bg || ''};
+  }
 `
 
-export default function Stats({ cn = '', isWorld, timeData, todayWorld, todayStats }) {
+export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
 
   return (
     <Container>
-      <h1 style={{fontSize: '20px'}}>Status for:   <span style={{fontWeight: 'bold'}}>{cn}</span></h1>
       {
         todayStats &&
-          <div style={{ border: '1px solid rgba(255, 60, 60, 0.12)', borderRadius: '6px', marginBottom: '16px' }}>
-          <Chart type='bar' info={todayStats} label={cn + '\'s Outbreak'} />
+          <div style={{ border: '1px solid rgba(255, 60, 60, 0.022)', borderRadius: '6px', marginBottom: '16px' }}>
+            <h1 style={{fontSize: '20px'}}>
+              {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
+            </h1>
           <Flex>
             <StatBlock 
-              title="Infected"
+              title={isHeb && 'נדבקים' || "Infected"}
               data={todayStats.cases}
             />
             <StatBlock 
-              title="Recovered"
+              title={isHeb && 'החלימו' || "Recovered"}
               data={todayStats.recovered}
             />
             <StatBlock 
-              title="Total Deaths"
+              title={isHeb && 'מקרי מוות' || "Total Deaths"}
               data={todayStats.deaths}
             />
             <StatBlock 
-              title="New Cases Today"
+              title={isHeb && 'מקרים חדשים' || "New Cases Today"}
               data={todayStats.todayCases}
             />
           </Flex>
         </div>
+          || todayWorld && 
+            <div>
+            <h1 style={{fontSize: '20px', backgroundColor: 'beige', paddingTop: '18px'}}>
+              {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
+            </h1>
+            <Flex bg='beige'>
+
+              <StatBlock 
+                title={isHeb && 'נדבקים' || "Infected"}
+                data={todayWorld.cases}
+              />
+              <StatBlock 
+                title={isHeb && 'החלימו' || "Recovered"}
+                data={todayWorld.recovered}
+              />
+              <StatBlock 
+                title={isHeb && 'מקרי מוות' || "Total Deaths"}
+                data={todayWorld.deaths}
+              />
+            </Flex>
+          </div>
       }
 
 
