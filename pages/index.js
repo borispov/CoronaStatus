@@ -1,5 +1,5 @@
 import CoronaApp from '../components/CoronaApp'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { css, ThemeProvider } from 'styled-components'
 import GlobalStyle from './Global'
 import { useState } from 'react'
 import { themes } from '../utils/themes'
@@ -26,17 +26,35 @@ const Btn = styled.button`
   outline: none;
 `
 const LangBtn = styled.button`
-background: ${props => props.theme.searchBgColor};
-color: ${props => props.theme.color};
-font-size: 14px;
-font-weight: 600;
-padding: 6px 10px;
-width: 45px;
-outline: none;
-text-align: center;
-border: none;
-border-radius: 6px;
+  background: ${props => props.theme.searchBgColor};
+  color: ${props => props.theme.color};
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  width: 45px;
+  outline: none;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  @media (max-width: 768px) {
+    width: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 6px;
+  }
 
+`
+
+const BtnContainer = styled.div`
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  padding: 0 12px;
+  @media (max-width: 768px) {
+    right: 0%;
+    top: 8%;
+    padding: 0;
+  }
 `
 
 export default function IndexPage() {
@@ -56,21 +74,15 @@ export default function IndexPage() {
         <GlobalStyle lang={lang}/>
         <CoronaApp theme={theme} lang={lang}/>
 
-        <div style={{ position: 'absolute', top: '5%', right: '3%', padding: '0 12px' }}>
-          <LangBtn
-            style={{position: 'relative', margin: '0 12px'}}
-            onClick={lang === 'heb' ? setEng : () => {}}
-          >En</LangBtn>
-          <LangBtn
-            onClick={lang === 'eng' ? setHeb : () => {}}
-          >עבר</LangBtn>
-          </div>
-        <Btn 
-          top='5%'
-          left='2%'
-          onClick={!isLight ? setLightTheme : setDarkTheme}
-        > {!isLight ? 'Light' : 'Dark'}
-        </Btn>
+        <BtnContainer>
+            <LangBtn
+              style={{position: 'relative', margin: '0 12px'}}
+              onClick={lang === 'heb' ? setEng : () => {}}
+            >En</LangBtn>
+            <LangBtn
+              onClick={lang === 'eng' ? setHeb : () => {}}
+            >עבר</LangBtn>
+        </BtnContainer>
       </ThemeProvider>
     </>
   )

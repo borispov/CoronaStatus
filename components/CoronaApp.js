@@ -4,10 +4,12 @@ import Stats from './Stats'
 import Header from './Header'
 import useTime from '../utils/useTime'
 import useTodayStats from '../utils/useTodayStats'
+import useCountries from '../utils/useCountries'
 import Chart from './Chart'
 import Container from './Container'
 import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
+import Select from 'react-select'
 
 const allCountries = {
   israel: '',
@@ -36,10 +38,10 @@ export default ({ theme, lang}) => {
   const url = 'http://covid19.borisky.me:3003/api/v1/'
 
   const { countryStats } = useTime(country)
-
   const { todayStats } = useTodayStats(url, country)
-
   const worldToday = useTodayStats(url, 'world').todayStats
+
+  const { countries } = useCountries()
 
   const worldTodaySorted = worldToday &&
     {
@@ -49,8 +51,6 @@ export default ({ theme, lang}) => {
       deaths: worldToday.deaths
     } || ''
 
-  console.log(worldToday && worldToday);
-
   const todayStatsSorted = todayStats && 
     {
       cases: todayStats.cases,
@@ -59,21 +59,26 @@ export default ({ theme, lang}) => {
       deaths: todayStats.deaths
     } || ''
 
-  const handleChange = e => setInput(e.target.value)
+  const handleChange = selected => {
+    setCountry(selected.value)
+  }
   const handleSubmit = e => {
     e.preventDefault();
     setCountry(inputValue)
   }
+
+  const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
 
   return (
     <div>
       <Header>Covid19 Feed</Header>
       <HeaderDescription />
 
+      <Container>
+
       {
         countryStats &&
           (
-            <Container>
               <Chart
                 isHeb={lang === 'heb'}
                 type='line'
@@ -83,25 +88,11 @@ export default ({ theme, lang}) => {
                 theme={theme}
                 fill={true}
               />
-            </Container>
           )
       }
       <Stats
         cn={country || todayStats && todayStats.country}
         todayStats={todayStatsSorted}
-        isHeb={lang === 'heb'}
-      />
-
-      <Stats
-        cn={'World'}
-        todayWorld={worldTodaySorted}
-        isHeb={lang==='heb'}
-      />
-
-      <CaseChart
-        showWorld={showWorld} 
-        theme={theme}
-        country={country}
         isHeb={lang === 'heb'}
       />
 
@@ -117,11 +108,27 @@ export default ({ theme, lang}) => {
           }
         </label>
 
-        <div style={{ display: 'flex', margin: '0 auto' }}>
-          <Input type="text" value={inputValue} onChange={handleChange} />
-          <Input type="submit" value="submit" btn={true}/>
-        </div>
+        <Select 
+          options={selectOptions}
+          value={country}
+          onChange={handleChange}
+        />
       </form>
+
+      <Stats
+        cn={'World'}
+        todayWorld={worldTodaySorted}
+        isHeb={lang==='heb'}
+      />
+
+      <CaseChart
+        showWorld={showWorld} 
+        theme={theme}
+        country={country}
+        isHeb={lang === 'heb'}
+      />
+
+    </Container>
 
     </div>
   )

@@ -22,8 +22,6 @@ const parseDatasets = (arrayOfSets, fill) => {
 
 export default ( props ) => {
 
-  console.log(props.fill);
-
   const data = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)

@@ -5,6 +5,7 @@ const Title = styled.span`
   color: #e6e6e6;
   font-size: 4rem;
   font-family: monospace;
+  text-align: center;
 `
 
 const Wrap = styled.div`
@@ -16,6 +17,7 @@ const Wrap = styled.div`
   background: linear-gradient(45deg, #cc0404, #000000d6);
   text-align: center;
   border-bottom: 1px solid darkblue;
+  margin: 0 auto;
   margin-bottom: 48px;
 `
 

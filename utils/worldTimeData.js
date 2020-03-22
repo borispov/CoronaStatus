@@ -8,6 +8,7 @@ function worldTimeData() {
   const [timeStats, setData] = useState();
   const [timeLoading, setLoading] = useState(false);
   const [timeError, setError] = useState(false);
+  const [countries, setCountries] = useState()
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +26,7 @@ function worldTimeData() {
   }, [])
 
   return {
-    timeStats, timeLoading, timeError
+    timeStats, timeLoading, timeError, countries
   }
 }
 

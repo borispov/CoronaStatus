@@ -12,13 +12,13 @@ async function currentCountry(){
 }
 
 // function useTime(loc, url = baseURL) {
-function useTime(loc) {
+function useTime(loc, getCountryList) {
 
 
   const [countryStats, setCountryStats] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
+  const [countries, setCountries] = useState()
 
   useEffect(() => {
     async function fetchData(cn) {
@@ -27,7 +27,6 @@ function useTime(loc) {
       setError()
       const country = loc || await currentCountry()
       const URL = baseURL + country
-      // console.log(URL);
       const data = await axios.get(URL)
         .then(res => res.data)
         .catch(err => setError(err))
@@ -40,7 +39,7 @@ function useTime(loc) {
   }, [loc])
 
   return {
-    countryStats, loading, error
+    countryStats, loading, error, countries
   }
 }
 

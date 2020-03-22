@@ -513,13 +513,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
 /* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-select */ "react-select");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_11__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -572,13 +577,15 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     todayStats
   } = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, country);
   const worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, 'world').todayStats;
+  const {
+    countries
+  } = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_6__["default"])();
   const worldTodaySorted = worldToday && {
     cases: worldToday.cases,
     todayCases: worldToday.todayCases,
     recovered: worldToday.recovered,
     deaths: worldToday.deaths
   } || '';
-  console.log(worldToday && worldToday);
   const todayStatsSorted = todayStats && {
     cases: todayStats.cases,
     todayCases: todayStats.todayCases,
@@ -586,38 +593,44 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     deaths: todayStats.deaths
   } || '';
 
-  const handleChange = e => setInput(e.target.value);
+  const handleChange = selected => {
+    setCountry(selected.value);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
     setCountry(inputValue);
   };
 
+  const selectOptions = countries && countries.map(a => ({
+    value: a,
+    label: a
+  }));
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 74
     },
     __self: undefined
-  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 75
     },
     __self: undefined
-  }), countryStats && __jsx(_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 77
     },
     __self: undefined
-  }, __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
     isHeb: lang === 'heb',
     type: "line",
     labels: countryStats.labels,
@@ -627,35 +640,16 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     fill: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 82
     },
     __self: undefined
-  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     cn: country || todayStats && todayStats.country,
     todayStats: todayStatsSorted,
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    cn: 'World',
-    todayWorld: worldTodaySorted,
-    isHeb: lang === 'heb',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    showWorld: showWorld,
-    theme: theme,
-    country: country,
-    isHeb: lang === 'heb',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 93
     },
     __self: undefined
   }), __jsx("form", {
@@ -666,7 +660,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 99
     },
     __self: undefined
   }, __jsx("label", {
@@ -675,38 +669,38 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 103
     },
     __self: undefined
-  }, lang === 'eng' ? `Search For Country:` : `חיפוש לפי מדינה`), __jsx("div", {
-    style: {
-      display: 'flex',
-      margin: '0 auto'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    type: "text",
-    value: inputValue,
+  }, lang === 'eng' ? `Search For Country:` : `חיפוש לפי מדינה`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    options: selectOptions,
+    value: country,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 111
     },
     __self: undefined
-  }), __jsx(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    type: "submit",
-    value: "submit",
-    btn: true,
+  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    cn: 'World',
+    todayWorld: worldTodaySorted,
+    isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 118
     },
     __self: undefined
-  }))));
+  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    showWorld: showWorld,
+    theme: theme,
+    country: country,
+    isHeb: lang === 'heb',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124
+    },
+    __self: undefined
+  })));
 });
 
 /***/ }),
@@ -733,6 +727,7 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span`
   color: #e6e6e6;
   font-size: 4rem;
   font-family: monospace;
+  text-align: center;
 `;
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   display: flex;
@@ -743,6 +738,7 @@ const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   background: linear-gradient(45deg, #cc0404, #000000d6);
   text-align: center;
   border-bottom: 1px solid darkblue;
+  margin: 0 auto;
   margin-bottom: 48px;
 `;
 /* harmony default export */ __webpack_exports__["default"] = (({
@@ -750,13 +746,13 @@ const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
 }) => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 23
+    lineNumber: 25
   },
   __self: undefined
 }, __jsx(Title, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 24
+    lineNumber: 26
   },
   __self: undefined
 }, children)));
@@ -788,13 +784,22 @@ const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p`
   line-height: 1.6;
   max-width: 520px;
   text-align: center;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: 380px;
+  }
+
 `;
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   display: block;
   width: 620px;
-
   max-width: 620px;
   margin: 0 auto 24px;
+  @media (max-width: 768px) {
+    width: 320px;
+    max-width: 380px;
+  }
+
 `;
 const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
   outline: none;
@@ -805,27 +810,27 @@ const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
 /* harmony default export */ __webpack_exports__["default"] = (() => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 30
+    lineNumber: 39
   },
   __self: undefined
 }, __jsx(Text, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 40
   },
   __self: undefined
 }, "This website makes use of public health data, specifically ", __jsx(Href, {
   href: "https://www.ourworldindata.org",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 40
   },
   __self: undefined
 }, "www.ourworldindata.org"), " and ", __jsx(Href, {
   href: "https://WHO.int",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 40
   },
   __self: undefined
 }, "WHO.int"))));
@@ -922,7 +927,6 @@ const parseDatasets = (arrayOfSets, fill) => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (props => {
-  console.log(props.fill);
   const data = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
@@ -995,7 +999,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("h1", {
@@ -1004,7 +1008,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 89
     },
     __self: undefined
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -1015,7 +1019,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     height: 40,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 90
     },
     __self: undefined
   }));
@@ -1428,17 +1432,34 @@ const Btn = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
   outline: none;
 `;
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
-background: ${props => props.theme.searchBgColor};
-color: ${props => props.theme.color};
-font-size: 14px;
-font-weight: 600;
-padding: 6px 10px;
-width: 45px;
-outline: none;
-text-align: center;
-border: none;
-border-radius: 6px;
+  background: ${props => props.theme.searchBgColor};
+  color: ${props => props.theme.color};
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  width: 45px;
+  outline: none;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  @media (max-width: 768px) {
+    width: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 6px;
+  }
 
+`;
+const BtnContainer = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  padding: 0 12px;
+  @media (max-width: 768px) {
+    right: 0%;
+    top: 8%;
+    padding: 0;
+  }
 `;
 function IndexPage() {
   const {
@@ -1464,14 +1485,14 @@ function IndexPage() {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 73
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_3__["default"], {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 74
     },
     __self: this
   }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1479,19 +1500,13 @@ function IndexPage() {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 75
     },
     __self: this
-  }), __jsx("div", {
-    style: {
-      position: 'absolute',
-      top: '5%',
-      right: '3%',
-      padding: '0 12px'
-    },
+  }), __jsx(BtnContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 77
     },
     __self: this
   }, __jsx(LangBtn, {
@@ -1502,26 +1517,17 @@ function IndexPage() {
     onClick: lang === 'heb' ? setEng : () => {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 78
     },
     __self: this
   }, "En"), __jsx(LangBtn, {
     onClick: lang === 'eng' ? setHeb : () => {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 82
     },
     __self: this
-  }, "\u05E2\u05D1\u05E8")), __jsx(Btn, {
-    top: "5%",
-    left: "2%",
-    onClick: !isLight ? setLightTheme : setDarkTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: this
-  }, " ", !isLight ? 'Light' : 'Dark')));
+  }, "\u05E2\u05D1\u05E8"))));
 }
 
 /***/ }),
@@ -1657,6 +1663,53 @@ const themes = {
 
 /***/ }),
 
+/***/ "./utils/useCountries.js":
+/*!*******************************!*\
+  !*** ./utils/useCountries.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const baseURL = `http://covid19.borisky.me:3003/api/v1/countries`;
+
+function useCountries() {
+  const {
+    0: error,
+    1: setError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: countries,
+    1: setCountries
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    async function fetchData() {
+      setError();
+      const {
+        data
+      } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(baseURL);
+      setCountries(data.data);
+    }
+
+    fetchData();
+  }, []);
+  return {
+    countries,
+    error
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useCountries);
+
+/***/ }),
+
 /***/ "./utils/useTime.js":
 /*!**************************!*\
   !*** ./utils/useTime.js ***!
@@ -1681,7 +1734,7 @@ async function currentCountry() {
 } // function useTime(loc, url = baseURL) {
 
 
-function useTime(loc) {
+function useTime(loc, getCountryList) {
   const {
     0: countryStats,
     1: setCountryStats
@@ -1694,13 +1747,16 @@ function useTime(loc) {
     0: error,
     1: setError
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: countries,
+    1: setCountries
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function fetchData(cn) {
       setLoading(true);
       setError();
       const country = loc || (await currentCountry());
-      const URL = baseURL + country; // console.log(URL);
-
+      const URL = baseURL + country;
       const data = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL).then(res => res.data).catch(err => setError(err));
       const timeStats = Object(_sortForChart__WEBPACK_IMPORTED_MODULE_2__["default"])(data);
       setCountryStats(timeStats);
@@ -1712,7 +1768,8 @@ function useTime(loc) {
   return {
     countryStats,
     loading,
-    error
+    error,
+    countries
   };
 }
 
@@ -1852,6 +1909,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-chartjs-2");
+
+/***/ }),
+
+/***/ "react-select":
+/*!*******************************!*\
+  !*** external "react-select" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-select");
 
 /***/ }),
 

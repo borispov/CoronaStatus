@@ -9,14 +9,23 @@ const Text = styled.p`
   line-height: 1.6;
   max-width: 520px;
   text-align: center;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: 380px;
+  }
+
 `
 
 const Wrap = styled.div`
   display: block;
   width: 620px;
-
   max-width: 620px;
   margin: 0 auto 24px;
+  @media (max-width: 768px) {
+    width: 320px;
+    max-width: 380px;
+  }
+
 `
 
 const Href = styled.a`
