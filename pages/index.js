@@ -46,7 +46,7 @@ const Btn = styled.button`
   outline: none;
 `
 const LangBtn = styled.button`
-  background: ${props => props.theme.searchBgColor};
+  background: ${props => props.theme.bgColor};
   color: ${props => props.theme.color};
   font-size: 14px;
   font-weight: 600;

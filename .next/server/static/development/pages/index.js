@@ -512,7 +512,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Container",
   componentId: "sc-1p5fd2u-0"
-})(["max-width:760px;margin:0 auto;text-align:center;"]);
+})(["max-width:1140px;margin:0 auto;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Container, {
   __source: {
     fileName: _jsxFileName,
@@ -776,19 +776,19 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withCo
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Header__Wrap",
   componentId: "sc-1yguf34-1"
-})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#cc0404,#000000d6);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:radial-gradient(#284c16EE,#070e16);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (({
   title
 }) => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 25
+    lineNumber: 26
   },
   __self: undefined
 }, __jsx(Title, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 26
+    lineNumber: 27
   },
   __self: undefined
 }, title)));
@@ -938,10 +938,19 @@ const parseDatasets = (arrayOfSets, fill) => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (props => {
-  const data = {
+  const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
   };
+
+  const data = canvas => {
+    const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 100, 0);
+    return _objectSpread({}, data2, {
+      background: gradient
+    });
+  };
+
   var options = {
     responsive: true,
     maintainAspectRatio: true,
@@ -989,7 +998,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     },
     plugins: {
       datalabels: {
-        display: true,
+        display: 'auto',
         // color: '#292929CC',
         color: props.theme.color,
         labels: {
@@ -1010,7 +1019,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 99
     },
     __self: undefined
   }, __jsx("h1", {
@@ -1019,7 +1028,7 @@ const parseDatasets = (arrayOfSets, fill) => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 100
     },
     __self: undefined
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -1030,10 +1039,191 @@ const parseDatasets = (arrayOfSets, fill) => {
     height: 40,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 101
     },
     __self: undefined
   }));
+});
+
+/***/ }),
+
+/***/ "./components/QuickStats.js":
+/*!**********************************!*\
+  !*** ./components/QuickStats.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "QuickStats__Container",
+  componentId: "lmgi17-0"
+})(["@media (max-width:576px){max-width:540px;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;"]);
+const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "QuickStats__Row",
+  componentId: "lmgi17-1"
+})(["display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;"]);
+const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "QuickStats__Col",
+  componentId: "lmgi17-2"
+})(["text-align:center;padding:5px 10px;font-weight:700;border-right-width:1px;border-left:1px solid #38383b;border-bottom:1px solid #38383b;border-right-color:#38383b;border-top:1px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;"], props => props.theme.color, props => props.theme.bgColor);
+/* harmony default export */ __webpack_exports__["default"] = (({
+  S,
+  country
+}) => {
+  return __jsx(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, __jsx(Row, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }, __jsx(Col, {
+    style: {
+      borderLeft: '1px solid #38383b',
+      borderTopRightRadius: '5px',
+      borderBottomRightRadius: '5px',
+      borderRightColor: '#38383b'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }, country, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, "\u05DE\u05D3\u05D9\u05E0\u05D4"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, S.cases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, S.recovered, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }, S.deaths, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
+    style: {
+      borderLeft: '1px solid #38383b',
+      borderTopLeftRadius: '5px',
+      borderBottomLeftRadius: '5px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: undefined
+  }, S.todayCases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: undefined
+  }, "\u05DE\u05E7\u05E8\u05D9\u05DD \u05D7\u05D3\u05E9\u05D9\u05DD")))));
 });
 
 /***/ }),
@@ -1147,8 +1337,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
 /* harmony import */ var _Bar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Bar */ "./components/Bar.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _QuickStats__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuickStats */ "./components/QuickStats.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
 
 
 
@@ -1160,7 +1352,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "Stats__Container",
   componentId: "tjczhx-0"
-})(["max-width:760px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
+})(["max-width:1140px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
 const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "Stats__Flex",
   componentId: "tjczhx-1"
@@ -1174,7 +1366,7 @@ function Stats({
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: this
   }, todayStats && __jsx("div", {
@@ -1185,7 +1377,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 35
     },
     __self: this
   }, __jsx("h1", {
@@ -1194,7 +1386,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1204,51 +1396,21 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
-  }, " ", cn)), __jsx(Flex, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'נדבקים' || "Infected",
-    data: todayStats.cases,
+  }, " ", cn)), __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    country: cn,
+    S: todayStats,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'החלימו' || "Recovered",
-    data: todayStats.recovered,
+  })) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'מקרי מוות' || "Total Deaths",
-    data: todayStats.deaths,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'מקרים חדשים' || "New Cases Today",
-    data: todayStats.todayCases,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
-  }))) || todayWorld && __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     },
     __self: this
   }, __jsx("h1", {
@@ -1258,7 +1420,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 63
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1268,13 +1430,13 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 64
     },
     __self: this
   }, " ", cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 66
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1282,7 +1444,7 @@ function Stats({
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 68
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1290,7 +1452,7 @@ function Stats({
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 72
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1298,7 +1460,7 @@ function Stats({
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 76
     },
     __self: this
   }))));
@@ -1335,11 +1497,21 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
       color: ${props => props.theme.color};
       font-family: ${props => props.theme.fontFamily};
       direction: ${props => props.lang === 'heb' ? 'rtl' : ''};
+      // background: ${props => props.theme.test};
   }
 
 
   .div.span.h3 {
     font-family: 'Roboto'
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1.75rem;
   }
   .lds-hourglass {
     display: inline-block;
@@ -1433,7 +1605,7 @@ const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.with
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "pages__LangBtn",
   componentId: "sc-1t8jk7a-3"
-})(["background:", ";color:", ";font-size:14px;font-weight:600;padding:6px 10px;width:45px;outline:none;text-align:center;border:none;border-radius:6px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], props => props.theme.searchBgColor, props => props.theme.color);
+})(["background:", ";color:", ";font-size:14px;font-weight:600;padding:6px 10px;width:45px;outline:none;text-align:center;border:none;border-radius:6px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], props => props.theme.bgColor, props => props.theme.color);
 const BtnContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "pages__BtnContainer",
   componentId: "sc-1t8jk7a-4"
@@ -1611,7 +1783,7 @@ const sortForChart = obj => {
     borderColor: '#fc3111',
     strokeColor: '#301934',
     pointRadius: 2,
-    borderWidth: 2,
+    borderWidth: 4,
     fill: true,
     datalabels: {
       display: ctx => ctx.dataIndex % 2,
@@ -1624,8 +1796,8 @@ const sortForChart = obj => {
     backgroundColor: 'rgba(29,82,209,1) 100%)',
     borderColor: 'rgba(21, 21, 21, 1)',
     strokeColor: "rgba(222, 222, 34, 1)",
-    pointRadius: 3,
-    borderWidth: 3,
+    pointRadius: 1,
+    borderWidth: 4,
     datalabels: {
       display: ctx => ctx.dataIndex % 2,
       align: 'end',
@@ -1634,17 +1806,17 @@ const sortForChart = obj => {
   }, {
     label: 'cases',
     data: cases,
-    backgroundColor: 'rgba(208,42,55,1)',
-    borderColor: 'rgba(210, 50, 120, 1)',
-    strokeColor: "rgba(200, 200, 200, 1)",
-    pointBorderColor: 'rgba(75,10,192,1)',
+    backgroundColor: '#2A4561',
+    borderColor: '#97D3ED',
+    strokeColor: "#ADFF2F",
+    pointBorderColor: 'rgba(75,10,192,0)',
     pointBackgroundColor: '#fff',
-    pointHoverBackgroundColor: 'rgba(45, 20, 19, 1)',
-    pointRadius: 2,
-    borderWidth: 3,
-    fillColor: 'rgba(230, 15, 66, 1)',
+    pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
+    pointRadius: 0,
+    borderWidth: 5,
     datalabels: {
-      display: ctx => ctx.dataIndex % 2,
+      // display: ctx => !(ctx.dataIndex % 5),
+      display: 'auto',
       align: 'end',
       anchor: 'end'
     }
@@ -1683,18 +1855,21 @@ const themes = {
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   },
   dark: {
     type: 'dark',
-    bgColor: '#1F2933',
+    // bgColor: '#1F2933',
+    bgColor: '#364061',
     headerBg: '#3d444b',
     color: '#E4E7EB',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   }
 };
 

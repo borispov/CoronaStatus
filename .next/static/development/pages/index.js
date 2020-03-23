@@ -570,7 +570,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Container",
   componentId: "sc-1p5fd2u-0"
-})(["max-width:760px;margin:0 auto;text-align:center;"]);
+})(["max-width:1140px;margin:0 auto;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Container, {
     __source: {
@@ -842,19 +842,19 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withCon
 var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__Wrap",
   componentId: "sc-1yguf34-1"
-})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#cc0404,#000000d6);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:radial-gradient(#284c16EE,#070e16);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var title = _ref.title;
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     },
     __self: this
   }, title));
@@ -1022,10 +1022,19 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  var data = {
+  var data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
   };
+
+  var data = function data(canvas) {
+    var ctx = canvas.getContext('2d');
+    var gradient = ctx.createLinearGradient(0, 0, 100, 0);
+    return _objectSpread({}, data2, {
+      background: gradient
+    });
+  };
+
   var options = {
     responsive: true,
     maintainAspectRatio: true,
@@ -1073,7 +1082,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     plugins: {
       datalabels: {
-        display: true,
+        display: 'auto',
         // color: '#292929CC',
         color: props.theme.color,
         labels: {
@@ -1094,7 +1103,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 99
     },
     __self: this
   }, __jsx("h1", {
@@ -1103,7 +1112,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 100
     },
     __self: this
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -1114,10 +1123,193 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     height: 40,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 101
     },
     __self: this
   }));
+});
+
+/***/ }),
+
+/***/ "./components/QuickStats.js":
+/*!**********************************!*\
+  !*** ./components/QuickStats.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Container",
+  componentId: "lmgi17-0"
+})(["@media (max-width:576px){max-width:540px;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;"]);
+var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Row",
+  componentId: "lmgi17-1"
+})(["display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;"]);
+var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Col",
+  componentId: "lmgi17-2"
+})(["text-align:center;padding:5px 10px;font-weight:700;border-right-width:1px;border-left:1px solid #38383b;border-bottom:1px solid #38383b;border-right-color:#38383b;border-top:1px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;"], function (props) {
+  return props.theme.color;
+}, function (props) {
+  return props.theme.bgColor;
+});
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var S = _ref.S,
+      country = _ref.country;
+  return __jsx(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, __jsx(Row, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, __jsx(Col, {
+    style: {
+      borderLeft: '1px solid #38383b',
+      borderTopRightRadius: '5px',
+      borderBottomRightRadius: '5px',
+      borderRightColor: '#38383b'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, country, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, "\u05DE\u05D3\u05D9\u05E0\u05D4"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }, S.cases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }, S.recovered, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: this
+  }, S.deaths, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
+    style: {
+      borderLeft: '1px solid #38383b',
+      borderTopLeftRadius: '5px',
+      borderBottomLeftRadius: '5px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: this
+  }, S.todayCases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, "\u05DE\u05E7\u05E8\u05D9\u05DD \u05D7\u05D3\u05E9\u05D9\u05DD")))));
 });
 
 /***/ }),
@@ -1238,8 +1430,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
 /* harmony import */ var _Bar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Bar */ "./components/Bar.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _QuickStats__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuickStats */ "./components/QuickStats.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
 
 
 
@@ -1251,7 +1445,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "Stats__Container",
   componentId: "tjczhx-0"
-})(["max-width:760px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
+})(["max-width:1140px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
 var Flex = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "Stats__Flex",
   componentId: "tjczhx-1"
@@ -1269,7 +1463,7 @@ function Stats(_ref) {
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: this
   }, todayStats && __jsx("div", {
@@ -1280,7 +1474,7 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 35
     },
     __self: this
   }, __jsx("h1", {
@@ -1289,7 +1483,7 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1299,51 +1493,21 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
-  }, " ", cn)), __jsx(Flex, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'נדבקים' || "Infected",
-    data: todayStats.cases,
+  }, " ", cn)), __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    country: cn,
+    S: todayStats,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'החלימו' || "Recovered",
-    data: todayStats.recovered,
+  })) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'מקרי מוות' || "Total Deaths",
-    data: todayStats.deaths,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'מקרים חדשים' || "New Cases Today",
-    data: todayStats.todayCases,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
-  }))) || todayWorld && __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     },
     __self: this
   }, __jsx("h1", {
@@ -1353,7 +1517,7 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 63
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1363,13 +1527,13 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 64
     },
     __self: this
   }, " ", cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 66
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1377,7 +1541,7 @@ function Stats(_ref) {
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 68
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1385,7 +1549,7 @@ function Stats(_ref) {
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 72
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1393,7 +1557,7 @@ function Stats(_ref) {
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 76
     },
     __self: this
   }))));
@@ -54893,7 +55057,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n      // background: ", ";\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-size: 1.75rem;\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -54911,6 +55075,8 @@ var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createG
   return props.theme.fontFamily;
 }, function (props) {
   return props.lang === 'heb' ? 'rtl' : '';
+}, function (props) {
+  return props.theme.test;
 });
 /* harmony default export */ __webpack_exports__["default"] = (GlobalStyle);
 
@@ -54986,7 +55152,7 @@ var LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.w
   displayName: "pages__LangBtn",
   componentId: "sc-1t8jk7a-3"
 })(["background:", ";color:", ";font-size:14px;font-weight:600;padding:6px 10px;width:45px;outline:none;text-align:center;border:none;border-radius:6px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], function (props) {
-  return props.theme.searchBgColor;
+  return props.theme.bgColor;
 }, function (props) {
   return props.theme.color;
 });
@@ -55188,7 +55354,7 @@ var sortForChart = function sortForChart(obj) {
     borderColor: '#fc3111',
     strokeColor: '#301934',
     pointRadius: 2,
-    borderWidth: 2,
+    borderWidth: 4,
     fill: true,
     datalabels: {
       display: function display(ctx) {
@@ -55203,8 +55369,8 @@ var sortForChart = function sortForChart(obj) {
     backgroundColor: 'rgba(29,82,209,1) 100%)',
     borderColor: 'rgba(21, 21, 21, 1)',
     strokeColor: "rgba(222, 222, 34, 1)",
-    pointRadius: 3,
-    borderWidth: 3,
+    pointRadius: 1,
+    borderWidth: 4,
     datalabels: {
       display: function display(ctx) {
         return ctx.dataIndex % 2;
@@ -55215,19 +55381,17 @@ var sortForChart = function sortForChart(obj) {
   }, {
     label: 'cases',
     data: cases,
-    backgroundColor: 'rgba(208,42,55,1)',
-    borderColor: 'rgba(210, 50, 120, 1)',
-    strokeColor: "rgba(200, 200, 200, 1)",
-    pointBorderColor: 'rgba(75,10,192,1)',
+    backgroundColor: '#2A4561',
+    borderColor: '#97D3ED',
+    strokeColor: "#ADFF2F",
+    pointBorderColor: 'rgba(75,10,192,0)',
     pointBackgroundColor: '#fff',
-    pointHoverBackgroundColor: 'rgba(45, 20, 19, 1)',
-    pointRadius: 2,
-    borderWidth: 3,
-    fillColor: 'rgba(230, 15, 66, 1)',
+    pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
+    pointRadius: 0,
+    borderWidth: 5,
     datalabels: {
-      display: function display(ctx) {
-        return ctx.dataIndex % 2;
-      },
+      // display: ctx => !(ctx.dataIndex % 5),
+      display: 'auto',
       align: 'end',
       anchor: 'end'
     }
@@ -55266,18 +55430,21 @@ var themes = {
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   },
   dark: {
     type: 'dark',
-    bgColor: '#1F2933',
+    // bgColor: '#1F2933',
+    bgColor: '#364061',
     headerBg: '#3d444b',
     color: '#E4E7EB',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   }
 };
 

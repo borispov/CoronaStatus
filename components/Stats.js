@@ -6,10 +6,11 @@ import styled from 'styled-components'
 import Spinner from './Spinner'
 import Bar from './Bar'
 import Chart from './Chart'
+import QuickStats from './QuickStats'
 
 
 const Container = styled.div`
-  max-width: 760px;
+  max-width: 1140px;
   margin: 24px auto 0;
   text-align: center;
   margin-top: 16px;
@@ -35,7 +36,9 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
             <h1 style={{fontSize: '20px'}}>
               {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
             </h1>
-          <Flex>
+            <QuickStats country={cn} S={todayStats}/>
+            {/*
+            <Flex>
             <StatBlock 
               title={isHeb && 'נדבקים' || "Infected"}
               data={todayStats.cases}
@@ -53,6 +56,7 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
               data={todayStats.todayCases}
             />
           </Flex>
+          */}
         </div>
           || todayWorld && 
             <div>

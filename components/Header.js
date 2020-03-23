@@ -14,7 +14,8 @@ const Wrap = styled.div`
   position: relative;
   height: 82px;
   width: 100%;
-  background: linear-gradient(45deg, #cc0404, #000000d6);
+  // background: linear-gradient(45deg, #cc0404, #000000d6);
+  background: radial-gradient(#284c16EE,#070e16);
   text-align: center;
   border-bottom: 1px solid darkblue;
   margin: 0 auto;

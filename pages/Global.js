@@ -17,11 +17,21 @@ const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.color};
       font-family: ${props => props.theme.fontFamily};
       direction: ${props => props.lang === 'heb' ? 'rtl' : ''};
+      // background: ${props => props.theme.test};
   }
 
 
   .div.span.h3 {
     font-family: 'Roboto'
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1.75rem;
   }
   .lds-hourglass {
     display: inline-block;

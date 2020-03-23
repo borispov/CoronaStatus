@@ -12,17 +12,20 @@ export const themes = {
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   },
   dark: {
     type: 'dark',
-    bgColor: '#1F2933',
+    // bgColor: '#1F2933',
+    bgColor: '#364061',
     headerBg: '#3d444b',
     color: '#E4E7EB',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833'
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
   },
 }

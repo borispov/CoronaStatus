@@ -35,7 +35,7 @@ const sortForChart = obj => {
       borderColor: '#fc3111',
       strokeColor: '#301934',
       pointRadius: 2,
-      borderWidth: 2,
+      borderWidth: 4,
       fill: true,
       datalabels: {
         display: ctx => ctx.dataIndex % 2,
@@ -49,8 +49,8 @@ const sortForChart = obj => {
       backgroundColor: 'rgba(29,82,209,1) 100%)',
       borderColor: 'rgba(21, 21, 21, 1)',
       strokeColor: "rgba(222, 222, 34, 1)",
-      pointRadius: 3,
-      borderWidth: 3,
+      pointRadius: 1,
+      borderWidth: 4,
       datalabels: {
         display: ctx => ctx.dataIndex % 2,
         align: 'end',
@@ -60,17 +60,17 @@ const sortForChart = obj => {
     {
       label: 'cases',
       data: cases,
-      backgroundColor: 'rgba(208,42,55,1)',
-      borderColor: 'rgba(210, 50, 120, 1)',
-      strokeColor: "rgba(200, 200, 200, 1)",
-      pointBorderColor: 'rgba(75,10,192,1)',
+      backgroundColor: '#2A4561',
+      borderColor: '#97D3ED',
+      strokeColor: "#ADFF2F",
+      pointBorderColor: 'rgba(75,10,192,0)',
       pointBackgroundColor: '#fff',
-      pointHoverBackgroundColor: 'rgba(45, 20, 19, 1)',
-      pointRadius: 2,
-      borderWidth: 3,
-      fillColor: 'rgba(230, 15, 66, 1)',
+      pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
+      pointRadius: 0,
+      borderWidth: 5,
       datalabels: {
-        display: ctx => ctx.dataIndex % 2,
+        // display: ctx => !(ctx.dataIndex % 5),
+        display: 'auto',
         align: 'end',
         anchor: 'end'
       }

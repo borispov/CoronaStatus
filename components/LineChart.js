@@ -22,10 +22,21 @@ const parseDatasets = (arrayOfSets, fill) => {
 
 export default ( props ) => {
 
-  const data = {
+  const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
   };
+
+  const data = canvas => {
+    const ctx = canvas.getContext('2d')
+    const gradient = ctx.createLinearGradient(0,0,100,0)
+
+    return {
+      ...data2,
+      background: gradient
+    }
+  }
+  
 
   var options = {
     responsive: true,
@@ -74,7 +85,7 @@ export default ( props ) => {
     },
     plugins: {
        datalabels: {
-          display: true,
+          display: 'auto',
          // color: '#292929CC',
         color: props.theme.color,
          labels: {
@@ -87,13 +98,13 @@ export default ( props ) => {
   return (
     <div style={{marginTop: '32px'}}>
       <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
-      <Line
-        label={props.label}
-        data={data}
-        width={100}
-        options={options}
-        height={40}
-      />
+        <Line
+          label={props.label}
+          data={data}
+          width={100}
+          options={options}
+          height={40}
+        />
     </div>
   )
 }
