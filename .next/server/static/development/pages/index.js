@@ -93,6 +93,41 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/icons/sun.svg":
+/*!******************************!*\
+  !*** ./assets/icons/sun.svg ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  fill: "currentColor",
+  d: "M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"
+});
+
+function SvgSun(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    "aria-hidden": "true",
+    "data-prefix": "fas",
+    "data-icon": "sun",
+    className: "sun_svg__svg-inline--fa sun_svg__fa-sun sun_svg__fa-w-16 sun_svg__fa-lg",
+    viewBox: "0 0 512 512",
+    color: "#F1D600"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgSun);
+
+/***/ }),
+
 /***/ "./components/Bar.js":
 /*!***************************!*\
   !*** ./components/Bar.js ***!
@@ -181,18 +216,10 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Butto
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button`
-  border-radius: 4px;
-  padding: 8px 14px;
-  font-size: 16px;
-  background: lightblue;
-  color: ${props => props.theme.color};
-  font-family: 'Sans'
-  :hover & {
-    background: ${props => props.theme.color};
-    color: ${props => props.theme.bgColor};
-  }
-`;
+const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "Button__Btn",
+  componentId: "sc-1h1khwv-0"
+})(["border-radius:4px;padding:8px 14px;font-size:16px;background:lightblue;color:", ";font-family:'Sans':hover &{background:", ";color:", ";}"], props => props.theme.color, props => props.theme.color, props => props.theme.bgColor);
 /* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Btn, {
   onClick: props.onClick,
   __source: {
@@ -482,11 +509,10 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Conta
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-`;
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Container",
+  componentId: "sc-1p5fd2u-0"
+})(["max-width:760px;margin:0 auto;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Container, {
   __source: {
     fileName: _jsxFileName,
@@ -518,8 +544,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
 /* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
 /* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-select */ "react-select");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-select */ "react-select");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_12__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -535,6 +563,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+const MultiSelect = styled_components__WEBPACK_IMPORTED_MODULE_11___default()(react_select__WEBPACK_IMPORTED_MODULE_12___default.a)`
+  &.Select--multi  {
+    .Select-value {
+        display: inline-flex;
+        align-items: center;
+        color: black;
+      }
+    }
+
+    & .Select-placeholder {
+      color: black;
+      font-size: smaller;
+    }
+  .input {
+    color: black !important;
+  }
+`;
 const allCountries = {
   israel: '',
   usa: '',
@@ -609,25 +655,26 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "Covid19 Status",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 93
     },
     __self: undefined
-  }, "Covid19 Feed"), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 94
     },
     __self: undefined
   }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 96
     },
     __self: undefined
   }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -640,7 +687,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     fill: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 101
     },
     __self: undefined
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -649,7 +696,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 112
     },
     __self: undefined
   }), __jsx("form", {
@@ -660,7 +707,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 118
     },
     __self: undefined
   }, __jsx("label", {
@@ -669,16 +716,16 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 122
     },
     __self: undefined
-  }, lang === 'eng' ? `Search For Country:` : `חיפוש לפי מדינה`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_11___default.a, {
+  }, lang === 'eng' ? `Search For Country:` : `חיפוש לפי מדינה`), __jsx(MultiSelect, {
     options: selectOptions,
     value: country,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 130
     },
     __self: undefined
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -687,7 +734,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 137
     },
     __self: undefined
   }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -697,7 +744,7 @@ const translateCountries = countries => cn => countries[Object.keys(countries).f
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 143
     },
     __self: undefined
   })));
@@ -722,27 +769,16 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Heade
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span`
-  align-self: center;
-  color: #e6e6e6;
-  font-size: 4rem;
-  font-family: monospace;
-  text-align: center;
-`;
-const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 82px;
-  width: 100%;
-  background: linear-gradient(45deg, #cc0404, #000000d6);
-  text-align: center;
-  border-bottom: 1px solid darkblue;
-  margin: 0 auto;
-  margin-bottom: 48px;
-`;
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
+  displayName: "Header__Title",
+  componentId: "sc-1yguf34-0"
+})(["align-self:center;color:#e6e6e6;font-size:4rem;font-family:monospace;text-align:center;"]);
+const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Header__Wrap",
+  componentId: "sc-1yguf34-1"
+})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#cc0404,#000000d6);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (({
-  children
+  title
 }) => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
@@ -755,7 +791,7 @@ const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
     lineNumber: 26
   },
   __self: undefined
-}, children)));
+}, title)));
 
 /***/ }),
 
@@ -777,36 +813,18 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Heade
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int';
-const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p`
-  color: ${props => props.theme.categoryColor};
-  font-size: 14px;
-  font-family: 'Open Sans';
-  line-height: 1.6;
-  max-width: 520px;
-  text-align: center;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    max-width: 380px;
-  }
-
-`;
-const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  display: block;
-  width: 620px;
-  max-width: 620px;
-  margin: 0 auto 24px;
-  @media (max-width: 768px) {
-    width: 320px;
-    max-width: 380px;
-  }
-
-`;
-const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
-  outline: none;
-  text-decoration: none;
-  font-weight: bold;
-  color: ${props => props.theme.categoryHoverColor};
-`;
+const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
+  displayName: "HeaderDescription__Text",
+  componentId: "sc-110gwmc-0"
+})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.6;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}"], props => props.theme.categoryColor);
+const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "HeaderDescription__Wrap",
+  componentId: "sc-110gwmc-1"
+})(["display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:320px;max-width:380px;}"]);
+const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+  displayName: "HeaderDescription__Href",
+  componentId: "sc-110gwmc-2"
+})(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], props => props.theme.categoryHoverColor);
 /* harmony default export */ __webpack_exports__["default"] = (() => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
@@ -857,17 +875,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
-const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input`
-  outline: none;
-  max-width: 420px;
-  width: ${props => props.btn ? '62px' : '85%'};
-  margin: ${props => props.btn ? '0 8px' : 0};
-  text-align: center;
-  border-radius: 6px;
-  background: ${props => props.theme.categoryColor};
-  font-size: 1.1rem;
-  padding: 8px 4px;
-`;
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.withConfig({
+  displayName: "Input",
+  componentId: "sc-1hzri75-0"
+})(["outline:none;max-width:420px;width:", ";margin:", ";text-align:center;border-radius:6px;background:", ";font-size:1.1rem;padding:8px 4px;"], props => props.btn ? '62px' : '85%', props => props.btn ? '0 8px' : 0, props => props.theme.categoryColor);
 /* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Input, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
@@ -1069,26 +1080,18 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/StatB
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Block = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  position: relative;
-  margin: 0;
-  padding: 16px 12px;
-  background: ${props => props.theme.bgColor};
-  font-size: 18px;
-  text-align: center;
-  border-radius: 6px;
-  align-content: center;
-  justify-content: space-between;
-  // box-shadow: 0 1px 12px 2px rgba(20,20,20,0.1);
-  color: ${props => props.theme.color};
-`;
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3`
-  font: 'Helvetica';
-  text-decoration: underline;
-  letter-spacing: 1px;
-  color: ${props => props.theme.textColor};
-  margin-bottom: 6px;
-`;
+const Block = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "StatBlock__Block",
+  componentId: "rmn7zo-0"
+})(["position:relative;margin:0;padding:16px 12px;background:", ";font-size:18px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], props => props.theme.bgColor, props => props.theme.color);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
+  displayName: "StatBlock__Title",
+  componentId: "rmn7zo-1"
+})(["font:'Helvetica';text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], props => props.theme.textColor);
+const Span = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
+  displayName: "StatBlock__Span",
+  componentId: "rmn7zo-2"
+})(["font-size:18px;font-weight:700;margin:12px 0 0 0;color:", ""], props => props.theme.color);
 
 const StatBlock = ({
   title,
@@ -1097,16 +1100,16 @@ const StatBlock = ({
   return __jsx(Block, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 35
     },
     __self: undefined
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 36
     },
     __self: undefined
-  }, title, ":"), __jsx("span", {
+  }, title, ":"), __jsx(Span, {
     style: {
       fontSize: '18px',
       fontWeight: 'bold',
@@ -1114,7 +1117,7 @@ const StatBlock = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 37
     },
     __self: undefined
   }, data));
@@ -1154,21 +1157,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
-  max-width: 760px;
-  margin: 24px auto 0;
-  text-align: center;
-  margin-top: 16px;
-`;
-const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
-  display: flex;
-  justify-content: space-evenly;
-  background-color: ${props => props.bg || ''};
-  border-radius: 12px;
-  & > div {
-    background-color: ${props => props.bg || ''};
-  }
-`;
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
+  displayName: "Stats__Container",
+  componentId: "tjczhx-0"
+})(["max-width:760px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
+const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
+  displayName: "Stats__Flex",
+  componentId: "tjczhx-1"
+})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;& > div{background-color:", ";}"], props => props.bg || props.theme.bgColor, props => props.bg || props.theme.bgColor);
 function Stats({
   cn = '',
   todayWorld,
@@ -1258,7 +1254,6 @@ function Stats({
   }, __jsx("h1", {
     style: {
       fontSize: '20px',
-      backgroundColor: 'beige',
       paddingTop: '18px'
     },
     __source: {
@@ -1277,7 +1272,6 @@ function Stats({
     },
     __self: this
   }, " ", cn)), __jsx(Flex, {
-    bg: "beige",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 62
@@ -1393,16 +1387,17 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IndexPage; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CoronaApp */ "./components/CoronaApp.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _components_CoronaApp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/CoronaApp */ "./components/CoronaApp.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_moon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/moon.svg */ "./utils/moon.svg");
+/* harmony import */ var _assets_icons_sun_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/icons/sun.svg */ "./assets/icons/sun.svg");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -1416,56 +1411,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['light']);
+ // const Moon = () => <MoonSVG />
 
-const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['dark']);
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['light']);
 
-const Btn = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
-  color: ${props => props.theme.bgColor};
-  background-color: ${props => props.theme.color};
-  border-radius: 50%;
-  position: absolute;
-  top: ${props => props.top};
-  right: ${props => props.right};
-  left: ${props => props.left};
-  padding: 6px 2px;
-  outline: none;
-`;
-const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
-  background: ${props => props.theme.searchBgColor};
-  color: ${props => props.theme.color};
-  font-size: 14px;
-  font-weight: 600;
-  padding: 6px 10px;
-  width: 45px;
-  outline: none;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  @media (max-width: 768px) {
-    width: 30px;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 4px 6px;
-  }
+const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['dark']);
 
-`;
-const BtnContainer = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
-  position: absolute;
-  top: 5%;
-  right: 3%;
-  padding: 0 12px;
-  @media (max-width: 768px) {
-    right: 0%;
-    top: 8%;
-    padding: 0;
-  }
-`;
+const ThemeIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["width:3rem;height:3rem;margin-left:auto;cursor:pointer;"]);
+const MoonIcon = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(_utils_moon_svg__WEBPACK_IMPORTED_MODULE_5__["default"]).withConfig({
+  displayName: "pages__MoonIcon",
+  componentId: "sc-1t8jk7a-0"
+})(["", ""], ThemeIcon);
+const SunIcon = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(_assets_icons_sun_svg__WEBPACK_IMPORTED_MODULE_6__["default"]).withConfig({
+  displayName: "pages__SunIcon",
+  componentId: "sc-1t8jk7a-1"
+})(["", ""], ThemeIcon);
+const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "pages__Btn",
+  componentId: "sc-1t8jk7a-2"
+})(["color:", ";background-color:", ";border-radius:50%;position:absolute;top:", ";right:", ";left:", ";padding:6px 2px;outline:none;"], props => props.theme.bgColor, props => props.theme.color, props => props.top, props => props.right, props => props.left);
+const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "pages__LangBtn",
+  componentId: "sc-1t8jk7a-3"
+})(["background:", ";color:", ";font-size:14px;font-weight:600;padding:6px 10px;width:45px;outline:none;text-align:center;border:none;border-radius:6px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], props => props.theme.searchBgColor, props => props.theme.color);
+const BtnContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "pages__BtnContainer",
+  componentId: "sc-1t8jk7a-4"
+})(["position:absolute;top:5%;right:3%;padding:0 12px;@media (max-width:768px){right:0%;top:8%;padding:0;}"]);
 function IndexPage() {
   const {
     0: theme,
     1: setTheme
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(lightTheme());
+  } = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(lightTheme());
 
   const setDarkTheme = () => setTheme(darkTheme());
 
@@ -1474,39 +1451,39 @@ function IndexPage() {
   const {
     0: lang,
     1: setLang
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('heb');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])('heb');
 
   const setHeb = () => setLang('heb');
 
   const setEng = () => setLang('eng');
 
   const isLight = theme.type === 'light';
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 93
     },
     __self: this
-  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_2__["default"], {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 94
     },
     __self: this
-  }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_0__["default"], {
     theme: theme,
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 95
     },
     __self: this
   }), __jsx(BtnContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 97
     },
     __self: this
   }, __jsx(LangBtn, {
@@ -1517,18 +1494,78 @@ function IndexPage() {
     onClick: lang === 'heb' ? setEng : () => {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 98
     },
     __self: this
   }, "En"), __jsx(LangBtn, {
     onClick: lang === 'eng' ? setHeb : () => {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 102
     },
     __self: this
-  }, "\u05E2\u05D1\u05E8"))));
+  }, "\u05E2\u05D1\u05E8")), __jsx("div", {
+    style: {
+      position: 'absolute',
+      top: '5%',
+      left: '2%'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: this
+  }, theme.type === 'light' && __jsx(MoonIcon, {
+    onClick: setDarkTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: this
+  }), theme.type === 'dark' && __jsx(SunIcon, {
+    onClick: setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: this
+  }))));
 }
+
+/***/ }),
+
+/***/ "./utils/moon.svg":
+/*!************************!*\
+  !*** ./utils/moon.svg ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  fill: "currentColor",
+  d: "M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 00283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"
+});
+
+function SvgMoon(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    "aria-hidden": "true",
+    "data-prefix": "fas",
+    "data-icon": "moon",
+    className: "moon_svg__svg-inline--fa moon_svg__fa-moon moon_svg__fa-w-16 moon_svg__fa-lg",
+    viewBox: "0 0 512 512",
+    color: "#666"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgMoon);
 
 /***/ }),
 

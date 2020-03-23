@@ -23,11 +23,18 @@ const Title = styled.h3`
   margin-bottom: 6px;
 `
 
+const Span = styled.span`
+  font-size: 18px;
+  font-weight: 700;
+  margin: 12px 0 0 0;
+  color: ${props => props.theme.color}
+`
+
 const StatBlock = ({ title, data }) => {
   return (
     <Block>
       <Title>{title}:</Title>
-      <span style={{fontSize: '18px', fontWeight: 'bold', margin: '12px 0 0 0'}}>{data}</span>
+      <Span style={{fontSize: '18px', fontWeight: 'bold', margin: '12px 0 0 0'}}>{data}</Span>
     </ Block>
   )
 }

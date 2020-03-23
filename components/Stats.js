@@ -18,10 +18,10 @@ const Container = styled.div`
 const Flex = styled.div`
   display: flex;
   justify-content: space-evenly;
-  background-color: ${props => props.bg || ''};
+  background-color: ${props => props.bg || props.theme.bgColor};
   border-radius: 12px;
   & > div {
-    background-color: ${props => props.bg || ''};
+    background-color: ${props => props.bg || props.theme.bgColor};
   }
 `
 
@@ -56,10 +56,10 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
         </div>
           || todayWorld && 
             <div>
-            <h1 style={{fontSize: '20px', backgroundColor: 'beige', paddingTop: '18px'}}>
+            <h1 style={{fontSize: '20px', paddingTop: '18px'}}>
               {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
             </h1>
-            <Flex bg='beige'>
+            <Flex>
 
               <StatBlock 
                 title={isHeb && 'נדבקים' || "Infected"}

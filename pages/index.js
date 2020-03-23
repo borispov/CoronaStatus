@@ -1,8 +1,12 @@
 import CoronaApp from '../components/CoronaApp'
 import styled, { css, ThemeProvider } from 'styled-components'
 import GlobalStyle from './Global'
-import { useState } from 'react'
 import { themes } from '../utils/themes'
+import React, { useState } from 'react'
+import MoonSVG from '../utils/moon.svg'
+import SunSVG from '../assets/icons/sun.svg'
+
+// const Moon = () => <MoonSVG />
 
 const lightTheme = () => ({
   ...themes['common'],
@@ -13,6 +17,22 @@ const darkTheme = () => ({
   ...themes['common'],
   ...themes['dark'],
 })
+
+const ThemeIcon = css`
+  width: 3rem;
+  height: 3rem;
+  margin-left: auto;
+  cursor: pointer;
+`
+
+const MoonIcon = styled(MoonSVG)`
+  ${ThemeIcon}
+`
+
+const SunIcon = styled(SunSVG)`
+  ${ThemeIcon}
+`
+
 
 const Btn = styled.button`
   color: ${props => props.theme.bgColor};
@@ -83,6 +103,10 @@ export default function IndexPage() {
               onClick={lang === 'eng' ? setHeb : () => {}}
             >עבר</LangBtn>
         </BtnContainer>
+        <div style={{position: 'absolute', top: '5%', left: '2%'}}>
+        {theme.type === 'light' && <MoonIcon onClick={setDarkTheme} />}
+        {theme.type === 'dark' && <SunIcon onClick={setLightTheme} />}
+        </div>
       </ThemeProvider>
     </>
   )

@@ -9,7 +9,26 @@ import Chart from './Chart'
 import Container from './Container'
 import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
+import styled from 'styled-components'
 import Select from 'react-select'
+
+const MultiSelect = styled(Select)`
+  &.Select--multi  {
+    .Select-value {
+        display: inline-flex;
+        align-items: center;
+        color: black;
+      }
+    }
+
+    & .Select-placeholder {
+      color: black;
+      font-size: smaller;
+    }
+  .input {
+    color: black !important;
+  }
+`
 
 const allCountries = {
   israel: '',
@@ -71,7 +90,7 @@ export default ({ theme, lang}) => {
 
   return (
     <div>
-      <Header>Covid19 Feed</Header>
+      <Header title='Covid19 Status' />
       <HeaderDescription />
 
       <Container>
@@ -108,7 +127,7 @@ export default ({ theme, lang}) => {
           }
         </label>
 
-        <Select 
+        <MultiSelect
           options={selectOptions}
           value={country}
           onChange={handleChange}
