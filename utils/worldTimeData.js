@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import sortForChart from './sortForChart'
 
-const baseURL = `http://covid19.borisky.me:3003/api/v1/alltime/`
+const baseURL = `https://covid19.borisky.me/api/v1/alltime/`
 
 function worldTimeData() {
   const [timeStats, setData] = useState();

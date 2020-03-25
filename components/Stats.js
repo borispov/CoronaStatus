@@ -33,9 +33,6 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
       {
         todayStats &&
           <div style={{ border: '1px solid rgba(255, 60, 60, 0.022)', borderRadius: '6px', marginBottom: '16px' }}>
-            <h1 style={{fontSize: '20px'}}>
-              {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
-            </h1>
             <QuickStats country={cn} S={todayStats}/>
             {/*
             <Flex>

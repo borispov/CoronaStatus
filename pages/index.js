@@ -6,6 +6,9 @@ import React, { useState } from 'react'
 import MoonSVG from '../utils/moon.svg'
 import SunSVG from '../assets/icons/sun.svg'
 
+import InfoSection from '../components/InfoSection'
+
+
 // const Moon = () => <MoonSVG />
 
 const lightTheme = () => ({
@@ -93,6 +96,7 @@ export default function IndexPage() {
       <ThemeProvider theme={theme}>
         <GlobalStyle lang={lang}/>
         <CoronaApp theme={theme} lang={lang}/>
+        <InfoSection theme={theme} />
 
         <BtnContainer>
             <LangBtn

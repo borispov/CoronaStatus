@@ -12,24 +12,6 @@ import CaseChart from './CaseChart'
 import styled from 'styled-components'
 import Select from 'react-select'
 
-const MultiSelect = styled(Select)`
-  &.Select--multi  {
-    .Select-value {
-        display: inline-flex;
-        align-items: center;
-        color: black;
-      }
-    }
-
-    & .Select-placeholder {
-      color: black;
-      font-size: smaller;
-    }
-  .input {
-    color: black !important;
-  }
-`
-
 const allCountries = {
   israel: '',
   usa: '',
@@ -54,7 +36,7 @@ export default ({ theme, lang}) => {
   const [country, setCountry] = useState('')
   const [inputValue, setInput] = useState('')
 
-  const url = 'http://covid19.borisky.me:3003/api/v1/'
+  const url = 'https://covid19.borisky.me/api/v1/'
 
   const { countryStats } = useTime(country)
   const { todayStats } = useTodayStats(url, country)
@@ -105,7 +87,9 @@ export default ({ theme, lang}) => {
                 data={countryStats.datasets.filter(a => a.label === 'cases')}
                 label={country || 'israel'}
                 theme={theme}
-                fill={true}
+                fill={false}
+                stops={3}
+                showLegend={false}
               />
           )
       }
@@ -118,7 +102,6 @@ export default ({ theme, lang}) => {
       <form 
         style={{ maxWidth: '520px', margin: '54px auto'}}
         onSubmit={handleSubmit}>
-
         <label style={{fontSize: '16px'}}>
           {
             lang === 'eng'
@@ -127,7 +110,8 @@ export default ({ theme, lang}) => {
           }
         </label>
 
-        <MultiSelect
+        <Select
+          className={'Select'}
           options={selectOptions}
           value={country}
           onChange={handleChange}

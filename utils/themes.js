@@ -7,13 +7,17 @@ export const themes = {
     type: 'light',
     bgColor: 'rgb(250, 250, 252)',
     headerBg: 'rgb(250, 250, 252)',
+    boxBg: 'rgba(50, 150, 252, 0.8)',
     color: '#3E4C59',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
     textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6'
   },
   dark: {
     type: 'dark',
@@ -26,6 +30,9 @@ export const themes = {
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
     textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6'
   },
 }

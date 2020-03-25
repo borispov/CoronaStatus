@@ -132,19 +132,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
   displayName: "Button__Btn",
   componentId: "sc-1h1khwv-0"
-})(["border-radius:4px;padding:8px 14px;font-size:16px;background:lightblue;color:", ";font-family:'Sans':hover &{background:", ";color:", ";}"], function (props) {
-  return props.theme.color;
+})(["border-radius:4px;padding:10px 14px;font-size:16px;background:", ";color:", ";font-family:'Sans'"], function (props) {
+  return props.theme.btnBg;
 }, function (props) {
-  return props.theme.color;
-}, function (props) {
-  return props.theme.bgColor;
+  return props.theme.btnColor;
 });
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Btn, {
     onClick: props.onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 12
     },
     __self: this
   }, props.children);
@@ -198,7 +196,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 
 
-var baseURL = "http://covid19.borisky.me:3003/api/v1/alltime/";
+var baseURL = "https://covid19.borisky.me/api/v1/alltime/";
 
 var countryTimeData = function countryTimeData(cn) {
   var loc, data, dataRes;
@@ -570,7 +568,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Container",
   componentId: "sc-1p5fd2u-0"
-})(["max-width:1140px;margin:0 auto;text-align:center;"]);
+})(["max-width:992px;margin:0 auto;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Container, {
     __source: {
@@ -592,35 +590,23 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wi
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
-/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
+/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
+/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
+/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  &.Select--multi  {\n    .Select-value {\n        display: inline-flex;\n        align-items: center;\n        color: black;\n      }\n    }\n\n    & .Select-placeholder {\n      color: black;\n      font-size: smaller;\n    }\n  .input {\n    color: black !important;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -634,8 +620,6 @@ function _templateObject() {
 
 
 
-
-var MultiSelect = Object(styled_components__WEBPACK_IMPORTED_MODULE_12__["default"])(react_select__WEBPACK_IMPORTED_MODULE_13__["default"])(_templateObject());
 var allCountries = {
   israel: '',
   usa: '',
@@ -664,29 +648,29 @@ var translateCountries = function translateCountries(countries) {
   var theme = _ref.theme,
       lang = _ref.lang;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       showWorld = _useState[0],
       setShowWorld = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       country = _useState2[0],
       setCountry = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       inputValue = _useState3[0],
       setInput = _useState3[1];
 
-  var url = 'http://covid19.borisky.me:3003/api/v1/';
+  var url = 'https://covid19.borisky.me/api/v1/';
 
-  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_5__["default"])(country),
+  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(country),
       countryStats = _useTime.countryStats;
 
-  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_6__["default"])(url, country),
+  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, country),
       todayStats = _useTodayStats.todayStats;
 
-  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_6__["default"])(url, 'world').todayStats;
+  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, 'world').todayStats;
 
-  var _useCountries = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_7__["default"])(),
+  var _useCountries = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_6__["default"])(),
       countries = _useCountries.countries;
 
   var worldTodaySorted = worldToday && {
@@ -720,29 +704,29 @@ var translateCountries = function translateCountries(countries) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 74
     },
     __self: this
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: "Covid19 Status",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 75
     },
     __self: this
-  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 76
     },
     __self: this
-  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 78
     },
     __self: this
-  }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
     isHeb: lang === 'heb',
     type: "line",
     labels: countryStats.labels,
@@ -751,19 +735,21 @@ var translateCountries = function translateCountries(countries) {
     }),
     label: country || 'israel',
     theme: theme,
-    fill: true,
+    fill: false,
+    stops: 3,
+    showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 83
     },
     __self: this
-  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     cn: country || todayStats && todayStats.country,
     todayStats: todayStatsSorted,
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 96
     },
     __self: this
   }), __jsx("form", {
@@ -774,7 +760,7 @@ var translateCountries = function translateCountries(countries) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 102
     },
     __self: this
   }, __jsx("label", {
@@ -783,35 +769,36 @@ var translateCountries = function translateCountries(countries) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 105
     },
     __self: this
-  }, lang === 'eng' ? "Search For Country:" : "\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4"), __jsx(MultiSelect, {
+  }, lang === 'eng' ? "Search For Country:" : "\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    className: 'Select',
     options: selectOptions,
     value: country,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 113
     },
     __self: this
-  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     cn: 'World',
     todayWorld: worldTodaySorted,
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 121
     },
     __self: this
-  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_10__["default"], {
     showWorld: showWorld,
     theme: theme,
     country: country,
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 127
     },
     __self: this
   })));
@@ -838,23 +825,23 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
   displayName: "Header__Title",
   componentId: "sc-1yguf34-0"
-})(["align-self:center;color:#e6e6e6;font-size:4rem;font-family:monospace;text-align:center;"]);
+})(["align-self:center;color:#e6e6e6;font-size:4rem;font-family:monospace;text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);"]);
 var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__Wrap",
   componentId: "sc-1yguf34-1"
-})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:radial-gradient(#284c16EE,#070e16);text-align:center;border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var title = _ref.title;
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   }, title));
@@ -923,6 +910,215 @@ var Href = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfi
     },
     __self: this
   }, "WHO.int")));
+});
+
+/***/ }),
+
+/***/ "./components/InfoSection.js":
+/*!***********************************!*\
+  !*** ./components/InfoSection.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/InfoSection.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
+
+
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "InfoSection__Wrapper",
+  componentId: "sc-1anhjcp-0"
+})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
+var Section = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "InfoSection__Section",
+  componentId: "sc-1anhjcp-1"
+})(["border-radius:4px;background:", ";color:", ";flex:0 0 50%;max-width:33%;position:relative;width:100%;border:1px solid;border-color:", ";margin:2px;@media (max-width:768px){flex-direction:column;flex:0 0 100%;max-width:85%;}"], function (props) {
+  return props.theme.bgColor;
+}, function (props) {
+  return props.theme.color;
+}, function (props) {
+  return props.theme.statColor;
+});
+var SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h2.withConfig({
+  displayName: "InfoSection__SectionTitle",
+  componentId: "sc-1anhjcp-2"
+})(["color:", ";background:", ";font-size:20px;padding:4px 8px;border-bottom:1px solid black;"], function (props) {
+  return props.theme.btnColor;
+}, function (props) {
+  return props.theme.boxBg;
+});
+var Link = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].a.withConfig({
+  displayName: "InfoSection__Link",
+  componentId: "sc-1anhjcp-3"
+})(["text-decoration:none;color:", ";font-weight:700;font-size:18px;line-height:1.5;padding:0 4px;"], function (props) {
+  return props.theme.statColor;
+});
+var Desc = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].p.withConfig({
+  displayName: "InfoSection__Desc",
+  componentId: "sc-1anhjcp-4"
+})(["font-size:16px;line-height:1.22;color:", ";padding:0 4px;"], function (props) {
+  return props.theme.color;
+});
+
+var reduceToCat = function reduceToCat(a, _ref) {
+  var category = _ref.category,
+      x = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, ["category"]);
+
+  return {
+    category: category,
+    data: a['data'].concat(x)
+  };
+};
+
+var init = {
+  category: '',
+  data: []
+}; // RENDERING functions
+
+var mapDataToSection = function mapDataToSection(item, idx) {
+  return __jsx("div", {
+    key: idx,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }, __jsx(Link, {
+    href: item.link,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, item.subject), __jsx(Desc, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, item.description));
+};
+
+var renderSection = function renderSection(secData) {
+  return secData.map(function (it, ix) {
+    return __jsx(Section, {
+      key: ix,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }, __jsx(SectionTitle, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78
+      },
+      __self: this
+    }, it.category), it.data.map(mapDataToSection));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(),
+      data = _useState[0],
+      setData = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(),
+      error = _useState2[0],
+      setError = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
+    function fetchData() {
+      var _ref2, _data, datakeys, d;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setError();
+              _context.prev = 1;
+              _context.next = 4;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://covid19.borisky.me/api/data/resources'));
+
+            case 4:
+              _ref2 = _context.sent;
+              _data = _ref2.data;
+              datakeys = Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(new Set(_data.map(function (i) {
+                return i.category;
+              })));
+              d = datakeys.map(function (key) {
+                return _data.filter(function (i) {
+                  return i.category === key;
+                });
+              }).map(function (each) {
+                return each.reduce(reduceToCat, init);
+              });
+              setData(d);
+              _context.next = 14;
+              break;
+
+            case 11:
+              _context.prev = 11;
+              _context.t0 = _context["catch"](1);
+              setError(_context.t0);
+
+            case 14:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, null, [[1, 11]], Promise);
+    }
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113
+      },
+      __self: this
+    }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx("h1", {
+    style: {
+      marginBot: '12px',
+      fontSize: '24px',
+      textAlign: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: this
+  }, "Useful Information For All"), __jsx(Wrapper, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: this
+  }, data && renderSection(data)));
 });
 
 /***/ }),
@@ -1068,7 +1264,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
       }
     },
     legend: {
-      display: true,
+      display: props.showLegend !== undefined ? false : true,
       position: 'bottom'
     },
     tooltips: {
@@ -1082,8 +1278,14 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     plugins: {
       datalabels: {
-        display: 'auto',
+        // display: ,
+        display: function display(ctx) {
+          var i = ctx.dataIndex;
+          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 3);
+        },
         // color: '#292929CC',
+        align: 'end',
+        anchor: 'end',
         color: props.theme.color,
         labels: {
           title: {
@@ -1103,7 +1305,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 105
     },
     __self: this
   }, __jsx("h1", {
@@ -1112,7 +1314,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 106
     },
     __self: this
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -1123,7 +1325,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     height: 40,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 107
     },
     __self: this
   }));
@@ -1158,8 +1360,8 @@ var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-2"
-})(["text-align:center;padding:5px 10px;font-weight:700;border-right-width:1px;border-left:1px solid #38383b;border-bottom:1px solid #38383b;border-right-color:#38383b;border-top:1px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;"], function (props) {
-  return props.theme.color;
+})(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid #38383b;border-bottom:2px solid #38383b;border-right-color:2px solid #38383b;border-top:2px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;"], function (props) {
+  return props.theme.statColor;
 }, function (props) {
   return props.theme.bgColor;
 });
@@ -1180,10 +1382,9 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     __self: this
   }, __jsx(Col, {
     style: {
-      borderLeft: '1px solid #38383b',
+      borderRight: '2px solid #38383b',
       borderTopRightRadius: '5px',
-      borderBottomRightRadius: '5px',
-      borderRightColor: '#38383b'
+      borderBottomRightRadius: '5px'
     },
     __source: {
       fileName: _jsxFileName,
@@ -1191,122 +1392,116 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __self: this
   }, __jsx("h3", {
+    style: {
+      fontWeight: 'bold',
+      display: 'inline-block',
+      paddingTop: '8px',
+      fontSize: '20px'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59
     },
     __self: this
-  }, country, __jsx("br", {
+  }, country)), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  }), __jsx("small", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: this
-  }, "\u05DE\u05D3\u05D9\u05E0\u05D4"))), __jsx(Col, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 63
     },
     __self: this
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 64
     },
     __self: this
   }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 66
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 67
     },
     __self: this
   }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 70
     },
     __self: this
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 71
     },
     __self: this
   }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 73
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 74
     },
     __self: this
   }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 77
     },
     __self: this
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 78
     },
     __self: this
   }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 80
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 81
     },
     __self: this
   }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
     style: {
-      borderLeft: '1px solid #38383b',
+      borderLeft: '2px solid #38383b',
       borderTopLeftRadius: '5px',
       borderBottomLeftRadius: '5px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 84
     },
     __self: this
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 85
     },
     __self: this
   }, S.todayCases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 87
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 88
     },
     __self: this
   }, "\u05DE\u05E7\u05E8\u05D9\u05DD \u05D7\u05D3\u05E9\u05D9\u05DD")))));
@@ -1477,37 +1672,18 @@ function Stats(_ref) {
       lineNumber: 35
     },
     __self: this
-  }, __jsx("h1", {
-    style: {
-      fontSize: '20px'
-    },
+  }, __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    country: cn,
+    S: todayStats,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36
     },
     __self: this
-  }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
-    style: {
-      fontWeight: 'bold',
-      textDecoration: 'underline'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, " ", cn)), __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    country: cn,
-    S: todayStats,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
   })) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 59
     },
     __self: this
   }, __jsx("h1", {
@@ -1517,7 +1693,7 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 60
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1527,13 +1703,13 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 61
     },
     __self: this
   }, " ", cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 63
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1541,7 +1717,7 @@ function Stats(_ref) {
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 65
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1549,7 +1725,7 @@ function Stats(_ref) {
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 69
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1557,10 +1733,32 @@ function Stats(_ref) {
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 73
     },
     __self: this
   }))));
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
 }
 
 /***/ }),
@@ -1736,6 +1934,98 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutProperties; });
+/* harmony import */ var _objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = Object(_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutPropertiesLoose; });
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js ***!
@@ -1801,6 +2091,28 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -55057,7 +55369,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n      // background: ", ";\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-size: 1.75rem;\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n      // background: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-size: 1.75rem;\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -55101,6 +55413,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _utils_moon_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/moon.svg */ "./utils/moon.svg");
 /* harmony import */ var _assets_icons_sun_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/icons/sun.svg */ "./assets/icons/sun.svg");
+/* harmony import */ var _components_InfoSection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/InfoSection */ "./components/InfoSection.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
@@ -55108,6 +55421,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -55190,14 +55504,14 @@ function IndexPage() {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 96
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_3__["default"], {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 97
     },
     __self: this
   }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -55205,13 +55519,20 @@ function IndexPage() {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 98
+    },
+    __self: this
+  }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    theme: theme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
     },
     __self: this
   }), __jsx(BtnContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 101
     },
     __self: this
   }, __jsx(LangBtn, {
@@ -55222,14 +55543,14 @@ function IndexPage() {
     onClick: lang === 'heb' ? setEng : function () {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 102
     },
     __self: this
   }, "En"), __jsx(LangBtn, {
     onClick: lang === 'eng' ? setHeb : function () {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 106
     },
     __self: this
   }, "\u05E2\u05D1\u05E8")), __jsx("div", {
@@ -55240,21 +55561,21 @@ function IndexPage() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 110
     },
     __self: this
   }, theme.type === 'light' && __jsx(MoonIcon, {
     onClick: setDarkTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 111
     },
     __self: this
   }), theme.type === 'dark' && __jsx(SunIcon, {
     onClick: setLightTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 112
     },
     __self: this
   }))));
@@ -55382,19 +55703,21 @@ var sortForChart = function sortForChart(obj) {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    borderColor: '#97D3ED',
+    // backgroundColor: 'rgb(235, 65, 15)',
+    borderColor: 'rgb(235, 65, 15)',
+    // borderColor: '#97D3ED',
     strokeColor: "#ADFF2F",
     pointBorderColor: 'rgba(75,10,192,0)',
     pointBackgroundColor: '#fff',
     pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
     pointRadius: 0,
-    borderWidth: 5,
-    datalabels: {
-      // display: ctx => !(ctx.dataIndex % 5),
-      display: 'auto',
-      align: 'end',
-      anchor: 'end'
-    }
+    borderWidth: 5 // datalabels: {
+    // display: ctx => !(ctx.dataIndex % 5),
+    //   display: 'auto',
+    //   align: 'end',
+    //   anchor: 'end'
+    // }
+
   }];
   return {
     datasets: datasets,
@@ -55425,13 +55748,17 @@ var themes = {
     type: 'light',
     bgColor: 'rgb(250, 250, 252)',
     headerBg: 'rgb(250, 250, 252)',
+    boxBg: 'rgba(50, 150, 252, 0.8)',
     color: '#3E4C59',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
     categoryHoverColor: '#333',
     textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6'
   },
   dark: {
     type: 'dark',
@@ -55444,7 +55771,10 @@ var themes = {
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
     textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)'
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6'
   }
 };
 
@@ -55468,7 +55798,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var baseURL = "http://covid19.borisky.me:3003/api/v1/countries";
+var baseURL = "https://covid19.borisky.me/api/v1/countries";
 
 function useCountries() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
@@ -55536,7 +55866,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var baseURL = "http://covid19.borisky.me:3003/api/v1/alltime/";
+var baseURL = "https://covid19.borisky.me/api/v1/alltime/";
 
 function currentCountry() {
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {

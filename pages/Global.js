@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
       // background: ${props => props.theme.test};
   }
 
+  .Select {
+    color: black !important;
+    font-size: 17px;
+  }
+
 
   .div.span.h3 {
     font-family: 'Roboto'

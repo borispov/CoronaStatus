@@ -71,7 +71,7 @@ export default ( props ) => {
         }
     },
     legend: {
-      display: true,
+      display: props.showLegend!==undefined?false:true,
       position: 'bottom'
     },
     tooltips: {
@@ -85,8 +85,14 @@ export default ( props ) => {
     },
     plugins: {
        datalabels: {
-          display: 'auto',
+          // display: ,
+         display: ctx => {
+           let i = ctx.dataIndex
+           return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 3)
+         },
          // color: '#292929CC',
+        align: 'end',
+        anchor: 'end',
         color: props.theme.color,
          labels: {
            title: { font: { weight: 'bold', style: 'italic', family: 'monospace' } }

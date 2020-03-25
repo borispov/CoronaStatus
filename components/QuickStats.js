@@ -31,17 +31,17 @@ const Row = styled.div`
 
 const Col = styled.div`
   text-align: center;
-  padding: 5px 10px;
+  padding: 8px 10px;
   font-weight: 700;
   border-right-width: 1px;
   // border-top-left-radius: 5px;
   // border-bottom-left-radius: 5px;
-  border-left: 1px solid #38383b;
-  border-bottom: 1px solid #38383b;
-  border-right-color: #38383b;
-  border-top: 1px solid #38383b;
+  border-left: 2px solid #38383b;
+  border-bottom: 2px solid #38383b;
+  border-right-color: 2px solid #38383b;
+  border-top: 2px solid #38383b;
   // color: #00b065;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.statColor};
   // background-color: #1c1c1d;
   background-color: ${props => props.theme.bgColor};
   flex: 0 0 20%;
@@ -55,11 +55,9 @@ export default ({ S, country }) => {
   return (
     <Container>
       <Row>
-        <Col style={{ borderLeft: '1px solid #38383b', borderTopRightRadius: '5px', borderBottomRightRadius: '5px', borderRightColor: '#38383b' }}>
-          <h3>
+        <Col style={{ borderRight: '2px solid #38383b', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
+          <h3 style={{fontWeight: 'bold', display: 'inline-block', paddingTop: '8px', fontSize: '20px'}}>
             {country}
-            <br />
-            <small>מדינה</small>
         </h3>
         </Col>
         <Col>
@@ -83,7 +81,7 @@ export default ({ S, country }) => {
             <small>מקרי מוות</small>
         </h3>
         </Col>
-        <Col style={{ borderLeft: '1px solid #38383b', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
+        <Col style={{ borderLeft: '2px solid #38383b', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
           <h3>
             {S.todayCases}
             <br />

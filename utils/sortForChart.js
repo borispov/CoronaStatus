@@ -61,19 +61,21 @@ const sortForChart = obj => {
       label: 'cases',
       data: cases,
       backgroundColor: '#2A4561',
-      borderColor: '#97D3ED',
+      // backgroundColor: 'rgb(235, 65, 15)',
+      borderColor: 'rgb(235, 65, 15)',
+      // borderColor: '#97D3ED',
       strokeColor: "#ADFF2F",
       pointBorderColor: 'rgba(75,10,192,0)',
       pointBackgroundColor: '#fff',
       pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
       pointRadius: 0,
       borderWidth: 5,
-      datalabels: {
+      // datalabels: {
         // display: ctx => !(ctx.dataIndex % 5),
-        display: 'auto',
-        align: 'end',
-        anchor: 'end'
-      }
+      //   display: 'auto',
+      //   align: 'end',
+      //   anchor: 'end'
+      // }
     }
   ]
 
