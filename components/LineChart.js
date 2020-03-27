@@ -10,6 +10,10 @@ const Div = styled.div`
   margin-bottom: 48px;
   height: 375px;
   width: 80%;
+  direction: rtl;
+  > * {
+    direction: rtl;
+  }
   @media (max-width: 768px) {
     height: 40vh;
     margin-bottom: 48px;
