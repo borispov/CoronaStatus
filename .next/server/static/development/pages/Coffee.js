@@ -2320,6 +2320,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/Coffee.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2331,69 +2333,47 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div`
-  background: ${props => props.theme.bgColor};
-  color: ${props => props.theme.color};
-`;
-const Heading = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.h1`
-  font-size: 4.5rem;
-  color: ${props => props.theme.color};
-  font-family: 'Montserrat';
-  line-height: 1.5;
-`;
-const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.p`
-  font-size: 16px;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.5;
-  padding: 2px;
-  color: ${props => props.theme.lightColor};
-`;
-const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_6___default()(Heading)`
-  margin-top: 8px;
-  font-size: 1.6rem;
-  color: ${props => props.theme.color};
-`;
-const Box = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div`
-  max-width: 620px;
-  width: 100%;
-  padding: 12px;
-  height: auto;
-  margin: 0 auto;
-  background: ${props => props.theme.bgColor}DD;
-`;
-const BoxTitle = styled_components__WEBPACK_IMPORTED_MODULE_6___default()(Heading)`
-  font-size: 18px;
-  line-height: 1.2;
-`;
-const BoxButtons = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div`
-  margin: 6px;
-  padding: 8px;
-  > button {
-    margin-left: 12px;
-  }
-`;
-const BoxCount = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div`
-  display: inline-block;
-  padding: 6px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  margin-left: 12px;
-  width: 62px;
-  border-radius: 16px;
-  background: ${props => props.theme.textColor};
-  color: ${props => props.theme.headerBg};
-`;
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div.withConfig({
+  displayName: "Coffee__Wrapper",
+  componentId: "wfmxm6-0"
+})(["background:", ";color:", ";"], props => props.theme.bgColor, props => props.theme.color);
+const Heading = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.h1.withConfig({
+  displayName: "Coffee__Heading",
+  componentId: "wfmxm6-1"
+})(["font-size:4.5rem;color:", ";font-family:'Montserrat';line-height:1.5;"], props => props.theme.color);
+const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.p.withConfig({
+  displayName: "Coffee__Paragraph",
+  componentId: "wfmxm6-2"
+})(["font-size:16px;max-width:480px;margin:0 auto;line-height:1.5;padding:2px;color:", ";"], props => props.theme.lightColor);
+const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_6___default()(Heading).withConfig({
+  displayName: "Coffee__Heading2",
+  componentId: "wfmxm6-3"
+})(["margin-top:8px;font-size:1.6rem;color:", ";"], props => props.theme.color);
+const Box = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div.withConfig({
+  displayName: "Coffee__Box",
+  componentId: "wfmxm6-4"
+})(["max-width:620px;width:100%;padding:12px;height:auto;margin:0 auto;background:", "DD;"], props => props.theme.bgColor);
+const BoxTitle = styled_components__WEBPACK_IMPORTED_MODULE_6___default()(Heading).withConfig({
+  displayName: "Coffee__BoxTitle",
+  componentId: "wfmxm6-5"
+})(["font-size:18px;line-height:1.2;"]);
+const BoxButtons = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div.withConfig({
+  displayName: "Coffee__BoxButtons",
+  componentId: "wfmxm6-6"
+})(["margin:6px;padding:8px;> button{margin-left:12px;}"]);
+const BoxCount = styled_components__WEBPACK_IMPORTED_MODULE_6___default.a.div.withConfig({
+  displayName: "Coffee__BoxCount",
+  componentId: "wfmxm6-7"
+})(["display:inline-block;padding:6px;text-align:center;font-size:16px;font-weight:bold;margin-left:12px;width:62px;border-radius:16px;background:", ";color:", ";"], props => props.theme.textColor, props => props.theme.headerBg);
 const hebText = 'שלום ותודה רבה לכם על כך שהנכם שוקלים לבצע תרומה עבור החזקת האתר הזה. אתר זה חינמי ופתוח לשימוש כלל הציבור. היני מודה לכם על זמנכם.';
 const engText = 'Hello and thank you for considering purchasing me a coffee in such unpleasant times. This website is free for all. As time allows, I\'ll keep updating and adding features.';
 const farewellEng = 'Take care of yourself and your beloved ones.';
 const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
-/* harmony default export */ __webpack_exports__["default"] = (({
-  isHeb,
-  theme
-}) => {
-  console.log(isHeb);
+/* harmony default export */ __webpack_exports__["default"] = (() => {
+  const theme = _utils_themes__WEBPACK_IMPORTED_MODULE_5__["themes"].light;
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_8__["useRouter"])();
+  const isHeb = router.query.isHeb || false;
   const {
     0: counter,
     1: setCounter
@@ -2421,49 +2401,49 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
   return __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx(_components_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx(Heading, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 102
     },
     __self: undefined
-  }, isHeb ? 'תודה רבה!' : 'Thank You!'), __jsx(Paragraph, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }, isHeb ? hebText : engText), __jsx(Heading2, {
+  }, isHeb && 'תודה רבה!' || 'Thank You!'), __jsx(Paragraph, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 103
     },
     __self: undefined
+  }, isHeb ? hebText : engText), __jsx(Heading2, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
   }, isHeb ? farewellHeb : farewellEng), __jsx(Box, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx(BoxTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 108
     },
     __self: undefined
-  }, isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'), __jsx(BoxButtons, {
+  }, !isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'), __jsx(BoxButtons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 109
     },
     __self: undefined
   }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2475,7 +2455,7 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     color: "white",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 110
     },
     __self: undefined
   }, "+"), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2487,43 +2467,22 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     color: "white",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 111
     },
     __self: undefined
   }, "-"), __jsx(BoxCount, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
-  }, counter, "$"))), __jsx(BoxButtons, {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 112
     },
     __self: undefined
-  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    pointer: true,
-    bgColor: "#218838",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: undefined
-  }, __jsx("a", {
-    style: {
-      textDecoration: 'none',
-      color: 'inherit'
-    },
-    href: 'https://paypal.me/BPov/' + counter,
-    target: "_blank",
+  }, counter, "$")), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 114
     },
     __self: undefined
-  }, isHeb ? 'המשך' : 'Support')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    href: "/",
+  }, error ? isHeb && errorHeb || errorEng : '')), __jsx(BoxButtons, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 116
@@ -2537,7 +2496,44 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
       lineNumber: 117
     },
     __self: undefined
-  }, isHeb ? 'חזור לאתר' : 'Back')))));
+  }, __jsx("a", {
+    style: {
+      textDecoration: 'none',
+      color: 'inherit'
+    },
+    href: 'https://paypal.me/BPov/' + counter,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: undefined
+  }, isHeb ? 'המשך' : 'Support')), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    pointer: true,
+    bgColor: "#218838",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121
+    },
+    __self: undefined
+  }, __jsx("a", {
+    style: {
+      textDecoration: 'none',
+      color: 'inherit'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122
+    },
+    __self: undefined
+  }, isHeb ? 'חזור לאתר' : 'Back'))))));
 });
 
 /***/ }),
@@ -2634,6 +2630,17 @@ const themes = {
 
 module.exports = __webpack_require__(/*! /Users/raypo/Desktop/Projectos/CoronaStatus/pages/Coffee.js */"./pages/Coffee.js");
 
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

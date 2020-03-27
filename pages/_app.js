@@ -8,11 +8,12 @@ import * as gtag from '../utils/gtag'
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
 export default class MyApp extends App {
+
  render() {
     const { Component, pageProps } = this.props
 
     return (
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     )
   }
 }

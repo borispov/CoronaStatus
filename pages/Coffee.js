@@ -6,6 +6,7 @@ import Button from '../components/Button'
 import { themes } from '../utils/themes'
 import styled, { css, ThemeProvider } from 'styled-components'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   background: ${props => props.theme.bgColor};
@@ -73,7 +74,10 @@ const engText = 'Hello and thank you for considering purchasing me a coffee in s
 const farewellEng = 'Take care of yourself and your beloved ones.'
 const farewellHeb = 'שמרו על עצמכם ועל אהובכם'
 
-export default ({ isHeb, theme }) => {
+export default () => {
+  const theme = themes.light
+  const router = useRouter()
+  const isHeb = router.query.isHeb || false
   const [counter, setCounter] = useState(2);
   const [error, setError] = useState(false)
 
@@ -95,27 +99,31 @@ export default ({ isHeb, theme }) => {
   return (
     <Wrapper>
       <Container>
-        <Heading>{ isHeb? 'תודה רבה!' : 'Thank You!' }</Heading>
+        <Heading>{ isHeb && 'תודה רבה!' || 'Thank You!' }</Heading>
         <Paragraph>
           { isHeb ? hebText : engText }
         </Paragraph>
         <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
         <Box>
-          <BoxTitle>{isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</BoxTitle>
+          <BoxTitle>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</BoxTitle>
           <BoxButtons>
             <Button onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
             <Button onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
             <BoxCount>{ counter }$</BoxCount>
           </BoxButtons>
+          <p>{error ? (isHeb &&errorHeb || errorEng) : ''}</p>
         </Box>
         <BoxButtons>
           <Button pointer bgColor='#218838'>
-            <a style={{textDecoration: 'none', color: 'inherit' }}href={'https://paypal.me/BPov/' + counter} target="_blank">{isHeb ? 'המשך' : 'Support'}</a>
+            <a style={{textDecoration: 'none', color: 'inherit' }} href={'https://paypal.me/BPov/' + counter} target="_blank">{isHeb ? 'המשך' : 'Support'}</a>
           </Button>
-          <Link href="/">
-            <Button pointer bgColor='#218838'>{ isHeb ? 'חזור לאתר' : 'Back' }
-            </Button>
-          </Link>
+          <Button pointer bgColor='#218838'>
+            <Link href="/">
+              <a style={{textDecoration: 'none', color: 'inherit' }}>
+              { isHeb ? 'חזור לאתר' : 'Back' }
+            </a>
+            </Link>
+          </Button>
         </BoxButtons>
 
       </Container>

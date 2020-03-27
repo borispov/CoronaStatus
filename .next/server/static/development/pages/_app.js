@@ -431,20 +431,13 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       Component,
       pageProps
     } = this.props;
-    return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
-      theme: _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"].light,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx(Component, _extends({}, pageProps, {
+    return __jsx(Component, _extends({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: this
-    })));
+    }));
   }
 
 }
