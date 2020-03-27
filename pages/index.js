@@ -27,6 +27,10 @@ const ThemeIcon = css`
   height: 4rem;
   margin-left: auto;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 3rem;
+    height: 3rem;
+  }
 `
 
 const MoonIcon = styled(MoonSVG)`
@@ -66,7 +70,6 @@ const LangBtn = styled.button`
   margin: 0 6px;
   margin-left: 16px;
   @media (max-width: 768px) {
-    width: 30px;
     font-size: 12px;
     font-weight: 400;
     padding: 4px 6px;
@@ -95,7 +98,7 @@ export default function IndexPage() {
       <ThemeProvider theme={theme}>
         <GlobalStyle lang={lang}/>
 
-        <Header title='C19.FeeD'>
+        <Header title='C19.FeeD' theme={theme} isHeb={lang === 'heb'}>
           { themeButton }
           <LangBtn onClick={handleLanguage}>{displayLang}</LangBtn>
         </Header>

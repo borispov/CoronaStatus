@@ -17,7 +17,8 @@ export const themes = {
     test: 'linear-gradient(45deg, #cc0404, #000000d6)',
     btnBg: '#344955',
     btnColor: '#fff',
-    statColor: '#1A74D6'
+    statColor: '#1A74D6',
+    lightColor: '#767676'
   },
   dark: {
     type: 'dark',
@@ -33,6 +34,7 @@ export const themes = {
     test: 'linear-gradient(45deg, #cc0404, #000000d6)',
     btnBg: '#344955',
     btnColor: '#fff',
-    statColor: '#1A74D6'
+    statColor: '#1A74D6',
+    lightColor: '#919695'
   },
 }

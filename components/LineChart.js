@@ -9,7 +9,7 @@ const Div = styled.div`
   margin-right: auto;
   margin-bottom: 48px;
   height: 375px;
-  width: 60vw;
+  width: 80%;
   @media (max-width: 768px) {
     height: 40vh;
     margin-bottom: 48px;

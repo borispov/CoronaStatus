@@ -1080,12 +1080,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
         lineNumber: 10
       },
       __self: this
-    }, __jsx("script", {
+    }, __jsx("link", {
+      href: "https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap",
+      rel: "stylesheet",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }), __jsx("script", {
       async: true,
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_2__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 17
       },
       __self: this
     }), __jsx("script", {
@@ -1101,25 +1109,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 21
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 34
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 35
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 36
       },
       __self: this
     })));

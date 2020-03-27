@@ -9,6 +9,11 @@ export default class extends Document {
       <html>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
+
+          <link
+            href='https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap'
+            rel='stylesheet'
+          />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

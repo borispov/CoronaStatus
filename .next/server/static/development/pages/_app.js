@@ -402,16 +402,52 @@ function createUrl(router) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/_app.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
-next_router__WEBPACK_IMPORTED_MODULE_1___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_2__["pageview"](url));
-/* harmony default export */ __webpack_exports__["default"] = (next_app__WEBPACK_IMPORTED_MODULE_0___default.a);
+
+
+
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_5__["pageview"](url));
+class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
+  render() {
+    const {
+      Component,
+      pageProps
+    } = this.props;
+    return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
+      theme: _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"].light,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, __jsx(Component, _extends({}, pageProps, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    })));
+  }
+
+}
 
 /***/ }),
 
@@ -450,6 +486,58 @@ const event = ({
 
 /***/ }),
 
+/***/ "./utils/themes.js":
+/*!*************************!*\
+  !*** ./utils/themes.js ***!
+  \*************************/
+/*! exports provided: themes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themes", function() { return themes; });
+const themes = {
+  common: {
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+  },
+  light: {
+    type: 'light',
+    bgColor: 'rgb(250, 250, 252)',
+    headerBg: 'rgb(250, 250, 252)',
+    boxBg: 'rgba(50, 150, 252, 0.8)',
+    color: '#3E4C59',
+    searchBgColor: '#E4E7EB',
+    boxShadow: '0.8rem 0.8rem 1.5rem gray',
+    categoryColor: '#999',
+    categoryHoverColor: '#333',
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6',
+    lightColor: '#767676'
+  },
+  dark: {
+    type: 'dark',
+    // bgColor: '#1F2933',
+    bgColor: '#364061',
+    headerBg: '#3d444b',
+    color: '#E4E7EB',
+    searchBgColor: '#E4E7EB',
+    boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
+    categoryColor: '#CBD2D9',
+    categoryHoverColor: '#9AA5B1',
+    textColor: '#ED3833',
+    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
+    btnBg: '#344955',
+    btnColor: '#fff',
+    statColor: '#1A74D6',
+    lightColor: '#919695'
+  }
+};
+
+/***/ }),
+
 /***/ 0:
 /*!****************************************!*\
   !*** multi private-next-pages/_app.js ***!
@@ -481,6 +569,17 @@ module.exports = require("next/router");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

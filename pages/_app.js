@@ -1,8 +1,20 @@
 import App from 'next/app'
 import Router from 'next/router'
+import { ThemeProvider } from 'styled-components'
+import { themes } from '../utils/themes'
 
 import * as gtag from '../utils/gtag'
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
-export default App
+export default class MyApp extends App {
+ render() {
+    const { Component, pageProps } = this.props
+
+    return (
+      <ThemeProvider theme={themes.light}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    )
+  }
+}

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
+
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
 
   *, *::before, *::after {
       box-sizing: border-box;
@@ -23,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   .Select {
     color: black !important;
     font-size: 17px;
-    font-family: 'Helvetica';
+    font-family: 'Montserrat';
   }
 
 

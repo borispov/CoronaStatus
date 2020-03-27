@@ -18,7 +18,8 @@ const Content = styled.div`
 export default () => (
   <Wrapper>
     <Content>
-      <h1>Coronavirus status</h1>
+      <h1>Coronavirus data feed. <small>By: Boris Povolotsky</small></h1>
+      <p> Take Care</p>
     </Content>
   </Wrapper>
 )
