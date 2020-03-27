@@ -12,9 +12,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <ThemeProvider theme={themes.light}>
         <Component {...pageProps} />
-      </ThemeProvider>
     )
   }
 }

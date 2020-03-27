@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
-
   *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;

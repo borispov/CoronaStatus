@@ -74,7 +74,6 @@ const farewellEng = 'Take care of yourself and your beloved ones.'
 const farewellHeb = 'שמרו על עצמכם ועל אהובכם'
 
 export default ({ isHeb, theme }) => {
-  console.log(isHeb);
   const [counter, setCounter] = useState(2);
   const [error, setError] = useState(false)
 
