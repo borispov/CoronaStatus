@@ -36,11 +36,13 @@ const Header = styled.header`
 `
 
 const Nav = styled.nav`
-  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
 `
 
 const List = styled.ul`

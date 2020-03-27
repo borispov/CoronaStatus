@@ -895,7 +895,7 @@ var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].header.wi
 var Nav = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].nav.withConfig({
   displayName: "Header__Nav",
   componentId: "sc-1yguf34-3"
-})(["margin-top:10px;display:flex;align-items:center;justify-content:space-between;width:100%;"]);
+})(["display:flex;align-items:center;justify-content:space-between;width:100%;@media (max-width:768px){margin-top:10px;}"]);
 var List = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul.withConfig({
   displayName: "Header__List",
   componentId: "sc-1yguf34-4"
@@ -926,7 +926,7 @@ var Href = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(nex
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 90
     },
     __self: this
   }, __jsx("div", {
@@ -936,37 +936,37 @@ var Href = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(nex
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 91
     },
     __self: this
   }, __jsx(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 92
     },
     __self: this
   }, __jsx(Nav, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 93
     },
     __self: this
   }, __jsx(List, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 94
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 95
     },
     __self: this
   }, 'C19feed'), __jsx(Item, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 96
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -978,7 +978,7 @@ var Href = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(nex
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 97
     },
     __self: this
   }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -987,19 +987,19 @@ var Href = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(nex
     link: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 101
     },
     __self: this
   }, __jsx(CoffeeIcon, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 102
     },
     __self: this
   }), "Buy Me A Coffix")))), __jsx(Side, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 109
     },
     __self: this
   }, " ", children, " ")))));
@@ -59114,7 +59114,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -59137,5 +59137,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
