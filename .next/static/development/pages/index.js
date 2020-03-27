@@ -122,30 +122,41 @@ var popKey = function popKey(o) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Button.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-var Btn = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
+var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "Button__Btn",
   componentId: "sc-1h1khwv-0"
-})(["border-radius:4px;padding:10px 14px;font-size:16px;background:", ";color:", ";font-family:'Sans'"], function (props) {
-  return props.theme.btnBg;
+})(["border-radius:4px;padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";"], function (props) {
+  return props.small && '8px 10px' || '10px 14px';
 }, function (props) {
-  return props.theme.btnColor;
+  return props.small ? '14px' : '16px';
+}, function (props) {
+  return props.bgColor && props.bgColor || props.theme.btnBg;
+}, function (props) {
+  return props.btnColor && props.btnColor || props.theme.btnColor;
+}, function (props) {
+  return props.border ? props.border : 'none';
+}, function (props) {
+  return props.bold && 'bold' || 'normal';
 });
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  return __jsx(Btn, {
-    onClick: props.onClick,
+  return __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    onClick: props.onClick
+  }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 14
     },
     __self: this
-  }, props.children);
+  }), props.children);
 });
 
 /***/ }),
@@ -568,7 +579,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Container",
   componentId: "sc-1p5fd2u-0"
-})(["max-width:992px;margin:0 auto;text-align:center;"]);
+})(["max-width:", ";margin:0 auto;text-align:center;"], function (props) {
+  return props.mw ? props.mw : '992px';
+});
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Container, {
     __source: {
@@ -594,16 +607,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
 /* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
+/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
+/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -618,31 +630,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-
-var allCountries = {
-  israel: '',
-  usa: '',
-  uk: '',
-  france: '',
-  lebanon: '',
-  germany: '',
-  poland: '',
-  russia: '',
-  india: '',
-  ukraine: '',
-  moldova: '',
-  spain: '',
-  italy: ''
-};
-
-var translateCountries = function translateCountries(countries) {
-  return function (cn) {
-    return countries[Object.keys(countries).filter(function (c) {
-      return c === 'cn';
-    })];
-  };
-};
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var theme = _ref.theme,
@@ -662,15 +649,15 @@ var translateCountries = function translateCountries(countries) {
 
   var url = 'https://covid19.borisky.me/api/v1/';
 
-  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_4__["default"])(country),
+  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_3__["default"])(country),
       countryStats = _useTime.countryStats;
 
-  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, country),
+  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, country),
       todayStats = _useTodayStats.todayStats;
 
-  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_5__["default"])(url, 'world').todayStats;
+  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, 'world').todayStats;
 
-  var _useCountries = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_6__["default"])(),
+  var _useCountries = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_5__["default"])(),
       countries = _useCountries.countries;
 
   var worldTodaySorted = worldToday && {
@@ -704,29 +691,22 @@ var translateCountries = function translateCountries(countries) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 56
     },
     __self: this
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "Covid19 Status",
+  }, __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 57
     },
     __self: this
-  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 59
     },
     __self: this
-  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isHeb: lang === 'heb',
     type: "line",
     labels: countryStats.labels,
@@ -740,7 +720,7 @@ var translateCountries = function translateCountries(countries) {
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 64
     },
     __self: this
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -749,7 +729,7 @@ var translateCountries = function translateCountries(countries) {
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 77
     },
     __self: this
   }), __jsx("form", {
@@ -760,7 +740,7 @@ var translateCountries = function translateCountries(countries) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 83
     },
     __self: this
   }, __jsx("label", {
@@ -769,17 +749,18 @@ var translateCountries = function translateCountries(countries) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 86
     },
     __self: this
-  }, lang === 'eng' ? "Search For Country:" : "\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, lang === 'eng' ? "Data For Country:" : "\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_11__["default"], {
     className: 'Select',
     options: selectOptions,
     value: country,
     onChange: handleChange,
+    placeholder: country || 'Get Country Stats',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 94
     },
     __self: this
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -788,20 +769,72 @@ var translateCountries = function translateCountries(countries) {
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 103
     },
     __self: this
-  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
     showWorld: showWorld,
     theme: theme,
     country: country,
     isHeb: lang === 'heb',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 109
     },
     __self: this
   })));
+});
+
+/***/ }),
+
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Footer.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Footer__Wrapper",
+  componentId: "u34t4c-0"
+})(["clear:both;position:relative;bottom:0;height:3.5rem;width:100%;background:", ";color:", ";margin-top:-3.5rem;"], function (props) {
+  return props.theme.color;
+}, function (props) {
+  return props.theme.bgColor;
+});
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Footer__Content",
+  componentId: "u34t4c-1"
+})(["text-align:center;"]);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return __jsx(Wrapper, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, __jsx(Content, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, "Coronavirus status")));
 });
 
 /***/ }),
@@ -818,33 +851,115 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Header.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
-  displayName: "Header__Title",
-  componentId: "sc-1yguf34-0"
-})(["align-self:center;color:#e6e6e6;font-size:4rem;font-family:monospace;text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);"]);
+
+
+ // import Logo from '../assets/icons/logo_transparent.png'
+
 var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__Wrap",
+  componentId: "sc-1yguf34-0"
+})(["direction:ltr;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].header.withConfig({
+  displayName: "Header",
   componentId: "sc-1yguf34-1"
-})(["display:flex;justify-content:center;position:relative;height:82px;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["display:flex;justify-content:space-between;"]);
+var Nav = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].nav.withConfig({
+  displayName: "Header__Nav",
+  componentId: "sc-1yguf34-2"
+})(["display:flex;align-items:center;justify-content:space-between;width:100%;"]);
+var List = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul.withConfig({
+  displayName: "Header__List",
+  componentId: "sc-1yguf34-3"
+})(["display:flex;align-items:center;"]);
+var Item = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li.withConfig({
+  displayName: "Header__Item",
+  componentId: "sc-1yguf34-4"
+})(["margin-top:20px;margin-left:40px;list-style:none;"]);
+var Side = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Header__Side",
+  componentId: "sc-1yguf34-5"
+})(["display:flex;margin-top:20px;"]);
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
+  displayName: "Header__Title",
+  componentId: "sc-1yguf34-6"
+})(["margin-top:20px;color:#e6e6e6;font-size:3.5rem;font-family:monospace;text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var title = _ref.title;
+  var title = _ref.title,
+      children = _ref.children;
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 57
+    },
+    __self: this
+  }, __jsx("div", {
+    style: {
+      maxWidth: '820px',
+      margin: '0 auto'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }, __jsx(Header, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, __jsx(Nav, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, __jsx(List, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 62
     },
     __self: this
-  }, title));
+  }, title), __jsx(Item, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: this
+  }, __jsx("a", {
+    href: "https://covid19.borisky.me/coffee-break",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    bold: true,
+    small: true,
+    bgColor: "#c82333",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }, "Buy Me A Coffee")))), __jsx(Side, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, " ", children, " ")))));
 });
 
 /***/ }),
@@ -950,7 +1065,7 @@ var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.with
 var Section = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "InfoSection__Section",
   componentId: "sc-1anhjcp-1"
-})(["border-radius:4px;background:", ";color:", ";flex:0 0 50%;max-width:33%;position:relative;width:100%;border:1px solid;border-color:", ";margin:2px;@media (max-width:768px){flex-direction:column;flex:0 0 100%;max-width:85%;}"], function (props) {
+})(["border-radius:4px;background:", ";color:", ";flex:0 0 50%;max-width:33%;position:relative;width:100%;border:1px solid;border-color:", ";margin-left:8px;margin-right:8px;margin-top:16px;margin-bottom:16px;@media (max-width:768px){flex-direction:column;flex:0 0 100%;max-width:85%;}"], function (props) {
   return props.theme.bgColor;
 }, function (props) {
   return props.theme.color;
@@ -960,7 +1075,7 @@ var Section = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.with
 var SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h2.withConfig({
   displayName: "InfoSection__SectionTitle",
   componentId: "sc-1anhjcp-2"
-})(["color:", ";background:", ";font-size:20px;padding:4px 8px;border-bottom:1px solid black;"], function (props) {
+})(["color:", ";background:", ";font-size:20px;padding:4px 8px;margin-bottom:8px;border-bottom:1px solid black;"], function (props) {
   return props.theme.btnColor;
 }, function (props) {
   return props.theme.boxBg;
@@ -968,15 +1083,19 @@ var SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h2.
 var Link = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-weight:700;font-size:18px;line-height:1.5;padding:0 4px;"], function (props) {
+})(["text-decoration:none;color:", ";font-weight:700;font-size:18px;line-height:1.5;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], function (props) {
   return props.theme.statColor;
 });
 var Desc = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].p.withConfig({
   displayName: "InfoSection__Desc",
   componentId: "sc-1anhjcp-4"
-})(["font-size:16px;line-height:1.22;color:", ";padding:0 4px;"], function (props) {
+})(["font-size:16px;line-height:1.3;color:", ";padding:0 4px;padding-bottom:12px;@media (max-width:768px){font-size:14px;}"], function (props) {
   return props.theme.color;
 });
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h1.withConfig({
+  displayName: "InfoSection__Title",
+  componentId: "sc-1anhjcp-5"
+})(["font-size:28px;margin:36px auto;text-shadow:0 2px 6px rgba(0,0,0,0.16);text-align:center;"]);
 
 var reduceToCat = function reduceToCat(a, _ref) {
   var category = _ref.category,
@@ -998,20 +1117,20 @@ var mapDataToSection = function mapDataToSection(item, idx) {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 87
     },
     __self: this
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 88
     },
     __self: this
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 89
     },
     __self: this
   }, item.description));
@@ -1023,13 +1142,13 @@ var renderSection = function renderSection(secData) {
       key: ix,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 96
       },
       __self: this
     }, __jsx(SectionTitle, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 97
       },
       __self: this
     }, it.category), it.data.map(mapDataToSection));
@@ -1095,27 +1214,22 @@ var renderSection = function renderSection(secData) {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 132
       },
       __self: this
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
   }
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx("h1", {
-    style: {
-      marginBot: '12px',
-      fontSize: '24px',
-      textAlign: 'center'
-    },
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 137
     },
     __self: this
-  }, "Useful Information For All"), __jsx(Wrapper, {
+  }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 138
     },
     __self: this
   }, data && renderSection(data)));
@@ -1191,6 +1305,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+var Div = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
+  displayName: "LineChart__Div",
+  componentId: "sc-9esmyi-0"
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:40vh;width:60vw;@media (max-width:768px){height:40vh;margin-bottom:48px;width:85vw;}"]);
 
 var filterBy5 = function filterBy5(x, i) {
   return !(i % 4);
@@ -1198,14 +1316,6 @@ var filterBy5 = function filterBy5(x, i) {
 
 var subtractArray = function subtractArray(arr) {
   return arr.filter(filterBy5);
-};
-
-var subCases = function subCases(arr) {
-  return arr[0];
-};
-
-var defaultSettings = {
-  fill: true
 };
 
 var parseDatasets = function parseDatasets(arrayOfSets, fill) {
@@ -1233,7 +1343,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
 
   var options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     onAnimationComplete: function onAnimationComplete() {
       this.showTooltip(this.datasets[0].points, true);
     },
@@ -1250,7 +1360,7 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
       }],
       yAxes: [{
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 5
         },
         gridLines: {
           color: 'rgba(200, 200, 200, 0.08)',
@@ -1281,10 +1391,11 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
         // display: ,
         display: function display(ctx) {
           var i = ctx.dataIndex;
-          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 3);
+          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 5);
         },
-        // color: '#292929CC',
-        align: 'end',
+        align: function align(ctx) {
+          return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'start' : 'end';
+        },
         anchor: 'end',
         color: props.theme.color,
         labels: {
@@ -1299,13 +1410,10 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
       }
     }
   };
-  return __jsx("div", {
-    style: {
-      marginTop: '32px'
-    },
+  return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 113
     },
     __self: this
   }, __jsx("h1", {
@@ -1314,18 +1422,18 @@ var parseDatasets = function parseDatasets(arrayOfSets, fill) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 114
     },
     __self: this
   }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
     label: props.label,
     data: data,
     width: 100,
-    options: options,
-    height: 40,
+    options: options // height={40}
+    ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 115
     },
     __self: this
   }));
@@ -1360,24 +1468,28 @@ var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-2"
-})(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid #38383b;border-bottom:2px solid #38383b;border-right-color:2px solid #38383b;border-top:2px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;"], function (props) {
+})(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid #38383b;border-bottom:2px solid #38383b;border-right-color:2px solid #38383b;border-top:2px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;justify-content:center;"], function (props) {
   return props.theme.statColor;
 }, function (props) {
   return props.theme.bgColor;
 });
+var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withConfig({
+  displayName: "QuickStats__Country",
+  componentId: "lmgi17-3"
+})(["font-size:18px;font-weight:bold;align-self:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var S = _ref.S,
       country = _ref.country;
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 65
     },
     __self: this
   }, __jsx(Row, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 66
     },
     __self: this
   }, __jsx(Col, {
@@ -1388,46 +1500,16 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, __jsx("h3", {
-    style: {
-      fontWeight: 'bold',
-      display: 'inline-block',
-      paddingTop: '8px',
-      fontSize: '20px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, country)), __jsx(Col, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
-  }, S.cases, __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: this
-  }), __jsx("small", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 67
     },
     __self: this
-  }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
+  }, __jsx(Country, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }, " ", country, " ")), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 70
@@ -1439,7 +1521,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 71
     },
     __self: this
-  }, S.recovered, __jsx("br", {
+  }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 73
@@ -1451,7 +1533,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 74
     },
     __self: this
-  }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
+  }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 77
@@ -1463,7 +1545,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 78
     },
     __self: this
-  }, S.deaths, __jsx("br", {
+  }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 80
@@ -1475,12 +1557,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 81
     },
     __self: this
-  }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
-    style: {
-      borderLeft: '2px solid #38383b',
-      borderTopLeftRadius: '5px',
-      borderBottomLeftRadius: '5px'
-    },
+  }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 84
@@ -1492,7 +1569,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 85
     },
     __self: this
-  }, S.todayCases, __jsx("br", {
+  }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 87
@@ -1502,6 +1579,35 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     __source: {
       fileName: _jsxFileName,
       lineNumber: 88
+    },
+    __self: this
+  }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
+    style: {
+      borderLeft: '2px solid #38383b',
+      borderTopLeftRadius: '5px',
+      borderBottomLeftRadius: '5px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92
+    },
+    __self: this
+  }, S.todayCases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
     },
     __self: this
   }, "\u05DE\u05E7\u05E8\u05D9\u05DD \u05D7\u05D3\u05E9\u05D9\u05DD")))));
@@ -55369,7 +55475,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      height: 100vh;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n      // background: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-size: 1.75rem;\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n      // background: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Helvetica';\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-size: 1.75rem;\n  }\n  .lds-hourglass {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n  }\n  .lds-hourglass:after {\n    content: \" \";\n    display: block;\n    border-radius: 50%;\n    width: 0;\n    height: 0;\n    margin: 8px;\n    box-sizing: border-box;\n    border: 32px solid #fff;\n    border-color: #fff transparent #fff transparent;\n    animation: lds-hourglass 1.2s infinite;\n  }\n  @keyframes lds-hourglass {\n    0% {\n      transform: rotate(0);\n      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n    }\n    50% {\n      transform: rotate(900deg);\n      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    }\n    100% {\n      transform: rotate(1800deg);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -55413,7 +55519,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _utils_moon_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/moon.svg */ "./utils/moon.svg");
 /* harmony import */ var _assets_icons_sun_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/icons/sun.svg */ "./assets/icons/sun.svg");
-/* harmony import */ var _components_InfoSection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/InfoSection */ "./components/InfoSection.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
+/* harmony import */ var _components_InfoSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/InfoSection */ "./components/InfoSection.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
@@ -55429,7 +55538,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
- // const Moon = () => <MoonSVG />
+
+
+
+
 
 var lightTheme = function lightTheme() {
   return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['light']);
@@ -55439,11 +55551,11 @@ var darkTheme = function darkTheme() {
   return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['dark']);
 };
 
-var ThemeIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["width:3rem;height:3rem;margin-left:auto;cursor:pointer;"]);
+var ThemeIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["width:4rem;height:4rem;margin-left:auto;cursor:pointer;"]);
 var MoonIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_utils_moon_svg__WEBPACK_IMPORTED_MODULE_6__["default"]).withConfig({
   displayName: "pages__MoonIcon",
   componentId: "sc-1t8jk7a-0"
-})(["", ""], ThemeIcon);
+})(["", " color:lightblue;"], ThemeIcon);
 var SunIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_assets_icons_sun_svg__WEBPACK_IMPORTED_MODULE_7__["default"]).withConfig({
   displayName: "pages__SunIcon",
   componentId: "sc-1t8jk7a-1"
@@ -55465,15 +55577,11 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 var LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "pages__LangBtn",
   componentId: "sc-1t8jk7a-3"
-})(["background:", ";color:", ";font-size:14px;font-weight:600;padding:6px 10px;width:45px;outline:none;text-align:center;border:none;border-radius:6px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], function (props) {
+})(["position:relative;background:", ";color:", ";font-size:14px;font-weight:600;font-family:'Sans';padding:8px 10px;width:100%;outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;@media (max-width:768px){width:30px;font-size:12px;font-weight:400;padding:4px 6px;}"], function (props) {
   return props.theme.bgColor;
 }, function (props) {
   return props.theme.color;
 });
-var BtnContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "pages__BtnContainer",
-  componentId: "sc-1t8jk7a-4"
-})(["position:absolute;top:5%;right:3%;padding:0 12px;@media (max-width:768px){right:0%;top:8%;padding:0;}"]);
 function IndexPage() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(lightTheme()),
       theme = _useState[0],
@@ -55500,85 +55608,75 @@ function IndexPage() {
   };
 
   var isLight = theme.type === 'light';
+  var handleLanguage = lang === 'heb' ? setEng : setHeb;
+
+  var themeButton = isLight && __jsx(MoonIcon, {
+    onClick: setDarkTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }) || __jsx(SunIcon, {
+    onClick: setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  });
+
+  var displayLang = lang === 'heb' ? 'English' : 'עברית';
   return __jsx(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 95
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_3__["default"], {
     lang: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 96
     },
     __self: this
-  }), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    theme: theme,
-    lang: lang,
+  }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    title: "C19.FeeD",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 98
     },
     __self: this
-  }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, themeButton, __jsx(LangBtn, {
+    onClick: handleLanguage,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: this
+  }, displayLang)), __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    theme: theme,
+    lang: lang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: this
+  }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 105
     },
     __self: this
-  }), __jsx(BtnContainer, {
+  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 107
     },
     __self: this
-  }, __jsx(LangBtn, {
-    style: {
-      position: 'relative',
-      margin: '0 12px'
-    },
-    onClick: lang === 'heb' ? setEng : function () {},
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102
-    },
-    __self: this
-  }, "En"), __jsx(LangBtn, {
-    onClick: lang === 'eng' ? setHeb : function () {},
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106
-    },
-    __self: this
-  }, "\u05E2\u05D1\u05E8")), __jsx("div", {
-    style: {
-      position: 'absolute',
-      top: '5%',
-      left: '2%'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: this
-  }, theme.type === 'light' && __jsx(MoonIcon, {
-    onClick: setDarkTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: this
-  }), theme.type === 'dark' && __jsx(SunIcon, {
-    onClick: setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: this
-  }))));
+  })));
 }
 
 /***/ }),

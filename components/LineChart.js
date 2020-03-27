@@ -3,14 +3,23 @@ import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
 import styled from 'styled-components'
 
+const Div = styled.div`
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+  height: 40vh;
+  width: 60vw;
+  @media (max-width: 768px) {
+    height: 40vh;
+    margin-bottom: 48px;
+    width: 85vw;
+  }
+`
+
+
 const filterBy5 = (x, i) => !(i % 4)
 const subtractArray = arr => arr.filter(filterBy5)
-
-const subCases = arr => arr[0]
-
-const defaultSettings = {
-  fill: true
-}
 
 const parseDatasets = (arrayOfSets, fill) => {
   return arrayOfSets.map(set => ({
@@ -40,7 +49,7 @@ export default ( props ) => {
 
   var options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     onAnimationComplete: function(){
       this.showTooltip(this.datasets[0].points, true)
     },
@@ -57,7 +66,7 @@ export default ( props ) => {
         }],
         yAxes: [{
           ticks: {
-            maxTicksLimit: 6,
+            maxTicksLimit: 5,
           },
             gridLines: {
                 color: 'rgba(200, 200, 200, 0.08)',
@@ -86,12 +95,11 @@ export default ( props ) => {
     plugins: {
        datalabels: {
           // display: ,
-         display: ctx => {
-           let i = ctx.dataIndex
-           return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 3)
-         },
-         // color: '#292929CC',
-        align: 'end',
+        display: ctx => {
+          let i = ctx.dataIndex
+          return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 5)
+        },
+        align: ctx => { return ctx.dataIndex === ctx.dataset.data.length -1 ? 'start' : 'end' },
         anchor: 'end',
         color: props.theme.color,
          labels: {
@@ -102,15 +110,15 @@ export default ( props ) => {
 };
 
   return (
-    <div style={{marginTop: '32px'}}>
+    <Div>
       <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
         <Line
           label={props.label}
           data={data}
           width={100}
           options={options}
-          height={40}
+          // height={40}
         />
-    </div>
+    </Div>
   )
 }

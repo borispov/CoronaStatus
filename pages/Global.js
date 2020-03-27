@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
       position: relative;
-      height: 100vh;
+      min-height: 100%;
       max-width: 100%;
       font-size: 62.5%;
       background-color: ${props => props.theme.bgColor};
@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
   .Select {
     color: black !important;
     font-size: 17px;
+    font-family: 'Helvetica';
   }
 
 

@@ -48,6 +48,15 @@ const Col = styled.div`
   max-width: 20%;
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+const Country = styled.h3`
+  font-size: 18px;
+  font-weight: bold;
+  align-self: center;
 `
 
 export default ({ S, country }) => {
@@ -56,9 +65,7 @@ export default ({ S, country }) => {
     <Container>
       <Row>
         <Col style={{ borderRight: '2px solid #38383b', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
-          <h3 style={{fontWeight: 'bold', display: 'inline-block', paddingTop: '8px', fontSize: '20px'}}>
-            {country}
-        </h3>
+          <Country> {country} </Country>
         </Col>
         <Col>
           <h3>

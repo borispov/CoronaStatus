@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Input from './Input'
 import Stats from './Stats'
-import Header from './Header'
 import useTime from '../utils/useTime'
 import useTodayStats from '../utils/useTodayStats'
 import useCountries from '../utils/useCountries'
@@ -11,23 +10,6 @@ import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
 import styled from 'styled-components'
 import Select from 'react-select'
-
-const allCountries = {
-  israel: '',
-  usa: '',
-  uk: '',
-  france: '',
-  lebanon: '',
-  germany: '',
-  poland: '',
-  russia: '',
-  india: '',
-  ukraine: '',
-  moldova: '',
-  spain: '',
-  italy: '',
-}
-const translateCountries = countries => cn => countries[Object.keys(countries).filter(c => c === 'cn')]
 
 
 export default ({ theme, lang}) => {
@@ -72,7 +54,6 @@ export default ({ theme, lang}) => {
 
   return (
     <div>
-      <Header title='Covid19 Status' />
       <HeaderDescription />
 
       <Container>
@@ -105,8 +86,8 @@ export default ({ theme, lang}) => {
         <label style={{fontSize: '16px'}}>
           {
             lang === 'eng'
-            ? `Search For Country:`
-            : `חיפוש לפי מדינה`
+            ? `Data For Country:`
+            : `נתונים לפי מדינה`
           }
         </label>
 
@@ -115,6 +96,7 @@ export default ({ theme, lang}) => {
           options={selectOptions}
           value={country}
           onChange={handleChange}
+          placeholder={country || 'Get Country Stats'}
         />
       </form>
 

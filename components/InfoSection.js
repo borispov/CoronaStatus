@@ -11,10 +11,10 @@ const Wrapper = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 32px;
-@media (max-width: 768px) {
-  flex-direction: column;
-  align-content: center;
-}
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-content: center;
+  }
 `
 
 const Section = styled.div`
@@ -27,7 +27,11 @@ const Section = styled.div`
   width: 100%;
   border: 1px solid;
   border-color: ${props => props.theme.statColor};
-  margin: 2px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
   @media (max-width: 768px) {
     flex-direction: column;
     flex: 0 0 100%;
@@ -40,6 +44,7 @@ const SectionTitle = styled.h2`
   background: ${props => props.theme.boxBg};
   font-size: 20px;
   padding: 4px 8px;
+  margin-bottom: 8px;
   border-bottom: 1px solid black;
 `
 
@@ -49,14 +54,28 @@ const Link = styled.a`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;
-  padding: 0 4px;
+  padding: 6px 4px 2px 4px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 
 const Desc = styled.p`
   font-size: 16px;
-  line-height: 1.22;
+  line-height: 1.3;
   color: ${props => props.theme.color};
   padding: 0 4px;
+  padding-bottom: 12px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`
+
+const Title = styled.h1`
+  font-size: 28px;
+  margin: 36px auto;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.16);
+  text-align: center;
 `
 
 const reduceToCat = (a, { category, ...x}) => ({ category, data: a['data'].concat(x) })
@@ -115,16 +134,10 @@ export default () => {
 
   return (
     <>
-      <h1 style={{marginBot: '12px', fontSize: '24px', textAlign: 'center'}}>Useful Information For All</h1>
-
+      <Title>Resources</Title>
       <Wrapper>
-
-        {
-          data && renderSection(data)
-        }
-
+        { data && renderSection(data) }
       </Wrapper>
-
     </>
   )
 

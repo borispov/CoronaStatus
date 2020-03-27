@@ -5,11 +5,12 @@ import { themes } from '../utils/themes'
 import React, { useState } from 'react'
 import MoonSVG from '../utils/moon.svg'
 import SunSVG from '../assets/icons/sun.svg'
+import Header from '../components/Header'
+import Button from '../components/Button'
 
 import InfoSection from '../components/InfoSection'
+import Footer from '../components/Footer'
 
-
-// const Moon = () => <MoonSVG />
 
 const lightTheme = () => ({
   ...themes['common'],
@@ -22,14 +23,15 @@ const darkTheme = () => ({
 })
 
 const ThemeIcon = css`
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   margin-left: auto;
   cursor: pointer;
 `
 
 const MoonIcon = styled(MoonSVG)`
   ${ThemeIcon}
+  color: lightblue;
 `
 
 const SunIcon = styled(SunSVG)`
@@ -49,16 +51,20 @@ const Btn = styled.button`
   outline: none;
 `
 const LangBtn = styled.button`
+  position: relative;
   background: ${props => props.theme.bgColor};
   color: ${props => props.theme.color};
   font-size: 14px;
   font-weight: 600;
-  padding: 6px 10px;
-  width: 45px;
+  font-family: 'Sans';
+  padding: 8px 10px;
+  width: 100%;
   outline: none;
   text-align: center;
   border: none;
   border-radius: 6px;
+  margin: 0 6px;
+  margin-left: 16px;
   @media (max-width: 768px) {
     width: 30px;
     font-size: 12px;
@@ -66,18 +72,6 @@ const LangBtn = styled.button`
     padding: 4px 6px;
   }
 
-`
-
-const BtnContainer = styled.div`
-  position: absolute;
-  top: 5%;
-  right: 3%;
-  padding: 0 12px;
-  @media (max-width: 768px) {
-    right: 0%;
-    top: 8%;
-    padding: 0;
-  }
 `
 
 export default function IndexPage() {
@@ -90,27 +84,28 @@ export default function IndexPage() {
   const setEng = () => setLang('eng')
 
   const isLight = theme.type === 'light'
+  const handleLanguage = lang === 'heb' ? setEng : setHeb
+
+  const themeButton = isLight && <MoonIcon onClick={setDarkTheme} /> || <SunIcon onClick={setLightTheme} />
+  const displayLang = lang === 'heb' ? 'English' : 'עברית'
+
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle lang={lang}/>
+
+        <Header title='C19.FeeD'>
+          { themeButton }
+          <LangBtn onClick={handleLanguage}>{displayLang}</LangBtn>
+        </Header>
+
         <CoronaApp theme={theme} lang={lang}/>
+
         <InfoSection theme={theme} />
 
-        <BtnContainer>
-            <LangBtn
-              style={{position: 'relative', margin: '0 12px'}}
-              onClick={lang === 'heb' ? setEng : () => {}}
-            >En</LangBtn>
-            <LangBtn
-              onClick={lang === 'eng' ? setHeb : () => {}}
-            >עבר</LangBtn>
-        </BtnContainer>
-        <div style={{position: 'absolute', top: '5%', left: '2%'}}>
-        {theme.type === 'light' && <MoonIcon onClick={setDarkTheme} />}
-        {theme.type === 'dark' && <SunIcon onClick={setLightTheme} />}
-        </div>
+        <Footer />
+
       </ThemeProvider>
     </>
   )
