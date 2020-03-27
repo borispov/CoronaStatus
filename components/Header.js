@@ -61,8 +61,8 @@ export default ({ title, children }) => (
           <List>
             <Title>{title}</Title>
             <Item>
-              <a href='https://covid19.borisky.me/coffee-break'>
-                <Button bold small bgColor='#c82333'>Buy Me A Coffee</Button>
+              <a href='https://paypal.me/BPov/5'>
+                <Button bold small bgColor='#c82333'>Buy Me A Coffix</Button>
               </a>
             </Item>
           </List>

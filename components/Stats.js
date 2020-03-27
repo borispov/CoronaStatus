@@ -33,7 +33,7 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
       {
         todayStats &&
           <div style={{ border: '1px solid rgba(255, 60, 60, 0.022)', borderRadius: '6px', marginBottom: '16px' }}>
-            <QuickStats country={cn} S={todayStats}/>
+            <QuickStats country={cn} S={todayStats} isHeb={isHeb}/>
             {/*
             <Flex>
             <StatBlock 

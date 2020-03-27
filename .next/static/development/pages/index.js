@@ -938,7 +938,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withCon
     },
     __self: this
   }, __jsx("a", {
-    href: "https://covid19.borisky.me/coffee-break",
+    href: "https://paypal.me/BPov/5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64
@@ -953,7 +953,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withCon
       lineNumber: 65
     },
     __self: this
-  }, "Buy Me A Coffee")))), __jsx(Side, {
+  }, "Buy Me A Coffix")))), __jsx(Side, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 70
@@ -1308,7 +1308,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:40vh;width:60vw;@media (max-width:768px){height:40vh;margin-bottom:48px;width:85vw;}"]);
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;width:60vw;@media (max-width:768px){height:40vh;margin-bottom:48px;width:85vw;}"]);
 
 var filterBy5 = function filterBy5(x, i) {
   return !(i % 4);
@@ -1479,7 +1479,8 @@ var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withC
 })(["font-size:18px;font-weight:bold;align-self:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var S = _ref.S,
-      country = _ref.country;
+      country = _ref.country,
+      isHeb = _ref.isHeb;
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
@@ -1533,7 +1534,7 @@ var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withC
       lineNumber: 74
     },
     __self: this
-  }, "\u05E0\u05D3\u05D1\u05E7\u05D9\u05DD"))), __jsx(Col, {
+  }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 77
@@ -1557,7 +1558,7 @@ var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withC
       lineNumber: 81
     },
     __self: this
-  }, "\u05D4\u05D7\u05DC\u05D9\u05DE\u05D5"))), __jsx(Col, {
+  }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 84
@@ -1581,7 +1582,7 @@ var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withC
       lineNumber: 88
     },
     __self: this
-  }, "\u05DE\u05E7\u05E8\u05D9 \u05DE\u05D5\u05D5\u05EA"))), __jsx(Col, {
+  }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
     style: {
       borderLeft: '2px solid #38383b',
       borderTopLeftRadius: '5px',
@@ -1610,7 +1611,7 @@ var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withC
       lineNumber: 95
     },
     __self: this
-  }, "\u05DE\u05E7\u05E8\u05D9\u05DD \u05D7\u05D3\u05E9\u05D9\u05DD")))));
+  }, isHeb ? 'מקרים חדשים' : 'Today Cases')))));
 });
 
 /***/ }),
@@ -1781,6 +1782,7 @@ function Stats(_ref) {
   }, __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
     country: cn,
     S: todayStats,
+    isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36

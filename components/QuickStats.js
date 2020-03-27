@@ -59,7 +59,7 @@ const Country = styled.h3`
   align-self: center;
 `
 
-export default ({ S, country }) => {
+export default ({ S, country, isHeb}) => {
 
   return (
     <Container>
@@ -71,28 +71,28 @@ export default ({ S, country }) => {
           <h3>
             {S.cases}
             <br />
-            <small>נדבקים</small>
+            <small>{isHeb ? 'נדבקים' : 'Infected'}</small>
           </h3>
         </Col>
         <Col>
           <h3>
             {S.recovered}
             <br />
-            <small>החלימו</small>
+            <small>{isHeb ? 'החלימו': 'Recovered'}</small>
           </h3>
         </Col>
         <Col>
           <h3>
             {S.deaths}
             <br />
-            <small>מקרי מוות</small>
+            <small>{ isHeb ? 'מקרי מוות' : 'Deaths' }</small>
         </h3>
         </Col>
         <Col style={{ borderLeft: '2px solid #38383b', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
           <h3>
             {S.todayCases}
             <br />
-            <small>מקרים חדשים</small>
+            <small>{isHeb ? 'מקרים חדשים' : 'Today Cases'}</small>
         </h3>
         </Col>
       </Row>
