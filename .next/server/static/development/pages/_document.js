@@ -1111,18 +1111,58 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
         lineNumber: 15
       },
       __self: this
-    }), __jsx("title", {
+    }), __jsx("link", {
+      rel: "shortcut icon",
+      type: "image/x-icon",
+      href: "/favicon.ico",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
       },
       __self: this
-    }, "Coronavirus - Live Feed"), __jsx("link", {
+    }), __jsx("link", {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/favicon-32x32.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/favicon-16x16.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "manifest",
+      href: "/site.webmanifest",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), __jsx("link", {
       href: "https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 23
       },
       __self: this
     }), __jsx("script", {
@@ -1130,7 +1170,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_2__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 27
       },
       __self: this
     }), __jsx("script", {
@@ -1146,25 +1186,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 31
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 44
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 45
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 46
       },
       __self: this
     })));
