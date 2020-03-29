@@ -10,7 +10,6 @@ import styled from 'styled-components'
 const baseURL = `https://nCorona.live/api/v1/alltime/`
 
 const countryTimeData = async (cn) => {
-  console.log('fetchinGGGGG');
   const loc = cn || await currentCountry()
   const data = await axios.get(baseURL+loc)
   const dataRes = await sortForChart(data.data)
@@ -54,7 +53,6 @@ class CaseChart extends React.Component {
 
   async componentDidMount() {
     this.setState({ loading: true })
-    console.log(this.props);
 
     try {
       const timeStats = await worldTimeData()
@@ -97,7 +95,6 @@ class CaseChart extends React.Component {
       return <Container><h1>{this.state.error}</h1></Container>
     }
 
-    // console.log(this.state.worldCases);
     return (
       <Container >
         <p style={{margin: '82px 0 0 0'}}>

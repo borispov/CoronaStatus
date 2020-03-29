@@ -31,14 +31,12 @@ function useTodayStats(url, country) {
   useEffect(() => {
 
     async function fetchData() {
-      console.log('fetching data');
       setLoading(true)
       setError()
       let searchCountry = country || await currentCountry();
 
       const parsedCountry = parseCn(searchCountry);
       const URL = url + 'today/' + searchCountry.toLowerCase()
-      console.log(URL);
       const data = await fetch(URL)
           .then(res => res.json())
           .catch(err => setError(err))

@@ -12,7 +12,6 @@ function worldTimeData() {
 
   useEffect(() => {
     async function fetchData() {
-      console.log('RUNNINGGGGGG AGAIN');
       setLoading(true)
       setError()
       const data = await axios.get(baseURL)

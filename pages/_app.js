@@ -39,8 +39,6 @@ export default class MyApp extends App {
     const themeButton = (isLight && <MoonIcon onClick={this.setDarkTheme} />) || <SunIcon onClick={this.setLightTheme} />
     const { Component, pageProps } = this.props
 
-    console.log(isHeb);
-
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
