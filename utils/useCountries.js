@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const baseURL = `https://covid19.borisky.me/api/v1/countries`
+const baseURL = `https://nCorona.live/api/v1/countries`
 
 function useCountries() {
   const [error, setError] = useState(false);

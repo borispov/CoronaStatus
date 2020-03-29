@@ -12,8 +12,35 @@ const Btn = styled.button`
   cursor: ${props => props.link ? 'pointer' : 'cursor'};
   line-height: 1.5;
 `
+
+const LangBtn = styled.button`
+  position: relative;
+  background: ${props => props.theme.bgColor};
+  color: ${props => props.theme.color};
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Sans';
+  padding: 8px 10px;
+  width: 100%;
+  outline: none;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  margin: 0 6px;
+  margin-left: 16px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 6px;
+  }
+`
+
+
 export default (props) => (
-  <Btn onClick={props.onClick} {...props}>
-    {props.children}
-  </Btn>
-)
+  props.langBtn && 
+      <LangBtn {...props} >{props.children}</LangBtn>
+     || <Btn onClick={props.onClick} {...props}>
+      {props.children}
+    </Btn>
+
+  )

@@ -7,7 +7,7 @@ import Chart from './Chart'
 import Container from './Container'
 import styled from 'styled-components'
 
-const baseURL = `https://covid19.borisky.me/api/v1/alltime/`
+const baseURL = `https://nCorona.live/api/v1/alltime/`
 
 const countryTimeData = async (cn) => {
   console.log('fetchinGGGGG');

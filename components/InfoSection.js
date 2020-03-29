@@ -112,7 +112,7 @@ export default () => {
       setError()
       try {
 
-        const { data } = await axios.get('https://covid19.borisky.me/api/data/resources')
+        const { data } = await axios.get('https://nCorona.live/api/data/resources')
 
         const datakeys = [...new Set(data.map(i => i.category))]
         const d = datakeys

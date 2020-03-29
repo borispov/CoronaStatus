@@ -2,7 +2,7 @@ import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
 import sortForChart from './sortForChart'
 
-const baseURL = `https://covid19.borisky.me/api/v1/alltime/`
+const baseURL = `https://nCorona.live/api/v1/alltime/`
 
 async function currentCountry(){
   return await axios

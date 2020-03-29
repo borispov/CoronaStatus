@@ -34,31 +34,11 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
         todayStats &&
           <div style={{ border: '1px solid rgba(255, 60, 60, 0.022)', borderRadius: '6px', marginBottom: '16px' }}>
             <QuickStats country={cn} S={todayStats} isHeb={isHeb}/>
-            {/*
-            <Flex>
-            <StatBlock 
-              title={isHeb && 'נדבקים' || "Infected"}
-              data={todayStats.cases}
-            />
-            <StatBlock 
-              title={isHeb && 'החלימו' || "Recovered"}
-              data={todayStats.recovered}
-            />
-            <StatBlock 
-              title={isHeb && 'מקרי מוות' || "Total Deaths"}
-              data={todayStats.deaths}
-            />
-            <StatBlock 
-              title={isHeb && 'מקרים חדשים' || "New Cases Today"}
-              data={todayStats.todayCases}
-            />
-          </Flex>
-          */}
         </div>
           || todayWorld && 
             <div>
             <h1 style={{fontSize: '20px', paddingTop: '18px'}}>
-              {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn}</span>
+              {isHeb && 'המצב ב: ' || 'Status for: '}<span style={{fontWeight: 'bold', textDecoration: 'underline'}}> {cn === 'World' && isHeb && 'עולם' || cn}</span>
             </h1>
             <Flex>
 

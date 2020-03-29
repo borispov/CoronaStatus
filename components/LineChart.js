@@ -1,7 +1,6 @@
-import React from 'react';
 import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
-import styled from 'styled-components'
+import styled, { withTheme }  from 'styled-components'
 
 const Div = styled.div`
   margin-top: 32px;
@@ -33,7 +32,7 @@ const parseDatasets = (arrayOfSets, fill) => {
   }))
 }
 
-export default ( props ) => {
+const LineChart = ( props, {theme} ) => {
 
   const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
@@ -126,3 +125,5 @@ export default ( props ) => {
     </Div>
   )
 }
+
+export default withTheme(LineChart)

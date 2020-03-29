@@ -1,115 +1,113 @@
-import React from 'react'
-import styled from 'styled-components'
 import Container from './Container'
 import Button from './Button'
 import Coffee from '../public/coffee.svg'
 import Link from 'next/link'
 
-const CoffeeIcon = styled(Coffee)`
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 0px 6px 0 0;
-  display: inline-block;
-  font-size: 14px;
-  padding-top: 4px;
-`
+const Header = (props, { title, isHeb }) => {
+  return (
+    <div className="header__wrapper">
+      <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+        <header className="header">
+          <nav className="nav">
+            <ul className="nav__list">
+              <h1>{'C19feed'}</h1>
+              <li className="nav__item">
+                <Link href='/Coffee'>
+                  <Button small bgColor='#c82333' link>
+                    <i> <Coffee /> </i>
+                    Buy Me A Coffix
+                  </Button>
+                </Link>
+              </li>
+            </ul>
 
-const Wrap = styled.div`
-  direction: ltr;
-  position: relative;
-  height: 82px;
-  width: 100%;
-  background: linear-gradient(45deg, #5c0434, #000000d6);
-  border-bottom: 1px solid darkblue;
-  margin: 0 auto;
-  margin-bottom: 48px;
-`
+            <div className="nav__side"> { props.children } </div>
 
-const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 768px) {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-`
+          </nav>
+        </header>
+      </div>
+      <style jsx>{`
+        i {
+          width: 1.3rem;
+          margin: 0px 6px 0 0;
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 14px;
+        }
 
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
-`
+        .header__wrapper {
+          direction: ltr;
+          position: relative;
+          height: 82px;
+          width: 100%;
+          background: linear-gradient(45deg, #5c0434, #000000d6);
+          border-bottom: 1px solid darkblue;
+          margin: 0 auto;
+          margin-bottom: 48px;
+        }
 
-const List = styled.ul`
-  display: flex;
-  align-items: center;
-`
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 
-const Item = styled.li`
-  margin-top: 20px;
-  margin-left: 40px;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 768px) {
-    margin-left: 12px;
-  }
-`
+        h1 {
+          margin-top: 20px;
+          color: #e6e6e6;
+          font-size: 3.5rem;
+          font-family: 'Montserrat';
+          text-align: center;
+          text-shadow: 0 1px 35px rgba(5, 35, 10, 0.2);
+        }
 
-const Side = styled.div`
-  display: flex;
-  margin-top: 20px;
-`
-
-const Title = styled.h1`
-  margin-top: 20px;
-  color: #e6e6e6;
-  font-size: 3.5rem;
-  font-family: 'Montserrat';
-  text-align: center;
-  text-shadow: 0 1px 35px rgba(5, 35, 10, 0.2);
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-`
-
-const Href = styled(Link)`
-  cursor: pointer;
-  text-decoration: none;
-  color: ${props => props.theme.btnColor};
-`
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
 
 
-export default ({ title, children, isHeb, theme }) => (
-  <Wrap>
-    <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-      <Header>
-        <Nav>
-          <List>
-            <Title>{'C19feed'}</Title>
-            <Item>
-              <Link href={{
-                pathname: '/Coffee',
-                query: { isHeb: 'false' }
-              }}>
-                <Button small bgColor='#c82333' link>
-                <CoffeeIcon />
-                  Buy Me A Coffix
-                </Button>
-              </Link>
-            </Item>
-          </List>
+        .nav__list {
+          display: flex;
+          align-items: center;
+        }
 
-          <Side> { children } </Side>
+        .nav__item {
+          margin-top: 20px;
+          margin-left: 40px;
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 
-        </Nav>
-      </Header>
+        .nav__side {
+          display: flex;
+          margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .header {
+            margin-left: 12px;
+            margin-right: 12px;
+          }
+          h1 {
+            font-size: 2.5rem;
+          }
+          .nav__item {
+            margin-left: 12px;
+          }
+          nav {
+            margin-top: 10px;
+          }
+        }
+
+      `}</style>
+
     </div>
-  </Wrap>
-)
+  )
+}
+
+export default Header

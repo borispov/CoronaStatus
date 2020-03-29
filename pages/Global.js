@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.color};
       font-family: ${props => props.theme.fontFamily};
-      direction: ${props => props.lang === 'heb' ? 'rtl' : ''};
+      direction: ${props => props.isHeb ? 'rtl' : ''};
       // background: ${props => props.theme.test};
   }
 

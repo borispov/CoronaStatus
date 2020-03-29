@@ -8,17 +8,16 @@ import Chart from './Chart'
 import Container from './Container'
 import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
-import styled from 'styled-components'
 import Select from 'react-select'
 
 
-export default ({ theme, lang}) => {
+const CoronaApp = ({ isHeb }) => {
 
   const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState('')
   const [inputValue, setInput] = useState('')
 
-  const url = 'https://covid19.borisky.me/api/v1/'
+  const url = 'https://nCorona.live/api/v1/'
 
   const { countryStats } = useTime(country)
   const { todayStats } = useTodayStats(url, country)
@@ -62,12 +61,11 @@ export default ({ theme, lang}) => {
         countryStats &&
           (
               <Chart
-                isHeb={lang === 'heb'}
+                isHeb={isHeb}
                 type='line'
                 labels={countryStats.labels}
                 data={countryStats.datasets.filter(a => a.label === 'cases')}
                 label={country || 'israel'}
-                theme={theme}
                 fill={false}
                 stops={3}
                 showLegend={false}
@@ -77,18 +75,14 @@ export default ({ theme, lang}) => {
       <Stats
         cn={country || todayStats && todayStats.country}
         todayStats={todayStatsSorted}
-        isHeb={lang === 'heb'}
+        isHeb={isHeb}
       />
 
       <form 
         style={{ maxWidth: '520px', margin: '54px auto'}}
         onSubmit={handleSubmit}>
         <label style={{fontSize: '16px'}}>
-          {
-            lang === 'eng'
-            ? `Data For Country:`
-            : `נתונים לפי מדינה`
-          }
+          { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
         </label>
 
         <Select
@@ -103,20 +97,21 @@ export default ({ theme, lang}) => {
       <Stats
         cn={'World'}
         todayWorld={worldTodaySorted}
-        isHeb={lang==='heb'}
+        isHeb={isHeb}
       />
 
       <CaseChart
         showWorld={showWorld} 
-        theme={theme}
         country={country}
-        isHeb={lang === 'heb'}
+        isHeb={isHeb}
       />
 
     </Container>
 
     </div>
   )
-  
-
 }
+
+export default CoronaApp
+
+

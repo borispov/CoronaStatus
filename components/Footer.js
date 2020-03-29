@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   clear: both;
-  position: relative;
+  position: fixed;
   bottom: 0;
   height: 3.5rem;
-  width: 100%;
-  background: ${props => props.theme.color};
-  color: ${props => props.theme.bgColor};
+  width: 50%;
+  background: #202124;
+  color: #6BA5ED;
   margin-top: -3.5rem;
 `
 
@@ -18,8 +18,7 @@ const Content = styled.div`
 export default () => (
   <Wrapper>
     <Content>
-      <h1>Coronavirus data feed. <small>By: Boris Povolotsky</small></h1>
-      <p> Take Care</p>
+      <h1>DO THE FIVE. <small>Help stop coronavirus</small></h1>
     </Content>
   </Wrapper>
 )

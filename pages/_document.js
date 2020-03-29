@@ -9,8 +9,11 @@ export default class extends Document {
       <html>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <meta name="description" content="This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc">
-          <meta name="description" content="אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד"
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+          <meta name="description" content="This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc"/>
+          <meta name="description" content="אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד"/>
+
           <title>Coronavirus - Live Feed</title>
           <link
             href='https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap'

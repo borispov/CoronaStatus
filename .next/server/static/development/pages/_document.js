@@ -1080,12 +1080,49 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
         lineNumber: 10
       },
       __self: this
-    }, __jsx("link", {
+    }, __jsx("meta", {
+      charSet: "utf-8",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }), __jsx("meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, shrink-to-fit=no",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }), __jsx("meta", {
+      name: "description",
+      content: "This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }), __jsx("meta", {
+      name: "description",
+      content: "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D5\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD \u05D0\u05D5\u05D3\u05D5\u05EA \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05DB\u05DE\u05D5 \u05DB\u05DF \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC\u05DC \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8 \u05D4\u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9 \u05D5\u05DE\u05D9\u05D3\u05E2 \u05DE\u05DE\u05E9\u05E8\u05D3\u05D9 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA \u05DE\u05D4\u05E2\u05D5\u05DC\u05DD, \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05D5\u05D9\u05E2\u05D9\u05DC \u05DC\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05D4\u05DE\u05E6\u05D1 \u05DB\u05D2\u05D5\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD, \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05DE\u05E7\u05D5\u05D5\u05E0\u05D9\u05DD \u05D5\u05E2\u05D5\u05D3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), __jsx("title", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, "Coronavirus - Live Feed"), __jsx("link", {
       href: "https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 18
       },
       __self: this
     }), __jsx("script", {
@@ -1093,7 +1130,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_2__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 22
       },
       __self: this
     }), __jsx("script", {
@@ -1109,25 +1146,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 26
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 39
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 40
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 41
       },
       __self: this
     })));
