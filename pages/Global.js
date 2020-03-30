@@ -39,37 +39,63 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 1.75rem;
   }
-  .lds-hourglass {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+
+  .loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ededed;
   }
-  .lds-hourglass:after {
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
-    border: 32px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-hourglass 1.2s infinite;
+
+  .loader {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
   }
-  @keyframes lds-hourglass {
-    0% {
-      transform: rotate(0);
-      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  circle {
+    fill: none;
+    stroke-width: 3.5;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+
+    &:nth-of-type(1) {
+      stroke-dasharray: 550px;
     }
+
+    &:nth-of-type(2) {
+      stroke-dasharray: 500px;
+    }
+
+    &:nth-of-type(3) {
+      stroke-dasharray: 450px;
+    }
+
+    &:nth-of-type(4) {
+      stroke-dasharray: 300px;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: -#{$i * 0.15}s;
+      }
+    }
+  }
+
+  @keyframes preloader {
     50% {
-      transform: rotate(900deg);
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    100% {
-      transform: rotate(1800deg);
+      transform: rotate(360deg);
     }
   }
+
+
+
 `
 
 

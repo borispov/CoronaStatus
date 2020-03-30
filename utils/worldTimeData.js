@@ -17,6 +17,7 @@ function worldTimeData() {
       const data = await axios.get(baseURL)
         .then(res => res.data)
         .catch(err => setError(err))
+      console.log(data);
       const sortedData = sortForChart(data);
       setData(sortedData)
       setLoading(false)

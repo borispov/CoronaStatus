@@ -37,18 +37,26 @@ function useTodayStats(url, country) {
 
       const parsedCountry = parseCn(searchCountry);
       const URL = url + 'today/' + searchCountry.toLowerCase()
-      const data = await fetch(URL)
-          .then(res => res.json())
-          .catch(err => setError(err))
-      const relevant = {
-        cases: data.cases,
-        todayCases: data.todayCases,
-        recovered: data.recovered,
-        deaths: data.deaths,
-        country: data.country
+      // const URL = url + (country === 'world' ? '' : searchCountry)
+      try {
+        // const data = await fetch(URL)
+        //     .then(res => res.json())
+        //     .catch(err => setError(err))
+        const { data } = await axios.get(URL)
+        console.log(data);
+        const relevant = {
+          cases: data.cases,
+          todayCases: data.todayCases,
+          recovered: data.recovered,
+          deaths: data.deaths,
+          country: data.country
+        }
+        setStats(relevant)
+        setLoading(false)
+       } catch(e) {
+        console.log('error getting today data', e);
+        setError(e)
       }
-      setStats(relevant)
-      setLoading(false)
     }
     fetchData();
   }, [country])

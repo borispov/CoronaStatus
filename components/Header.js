@@ -1,6 +1,6 @@
 import Container from './Container'
 import Button from './Button'
-import Coffee from '../public/coffee.svg'
+import Coffee from '../static/coffee.svg'
 import Link from 'next/link'
 
 const Header = (props, { title, isHeb }) => {

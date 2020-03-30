@@ -1,8 +1,11 @@
 import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
 import sortForChart from './sortForChart'
+import sortExternalApi from './sortExternalApi'
+
 
 const baseURL = `https://nCorona.live/api/v1/alltime/`
+const baseURLv2 = 'https://pomber.github.io/covid19/timeseries.json'
 
 async function currentCountry(){
   return await axios
@@ -30,6 +33,12 @@ function useTime(loc, getCountryList) {
       const data = await axios.get(URL)
         .then(res => res.data)
         .catch(err => setError(err))
+
+      // const data = await axios.get(baseURLv2)
+      //   .then(res => res.data[country])
+      //   .catch(err => setError(err))
+
+      // const timeStats = sortExternalApi(data);
       const timeStats = sortForChart(data);
       setCountryStats(timeStats)
       setLoading(false)

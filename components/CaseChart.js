@@ -1,34 +1,19 @@
 import React from 'react'
 import Button from './Button'
 import axios from 'axios'
-import useTime from '../utils/useTime'
 import sortForChart from '../utils/sortForChart'
 import Chart from './Chart'
 import Container from './Container'
-import styled from 'styled-components'
+import Spinner from './Spinner'
 
 const baseURL = `https://nCorona.live/api/v1/alltime/`
-
-const countryTimeData = async (cn) => {
-  const loc = cn || await currentCountry()
-  const data = await axios.get(baseURL+loc)
-  const dataRes = await sortForChart(data.data)
-  return dataRes
-}
 
 const worldTimeData = async () => {
   const data = await axios.get(baseURL)
   const dataRes = await sortForChart(data.data)
+  console.log(dataRes);
   return dataRes
 }
-
-async function currentCountry(){
-  return await axios
-    .get('https://extreme-ip-lookup.com/json/')
-    .then(res => res.data.country)
-    .catch(e => 'israel')
-}
-
 
 class CaseChart extends React.Component {
 
@@ -37,13 +22,10 @@ class CaseChart extends React.Component {
     this.state = {
       dataToPresent: 'worldCases',
       worldData: [],
-      countryData: [],
       worldLabels: [],
-      countryLabels: [],
       worldCases: [],
       deathCases: [],
       newCases: [],
-      countryCases: [],
       showWorld: true,
       loading: false
     }
@@ -56,27 +38,19 @@ class CaseChart extends React.Component {
 
     try {
       const timeStats = await worldTimeData()
-      const countryStats = await countryTimeData(this.props.country)
-
       const worldCases = timeStats && timeStats.datasets.filter(a => a.label === 'cases')
       const deathCases = timeStats && timeStats.datasets.filter(a => a.label === 'deaths')
       const newCases = timeStats && timeStats.datasets.filter(a => a.label === 'new cases')
-
-      const countryCases = countryStats && countryStats.datasets.filter(a => a.label === 'cases')
-      const countryLabels = countryStats && countryStats.labels
       const worldLabels = timeStats && timeStats.labels
-      const worldDeaths = timeStats && timeStats.datasets.filter(a => a.label === 'deaths')
+
 
 
       this.setState({
         worldData: timeStats,
-        countryData: countryStats,
         worldCases,
         deathCases,
         newCases,
-        countryCases,
         worldLabels,
-        countryLabels,
         loading: false
       })
     } catch(err) {
@@ -92,7 +66,7 @@ class CaseChart extends React.Component {
       return <Container><h1>Loading Data . . .</h1></Container>
     }
     if (this.state.error) {
-      return <Container><h1>{this.state.error}</h1></Container>
+      return <Container><h1>{' error occured:' + this.state.error}</h1></Container>
     }
 
     return (

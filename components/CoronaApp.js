@@ -18,6 +18,8 @@ const CoronaApp = ({ isHeb }) => {
   const [inputValue, setInput] = useState('')
 
   const url = 'https://nCorona.live/api/v1/'
+  const url2 = 'https://corona.lmao.ninja/countries/'
+  const worldUrl = 'https://corona.lmao.ninja/all'
 
   const { countryStats } = useTime(country)
   const { todayStats } = useTodayStats(url, country)

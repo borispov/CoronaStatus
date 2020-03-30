@@ -70,12 +70,6 @@ const sortForChart = obj => {
       pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
       pointRadius: 0,
       borderWidth: 5,
-      // datalabels: {
-        // display: ctx => !(ctx.dataIndex % 5),
-      //   display: 'auto',
-      //   align: 'end',
-      //   anchor: 'end'
-      // }
     }
   ]
 

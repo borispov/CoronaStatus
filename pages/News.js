@@ -2,7 +2,6 @@ import styled, { withTheme } from 'styled-components'
 import Container from '../components/Container'
 import { useState, useEffect } from 'react'
 
-
 const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;

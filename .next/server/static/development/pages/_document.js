@@ -1114,7 +1114,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }), __jsx("link", {
       rel: "shortcut icon",
       type: "image/x-icon",
-      href: "/favicon.ico",
+      href: "https://ncorona.live/favicon.ico",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
