@@ -6,7 +6,7 @@ import GlobalStyle from './Global'
 import Header from '../components/Header'
 import { Button } from '../components/S'
 
-import { MoonIcon, SunIcon } from '../components/Icons/ThemeIcon'
+import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
 
@@ -43,9 +43,14 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
-        <Header title='C19' isHeb={isHeb}>
+        <Header title='nCorona' isHeb={isHeb}>
           { themeButton }
-          <Button langBtn onClick={this.toggleLang}>{displayLang}</Button>
+          <Button langBtn onClick={this.toggleLang}>
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <WorldIcon />
+              {displayLang}
+            </div>
+          </Button>
         </Header>
         <Component {...pageProps} isHeb={isHeb}/>
       </ThemeProvider>

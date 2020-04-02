@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Heading, Button, Paragraph, simpleWrapper, Container } from '../components/S'
+import { Heading, Button, Paragraph, FadeIn, simpleWrapper, Container } from '../components/S'
 import styled, { withTheme } from 'styled-components'
 import Link from 'next/link'
 
@@ -89,35 +89,37 @@ export default withTheme(({ isHeb, theme }) => {
 
   return (
     <simpleWrapper>
-      <Container>
-        <Heading>{ isHeb && 'תודה רבה' || 'Thank You!' }</Heading>
-        <Paragraph color={theme.color}>
-          { isHeb ? hebText : engText }
-        </Paragraph>
-        <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
-        <Box>
-          <Heading fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Heading>
+      <Container textAlign>
+        <FadeIn duration="0.5s" delay="0.1s">
+          <Heading>{ isHeb && 'תודה רבה' || 'Thank You!' }</Heading>
+          <Paragraph color={theme.color}>
+            { isHeb ? hebText : engText }
+          </Paragraph>
+          <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
+          <Box>
+            <Heading fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Heading>
+            <BoxButtons>
+              <Button onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
+              <Button onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
+              <BoxCount>{ counter }$</BoxCount>
+            </BoxButtons>
+            <ErrorText>{error ? (isHeb &&errorHeb || errorEng) : ''}</ErrorText>
+          </Box>
           <BoxButtons>
-            <Button onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
-            <Button onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
-            <BoxCount>{ counter }$</BoxCount>
+            <Button pointer bgColor='#218838'>
+              <a style={{textDecoration: 'none', color: 'inherit' }} href={'https://paypal.me/BPov/' + counter} target="_blank">{isHeb ? 'המשך' : 'Support'}</a>
+            </Button>
+            <Button pointer bgColor='#a1a1a1'>
+              <Link href="/">
+                <a style={{textDecoration: 'none', color: 'inherit' }}>
+                { isHeb ? 'חזור לאתר' : 'Back' }
+              </a>
+              </Link>
+            </Button>
           </BoxButtons>
-          <ErrorText>{error ? (isHeb &&errorHeb || errorEng) : ''}</ErrorText>
-        </Box>
-        <BoxButtons>
-          <Button pointer bgColor='#218838'>
-            <a style={{textDecoration: 'none', color: 'inherit' }} href={'https://paypal.me/BPov/' + counter} target="_blank">{isHeb ? 'המשך' : 'Support'}</a>
-          </Button>
-          <Button pointer bgColor='#a1a1a1'>
-            <Link href="/">
-              <a style={{textDecoration: 'none', color: 'inherit' }}>
-              { isHeb ? 'חזור לאתר' : 'Back' }
-            </a>
-            </Link>
-          </Button>
-        </BoxButtons>
+        </FadeIn>
 
-        {/* */}
+          {/* */}
       </Container>
     </simpleWrapper>
   )

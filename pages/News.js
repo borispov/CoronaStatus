@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   width: 85%;
   direction: rtl;
+  transition: all .6s ease-in-out;
   @media (max-width: 768px) {
     width: 100%;
     max-width: 100%;
@@ -22,44 +23,56 @@ const Wrapper = styled.div`
 `
 
 const NewsCard = styled.div`
-  margin: 8px 12px;
   display: flex;
-  flex-direction: row;
-  padding: 16px 6px;
-  border: 1px solid gray;
+
+  border-radius: 6px;
+  border: 1px solid ${props => props.theme.statColor};
+  border-top: 6px solid ${props => props.theme.statColor};
+
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
   justify-content: space-between;
-  @media (max-width: 768px) {
-    width: 100%;
-    max-width: 100%;
-    flex-direction: column;
-    padding: 0;
-    margin: 0 auto;
-  }
+  margin: 16px auto;
+  height: auto;
 `
 
 const NewsBanner = styled.div`
-  margin-left: 42px;
-  width: 48px;
-  height: 48px;
   display: block;
-  border: 1px solid gray;
-  @media (max-width: 768px) {
-    margin: 0;
-    visibility: hidden;
+  margin-left: 8px;
+  width: 124px;
+  height: auto;
+  border: 0;
+  // flex: 0 0 20%;
+  img {
+    width: 124px;
+    height: 100%;
   }
 `
 
 const Source = styled.h1`
+  margin-right: 24px;
+  width: 100%;
+  display: block;
+  text-align: center;
   font-size: 12px;
   font-weight: 700;
-  padding-bottom: 8px;
-  transform: rotate(-15deg);
+  color: ${props => props.theme.test};
   @media (max-width: 768px) {
-    transform: rotate(0);
     padding: 0;
   }
-
 `
+
+const Title = styled(S.Heading2)`
+  font-weight: 700;
+  font-family: 'Roboto';
+  @media (max-width: 768px) {
+    max-width: fit-content;
+  }
+`
+
+const shortenSnippet = text => text.split(' ').slice(0, 40).join(' ') + '. . .';
+
 
 const showSource = url => sourceList[url.split('.')[1]]
 
@@ -70,26 +83,26 @@ const News = ({ theme, isHeb, news }) => {
     return news.map((item, idx) => (
       <NewsCard key={idx}>
         <a style={{textDecoration: 'none'}} href={item.href}>
-        <S.Flex mCol>
-          <NewsBanner>
-            <img width="64" height="64" src={item.image} alt={item.title}></img>
-          </NewsBanner>
-          <S.Flex column alignItems>
-            <S.Heading2 truncate nowrap fontSize='16px'>{item.title}</S.Heading2>
-            <S.Paragraph padding='0' noMargin fontSize='12px'>{item.description}</S.Paragraph>
+          <S.Flex justify='flex-start' margin='0'>
+            <NewsBanner>
+              <img src={item.image} alt={item.title}></img>
+            </NewsBanner>
+            <S.Flex column flex='0 1 80%' margin='12px 0px 18px 6px'>
+              <Title fontSize='16px' color='#111'>{item.title}</Title>
+             <S.Paragraph padding='0' noMargin fontSize='12px'>{shortenSnippet(item.description)}</S.Paragraph>
+            </S.Flex>
+          </S.Flex>
+        </a>
+        <S.Flex justify='space-between' bgColor='inverse' margin='0' padding='0 12px'>
+          <S.Flex justify='center' alignItems='middle' column>
+            <a style={{textDecoration: 'none', textAlign: 'center', color: 'white'}} href={item.href} >
+              <Source>{showSource(item.href)}</Source>
+            </a>
+          </S.Flex>
+          <S.Flex justify='flex-end' column alignItems='middle'>
+            <S.Heading2 color="white">{dateHeb(item.date)}</S.Heading2>
           </S.Flex>
         </S.Flex>
-      </a>
-      <S.Flex justify='space-evenly' margin='12px 0 0 0'>
-        <S.Flex justify='center' alignItems column>
-          <a style={{textDecoration: 'none'}} href={item.href} >
-            <Source>{showSource(item.href)}</Source>
-          </a>
-        </S.Flex>
-          <S.Flex justify='flex-end' column>
-            <S.Heading2>{dateHeb(item.date)}</S.Heading2>
-          </S.Flex>
-      </S.Flex>
 
       </NewsCard>
     ))
@@ -100,7 +113,10 @@ const News = ({ theme, isHeb, news }) => {
       <S.Container>
         <S.Flex column justify='baseline' >
 
-          {newsToTemplate(news)}
+          <S.FadeIn duration="3s" delay="0.1s">
+
+            {newsToTemplate(news)}
+          </S.FadeIn>
 
         </S.Flex>
       </S.Container>

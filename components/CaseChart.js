@@ -69,8 +69,8 @@ class CaseChart extends React.Component {
     }
 
     return (
-      <Container >
-        <p style={{margin: '82px 0 0 0'}}>
+      <>
+        <p style={{margin: '82px 0 0 0', textAlign: 'center', fontSize: '14px', fontWeight: '700', fontFamily: 'Roboto', fontStyle: 'italic'}}>
           {this.props.isHeb &&
               'שיעור התפשטות הנגיף בעולם, מקרי מוות ומסרים מקרים חדשים ליום'
                 || 'Growth Rate of the virus in the world, including deaths and new cases'}
@@ -81,16 +81,16 @@ class CaseChart extends React.Component {
               type='line'
               labels={this.state.worldLabels}
               data={this.state[this.state.dataToPresent]}
-              label='Global Statistics'
+              label={this.props.isHeb ? 'נתונים מהעולם' : 'Global'}
               theme={this.props.theme}
             /> || <div> Loading Charts ... </div>
         }
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px'}}>
-          <Button margin={'0 45px 0 0'} onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button margin={'0 45px 0 0'} onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button margin={'0 45px 0 0'} onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+          <Button onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
+          <Button onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
+          <Button onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
         </div>
-      </Container>
+      </>
     )
   }
 

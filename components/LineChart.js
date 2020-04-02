@@ -1,6 +1,7 @@
 import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
-import styled, { withTheme }  from 'styled-components'
+import styled, { withTheme, keyframes }  from 'styled-components'
+import { FadeIn } from './S'
 
 const Div = styled.div`
   margin-top: 32px;
@@ -8,6 +9,7 @@ const Div = styled.div`
   margin-right: auto;
   margin-bottom: 48px;
   height: 375px;
+  text-align: center;
   width: 80%;
   direction: rtl;
   > * {
@@ -17,6 +19,7 @@ const Div = styled.div`
     height: 40vh;
     margin-bottom: 48px;
     width: 80vw;
+    max-width: 80%;
   }
 `
 
@@ -97,7 +100,6 @@ const LineChart = ( props, {theme} ) => {
     },
     plugins: {
        datalabels: {
-          // display: ,
         display: ctx => {
           let i = ctx.dataIndex
           return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 5)
@@ -106,23 +108,25 @@ const LineChart = ( props, {theme} ) => {
         anchor: 'end',
         color: props.theme.color,
          labels: {
-           title: { font: { weight: 'bold', style: 'italic', family: 'monospace' } }
+           title: { font: { weight: 'bold', style: 'italic', family: 'Roboto' } }
          }
        }
     }
 };
 
   return (
-    <Div>
-      <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
-        <Line
-          label={props.label}
-          data={data}
-          width={100}
-          options={options}
-          // height={40}
-        />
-    </Div>
+    <FadeIn duration="1s" delay="0.059s">
+      <Div>
+        <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
+          <Line
+            label={props.label}
+            data={data}
+            width={100}
+            options={options}
+            // height={40}
+          />
+      </Div>
+    </FadeIn>
   )
 }
 

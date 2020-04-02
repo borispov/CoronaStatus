@@ -1,11 +1,15 @@
-import styled, { withTheme } from 'styled-components'
+import styled, { withTheme, keyframes } from 'styled-components'
 
 export const Flex = styled.div`
   display: flex;
   flex-direction: ${props => props.column && 'column' || 'row'};
   justify-content: ${props => props.justify || 'center'};
   margin: ${props => props.margin || '0 2px'};
+  color: ${props => props.color || ''};
   align-items: ${props => props.alignItems || ''};
+  flex: ${props => props.flex};
+  background: ${props => props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : ''};
+  padding: ${props => props.padding};
   @media (max-width: 768px) {
     flex-direction: ${props => props.mRow ? 'row' : props.mCol ? 'column' : ''};
   }
@@ -25,30 +29,28 @@ export const Heading2 = styled.h2`
   font-family: ${props => props.font || 'Montserrat'};
   background: ${props => props.bg || ''};
   white-space: ${props=> props.nowrap || ''};
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 450px;
+  max-width: 100%;
   text-overflow: ${props => props.truncate && 'ellipsis'};
   @media (max-width: 768px) {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     max-width: 100%;
+    line-height: 1.45;
   }
 `
 
 export const Paragraph = styled.p`
   font-size: ${props => props.fontSize || '16px'};
-  max-width: ${props => props.mw || '480px'};
-  margin: ${props => props.noMargin || '0 auto'};
+  max-width: fit-content;
+  margin: ${props => props.noMargin && '0' || '0'};
   line-height: ${props => props.lineHeight || 1.5};
-  padding: ${props => props.padding || '2px'};
+  padding: ${props => props.padding || ''};
   color: ${props => props.color || props.theme.color};
   @media (max-width: 768px) {
     font-size: 12px;
     font-weight: 300;
-    overflow: hidden;
-    max-width: 250px;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    margin: 0;
   }
 `
 
@@ -77,42 +79,45 @@ export const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  text-align: ${props => props.textAlign && 'center'};
 `
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
   padding: ${props => props.small && '.375rem .75rem' || '10px 14px'};
-  font-size: ${props => props.small ? '14px' : '16px'};
+  font-size: ${props => props.small ? '12px' : '16px'};
   background: ${props => props.bgColor && props.bgColor || props.theme.btnBg};
   color: ${props => props.btnColor && props.btnColor || props.theme.btnColor};
   font-family: 'Sans';
   border: ${props => props.border ? props.border : 'none'};
   font-weight: ${props => props.bold && 'bold' || 'normal'};
   cursor: ${props => props.link ? 'pointer' : 'cursor'};
+  outline: none;
   line-height: 1.5;
   margin: ${props => props.margin ? props.margin : ''};
+  @media (max-width: 450px) {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0.210rem 0.45rem;
+  }
 `
 
-const LangBtn = styled.button`
+const LangBtn = styled(Btn)`
   position: relative;
-  background: ${props => props.theme.bgColor};
-  color: ${props => props.theme.color};
-  font-size: 14px;
-  font-weight: 600;
-  font-family: 'Sans';
-  padding: 8px 10px;
-  width: 100%;
+  background: lightblue;
+  // background: ${props => props.theme.categoryColor};
+  // color: ${props => props.theme.color};
+  color: #111;
+  padding: 0.54rem 0.85rem;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Roboto';
   outline: none;
   text-align: center;
   border: none;
   border-radius: 6px;
   margin: 0 6px;
   margin-left: 16px;
-  @media (max-width: 768px) {
-    font-size: 12px;
-    font-weight: 400;
-    padding: 4px 6px;
-  }
 `
 
 export const Button = props => (
@@ -122,3 +127,42 @@ export const Button = props => (
       {props.children}
     </Btn>
 )
+
+
+const BaseAnimation = styled.div`  
+  animation-duration: ${props => props.duration};  
+  animation-timing-function: ${props => props.timingFunction};      
+  animation-delay: ${props => props.delay};  
+  animation-iteration-count: ${props => props.iterationCount};  
+  animation-direction: ${props => props.direction}; 
+  animation-fill-mode: ${props => props.fillMode};  
+  animation-play-state:  ${props => props.playState};  
+  display: ${props => props.display};
+`
+
+BaseAnimation.defaultProps = {  
+  duration: '1s',
+  timingFunction: 'ease',
+  delay: '0s',
+  iterationCount: '1',
+  direction: 'normal',
+  fillMode: 'both',
+  playState: 'running',
+  display: 'block'
+}; 
+
+const fadeInAnimation = keyframes`
+  from {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+export const FadeIn = styled(BaseAnimation)`
+  animation-name: ${fadeInAnimation};
+`

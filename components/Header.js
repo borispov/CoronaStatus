@@ -9,26 +9,36 @@ const Header = (props, { title, isHeb }) => {
         <header className="header">
           <nav className="nav">
             <ul className="nav__list">
-              <h1>{props.title}</h1>
+              <Link href="/">
+                <a>
+                  <h1 style={{cursor: 'pointer'}}>{props.title}</h1>
+                </a>
+              </Link>
               <li className="nav__item">
                 <Link href='/Coffee'>
-                  <Button small bgColor='#c82333' link>
-                    <i> <Coffee /> </i>
-                    Buy Me A Coffix
-                  </Button>
+                  <a>
+                    <Button small bgColor='#c82333' link>
+                      <i> <Coffee /> </i>
+                      Buy Me A Coffix
+                    </Button>
+                  </a>
                 </Link>
               </li>
               <li className="nav__item">
                 <Link href='/News'>
-                  <Button bgColor='rgba(0,0,0,0)' small link>
-                    News
-                  </Button>
+                  <a>
+                    <Button bgColor='#c8233367' small link>
+                      News
+                    </Button>
+                  </a>
                 </Link>
               </li>
 
             </ul>
 
-            <div className="nav__side"> { props.children } </div>
+            <div className="nav__side"> 
+              { props.children.map(each => ( <li className="nav__item" style={{marginLeft: '15px'}}>{each}</li> )) } 
+            </div>
 
           </nav>
         </header>
@@ -45,7 +55,7 @@ const Header = (props, { title, isHeb }) => {
         .header__wrapper {
           direction: ltr;
           position: relative;
-          height: 82px;
+          height: 64px;
           width: 100%;
           background: linear-gradient(45deg, #5c0434, #000000d6);
           border-bottom: 1px solid darkblue;
@@ -60,7 +70,7 @@ const Header = (props, { title, isHeb }) => {
         }
 
         h1 {
-          margin-top: 20px;
+          margin-top: 10px;
           color: #e6e6e6;
           font-size: 3.5rem;
           font-family: 'Montserrat';
@@ -71,7 +81,7 @@ const Header = (props, { title, isHeb }) => {
         nav {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-around;
           width: 100%;
         }
 
@@ -82,7 +92,7 @@ const Header = (props, { title, isHeb }) => {
         }
 
         .nav__item {
-          margin-top: 20px;
+          margin-top: 10px;
           margin-left: 40px;
           list-style: none;
           display: flex;
@@ -92,7 +102,6 @@ const Header = (props, { title, isHeb }) => {
 
         .nav__side {
           display: flex;
-          margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -107,7 +116,7 @@ const Header = (props, { title, isHeb }) => {
             margin-left: 12px;
           }
           nav {
-            margin-top: 10px;
+            margin-top: 6px;
           }
         }
 
