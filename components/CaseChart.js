@@ -1,9 +1,8 @@
 import React from 'react'
-import Button from './Button'
+import { Button, Container } from './S'
 import axios from 'axios'
 import sortForChart from '../utils/sortForChart'
 import Chart from './Chart'
-import Container from './Container'
 import Spinner from './Spinner'
 
 const baseURL = `https://nCorona.live/api/v1/alltime/`
@@ -86,10 +85,10 @@ class CaseChart extends React.Component {
               theme={this.props.theme}
             /> || <div> Loading Charts ... </div>
         }
-        <div style={{display: 'flex', justifyContent: 'space-around', padding: '34px 32px'}}>
-          <Button onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+        <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px'}}>
+          <Button margin={'0 45px 0 0'} onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
+          <Button margin={'0 45px 0 0'} onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
+          <Button margin={'0 45px 0 0'} onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
         </div>
       </Container>
     )

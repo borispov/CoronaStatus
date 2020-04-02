@@ -1,18 +1,16 @@
 import App from 'next/app'
 import Router from 'next/router'
-import styled, { css, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import GlobalStyle from './Global'
 
 import Header from '../components/Header'
-import Button from '../components/Button'
+import { Button } from '../components/S'
 
 import { MoonIcon, SunIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
-
-
 
 const lightTheme = () => ({
   ...themes['common'],
@@ -45,7 +43,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
-        <Header title='C19.FeeD' isHeb={isHeb}>
+        <Header title='C19' isHeb={isHeb}>
           { themeButton }
           <Button langBtn onClick={this.toggleLang}>{displayLang}</Button>
         </Header>

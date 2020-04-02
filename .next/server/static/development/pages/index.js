@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -164,52 +164,6 @@ const popKey = o => Object.keys(o)[0];
 
 /***/ }),
 
-/***/ "./components/Button.js":
-/*!******************************!*\
-  !*** ./components/Button.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Button.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-
-const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
-  displayName: "Button__Btn",
-  componentId: "sc-1h1khwv-0"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";line-height:1.5;"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '14px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor');
-const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
-  displayName: "Button__LangBtn",
-  componentId: "sc-1h1khwv-1"
-})(["position:relative;background:", ";color:", ";font-size:14px;font-weight:600;font-family:'Sans';padding:8px 10px;width:100%;outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;@media (max-width:768px){font-size:12px;font-weight:400;padding:4px 6px;}"], props => props.theme.bgColor, props => props.theme.color);
-/* harmony default export */ __webpack_exports__["default"] = (props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 41
-  },
-  __self: undefined
-}), props.children) || __jsx(Btn, _extends({
-  onClick: props.onClick
-}, props, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 42
-  },
-  __self: undefined
-}), props.children));
-
-/***/ }),
-
 /***/ "./components/CaseChart.js":
 /*!*********************************!*\
   !*** ./components/CaseChart.js ***!
@@ -221,18 +175,16 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./S */ "./components/S.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
-/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
+/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CaseChart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -298,41 +250,41 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   render() {
     if (this.state.loading) {
-      return __jsx(_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 65
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 65
         },
         __self: this
       }, "Loading Data . . ."));
     }
 
     if (this.state.error) {
-      return __jsx(_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 68
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 68
         },
         __self: this
       }, ' error occured:' + this.state.error));
     }
 
-    return __jsx(_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 72
       },
       __self: this
     }, __jsx("p", {
@@ -341,7 +293,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 73
       },
       __self: this
     }, this.props.isHeb && 'שיעור התפשטות הנגיף בעולם, מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -352,45 +304,48 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 80
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 86
       },
       __self: this
     }, " Loading Charts ... "), __jsx("div", {
       style: {
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         padding: '34px 32px'
       },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      margin: '0 45px 0 0',
+      onClick: () => this.present('worldCases'),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 89
       },
       __self: this
-    }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      onClick: () => this.present('worldCases'),
+    }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      margin: '0 45px 0 0',
+      onClick: () => this.present('deathCases'),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 90
       },
       __self: this
-    }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      onClick: () => this.present('deathCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      margin: '0 45px 0 0',
       onClick: () => this.present('newCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 91
       },
       __self: this
     }, this.props.isHeb && 'מקרים חדשים' || 'New cases')));
@@ -445,37 +400,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 /***/ }),
 
-/***/ "./components/Container.js":
-/*!*********************************!*\
-  !*** ./components/Container.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Container.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "Container",
-  componentId: "sc-1p5fd2u-0"
-})(["max-width:", ";margin:0 auto;text-align:center;"], props => props.mw ? props.mw : '992px');
-/* harmony default export */ __webpack_exports__["default"] = (props => __jsx(Container, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}, props.children));
-
-/***/ }),
-
 /***/ "./components/CoronaApp.js":
 /*!*********************************!*\
   !*** ./components/CoronaApp.js ***!
@@ -493,7 +417,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
 /* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./S */ "./components/S.js");
 /* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
 /* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-select */ "react-select");
@@ -579,7 +503,7 @@ const CoronaApp = ({
       lineNumber: 58
     },
     __self: undefined
-  }), __jsx(_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 60
@@ -790,7 +714,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Container */ "./components/Container.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./S */ "./components/S.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/InfoSection.js";
@@ -1086,7 +1010,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;width:80%;direction:rtl;> *{direction:rtl;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:85vw;}"]);
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;width:80%;direction:rtl;> *{direction:rtl;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:80vw;}"]);
 
 const filterBy5 = (x, i) => !(i % 4);
 
@@ -1153,7 +1077,7 @@ const LineChart = (props, {
     },
     tooltips: {
       titleFontFamily: 'Open Sans',
-      backgroundColor: 'rgba(20,20,20, 0.3)',
+      backgroundColor: 'rgba(20,20,20, 0.4)',
       titleFontColor: '#fff',
       caretSize: 10,
       cornerRadius: 5,
@@ -1230,41 +1154,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./S */ "./components/S.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "QuickStats__Container",
-  componentId: "lmgi17-0"
-})(["@media (max-width:576px){max-width:540px;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;"]);
+
 const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Row",
-  componentId: "lmgi17-1"
+  componentId: "lmgi17-0"
 })(["display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;"]);
 const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Col",
-  componentId: "lmgi17-2"
+  componentId: "lmgi17-1"
 })(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid #38383b;border-bottom:2px solid #38383b;border-right-color:2px solid #38383b;border-top:2px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;justify-content:center;"], props => props.theme.statColor, props => props.theme.bgColor);
 const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "QuickStats__Country",
-  componentId: "lmgi17-3"
+  componentId: "lmgi17-2"
 })(["font-size:18px;font-weight:bold;align-self:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (({
   S,
   country,
   isHeb
 }) => {
-  return __jsx(Container, {
+  return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx(Row, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx(Col, {
@@ -1275,85 +1197,85 @@ const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.with
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 48
     },
     __self: undefined
   }, " ", country, " ")), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 51
     },
     __self: undefined
   }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 53
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 54
     },
     __self: undefined
   }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 57
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 58
     },
     __self: undefined
   }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 60
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 61
     },
     __self: undefined
   }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 65
     },
     __self: undefined
   }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 68
     },
     __self: undefined
   }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
@@ -1364,29 +1286,106 @@ const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.with
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 72
     },
     __self: undefined
   }, S.todayCases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 75
     },
     __self: undefined
   }, isHeb ? 'מקרים חדשים' : 'Today Cases')))));
 });
+
+/***/ }),
+
+/***/ "./components/S.js":
+/*!*************************!*\
+  !*** ./components/S.js ***!
+  \*************************/
+/*! exports provided: Flex, Heading, Heading2, Paragraph, simpleWrapper, Container, Button */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Flex", function() { return Flex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Heading", function() { return Heading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Heading2", function() { return Heading2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Paragraph", function() { return Paragraph; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "simpleWrapper", function() { return simpleWrapper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return Container; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/S.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+const Flex = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "S__Flex",
+  componentId: "sc-3vwmv4-0"
+})(["display:flex;flex-direction:", ";justify-content:", ";margin:", ";align-items:", ";@media (max-width:768px){flex-direction:", ";}"], props => props.column && 'column' || 'row', props => props.justify || 'center', props => props.margin || '0 2px', props => props.alignItems || '', props => props.mRow ? 'row' : props.mCol ? 'column' : '');
+const Heading = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
+  displayName: "S__Heading",
+  componentId: "sc-3vwmv4-1"
+})(["font-size:", ";color:", ";font-family:", ";line-height:1.5;"], props => props.fontSize || '4.5rem', props => props.color || props.theme.color, props => props.font || 'Montserrat');
+const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h2.withConfig({
+  displayName: "S__Heading2",
+  componentId: "sc-3vwmv4-2"
+})(["font-size:", ";padding:", ";color:", ";font-family:", ";background:", ";white-space:", ";white-space:nowrap;overflow:hidden;max-width:450px;text-overflow:", ";@media (max-width:768px){font-size:14px;font-weight:400;max-width:100%;}"], props => props.fontSize || '18px', props => props.padding || '', props => props.color || props.theme.color, props => props.font || 'Montserrat', props => props.bg || '', props => props.nowrap || '', props => props.truncate && 'ellipsis');
+const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
+  displayName: "S__Paragraph",
+  componentId: "sc-3vwmv4-3"
+})(["font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;overflow:hidden;max-width:250px;text-overflow:ellipsis;}"], props => props.fontSize || '16px', props => props.mw || '480px', props => props.noMargin || '0 auto', props => props.lineHeight || 1.5, props => props.padding || '2px', props => props.color || props.theme.color);
+const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "S__simpleWrapper",
+  componentId: "sc-3vwmv4-4"
+})(["background:", ";color:", ";direction:ltr;"], props => props.theme.bgColor, props => props.theme.color);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "S__Container",
+  componentId: "sc-3vwmv4-5"
+})(["@media (max-width:576px){max-width:540px;}@media (max-width:768px){max-width:640px;}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;"]);
+const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "S__Btn",
+  componentId: "sc-3vwmv4-6"
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";line-height:1.5;margin:", ";"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '14px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
+const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "S__LangBtn",
+  componentId: "sc-3vwmv4-7"
+})(["position:relative;background:", ";color:", ";font-size:14px;font-weight:600;font-family:'Sans';padding:8px 10px;width:100%;outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;@media (max-width:768px){font-size:12px;font-weight:400;padding:4px 6px;}"], props => props.theme.bgColor, props => props.theme.color);
+const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 120
+  },
+  __self: undefined
+}), props.children) || __jsx(Btn, _extends({
+  onClick: props.onClick
+}, props, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 121
+  },
+  __self: undefined
+}), props.children);
 
 /***/ }),
 
@@ -4171,7 +4170,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

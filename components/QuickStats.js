@@ -1,26 +1,6 @@
 import styled from 'styled-components'
+import { Container } from './S'
 
-const Container = styled.div`
-  @media (max-width: 576px) {
-    max-width: 540px;
-  }
-  @media (max-width: 768px) {
-
-  }
-
-  @media (max-width: 992px) {
-    max-width: 960px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-  }
-  transition: all .5s cubic-bezier(.55,0,.1,1);
-  width: 85%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-`
 
 const Row = styled.div`
   display: flex;

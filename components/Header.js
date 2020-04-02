@@ -1,5 +1,4 @@
-import Container from './Container'
-import Button from './Button'
+import { Button, Container} from './S'
 import Coffee from '../public/coffee.svg'
 import Link from 'next/link'
 
@@ -10,7 +9,7 @@ const Header = (props, { title, isHeb }) => {
         <header className="header">
           <nav className="nav">
             <ul className="nav__list">
-              <h1>{'C19feed'}</h1>
+              <h1>{props.title}</h1>
               <li className="nav__item">
                 <Link href='/Coffee'>
                   <Button small bgColor='#c82333' link>
@@ -19,6 +18,14 @@ const Header = (props, { title, isHeb }) => {
                   </Button>
                 </Link>
               </li>
+              <li className="nav__item">
+                <Link href='/News'>
+                  <Button bgColor='rgba(0,0,0,0)' small link>
+                    News
+                  </Button>
+                </Link>
+              </li>
+
             </ul>
 
             <div className="nav__side"> { props.children } </div>

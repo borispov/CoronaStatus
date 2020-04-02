@@ -1,30 +1,7 @@
 import { useState, useEffect } from 'react'
-import Container from '../components/Container'
-import Button from '../components/Button'
+import { Heading, Button, Paragraph, simpleWrapper, Container } from '../components/S'
 import styled, { withTheme } from 'styled-components'
 import Link from 'next/link'
-
-const Wrapper = styled.div`
-  background: ${props => props.theme.bgColor};
-  color: ${props => props.theme.color};
-  direction: ltr;
-`
-
-const Heading = styled.h1`
-  font-size: 4.5rem;
-  color: ${props => props.theme.color};
-  font-family: 'Montserrat';
-  line-height: 1.5;
-`
-
-const Paragraph = styled.p`
-  font-size: 16px;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.5;
-  padding: 2px;
-  color: ${props => props.theme.lightColor};
-`
 
 const Heading2 = styled(Heading)`
   margin-top: 8px;
@@ -41,10 +18,6 @@ const Box = styled.div`
   background: ${props => props.theme.bgColor}DD;
 `
 
-const BoxTitle = styled(Heading)`
-  font-size: 18px;
-  line-height: 1.2;
-`
 const BoxButtons = styled.div`
   margin: 6px;
   padding: 8px;
@@ -90,7 +63,7 @@ const engText = 'Hello and thank you for considering purchasing me a coffee in s
 const farewellEng = 'Take care of yourself and your beloved ones.'
 const farewellHeb = 'שמרו על עצמכם ועל אהובכם'
 
-export default withTheme(({ isHeb }) => {
+export default withTheme(({ isHeb, theme }) => {
   const [counter, setCounter] = useState(2);
   const [error, setError] = useState(false)
 
@@ -115,15 +88,15 @@ export default withTheme(({ isHeb }) => {
   }
 
   return (
-    <Wrapper>
+    <simpleWrapper>
       <Container>
         <Heading>{ isHeb && 'תודה רבה' || 'Thank You!' }</Heading>
-        <Paragraph>
+        <Paragraph color={theme.color}>
           { isHeb ? hebText : engText }
         </Paragraph>
         <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
         <Box>
-          <BoxTitle>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</BoxTitle>
+          <Heading fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Heading>
           <BoxButtons>
             <Button onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
             <Button onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
@@ -146,6 +119,6 @@ export default withTheme(({ isHeb }) => {
 
         {/* */}
       </Container>
-    </Wrapper>
+    </simpleWrapper>
   )
 })

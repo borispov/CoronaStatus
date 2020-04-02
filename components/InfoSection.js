@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Container from './Container'
+import { Container } from './S'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`

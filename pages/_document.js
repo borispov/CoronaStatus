@@ -1,5 +1,4 @@
-import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import React from 'react' import Document, { Head, Main, NextScript } from 'next/document'
 
 import { GA_TRACKING_ID } from '../utils/gtag'
 

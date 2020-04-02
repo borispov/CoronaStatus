@@ -16,7 +16,7 @@ const Div = styled.div`
   @media (max-width: 768px) {
     height: 40vh;
     margin-bottom: 48px;
-    width: 85vw;
+    width: 80vw;
   }
 `
 
@@ -88,7 +88,7 @@ const LineChart = ( props, {theme} ) => {
     },
     tooltips: {
         titleFontFamily: 'Open Sans',
-        backgroundColor: 'rgba(20,20,20, 0.3)',
+        backgroundColor: 'rgba(20,20,20, 0.4)',
         titleFontColor: '#fff',
         caretSize: 10,
         cornerRadius: 5,

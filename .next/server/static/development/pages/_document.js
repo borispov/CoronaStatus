@@ -1112,7 +1112,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       },
       __self: this
     }), __jsx("link", {
-      rel: "shortcut icon",
+      rel: "icon",
       type: "image/x-icon",
       href: "https://ncorona.live/favicon.ico",
       __source: {
