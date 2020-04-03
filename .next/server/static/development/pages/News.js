@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -145,19 +145,19 @@ const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.d
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;}@media (max-width:768px){max-width:640px;}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], props => props.textAlign && 'center');
+})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], props => props.textAlign && 'center');
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:0.210rem 0.45rem;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
-})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Roboto';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;"]);
+})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Roboto';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 125
+    lineNumber: 127
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -165,7 +165,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 126
+    lineNumber: 128
   },
   __self: undefined
 }), props.children);
@@ -196,9 +196,9 @@ const SlideInLeft = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Bas
 
 /***/ }),
 
-/***/ "./pages/News.js":
+/***/ "./pages/news.js":
 /*!***********************!*\
-  !*** ./pages/News.js ***!
+  !*** ./pages/news.js ***!
   \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -213,7 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _utils_dateHeb__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/dateHeb */ "./utils/dateHeb.js");
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/News.js";
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/news.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -227,24 +227,24 @@ const sourceList = {
   israelhayom: 'ישראל היום'
 };
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "News__Wrapper",
-  componentId: "sc-1dpkj34-0"
+  displayName: "news__Wrapper",
+  componentId: "sc-1bflqvw-0"
 })(["margin:0 auto;width:85%;direction:rtl;transition:all .6s ease-in-out;@media (max-width:768px){width:100%;max-width:100%;}"]);
 const NewsCard = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "News__NewsCard",
-  componentId: "sc-1dpkj34-1"
-})(["display:flex;border-radius:6px;border:1px solid ", ";border-top:6px solid ", ";flex-direction:column;width:100%;max-width:100%;justify-content:space-between;margin:16px auto;height:auto;"], props => props.theme.statColor, props => props.theme.statColor);
+  displayName: "news__NewsCard",
+  componentId: "sc-1bflqvw-1"
+})(["display:flex;border-radius:6px;border:1px solid ", ";border-top:4px solid ", ";flex-direction:column;width:100%;max-width:100%;justify-content:space-between;margin:16px auto;height:auto;@media (max-width:568px){border:1px solid ", ";border-top:6px solid ", ";}"], props => props.theme.menuBorder, props => props.theme.menuBorder, props => props.theme.blueTheme, props => props.theme.blueTheme);
 const NewsBanner = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "News__NewsBanner",
-  componentId: "sc-1dpkj34-2"
+  displayName: "news__NewsBanner",
+  componentId: "sc-1bflqvw-2"
 })(["display:block;margin-left:8px;width:124px;height:auto;border:0;img{width:124px;height:100%;}"]);
 const Source = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
-  displayName: "News__Source",
-  componentId: "sc-1dpkj34-3"
+  displayName: "news__Source",
+  componentId: "sc-1bflqvw-3"
 })(["margin-right:24px;width:100%;display:block;text-align:center;font-size:12px;font-weight:700;color:", ";@media (max-width:768px){padding:0;}"], props => props.theme.test);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(_components_S__WEBPACK_IMPORTED_MODULE_2__["Heading2"]).withConfig({
-  displayName: "News__Title",
-  componentId: "sc-1dpkj34-4"
+  displayName: "news__Title",
+  componentId: "sc-1bflqvw-4"
 })(["font-weight:700;font-family:'Roboto';color:", ";@media (max-width:768px){max-width:fit-content;}"], props => props.theme.color);
 
 const shortenSnippet = text => text.split(' ').slice(0, 40).join(' ') + '. . .';
@@ -261,7 +261,7 @@ const News = ({
       key: idx,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 89
       },
       __self: undefined
     }, __jsx("a", {
@@ -271,7 +271,7 @@ const News = ({
       href: item.href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 90
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -279,13 +279,13 @@ const News = ({
       margin: "0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 91
       },
       __self: undefined
     }, __jsx(NewsBanner, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 92
       },
       __self: undefined
     }, __jsx("img", {
@@ -293,7 +293,7 @@ const News = ({
       alt: item.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 93
       },
       __self: undefined
     })), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -302,7 +302,7 @@ const News = ({
       margin: "12px 0px 18px 6px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 95
       },
       __self: undefined
     }, __jsx(Title, {
@@ -310,7 +310,7 @@ const News = ({
       color: "#111",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 96
       },
       __self: undefined
     }, item.title), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Paragraph"], {
@@ -319,7 +319,7 @@ const News = ({
       fontSize: "12px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 97
       },
       __self: undefined
     }, shortenSnippet(item.description))))), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -329,7 +329,7 @@ const News = ({
       padding: "0 12px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 101
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -338,7 +338,7 @@ const News = ({
       column: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 102
       },
       __self: undefined
     }, __jsx("a", {
@@ -350,13 +350,13 @@ const News = ({
       href: item.href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 103
       },
       __self: undefined
     }, __jsx(Source, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 104
       },
       __self: undefined
     }, showSource(item.href)))), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -365,14 +365,14 @@ const News = ({
       alignItems: "middle",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 107
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Heading2"], {
       color: "white",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 108
       },
       __self: undefined
     }, Object(_utils_dateHeb__WEBPACK_IMPORTED_MODULE_4__["default"])(item.date))))));
@@ -381,13 +381,13 @@ const News = ({
   return __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 117
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 118
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -395,15 +395,15 @@ const News = ({
     justify: "baseline",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 119
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["FadeIn"], {
-    duration: "3s",
+    duration: "1.8s",
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 121
     },
     __self: undefined
   }, newsToTemplate(news)))));
@@ -454,14 +454,14 @@ months[months.length] = "דצמבר";
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*****************************!*\
-  !*** multi ./pages/News.js ***!
+  !*** multi ./pages/news.js ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/raypo/Desktop/Projectos/CoronaStatus/pages/News.js */"./pages/News.js");
+module.exports = __webpack_require__(/*! /Users/raypo/Desktop/Projectos/CoronaStatus/pages/news.js */"./pages/news.js");
 
 
 /***/ }),
@@ -500,4 +500,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=News.js.map
+//# sourceMappingURL=news.js.map

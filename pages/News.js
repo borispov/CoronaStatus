@@ -26,8 +26,8 @@ const NewsCard = styled.div`
   display: flex;
 
   border-radius: 6px;
-  border: 1px solid ${props => props.theme.statColor};
-  border-top: 6px solid ${props => props.theme.statColor};
+  border: 1px solid ${props => props.theme.menuBorder};
+  border-top: 4px solid ${props => props.theme.menuBorder};
 
   flex-direction: column;
   width: 100%;
@@ -35,6 +35,10 @@ const NewsCard = styled.div`
   justify-content: space-between;
   margin: 16px auto;
   height: auto;
+  @media (max-width: 568px) {
+    border: 1px solid ${props => props.theme.blueTheme};
+    border-top: 6px solid ${props => props.theme.blueTheme};
+  }
 `
 
 const NewsBanner = styled.div`
@@ -114,7 +118,7 @@ const News = ({ theme, isHeb, news }) => {
       <S.Container>
         <S.Flex column justify='baseline' >
 
-          <S.FadeIn duration="3s" delay="0.1s">
+          <S.FadeIn duration="1.8s" delay="0.1s">
 
             {newsToTemplate(news)}
           </S.FadeIn>

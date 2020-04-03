@@ -1,11 +1,12 @@
 import { Button, Container, SlideInLeft } from './S'
-import Coffee from '../public/coffee.svg'
+import { Coffee } from './Icons/ThemeIcon'
 import Link from 'next/link'
 
-const Header = (props, { title, isHeb }) => {
+const Header = (props, { title }) => {
+  const Tip = props.isHeb && 'תרומה לכפפות' || 'Gloves Tip'
   return (
     <div className="header__wrapper">
-      <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '920px', margin: '0 auto' }}>
         <SlideInLeft duration='0.75s'>
         <header className="header">
           <nav className="nav">
@@ -20,26 +21,18 @@ const Header = (props, { title, isHeb }) => {
                   <a>
                     <Button small bgColor='#c82333' link>
                       <i> <Coffee /> </i>
-                      Buy Me A Coffix
+                      {Tip}
                     </Button>
                   </a>
                 </Link>
               </li>
-              <li className="nav__item">
-                <Link href='/News'>
-                  <a>
-                    <Button bgColor='#c8233367' small link>
-                      News
-                    </Button>
-                  </a>
-                </Link>
-              </li>
+              {props.children}
 
+              {/*
+                { props.children.map(each => ( <li className="nav__item" style={{marginLeft: '15px'}}>{each}</li> )) } 
+              
+              */}
             </ul>
-
-            <div className="nav__side"> 
-              { props.children.map(each => ( <li className="nav__item" style={{marginLeft: '15px'}}>{each}</li> )) } 
-            </div>
 
           </nav>
         </header>
@@ -58,6 +51,7 @@ const Header = (props, { title, isHeb }) => {
           direction: ltr;
           position: relative;
           height: 64px;
+          z-index: 1;
           width: 100%;
           background: linear-gradient(45deg, #5c0434, #000000d6);
           border-bottom: 1px solid darkblue;
@@ -66,7 +60,7 @@ const Header = (props, { title, isHeb }) => {
         }
 
         .header {
-          display: flex;
+          // display: flex;
           justify-content: space-between;
           align-items: center;
         }
@@ -81,7 +75,7 @@ const Header = (props, { title, isHeb }) => {
         }
 
         nav {
-          display: flex;
+          // display: flex;
           align-items: center;
           justify-content: space-around;
           width: 100%;
@@ -89,6 +83,7 @@ const Header = (props, { title, isHeb }) => {
 
 
         .nav__list {
+          justify-content: space-around;
           display: flex;
           align-items: center;
         }
@@ -110,15 +105,19 @@ const Header = (props, { title, isHeb }) => {
           .header {
             margin-left: 12px;
             margin-right: 12px;
+            align-items: flex-end;
+            padding-top: 4px;
           }
           h1 {
             font-size: 2.5rem;
+            align-items: flex-end;
           }
           .nav__item {
-            margin-left: 12px;
+            margin-left: 8px;
           }
-          nav {
-            margin-top: 6px;
+
+          ul {
+            // padding-top: 4px;
           }
         }
 

@@ -14,9 +14,15 @@ const Text = styled.p`
     max-width: 380px;
   }
 
+  @media (max-width: 320px) {
+    max-width: 88%;
+  }
+
 `
 
 const Wrap = styled.div`
+  z-index: -1;
+  position: relative;
   display: block;
   width: 620px;
   max-width: 620px;
@@ -24,6 +30,10 @@ const Wrap = styled.div`
   @media (max-width: 768px) {
     width: 320px;
     max-width: 380px;
+  }
+
+  @media (max-width: 320px) {
+    max-width: fit-content;
   }
 
 `

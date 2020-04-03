@@ -63,9 +63,10 @@ export const simpleWrapper = styled.div`
 export const Container = styled.div`
   @media (max-width: 576px) {
     max-width: 540px;
+    max-width: 100%;
   }
   @media (max-width: 768px) {
-    max-width: 640px;
+    // max-width: ${props => props.med || '640px'};
   }
   @media (max-width: 992px) {
     max-width: 960px;
@@ -98,7 +99,7 @@ const Btn = styled.button`
   @media (max-width: 450px) {
     font-size: 12px;
     font-weight: normal;
-    padding: 0.210rem 0.45rem;
+    padding: 1px 4px;
   }
 `
 
@@ -118,6 +119,7 @@ const LangBtn = styled(Btn)`
   border-radius: 6px;
   margin: 0 6px;
   margin-left: 16px;
+  z-index: 1;
 `
 
 export const Button = props => (

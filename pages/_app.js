@@ -2,9 +2,13 @@ import App from 'next/app'
 import Router from 'next/router'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from './Global'
+import Link from 'next/link';
 
 import Header from '../components/Header'
 import { Button } from '../components/S'
+
+import Burger from '../components/Burger';
+import Menu from '../components/Menu';
 
 import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
@@ -27,30 +31,49 @@ export default class MyApp extends App {
   state = {
     theme: lightTheme(),
     isHeb: true,
+    menuOpen: false
   }
 
-  toggleLang =    () => this.setState(prevState => ({ ...prevState, isHeb: !prevState.isHeb }))
-  setDarkTheme =  () => this.setState(prevState => ({ ...prevState, theme: darkTheme() }))
+  toggleMenu    = () => this.setState({ menuOpen: !this.state.menuOpen })
+  // toggleLang    = () => this.setState(prevState => ({ ...prevState, isHeb: !prevState.isHeb }))
+  toggleLang    = () => this.setState({ isHeb: !this.state.isHeb })
+  setDarkTheme  = () => this.setState(prevState => ({ ...prevState, theme: darkTheme() }))
   setLightTheme = () => this.setState(prevState => ({ ...prevState, theme: lightTheme() }))
 
   render() {
-    const { theme, isHeb } = this.state
-    const displayLang = isHeb ? 'English' : 'עברית'
-    const isLight = theme.type === 'light'
-    const themeButton = (isLight && <MoonIcon onClick={this.setDarkTheme} />) || <SunIcon onClick={this.setLightTheme} />
+    const { theme, isHeb }  = this.state
+    const displayLang       = isHeb ? 'English' : 'עברית'
+    const isLight           = theme.type === 'light'
+    const themeButton       = isLight
+      && <MoonIcon onClick={this.setDarkTheme} />
+      || <SunIcon onClick={this.setLightTheme} />
+
     const { Component, pageProps } = this.props
 
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
         <Header title='nCorona' isHeb={isHeb}>
-          { themeButton }
-          <Button langBtn onClick={this.toggleLang}>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <WorldIcon />
+
+          <Burger setOpen={this.toggleMenu} open={this.state.menuOpen} />
+          <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
+            <a onClick={isLight ? this.setDarkTheme : this.setLightTheme}>
+              <span>{ isLight ? '🌒' : '🌞'}</span>
+              { isLight ? 'Dark Mode' : 'Light Mode' }
+            </a>
+            <a onClick={this.toggleLang}>
+              <span>&#127760;</span>
               {displayLang}
-            </div>
-          </Button>
+            </a>
+            <Link href="/news">
+              <a alt="news">
+                <span>&#128240;</span>
+                News
+              </a>
+            </Link>
+
+          </Menu>
+
         </Header>
         <Component {...pageProps} isHeb={isHeb}/>
       </ThemeProvider>

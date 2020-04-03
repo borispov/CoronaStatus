@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from './Burger.js';","map":{"version":3,"sources":["/Users/raypo/Desktop/Projectos/CoronaStatus/components/Burger/index.js"],"names":["default"],"mappings":"AAAA,SAASA,OAAT,QAAwB,aAAxB","sourcesContent":["export { default } from './Burger.js'\n"]},"metadata":{},"sourceType":"module"}

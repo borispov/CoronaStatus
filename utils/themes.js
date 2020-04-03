@@ -1,14 +1,21 @@
 export const themes = {
   common: {
     fontFamily:
-      "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    menuBorder: '#232F34',
+    menuBg: '#344955',
+    menuColor: '#4A6572',
+    menuHover: '#F9AA33'
   },
+  mobile: '568px',
   light: {
     type: 'light',
-    bgColor: 'rgb(250, 250, 252)',
+    // bgColor: 'rgb(250, 250, 252)',
+    bgColor: '#',
     headerBg: 'rgb(250, 250, 252)',
     boxBg: 'rgba(50, 150, 252, 0.8)',
-    color: '#3E4C59',
+    // color: '#3E4C59',
+    color: '#121212',
     searchBgColor: '#E4E7EB',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     categoryColor: '#999',
@@ -18,7 +25,9 @@ export const themes = {
     btnBg: '#344955',
     btnColor: '#fff',
     statColor: '#1A74D6',
-    lightColor: '#767676'
+    blueTheme: '#6200EE',
+    lightColor: '#767676',
+    dark: '#121212'
   },
   dark: {
     type: 'dark',
@@ -35,6 +44,7 @@ export const themes = {
     btnBg: '#344955',
     btnColor: '#fff',
     statColor: '#1A74D6',
-    lightColor: '#919695'
+    lightColor: '#919695',
+    dark: '#121212'
   },
 }

@@ -8,11 +8,7 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/Coffee": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/News": [
+    "/": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
@@ -27,6 +23,14 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+    ],
+    "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/news": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
