@@ -1060,31 +1060,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/_document.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (class extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
+  static getInitialProps({
+    renderPage
+  }) {
+    const sheet = new styled_components__WEBPACK_IMPORTED_MODULE_2__["ServerStyleSheet"]();
+    const page = renderPage(App => props => sheet.collectStyles(__jsx(App, _extends({}, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }))));
+    const styleTags = sheet.getStyleElement();
+    return _objectSpread({}, page, {
+      styleTags
+    });
+  }
+
   render() {
     return __jsx("html", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 21
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 22
       },
       __self: this
     }, __jsx("meta", {
       charSet: "utf-8",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 24
       },
       __self: this
     }), __jsx("meta", {
@@ -1092,7 +1121,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       content: "width=device-width, initial-scale=1, shrink-to-fit=no",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 25
       },
       __self: this
     }), __jsx("meta", {
@@ -1100,7 +1129,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       content: "This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 26
       },
       __self: this
     }), __jsx("meta", {
@@ -1108,7 +1137,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       content: "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D5\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD \u05D0\u05D5\u05D3\u05D5\u05EA \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05DB\u05DE\u05D5 \u05DB\u05DF \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC\u05DC \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8 \u05D4\u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9 \u05D5\u05DE\u05D9\u05D3\u05E2 \u05DE\u05DE\u05E9\u05E8\u05D3\u05D9 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA \u05DE\u05D4\u05E2\u05D5\u05DC\u05DD, \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05D5\u05D9\u05E2\u05D9\u05DC \u05DC\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05D4\u05DE\u05E6\u05D1 \u05DB\u05D2\u05D5\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD, \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05DE\u05E7\u05D5\u05D5\u05E0\u05D9\u05DD \u05D5\u05E2\u05D5\u05D3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 27
       },
       __self: this
     }), __jsx("link", {
@@ -1117,7 +1146,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       href: "https://ncorona.live/favicon.ico",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 29
       },
       __self: this
     }), __jsx("link", {
@@ -1126,7 +1155,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       href: "/apple-touch-icon.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 30
       },
       __self: this
     }), __jsx("link", {
@@ -1136,7 +1165,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       href: "/favicon-32x32.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 31
       },
       __self: this
     }), __jsx("link", {
@@ -1146,7 +1175,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       href: "/favicon-16x16.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 32
       },
       __self: this
     }), __jsx("link", {
@@ -1154,7 +1183,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       href: "/site.webmanifest",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 33
       },
       __self: this
     }), __jsx("link", {
@@ -1162,15 +1191,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 35
       },
       __self: this
     }), __jsx("script", {
       async: true,
-      src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_2__["GA_TRACKING_ID"]}`,
+      src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 39
       },
       __self: this
     }), __jsx("script", {
@@ -1179,32 +1208,32 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${_utils_gtag__WEBPACK_IMPORTED_MODULE_2__["GA_TRACKING_ID"]}', {
+            gtag('config', '${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}', {
               page_path: window.location.pathname,
             });
           `
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 43
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 57
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 58
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 59
       },
       __self: this
     })));
@@ -1280,6 +1309,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 
