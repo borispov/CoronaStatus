@@ -2981,14 +2981,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       onClick: this.setDarkTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 47
       },
       __self: this
     }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_10__["SunIcon"], {
       onClick: this.setLightTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 48
       },
       __self: this
     });
@@ -3001,23 +3001,22 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       theme: theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 53
       },
       __self: this
     }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_4__["default"], {
       isHeb: isHeb,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 54
       },
       __self: this
     }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
       title: "nCorona",
       isHeb: isHeb,
-      theme: theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 55
       },
       __self: this
     }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3025,7 +3024,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       open: this.state.menuOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 56
       },
       __self: this
     }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3033,60 +3032,60 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       open: this.state.menuOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 57
       },
       __self: this
     }, __jsx("a", {
       onClick: isLight ? this.setDarkTheme : this.setLightTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 58
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 59
       },
       __self: this
     }, isLight ? '🌒' : '🌞'), isLight ? 'Dark Mode' : 'Light Mode'), __jsx("a", {
       onClick: this.toggleLang,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 62
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 63
       },
       __self: this
     }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
       href: "/News",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 66
       },
       __self: this
     }, __jsx("a", {
       alt: "news",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 67
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 68
       },
       __self: this
     }, "\uD83D\uDCF0"), "News")))), __jsx(Component, _extends({}, pageProps, {
       isHeb: isHeb,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 76
       },
       __self: this
     })));

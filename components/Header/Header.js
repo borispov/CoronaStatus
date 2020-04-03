@@ -28,10 +28,6 @@ const Header = ({ title, theme, isHeb, children }) => {
                 </Link>
               </NavItem>
               {children}
-
-              {/*
-                { props.children.map(each => ( <li className="nav__item" style={{marginLeft: '15px'}}>{each}</li> )) } 
-              */}
             </NavList>
           </Nav>
         </HeaderTag>

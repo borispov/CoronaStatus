@@ -35,7 +35,6 @@ export default class MyApp extends App {
   }
 
   toggleMenu    = () => this.setState({ menuOpen: !this.state.menuOpen })
-  // toggleLang    = () => this.setState(prevState => ({ ...prevState, isHeb: !prevState.isHeb }))
   toggleLang    = () => this.setState({ isHeb: !this.state.isHeb })
   setDarkTheme  = () => this.setState(prevState => ({ ...prevState, theme: darkTheme() }))
   setLightTheme = () => this.setState(prevState => ({ ...prevState, theme: lightTheme() }))
@@ -53,8 +52,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
-        <Header title='nCorona' isHeb={isHeb} theme={theme}>
-
+        <Header title='nCorona' isHeb={isHeb}>
           <Burger setOpen={this.toggleMenu} open={this.state.menuOpen} />
           <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
             <a onClick={isLight ? this.setDarkTheme : this.setLightTheme}>

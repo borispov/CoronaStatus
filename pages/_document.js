@@ -4,21 +4,30 @@ import { ServerStyleSheet } from 'styled-components'
 import { GA_TRACKING_ID } from '../utils/gtag'
 
 export default class extends Document {
-  static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet()
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
-    const styleTags = sheet.getStyleElement()
+  static async getInitialProps( ctx ) {
+    const sheet = new ServerStyleSheet();
+    const page = ctx.renderPage;
 
-    return {
-      ...page,
-      styleTags 
-    }
+    try {
+      ctx.renderPage = () => page({ enhanceApp: App => props => sheet.collectStyles(<App {...props} />) })
+      const initialProps = await Document.getInitialProps(ctx)
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        )
+      }
+    } finally { sheet.seal() }
 
   }
   render() {
     return (
       <html>
         <Head>
+          { this.props.styleTags }
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -41,17 +50,16 @@ export default class extends Document {
           />
           <script
             dangerouslySetInnerHTML={{
-              __html: `
+              __html:`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
-          `,
+            `
             }}
           />
-          { this.props.styleTags }
         </Head>
         <body>
           <Main />

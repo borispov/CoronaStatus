@@ -1079,41 +1079,48 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 /* harmony default export */ __webpack_exports__["default"] = (class extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
-  static getInitialProps({
-    renderPage
-  }) {
+  static async getInitialProps(ctx) {
     const sheet = new styled_components__WEBPACK_IMPORTED_MODULE_2__["ServerStyleSheet"]();
-    const page = renderPage(App => props => sheet.collectStyles(__jsx(App, _extends({}, props, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    }))));
-    const styleTags = sheet.getStyleElement();
-    return _objectSpread({}, page, {
-      styleTags
-    });
+    const page = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () => page({
+        enhanceApp: App => props => sheet.collectStyles(__jsx(App, _extends({}, props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12
+          },
+          __self: this
+        })))
+      });
+
+      const initialProps = await next_document__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(ctx);
+      return _objectSpread({}, initialProps, {
+        styles: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, initialProps.styles, sheet.getStyleElement())
+      });
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
     return __jsx("html", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 28
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 29
       },
       __self: this
-    }, __jsx("meta", {
+    }, this.props.styleTags, __jsx("meta", {
       charSet: "utf-8",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 32
       },
       __self: this
     }), __jsx("meta", {
@@ -1121,7 +1128,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       content: "width=device-width, initial-scale=1, shrink-to-fit=no",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 33
       },
       __self: this
     }), __jsx("meta", {
@@ -1129,7 +1136,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       content: "This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 34
       },
       __self: this
     }), __jsx("meta", {
@@ -1137,7 +1144,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       content: "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D5\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD \u05D0\u05D5\u05D3\u05D5\u05EA \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05DB\u05DE\u05D5 \u05DB\u05DF \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC\u05DC \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8 \u05D4\u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9 \u05D5\u05DE\u05D9\u05D3\u05E2 \u05DE\u05DE\u05E9\u05E8\u05D3\u05D9 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA \u05DE\u05D4\u05E2\u05D5\u05DC\u05DD, \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05D5\u05D9\u05E2\u05D9\u05DC \u05DC\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05D4\u05DE\u05E6\u05D1 \u05DB\u05D2\u05D5\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD, \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05DE\u05E7\u05D5\u05D5\u05E0\u05D9\u05DD \u05D5\u05E2\u05D5\u05D3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 35
       },
       __self: this
     }), __jsx("link", {
@@ -1146,7 +1153,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "https://ncorona.live/favicon.ico",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 37
       },
       __self: this
     }), __jsx("link", {
@@ -1155,7 +1162,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/apple-touch-icon.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 38
       },
       __self: this
     }), __jsx("link", {
@@ -1165,7 +1172,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/favicon-32x32.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 39
       },
       __self: this
     }), __jsx("link", {
@@ -1175,7 +1182,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/favicon-16x16.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 40
       },
       __self: this
     }), __jsx("link", {
@@ -1183,7 +1190,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/site.webmanifest",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 41
       },
       __self: this
     }), __jsx("link", {
@@ -1191,7 +1198,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 43
       },
       __self: this
     }), __jsx("script", {
@@ -1199,7 +1206,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 47
       },
       __self: this
     }), __jsx("script", {
@@ -1211,29 +1218,29 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
             gtag('config', '${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}', {
               page_path: window.location.pathname,
             });
-          `
+            `
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 51
       },
       __self: this
-    }), this.props.styleTags), __jsx("body", {
+    })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 64
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 65
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 66
       },
       __self: this
     })));
