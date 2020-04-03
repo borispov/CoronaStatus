@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from './Header.js';","map":{"version":3,"sources":["/Users/raypo/Desktop/Projectos/CoronaStatus/components/Header/index.js"],"names":["default"],"mappings":"AACA,SAASA,OAAT,QAAwB,aAAxB","sourcesContent":["\nexport { default } from './Header.js'\n"]},"metadata":{},"sourceType":"module"}

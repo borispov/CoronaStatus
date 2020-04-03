@@ -1,4 +1,3 @@
-import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -52,7 +51,7 @@ export default class extends Document {
           `,
             }}
           />
-          {/* { this.props.styleTags } */}
+          { this.props.styleTags }
         </Head>
         <body>
           <Main />

@@ -53,7 +53,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
-        <Header title='nCorona' isHeb={isHeb}>
+        <Header title='nCorona' isHeb={isHeb} theme={theme}>
 
           <Burger setOpen={this.toggleMenu} open={this.state.menuOpen} />
           <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
