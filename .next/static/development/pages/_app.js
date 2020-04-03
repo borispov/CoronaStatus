@@ -9619,7 +9619,7 @@ var MyApp = /*#__PURE__*/function (_App) {
         },
         __self: this
       }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
-        href: "/news",
+        href: "/News",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 68

@@ -3029,7 +3029,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       },
       __self: this
     }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      href: "/news",
+      href: "/News",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 68

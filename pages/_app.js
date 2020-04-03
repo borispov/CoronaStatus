@@ -65,7 +65,7 @@ export default class MyApp extends App {
               <span>&#127760;</span>
               {displayLang}
             </a>
-            <Link href="/news">
+            <Link href="/News">
               <a alt="news">
                 <span>&#128240;</span>
                 News
