@@ -153,7 +153,7 @@ BaseAnimation.defaultProps = {
 
 const fadeInAnimation = keyframes`
   from {
-    transform: scale(.5);
+    transform: scale(0.5);
     opacity: 0;
   }
 
@@ -165,4 +165,22 @@ const fadeInAnimation = keyframes`
 
 export const FadeIn = styled(BaseAnimation)`
   animation-name: ${fadeInAnimation};
+`
+
+
+const slideInLeftAnimation = keyframes`
+  from {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+`
+export const SlideInLeft = styled(BaseAnimation)`
+  animation-name: ${slideInLeftAnimation};
+  animation-timing-function: cubic-bezier(0.24, 0.1, 0.34, 1.46);
 `

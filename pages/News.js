@@ -66,6 +66,7 @@ const Source = styled.h1`
 const Title = styled(S.Heading2)`
   font-weight: 700;
   font-family: 'Roboto';
+  color: ${props => props.theme.color};
   @media (max-width: 768px) {
     max-width: fit-content;
   }

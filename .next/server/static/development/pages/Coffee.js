@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,7 +97,7 @@ module.exports =
 /*!*************************!*\
   !*** ./components/S.js ***!
   \*************************/
-/*! exports provided: Flex, Heading, Heading2, Paragraph, simpleWrapper, Container, Button, FadeIn */
+/*! exports provided: Flex, Heading, Heading2, Paragraph, simpleWrapper, Container, Button, FadeIn, SlideInLeft */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -110,6 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return Container; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FadeIn", function() { return FadeIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideInLeft", function() { return SlideInLeft; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
@@ -182,21 +183,16 @@ BaseAnimation.defaultProps = {
   playState: 'running',
   display: 'block'
 };
-const fadeInAnimation = styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"]`
-  from {
-    transform: scale(.5);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
+const fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}"]);
 const FadeIn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnimation).withConfig({
   displayName: "S__FadeIn",
   componentId: "sc-3vwmv4-9"
 })(["animation-name:", ";"], fadeInAnimation);
+const slideInLeftAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{-webkit-transform:translateX(-200%);transform:translateX(-200%);visibility:visible;}to{-webkit-transform:translateX(0);transform:translateX(0);}"]);
+const SlideInLeft = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnimation).withConfig({
+  displayName: "S__SlideInLeft",
+  componentId: "sc-3vwmv4-10"
+})(["animation-name:", ";animation-timing-function:cubic-bezier(0.24,0.1,0.34,1.46);"], slideInLeftAnimation);
 
 /***/ }),
 
@@ -2362,7 +2358,7 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/Coffee.js ***!
   \*******************************/

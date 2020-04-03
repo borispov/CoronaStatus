@@ -1,4 +1,4 @@
-import { Button, Container} from './S'
+import { Button, Container, SlideInLeft } from './S'
 import Coffee from '../public/coffee.svg'
 import Link from 'next/link'
 
@@ -6,6 +6,7 @@ const Header = (props, { title, isHeb }) => {
   return (
     <div className="header__wrapper">
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+        <SlideInLeft duration='0.75s'>
         <header className="header">
           <nav className="nav">
             <ul className="nav__list">
@@ -42,6 +43,7 @@ const Header = (props, { title, isHeb }) => {
 
           </nav>
         </header>
+      </SlideInLeft>
       </div>
       <style jsx>{`
         i {

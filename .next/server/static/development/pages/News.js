@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,7 +97,7 @@ module.exports =
 /*!*************************!*\
   !*** ./components/S.js ***!
   \*************************/
-/*! exports provided: Flex, Heading, Heading2, Paragraph, simpleWrapper, Container, Button, FadeIn */
+/*! exports provided: Flex, Heading, Heading2, Paragraph, simpleWrapper, Container, Button, FadeIn, SlideInLeft */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -110,6 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return Container; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FadeIn", function() { return FadeIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideInLeft", function() { return SlideInLeft; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
@@ -182,21 +183,16 @@ BaseAnimation.defaultProps = {
   playState: 'running',
   display: 'block'
 };
-const fadeInAnimation = styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"]`
-  from {
-    transform: scale(.5);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
+const fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}"]);
 const FadeIn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnimation).withConfig({
   displayName: "S__FadeIn",
   componentId: "sc-3vwmv4-9"
 })(["animation-name:", ";"], fadeInAnimation);
+const slideInLeftAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{-webkit-transform:translateX(-200%);transform:translateX(-200%);visibility:visible;}to{-webkit-transform:translateX(0);transform:translateX(0);}"]);
+const SlideInLeft = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnimation).withConfig({
+  displayName: "S__SlideInLeft",
+  componentId: "sc-3vwmv4-10"
+})(["animation-name:", ";animation-timing-function:cubic-bezier(0.24,0.1,0.34,1.46);"], slideInLeftAnimation);
 
 /***/ }),
 
@@ -249,7 +245,7 @@ const Source = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withC
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(_components_S__WEBPACK_IMPORTED_MODULE_2__["Heading2"]).withConfig({
   displayName: "News__Title",
   componentId: "sc-1dpkj34-4"
-})(["font-weight:700;font-family:'Roboto';@media (max-width:768px){max-width:fit-content;}"]);
+})(["font-weight:700;font-family:'Roboto';color:", ";@media (max-width:768px){max-width:fit-content;}"], props => props.theme.color);
 
 const shortenSnippet = text => text.split(' ').slice(0, 40).join(' ') + '. . .';
 
@@ -265,7 +261,7 @@ const News = ({
       key: idx,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 85
       },
       __self: undefined
     }, __jsx("a", {
@@ -275,7 +271,7 @@ const News = ({
       href: item.href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 86
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -283,13 +279,13 @@ const News = ({
       margin: "0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 87
       },
       __self: undefined
     }, __jsx(NewsBanner, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 88
       },
       __self: undefined
     }, __jsx("img", {
@@ -297,7 +293,7 @@ const News = ({
       alt: item.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 89
       },
       __self: undefined
     })), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -306,7 +302,7 @@ const News = ({
       margin: "12px 0px 18px 6px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 91
       },
       __self: undefined
     }, __jsx(Title, {
@@ -314,7 +310,7 @@ const News = ({
       color: "#111",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 92
       },
       __self: undefined
     }, item.title), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Paragraph"], {
@@ -323,7 +319,7 @@ const News = ({
       fontSize: "12px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 93
       },
       __self: undefined
     }, shortenSnippet(item.description))))), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -333,7 +329,7 @@ const News = ({
       padding: "0 12px",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 97
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -342,7 +338,7 @@ const News = ({
       column: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 98
       },
       __self: undefined
     }, __jsx("a", {
@@ -354,13 +350,13 @@ const News = ({
       href: item.href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 99
       },
       __self: undefined
     }, __jsx(Source, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 100
       },
       __self: undefined
     }, showSource(item.href)))), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -369,14 +365,14 @@ const News = ({
       alignItems: "middle",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 103
       },
       __self: undefined
     }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Heading2"], {
       color: "white",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 104
       },
       __self: undefined
     }, Object(_utils_dateHeb__WEBPACK_IMPORTED_MODULE_4__["default"])(item.date))))));
@@ -385,13 +381,13 @@ const News = ({
   return __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 113
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 114
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["Flex"], {
@@ -399,7 +395,7 @@ const News = ({
     justify: "baseline",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_2__["FadeIn"], {
@@ -407,7 +403,7 @@ const News = ({
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 117
     },
     __self: undefined
   }, newsToTemplate(news)))));
@@ -458,7 +454,7 @@ months[months.length] = "דצמבר";
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!*****************************!*\
   !*** multi ./pages/News.js ***!
   \*****************************/

@@ -115,7 +115,6 @@ const LineChart = ( props, {theme} ) => {
 };
 
   return (
-    <FadeIn duration="1s" delay="0.059s">
       <Div>
         <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
           <Line
@@ -126,7 +125,6 @@ const LineChart = ( props, {theme} ) => {
             // height={40}
           />
       </Div>
-    </FadeIn>
   )
 }
 
