@@ -29,6 +29,7 @@ const CoronaApp = ({ isHeb }) => {
 
   const worldTodaySorted = worldToday &&
     {
+      active: worldToday.active,
       cases: worldToday.cases,
       todayCases: worldToday.todayCases,
       recovered: worldToday.recovered,
@@ -81,9 +82,9 @@ const CoronaApp = ({ isHeb }) => {
       />
 
       <form 
-        style={{ maxWidth: '520px', margin: '54px auto'}}
+        style={{ maxWidth: '520px', margin: '54px auto', textAlign: 'center'}}
         onSubmit={handleSubmit}>
-        <label style={{fontSize: '16px'}}>
+        <label style={{fontSize: '16px', fontWeight: 'bold'}}>
           { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
         </label>
 
@@ -92,9 +93,14 @@ const CoronaApp = ({ isHeb }) => {
           options={selectOptions}
           value={country}
           onChange={handleChange}
-          placeholder={country || 'Get Country Stats'}
+          placeholder={country || 'ישראל'}
         />
       </form>
+
+      <HeaderDescription 
+        txt='* גרפים המציגים את שיעור הצמיחה של נגיף הקורונה,
+        אינם מתעדכנים בזמן אמת ולכן אינם משקפים את היום הנוכחי. בדרך-כלל מתקיים פער של יום,
+        לכל היותר שלושה ימים. הנתונים המוצגים מחוץ לגרפים משקפים את הזמן הנתון ברגע הנוכחי ומתעדכנים בערך אחת לחצי שעה.'/>
 
       <Stats
         cn={'World'}

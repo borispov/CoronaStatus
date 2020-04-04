@@ -1,7 +1,13 @@
-import {Line} from 'react-chartjs-2';
+import { Line, defaults } from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
 import styled, { withTheme, keyframes }  from 'styled-components'
 import { FadeIn } from './S'
+
+defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+defaults.global.hover.mode = 'nearest'
+defaults.global.hover.axis = 'xy'
+defaults.global.hover.intersect = false
+
 
 const Div = styled.div`
   margin-top: 32px;
@@ -15,6 +21,10 @@ const Div = styled.div`
   > * {
     direction: rtl;
   }
+  h1 {
+    text-shadow: ${({ theme }) => theme.shadows[1]};
+  }
+
   @media (max-width: 768px) {
     height: 40vh;
     margin-bottom: 48px;
@@ -31,7 +41,7 @@ const parseDatasets = (arrayOfSets, fill) => {
   return arrayOfSets.map(set => ({
     ...set,
     data: set.data.length > 30 ? subtractArray(set.data) : set.data,
-    fill: fill || false
+    fill: fill || false,
   }))
 }
 
@@ -61,21 +71,27 @@ const LineChart = ( props, {theme} ) => {
     },
     animation: {
         easing: 'easeInOutQuad',
-        duration: 1050
+        duration: 100
     },
     scales: {
         xAxes: [{
             gridLines: {
-                color: 'rgba(200, 200, 200, 0.05)',
-                lineWidth: 1
+                drawBorder: true,
+                drawTicks: true,
+                color: 'rgba(0, 0, 0, 0.05)',
+                lineWidth: 1,
+                zeroLineWidth: 0.2,
             }
         }],
         yAxes: [{
           ticks: {
-            maxTicksLimit: 5,
+            maxTicksLimit: 6,
           },
             gridLines: {
-                color: 'rgba(200, 200, 200, 0.08)',
+                drawBorder: true,
+              drawTicks: true,
+              zeroLineWidth: 0.2,
+                color: 'rgba(0, 0, 0, 0.05)',
                 lineWidth: 1
             }
         }]
@@ -90,13 +106,9 @@ const LineChart = ( props, {theme} ) => {
       position: 'bottom'
     },
     tooltips: {
-        titleFontFamily: 'Open Sans',
-        backgroundColor: 'rgba(20,20,20, 0.4)',
-        titleFontColor: '#fff',
-        caretSize: 10,
-        cornerRadius: 5,
-        xPadding: 15,
-        yPadding: 15
+        titleFontFamily: 'Roboto',
+        backgroundColor: 'rgba(20,20,20, 1)',
+        titleFontColor: '#f9f9f9',
     },
     plugins: {
        datalabels: {
@@ -116,7 +128,6 @@ const LineChart = ( props, {theme} ) => {
 
   return (
       <Div>
-        <h1 style={{fontSize: '1.65rem'}}>{props.label}</h1>
           <Line
             label={props.label}
             data={data}

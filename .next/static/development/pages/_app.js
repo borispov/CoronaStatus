@@ -209,7 +209,7 @@ var Header = function Header(_ref) {
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     small: true,
-    bgColor: "#c82333",
+    bg: "error2",
     link: true,
     __source: {
       fileName: _jsxFileName,
@@ -255,7 +255,9 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "Headerstyled__HeaderWrapper",
   componentId: "sc-1v2vfvs-0"
-})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,", ",#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;box-shadow:0 0.3px 0.9px rgba(0,0,0,0.12),0 1.6px 3.6px rgba(0,0,0,0.12);"], function (props) {
+  return props.theme.primaryColor;
+});
 var HeaderTag = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header.withConfig({
   displayName: "Headerstyled__HeaderTag",
   componentId: "sc-1v2vfvs-1"
@@ -271,7 +273,7 @@ var NavList = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul.withC
 var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li.withConfig({
   displayName: "Headerstyled__NavItem",
   componentId: "sc-1v2vfvs-4"
-})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:14px;}@media (max-width:580px){margin-left:8px;}"]);
+})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
   displayName: "Headerstyled__Logo",
   componentId: "sc-1v2vfvs-5"
@@ -321,7 +323,7 @@ var ThemeIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["
 var Coffee = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(_public_coffee_svg__WEBPACK_IMPORTED_MODULE_4__["default"]).withConfig({
   displayName: "ThemeIcon__Coffee",
   componentId: "sc-19iwvb-0"
-})(["", " width:1.5rem;height:1.5rem;"], ThemeIcon);
+})(["", " width:2rem;height:2rem;"], ThemeIcon);
 var WorldIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(_public_world_svg__WEBPACK_IMPORTED_MODULE_3__["default"]).withConfig({
   displayName: "ThemeIcon__WorldIcon",
   componentId: "sc-19iwvb-1"
@@ -472,14 +474,12 @@ __webpack_require__.r(__webpack_exports__);
 var StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(45deg,#5c0434,#000000d6);height:auto;position:absolute;z-index:999;top:0;right:0;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";@media (max-width:", "){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;}span{margin-right:18px;font-size:14px;color:", ";}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:", ";text-decoration:none;transition:color 0.15s linear;@media (max-width:", "){font-size:1.5rem;text-align:center;}&:hover{color:", ";}}"], function (_ref) {
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(45deg,#5c0434,#000000d6);height:auto;position:absolute;z-index:999;top:0;right:10%;direction:rtl;width:30%;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";@media (max-width:", "){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:center;}span{margin-right:18px;margin-right:18px;font-size:14px;color:", ";}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:", "){font-size:1.5rem;text-align:center;}&:hover{color:", ";}}"], function (_ref) {
   var open = _ref.open;
-  return open ? 'translateY(64px)' : 'translateY(-120%)';
+  return open ? 'translateY(64px)' : 'translateY(-100%)';
 }, function (_ref2) {
   var theme = _ref2.theme;
   return theme.mobile;
-}, function (props) {
-  return props.theme.menuColor;
 }, function (props) {
   return props.theme.menuColor;
 }, function (_ref3) {
@@ -587,8 +587,12 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["font-size:", ";max-width:fit-content;margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+  return props.center ? 'center' : '';
+}, function (props) {
   return props.fontSize || '16px';
+}, function (props) {
+  return props.mw || 'fit-content';
 }, function (props) {
   return props.noMargin && '0' || '0';
 }, function (props) {
@@ -596,7 +600,7 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 }, function (props) {
   return props.padding || '';
 }, function (props) {
-  return props.color || props.theme.color;
+  return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -615,16 +619,18 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
-  return props.small && '.375rem .75rem' || '10px 14px';
+  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bgColor && props.bgColor || props.theme.btnBg;
+  return props.bg && props.theme[props.bg] || props.theme.primaryColor;
 }, function (props) {
-  return props.btnColor && props.btnColor || props.theme.btnColor;
+  return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
+}, function (props) {
+  return props.outline ? '1px solid ' + props.theme.secondary : '';
 }, function (props) {
   return props.border ? props.border : 'none';
 }, function (props) {
@@ -633,6 +639,8 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
   return props.link ? 'pointer' : 'cursor';
 }, function (props) {
   return props.margin ? props.margin : '';
+}, function (props) {
+  return props.theme.hover;
 });
 var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
   displayName: "S__LangBtn",
@@ -642,7 +650,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 135
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -650,7 +658,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 136
     },
     __self: this
   }), props.children);
@@ -8713,7 +8721,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Montserrat';\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto'\n  }\n\n  h1 {\n    font-family: 'Roboto'\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Roboto';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Montserrat';\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto';\n  }\n\n  h1 {\n    font-family: 'Roboto';\n    font-weight: 400;\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Roboto';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -9134,47 +9142,89 @@ var themes = {
     menuBorder: '#232F34',
     menuBg: '#344955',
     menuColor: '#4A6572',
-    menuHover: '#F9AA33'
+    menuHover: '#F9AA33',
+    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    white: '#FFF',
+    black: '#000',
+    secondary: '#03DAC6',
+    shadows: {
+      0: "none",
+      1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+      2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+      3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+      4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    }
   },
-  mobile: '568px',
+  mobile: '660px',
   light: {
     type: 'light',
-    // bgColor: 'rgb(250, 250, 252)',
-    bgColor: '#',
-    headerBg: 'rgb(250, 250, 252)',
-    boxBg: 'rgba(50, 150, 252, 0.8)',
-    // color: '#3E4C59',
+    text: {
+      primary: 'rgba(0,0,0,0.87)',
+      secondary: 'rgba(0,0,0,0.60)',
+      disabled: 'rgba(0,0,0,0.38)'
+    },
+    primaryColor: '#6646EE',
+    primaryDark: '303f9f',
+    primaryVariant: '#3700B3',
+    complementary: '#BC85F9',
+    bgColor: '#FFF',
+    error: '#b00020',
+    error2: '#ee5f02',
+    hover: 'rgba(0,0,0,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(0,0,0,0.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    successDefault: '#4caf50',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    textColor: '#121112',
     color: '#121212',
-    searchBgColor: '#E4E7EB',
+    onPrimary: '#FFFFFF',
+    onBg: '#000000',
+    onError: '#FFFFFF',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
-    categoryColor: '#999',
-    categoryHoverColor: '#333',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
     btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    blueTheme: '#6200EE',
-    lightColor: '#767676',
-    dark: '#121212'
+    btnColor: '#fff'
   },
   dark: {
     type: 'dark',
-    // bgColor: '#1F2933',
-    bgColor: '#364061',
-    headerBg: '#3d444b',
-    color: '#E4E7EB',
-    searchBgColor: '#E4E7EB',
+    // primaryColor: '#BB86FC',
+    primaryColor: '#BC85F9',
+    primaryDark: '#BB86FC',
+    primaryVariant: '#3700B3',
+    complementary: '#6646EE',
+    bgColor: '#1B1B12',
+    error: '#CF6679',
+    error2: '#ee5f02',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    primaryHover: '#BF96FD',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    hover: 'rgba(255,255,255,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(255,255,255,255.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    color: 'hsl(207, 0%, 87%)',
+    textColor: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
-    btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    lightColor: '#919695',
-    dark: '#121212'
+    btnBg: '#344955'
   }
 };
 

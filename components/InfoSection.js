@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: Roboto;
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 32px;
@@ -19,14 +20,12 @@ const Wrapper = styled.div`
 
 const Section = styled.div`
   border-radius: 4px;
-  background: ${props => props.theme.bgColor};
-  color: ${props => props.theme.color};
   flex: 0 0 50%;
   max-width: 33%;
   position: relative;
   width: 100%;
   border: 1px solid;
-  border-color: ${props => props.theme.statColor};
+  border-color: ${props => props.theme.primaryColor};
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 16px;
@@ -40,8 +39,8 @@ const Section = styled.div`
 `
 
 const SectionTitle = styled.h2`
-  color: ${props => props.theme.btnColor};
-  background: ${props => props.theme.boxBg};
+  color: ${props => props.theme.onPrimary};
+  background: ${props => props.theme.primaryColor};
   font-size: 20px;
   padding: 4px 8px;
   margin-bottom: 8px;
@@ -50,8 +49,7 @@ const SectionTitle = styled.h2`
 
 const Link = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.statColor};
-  font-weight: 700;
+  color: ${props => props.theme.primaryColor};
   font-size: 18px;
   line-height: 1.5;
   padding: 6px 4px 2px 4px;
@@ -63,7 +61,7 @@ const Link = styled.a`
 const Desc = styled.p`
   font-size: 16px;
   line-height: 1.3;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.text.secondary};
   padding: 0 4px;
   padding-bottom: 12px;
   @media (max-width: 768px) {

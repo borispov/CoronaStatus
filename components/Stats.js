@@ -13,7 +13,7 @@ const Container = styled.div`
   max-width: 1140px;
   margin: 24px auto 0;
   text-align: center;
-  margin-top: 16px;
+  margin-top: 32px;
 `
 
 const Flex = styled.div`
@@ -22,7 +22,7 @@ const Flex = styled.div`
   background-color: ${props => props.bg || props.theme.bgColor};
   border-radius: 12px;
   & > div {
-    background-color: ${props => props.bg || props.theme.bgColor};
+    // background-color: ${props => props.theme.secondary};
   }
 `
 
@@ -32,9 +32,7 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
     <Container>
       {
         todayStats &&
-          <div style={{ border: '1px solid rgba(255, 60, 60, 0.022)', borderRadius: '6px', marginBottom: '16px' }}>
-            <QuickStats country={cn} S={todayStats} isHeb={isHeb}/>
-        </div>
+          <QuickStats country={cn} S={todayStats} isHeb={isHeb}/>
           || todayWorld && 
             <div>
             <h1 style={{fontSize: '20px', paddingTop: '18px'}}>
@@ -42,9 +40,13 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {
             </h1>
             <Flex>
 
-              <StatBlock 
-                title={isHeb && 'נדבקים' || "Infected"}
+              <StatBlock
+                title={isHeb && 'סך נדבקים' || "Total Confirmed"}
                 data={todayWorld.cases}
+              />
+              <StatBlock
+                title={isHeb && 'פעילים' || "Active"}
+                data={todayWorld.active}
               />
               <StatBlock 
                 title={isHeb && 'החלימו' || "Recovered"}

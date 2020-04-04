@@ -299,7 +299,7 @@ const Header = ({
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     small: true,
-    bgColor: "#c82333",
+    bg: "error2",
     link: true,
     __source: {
       fileName: _jsxFileName,
@@ -346,7 +346,7 @@ __webpack_require__.r(__webpack_exports__);
 const HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "Headerstyled__HeaderWrapper",
   componentId: "sc-1v2vfvs-0"
-})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;"]);
+})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,", ",#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;box-shadow:0 0.3px 0.9px rgba(0,0,0,0.12),0 1.6px 3.6px rgba(0,0,0,0.12);"], props => props.theme.primaryColor);
 const HeaderTag = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.header.withConfig({
   displayName: "Headerstyled__HeaderTag",
   componentId: "sc-1v2vfvs-1"
@@ -362,7 +362,7 @@ const NavList = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.with
 const NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.li.withConfig({
   displayName: "Headerstyled__NavItem",
   componentId: "sc-1v2vfvs-4"
-})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:14px;}@media (max-width:580px){margin-left:8px;}"]);
+})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "Headerstyled__Logo",
   componentId: "sc-1v2vfvs-5"
@@ -413,7 +413,7 @@ const ThemeIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(
 const Coffee = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_public_coffee_svg__WEBPACK_IMPORTED_MODULE_4__["default"]).withConfig({
   displayName: "ThemeIcon__Coffee",
   componentId: "sc-19iwvb-0"
-})(["", " width:1.5rem;height:1.5rem;"], ThemeIcon);
+})(["", " width:2rem;height:2rem;"], ThemeIcon);
 const WorldIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_public_world_svg__WEBPACK_IMPORTED_MODULE_3__["default"]).withConfig({
   displayName: "ThemeIcon__WorldIcon",
   componentId: "sc-19iwvb-1"
@@ -564,11 +564,11 @@ __webpack_require__.r(__webpack_exports__);
 const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(45deg,#5c0434,#000000d6);height:auto;position:absolute;z-index:999;top:0;right:0;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";@media (max-width:", "){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;}span{margin-right:18px;font-size:14px;color:", ";}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:", ";text-decoration:none;transition:color 0.15s linear;@media (max-width:", "){font-size:1.5rem;text-align:center;}&:hover{color:", ";}}"], ({
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(45deg,#5c0434,#000000d6);height:auto;position:absolute;z-index:999;top:0;right:10%;direction:rtl;width:30%;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";@media (max-width:", "){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:center;}span{margin-right:18px;margin-right:18px;font-size:14px;color:", ";}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:", "){font-size:1.5rem;text-align:center;}&:hover{color:", ";}}"], ({
   open
-}) => open ? 'translateY(64px)' : 'translateY(-120%)', ({
+}) => open ? 'translateY(64px)' : 'translateY(-100%)', ({
   theme
-}) => theme.mobile, props => props.theme.menuColor, props => props.theme.menuColor, ({
+}) => theme.mobile, props => props.theme.menuColor, ({
   theme
 }) => theme.mobile, ({
   theme
@@ -635,7 +635,7 @@ const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h2.wit
 const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["font-size:", ";max-width:fit-content;margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.fontSize || '16px', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.color || props.theme.color);
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.center ? 'center' : '', props => props.fontSize || '16px', props => props.mw || 'fit-content', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.secondary ? props.theme.text.secondary : props.theme.text.primary);
 const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
@@ -647,7 +647,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -655,7 +655,7 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).wi
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 127
+    lineNumber: 135
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -663,7 +663,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 128
+    lineNumber: 136
   },
   __self: undefined
 }), props.children);
@@ -2806,11 +2806,12 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 
 
   .div.span.h3 {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
   }
 
   h1 {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    font-weight: 400;
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -3236,47 +3237,89 @@ const themes = {
     menuBorder: '#232F34',
     menuBg: '#344955',
     menuColor: '#4A6572',
-    menuHover: '#F9AA33'
+    menuHover: '#F9AA33',
+    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    white: '#FFF',
+    black: '#000',
+    secondary: '#03DAC6',
+    shadows: {
+      0: "none",
+      1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+      2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+      3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+      4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    }
   },
-  mobile: '568px',
+  mobile: '660px',
   light: {
     type: 'light',
-    // bgColor: 'rgb(250, 250, 252)',
-    bgColor: '#',
-    headerBg: 'rgb(250, 250, 252)',
-    boxBg: 'rgba(50, 150, 252, 0.8)',
-    // color: '#3E4C59',
+    text: {
+      primary: 'rgba(0,0,0,0.87)',
+      secondary: 'rgba(0,0,0,0.60)',
+      disabled: 'rgba(0,0,0,0.38)'
+    },
+    primaryColor: '#6646EE',
+    primaryDark: '303f9f',
+    primaryVariant: '#3700B3',
+    complementary: '#BC85F9',
+    bgColor: '#FFF',
+    error: '#b00020',
+    error2: '#ee5f02',
+    hover: 'rgba(0,0,0,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(0,0,0,0.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    successDefault: '#4caf50',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    textColor: '#121112',
     color: '#121212',
-    searchBgColor: '#E4E7EB',
+    onPrimary: '#FFFFFF',
+    onBg: '#000000',
+    onError: '#FFFFFF',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
-    categoryColor: '#999',
-    categoryHoverColor: '#333',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
     btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    blueTheme: '#6200EE',
-    lightColor: '#767676',
-    dark: '#121212'
+    btnColor: '#fff'
   },
   dark: {
     type: 'dark',
-    // bgColor: '#1F2933',
-    bgColor: '#364061',
-    headerBg: '#3d444b',
-    color: '#E4E7EB',
-    searchBgColor: '#E4E7EB',
+    // primaryColor: '#BB86FC',
+    primaryColor: '#BC85F9',
+    primaryDark: '#BB86FC',
+    primaryVariant: '#3700B3',
+    complementary: '#6646EE',
+    bgColor: '#1B1B12',
+    error: '#CF6679',
+    error2: '#ee5f02',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    primaryHover: '#BF96FD',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    hover: 'rgba(255,255,255,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(255,255,255,255.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    color: 'hsl(207, 0%, 87%)',
+    textColor: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
-    btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    lightColor: '#919695',
-    dark: '#121212'
+    btnBg: '#344955'
   }
 };
 

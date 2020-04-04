@@ -136,7 +136,7 @@ const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h2.wit
 const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["font-size:", ";max-width:fit-content;margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.fontSize || '16px', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.color || props.theme.color);
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.center ? 'center' : '', props => props.fontSize || '16px', props => props.mw || 'fit-content', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.secondary ? props.theme.text.secondary : props.theme.text.primary);
 const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
@@ -148,7 +148,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -156,7 +156,7 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).wi
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 127
+    lineNumber: 135
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -164,7 +164,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 128
+    lineNumber: 136
   },
   __self: undefined
 }), props.children);

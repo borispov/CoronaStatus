@@ -1,8 +1,5 @@
 import { Bar, defaults } from 'react-chartjs-2';
 
-defaults.global.animation = false
-defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
-
 const prop = o => k => o[k]
 const popVal = o => Object.values(o)[0]
 const popKey = o => Object.keys(o)[0]

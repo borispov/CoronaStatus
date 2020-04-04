@@ -1,0 +1,190 @@
+webpackHotUpdate("static/development/pages/index.js",{
+
+/***/ "./components/QuickStats.js":
+/*!**********************************!*\
+  !*** ./components/QuickStats.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./S */ "./components/S.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Row",
+  componentId: "lmgi17-0"
+})(["display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;"]);
+var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Col",
+  componentId: "lmgi17-1"
+})(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid;border-right-color:2px solid;border-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;"], function (props) {
+  return props.theme.secondary;
+}, function (props) {
+  return props.theme.primaryColor;
+}, function (props) {
+  return props.theme.onPrimary;
+});
+var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withConfig({
+  displayName: "QuickStats__Country",
+  componentId: "lmgi17-2"
+})(["font-size:18px;font-weight:bold;align-self:center;color:", ";"], function (props) {
+  return props.theme.onPrimary;
+});
+var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "QuickStats__Div",
+  componentId: "lmgi17-3"
+})(["box-shadow:", ";border-radius:6px;margin-bottom:16px;border:", ";"], function (props) {
+  return props.theme.shadows[2];
+}, function (_ref) {
+  var theme = _ref.theme;
+  return theme.secondary;
+});
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref2) {
+  var S = _ref2.S,
+      country = _ref2.country,
+      isHeb = _ref2.isHeb;
+  return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, __jsx(Div, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, __jsx(Row, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, __jsx(Col, {
+    style: {
+      borderRight: 'none',
+      borderTopRightRadius: '5px',
+      borderBottomRightRadius: '5px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, __jsx(Country, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, " ", country, " ")), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, S.cases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, S.recovered, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }))), __jsx(Col, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, S.deaths, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
+    style: {
+      borderLeft: 'none',
+      borderTopLeftRadius: '5px',
+      borderBottomLeftRadius: '5px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  }, S.todayCases, __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  }), __jsx("small", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: this
+  }, isHeb ? 'מקרים חדשים' : 'Today Cases'))))));
+});
+
+/***/ })
+
+})
+//# sourceMappingURL=index.js.c9c8d5f1a4509778b09c.hot-update.js.map

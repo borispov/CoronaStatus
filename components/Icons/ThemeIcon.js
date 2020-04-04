@@ -18,8 +18,8 @@ const ThemeIcon = css`
 
 export const Coffee = styled(CoffeeSVG)`
   ${ThemeIcon}
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
 `
 
 export const WorldIcon = styled(World)`

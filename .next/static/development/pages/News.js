@@ -79,8 +79,12 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["font-size:", ";max-width:fit-content;margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+  return props.center ? 'center' : '';
+}, function (props) {
   return props.fontSize || '16px';
+}, function (props) {
+  return props.mw || 'fit-content';
 }, function (props) {
   return props.noMargin && '0' || '0';
 }, function (props) {
@@ -88,7 +92,7 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 }, function (props) {
   return props.padding || '';
 }, function (props) {
-  return props.color || props.theme.color;
+  return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -107,16 +111,18 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
-  return props.small && '.375rem .75rem' || '10px 14px';
+  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bgColor && props.bgColor || props.theme.btnBg;
+  return props.bg && props.theme[props.bg] || props.theme.primaryColor;
 }, function (props) {
-  return props.btnColor && props.btnColor || props.theme.btnColor;
+  return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
+}, function (props) {
+  return props.outline ? '1px solid ' + props.theme.secondary : '';
 }, function (props) {
   return props.border ? props.border : 'none';
 }, function (props) {
@@ -125,6 +131,8 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
   return props.link ? 'pointer' : 'cursor';
 }, function (props) {
   return props.margin ? props.margin : '';
+}, function (props) {
+  return props.theme.hover;
 });
 var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
   displayName: "S__LangBtn",
@@ -134,7 +142,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 135
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -142,7 +150,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 136
     },
     __self: this
   }), props.children);

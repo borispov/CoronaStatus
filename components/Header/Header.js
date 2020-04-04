@@ -20,7 +20,7 @@ const Header = ({ title, theme, isHeb, children }) => {
               <NavItem>
                 <Link href='/Coffee'>
                   <a>
-                    <Button small bgColor='#c82333' link>
+                    <Button small bg='error2' link>
                       <i> <Coffee /> </i>
                       {Tip}
                     </Button>

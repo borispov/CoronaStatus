@@ -3,10 +3,10 @@ import styled from 'styled-components'
 const descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int'
 
 const Text = styled.p`
-  color: ${props => props.theme.categoryColor};
+  color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
   font-size: 14px;
   font-family: 'Open Sans';
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 520px;
   text-align: center;
   margin: 0 auto;
@@ -42,12 +42,15 @@ const Href = styled.a`
   outline: none;
   text-decoration: none;
   font-weight: bold;
-  color: ${props => props.theme.categoryHoverColor};
+  color: ${props => props.theme.primaryVariant};
 `
 
-export default () => (
+export default ({ txt }) => (
   <Wrap>
-    <Text>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
-    </Text>
+    {
+      txt && <Text secondary>{txt}</Text> ||
+      <Text>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
+      </Text>
+    }
   </Wrap>
 )

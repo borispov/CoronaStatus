@@ -45,6 +45,7 @@ function useTodayStats(url, country) {
         const { data } = await axios.get(URL)
         console.log(data);
         const relevant = {
+          active: data.active,
           cases: data.cases,
           todayCases: data.todayCases,
           recovered: data.recovered,

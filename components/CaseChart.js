@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container } from './S'
+import { Button, Container, Paragraph } from './S'
 import axios from 'axios'
 import sortForChart from '../utils/sortForChart'
 import Chart from './Chart'
@@ -57,6 +57,13 @@ class CaseChart extends React.Component {
     }
 
 
+    // margin: '82px 0 0 0',
+    // textAlign: 'center',
+    // fontSize: '16px',
+    // fontWeight: '700',
+    // fontStyle: 'italic',
+    // color: 'rgba(0,0,0,0.60)'
+
   }
 
   render() {
@@ -70,11 +77,17 @@ class CaseChart extends React.Component {
 
     return (
       <>
-        <p style={{margin: '82px 0 0 0', textAlign: 'center', fontSize: '14px', fontWeight: '700', fontFamily: 'Roboto', fontStyle: 'italic'}}>
+          <Paragraph mw='auto' center secondary>
           {this.props.isHeb &&
-              'שיעור התפשטות הנגיף בעולם, מקרי מוות ומסרים מקרים חדשים ליום'
+            'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום'
                 || 'Growth Rate of the virus in the world, including deaths and new cases'}
-        </p>
+          </Paragraph>
+
+        <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
+          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
+          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
+          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+        </div>
         {
           this.state.worldData &&
             <Chart 
@@ -85,11 +98,6 @@ class CaseChart extends React.Component {
               theme={this.props.theme}
             /> || <div> Loading Charts ... </div>
         }
-        <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px'}}>
-          <Button onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
-        </div>
       </>
     )
   }

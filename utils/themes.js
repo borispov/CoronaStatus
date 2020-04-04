@@ -32,13 +32,15 @@ export const themes = {
       disabled: 'rgba(0,0,0,0.38)'
     },
 
-    primaryColor: '#6200EE',
+    primaryColor: '#6646EE',
     primaryDark: '303f9f',
     primaryVariant: '#3700B3',
 
+    complementary: '#BC85F9',
+
     bgColor: '#FFF',
-    bgColor2: '#fafafa',
     error: '#b00020',
+    error2: '#ee5f02',
 
     hover: 'rgba(0,0,0,0.4)',
     hoverOpacity: 0.04,
@@ -46,13 +48,12 @@ export const themes = {
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
 
-
+    successDefault: '#4caf50',
     success: {
       light: '#81c784',
         main: '#4caf50',
         dark: '#388e3c'
     },
-
 
     textColor: '#121112',
     color: '#121212',
@@ -68,11 +69,16 @@ export const themes = {
   dark: {
     type: 'dark',
 
-    primaryColor: '#BB86FC',
+    // primaryColor: '#BB86FC',
+    primaryColor: '#BC85F9',
     primaryDark: '#BB86FC',
     primaryVariant: '#3700B3',
+
+    complementary: '#6646EE',
+
     bgColor: '#1B1B12',
     error: '#CF6679',
+    error2: '#ee5f02',
 
     success: {
       light: '#81c784',

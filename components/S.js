@@ -40,12 +40,13 @@ export const Heading2 = styled.h2`
 `
 
 export const Paragraph = styled.p`
+  text-align: ${props => props.center ? 'center' : ''};
   font-size: ${props => props.fontSize || '16px'};
-  max-width: fit-content;
+  max-width: ${props => props.mw || 'fit-content'};
   margin: ${props => props.noMargin && '0' || '0'};
   line-height: ${props => props.lineHeight || 1.5};
   padding: ${props => props.padding || ''};
-  color: ${props => props.color || props.theme.color};
+  color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
   @media (max-width: 768px) {
     font-size: 12px;
     font-weight: 300;
@@ -85,10 +86,14 @@ export const Container = styled.div`
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
-  padding: ${props => props.small && '.375rem .75rem' || '10px 14px'};
+padding: ${props => props.small 
+    && '.375rem .75rem' || props.medium
+    && '6px 9px'
+    || '10px 14px'};
   font-size: ${props => props.small ? '12px' : '16px'};
-  background: ${props => props.bgColor && props.bgColor || props.theme.btnBg};
-  color: ${props => props.btnColor && props.btnColor || props.theme.btnColor};
+  background: ${props => props.bg && props.theme[props.bg] || props.theme.primaryColor};
+  color: ${props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary};
+  border: ${props => props.outline ? '1px solid ' + props.theme.secondary : ''};
   font-family: 'Sans';
   border: ${props => props.border ? props.border : 'none'};
   font-weight: ${props => props.bold && 'bold' || 'normal'};
@@ -96,6 +101,9 @@ const Btn = styled.button`
   outline: none;
   line-height: 1.5;
   margin: ${props => props.margin ? props.margin : ''};
+  &:hover {
+    background: ${props => props.theme.hover};
+  }
   @media (max-width: 450px) {
     font-size: 12px;
     font-weight: normal;

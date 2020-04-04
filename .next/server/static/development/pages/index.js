@@ -110,8 +110,6 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Bar.j
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.animation = false;
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.defaultFontFamily = "'PT Sans', sans-serif";
 
 const prop = o => k => o[k];
 
@@ -146,7 +144,7 @@ const popKey = o => Object.keys(o)[0];
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Bar"], {
@@ -156,7 +154,7 @@ const popKey = o => Object.keys(o)[0];
     options: options,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 44
     },
     __self: undefined
   }));
@@ -245,7 +243,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         loading: false,
         error: err
       });
-    }
+    } // margin: '82px 0 0 0',
+    // textAlign: 'center',
+    // fontSize: '16px',
+    // fontWeight: '700',
+    // fontStyle: 'italic',
+    // color: 'rgba(0,0,0,0.60)'
+
   }
 
   render() {
@@ -253,13 +257,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 72
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 72
         },
         __self: this
       }, "Loading Data . . ."));
@@ -269,33 +273,72 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 75
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 75
         },
         __self: this
       }, ' error occured:' + this.state.error));
     }
 
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("p", {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
+      mw: "auto",
+      center: true,
+      secondary: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80
+      },
+      __self: this
+    }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
       style: {
-        margin: '82px 0 0 0',
-        textAlign: 'center',
-        fontSize: '14px',
-        fontWeight: '700',
-        fontFamily: 'Roboto',
-        fontStyle: 'italic'
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        padding: '34px 32px 8px 32px'
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 86
       },
       __self: this
-    }, this.props.isHeb && 'שיעור התפשטות הנגיף בעולם, מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      outline: true,
+      bg: "complementary",
+      btnColor: "onBg",
+      medium: true,
+      onClick: () => this.present('worldCases'),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      },
+      __self: this
+    }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      outline: true,
+      bg: "complementary",
+      btnColor: "onBg",
+      medium: true,
+      onClick: () => this.present('deathCases'),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      outline: true,
+      bg: "complementary",
+      btnColor: "onBg",
+      medium: true,
+      onClick: () => this.present('newCases'),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89
+      },
+      __self: this
+    }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
       type: "line",
       labels: this.state.worldLabels,
       data: this.state[this.state.dataToPresent],
@@ -303,48 +346,16 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 93
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 99
       },
       __self: this
-    }, " Loading Charts ... "), __jsx("div", {
-      style: {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        padding: '34px 32px'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      onClick: () => this.present('worldCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      onClick: () => this.present('deathCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90
-      },
-      __self: this
-    }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      onClick: () => this.present('newCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }, this.props.isHeb && 'מקרים חדשים' || 'New cases')));
+    }, " Loading Charts ... "));
   }
 
 }
@@ -462,6 +473,7 @@ const CoronaApp = ({
     countries
   } = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_5__["default"])();
   const worldTodaySorted = worldToday && {
+    active: worldToday.active,
     cases: worldToday.cases,
     todayCases: worldToday.todayCases,
     recovered: worldToday.recovered,
@@ -490,19 +502,19 @@ const CoronaApp = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
   }), __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     },
     __self: undefined
   }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -516,7 +528,7 @@ const CoronaApp = ({
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -525,27 +537,29 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 78
     },
     __self: undefined
   }), __jsx("form", {
     style: {
       maxWidth: '520px',
-      margin: '54px auto'
+      margin: '54px auto',
+      textAlign: 'center'
     },
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 84
     },
     __self: undefined
   }, __jsx("label", {
     style: {
-      fontSize: '16px'
+      fontSize: '16px',
+      fontWeight: 'bold'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: undefined
   }, isHeb ? `נתונים לפי מדינה` : `Data For Country:`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -553,19 +567,26 @@ const CoronaApp = ({
     options: selectOptions,
     value: country,
     onChange: handleChange,
-    placeholder: country || 'Get Country Stats',
+    placeholder: country || 'ישראל',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 91
     },
     __self: undefined
-  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  })), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     cn: 'World',
     todayWorld: worldTodaySorted,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 105
     },
     __self: undefined
   }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -574,7 +595,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 111
     },
     __self: undefined
   })));
@@ -658,7 +679,7 @@ const descriptionTextEn = 'This website makes use of public health data, specifi
 const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "HeaderDescription__Text",
   componentId: "sc-110gwmc-0"
-})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.6;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:320px){max-width:88%;}"], props => props.theme.categoryColor);
+})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:320px){max-width:88%;}"], props => props.secondary ? props.theme.text.secondary : props.theme.text.primary);
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "HeaderDescription__Wrap",
   componentId: "sc-110gwmc-1"
@@ -666,31 +687,40 @@ const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCo
 const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
   displayName: "HeaderDescription__Href",
   componentId: "sc-110gwmc-2"
-})(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], props => props.theme.categoryHoverColor);
-/* harmony default export */ __webpack_exports__["default"] = (() => __jsx(Wrap, {
+})(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], props => props.theme.primaryVariant);
+/* harmony default export */ __webpack_exports__["default"] = (({
+  txt
+}) => __jsx(Wrap, {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 49
   },
   __self: undefined
-}, __jsx(Text, {
+}, txt && __jsx(Text, {
+  secondary: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 51
+  },
+  __self: undefined
+}, txt) || __jsx(Text, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 52
   },
   __self: undefined
 }, "This website makes use of public health data, specifically ", __jsx(Href, {
   href: "https://www.ourworldindata.org",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 52
   },
   __self: undefined
 }, "www.ourworldindata.org"), " and ", __jsx(Href, {
   href: "https://WHO.int",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 52
   },
   __self: undefined
 }, "WHO.int"))));
@@ -728,23 +758,23 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Wrapper",
   componentId: "sc-1anhjcp-0"
-})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
+})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Roboto;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
 const Section = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Section",
   componentId: "sc-1anhjcp-1"
-})(["border-radius:4px;background:", ";color:", ";flex:0 0 50%;max-width:33%;position:relative;width:100%;border:1px solid;border-color:", ";margin-left:8px;margin-right:8px;margin-top:16px;margin-bottom:16px;@media (max-width:768px){flex-direction:column;flex:0 0 100%;max-width:85%;}"], props => props.theme.bgColor, props => props.theme.color, props => props.theme.statColor);
+})(["border-radius:4px;flex:0 0 50%;max-width:33%;position:relative;width:100%;border:1px solid;border-color:", ";margin-left:8px;margin-right:8px;margin-top:16px;margin-bottom:16px;@media (max-width:768px){flex-direction:column;flex:0 0 100%;max-width:85%;}"], props => props.theme.primaryColor);
 const SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h2.withConfig({
   displayName: "InfoSection__SectionTitle",
   componentId: "sc-1anhjcp-2"
-})(["color:", ";background:", ";font-size:20px;padding:4px 8px;margin-bottom:8px;border-bottom:1px solid black;"], props => props.theme.btnColor, props => props.theme.boxBg);
+})(["color:", ";background:", ";font-size:20px;padding:4px 8px;margin-bottom:8px;border-bottom:1px solid black;"], props => props.theme.onPrimary, props => props.theme.primaryColor);
 const Link = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-weight:700;font-size:18px;line-height:1.5;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.statColor);
+})(["text-decoration:none;color:", ";font-size:18px;line-height:1.5;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryColor);
 const Desc = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p.withConfig({
   displayName: "InfoSection__Desc",
   componentId: "sc-1anhjcp-4"
-})(["font-size:16px;line-height:1.3;color:", ";padding:0 4px;padding-bottom:12px;@media (max-width:768px){font-size:14px;}"], props => props.theme.color);
+})(["font-size:16px;line-height:1.3;color:", ";padding:0 4px;padding-bottom:12px;@media (max-width:768px){font-size:14px;}"], props => props.theme.text.secondary);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h1.withConfig({
   displayName: "InfoSection__Title",
   componentId: "sc-1anhjcp-5"
@@ -772,20 +802,20 @@ const mapDataToSection = (item, idx) => {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 86
     },
     __self: undefined
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 87
     },
     __self: undefined
   }, item.description));
@@ -796,13 +826,13 @@ const renderSection = secData => {
     key: ix,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx(SectionTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 95
     },
     __self: undefined
   }, it.category), it.data.map(mapDataToSection)));
@@ -840,7 +870,7 @@ const renderSection = secData => {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 130
       },
       __self: undefined
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -849,13 +879,13 @@ const renderSection = secData => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 135
     },
     __self: undefined
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 136
     },
     __self: undefined
   }, data && renderSection(data)));
@@ -1005,10 +1035,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.defaultFontFamily = "'PT Sans', sans-serif";
+react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.mode = 'nearest';
+react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.axis = 'xy';
+react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.intersect = false;
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:80vw;max-width:80%;}"]);
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:80vw;max-width:80%;}"], ({
+  theme
+}) => theme.shadows[1]);
 
 const filterBy5 = (x, i) => !(i % 4);
 
@@ -1045,21 +1081,27 @@ const LineChart = (props, {
     },
     animation: {
       easing: 'easeInOutQuad',
-      duration: 1050
+      duration: 100
     },
     scales: {
       xAxes: [{
         gridLines: {
-          color: 'rgba(200, 200, 200, 0.05)',
-          lineWidth: 1
+          drawBorder: true,
+          drawTicks: true,
+          color: 'rgba(0, 0, 0, 0.05)',
+          lineWidth: 1,
+          zeroLineWidth: 0.2
         }
       }],
       yAxes: [{
         ticks: {
-          maxTicksLimit: 5
+          maxTicksLimit: 6
         },
         gridLines: {
-          color: 'rgba(200, 200, 200, 0.08)',
+          drawBorder: true,
+          drawTicks: true,
+          zeroLineWidth: 0.2,
+          color: 'rgba(0, 0, 0, 0.05)',
           lineWidth: 1
         }
       }]
@@ -1074,13 +1116,9 @@ const LineChart = (props, {
       position: 'bottom'
     },
     tooltips: {
-      titleFontFamily: 'Open Sans',
-      backgroundColor: 'rgba(20,20,20, 0.4)',
-      titleFontColor: '#fff',
-      caretSize: 10,
-      cornerRadius: 5,
-      xPadding: 15,
-      yPadding: 15
+      titleFontFamily: 'Roboto',
+      backgroundColor: 'rgba(20,20,20, 1)',
+      titleFontColor: '#f9f9f9'
     },
     plugins: {
       datalabels: {
@@ -1108,19 +1146,10 @@ const LineChart = (props, {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 130
     },
     __self: undefined
-  }, __jsx("h1", {
-    style: {
-      fontSize: '1.65rem'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 119
-    },
-    __self: undefined
-  }, props.label), __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+  }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
     label: props.label,
     data: data,
     width: 100,
@@ -1128,7 +1157,7 @@ const LineChart = (props, {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 131
     },
     __self: undefined
   }));
@@ -1164,11 +1193,15 @@ const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
 const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;border-right-width:1px;border-left:2px solid #38383b;border-bottom:2px solid #38383b;border-right-color:2px solid #38383b;border-top:2px solid #38383b;color:", ";background-color:", ";flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;justify-content:center;"], props => props.theme.statColor, props => props.theme.bgColor);
+})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;"], props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
 const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
-})(["font-size:18px;font-weight:bold;align-self:center;"]);
+})(["font-size:18px;font-weight:bold;align-self:center;color:", ";"], props => props.theme.onPrimary);
+const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "QuickStats__Div",
+  componentId: "lmgi17-3"
+})(["box-shadow:", ";border-radius:6px;margin-bottom:16px;"], props => props.theme.shadows[2]);
 /* harmony default export */ __webpack_exports__["default"] = (({
   S,
   country,
@@ -1177,134 +1210,144 @@ const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.with
   return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 43
+    },
+    __self: undefined
+  }, __jsx(Div, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx(Row, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx(Col, {
     style: {
-      borderRight: '2px solid #38383b',
+      borderRight: 'none',
       borderTopRightRadius: '5px',
       borderBottomRightRadius: '5px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
   }, " ", country, " ")), __jsx(Col, {
+    bg: "primaryVariant",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
-  }, S.cases, __jsx("br", {
+  }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53
     },
     __self: undefined
-  }), __jsx("small", {
+  }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
+    bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 56
     },
     __self: undefined
-  }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
+  }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
-  }, S.recovered, __jsx("br", {
+  }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 60
     },
     __self: undefined
-  }), __jsx("small", {
+  }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
+    bg: "error",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 63
     },
     __self: undefined
-  }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
+  }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 66
     },
     __self: undefined
-  }, S.deaths, __jsx("br", {
+  }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 67
     },
     __self: undefined
-  }), __jsx("small", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: undefined
   }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
+    bg: "error2",
     style: {
-      borderLeft: '2px solid #38383b',
+      borderLeft: 'none',
       borderTopLeftRadius: '5px',
       borderBottomLeftRadius: '5px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
     },
     __self: undefined
   }, S.todayCases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 74
     },
     __self: undefined
-  }, isHeb ? 'מקרים חדשים' : 'Today Cases')))));
+  }, isHeb ? 'מקרים חדשים' : 'Today Cases'))))));
 });
 
 /***/ }),
@@ -1352,7 +1395,7 @@ const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h2.wit
 const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["font-size:", ";max-width:fit-content;margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.fontSize || '16px', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.color || props.theme.color);
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.center ? 'center' : '', props => props.fontSize || '16px', props => props.mw || 'fit-content', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.secondary ? props.theme.text.secondary : props.theme.text.primary);
 const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
@@ -1364,7 +1407,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bgColor && props.bgColor || props.theme.btnBg, props => props.btnColor && props.btnColor || props.theme.btnColor, props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -1372,7 +1415,7 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).wi
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 127
+    lineNumber: 135
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -1380,7 +1423,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 128
+    lineNumber: 136
   },
   __self: undefined
 }), props.children);
@@ -1500,11 +1543,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Block = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "StatBlock__Block",
   componentId: "rmn7zo-0"
-})(["position:relative;margin:0;padding:16px 12px;background:", ";font-size:18px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], props => props.theme.bgColor, props => props.theme.color);
+})(["position:relative;margin:0;padding:16px 12px;font-size:18px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], props => props.theme.onBg);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "StatBlock__Title",
   componentId: "rmn7zo-1"
-})(["font:'Helvetica';text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], props => props.theme.textColor);
+})(["font:'Helvetica';font-weight:400;font-size:28px;text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], props => props.theme.onBg);
 const Span = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
   displayName: "StatBlock__Span",
   componentId: "rmn7zo-2"
@@ -1526,7 +1569,7 @@ const StatBlock = ({
       lineNumber: 36
     },
     __self: undefined
-  }, title, ":"), __jsx(Span, {
+  }, title), __jsx(Span, {
     style: {
       fontSize: '18px',
       fontWeight: 'bold',
@@ -1579,11 +1622,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "Stats__Container",
   componentId: "tjczhx-0"
-})(["max-width:1140px;margin:24px auto 0;text-align:center;margin-top:16px;"]);
+})(["max-width:1140px;margin:24px auto 0;text-align:center;margin-top:32px;"]);
 const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "Stats__Flex",
   componentId: "tjczhx-1"
-})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;& > div{background-color:", ";}"], props => props.bg || props.theme.bgColor, props => props.bg || props.theme.bgColor);
+})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;& > div{}"], props => props.bg || props.theme.bgColor);
 function Stats({
   cn = '',
   todayWorld,
@@ -1596,30 +1639,19 @@ function Stats({
       lineNumber: 32
     },
     __self: this
-  }, todayStats && __jsx("div", {
-    style: {
-      border: '1px solid rgba(255, 60, 60, 0.022)',
-      borderRadius: '6px',
-      marginBottom: '16px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, todayStats && __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
     country: cn,
     S: todayStats,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
-  })) || todayWorld && __jsx("div", {
+  }) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 37
     },
     __self: this
   }, __jsx("h1", {
@@ -1629,7 +1661,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 38
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1639,21 +1671,29 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: this
   }, " ", cn === 'World' && isHeb && 'עולם' || cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 41
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: isHeb && 'נדבקים' || "Infected",
+    title: isHeb && 'סך נדבקים' || "Total Confirmed",
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 43
+    },
+    __self: this
+  }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: isHeb && 'פעילים' || "Active",
+    data: todayWorld.active,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1661,7 +1701,7 @@ function Stats({
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 51
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1669,7 +1709,7 @@ function Stats({
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 55
     },
     __self: this
   }))));
@@ -3646,11 +3686,12 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 
 
   .div.span.h3 {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
   }
 
   h1 {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    font-weight: 400;
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -3917,15 +3958,20 @@ const sortForChart = obj => {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    // backgroundColor: 'rgb(235, 65, 15)',
-    borderColor: 'rgb(235, 65, 15)',
-    // borderColor: '#97D3ED',
+    borderColor: '#6200EE',
     strokeColor: "#ADFF2F",
-    pointBorderColor: 'rgba(75,10,192,0)',
-    pointBackgroundColor: '#fff',
-    pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
-    pointRadius: 0,
-    borderWidth: 5
+    borderWidth: 5,
+    borderCapStyle: 'butt',
+    borderDash: [],
+    borderDashOffset: 0.0,
+    borderJoinStyle: 'miter',
+    pointBorderWidth: 1,
+    pointHoverRadius: 5,
+    pointHoverBackgroundColor: '#3700B3',
+    pointHoverBorderColor: '#3700B399',
+    pointHoverBorderWidth: 2,
+    pointRadius: 1,
+    pointHitRadius: 10
   }];
   return {
     datasets,
@@ -3954,47 +4000,89 @@ const themes = {
     menuBorder: '#232F34',
     menuBg: '#344955',
     menuColor: '#4A6572',
-    menuHover: '#F9AA33'
+    menuHover: '#F9AA33',
+    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    white: '#FFF',
+    black: '#000',
+    secondary: '#03DAC6',
+    shadows: {
+      0: "none",
+      1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+      2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+      3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+      4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    }
   },
-  mobile: '568px',
+  mobile: '660px',
   light: {
     type: 'light',
-    // bgColor: 'rgb(250, 250, 252)',
-    bgColor: '#',
-    headerBg: 'rgb(250, 250, 252)',
-    boxBg: 'rgba(50, 150, 252, 0.8)',
-    // color: '#3E4C59',
+    text: {
+      primary: 'rgba(0,0,0,0.87)',
+      secondary: 'rgba(0,0,0,0.60)',
+      disabled: 'rgba(0,0,0,0.38)'
+    },
+    primaryColor: '#6646EE',
+    primaryDark: '303f9f',
+    primaryVariant: '#3700B3',
+    complementary: '#BC85F9',
+    bgColor: '#FFF',
+    error: '#b00020',
+    error2: '#ee5f02',
+    hover: 'rgba(0,0,0,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(0,0,0,0.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    successDefault: '#4caf50',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    textColor: '#121112',
     color: '#121212',
-    searchBgColor: '#E4E7EB',
+    onPrimary: '#FFFFFF',
+    onBg: '#000000',
+    onError: '#FFFFFF',
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
-    categoryColor: '#999',
-    categoryHoverColor: '#333',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
     btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    blueTheme: '#6200EE',
-    lightColor: '#767676',
-    dark: '#121212'
+    btnColor: '#fff'
   },
   dark: {
     type: 'dark',
-    // bgColor: '#1F2933',
-    bgColor: '#364061',
-    headerBg: '#3d444b',
-    color: '#E4E7EB',
-    searchBgColor: '#E4E7EB',
+    // primaryColor: '#BB86FC',
+    primaryColor: '#BC85F9',
+    primaryDark: '#BB86FC',
+    primaryVariant: '#3700B3',
+    complementary: '#6646EE',
+    bgColor: '#1B1B12',
+    error: '#CF6679',
+    error2: '#ee5f02',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    primaryHover: '#BF96FD',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    hover: 'rgba(255,255,255,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(255,255,255,255.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    color: 'hsl(207, 0%, 87%)',
+    textColor: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
-    textColor: '#ED3833',
-    test: 'linear-gradient(45deg, #cc0404, #000000d6)',
-    btnBg: '#344955',
-    btnColor: '#fff',
-    statColor: '#1A74D6',
-    lightColor: '#919695',
-    dark: '#121212'
+    btnBg: '#344955'
   }
 };
 
@@ -4183,6 +4271,7 @@ function useTodayStats(url, country) {
         } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL);
         console.log(data);
         const relevant = {
+          active: data.active,
           cases: data.cases,
           todayCases: data.todayCases,
           recovered: data.recovered,
