@@ -86,7 +86,7 @@ export const Container = styled.div`
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
-padding: ${props => props.small 
+  padding: ${props => props.small 
     && '.375rem .75rem' || props.medium
     && '6px 9px'
     || '10px 14px'};
@@ -101,13 +101,14 @@ padding: ${props => props.small
   outline: none;
   line-height: 1.5;
   margin: ${props => props.margin ? props.margin : ''};
+  box-shadow: ${props => props.theme.shadows[1]};
   &:hover {
     background: ${props => props.theme.hover};
   }
   @media (max-width: 450px) {
     font-size: 12px;
     font-weight: normal;
-    padding: 1px 4px;
+    // padding: 1px 4px;
   }
 `
 

@@ -243,13 +243,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         loading: false,
         error: err
       });
-    } // margin: '82px 0 0 0',
-    // textAlign: 'center',
-    // fontSize: '16px',
-    // fontWeight: '700',
-    // fontStyle: 'italic',
-    // color: 'rgba(0,0,0,0.60)'
-
+    }
   }
 
   render() {
@@ -257,13 +251,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 64
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 64
         },
         __self: this
       }, "Loading Data . . ."));
@@ -273,13 +267,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 67
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 67
         },
         __self: this
       }, ' error occured:' + this.state.error));
@@ -291,7 +285,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       secondary: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 72
       },
       __self: this
     }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -302,40 +296,37 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 78
       },
       __self: this
     }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      outline: true,
       bg: "complementary",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('worldCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 79
       },
       __self: this
     }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      outline: true,
       bg: "complementary",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('deathCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 80
       },
       __self: this
     }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      outline: true,
       bg: "complementary",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('newCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 81
       },
       __self: this
     }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -346,13 +337,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 85
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 91
       },
       __self: this
     }, " Loading Charts ... "));
@@ -778,7 +769,7 @@ const Desc = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p.withConf
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h1.withConfig({
   displayName: "InfoSection__Title",
   componentId: "sc-1anhjcp-5"
-})(["font-size:28px;margin:36px auto;text-shadow:0 2px 6px rgba(0,0,0,0.16);text-align:center;"]);
+})(["font-size:28px;margin:128px 12px auto;text-shadow:0 2px 6px rgba(0,0,0,0.16);text-align:center;color:", ";"], props => props.theme.onBg);
 
 const reduceToCat = (a, _ref) => {
   let {
@@ -802,20 +793,20 @@ const mapDataToSection = (item, idx) => {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: undefined
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 88
     },
     __self: undefined
   }, item.description));
@@ -826,13 +817,13 @@ const renderSection = secData => {
     key: ix,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx(SectionTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: undefined
   }, it.category), it.data.map(mapDataToSection)));
@@ -870,7 +861,7 @@ const renderSection = secData => {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 131
       },
       __self: undefined
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -879,13 +870,13 @@ const renderSection = secData => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 136
     },
     __self: undefined
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: undefined
   }, data && renderSection(data)));
@@ -1407,7 +1398,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.hover);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -1415,7 +1406,7 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).wi
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 135
+    lineNumber: 136
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -1423,7 +1414,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 136
+    lineNumber: 137
   },
   __self: undefined
 }), props.children);
@@ -3930,25 +3921,15 @@ const sortForChart = obj => {
     strokeColor: '#301934',
     pointRadius: 2,
     borderWidth: 4,
-    fill: true,
-    datalabels: {
-      display: ctx => ctx.dataIndex % 2,
-      align: 'end',
-      anchor: 'end'
-    }
+    fill: true
   }, {
     label: 'deaths',
     data: deaths,
     backgroundColor: 'rgba(29,82,209,1) 100%)',
-    borderColor: 'rgba(21, 21, 21, 1)',
+    borderColor: '#b00020',
     strokeColor: "rgba(222, 222, 34, 1)",
     pointRadius: 1,
-    borderWidth: 4,
-    datalabels: {
-      display: ctx => ctx.dataIndex % 2,
-      align: 'end',
-      anchor: 'end'
-    }
+    borderWidth: 4
   }, {
     label: 'cases',
     data: cases,
@@ -4017,7 +3998,7 @@ const themes = {
       disabled: 'rgba(0,0,0,0.38)'
     },
     primaryColor: '#6646EE',
-    primaryDark: '303f9f',
+    primaryDark: '#303f9f',
     primaryVariant: '#3700B3',
     complementary: '#BC85F9',
     bgColor: '#FFF',

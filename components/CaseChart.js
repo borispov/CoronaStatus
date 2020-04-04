@@ -56,14 +56,6 @@ class CaseChart extends React.Component {
       this.setState({ loading: false, error: err })
     }
 
-
-    // margin: '82px 0 0 0',
-    // textAlign: 'center',
-    // fontSize: '16px',
-    // fontWeight: '700',
-    // fontStyle: 'italic',
-    // color: 'rgba(0,0,0,0.60)'
-
   }
 
   render() {
@@ -84,9 +76,9 @@ class CaseChart extends React.Component {
           </Paragraph>
 
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
-          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button outline bg='complementary' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
+          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
+          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
         </div>
         {
           this.state.worldData &&

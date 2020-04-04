@@ -71,9 +71,10 @@ const Desc = styled.p`
 
 const Title = styled.h1`
   font-size: 28px;
-  margin: 36px auto;
+  margin: 128px 12px auto;
   text-shadow: 0 2px 6px rgba(0,0,0,0.16);
   text-align: center;
+  color: ${props => props.theme.onBg};
 `
 
 const reduceToCat = (a, { category, ...x}) => ({ category, data: a['data'].concat(x) })

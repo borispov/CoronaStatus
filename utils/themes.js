@@ -33,7 +33,7 @@ export const themes = {
     },
 
     primaryColor: '#6646EE',
-    primaryDark: '303f9f',
+    primaryDark: '#303f9f',
     primaryVariant: '#3700B3',
 
     complementary: '#BC85F9',

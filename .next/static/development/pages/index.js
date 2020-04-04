@@ -238,13 +238,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 64
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 64
           },
           __self: this
         }, "Loading Data . . ."));
@@ -254,13 +254,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 67
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 67
           },
           __self: this
         }, ' error occured:' + this.state.error));
@@ -272,7 +272,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         secondary: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 72
         },
         __self: this
       }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -283,11 +283,10 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 78
         },
         __self: this
       }, __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        outline: true,
         bg: "complementary",
         btnColor: "onBg",
         medium: true,
@@ -296,11 +295,10 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 79
         },
         __self: this
       }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        outline: true,
         bg: "complementary",
         btnColor: "onBg",
         medium: true,
@@ -309,11 +307,10 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 80
         },
         __self: this
       }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        outline: true,
         bg: "complementary",
         btnColor: "onBg",
         medium: true,
@@ -322,7 +319,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 81
         },
         __self: this
       }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -333,13 +330,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         theme: this.props.theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 85
         },
         __self: this
       }) || __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 91
         },
         __self: this
       }, " Loading Charts ... "));
@@ -785,7 +782,9 @@ var Desc = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].p.withConfi
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h1.withConfig({
   displayName: "InfoSection__Title",
   componentId: "sc-1anhjcp-5"
-})(["font-size:28px;margin:36px auto;text-shadow:0 2px 6px rgba(0,0,0,0.16);text-align:center;"]);
+})(["font-size:28px;margin:128px 12px auto;text-shadow:0 2px 6px rgba(0,0,0,0.16);text-align:center;color:", ";"], function (props) {
+  return props.theme.onBg;
+});
 
 var reduceToCat = function reduceToCat(a, _ref) {
   var category = _ref.category,
@@ -807,20 +806,20 @@ var mapDataToSection = function mapDataToSection(item, idx) {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: this
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: this
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 88
     },
     __self: this
   }, item.description));
@@ -832,13 +831,13 @@ var renderSection = function renderSection(secData) {
       key: ix,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 95
       },
       __self: this
     }, __jsx(SectionTitle, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 96
       },
       __self: this
     }, it.category), it.data.map(mapDataToSection));
@@ -904,7 +903,7 @@ var renderSection = function renderSection(secData) {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 131
       },
       __self: this
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -913,13 +912,13 @@ var renderSection = function renderSection(secData) {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 136
     },
     __self: this
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: this
   }, data && renderSection(data)));
@@ -1514,7 +1513,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
   return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
@@ -1535,6 +1534,8 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.margin ? props.margin : '';
 }, function (props) {
+  return props.theme.shadows[1];
+}, function (props) {
   return props.theme.hover;
 });
 var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
@@ -1545,7 +1546,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 136
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1553,7 +1554,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: this
   }), props.children);
@@ -59004,29 +59005,15 @@ var sortForChart = function sortForChart(obj) {
     strokeColor: '#301934',
     pointRadius: 2,
     borderWidth: 4,
-    fill: true,
-    datalabels: {
-      display: function display(ctx) {
-        return ctx.dataIndex % 2;
-      },
-      align: 'end',
-      anchor: 'end'
-    }
+    fill: true
   }, {
     label: 'deaths',
     data: deaths,
     backgroundColor: 'rgba(29,82,209,1) 100%)',
-    borderColor: 'rgba(21, 21, 21, 1)',
+    borderColor: '#b00020',
     strokeColor: "rgba(222, 222, 34, 1)",
     pointRadius: 1,
-    borderWidth: 4,
-    datalabels: {
-      display: function display(ctx) {
-        return ctx.dataIndex % 2;
-      },
-      align: 'end',
-      anchor: 'end'
-    }
+    borderWidth: 4
   }, {
     label: 'cases',
     data: cases,
@@ -59095,7 +59082,7 @@ var themes = {
       disabled: 'rgba(0,0,0,0.38)'
     },
     primaryColor: '#6646EE',
-    primaryDark: '303f9f',
+    primaryDark: '#303f9f',
     primaryVariant: '#3700B3',
     complementary: '#BC85F9',
     bgColor: '#FFF',

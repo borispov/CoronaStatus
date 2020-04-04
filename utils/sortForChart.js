@@ -37,25 +37,15 @@ const sortForChart = obj => {
       pointRadius: 2,
       borderWidth: 4,
       fill: true,
-      datalabels: {
-        display: ctx => ctx.dataIndex % 2,
-        align: 'end',
-        anchor: 'end'
-      }
     },
     {
       label: 'deaths',
       data: deaths,
       backgroundColor: 'rgba(29,82,209,1) 100%)',
-      borderColor: 'rgba(21, 21, 21, 1)',
+      borderColor: '#b00020',
       strokeColor: "rgba(222, 222, 34, 1)",
       pointRadius: 1,
       borderWidth: 4,
-      datalabels: {
-        display: ctx => ctx.dataIndex % 2,
-        align: 'end',
-        anchor: 'end'
-      }
     },
     {
       label: 'cases',

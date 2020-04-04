@@ -474,19 +474,17 @@ __webpack_require__.r(__webpack_exports__);
 var StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(45deg,#5c0434,#000000d6);height:auto;position:absolute;z-index:999;top:0;right:10%;direction:rtl;width:30%;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";@media (max-width:", "){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:center;}span{margin-right:18px;margin-right:18px;font-size:14px;color:", ";}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:", "){font-size:1.5rem;text-align:center;}&:hover{color:", ";}}"], function (_ref) {
+})(["display:flex;flex-direction:column;justify-content:center;background:", ";color:", ";height:auto;position:absolute;z-index:999;top:0;right:10%;direction:rtl;width:fit-content;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;}span{margin-right:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:10px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
+  return props.theme.primaryVariant;
+}, function (props) {
+  return props.theme.onPrimary;
+}, function (_ref) {
   var open = _ref.open;
   return open ? 'translateY(64px)' : 'translateY(-100%)';
-}, function (_ref2) {
-  var theme = _ref2.theme;
-  return theme.mobile;
 }, function (props) {
   return props.theme.menuColor;
-}, function (_ref3) {
-  var theme = _ref3.theme;
-  return theme.mobile;
-}, function (_ref4) {
-  var theme = _ref4.theme;
+}, function (_ref2) {
+  var theme = _ref2.theme;
   return theme.menuHover;
 });
 
@@ -619,7 +617,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;padding:1px 4px;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
   return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
@@ -640,6 +638,8 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.margin ? props.margin : '';
 }, function (props) {
+  return props.theme.shadows[1];
+}, function (props) {
   return props.theme.hover;
 });
 var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
@@ -650,7 +650,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 136
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -658,7 +658,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: this
   }), props.children);
@@ -9164,7 +9164,7 @@ var themes = {
       disabled: 'rgba(0,0,0,0.38)'
     },
     primaryColor: '#6646EE',
-    primaryDark: '303f9f',
+    primaryDark: '#303f9f',
     primaryVariant: '#3700B3',
     complementary: '#BC85F9',
     bgColor: '#FFF',
