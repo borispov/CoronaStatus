@@ -4,8 +4,7 @@ import styled from 'styled-components'
 const Block = styled.div`
   position: relative;
   margin: 0;
-  padding: 16px 12px;
-  font-size: 18px;
+  padding: 16px 8px;
   text-align: center;
   border-radius: 6px;
   align-content: center;
@@ -14,9 +13,8 @@ const Block = styled.div`
 `
 
 const Title = styled.h3`
-  font: 'Helvetica';
   font-weight: 400;
-  font-size: 28px;
+  font-size: 18px;
   text-decoration: underline;
   letter-spacing: 1px;
   color: ${props => props.theme.onBg};
@@ -24,7 +22,7 @@ const Title = styled.h3`
 `
 
 const Span = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin: 12px 0 0 0;
   color: ${props => props.theme.color}
@@ -34,7 +32,7 @@ const StatBlock = ({ title, data }) => {
   return (
     <Block>
       <Title>{title}</Title>
-      <Span style={{fontSize: '18px', fontWeight: 'bold', margin: '12px 0 0 0'}}>{data}</Span>
+      <Span>{data}</Span>
     </ Block>
   )
 }

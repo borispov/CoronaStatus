@@ -1081,7 +1081,7 @@ react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.hover.intersect 
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:80vw;max-width:80%;}"], function (_ref) {
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], function (_ref) {
   var theme = _ref.theme;
   return theme.shadows[1];
 });
@@ -1237,7 +1237,7 @@ var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;"], function (props) {
+})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], function (props) {
   return props.bg && props.theme[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.theme.onPrimary;
@@ -1245,7 +1245,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
-})(["font-size:18px;font-weight:bold;align-self:center;color:", ";"], function (props) {
+})(["font-size:18px;font-weight:bold;align-self:center;color:", ";@media (max-width:768px){font-size:14px;}"], function (props) {
   return props.theme.onPrimary;
 });
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
@@ -1261,19 +1261,19 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
   return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 49
     },
     __self: this
   }, __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 50
     },
     __self: this
   }, __jsx(Row, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 51
     },
     __self: this
   }, __jsx(Col, {
@@ -1284,88 +1284,88 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 52
     },
     __self: this
   }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 53
     },
     __self: this
   }, " ", country, " ")), __jsx(Col, {
     bg: "primaryVariant",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 55
     },
     __self: this
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
     },
     __self: this
   }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 58
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 59
     },
     __self: this
   }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
     bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 62
     },
     __self: this
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 63
     },
     __self: this
   }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 65
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 66
     },
     __self: this
   }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
     bg: "error",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 69
     },
     __self: this
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 70
     },
     __self: this
   }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 72
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 73
     },
     __self: this
   }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
@@ -1377,25 +1377,25 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 76
     },
     __self: this
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 77
     },
     __self: this
   }, S.todayCases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 79
     },
     __self: this
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 80
     },
     __self: this
   }, isHeb ? 'מקרים חדשים' : 'Today Cases'))))));
@@ -1691,19 +1691,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Block = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "StatBlock__Block",
   componentId: "rmn7zo-0"
-})(["position:relative;margin:0;padding:16px 12px;font-size:18px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], function (props) {
+})(["position:relative;margin:0;padding:16px 8px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], function (props) {
   return props.theme.onBg;
 });
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withConfig({
   displayName: "StatBlock__Title",
   componentId: "rmn7zo-1"
-})(["font:'Helvetica';font-weight:400;font-size:28px;text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], function (props) {
+})(["font-weight:400;font-size:18px;text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], function (props) {
   return props.theme.onBg;
 });
 var Span = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span.withConfig({
   displayName: "StatBlock__Span",
   componentId: "rmn7zo-2"
-})(["font-size:18px;font-weight:700;margin:12px 0 0 0;color:", ""], function (props) {
+})(["font-size:16px;font-weight:700;margin:12px 0 0 0;color:", ""], function (props) {
   return props.theme.color;
 });
 
@@ -1713,24 +1713,19 @@ var StatBlock = function StatBlock(_ref) {
   return __jsx(Block, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 33
     },
     __self: this
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 34
     },
     __self: this
   }, title), __jsx(Span, {
-    style: {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      margin: '12px 0 0 0'
-    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 35
     },
     __self: this
   }, data));
@@ -1778,7 +1773,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.wi
 var Flex = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "Stats__Flex",
   componentId: "tjczhx-1"
-})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;& > div{}"], function (props) {
+})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;"], function (props) {
   return props.bg || props.theme.bgColor;
 });
 function Stats(_ref) {
@@ -1790,7 +1785,7 @@ function Stats(_ref) {
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 29
     },
     __self: this
   }, todayStats && __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1799,13 +1794,13 @@ function Stats(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 32
     },
     __self: this
   }) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 34
     },
     __self: this
   }, __jsx("h1", {
@@ -1815,7 +1810,7 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 35
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1825,13 +1820,13 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 36
     },
     __self: this
   }, " ", cn === 'World' && isHeb && 'עולם' || cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1839,7 +1834,7 @@ function Stats(_ref) {
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 40
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1847,7 +1842,7 @@ function Stats(_ref) {
     data: todayWorld.active,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 44
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1855,7 +1850,7 @@ function Stats(_ref) {
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 48
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1863,7 +1858,7 @@ function Stats(_ref) {
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 52
     },
     __self: this
   }))));

@@ -22,6 +22,9 @@ const Col = styled.div`
   background: ${props => (props.bg && props.theme[props.bg]) || props.theme.primaryColor};
   color: ${props => props.theme.onPrimary};
   justify-content: center;
+  @media (max-width: 768px) {
+    padding: 8px 12px;
+  }
 `
 
 const Country = styled.h3`
@@ -29,6 +32,9 @@ const Country = styled.h3`
   font-weight: bold;
   align-self: center;
   color: ${props => props.theme.onPrimary};
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `
 
 const Div = styled.div`
@@ -47,32 +53,32 @@ export default ({ S, country, isHeb}) => {
             <Country> {country} </Country>
           </Col>
           <Col bg='primaryVariant' >
-            <h3>
+            <Country>
               {S.cases}
               <br />
               <small>{isHeb ? 'נדבקים' : 'Infected'}</small>
-            </h3>
+            </Country>
           </Col>
           <Col bg='successDefault'>
-            <h3>
+            <Country>
               {S.recovered}
               <br />
               <small>{isHeb ? 'החלימו' : 'Recovered'}</small>
-            </h3>
+            </Country>
           </Col>
           <Col bg='error'>
-            <h3>
+            <Country>
               {S.deaths}
               <br />
               <small>{ isHeb ? 'מקרי מוות' : 'Deaths' }</small>
-          </h3>
+          </Country>
           </Col>
           <Col bg='error2' style={{ borderLeft: 'none', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
-            <h3>
+            <Country>
               {S.todayCases}
               <br />
               <small>{isHeb ? 'מקרים חדשים' : 'Today Cases'}</small>
-          </h3>
+          </Country>
           </Col>
         </Row>
 

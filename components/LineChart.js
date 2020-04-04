@@ -28,8 +28,8 @@ const Div = styled.div`
   @media (max-width: 768px) {
     height: 40vh;
     margin-bottom: 48px;
-    width: 80vw;
-    max-width: 80%;
+    width: 100vw;
+    max-width: 100%;
   }
 `
 

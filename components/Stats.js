@@ -21,9 +21,6 @@ const Flex = styled.div`
   justify-content: space-evenly;
   background-color: ${props => props.bg || props.theme.bgColor};
   border-radius: 12px;
-  & > div {
-    // background-color: ${props => props.theme.secondary};
-  }
 `
 
 export default function Stats({ cn = '', todayWorld, todayStats, isHeb }) {

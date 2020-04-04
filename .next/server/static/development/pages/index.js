@@ -1042,7 +1042,7 @@ react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.intersect 
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:80vw;max-width:80%;}"], ({
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], ({
   theme
 }) => theme.shadows[1]);
 
@@ -1193,11 +1193,11 @@ const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
 const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;"], props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
+})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
 const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
-})(["font-size:18px;font-weight:bold;align-self:center;color:", ";"], props => props.theme.onPrimary);
+})(["font-size:18px;font-weight:bold;align-self:center;color:", ";@media (max-width:768px){font-size:14px;}"], props => props.theme.onPrimary);
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Div",
   componentId: "lmgi17-3"
@@ -1210,19 +1210,19 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
   return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx(Row, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(Col, {
@@ -1233,88 +1233,88 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 53
     },
     __self: undefined
   }, " ", country, " ")), __jsx(Col, {
     bg: "primaryVariant",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 55
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
     },
     __self: undefined
   }, S.cases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 58
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 59
     },
     __self: undefined
   }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
     bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 62
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 63
     },
     __self: undefined
   }, S.recovered, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 66
     },
     __self: undefined
   }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
     bg: "error",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 69
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 70
     },
     __self: undefined
   }, S.deaths, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 73
     },
     __self: undefined
   }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
@@ -1326,25 +1326,25 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 76
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, __jsx(Country, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 77
     },
     __self: undefined
   }, S.todayCases, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 79
     },
     __self: undefined
   }), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 80
     },
     __self: undefined
   }, isHeb ? 'מקרים חדשים' : 'Today Cases'))))));
@@ -1543,15 +1543,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Block = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "StatBlock__Block",
   componentId: "rmn7zo-0"
-})(["position:relative;margin:0;padding:16px 12px;font-size:18px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], props => props.theme.onBg);
+})(["position:relative;margin:0;padding:16px 8px;text-align:center;border-radius:6px;align-content:center;justify-content:space-between;color:", ";"], props => props.theme.onBg);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "StatBlock__Title",
   componentId: "rmn7zo-1"
-})(["font:'Helvetica';font-weight:400;font-size:28px;text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], props => props.theme.onBg);
+})(["font-weight:400;font-size:18px;text-decoration:underline;letter-spacing:1px;color:", ";margin-bottom:6px;"], props => props.theme.onBg);
 const Span = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span.withConfig({
   displayName: "StatBlock__Span",
   componentId: "rmn7zo-2"
-})(["font-size:18px;font-weight:700;margin:12px 0 0 0;color:", ""], props => props.theme.color);
+})(["font-size:16px;font-weight:700;margin:12px 0 0 0;color:", ""], props => props.theme.color);
 
 const StatBlock = ({
   title,
@@ -1560,24 +1560,19 @@ const StatBlock = ({
   return __jsx(Block, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 33
     },
     __self: undefined
   }, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 34
     },
     __self: undefined
   }, title), __jsx(Span, {
-    style: {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      margin: '12px 0 0 0'
-    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 35
     },
     __self: undefined
   }, data));
@@ -1626,7 +1621,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.w
 const Flex = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "Stats__Flex",
   componentId: "tjczhx-1"
-})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;& > div{}"], props => props.bg || props.theme.bgColor);
+})(["display:flex;justify-content:space-evenly;background-color:", ";border-radius:12px;"], props => props.bg || props.theme.bgColor);
 function Stats({
   cn = '',
   todayWorld,
@@ -1636,7 +1631,7 @@ function Stats({
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 29
     },
     __self: this
   }, todayStats && __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1645,13 +1640,13 @@ function Stats({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 32
     },
     __self: this
   }) || todayWorld && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 34
     },
     __self: this
   }, __jsx("h1", {
@@ -1661,7 +1656,7 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 35
     },
     __self: this
   }, isHeb && 'המצב ב: ' || 'Status for: ', __jsx("span", {
@@ -1671,13 +1666,13 @@ function Stats({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 36
     },
     __self: this
   }, " ", cn === 'World' && isHeb && 'עולם' || cn)), __jsx(Flex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1685,7 +1680,7 @@ function Stats({
     data: todayWorld.cases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 40
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1693,7 +1688,7 @@ function Stats({
     data: todayWorld.active,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 44
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1701,7 +1696,7 @@ function Stats({
     data: todayWorld.recovered,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 48
     },
     __self: this
   }), __jsx(_StatBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1709,7 +1704,7 @@ function Stats({
     data: todayWorld.deaths,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 52
     },
     __self: this
   }))));
