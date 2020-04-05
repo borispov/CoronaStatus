@@ -6,10 +6,10 @@ export const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    headerBg: '#6646EE',
     white: '#FFF',
     black: '#000',
-    secondary: '#03DAC6',
+    secondary: '#303f9f',
 
     shadows: {
       0: "none",
@@ -18,6 +18,16 @@ export const themes = {
       3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
       4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
     },
+
+    general: {
+      successDefault: '#4caf50',
+      primaryColor: '#6646EE',
+      primaryDark: '#303f9f',
+      primaryVariant: '#3700B3',
+      complementary: '#BC85F9',
+      error: '#b00020',
+      error2: '#ee5f02',
+    }
 
   },
 
@@ -55,7 +65,6 @@ export const themes = {
         dark: '#388e3c'
     },
 
-    textColor: '#121112',
     color: '#121212',
 
     onPrimary: '#FFFFFF',
@@ -104,10 +113,7 @@ export const themes = {
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
 
-
     color: 'hsl(207, 0%, 87%)',
-    textColor: 'hsl(207, 0%, 87%)',
-
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',

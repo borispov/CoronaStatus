@@ -163,10 +163,10 @@ __webpack_require__.r(__webpack_exports__);
 const StyledBurger = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
   displayName: "Burgerstyled__StyledBurger",
   componentId: "sc-2xj2d1-0"
-})(["position:relative;display:flex;flex-direction:column;justify-content:space-around;width:2rem;height:2rem;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;@media (max-width:768px){margin-top:10px;}&:focus{outline:none;}div{width:2.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";}:nth-child(2){opacity:", ";transform:", ";}:nth-child(3){transform:", ";}}"], ({
+})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);box-shadow:", ";@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";}:nth-child(2){opacity:", ";transform:", ";}:nth-child(3){transform:", ";}}"], props => props.theme.shadows[3], ({
   theme,
   open
-}) => open ? '#d9d9d9' : '#a1a1a1', ({
+}) => open ? '#d9d9d9' : theme.white, ({
   open
 }) => open ? 'rotate(45deg)' : 'rotate(0)', ({
   open
@@ -266,35 +266,29 @@ const Header = ({
       lineNumber: 15
     },
     __self: undefined
-  }, __jsx("a", {
+  }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Logo"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: undefined
-  }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Logo"], {
+  }, title)), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, title))), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/Coffee",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -303,19 +297,19 @@ const Header = ({
     link: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx("i", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 22
     },
     __self: undefined
   }, " ", __jsx(_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_2__["Coffee"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 22
     },
     __self: undefined
   }), " "), Tip)))), children)))));
@@ -346,7 +340,7 @@ __webpack_require__.r(__webpack_exports__);
 const HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "Headerstyled__HeaderWrapper",
   componentId: "sc-1v2vfvs-0"
-})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,", ",#000000d6);border-bottom:1px solid darkblue;margin:0 auto;margin-bottom:48px;box-shadow:0 0.3px 0.9px rgba(0,0,0,0.12),0 1.6px 3.6px rgba(0,0,0,0.12);"], props => props.theme.primaryColor);
+})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,", ",#000000d6);margin:0 auto;margin-bottom:48px;box-shadow:", ";"], props => props.theme.headerBg, props => props.theme.shadows[4]);
 const HeaderTag = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.header.withConfig({
   displayName: "Headerstyled__HeaderTag",
   componentId: "sc-1v2vfvs-1"
@@ -366,7 +360,7 @@ const NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.li.with
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "Headerstyled__Logo",
   componentId: "sc-1v2vfvs-5"
-})(["margin-top:10px;color:#e6e6e6;font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:2.5rem;align-items:flex-end;}"]);
+})(["margin-top:10px;color:#e6e6e6;font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"]);
 
 /***/ }),
 
@@ -564,9 +558,9 @@ __webpack_require__.r(__webpack_exports__);
 const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:", ";color:", ";height:auto;position:absolute;z-index:999;top:0;right:10%;direction:rtl;width:fit-content;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;transition:transform 0.22s ease-in-out;transform:", ";.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;}span{margin-right:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:10px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.primaryVariant, props => props.theme.onPrimary, ({
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#2c3181,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);box-shadow:", ";@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:10px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
   open
-}) => open ? 'translateY(64px)' : 'translateY(-100%)', props => props.theme.menuColor, ({
+}) => open ? 'translateY(64px)' : 'translateY(-100%)', props => props.theme.shadows[3], props => props.theme.menuColor, ({
   theme
 }) => theme.menuHover);
 
@@ -3234,16 +3228,25 @@ const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    headerBg: '#6646EE',
     white: '#FFF',
     black: '#000',
-    secondary: '#03DAC6',
+    secondary: '#303f9f',
     shadows: {
       0: "none",
       1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
       2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
       3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
       4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    },
+    general: {
+      successDefault: '#4caf50',
+      primaryColor: '#6646EE',
+      primaryDark: '#303f9f',
+      primaryVariant: '#3700B3',
+      complementary: '#BC85F9',
+      error: '#b00020',
+      error2: '#ee5f02'
     }
   },
   mobile: '660px',
@@ -3272,7 +3275,6 @@ const themes = {
       main: '#4caf50',
       dark: '#388e3c'
     },
-    textColor: '#121112',
     color: '#121212',
     onPrimary: '#FFFFFF',
     onBg: '#000000',
@@ -3311,7 +3313,6 @@ const themes = {
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
     color: 'hsl(207, 0%, 87%)',
-    textColor: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',

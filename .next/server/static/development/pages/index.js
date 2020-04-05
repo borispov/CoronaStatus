@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1184,7 +1184,7 @@ const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
 const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
+})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
 const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
@@ -3977,16 +3977,25 @@ const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: 'linear-gradient(45deg, #5c0434, #000000d6)',
+    headerBg: '#6646EE',
     white: '#FFF',
     black: '#000',
-    secondary: '#03DAC6',
+    secondary: '#303f9f',
     shadows: {
       0: "none",
       1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
       2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
       3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
       4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    },
+    general: {
+      successDefault: '#4caf50',
+      primaryColor: '#6646EE',
+      primaryDark: '#303f9f',
+      primaryVariant: '#3700B3',
+      complementary: '#BC85F9',
+      error: '#b00020',
+      error2: '#ee5f02'
     }
   },
   mobile: '660px',
@@ -4015,7 +4024,6 @@ const themes = {
       main: '#4caf50',
       dark: '#388e3c'
     },
-    textColor: '#121112',
     color: '#121212',
     onPrimary: '#FFFFFF',
     onBg: '#000000',
@@ -4054,7 +4062,6 @@ const themes = {
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
     color: 'hsl(207, 0%, 87%)',
-    textColor: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
@@ -4275,7 +4282,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

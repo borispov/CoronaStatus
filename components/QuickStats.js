@@ -19,7 +19,7 @@ const Col = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: ${props => (props.bg && props.theme[props.bg]) || props.theme.primaryColor};
+  background: ${props => (props.bg && props.theme.general[props.bg]) || props.theme.primaryColor};
   color: ${props => props.theme.onPrimary};
   justify-content: center;
   @media (max-width: 768px) {

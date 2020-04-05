@@ -7,11 +7,11 @@ export const HeaderWrapper = styled.div`
   z-index: 1;
   width: 100%;
   // background: linear-gradient(45deg, #5c0434, #000000d6);
-  background: linear-gradient(45deg, ${props => props.theme.primaryColor}, #000000d6);
-  border-bottom: 1px solid darkblue;
+  background: linear-gradient(45deg, ${props => props.theme.headerBg}, #000000d6);
+  /* border-bottom: 1px solid darkblue; */
   margin: 0 auto;
   margin-bottom: 48px;
-  box-shadow: 0 0.3px 0.9px rgba(0, 0, 0, 0.12), 0 1.6px 3.6px rgba(0, 0, 0, 0.12);
+  box-shadow: ${props => props.theme.shadows[4]};
 `
 
 export const HeaderTag = styled.header`
@@ -70,7 +70,7 @@ export const Logo = styled.h1`
   font-family: 'Montserrat';
 
   @media (max-width: 580px) {
-    font-size: 2.5rem;
+    font-size: 3rem;
     align-items: flex-end;
   }
 

@@ -13,9 +13,7 @@ const Header = ({ title, theme, isHeb, children }) => {
           <Nav>
             <NavList>
               <Link href="/">
-                <a>
                   <Logo>{title}</Logo>
-                </a>
               </Link>
               <NavItem>
                 <Link href='/Coffee'>

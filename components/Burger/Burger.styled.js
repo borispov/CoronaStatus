@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: auto;
+  height: 2.4rem;
+  top: 60%;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 10;
+  transform: translateY(-50%);
+  box-shadow: ${props => props.theme.shadows[3]};
 
-  @media (max-width: 768px) {
-    margin-top: 10px;
+  @media (max-width: 660px) {
+    margin-top: 4px;
   }
 
   &:focus {
@@ -22,10 +25,10 @@ export const StyledBurger = styled.button`
   }
 
   div {
-    width: 2.5rem;
+    width: 3.5rem;
     // height: 0.25rem;
     height: 0.45rem;
-    background: ${({ theme, open }) => open ? '#d9d9d9' : '#a1a1a1'};
+    background: ${({ theme, open }) => open ? '#d9d9d9' : theme.white };
     border-radius: 10px;
     z-index: 10;
     transition: all 0.3s linear;
