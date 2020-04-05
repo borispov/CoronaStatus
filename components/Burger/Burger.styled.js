@@ -14,7 +14,6 @@ export const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
   transform: translateY(-50%);
-  box-shadow: ${props => props.theme.shadows[3]};
 
   @media (max-width: 660px) {
     margin-top: 4px;
@@ -37,15 +36,18 @@ export const StyledBurger = styled.button`
 
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      box-shadow: ${props => props.theme.shadows[3]};
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
       transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      box-shadow: ${props => props.theme.shadows[3]};
     }
 
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      box-shadow: ${props => props.theme.shadows[3]};
     }
   }
 `;

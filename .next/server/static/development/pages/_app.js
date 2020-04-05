@@ -163,18 +163,18 @@ __webpack_require__.r(__webpack_exports__);
 const StyledBurger = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
   displayName: "Burgerstyled__StyledBurger",
   componentId: "sc-2xj2d1-0"
-})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);box-shadow:", ";@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";}:nth-child(2){opacity:", ";transform:", ";}:nth-child(3){transform:", ";}}"], props => props.theme.shadows[3], ({
+})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], ({
   theme,
   open
 }) => open ? '#d9d9d9' : theme.white, ({
   open
-}) => open ? 'rotate(45deg)' : 'rotate(0)', ({
+}) => open ? 'rotate(45deg)' : 'rotate(0)', props => props.theme.shadows[3], ({
   open
 }) => open ? '0' : '1', ({
   open
-}) => open ? 'translateX(20px)' : 'translateX(0)', ({
+}) => open ? 'translateX(20px)' : 'translateX(0)', props => props.theme.shadows[3], ({
   open
-}) => open ? 'rotate(-45deg)' : 'rotate(0)');
+}) => open ? 'rotate(-45deg)' : 'rotate(0)', props => props.theme.shadows[3]);
 
 /***/ }),
 
@@ -272,7 +272,13 @@ const Header = ({
       lineNumber: 16
     },
     __self: undefined
-  }, title)), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+  }, "n", __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Span"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "C"), "orona")), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
@@ -323,7 +329,7 @@ const Header = ({
 /*!********************************************!*\
   !*** ./components/Header/Header.styled.js ***!
   \********************************************/
-/*! exports provided: HeaderWrapper, HeaderTag, Nav, NavList, NavItem, Logo */
+/*! exports provided: HeaderWrapper, HeaderTag, Nav, NavList, NavItem, Span, Logo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -333,6 +339,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Nav", function() { return Nav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavList", function() { return NavList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return NavItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Span", function() { return Span; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
@@ -357,10 +364,14 @@ const NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.li.with
   displayName: "Headerstyled__NavItem",
   componentId: "sc-1v2vfvs-4"
 })(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
+const Span = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.span.withConfig({
+  displayName: "Headerstyled__Span",
+  componentId: "sc-1v2vfvs-5"
+})(["font-size:3.8rem;font-weight:bold;text-shadow:0 1px 9px rgba(15,0,115,0.6);color:", ";@media (max-width:580px){font-size:3.3rem;align-items:flex-end;}"], props => props.theme.error2);
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "Headerstyled__Logo",
-  componentId: "sc-1v2vfvs-5"
-})(["margin-top:10px;color:#e6e6e6;font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"]);
+  componentId: "sc-1v2vfvs-6"
+})(["display:inline-block;margin-top:10px;color:", ";font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"], props => props.color || '#e6e6e6');
 
 /***/ }),
 
@@ -558,9 +569,9 @@ __webpack_require__.r(__webpack_exports__);
 const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#2c3181,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);box-shadow:", ";@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#364F9F,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
   open
-}) => open ? 'translateY(64px)' : 'translateY(-140%)', props => props.theme.shadows[1], props => props.theme.menuColor, ({
+}) => open ? 'translateY(64px)' : 'translateY(-140%)', props => props.theme.menuColor, ({
   theme
 }) => theme.menuHover);
 
@@ -637,7 +648,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `1px solid ${props.theme[props.btnColor] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -2934,8 +2945,8 @@ const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODUL
 const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['dark']);
 
 class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
-  constructor(...args) {
-    super(...args);
+  constructor(props) {
+    super(props);
 
     _defineProperty(this, "state", {
       theme: lightTheme(),
@@ -2958,6 +2969,8 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     _defineProperty(this, "setLightTheme", () => this.setState(prevState => _objectSpread({}, prevState, {
       theme: lightTheme()
     })));
+
+    this.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
   }
 
   render() {
@@ -2972,14 +2985,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       onClick: this.setDarkTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 52
       },
       __self: this
     }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_10__["SunIcon"], {
       onClick: this.setLightTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 53
       },
       __self: this
     });
@@ -2992,22 +3005,23 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       theme: theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 58
       },
       __self: this
     }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_4__["default"], {
       isHeb: isHeb,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 59
       },
       __self: this
     }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
       title: "nCorona",
       isHeb: isHeb,
+      closeMenu: this.closeMenu,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 60
       },
       __self: this
     }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3015,7 +3029,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       open: this.state.menuOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 61
       },
       __self: this
     }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3023,44 +3037,24 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       open: this.state.menuOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 62
       },
       __self: this
     }, __jsx("a", {
       onClick: isLight ? this.setDarkTheme : this.setLightTheme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 63
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 64
       },
       __self: this
     }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
       onClick: this.toggleLang,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
-    }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      href: "/News",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
-    }, __jsx("a", {
-      alt: "news",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 71
@@ -3072,11 +3066,31 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 72
       },
       __self: this
+    }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      href: "/News",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75
+      },
+      __self: this
+    }, __jsx("a", {
+      alt: "news",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: this
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
     }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')))), __jsx(Component, _extends({}, pageProps, {
       isHeb: isHeb,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 85
       },
       __self: this
     })));
@@ -3228,7 +3242,7 @@ const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: '#6646EE',
+    headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
     secondary: '#303f9f',
@@ -3251,6 +3265,29 @@ const themes = {
     }
   },
   mobile: '660px',
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+    bgColor: '#F5F5F5',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    }
+  },
   light: {
     type: 'light',
     text: {

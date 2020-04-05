@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import * as S from '../components/S'
 import axios from 'axios'
 import dateHeb from '../utils/dateHeb'
+import useMobileDetect from '../utils/isMobile'
 
 
 const sourceList = {
@@ -84,6 +85,8 @@ const showSource = url => sourceList[url.split('.')[1]]
 
 const News = ({ theme, isHeb, news }) => {
 
+  const detectMobile = useMobileDetect();
+
   const newsToTemplate = news => {
     return news.map((item, idx) => (
       <NewsCard key={idx}>
@@ -94,7 +97,13 @@ const News = ({ theme, isHeb, news }) => {
             </NewsBanner>
             <S.Flex column flex='0 1 80%' margin='12px 0px 18px 6px'>
               <Title fontSize='16px' color='#111'>{item.title}</Title>
-             <S.Paragraph padding='0' noMargin fontSize='12px'>{shortenSnippet(item.description)}</S.Paragraph>
+              <S.Paragraph padding='0' noMargin fontSize='12px'>
+                {
+                  detectMobile.isMobile() 
+                    ? shortenSnippet(item.description) 
+                    : item.description
+                }
+              </S.Paragraph>
             </S.Flex>
           </S.Flex>
         </a>

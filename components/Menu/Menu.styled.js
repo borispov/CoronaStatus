@@ -4,7 +4,8 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg, #2c3181, #000000ff);
+  background: linear-gradient(180deg,#364F9F, #000000ff);
+  /* background: linear-gradient(180deg, #5c0434, #000000d6); */
   color: ${props => props.theme.onPrimary};
   height: auto;
   position: absolute;
@@ -20,7 +21,6 @@ export const StyledMenu = styled.nav`
   border-top: none;
   transition: transform 0.22s ease-in-out;
   transform: ${({ open }) => open ?  'translateY(64px)' : 'translateY(-140%)'} translateX(50%);
-  box-shadow: ${props => props.theme.shadows[1]};
   @media (max-width: 660px) {
     width: 100%;
   }

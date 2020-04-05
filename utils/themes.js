@@ -6,7 +6,7 @@ export const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: '#6646EE',
+    headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
     secondary: '#303f9f',
@@ -33,6 +33,36 @@ export const themes = {
   },
 
   mobile: '660px',
+
+
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+
+    bgColor: '#F5F5F5',
+
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)',
+    },
+
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+
+  },
 
   light: {
     type: 'light',

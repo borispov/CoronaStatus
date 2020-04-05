@@ -43,7 +43,6 @@ function useTodayStats(url, country) {
         //     .then(res => res.json())
         //     .catch(err => setError(err))
         const { data } = await axios.get(URL)
-        console.log(data);
         const relevant = {
           active: data.active,
           cases: data.cases,
@@ -55,7 +54,6 @@ function useTodayStats(url, country) {
         setStats(relevant)
         setLoading(false)
        } catch(e) {
-        console.log('error getting today data', e);
         setError(e)
       }
     }

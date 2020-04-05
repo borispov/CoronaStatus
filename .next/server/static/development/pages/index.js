@@ -195,7 +195,6 @@ const baseURL = `https://nCorona.live/api/v1/alltime/`;
 const worldTimeData = async () => {
   const data = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL);
   const dataRes = await Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__["default"])(data.data);
-  console.log(dataRes);
   return dataRes;
 };
 
@@ -203,11 +202,15 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
 
-    _defineProperty(this, "present", val => this.setState({
-      dataToPresent: val
-    }));
+    _defineProperty(this, "present", val => {
+      this.setState({
+        dataToPresent: val,
+        active: val
+      });
+    });
 
     this.state = {
+      active: 'worldCases',
       dataToPresent: 'worldCases',
       worldData: [],
       worldLabels: [],
@@ -251,13 +254,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 66
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 66
         },
         __self: this
       }, "Loading Data . . ."));
@@ -267,13 +270,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 69
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 69
         },
         __self: this
       }, ' error occured:' + this.state.error));
@@ -285,7 +288,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       secondary: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 74
       },
       __self: this
     }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -296,37 +299,46 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 80
       },
       __self: this
     }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      bg: "complementary",
+      active: this.state.active === 'worldCases',
+      bg: "transparent",
+      fat: true,
+      outline: "primaryDark",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('worldCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 81
       },
       __self: this
     }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      bg: "complementary",
+      active: this.state.active === 'deathCases',
+      bg: "transparent",
+      fat: true,
+      outline: "primaryDark",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('deathCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 82
       },
       __self: this
     }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      bg: "complementary",
+      active: this.state.active === 'newCases',
+      bg: "transparent",
+      fat: true,
+      outline: "primaryDark",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('newCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 83
       },
       __self: this
     }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -337,13 +349,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 87
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 93
       },
       __self: this
     }, " Loading Charts ... "));
@@ -761,7 +773,7 @@ const SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h2
 const Link = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-size:18px;line-height:1.5;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryColor);
+})(["text-decoration:none;color:", ";font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.onBg);
 const Desc = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p.withConfig({
   displayName: "InfoSection__Desc",
   componentId: "sc-1anhjcp-4"
@@ -1398,7 +1410,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `1px solid ${props.theme[props.btnColor] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -3977,7 +3989,7 @@ const themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: '#6646EE',
+    headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
     secondary: '#303f9f',
@@ -4000,6 +4012,29 @@ const themes = {
     }
   },
   mobile: '660px',
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+    bgColor: '#F5F5F5',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    }
+  },
   light: {
     type: 'light',
     text: {
@@ -4253,7 +4288,6 @@ function useTodayStats(url, country) {
         const {
           data
         } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL);
-        console.log(data);
         const relevant = {
           active: data.active,
           cases: data.cases,
@@ -4265,7 +4299,6 @@ function useTodayStats(url, country) {
         setStats(relevant);
         setLoading(false);
       } catch (e) {
-        console.log('error getting today data', e);
         setError(e);
       }
     }

@@ -49,9 +49,9 @@ const SectionTitle = styled.h2`
 
 const Link = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.onBg};
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.8;
   padding: 6px 4px 2px 4px;
   @media (max-width: 768px) {
     font-size: 16px;

@@ -6,9 +6,8 @@ export const HeaderWrapper = styled.div`
   height: 64px;
   z-index: 1;
   width: 100%;
-  // background: linear-gradient(45deg, #5c0434, #000000d6);
+  /* background: linear-gradient(45deg, #5c0434, #000000d6); */
   background: linear-gradient(45deg, ${props => props.theme.headerBg}, #000000d6);
-  /* border-bottom: 1px solid darkblue; */
   margin: 0 auto;
   margin-bottom: 48px;
   box-shadow: ${props => props.theme.shadows[4]};
@@ -58,10 +57,21 @@ export const NavItem = styled.li`
     margin-left: 8px;
   }
 `
+export const Span = styled.span`
+  font-size: 3.8rem;
+  font-weight: bold;
+  text-shadow: 0 1px 9px rgba(15,0,115,0.6);
+  color: ${props => props.theme.error2};
+  @media (max-width: 580px) {
+    font-size: 3.3rem;
+    align-items: flex-end;
+  }
+`
 
 export const Logo = styled.h1`
+  display: inline-block;
   margin-top: 10px;
-  color: #e6e6e6;
+  color: ${props => props.color || '#e6e6e6'} ;
   font-size: 3.5rem;
   font-family: 'Montserrat';
   text-align: center;

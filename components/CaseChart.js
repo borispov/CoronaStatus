@@ -10,7 +10,6 @@ const baseURL = `https://nCorona.live/api/v1/alltime/`
 const worldTimeData = async () => {
   const data = await axios.get(baseURL)
   const dataRes = await sortForChart(data.data)
-  console.log(dataRes);
   return dataRes
 }
 
@@ -19,6 +18,7 @@ class CaseChart extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+      active: 'worldCases',
       dataToPresent: 'worldCases',
       worldData: [],
       worldLabels: [],
@@ -30,7 +30,9 @@ class CaseChart extends React.Component {
     }
   }
 
-  present = val => this.setState({dataToPresent: val})
+  present = val => {
+    this.setState({dataToPresent: val, active: val})
+  }
 
   async componentDidMount() {
     this.setState({ loading: true })
@@ -76,9 +78,9 @@ class CaseChart extends React.Component {
           </Paragraph>
 
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
-          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button bg='complementary' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+          <Button active={this.state.active === 'worldCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
+          <Button active={this.state.active === 'deathCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
+          <Button active={this.state.active === 'newCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
         </div>
         {
           this.state.worldData &&

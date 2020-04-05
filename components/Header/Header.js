@@ -1,6 +1,6 @@
 import { Button, Container, FadeIn } from '../S'
 import { Coffee } from '../Icons/ThemeIcon'
-import { HeaderWrapper, HeaderTag, Nav, NavList, NavItem, Logo } from './Header.styled'
+import { HeaderWrapper, HeaderTag, Nav, Span, NavList, NavItem, Logo } from './Header.styled'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -13,7 +13,7 @@ const Header = ({ title, theme, isHeb, children }) => {
           <Nav>
             <NavList>
               <Link href="/">
-                  <Logo>{title}</Logo>
+                <Logo>n<Span>C</Span>orona</Logo>
               </Link>
               <NavItem>
                 <Link href='/Coffee'>

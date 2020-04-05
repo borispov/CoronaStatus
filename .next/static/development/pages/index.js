@@ -136,10 +136,9 @@ var worldTimeData = function worldTimeData() {
 
         case 5:
           dataRes = _context.sent;
-          console.log(dataRes);
           return _context.abrupt("return", dataRes);
 
-        case 8:
+        case 7:
         case "end":
           return _context.stop();
       }
@@ -158,12 +157,14 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
     _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CaseChart).call(this, props));
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "present", function (val) {
-      return _this.setState({
-        dataToPresent: val
+      _this.setState({
+        dataToPresent: val,
+        active: val
       });
     });
 
     _this.state = {
+      active: 'worldCases',
       dataToPresent: 'worldCases',
       worldData: [],
       worldLabels: [],
@@ -238,13 +239,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64
+            lineNumber: 66
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64
+            lineNumber: 66
           },
           __self: this
         }, "Loading Data . . ."));
@@ -254,13 +255,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 69
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 69
           },
           __self: this
         }, ' error occured:' + this.state.error));
@@ -272,7 +273,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         secondary: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 74
         },
         __self: this
       }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -283,11 +284,14 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 80
         },
         __self: this
       }, __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        bg: "complementary",
+        active: this.state.active === 'worldCases',
+        bg: "transparent",
+        fat: true,
+        outline: "primaryDark",
         btnColor: "onBg",
         medium: true,
         onClick: function onClick() {
@@ -295,11 +299,14 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 81
         },
         __self: this
       }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        bg: "complementary",
+        active: this.state.active === 'deathCases',
+        bg: "transparent",
+        fat: true,
+        outline: "primaryDark",
         btnColor: "onBg",
         medium: true,
         onClick: function onClick() {
@@ -307,11 +314,14 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 82
         },
         __self: this
       }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        bg: "complementary",
+        active: this.state.active === 'newCases',
+        bg: "transparent",
+        fat: true,
+        outline: "primaryDark",
         btnColor: "onBg",
         medium: true,
         onClick: function onClick() {
@@ -319,7 +329,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 83
         },
         __self: this
       }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -330,13 +340,13 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         theme: this.props.theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 87
         },
         __self: this
       }) || __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 93
         },
         __self: this
       }, " Loading Charts ... "));
@@ -770,8 +780,8 @@ var SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h2.
 var Link = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-size:18px;line-height:1.5;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], function (props) {
-  return props.theme.primaryColor;
+})(["text-decoration:none;color:", ";font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], function (props) {
+  return props.theme.onBg;
 });
 var Desc = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].p.withConfig({
   displayName: "InfoSection__Desc",
@@ -1520,11 +1530,11 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
+  return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
 }, function (props) {
-  return props.outline ? "1px solid ".concat(props.theme[props.btnColor] || props.theme.primaryColor) : 'none';
+  return props.outline ? "".concat(props.fat ? '2px' : '1px', " solid ").concat(props.theme[props.outline] || props.theme.primaryColor) : 'none';
 }, function (props) {
   return props.bold && 'bold' || 'normal';
 }, function (props) {
@@ -59059,7 +59069,7 @@ var themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: '#6646EE',
+    headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
     secondary: '#303f9f',
@@ -59082,6 +59092,29 @@ var themes = {
     }
   },
   mobile: '660px',
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+    bgColor: '#F5F5F5',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    }
+  },
   light: {
     type: 'light',
     text: {
@@ -59456,7 +59489,6 @@ function useTodayStats(url, country) {
             case 13:
               _ref = _context2.sent;
               data = _ref.data;
-              console.log(data);
               relevant = {
                 active: data.active,
                 cases: data.cases,
@@ -59467,21 +59499,20 @@ function useTodayStats(url, country) {
               };
               setStats(relevant);
               setLoading(false);
-              _context2.next = 25;
+              _context2.next = 23;
               break;
 
-            case 21:
-              _context2.prev = 21;
+            case 20:
+              _context2.prev = 20;
               _context2.t1 = _context2["catch"](10);
-              console.log('error getting today data', _context2.t1);
               setError(_context2.t1);
 
-            case 25:
+            case 23:
             case "end":
               return _context2.stop();
           }
         }
-      }, null, null, [[10, 21]], Promise);
+      }, null, null, [[10, 20]], Promise);
     }
 
     fetchData();

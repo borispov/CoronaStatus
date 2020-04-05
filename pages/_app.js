@@ -28,6 +28,11 @@ const darkTheme = () => ({
 
 export default class MyApp extends App {
 
+  constructor(props) {
+    super(props)
+    this.myRef = React.createRef();
+  }
+
   state = {
     theme: lightTheme(),
     isHeb: true,
@@ -52,7 +57,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
-        <Header title='nCorona' isHeb={isHeb}>
+        <Header title='nCorona' isHeb={isHeb} closeMenu={this.closeMenu}>
           <Burger setOpen={this.toggleMenu} open={this.state.menuOpen} />
           <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
             <a onClick={isLight ? this.setDarkTheme : this.setLightTheme}>

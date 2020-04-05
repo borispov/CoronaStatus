@@ -70,24 +70,28 @@ __webpack_require__.r(__webpack_exports__);
 var StyledBurger = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "Burgerstyled__StyledBurger",
   componentId: "sc-2xj2d1-0"
-})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);box-shadow:", ";@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";}:nth-child(2){opacity:", ";transform:", ";}:nth-child(3){transform:", ";}}"], function (props) {
-  return props.theme.shadows[3];
-}, function (_ref) {
+})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], function (_ref) {
   var theme = _ref.theme,
       open = _ref.open;
   return open ? '#d9d9d9' : theme.white;
 }, function (_ref2) {
   var open = _ref2.open;
   return open ? 'rotate(45deg)' : 'rotate(0)';
+}, function (props) {
+  return props.theme.shadows[3];
 }, function (_ref3) {
   var open = _ref3.open;
   return open ? '0' : '1';
 }, function (_ref4) {
   var open = _ref4.open;
   return open ? 'translateX(20px)' : 'translateX(0)';
+}, function (props) {
+  return props.theme.shadows[3];
 }, function (_ref5) {
   var open = _ref5.open;
   return open ? 'rotate(-45deg)' : 'rotate(0)';
+}, function (props) {
+  return props.theme.shadows[3];
 });
 
 /***/ }),
@@ -184,7 +188,13 @@ var Header = function Header(_ref) {
       lineNumber: 16
     },
     __self: this
-  }, title)), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+  }, "n", __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Span"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "C"), "orona")), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
@@ -235,7 +245,7 @@ var Header = function Header(_ref) {
 /*!********************************************!*\
   !*** ./components/Header/Header.styled.js ***!
   \********************************************/
-/*! exports provided: HeaderWrapper, HeaderTag, Nav, NavList, NavItem, Logo */
+/*! exports provided: HeaderWrapper, HeaderTag, Nav, NavList, NavItem, Span, Logo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -245,6 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Nav", function() { return Nav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavList", function() { return NavList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return NavItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Span", function() { return Span; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
@@ -272,10 +283,18 @@ var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li.withC
   displayName: "Headerstyled__NavItem",
   componentId: "sc-1v2vfvs-4"
 })(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
+var Span = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span.withConfig({
+  displayName: "Headerstyled__Span",
+  componentId: "sc-1v2vfvs-5"
+})(["font-size:3.8rem;font-weight:bold;text-shadow:0 1px 9px rgba(15,0,115,0.6);color:", ";@media (max-width:580px){font-size:3.3rem;align-items:flex-end;}"], function (props) {
+  return props.theme.error2;
+});
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
   displayName: "Headerstyled__Logo",
-  componentId: "sc-1v2vfvs-5"
-})(["margin-top:10px;color:#e6e6e6;font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"]);
+  componentId: "sc-1v2vfvs-6"
+})(["display:inline-block;margin-top:10px;color:", ";font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"], function (props) {
+  return props.color || '#e6e6e6';
+});
 
 /***/ }),
 
@@ -472,13 +491,11 @@ __webpack_require__.r(__webpack_exports__);
 var StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#2c3181,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);box-shadow:", ";@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#364F9F,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
   return props.theme.onPrimary;
 }, function (_ref) {
   var open = _ref.open;
   return open ? 'translateY(64px)' : 'translateY(-140%)';
-}, function (props) {
-  return props.theme.shadows[1];
 }, function (props) {
   return props.theme.menuColor;
 }, function (_ref2) {
@@ -622,11 +639,11 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
+  return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
 }, function (props) {
-  return props.outline ? "1px solid ".concat(props.theme[props.btnColor] || props.theme.primaryColor) : 'none';
+  return props.outline ? "".concat(props.fat ? '2px' : '1px', " solid ").concat(props.theme[props.outline] || props.theme.primaryColor) : 'none';
 }, function (props) {
   return props.bold && 'bold' || 'normal';
 }, function (props) {
@@ -8818,18 +8835,12 @@ var darkTheme = function darkTheme() {
 var MyApp = /*#__PURE__*/function (_App) {
   Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(MyApp, _App);
 
-  function MyApp() {
-    var _getPrototypeOf2;
-
+  function MyApp(props) {
     var _this;
 
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, MyApp);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(MyApp)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(MyApp).call(this, props));
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "state", {
       theme: lightTheme(),
@@ -8865,6 +8876,7 @@ var MyApp = /*#__PURE__*/function (_App) {
       });
     });
 
+    _this.myRef = react__WEBPACK_IMPORTED_MODULE_8___default.a.createRef();
     return _this;
   }
 
@@ -8881,14 +8893,14 @@ var MyApp = /*#__PURE__*/function (_App) {
         onClick: this.setDarkTheme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 52
         },
         __self: this
       }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_18__["SunIcon"], {
         onClick: this.setLightTheme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 53
         },
         __self: this
       });
@@ -8900,22 +8912,23 @@ var MyApp = /*#__PURE__*/function (_App) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 58
         },
         __self: this
       }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_12__["default"], {
         isHeb: isHeb,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 59
         },
         __self: this
       }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_14__["default"], {
         title: "nCorona",
         isHeb: isHeb,
+        closeMenu: this.closeMenu,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 60
         },
         __self: this
       }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -8923,7 +8936,7 @@ var MyApp = /*#__PURE__*/function (_App) {
         open: this.state.menuOpen,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
       }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_17__["default"], {
@@ -8931,44 +8944,24 @@ var MyApp = /*#__PURE__*/function (_App) {
         open: this.state.menuOpen,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       }, __jsx("a", {
         onClick: isLight ? this.setDarkTheme : this.setLightTheme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 63
         },
         __self: this
       }, __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 64
         },
         __self: this
       }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
         onClick: this.toggleLang,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66
-        },
-        __self: this
-      }, __jsx("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
-        href: "/News",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, __jsx("a", {
-        alt: "news",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 71
@@ -8980,11 +8973,31 @@ var MyApp = /*#__PURE__*/function (_App) {
           lineNumber: 72
         },
         __self: this
+      }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+        href: "/News",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: this
+      }, __jsx("a", {
+        alt: "news",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, __jsx("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
       }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
         isHeb: isHeb,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 85
         },
         __self: this
       })));
@@ -9139,7 +9152,7 @@ var themes = {
     menuBg: '#344955',
     menuColor: '#4A6572',
     menuHover: '#F9AA33',
-    headerBg: '#6646EE',
+    headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
     secondary: '#303f9f',
@@ -9162,6 +9175,29 @@ var themes = {
     }
   },
   mobile: '660px',
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+    bgColor: '#F5F5F5',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    }
+  },
   light: {
     type: 'light',
     text: {
