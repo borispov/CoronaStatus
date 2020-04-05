@@ -27,6 +27,7 @@ export const themes = {
       complementary: '#BC85F9',
       error: '#b00020',
       error2: '#ee5f02',
+      transparent: 'transparent'
     }
 
   },

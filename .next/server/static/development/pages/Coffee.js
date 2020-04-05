@@ -148,7 +148,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? '1px solid ' + props.theme.secondary : '', props => props.border ? props.border : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `1px solid ${props.theme[props.btnColor] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.theme.hover);
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -156,7 +156,7 @@ const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).wi
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 136
+    lineNumber: 137
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -164,7 +164,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 137
+    lineNumber: 138
   },
   __self: undefined
 }), props.children);
@@ -2147,7 +2147,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2___default()(_components_S__WEBPACK_IMPORTED_MODULE_1__["Heading"]).withConfig({
   displayName: "Coffee__Heading2",
   componentId: "wfmxm6-0"
-})(["margin-top:8px;font-size:1.6rem;color:", ";"], props => props.theme.color);
+})(["margin-top:14px;font-size:1.6rem;color:", ";"], props => props.theme.color);
 const Box = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Coffee__Box",
   componentId: "wfmxm6-1"
@@ -2159,7 +2159,7 @@ const BoxButtons = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.
 const BoxCount = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Coffee__BoxCount",
   componentId: "wfmxm6-3"
-})(["display:inline-block;vertical-align:middle;padding:16px;text-align:center;font-size:16px;font-weight:400;margin-left:12px;margin-right:12px;width:80px;height:64px;border:1px solid ", ";background:", ";border-radius:4px;color:", ";border-bottom:4px solid gray;border-top:4px solid gray;border-right:1px solid gray;border-left:1px solid gray;position:relative;"], props => props.theme.color, props => props.theme.bgColor, props => props.theme.color);
+})(["display:inline-block;vertical-align:middle;padding:16px;text-align:center;font-size:16px;font-weight:400;margin-left:18px;margin-right:18px;width:80px;height:64px;border:1px solid ", ";background:", ";border-radius:4px;color:", ";border-bottom:4px solid gray;border-top:4px solid gray;border-right:1px solid gray;border-left:1px solid gray;position:relative;"], props => props.theme.color, props => props.theme.bgColor, props => props.theme.color);
 const ErrorText = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h2.withConfig({
   displayName: "Coffee__ErrorText",
   componentId: "wfmxm6-4"
@@ -2261,6 +2261,9 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     },
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    bg: "transparent",
+    btnColor: "onBg",
+    outline: true,
     onClick: () => handleClick('plus'),
     radius: "8px",
     bold: true,
@@ -2273,6 +2276,9 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     },
     __self: undefined
   }, "+"), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    bg: "transparent",
+    btnColor: "onBg",
+    outline: true,
     onClick: () => handleClick('minus'),
     radius: "8px",
     bold: true,
@@ -2304,7 +2310,7 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     __self: undefined
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     pointer: true,
-    bgColor: "#218838",
+    bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 109
@@ -2324,7 +2330,9 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     __self: undefined
   }, isHeb ? 'המשך' : 'Support')), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     pointer: true,
-    bgColor: "#a1a1a1",
+    bg: "transparent",
+    outline: true,
+    btnColor: "primaryColor",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 112

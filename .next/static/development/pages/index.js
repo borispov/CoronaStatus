@@ -1513,20 +1513,18 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
-  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
+  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px';
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bg && props.theme[props.bg] || props.theme.primaryColor;
+  return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
 }, function (props) {
-  return props.outline ? '1px solid ' + props.theme.secondary : '';
-}, function (props) {
-  return props.border ? props.border : 'none';
+  return props.outline ? "1px solid ".concat(props.theme[props.btnColor] || props.theme.primaryColor) : 'none';
 }, function (props) {
   return props.bold && 'bold' || 'normal';
 }, function (props) {
@@ -1546,7 +1544,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1554,7 +1552,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 138
     },
     __self: this
   }), props.children);
@@ -59079,7 +59077,8 @@ var themes = {
       primaryVariant: '#3700B3',
       complementary: '#BC85F9',
       error: '#b00020',
-      error2: '#ee5f02'
+      error2: '#ee5f02',
+      transparent: 'transparent'
     }
   },
   mobile: '660px',

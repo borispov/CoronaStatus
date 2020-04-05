@@ -472,13 +472,13 @@ __webpack_require__.r(__webpack_exports__);
 var StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#2c3181,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);box-shadow:", ";@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:10px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#2c3181,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);box-shadow:", ";@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
   return props.theme.onPrimary;
 }, function (_ref) {
   var open = _ref.open;
-  return open ? 'translateY(64px)' : 'translateY(-100%)';
+  return open ? 'translateY(64px)' : 'translateY(-140%)';
 }, function (props) {
-  return props.theme.shadows[3];
+  return props.theme.shadows[1];
 }, function (props) {
   return props.theme.menuColor;
 }, function (_ref2) {
@@ -615,20 +615,18 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
-  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || '10px 14px';
+  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px';
 }, function (props) {
   return props.small ? '12px' : '16px';
 }, function (props) {
-  return props.bg && props.theme[props.bg] || props.theme.primaryColor;
+  return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
 }, function (props) {
-  return props.outline ? '1px solid ' + props.theme.secondary : '';
-}, function (props) {
-  return props.border ? props.border : 'none';
+  return props.outline ? "1px solid ".concat(props.theme[props.btnColor] || props.theme.primaryColor) : 'none';
 }, function (props) {
   return props.bold && 'bold' || 'normal';
 }, function (props) {
@@ -648,7 +646,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 137
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -656,7 +654,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 138
     },
     __self: this
   }), props.children);
@@ -8949,44 +8947,44 @@ var MyApp = /*#__PURE__*/function (_App) {
           lineNumber: 59
         },
         __self: this
-      }, isLight ? '🌒' : '🌞'), isLight ? 'Dark Mode' : 'Light Mode'), __jsx("a", {
+      }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
         onClick: this.toggleLang,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 66
         },
         __self: this
       }, __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 67
         },
         __self: this
       }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
         href: "/News",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 70
         },
         __self: this
       }, __jsx("a", {
         alt: "news",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 71
         },
         __self: this
       }, __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 72
         },
         __self: this
-      }, "\uD83D\uDCF0"), "News")))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+      }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
         isHeb: isHeb,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 80
         },
         __self: this
       })));
@@ -9159,7 +9157,8 @@ var themes = {
       primaryVariant: '#3700B3',
       complementary: '#BC85F9',
       error: '#b00020',
-      error2: '#ee5f02'
+      error2: '#ee5f02',
+      transparent: 'transparent'
     }
   },
   mobile: '660px',

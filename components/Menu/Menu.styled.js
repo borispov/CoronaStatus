@@ -19,8 +19,8 @@ export const StyledMenu = styled.nav`
   border-bottom-right-radius: 6px;
   border-top: none;
   transition: transform 0.22s ease-in-out;
-  transform: ${({ open }) => open ?  'translateY(64px)' : 'translateY(-100%)'} translateX(50%);
-  box-shadow: ${props => props.theme.shadows[3]};
+  transform: ${({ open }) => open ?  'translateY(64px)' : 'translateY(-140%)'} translateX(50%);
+  box-shadow: ${props => props.theme.shadows[1]};
   @media (max-width: 660px) {
     width: 100%;
   }
@@ -32,6 +32,11 @@ export const StyledMenu = styled.nav`
     justify-content: flex-start;
     padding: 10px 6px;
     text-align: right;
+    @media (max-width: 660px) {
+      margin: 0 auto;
+      padding: 16px;
+      text-align: center;
+    }
   }
 
   span {
@@ -40,7 +45,7 @@ export const StyledMenu = styled.nav`
     font-size: 12px;
     color: ${props => props.theme.menuColor};
     @media (max-width: 660px) {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 

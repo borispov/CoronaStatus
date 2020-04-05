@@ -86,16 +86,17 @@ export const Container = styled.div`
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
-  padding: ${props => props.small 
+  padding: ${props => props.small
     && '.375rem .75rem' || props.medium
-    && '6px 9px'
+    && '6px 9px' || props.big 
+    && '14px'
     || '10px 14px'};
   font-size: ${props => props.small ? '12px' : '16px'};
-  background: ${props => props.bg && props.theme[props.bg] || props.theme.primaryColor};
+  background: ${props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor};
   color: ${props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary};
-  border: ${props => props.outline ? '1px solid ' + props.theme.secondary : ''};
+  border: ${props => props.outline ? `1px solid ${props.theme[props.btnColor] || props.theme.primaryColor}` : 'none'};
   font-family: 'Sans';
-  border: ${props => props.border ? props.border : 'none'};
+  /* border: ${props => props.border ? props.border : 'none'}; */
   font-weight: ${props => props.bold && 'bold' || 'normal'};
   cursor: ${props => props.link ? 'pointer' : 'cursor'};
   outline: none;

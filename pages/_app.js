@@ -57,7 +57,11 @@ export default class MyApp extends App {
           <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
             <a onClick={isLight ? this.setDarkTheme : this.setLightTheme}>
               <span>{ isLight ? '🌒' : '🌞'}</span>
-              { isLight ? 'Dark Mode' : 'Light Mode' }
+              {
+                isLight
+                  ? (isHeb && 'מצב לילה' || 'Dark Mode')
+                  : (isHeb && 'מצב יום' || 'Light Mode')
+              }
             </a>
             <a onClick={this.toggleLang}>
               <span>&#127760;</span>
@@ -66,7 +70,7 @@ export default class MyApp extends App {
             <Link href="/News">
               <a alt="news">
                 <span>&#128240;</span>
-                News
+                { isHeb && 'חדשות' || 'News' }
               </a>
             </Link>
 

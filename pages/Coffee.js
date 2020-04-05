@@ -4,7 +4,7 @@ import styled, { withTheme } from 'styled-components'
 import Link from 'next/link'
 
 const Heading2 = styled(Heading)`
-  margin-top: 8px;
+  margin-top: 14px;
   font-size: 1.6rem;
   color: ${props => props.theme.color};
 `
@@ -33,8 +33,8 @@ const BoxCount = styled.div`
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 18px;
+  margin-right: 18px;
   width: 80px;
   height: 64px;
   // border-radius: 16px;
@@ -99,17 +99,17 @@ export default withTheme(({ isHeb, theme }) => {
           <Box>
             <Heading fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Heading>
             <BoxButtons>
-              <Button onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
-              <Button onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
+              <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
+              <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
               <BoxCount>{ counter }$</BoxCount>
             </BoxButtons>
             <ErrorText>{error ? (isHeb &&errorHeb || errorEng) : ''}</ErrorText>
           </Box>
           <BoxButtons>
-            <Button pointer bgColor='#218838'>
+            <Button pointer bg='successDefault'>
               <a style={{textDecoration: 'none', color: 'inherit' }} href={'https://paypal.me/BPov/' + counter} target="_blank">{isHeb ? 'המשך' : 'Support'}</a>
             </Button>
-            <Button pointer bgColor='#a1a1a1'>
+            <Button pointer bg='transparent' outline btnColor='primaryColor'>
               <Link href="/">
                 <a style={{textDecoration: 'none', color: 'inherit' }}>
                 { isHeb ? 'חזור לאתר' : 'Back' }
