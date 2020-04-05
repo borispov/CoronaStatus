@@ -12,7 +12,7 @@ const parseLabel = label => {
   return d.getDate() + '.' + ('0' + (d.getMonth()+1)).toString()
 }
 
-const sortForChart = obj => {
+const sortForChart = (obj, theme) => {
 
   const zeroNull = c => c === null ? 0 : c
   const sortedObj = obj.sort((a,b) => new Date(a.date) - new Date(b.date))
@@ -51,7 +51,7 @@ const sortForChart = obj => {
       label: 'cases',
       data: cases,
       backgroundColor: '#2A4561',
-      borderColor: '#6200EE',
+      borderColor: theme && theme.analogous || '#6200ee',
       strokeColor: "#ADFF2F",
       borderWidth: 5,
 

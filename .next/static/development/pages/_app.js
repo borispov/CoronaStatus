@@ -70,7 +70,7 @@ __webpack_require__.r(__webpack_exports__);
 var StyledBurger = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "Burgerstyled__StyledBurger",
   componentId: "sc-2xj2d1-0"
-})(["position:absolute;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;top:60%;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;transform:translateY(-50%);@media (max-width:660px){margin-top:4px;}&:focus{outline:none;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], function (_ref) {
+})(["position:relative;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;background:transparent;border:none;cursor:pointer;z-index:10;transition:all 0.3s ease-in-out;margin-top:12px;&:focus{outline:none;}&:hover{transform:translateY(10%);}@media (max-width:660px){margin-top:4px;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], function (_ref) {
   var theme = _ref.theme,
       open = _ref.open;
   return open ? '#d9d9d9' : theme.white;
@@ -194,47 +194,49 @@ var Header = function Header(_ref) {
       lineNumber: 16
     },
     __self: this
-  }, "C"), "orona")), __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+  }, "C"), "orona")), children, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/Coffee",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    letterSpace: true,
     small: true,
-    bg: "error2",
+    bg: "error",
+    hoverUp: true,
     link: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, __jsx("i", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
   }, " ", __jsx(_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_2__["Coffee"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
-  }), " "), Tip)))), children)))));
+  }), " "), Tip)))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -262,9 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "Headerstyled__HeaderWrapper",
   componentId: "sc-1v2vfvs-0"
-})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,", ",#000000d6);margin:0 auto;margin-bottom:48px;box-shadow:", ";"], function (props) {
-  return props.theme.headerBg;
-}, function (props) {
+})(["direction:ltr;position:relative;height:64px;z-index:1;width:100%;background:linear-gradient(45deg,#5c0434,#000000d6);margin:0 auto;margin-bottom:48px;box-shadow:", ";"], function (props) {
   return props.theme.shadows[4];
 });
 var HeaderTag = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header.withConfig({
@@ -282,7 +282,7 @@ var NavList = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul.withC
 var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li.withConfig({
   displayName: "Headerstyled__NavItem",
   componentId: "sc-1v2vfvs-4"
-})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:0px 6px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
+})(["margin-top:10px;margin-left:40px;list-style:none;display:flex;justify-content:space-between;align-items:center;i{width:1.3rem;margin:2px 12px 0 0;display:inline-block;vertical-align:middle;font-size:16px;}@media (max-width:580px){margin-left:8px;}"]);
 var Span = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span.withConfig({
   displayName: "Headerstyled__Span",
   componentId: "sc-1v2vfvs-5"
@@ -491,7 +491,7 @@ __webpack_require__.r(__webpack_exports__);
 var StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#364F9F,#000000ff);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
+})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#3f060a,#000000d6);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], function (props) {
   return props.theme.onPrimary;
 }, function (_ref) {
   var open = _ref.open;
@@ -632,7 +632,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";&:hover{background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
   return props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px';
@@ -641,7 +641,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
-  return props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
+  return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
 }, function (props) {
   return props.outline ? "".concat(props.fat ? '2px' : '1px', " solid ").concat(props.theme[props.outline] || props.theme.primaryColor) : 'none';
 }, function (props) {
@@ -653,17 +653,23 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.theme.shadows[1];
 }, function (props) {
-  return props.theme.hover;
+  return props.letterSpace ? '1.5px' : '0';
+}, function (props) {
+  return props.hoverUp ? 'translateY(-5%)' : '';
+}, function (props) {
+  return !props.active && props.hoverColor && props.theme[props.hoverColor];
+}, function (props) {
+  return !props.active && props.hoverColor ? props.theme.onPrimary : '';
 });
 var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
-})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Roboto';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
+})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Rubik';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
 var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 139
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -671,7 +677,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 140
     },
     __self: this
   }), props.children);
@@ -8734,7 +8740,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Montserrat';\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Roboto';\n  }\n\n  h1 {\n    font-family: 'Roboto';\n    font-weight: 400;\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Roboto';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Montserrat';\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Rubik';\n  }\n\n  h1 {\n    font-family: 'Rubik';\n    font-weight: 400;\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Rubik';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -9171,7 +9177,8 @@ var themes = {
       complementary: '#BC85F9',
       error: '#b00020',
       error2: '#ee5f02',
-      transparent: 'transparent'
+      transparent: 'transparent',
+      white: '#FFF'
     }
   },
   mobile: '660px',
@@ -9205,11 +9212,20 @@ var themes = {
       secondary: 'rgba(0,0,0,0.60)',
       disabled: 'rgba(0,0,0,0.38)'
     },
-    primaryColor: '#6646EE',
-    primaryDark: '#303f9f',
-    primaryVariant: '#3700B3',
-    complementary: '#BC85F9',
-    bgColor: '#FFF',
+    primaryDark: '#31000d',
+    primaryColor: '#5C0434',
+    // Red
+    // primaryLight: '#8c385e',
+    primaryLight: 'rgb(124,54,92)',
+    primaryVariant: '#B8004B',
+    analogous: '#58045c',
+    complementary: '#1d8c4a',
+    // primaryColor: '#6646EE', // Main Purple
+    // primaryDark: '#303f9f',
+    // primaryVariant: '#3700B3',
+    // complementary: '#BC85F9',
+    bgColor: '#F5F5F5',
+    // bgColor: '#FFF',
     error: '#b00020',
     error2: '#ee5f02',
     hover: 'rgba(0,0,0,0.4)',

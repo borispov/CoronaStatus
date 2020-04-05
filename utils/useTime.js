@@ -15,8 +15,7 @@ async function currentCountry(){
 }
 
 // function useTime(loc, url = baseURL) {
-function useTime(loc, getCountryList) {
-
+function useTime(loc, theme = {}) {
 
   const [countryStats, setCountryStats] = useState();
   const [loading, setLoading] = useState(false);
@@ -39,7 +38,7 @@ function useTime(loc, getCountryList) {
       //   .catch(err => setError(err))
 
       // const timeStats = sortExternalApi(data);
-      const timeStats = sortForChart(data);
+      const timeStats = sortForChart(data, theme);
       setCountryStats(timeStats)
       setLoading(false)
     }

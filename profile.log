@@ -1,0 +1,1042 @@
+SCRIPT  /Users/raypo/.vim/bundle/Ale/autoload/ale.vim
+Sourced 1 time
+Total time:   0.001657
+ Self time:   0.001657
+
+count  total (s)   self (s)
+                            " Author: w0rp <devw0rp@gmail.com>, David Alexander <opensource@thelonelyghost.com>
+                            " Description: Primary code path for the plugin
+                            "   Manages execution of linters when requested by autocommands
+                            
+                            " Strings used for severity in the echoed message
+    1              0.000058 let g:ale_echo_msg_error_str = get(g:, 'ale_echo_msg_error_str', 'Error')
+    1              0.000042 let g:ale_echo_msg_info_str = get(g:, 'ale_echo_msg_info_str', 'Info')
+    1              0.000039 let g:ale_echo_msg_log_str = get(g:, 'ale_echo_msg_log_str', 'Log')
+    1              0.000009 let g:ale_echo_msg_warning_str = get(g:, 'ale_echo_msg_warning_str', 'Warning')
+                            " Ignoring linters, for disabling some, or ignoring LSP diagnostics.
+    1              0.000027 let g:ale_linters_ignore = get(g:, 'ale_linters_ignore', {})
+    1              0.000025 let g:ale_disable_lsp = get(g:, 'ale_disable_lsp', 0)
+                            
+                            " LSP window/showMessage format
+    1              0.000046 let g:ale_lsp_show_message_format = get(g:, 'ale_lsp_show_message_format', '%severity%:%linter%: %s')
+                            " Valid values mimic LSP definitions (error, warning and information; log is
+                            " never shown)
+    1              0.000027 let g:ale_lsp_show_message_severity = get(g:, 'ale_lsp_show_message_severity', 'error')
+                            
+    1              0.000004 let s:lint_timer = -1
+    1              0.000028 let s:getcmdwintype_exists = exists('*getcmdwintype')
+                            
+                            " Return 1 if a file is too large for ALE to handle.
+    1              0.000013 function! ale#FileTooLarge(buffer) abort
+                                let l:max = getbufvar(a:buffer, 'ale_maximum_file_size', get(g:, 'ale_maximum_file_size', 0))
+                            
+                                return l:max > 0 ? (line2byte(line('$') + 1) > l:max) : 0
+                            endfunction
+                            
+                            " A function for checking various conditions whereby ALE just shouldn't
+                            " attempt to do anything, say if particular buffer types are open in Vim.
+    1              0.000004 function! ale#ShouldDoNothing(buffer) abort
+                                " The checks are split into separate if statements to make it possible to
+                                " profile each check individually with Vim's profiling tools.
+                                "
+                                " Do nothing if ALE is disabled.
+                                if !getbufvar(a:buffer, 'ale_enabled', get(g:, 'ale_enabled', 0))
+                                    return 1
+                                endif
+                            
+                                " Don't perform any checks when newer NeoVim versions are exiting.
+                                if get(v:, 'exiting', v:null) isnot v:null
+                                    return 1
+                                endif
+                            
+                                let l:filetype = getbufvar(a:buffer, '&filetype')
+                            
+                                " Do nothing when there's no filetype.
+                                if l:filetype is# ''
+                                    return 1
+                                endif
+                            
+                                " Do nothing for diff buffers.
+                                if getbufvar(a:buffer, '&diff')
+                                    return 1
+                                endif
+                            
+                                " Do nothing for blacklisted files.
+                                if index(get(g:, 'ale_filetype_blacklist', []), l:filetype) >= 0
+                                    return 1
+                                endif
+                            
+                                " Do nothing if running from command mode.
+                                if s:getcmdwintype_exists && !empty(getcmdwintype())
+                                    return 1
+                                endif
+                            
+                                let l:filename = fnamemodify(bufname(a:buffer), ':t')
+                            
+                                " Do nothing for directories.
+                                if l:filename is# '.'
+                                    return 1
+                                endif
+                            
+                                " Don't start linting and so on when an operator is pending.
+                                if ale#util#Mode(1) is# 'no'
+                                    return 1
+                                endif
+                            
+                                " Do nothing if running in the sandbox.
+                                if ale#util#InSandbox()
+                                    return 1
+                                endif
+                            
+                                " Do nothing if the file is too large.
+                                if ale#FileTooLarge(a:buffer)
+                                    return 1
+                                endif
+                            
+                                " Do nothing from CtrlP buffers with CtrlP-funky.
+                                if exists(':CtrlPFunky') is 2
+                                \&& getbufvar(a:buffer, '&l:statusline') =~# 'CtrlPMode.*funky'
+                                    return 1
+                                endif
+                            
+                                return 0
+                            endfunction
+                            
+    1              0.000018 function! s:Lint(buffer, should_lint_file, timer_id) abort
+                                " Use the filetype from the buffer
+                                let l:filetype = getbufvar(a:buffer, '&filetype')
+                                let l:linters = ale#linter#Get(l:filetype)
+                            
+                                " Apply ignore lists for linters only if needed.
+                                let l:ignore_config = ale#Var(a:buffer, 'linters_ignore')
+                                let l:disable_lsp = ale#Var(a:buffer, 'disable_lsp')
+                                let l:linters = !empty(l:ignore_config) || l:disable_lsp
+                                \   ? ale#engine#ignore#Exclude(l:filetype, l:linters, l:ignore_config, l:disable_lsp)
+                                \   : l:linters
+                            
+                                " Tell other sources that they can start checking the buffer now.
+                                let g:ale_want_results_buffer = a:buffer
+                                silent doautocmd <nomodeline> User ALEWantResults
+                                unlet! g:ale_want_results_buffer
+                            
+                                " Don't set up buffer data and so on if there are no linters to run.
+                                if !has_key(g:ale_buffer_info, a:buffer) && empty(l:linters)
+                                    return
+                                endif
+                            
+                                " Clear lint_file linters, or only run them if the file exists.
+                                let l:lint_file = empty(l:linters)
+                                \   || (a:should_lint_file && filereadable(expand('#' . a:buffer . ':p')))
+                            
+                                call ale#engine#RunLinters(a:buffer, l:linters, l:lint_file)
+                            endfunction
+                            
+                            " (delay, [linting_flag, buffer_number])
+    1              0.000015 function! ale#Queue(delay, ...) abort
+                                if a:0 > 2
+                                    throw 'too many arguments!'
+                                endif
+                            
+                                let l:buffer = get(a:000, 1, v:null)
+                            
+                                if l:buffer is v:null
+                                    let l:buffer = bufnr('')
+                                endif
+                            
+                                if type(l:buffer) isnot v:t_number
+                                    throw 'buffer_number must be a Number'
+                                endif
+                            
+                                if ale#ShouldDoNothing(l:buffer)
+                                    return
+                                endif
+                            
+                                " Default linting_flag to ''
+                                let l:should_lint_file = get(a:000, 0) is# 'lint_file'
+                            
+                                if s:lint_timer != -1
+                                    call timer_stop(s:lint_timer)
+                                    let s:lint_timer = -1
+                                endif
+                            
+                                if a:delay > 0
+                                    let s:lint_timer = timer_start(
+                                    \   a:delay,
+                                    \   function('s:Lint', [l:buffer, l:should_lint_file])
+                                    \)
+                                else
+                                    call s:Lint(l:buffer, l:should_lint_file, 0)
+                                endif
+                            endfunction
+                            
+    1              0.000025 let s:current_ale_version = [2, 6, 0]
+                            
+                            " A function used to check for ALE features in files outside of the project.
+    1              0.000013 function! ale#Has(feature) abort
+                                let l:match = matchlist(a:feature, '\c\v^ale-(\d+)\.(\d+)(\.(\d+))?$')
+                            
+                                if !empty(l:match)
+                                    let l:version = [l:match[1] + 0, l:match[2] + 0, l:match[4] + 0]
+                            
+                                    return ale#semver#GTE(s:current_ale_version, l:version)
+                                endif
+                            
+                                return 0
+                            endfunction
+                            
+                            " Given a buffer number and a variable name, look for that variable in the
+                            " buffer scope, then in global scope. If the name does not exist in the global
+                            " scope, an exception will be thrown.
+                            "
+                            " Every variable name will be prefixed with 'ale_'.
+    1              0.000014 function! ale#Var(buffer, variable_name) abort
+                                let l:full_name = 'ale_' . a:variable_name
+                                let l:vars = getbufvar(str2nr(a:buffer), '', {})
+                            
+                                return get(l:vars, l:full_name, g:[l:full_name])
+                            endfunction
+                            
+                            " Initialize a variable with a default value, if it isn't already set.
+                            "
+                            " Every variable name will be prefixed with 'ale_'.
+    1              0.000012 function! ale#Set(variable_name, default) abort
+                                let l:full_name = 'ale_' . a:variable_name
+                            
+                                if !has_key(g:, l:full_name)
+                                    let g:[l:full_name] = a:default
+                                endif
+                            endfunction
+                            
+                            " Given a string for adding to a command, return the string padded with a
+                            " space on the left if it is not empty. Otherwise return an empty string.
+                            "
+                            " This can be used for making command strings cleaner and easier to test.
+    1              0.000004 function! ale#Pad(string) abort
+                                return !empty(a:string) ? ' ' . a:string : ''
+                            endfunction
+                            
+                            " Given a environment variable name and a value, produce part of a command for
+                            " setting an environment variable before running a command. The syntax will be
+                            " valid for cmd on Windows, or most shells on Unix.
+    1              0.000003 function! ale#Env(variable_name, value) abort
+                                if has('win32')
+                                    return 'set ' . a:variable_name . '=' . ale#Escape(a:value) . ' && '
+                                endif
+                            
+                                return a:variable_name . '=' . ale#Escape(a:value) . ' '
+                            endfunction
+                            
+                            " Escape a string suitably for each platform.
+                            " shellescape does not work on Windows.
+    1              0.000011 function! ale#Escape(str) abort
+                                if fnamemodify(&shell, ':t') is? 'cmd.exe'
+                                    " If the string contains spaces, it will be surrounded by quotes.
+                                    " Otherwise, special characters will be escaped with carets (^).
+                                    return substitute(
+                                    \   a:str =~# ' '
+                                    \       ?  '"' .  substitute(a:str, '"', '""', 'g') . '"'
+                                    \       : substitute(a:str, '\v([&|<>^])', '^\1', 'g'),
+                                    \   '%',
+                                    \   '%%',
+                                    \   'g',
+                                    \)
+                                endif
+                            
+                                return shellescape (a:str)
+                            endfunction
+                            
+                            " Get the loclist item message according to a given format string.
+                            "
+                            " See `:help g:ale_loclist_msg_format` and `:help g:ale_echo_msg_format`
+    1              0.000023 function! ale#GetLocItemMessage(item, format_string) abort
+                                let l:msg = a:format_string
+                                let l:severity = g:ale_echo_msg_warning_str
+                                let l:code = get(a:item, 'code', '')
+                                let l:type = get(a:item, 'type', 'E')
+                                let l:linter_name = get(a:item, 'linter_name', '')
+                                let l:code_repl = !empty(l:code) ? '\=submatch(1) . l:code . submatch(2)' : ''
+                            
+                                if l:type is# 'E'
+                                    let l:severity = g:ale_echo_msg_error_str
+                                elseif l:type is# 'I'
+                                    let l:severity = g:ale_echo_msg_info_str
+                                endif
+                            
+                                " Replace special markers with certain information.
+                                " \=l:variable is used to avoid escaping issues.
+                                let l:msg = substitute(l:msg, '\V%severity%', '\=l:severity', 'g')
+                                let l:msg = substitute(l:msg, '\V%linter%', '\=l:linter_name', 'g')
+                                let l:msg = substitute(l:msg, '\v\%([^\%]*)code([^\%]*)\%', l:code_repl, 'g')
+                                " Replace %s with the text.
+                                let l:msg = substitute(l:msg, '\V%s', '\=a:item.text', 'g')
+                            
+                                return l:msg
+                            endfunction
+
+SCRIPT  /Users/raypo/.vim/bundle/ctrlp.vim/autoload/ctrlp/utils.vim
+Sourced 1 time
+Total time:   0.000340
+ Self time:   0.000196
+
+count  total (s)   self (s)
+                            " =============================================================================
+                            " File:          autoload/ctrlp/utils.vim
+                            " Description:   Utilities
+                            " Author:        Kien Nguyen <github.com/kien>
+                            " =============================================================================
+                            
+                            " Static variables {{{1
+    1              0.000004 fu! ctrlp#utils#lash()
+                            	retu &ssl || !exists('+ssl') ? '/' : '\'
+                            endf
+                            
+    1              0.000003 fu! s:lash(...)
+                            	retu ( a:0 ? a:1 : getcwd() ) !~ '[\/]$' ? s:lash : ''
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#opts()
+                            	let s:lash = ctrlp#utils#lash()
+                            	let usrhome = $HOME . s:lash( $HOME )
+                            	let cahome = exists('$XDG_CACHE_HOME') ? $XDG_CACHE_HOME : usrhome.'.cache'
+                            	let cadir = isdirectory(usrhome.'.ctrlp_cache')
+                            		\ ? usrhome.'.ctrlp_cache' : cahome.s:lash(cahome).'ctrlp'
+                            	if exists('g:ctrlp_cache_dir')
+                            		let cadir = expand(g:ctrlp_cache_dir, 1)
+                            		if isdirectory(cadir.s:lash(cadir).'.ctrlp_cache')
+                            			let cadir = cadir.s:lash(cadir).'.ctrlp_cache'
+                            		en
+                            	en
+                            	let s:cache_dir = cadir
+                            endf
+    1   0.000154   0.000010 cal ctrlp#utils#opts()
+                            
+    1              0.000005 let s:wig_cond = v:version > 702 || ( v:version == 702 && has('patch051') )
+                            " Files and Directories {{{1
+    1              0.000002 fu! ctrlp#utils#cachedir()
+                            	retu s:cache_dir
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#cachefile(...)
+                            	let [tail, dir] = [a:0 == 1 ? '.'.a:1 : '', a:0 == 2 ? a:1 : getcwd()]
+                            	let cache_file = substitute(dir, '\([\/]\|^\a\zs:\)', '%', 'g').tail.'.txt'
+                            	retu a:0 == 1 ? cache_file : s:cache_dir.s:lash(s:cache_dir).cache_file
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#readfile(file)
+                            	if filereadable(a:file)
+                            		let data = readfile(a:file)
+                            		if empty(data) || type(data) != 3
+                            			unl data
+                            			let data = []
+                            		en
+                            		retu data
+                            	en
+                            	retu []
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#mkdir(dir)
+                            	if exists('*mkdir') && !isdirectory(a:dir)
+                            		sil! cal mkdir(a:dir, 'p')
+                            	en
+                            	retu a:dir
+                            endf
+                            
+    1              0.000017 fu! ctrlp#utils#writecache(lines, ...)
+                            	if isdirectory(ctrlp#utils#mkdir(a:0 ? a:1 : s:cache_dir))
+                            		sil! cal writefile(a:lines, a:0 >= 2 ? a:2 : ctrlp#utils#cachefile())
+                            	en
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#glob(...)
+                            	let path = ctrlp#utils#fnesc(a:1, 'g')
+                            	retu s:wig_cond ? glob(path, a:2) : glob(path)
+                            endf
+                            
+    1              0.000001 fu! ctrlp#utils#globpath(...)
+                            	retu call('globpath', s:wig_cond ? a:000 : a:000[:1])
+                            endf
+                            
+    1              0.000002 fu! ctrlp#utils#fnesc(path, type, ...)
+                            	if exists('*fnameescape')
+                            		if exists('+ssl')
+                            			if a:type == 'c'
+                            				let path = escape(a:path, '%#')
+                            			elsei a:type == 'f'
+                            				let path = fnameescape(a:path)
+                            			elsei a:type == 'g'
+                            				let path = escape(a:path, '?*')
+                            			en
+                            			let path = substitute(path, '[', '[[]', 'g')
+                            		el
+                            			let path = fnameescape(a:path)
+                            		en
+                            	el
+                            		if exists('+ssl')
+                            			if a:type == 'c'
+                            				let path = escape(a:path, '%#')
+                            			elsei a:type == 'f'
+                            				let path = escape(a:path, " \t\n%#*?|<\"")
+                            			elsei a:type == 'g'
+                            				let path = escape(a:path, '?*')
+                            			en
+                            			let path = substitute(path, '[', '[[]', 'g')
+                            		el
+                            			let path = escape(a:path, " \t\n*?[{`$\\%#'\"|!<")
+                            		en
+                            	en
+                            	retu a:0 ? escape(path, a:1) : path
+                            endf
+                            "}}}
+                            
+                            " vim:fen:fdm=marker:fmr={{{,}}}:fdl=0:fdc=1:ts=2:sw=2:sts=2
+
+FUNCTION  ctrlp#utils#opts()
+Called 1 time
+Total time:   0.000143
+ Self time:   0.000093
+
+count  total (s)   self (s)
+    1   0.000039   0.000029 	let s:lash = ctrlp#utils#lash()
+    1   0.000042   0.000010 	let usrhome = $HOME . s:lash( $HOME )
+    1              0.000006 	let cahome = exists('$XDG_CACHE_HOME') ? $XDG_CACHE_HOME : usrhome.'.cache'
+    1   0.000041   0.000032 	let cadir = isdirectory(usrhome.'.ctrlp_cache') ? usrhome.'.ctrlp_cache' : cahome.s:lash(cahome).'ctrlp'
+    1              0.000003 	if exists('g:ctrlp_cache_dir')
+                            		let cadir = expand(g:ctrlp_cache_dir, 1)
+                            		if isdirectory(cadir.s:lash(cadir).'.ctrlp_cache')
+                            			let cadir = cadir.s:lash(cadir).'.ctrlp_cache'
+                            		en
+                            	en
+    1              0.000002 	let s:cache_dir = cadir
+
+FUNCTION  <SNR>68_lash()
+Called 2 times
+Total time:   0.000040
+ Self time:   0.000040
+
+count  total (s)   self (s)
+    2              0.000039 	retu ( a:0 ? a:1 : getcwd() ) !~ '[\/]$' ? s:lash : ''
+
+FUNCTION  <SNR>50_getline()
+Called 9 times
+Total time:   0.001301
+ Self time:   0.001301
+
+count  total (s)   self (s)
+    9              0.000152   let line = getline('.')
+    9              0.000113   let pos = col('.') - 1
+    9              0.000123   let before = strpart(line, 0, pos)
+    9              0.000113   let after = strpart(line, pos)
+    9              0.000058   let afterline = after
+    9              0.000033   if g:AutoPairsMultilineClose
+    9              0.000093     let n = line('$')
+    9              0.000082     let i = line('.')+1
+    9              0.000058     while i <= n
+                                  let line = getline(i)
+                                  let after = after.' '.line
+                                  if !(line =~ '\v^\s*$')
+                                    break
+                                  end
+                                  let i = i+1
+                                endwhile
+    9              0.000016   end
+    9              0.000075   return [before, after, afterline]
+
+FUNCTION  ctrlp#utils#writecache()
+Called 1 time
+Total time:   0.001551
+ Self time:   0.001528
+
+count  total (s)   self (s)
+    1   0.000054   0.000031 	if isdirectory(ctrlp#utils#mkdir(a:0 ? a:1 : s:cache_dir))
+    1              0.001489 		sil! cal writefile(a:lines, a:0 >= 2 ? a:2 : ctrlp#utils#cachefile())
+    1              0.000005 	en
+
+FUNCTION  ctrlp#utils#readfile()
+Called 1 time
+Total time:   0.000130
+ Self time:   0.000130
+
+count  total (s)   self (s)
+    1              0.000033 	if filereadable(a:file)
+    1              0.000086 		let data = readfile(a:file)
+    1              0.000005 		if empty(data) || type(data) != 3
+                            			unl data
+                            			let data = []
+                            		en
+    1              0.000001 		retu data
+                            	en
+                            	retu []
+
+FUNCTION  <SNR>36_try_cmd()
+Called 1 time
+Total time:   0.030754
+ Self time:   0.000196
+
+count  total (s)   self (s)
+    1              0.000010   let argv = split(a:cmd, " ")
+    1   0.030707   0.000149   let out = systemlist(argv, (a:0 ? a:1 : ['']), 1)
+    1              0.000007   if v:shell_error
+                                if !exists('s:did_error_try_cmd')
+                                  echohl WarningMsg
+                                  echomsg "clipboard: error: ".(len(out) ? out[0] : v:shell_error)
+                                  echohl None
+                                  let s:did_error_try_cmd = 1
+                                endif
+                                return 0
+                              endif
+    1              0.000003   return out
+
+FUNCTION  ale#events#QuitEvent()
+Called 1 time
+Total time:   0.000073
+ Self time:   0.000053
+
+count  total (s)   self (s)
+                                " Remember when ALE is quitting for BufWrite, etc.
+    1   0.000070   0.000050     call setbufvar(a:buffer, 'ale_quitting', ale#events#ClockMilliseconds())
+
+FUNCTION  ctrlp#utils#cachedir()
+Called 1 time
+Total time:   0.000003
+ Self time:   0.000003
+
+count  total (s)   self (s)
+    1              0.000002 	retu s:cache_dir
+
+FUNCTION  <SNR>45_SetDefaultCompletionType()
+Called 1 time
+Total time:   0.000069
+ Self time:   0.000069
+
+count  total (s)   self (s)
+    1              0.000035   if exists('b:SuperTabDefaultCompletionType') && (!exists('b:complCommandLine') || !b:complCommandLine)
+                                call SuperTabSetCompletionType(b:SuperTabDefaultCompletionType)
+                              endif
+
+FUNCTION  <SNR>48_savetofile()
+Called 1 time
+Total time:   0.001578
+ Self time:   0.000028
+
+count  total (s)   self (s)
+    1   0.001578   0.000027 	cal ctrlp#utils#writecache(a:mrufs, s:cadir, s:cafile)
+
+FUNCTION  ctrlp#utils#lash()
+Called 3 times
+Total time:   0.000020
+ Self time:   0.000020
+
+count  total (s)   self (s)
+    3              0.000018 	retu &ssl || !exists('+ssl') ? '/' : '\'
+
+FUNCTION  274()
+Called 1 time
+Total time:   0.030830
+ Self time:   0.000076
+
+count  total (s)   self (s)
+    1              0.000005   if a:reg == '"'
+                                call s:clipboard.set(a:lines,a:regtype,'+')
+                                if s:copy['*'] != s:copy['+']
+                                  call s:clipboard.set(a:lines,a:regtype,'*')
+                                end
+                                return 0
+                              end
+                            
+    1              0.000005   if type(s:copy[a:reg]) == v:t_func
+                                call s:copy[a:reg](a:lines, a:regtype)
+                                return 0
+                              end
+                            
+    1              0.000001   if s:cache_enabled == 0
+    1   0.030800   0.000047     call s:try_cmd(s:copy[a:reg], a:lines)
+    1              0.000002     return 0
+                              end
+                            
+                              if s:selections[a:reg].owner > 0
+                                " The previous provider instance should exit when the new one takes
+                                " ownership, but kill it to be sure we don't fill up the job table.
+                                call jobstop(s:selections[a:reg].owner)
+                              end
+                              let s:selections[a:reg] = copy(s:selection)
+                              let selection = s:selections[a:reg]
+                              let selection.data = [a:lines, a:regtype]
+                              let argv = split(s:copy[a:reg], " ")
+                              let selection.argv = argv
+                              let selection.detach = s:cache_enabled
+                              let selection.cwd = "/"
+                              let jobid = jobstart(argv, selection)
+                              if jobid > 0
+                                call jobsend(jobid, a:lines)
+                                call jobclose(jobid, 'stdin')
+                                let selection.owner = jobid
+                              else
+                                echohl WarningMsg
+                                echomsg 'clipboard: failed to execute: '.(s:copy[a:reg])
+                                echohl None
+                                return 0
+                              endif
+                              return 1
+
+FUNCTION  <SNR>48_mergelists()
+Called 1 time
+Total time:   0.001366
+ Self time:   0.000328
+
+count  total (s)   self (s)
+    1   0.001064   0.000037 	let diskmrufs = ctrlp#utils#readfile(ctrlp#mrufiles#cachefile())
+    1              0.000208 	cal filter(diskmrufs, 'index(s:mrufs, v:val) < 0')
+    1              0.000029 	let mrufs = s:mrufs + diskmrufs
+    1   0.000063   0.000053 	retu s:chop(mrufs)
+
+FUNCTION  AutoPairsReturn()
+Called 2 times
+Total time:   0.001006
+ Self time:   0.000741
+
+count  total (s)   self (s)
+    2              0.000014   if b:autopairs_enabled == 0
+                                return ''
+                              end
+    2              0.000019   let b:autopairs_return_pos = 0
+    2              0.000037   let before = getline(line('.')-1)
+    2   0.000335   0.000071   let [ig, ig, afterline] = s:getline()
+    2              0.000003   let cmd = ''
+   20              0.000034   for [open, close, opt] in b:AutoPairsList
+   18              0.000023     if close == ''
+                                  continue
+                                end
+                            
+   18              0.000151     if before =~ '\V'.open.'\v\s*$' && afterline =~ '^\s*\V'.close
+                                  let b:autopairs_return_pos = line('.')
+                                  if g:AutoPairsCenterLine && winline() * 3 >= winheight(0) * 2
+                                    " Recenter before adding new line to avoid replacing line content
+                                    let cmd = "zz"
+                                  end
+                            
+                                  " If equalprg has been set, then avoid call =
+                                  " https://github.com/jiangmiao/auto-pairs/issues/24
+                                  if &equalprg != ''
+                                    return "\<ESC>".cmd."O"
+                                  endif
+                            
+                                  " conflict with javascript and coffee
+                                  " javascript   need   indent new line
+                                  " coffeescript forbid indent new line
+                                  if &filetype == 'coffeescript' || &filetype == 'coffee'
+                                    return "\<ESC>".cmd."k==o"
+                                  else
+                                    return "\<ESC>".cmd."=ko"
+                                  endif
+                                end
+   18              0.000026   endfor
+    2              0.000002   return ''
+
+FUNCTION  AutoPairsSpace()
+Called 7 times
+Total time:   0.005433
+ Self time:   0.004397
+
+count  total (s)   self (s)
+    7              0.000099   if !b:autopairs_enabled
+                                return "\<SPACE>"
+                              end
+                            
+    7   0.001369   0.000332   let [before, after, ig] = s:getline()
+                            
+   70              0.000508   for [open, close, opt] in b:AutoPairsList
+   63              0.000375     if close == ''
+                                  continue
+                                end
+   63              0.001220     if before =~ '\V'.open.'\v$' && after =~ '^\V'.close
+                                  if close =~ '\v^[''"`]$'
+                                    return "\<SPACE>"
+                                  else
+                                    return "\<SPACE>\<SPACE>".s:Left
+                                  end
+                                end
+   63              0.000195   endfor
+    7              0.000046   return "\<SPACE>"
+
+FUNCTION  ale#Var()
+Called 1 time
+Total time:   0.000100
+ Self time:   0.000100
+
+count  total (s)   self (s)
+    1              0.000009     let l:full_name = 'ale_' . a:variable_name
+    1              0.000049     let l:vars = getbufvar(str2nr(a:buffer), '', {})
+                            
+    1              0.000028     return get(l:vars, l:full_name, g:[l:full_name])
+
+FUNCTION  ctrlp#mrufiles#cachefile()
+Called 1 time
+Total time:   0.000897
+ Self time:   0.000410
+
+count  total (s)   self (s)
+    1              0.000008 	if !exists('s:cadir') || !exists('s:cafile')
+    1   0.000876   0.000393 		let s:cadir = ctrlp#utils#cachedir().ctrlp#utils#lash().'mru'
+    1   0.000009   0.000005 		let s:cafile = s:cadir.ctrlp#utils#lash().'cache.txt'
+    1              0.000001 	en
+    1              0.000001 	retu s:cafile
+
+FUNCTION  provider#clipboard#Call()
+Called 1 time
+Total time:   0.030950
+ Self time:   0.000120
+
+count  total (s)   self (s)
+    1              0.000014   if get(s:, 'here', v:false)  " Clipboard provider must not recurse. #7184
+                                return 0
+                              endif
+    1              0.000004   let s:here = v:true
+    1              0.000001   try
+    1   0.030915   0.000085     return call(s:clipboard[a:method],a:args,s:clipboard)
+                              finally
+    1              0.000003     let s:here = v:false
+    1              0.000001   endtry
+
+FUNCTION  ale#events#ClockMilliseconds()
+Called 1 time
+Total time:   0.000019
+ Self time:   0.000019
+
+count  total (s)   self (s)
+    1              0.000017     return float2nr(reltimefloat(reltime()) * 1000)
+
+FUNCTION  <SNR>56_Highlight_Matching_Pair()
+Called 7 times
+Total time:   0.001441
+ Self time:   0.001441
+
+count  total (s)   self (s)
+                              " Remove any previous match.
+    7              0.000065   if exists('w:paren_hl_on') && w:paren_hl_on
+                                silent! call matchdelete(3)
+                                let w:paren_hl_on = 0
+                              endif
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+    7              0.000068   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+                              endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+    7              0.000041   let c_lnum = line('.')
+    7              0.000047   let c_col = col('.')
+    7              0.000014   let before = 0
+                            
+    7              0.000028   let text = getline(c_lnum)
+    7              0.000389   let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')
+    7              0.000028   if empty(matches)
+                                let [c_before, c] = ['', '']
+                              else
+    7              0.000058     let [c_before, c] = matches[1:2]
+    7              0.000007   endif
+    7              0.000200   let plist = split(&matchpairs, '.\zs[:,]')
+    7              0.000043   let i = index(plist, c)
+    7              0.000011   if i < 0
+                                " not found, in Insert mode try character before the cursor
+    7              0.000053     if c_col > 1 && (mode() == 'i' || mode() == 'R')
+    2              0.000006       let before = strlen(c_before)
+    2              0.000003       let c = c_before
+    2              0.000005       let i = index(plist, c)
+    2              0.000001     endif
+    7              0.000029     if i < 0
+                                  " not found, nothing to do
+    7              0.000029       return
+                                endif
+                              endif
+                            
+                              " Figure out the arguments for searchpairpos().
+                              if i % 2 == 0
+                                let s_flags = 'nW'
+                                let c2 = plist[i + 1]
+                              else
+                                let s_flags = 'nbW'
+                                let c2 = c
+                                let c = plist[i - 1]
+                              endif
+                              if c == '['
+                                let c = '\['
+                                let c2 = '\]'
+                              endif
+                            
+                              " Find the match.  When it was just before the cursor move it there for a
+                              " moment.
+                              if before > 0
+                                let has_getcurpos = exists("*getcurpos")
+                                if has_getcurpos
+                                  " getcurpos() is more efficient but doesn't exist before 7.4.313.
+                                  let save_cursor = getcurpos()
+                                else
+                                  let save_cursor = winsaveview()
+                                endif
+                                call cursor(c_lnum, c_col - before)
+                              endif
+                            
+                              if !has("syntax") || !exists("g:syntax_on")
+                                let s_skip = "0"
+                              else
+                                " Build an expression that detects whether the current cursor position is
+                                " in certain syntax types (string, comment, etc.), for use as
+                                " searchpairpos()'s skip argument.
+                                " We match "escape" for special items, such as lispEscapeSpecial.
+                                let s_skip = '!empty(filter(map(synstack(line("."), col(".")), ''synIDattr(v:val, "name")''), ' . '''v:val =~? "string\\|character\\|singlequote\\|escape\\|comment"''))'
+                                " If executing the expression determines that the cursor is currently in
+                                " one of the syntax types, then we want searchpairpos() to find the pair
+                                " within those syntax types (i.e., not skip).  Otherwise, the cursor is
+                                " outside of the syntax types and s_skip should keep its value so we skip
+                                " any matching pair inside the syntax types.
+                                " Catch if this throws E363: pattern uses more memory than 'maxmempattern'.
+                                try
+                                  execute 'if ' . s_skip . ' | let s_skip = "0" | endif'
+                                catch /^Vim\%((\a\+)\)\=:E363/
+                                  " We won't find anything, so skip searching, should keep Vim responsive.
+                                  return
+                                endtry
+                              endif
+                            
+                              " Limit the search to lines visible in the window.
+                              let stoplinebottom = line('w$')
+                              let stoplinetop = line('w0')
+                              if i % 2 == 0
+                                let stopline = stoplinebottom
+                              else
+                                let stopline = stoplinetop
+                              endif
+                            
+                              " Limit the search time to 300 msec to avoid a hang on very long lines.
+                              " This fails when a timeout is not supported.
+                              if mode() == 'i' || mode() == 'R'
+                                let timeout = exists("b:matchparen_insert_timeout") ? b:matchparen_insert_timeout : g:matchparen_insert_timeout
+                              else
+                                let timeout = exists("b:matchparen_timeout") ? b:matchparen_timeout : g:matchparen_timeout
+                              endif
+                              try
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline, timeout)
+                              catch /E118/
+                                " Can't use the timeout, restrict the stopline a bit more to avoid taking
+                                " a long time on closed folds and long lines.
+                                " The "viewable" variables give a range in which we can scroll while
+                                " keeping the cursor at the same position.
+                                " adjustedScrolloff accounts for very large numbers of scrolloff.
+                                let adjustedScrolloff = min([&scrolloff, (line('w$') - line('w0')) / 2])
+                                let bottom_viewable = min([line('$'), c_lnum + &lines - adjustedScrolloff - 2])
+                                let top_viewable = max([1, c_lnum-&lines+adjustedScrolloff + 2])
+                                " one of these stoplines will be adjusted below, but the current values are
+                                " minimal boundaries within the current window
+                                if i % 2 == 0
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = min([line2byte("$"), line2byte(".") + col(".") + &smc * 2])
+                            	let stopline = min([bottom_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = min([bottom_viewable, c_lnum + 100])
+                                  endif
+                                  let stoplinebottom = stopline
+                                else
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = max([1, line2byte(".") + col(".") - &smc * 2])
+                            	let stopline = max([top_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = max([top_viewable, c_lnum - 100])
+                                  endif
+                                  let stoplinetop = stopline
+                                endif
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline)
+                              endtry
+                            
+                              if before > 0
+                                if has_getcurpos
+                                  call setpos('.', save_cursor)
+                                else
+                                  call winrestview(save_cursor)
+                                endif
+                              endif
+                            
+                              " If a match is found setup match highlighting.
+                              if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
+                                if exists('*matchaddpos')
+                                  call matchaddpos('MatchParen', [[c_lnum, c_col - before], [m_lnum, m_col]], 10, 3)
+                                else
+                                  exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) . 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+                                endif
+                                let w:paren_hl_on = 1
+                              endif
+
+FUNCTION  <SNR>48_chop()
+Called 1 time
+Total time:   0.000011
+ Self time:   0.000011
+
+count  total (s)   self (s)
+    1              0.000009 	if len(a:mrufs) > {s:max} | cal remove(a:mrufs, {s:max}, -1) | en
+    1              0.000001 	retu a:mrufs
+
+FUNCTION  ale#Queue()
+Called 2 times
+Total time:   0.000383
+ Self time:   0.000240
+
+count  total (s)   self (s)
+    2              0.000015     if a:0 > 2
+                                    throw 'too many arguments!'
+                                endif
+                            
+    2              0.000028     let l:buffer = get(a:000, 1, v:null)
+                            
+    2              0.000006     if l:buffer is v:null
+    2              0.000027         let l:buffer = bufnr('')
+    2              0.000002     endif
+                            
+    2              0.000026     if type(l:buffer) isnot v:t_number
+                                    throw 'buffer_number must be a Number'
+                                endif
+                            
+    2   0.000243   0.000100     if ale#ShouldDoNothing(l:buffer)
+    2              0.000005         return
+                                endif
+                            
+                                " Default linting_flag to ''
+                                let l:should_lint_file = get(a:000, 0) is# 'lint_file'
+                            
+                                if s:lint_timer != -1
+                                    call timer_stop(s:lint_timer)
+                                    let s:lint_timer = -1
+                                endif
+                            
+                                if a:delay > 0
+                                    let s:lint_timer = timer_start(   a:delay,   function('s:Lint', [l:buffer, l:should_lint_file]))
+                                else
+                                    call s:Lint(l:buffer, l:should_lint_file, 0)
+                                endif
+
+FUNCTION  ale#ShouldDoNothing()
+Called 2 times
+Total time:   0.000142
+ Self time:   0.000142
+
+count  total (s)   self (s)
+                                " The checks are split into separate if statements to make it possible to
+                                " profile each check individually with Vim's profiling tools.
+                                "
+                                " Do nothing if ALE is disabled.
+    2              0.000025     if !getbufvar(a:buffer, 'ale_enabled', get(g:, 'ale_enabled', 0))
+                                    return 1
+                                endif
+                            
+                                " Don't perform any checks when newer NeoVim versions are exiting.
+    2              0.000008     if get(v:, 'exiting', v:null) isnot v:null
+                                    return 1
+                                endif
+                            
+    2              0.000034     let l:filetype = getbufvar(a:buffer, '&filetype')
+                            
+                                " Do nothing when there's no filetype.
+    2              0.000015     if l:filetype is# ''
+    2              0.000003         return 1
+                                endif
+                            
+                                " Do nothing for diff buffers.
+                                if getbufvar(a:buffer, '&diff')
+                                    return 1
+                                endif
+                            
+                                " Do nothing for blacklisted files.
+                                if index(get(g:, 'ale_filetype_blacklist', []), l:filetype) >= 0
+                                    return 1
+                                endif
+                            
+                                " Do nothing if running from command mode.
+                                if s:getcmdwintype_exists && !empty(getcmdwintype())
+                                    return 1
+                                endif
+                            
+                                let l:filename = fnamemodify(bufname(a:buffer), ':t')
+                            
+                                " Do nothing for directories.
+                                if l:filename is# '.'
+                                    return 1
+                                endif
+                            
+                                " Don't start linting and so on when an operator is pending.
+                                if ale#util#Mode(1) is# 'no'
+                                    return 1
+                                endif
+                            
+                                " Do nothing if running in the sandbox.
+                                if ale#util#InSandbox()
+                                    return 1
+                                endif
+                            
+                                " Do nothing if the file is too large.
+                                if ale#FileTooLarge(a:buffer)
+                                    return 1
+                                endif
+                            
+                                " Do nothing from CtrlP buffers with CtrlP-funky.
+                                if exists(':CtrlPFunky') is 2&& getbufvar(a:buffer, '&l:statusline') =~# 'CtrlPMode.*funky'
+                                    return 1
+                                endif
+                            
+                                return 0
+
+FUNCTION  ctrlp#utils#mkdir()
+Called 1 time
+Total time:   0.000023
+ Self time:   0.000023
+
+count  total (s)   self (s)
+    1              0.000017 	if exists('*mkdir') && !isdirectory(a:dir)
+                            		sil! cal mkdir(a:dir, 'p')
+                            	en
+    1              0.000001 	retu a:dir
+
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+    1   0.030950   0.000120  provider#clipboard#Call()
+    1   0.030830   0.000076  274()
+    1   0.030754   0.000196  <SNR>36_try_cmd()
+    7   0.005433   0.004397  AutoPairsSpace()
+    1   0.001578   0.000028  <SNR>48_savetofile()
+    1   0.001551   0.001528  ctrlp#utils#writecache()
+    7   0.001441             <SNR>56_Highlight_Matching_Pair()
+    1   0.001366   0.000328  <SNR>48_mergelists()
+    9   0.001301             <SNR>50_getline()
+    2   0.001006   0.000741  AutoPairsReturn()
+    1   0.000897   0.000410  ctrlp#mrufiles#cachefile()
+    2   0.000383   0.000240  ale#Queue()
+    1   0.000143   0.000093  ctrlp#utils#opts()
+    2   0.000142             ale#ShouldDoNothing()
+    1   0.000130             ctrlp#utils#readfile()
+    1   0.000100             ale#Var()
+    1   0.000073   0.000053  ale#events#QuitEvent()
+    1   0.000069             <SNR>45_SetDefaultCompletionType()
+    2   0.000040             <SNR>68_lash()
+    1   0.000023             ctrlp#utils#mkdir()
+
+FUNCTIONS SORTED ON SELF TIME
+count  total (s)   self (s)  function
+    7   0.005433   0.004397  AutoPairsSpace()
+    1   0.001551   0.001528  ctrlp#utils#writecache()
+    7              0.001441  <SNR>56_Highlight_Matching_Pair()
+    9              0.001301  <SNR>50_getline()
+    2   0.001006   0.000741  AutoPairsReturn()
+    1   0.000897   0.000410  ctrlp#mrufiles#cachefile()
+    1   0.001366   0.000328  <SNR>48_mergelists()
+    2   0.000383   0.000240  ale#Queue()
+    1   0.030754   0.000196  <SNR>36_try_cmd()
+    2              0.000142  ale#ShouldDoNothing()
+    1              0.000130  ctrlp#utils#readfile()
+    1   0.030950   0.000120  provider#clipboard#Call()
+    1              0.000100  ale#Var()
+    1   0.000143   0.000093  ctrlp#utils#opts()
+    1   0.030830   0.000076  274()
+    1              0.000069  <SNR>45_SetDefaultCompletionType()
+    1   0.000073   0.000053  ale#events#QuitEvent()
+    2              0.000040  <SNR>68_lash()
+    1   0.001578   0.000028  <SNR>48_savetofile()
+    1              0.000023  ctrlp#utils#mkdir()
+

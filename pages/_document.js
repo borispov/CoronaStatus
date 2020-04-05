@@ -40,10 +40,8 @@ export default class extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
           <link rel="manifest" href="/site.webmanifest"/>
 
-          <link
-            href='https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap'
-            rel='stylesheet'
-          />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Rubik:400,500,700&display=swap&subset=hebrew" rel="stylesheet">
+
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

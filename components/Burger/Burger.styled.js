@@ -1,31 +1,30 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: auto;
   height: 2.4rem;
-  top: 60%;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
   z-index: 10;
-  transform: translateY(-50%);
-
+  transition: all 0.3s ease-in-out;
+  margin-top: 12px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: translateY(10%);
+  }
   @media (max-width: 660px) {
     margin-top: 4px;
   }
 
-  &:focus {
-    outline: none;
-  }
-
   div {
     width: 3.5rem;
-    // height: 0.25rem;
     height: 0.45rem;
     background: ${({ theme, open }) => open ? '#d9d9d9' : theme.white };
     border-radius: 10px;

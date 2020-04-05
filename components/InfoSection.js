@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: Roboto;
+  font-family: Rubik;
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 32px;
@@ -26,6 +26,7 @@ const Section = styled.div`
   width: 100%;
   border: 1px solid;
   border-color: ${props => props.theme.primaryColor};
+  background: ${props => props.theme.bgColor};
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 16px;
@@ -40,7 +41,7 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   color: ${props => props.theme.onPrimary};
-  background: ${props => props.theme.primaryColor};
+  background: ${props => props.theme.primaryLight};
   font-size: 20px;
   padding: 4px 8px;
   margin-bottom: 8px;
@@ -49,7 +50,9 @@ const SectionTitle = styled.h2`
 
 const Link = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.onBg};
+  color: ${props => props.theme.primaryDark};
+  font-weight: 700 !important;
+  font-family: 'Rubik' !important;
   font-size: 18px;
   line-height: 1.8;
   padding: 6px 4px 2px 4px;

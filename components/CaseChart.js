@@ -7,9 +7,9 @@ import Spinner from './Spinner'
 
 const baseURL = `https://nCorona.live/api/v1/alltime/`
 
-const worldTimeData = async () => {
+const worldTimeData = async (theme) => {
   const data = await axios.get(baseURL)
-  const dataRes = await sortForChart(data.data)
+  const dataRes = await sortForChart(data.data, theme)
   return dataRes
 }
 
@@ -38,7 +38,7 @@ class CaseChart extends React.Component {
     this.setState({ loading: true })
 
     try {
-      const timeStats = await worldTimeData()
+      const timeStats = await worldTimeData(this.props.theme)
       const worldCases = timeStats && timeStats.datasets.filter(a => a.label === 'cases')
       const deathCases = timeStats && timeStats.datasets.filter(a => a.label === 'deaths')
       const newCases = timeStats && timeStats.datasets.filter(a => a.label === 'new cases')
@@ -78,9 +78,43 @@ class CaseChart extends React.Component {
           </Paragraph>
 
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
-          <Button active={this.state.active === 'worldCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('worldCases')}>{this.props.isHeb && 'נדבקים' || 'Cases'}</Button>
-          <Button active={this.state.active === 'deathCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('deathCases')}>{this.props.isHeb && 'מקרי מוות' || 'Deaths'}</Button>
-          <Button active={this.state.active === 'newCases'} bg='transparent' fat outline='primaryDark' btnColor='onBg' medium onClick={() => this.present('newCases')}>{this.props.isHeb && 'מקרים חדשים' || 'New cases'}</Button>
+
+          <Button
+            active={this.state.active === 'worldCases'} 
+            bg='transparent' 
+            fat 
+            hoverColor='primaryDark'
+            outline='primaryDark' 
+            btnColor='onBg' 
+            medium 
+            onClick={() => this.present('worldCases')}>
+              {this.props.isHeb && 'נדבקים' || 'Cases'}
+          </Button>
+
+          <Button 
+            active={this.state.active === 'deathCases'} 
+            bg='transparent' 
+            fat
+            hoverColor='primaryDark'
+            outline='primaryDark'
+            btnColor='onBg'
+            medium 
+            onClick={() => this.present('deathCases')}>
+              {this.props.isHeb && 'מקרי מוות' || 'Deaths'}
+          </Button>
+
+          <Button 
+            active={this.state.active === 'newCases'} 
+            bg='transparent' 
+            hoverColor='primaryDark'
+            fat 
+            outline='primaryDark'
+            btnColor='onBg'
+            medium 
+            onClick={() => this.present('newCases')}>
+              {this.props.isHeb && 'מקרים חדשים' || 'New cases'}
+          </Button>
+
         </div>
         {
           this.state.worldData &&

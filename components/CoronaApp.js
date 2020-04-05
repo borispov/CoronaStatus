@@ -9,9 +9,10 @@ import { Container } from './S'
 import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
 import Select from 'react-select'
+import { withTheme } from 'styled-components'
 
 
-const CoronaApp = ({ isHeb }) => {
+const CoronaApp = ({ isHeb, theme }) => {
 
   const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState('')
@@ -21,7 +22,7 @@ const CoronaApp = ({ isHeb }) => {
   const url2 = 'https://corona.lmao.ninja/countries/'
   const worldUrl = 'https://corona.lmao.ninja/all'
 
-  const { countryStats } = useTime(country)
+  const { countryStats } = useTime(country, theme)
   const { todayStats } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
 
@@ -112,6 +113,7 @@ const CoronaApp = ({ isHeb }) => {
         showWorld={showWorld} 
         country={country}
         isHeb={isHeb}
+        theme={theme}
       />
 
     </Container>
@@ -120,6 +122,4 @@ const CoronaApp = ({ isHeb }) => {
   )
 }
 
-export default CoronaApp
-
-
+export default withTheme(CoronaApp)

@@ -106,7 +106,7 @@ const LineChart = ( props, {theme} ) => {
       position: 'bottom'
     },
     tooltips: {
-        titleFontFamily: 'Roboto',
+        titleFontFamily: 'Rubik',
         backgroundColor: 'rgba(20,20,20, 1)',
         titleFontColor: '#f9f9f9',
     },
@@ -120,7 +120,7 @@ const LineChart = ( props, {theme} ) => {
         anchor: 'end',
         color: props.theme.color,
          labels: {
-           title: { font: { weight: 'bold', style: 'italic', family: 'Roboto' } }
+           title: { font: { weight: 'bold', style: 'italic', family: 'RubiRubik' } }
          }
        }
     }

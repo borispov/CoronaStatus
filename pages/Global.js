@@ -27,11 +27,11 @@ const GlobalStyle = createGlobalStyle`
 
 
   .div.span.h3 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
   }
 
   h1 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
     font-weight: 400;
   }
 
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
   }
   h3 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
     font-size: 1.75rem;
   }
 

@@ -4,8 +4,8 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg,#364F9F, #000000ff);
-  /* background: linear-gradient(180deg, #5c0434, #000000d6); */
+  /* background: linear-gradient(180deg,#364F9F, #000000ff); */
+  background: linear-gradient(180deg, #3f060a, #000000d6);
   color: ${props => props.theme.onPrimary};
   height: auto;
   position: absolute;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int'
 
 const Text = styled.p`
-  color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
+  color: ${props => props.theme.text.primary};
   font-size: 14px;
   font-family: 'Open Sans';
   line-height: 1.5;
@@ -21,7 +21,7 @@ const Text = styled.p`
 `
 
 const Wrap = styled.div`
-  z-index: -1;
+  z-index: 9999;
   position: relative;
   display: block;
   width: 620px;
@@ -45,12 +45,13 @@ const Href = styled.a`
   color: ${props => props.theme.primaryVariant};
 `
 
-export default ({ txt }) => (
+export default ({ txt }) => {
+  const toShow = txt ? <Text secondary>{txt}</Text> :
+  <Text>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
+  </Text>
+  return (
   <Wrap>
-    {
-      txt && <Text secondary>{txt}</Text> ||
-      <Text>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
-      </Text>
-    }
+    { toShow }
   </Wrap>
-)
+  )
+}

@@ -70,14 +70,14 @@ const Source = styled.h1`
 
 const Title = styled(S.Heading2)`
   font-weight: 700;
-  font-family: 'Roboto';
+  font-family: 'Rubik';
   color: ${props => props.theme.color};
   @media (max-width: 768px) {
     max-width: fit-content;
   }
 `
 
-const shortenSnippet = text => text.split(' ').slice(0, 40).join(' ') + '. . .';
+const shortenSnippet = text => text.split(' ').slice(0, 22).join(' ') + '. . .';
 
 
 const showSource = url => sourceList[url.split('.')[1]]

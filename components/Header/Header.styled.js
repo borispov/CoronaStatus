@@ -6,8 +6,8 @@ export const HeaderWrapper = styled.div`
   height: 64px;
   z-index: 1;
   width: 100%;
-  /* background: linear-gradient(45deg, #5c0434, #000000d6); */
-  background: linear-gradient(45deg, ${props => props.theme.headerBg}, #000000d6);
+  background: linear-gradient(45deg, #5c0434, #000000d6);
+  /* background: linear-gradient(45deg, ${props => props.theme.headerBg}, #000000d6); */
   margin: 0 auto;
   margin-bottom: 48px;
   box-shadow: ${props => props.theme.shadows[4]};
@@ -47,7 +47,7 @@ export const NavItem = styled.li`
 
   i {
     width: 1.3rem;
-    margin: 0px 6px 0 0;
+    margin: 2px 12px 0 0;
     display: inline-block;
     vertical-align: middle;
     font-size: 16px;

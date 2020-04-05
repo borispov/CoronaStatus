@@ -93,18 +93,20 @@ const Btn = styled.button`
     || '10px 14px'};
   font-size: ${props => props.small ? '12px' : '16px'};
   background: ${props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor};
-  color: ${props => props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary};
+  color: ${props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary};
   border: ${props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none'};
-  font-family: 'Sans';
-  /* border: ${props => props.border ? props.border : 'none'}; */
   font-weight: ${props => props.bold && 'bold' || 'normal'};
   cursor: ${props => props.link ? 'pointer' : 'cursor'};
   outline: none;
   line-height: 1.5;
   margin: ${props => props.margin ? props.margin : ''};
   box-shadow: ${props => props.theme.shadows[1]};
-  &:hover {
-    background: ${props => props.theme.hover};
+  letter-spacing: ${props => props.letterSpace ? '1.5px' : '0'};
+  transition: all 0.3s ease-in-out;
+  &: hover {
+    transform: ${props => props.hoverUp ? 'translateY(-5%)': ''};
+    background: ${props => !props.active && props.hoverColor && props.theme[props.hoverColor]};
+    color: ${props => !props.active && props.hoverColor ? props.theme.onPrimary : ''};
   }
   @media (max-width: 450px) {
     font-size: 12px;
@@ -122,7 +124,7 @@ const LangBtn = styled(Btn)`
   padding: 0.54rem 0.85rem;
   font-size: 12px;
   font-weight: 400;
-  font-family: 'Roboto';
+  font-family: 'Rubik';
   outline: none;
   text-align: center;
   border: none;

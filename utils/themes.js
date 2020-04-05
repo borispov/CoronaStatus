@@ -27,7 +27,8 @@ export const themes = {
       complementary: '#BC85F9',
       error: '#b00020',
       error2: '#ee5f02',
-      transparent: 'transparent'
+      transparent: 'transparent',
+      white: '#FFF'
     }
 
   },
@@ -73,13 +74,22 @@ export const themes = {
       disabled: 'rgba(0,0,0,0.38)'
     },
 
-    primaryColor: '#6646EE',
-    primaryDark: '#303f9f',
-    primaryVariant: '#3700B3',
+    primaryDark: '#31000d',
+    primaryColor: '#5C0434', // Red
+    // primaryLight: '#8c385e',
+    primaryLight: 'rgb(124,54,92)',
+    primaryVariant: '#B8004B',
+    analogous: '#58045c',
 
-    complementary: '#BC85F9',
+    complementary: '#1d8c4a',
+    // primaryColor: '#6646EE', // Main Purple
+    // primaryDark: '#303f9f',
+    // primaryVariant: '#3700B3',
 
-    bgColor: '#FFF',
+    // complementary: '#BC85F9',
+
+    bgColor: '#F5F5F5',
+    // bgColor: '#FFF',
     error: '#b00020',
     error2: '#ee5f02',
 

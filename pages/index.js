@@ -1,7 +1,3 @@
-import GlobalStyle from './Global'
-import { themes } from '../utils/themes'
-import React, { useState } from 'react'
-import Layout from '../components/Layout'
 import CoronaApp from '../components/CoronaApp'
 
 import { FadeIn } from '../components/S'

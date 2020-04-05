@@ -15,17 +15,17 @@ const Header = ({ title, theme, isHeb, children }) => {
               <Link href="/">
                 <Logo>n<Span>C</Span>orona</Logo>
               </Link>
+              {children}
               <NavItem>
                 <Link href='/Coffee'>
                   <a>
-                    <Button small bg='error2' link>
+                    <Button letterSpace small bg='error' hoverUp link>
                       <i> <Coffee /> </i>
                       {Tip}
                     </Button>
                   </a>
                 </Link>
               </NavItem>
-              {children}
             </NavList>
           </Nav>
         </HeaderTag>
