@@ -3,6 +3,17 @@ import { Heading, Button, Paragraph, FadeIn, simpleWrapper, Container } from '..
 import styled, { withTheme } from 'styled-components'
 import Link from 'next/link'
 
+const Message = styled(Heading)`
+  font-size: 16px;
+  background: ${props => props.theme.primaryLight};
+  color: ${props => props.theme.onPrimary};
+  width: fit-content;
+  margin: 0 auto;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-top: 28px;
+`
+
 const Heading2 = styled(Heading)`
   margin-top: 14px;
   font-size: 1.6rem;
@@ -31,8 +42,8 @@ const BoxCount = styled.div`
   vertical-align: middle;
   padding: 16px;
   text-align: center;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 500;
   margin-left: 18px;
   margin-right: 18px;
   width: 80px;
@@ -47,6 +58,7 @@ const BoxCount = styled.div`
   border-right: 1px solid gray;
   border-left: 1px solid gray;
   position: relative;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.16) 1px 2px 4px rgba(0,0,0,0.26);
 `
 
 const ErrorText = styled.h2`
@@ -55,6 +67,7 @@ const ErrorText = styled.h2`
   font-family: monospace;
   padding: 2px 4px;
   color: ${props => props.theme.color};
+  transition: all 0.3s ease-in-out;
 `
 
 
@@ -97,13 +110,15 @@ export default withTheme(({ isHeb, theme }) => {
           </Paragraph>
           <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
           <Box>
-            <Heading fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Heading>
             <BoxButtons>
               <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
               <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
               <BoxCount>{ counter }$</BoxCount>
             </BoxButtons>
-            <ErrorText>{error ? (isHeb &&errorHeb || errorEng) : ''}</ErrorText>
+
+            <ErrorText>{error ? (isHeb && errorHeb || errorEng) : ''}</ErrorText>
+
+            <Message fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Message>
           </Box>
           <BoxButtons>
             <Button pointer bg='successDefault'>
