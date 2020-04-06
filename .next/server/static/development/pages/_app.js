@@ -163,18 +163,18 @@ __webpack_require__.r(__webpack_exports__);
 const StyledBurger = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
   displayName: "Burgerstyled__StyledBurger",
   componentId: "sc-2xj2d1-0"
-})(["position:relative;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;background:transparent;border:none;cursor:pointer;z-index:10;transition:all 0.3s ease-in-out;margin-top:12px;&:focus{outline:none;}&:hover{transform:translateY(10%);}@media (max-width:660px){margin-top:4px;}div{width:3.5rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], ({
+})(["position:relative;display:flex;flex-direction:column;justify-content:space-around;width:auto;height:2.4rem;background:transparent;border:none;cursor:pointer;z-index:10;transition:all 0.3s ease-in-out;margin-top:12px;&:focus{outline:none;}&:hover{transform:translateY(10%);}@media (max-width:660px){margin-top:4px;}div{width:3.2rem;height:0.45rem;background:", ";border-radius:10px;z-index:10;transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:", ";box-shadow:", ";}:nth-child(2){opacity:", ";transform:", ";box-shadow:", ";}:nth-child(3){transform:", ";box-shadow:", ";}}"], ({
   theme,
   open
 }) => open ? '#d9d9d9' : theme.white, ({
   open
-}) => open ? 'rotate(45deg)' : 'rotate(0)', props => props.theme.shadows[3], ({
+}) => open ? 'rotate(34deg)' : 'rotate(0)', props => props.theme.shadows[3], ({
   open
 }) => open ? '0' : '1', ({
   open
 }) => open ? 'translateX(20px)' : 'translateX(0)', props => props.theme.shadows[3], ({
   open
-}) => open ? 'rotate(-45deg)' : 'rotate(0)', props => props.theme.shadows[3]);
+}) => open ? 'rotate(-34deg)' : 'rotate(0)', props => props.theme.shadows[3]);
 
 /***/ }),
 
@@ -571,9 +571,9 @@ __webpack_require__.r(__webpack_exports__);
 const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
   displayName: "Menustyled__StyledMenu",
   componentId: "sc-1p59uup-0"
-})(["display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#3f060a,#000000d6);color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
+})(["display:flex;flex-direction:column;justify-content:center;background:#3f172b;color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:bold;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
   open
-}) => open ? 'translateY(64px)' : 'translateY(-140%)', props => props.theme.menuColor, ({
+}) => open ? 'translateY(63px)' : 'translateY(-140%)', props => props.theme.menuColor, ({
   theme
 }) => theme.menuHover);
 

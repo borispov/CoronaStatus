@@ -24,7 +24,7 @@ export const StyledBurger = styled.button`
   }
 
   div {
-    width: 3.5rem;
+    width: 3.2rem;
     height: 0.45rem;
     background: ${({ theme, open }) => open ? '#d9d9d9' : theme.white };
     border-radius: 10px;
@@ -34,7 +34,7 @@ export const StyledBurger = styled.button`
     transform-origin: 1px;
 
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(34deg)' : 'rotate(0)'};
       box-shadow: ${props => props.theme.shadows[3]};
     }
 
@@ -45,7 +45,7 @@ export const StyledBurger = styled.button`
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(-34deg)' : 'rotate(0)'};
       box-shadow: ${props => props.theme.shadows[3]};
     }
   }
