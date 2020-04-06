@@ -1194,7 +1194,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       },
       __self: this
     }), __jsx("link", {
-      href: "https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap",
+      href: "https://fonts.googleapis.com/css?family=Montserrat:400,700|Rubik:400,500,700&display=swap&subset=hebrew",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
@@ -1206,7 +1206,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 45
       },
       __self: this
     }), __jsx("script", {
@@ -1222,25 +1222,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 49
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 62
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 63
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 64
       },
       __self: this
     })));

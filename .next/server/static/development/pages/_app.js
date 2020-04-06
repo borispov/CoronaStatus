@@ -298,6 +298,7 @@ const Header = ({
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    letterSpace: true,
     small: true,
     bg: "error",
     hoverUp: true,
@@ -649,15 +650,15 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.hoverUp ? 'translateY(-5%)' : '', props => props.hoverColor && props.theme[props.hoverColor]);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
-})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Roboto';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
+})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Rubik';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 138
+    lineNumber: 139
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -665,7 +666,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 139
+    lineNumber: 140
   },
   __self: undefined
 }), props.children);
@@ -2808,11 +2809,11 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 
 
   .div.span.h3 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
   }
 
   h1 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
     font-weight: 400;
   }
 
@@ -2822,7 +2823,7 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
     line-height: 1.2;
   }
   h3 {
-    font-family: 'Roboto';
+    font-family: 'Rubik';
     font-size: 1.75rem;
   }
 
@@ -3297,11 +3298,14 @@ const themes = {
       secondary: 'rgba(0,0,0,0.60)',
       disabled: 'rgba(0,0,0,0.38)'
     },
+    primaryDark: '#31000d',
     primaryColor: '#5C0434',
     // Red
-    primaryLight: '#8c385e',
+    // primaryLight: '#8c385e',
+    primaryLight: 'rgb(124,54,92)',
     primaryVariant: '#B8004B',
-    complementary: '#045c2c',
+    analogous: '#58045c',
+    complementary: '#1d8c4a',
     // primaryColor: '#6646EE', // Main Purple
     // primaryDark: '#303f9f',
     // primaryVariant: '#3700B3',

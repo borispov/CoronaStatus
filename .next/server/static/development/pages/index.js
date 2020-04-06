@@ -306,31 +306,34 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       active: this.state.active === 'worldCases',
       bg: "transparent",
       fat: true,
+      hoverColor: "primaryDark",
       outline: "primaryDark",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('worldCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 82
       },
       __self: this
     }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       active: this.state.active === 'deathCases',
       bg: "transparent",
       fat: true,
+      hoverColor: "primaryDark",
       outline: "primaryDark",
       btnColor: "onBg",
       medium: true,
       onClick: () => this.present('deathCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 94
       },
       __self: this
     }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       active: this.state.active === 'newCases',
       bg: "transparent",
+      hoverColor: "primaryDark",
       fat: true,
       outline: "primaryDark",
       btnColor: "onBg",
@@ -338,7 +341,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onClick: () => this.present('newCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 106
       },
       __self: this
     }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -349,13 +352,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 121
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 127
       },
       __self: this
     }, " Loading Charts ... "));
@@ -687,51 +690,54 @@ const descriptionTextEn = 'This website makes use of public health data, specifi
 const Text = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "HeaderDescription__Text",
   componentId: "sc-110gwmc-0"
-})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:320px){max-width:88%;}"], props => props.secondary ? props.theme.text.secondary : props.theme.text.primary);
+})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:320px){max-width:88%;}"], props => props.theme.text.primary);
 const Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "HeaderDescription__Wrap",
   componentId: "sc-110gwmc-1"
-})(["z-index:-1;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:320px;max-width:380px;}@media (max-width:320px){max-width:fit-content;}"]);
+})(["z-index:9999;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:320px;max-width:380px;}@media (max-width:320px){max-width:fit-content;}"]);
 const Href = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
   displayName: "HeaderDescription__Href",
   componentId: "sc-110gwmc-2"
 })(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], props => props.theme.primaryVariant);
 /* harmony default export */ __webpack_exports__["default"] = (({
   txt
-}) => __jsx(Wrap, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 49
-  },
-  __self: undefined
-}, txt && __jsx(Text, {
-  secondary: true,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 51
-  },
-  __self: undefined
-}, txt) || __jsx(Text, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 52
-  },
-  __self: undefined
-}, "This website makes use of public health data, specifically ", __jsx(Href, {
-  href: "https://www.ourworldindata.org",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 52
-  },
-  __self: undefined
-}, "www.ourworldindata.org"), " and ", __jsx(Href, {
-  href: "https://WHO.int",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 52
-  },
-  __self: undefined
-}, "WHO.int"))));
+}) => {
+  const toShow = txt ? __jsx(Text, {
+    secondary: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, txt) : __jsx(Text, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "This website makes use of public health data, specifically ", __jsx(Href, {
+    href: "https://www.ourworldindata.org",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "www.ourworldindata.org"), " and ", __jsx(Href, {
+    href: "https://WHO.int",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "WHO.int"));
+  return __jsx(Wrap, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, toShow);
+});
 
 /***/ }),
 
@@ -766,7 +772,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Wrapper",
   componentId: "sc-1anhjcp-0"
-})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Roboto;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
+})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Rubik;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
 const Section = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Section",
   componentId: "sc-1anhjcp-1"
@@ -778,7 +784,7 @@ const SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h2
 const Link = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-weight:700 !important;font-family:'Roboto' !important;font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryColor);
+})(["text-decoration:none;color:", ";font-weight:700 !important;font-family:'Rubik' !important;font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryDark);
 const Desc = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p.withConfig({
   displayName: "InfoSection__Desc",
   componentId: "sc-1anhjcp-4"
@@ -1048,7 +1054,7 @@ const LineChart = (props, {
       position: 'bottom'
     },
     tooltips: {
-      titleFontFamily: 'Roboto',
+      titleFontFamily: 'Rubik',
       backgroundColor: 'rgba(20,20,20, 1)',
       titleFontColor: '#f9f9f9'
     },
@@ -1068,7 +1074,7 @@ const LineChart = (props, {
             font: {
               weight: 'bold',
               style: 'italic',
-              family: 'Roboto'
+              family: 'RubiRubik'
             }
           }
         }
@@ -1125,7 +1131,7 @@ const Row = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
 const Col = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
+})(["text-align:center;padding:8px 10px;font-weight:400;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], props => props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.theme.onPrimary);
 const Country = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
@@ -1224,7 +1230,7 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
       lineNumber: 66
     },
     __self: undefined
-  }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
+  }, isHeb ? 'מחלימים' : 'Recovered'))), __jsx(Col, {
     bg: "error",
     __source: {
       fileName: _jsxFileName,
@@ -1249,7 +1255,7 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
       lineNumber: 73
     },
     __self: undefined
-  }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
+  }, isHeb ? 'מתים' : 'Deaths'))), __jsx(Col, {
     bg: "error2",
     style: {
       borderLeft: 'none',
@@ -1339,15 +1345,15 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-family:'Sans';font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.hoverUp ? 'translateY(-5%)' : '', props => props.hoverColor && props.theme[props.hoverColor]);
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
-})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Roboto';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
+})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Rubik';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
 const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 138
+    lineNumber: 139
   },
   __self: undefined
 }), props.children) || __jsx(Btn, _extends({
@@ -1355,7 +1361,7 @@ const Button = props => props.langBtn && __jsx(LangBtn, _extends({}, props, {
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 139
+    lineNumber: 140
   },
   __self: undefined
 }), props.children);
@@ -1821,7 +1827,7 @@ const sortForChart = (obj, theme) => {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    borderColor: theme && theme.primaryDark || '#6200ee',
+    borderColor: theme && theme.analogous || '#6200ee',
     strokeColor: "#ADFF2F",
     borderWidth: 5,
     borderCapStyle: 'butt',

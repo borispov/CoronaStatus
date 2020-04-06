@@ -1179,7 +1179,7 @@ var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:700;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], function (props) {
+})(["text-align:center;padding:8px 10px;font-weight:400;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], function (props) {
   return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.theme.onPrimary;
@@ -1285,7 +1285,7 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 66
     },
     __self: this
-  }, isHeb ? 'החלימו' : 'Recovered'))), __jsx(Col, {
+  }, isHeb ? 'מחלימים' : 'Recovered'))), __jsx(Col, {
     bg: "error",
     __source: {
       fileName: _jsxFileName,
@@ -1310,7 +1310,7 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
       lineNumber: 73
     },
     __self: this
-  }, isHeb ? 'מקרי מוות' : 'Deaths'))), __jsx(Col, {
+  }, isHeb ? 'מתים' : 'Deaths'))), __jsx(Col, {
     bg: "error2",
     style: {
       borderLeft: 'none',

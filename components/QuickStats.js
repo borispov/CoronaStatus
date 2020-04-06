@@ -12,7 +12,7 @@ const Row = styled.div`
 const Col = styled.div`
   text-align: center;
   padding: 8px 10px;
-  font-weight: 700;
+  font-weight: 400;
   flex: 0 0 20%;
   max-width: 20%;
   position: relative;
@@ -63,14 +63,14 @@ export default ({ S, country, isHeb}) => {
             <Country>
               {S.recovered}
               <br />
-              <small>{isHeb ? 'החלימו' : 'Recovered'}</small>
+              <small>{isHeb ? 'מחלימים' : 'Recovered'}</small>
             </Country>
           </Col>
           <Col bg='error'>
             <Country>
               {S.deaths}
               <br />
-              <small>{ isHeb ? 'מקרי מוות' : 'Deaths' }</small>
+              <small>{ isHeb ? 'מתים' : 'Deaths' }</small>
           </Country>
           </Col>
           <Col bg='error2' style={{ borderLeft: 'none', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
