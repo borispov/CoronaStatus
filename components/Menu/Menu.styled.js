@@ -5,7 +5,7 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   /* background: linear-gradient(180deg,#364F9F, #000000ff); */
-  background: linear-gradient(180deg, #3f060a, #000000d6);
+  background: #3f172b;
   color: ${props => props.theme.onPrimary};
   height: auto;
   position: absolute;
@@ -20,7 +20,7 @@ export const StyledMenu = styled.nav`
   border-bottom-right-radius: 6px;
   border-top: none;
   transition: transform 0.22s ease-in-out;
-  transform: ${({ open }) => open ?  'translateY(64px)' : 'translateY(-140%)'} translateX(50%);
+  transform: ${({ open }) => open ?  'translateY(63px)' : 'translateY(-140%)'} translateX(50%);
   @media (max-width: 660px) {
     width: 100%;
   }
