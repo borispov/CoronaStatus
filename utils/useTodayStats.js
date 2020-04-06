@@ -36,7 +36,7 @@ function useTodayStats(url, country) {
       let searchCountry = country || await currentCountry();
 
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + searchCountry.toLowerCase()
+      const URL = url + 'today/' + parsedCountry.toLowerCase()
       // const URL = url + (country === 'world' ? '' : searchCountry)
       try {
         // const data = await fetch(URL)

@@ -55944,7 +55944,7 @@ function useTodayStats(url, country) {
             case 7:
               searchCountry = _context2.t0;
               parsedCountry = parseCn(searchCountry);
-              URL = url + 'today/' + searchCountry.toLowerCase(); // const URL = url + (country === 'world' ? '' : searchCountry)
+              URL = url + 'today/' + parsedCountry.toLowerCase(); // const URL = url + (country === 'world' ? '' : searchCountry)
 
               _context2.prev = 10;
               _context2.next = 13;
