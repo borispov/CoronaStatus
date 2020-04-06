@@ -183,7 +183,7 @@ var BaseAnimation = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 });
 BaseAnimation.defaultProps = {
   duration: '1s',
-  timingFunction: 'ease',
+  timingFunction: 'ease-in-out',
   delay: '0s',
   iterationCount: '1',
   direction: 'normal',
@@ -191,7 +191,11 @@ BaseAnimation.defaultProps = {
   playState: 'running',
   display: 'block'
 };
-var fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(["from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}"]);
+var fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(["from{transform:", ";opacity:0;}to{transform:", ";opacity:1;}"], function (props) {
+  return props.noScale ? '' : scale(0.5);
+}, function (props) {
+  return props.noScale ? '' : scale(1);
+});
 var FadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(BaseAnimation).withConfig({
   displayName: "S__FadeIn",
   componentId: "sc-3vwmv4-9"
@@ -6333,8 +6337,8 @@ var News = function News(_ref) {
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_3__["FadeIn"], {
-    duration: "1.8s",
-    delay: "0.1s",
+    duration: "0.5s",
+    delay: "0.07s",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 130

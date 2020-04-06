@@ -676,7 +676,7 @@ const BaseAnimation = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.d
 })(["   animation-duration:", ";animation-timing-function:", ";animation-delay:", ";animation-iteration-count:", ";animation-direction:", ";animation-fill-mode:", ";animation-play-state:", ";display:", ";"], props => props.duration, props => props.timingFunction, props => props.delay, props => props.iterationCount, props => props.direction, props => props.fillMode, props => props.playState, props => props.display);
 BaseAnimation.defaultProps = {
   duration: '1s',
-  timingFunction: 'ease',
+  timingFunction: 'ease-in-out',
   delay: '0s',
   iterationCount: '1',
   direction: 'normal',
@@ -684,7 +684,7 @@ BaseAnimation.defaultProps = {
   playState: 'running',
   display: 'block'
 };
-const fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}"]);
+const fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{transform:", ";opacity:0;}to{transform:", ";opacity:1;}"], props => props.noScale ? '' : scale(0.5), props => props.noScale ? '' : scale(1));
 const FadeIn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnimation).withConfig({
   displayName: "S__FadeIn",
   componentId: "sc-3vwmv4-9"

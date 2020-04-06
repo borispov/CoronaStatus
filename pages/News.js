@@ -127,7 +127,7 @@ const News = ({ theme, isHeb, news }) => {
       <S.Container>
         <S.Flex column justify='baseline' >
 
-          <S.FadeIn duration="1.8s" delay="0.1s">
+          <S.FadeIn duration="0.5s" delay="0.07s">
 
             {newsToTemplate(news)}
           </S.FadeIn>

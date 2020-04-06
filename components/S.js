@@ -156,7 +156,7 @@ const BaseAnimation = styled.div`
 
 BaseAnimation.defaultProps = {  
   duration: '1s',
-  timingFunction: 'ease',
+  timingFunction: 'ease-in-out',
   delay: '0s',
   iterationCount: '1',
   direction: 'normal',
@@ -167,12 +167,12 @@ BaseAnimation.defaultProps = {
 
 const fadeInAnimation = keyframes`
   from {
-    transform: scale(0.5);
+    transform: ${props => props.noScale ? '' : scale(0.5)};
     opacity: 0;
   }
 
   to {
-    transform: scale(1);
+    transform: ${props => props.noScale ? '' : scale(1)};
     opacity: 1;
   }
 `;
