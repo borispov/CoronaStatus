@@ -77,7 +77,7 @@ const Title = styled(S.Heading2)`
   }
 `
 
-const shortenSnippet = text => text.split(' ').slice(0, 22).join(' ') + '. . .';
+const shortenSnippet = text => text.split(' ').slice(0, 36).join(' ') + '. . .';
 
 
 const showSource = url => sourceList[url.split('.')[1]]
@@ -99,9 +99,9 @@ const News = ({ theme, isHeb, news }) => {
               <Title fontSize='16px' color='#111'>{item.title}</Title>
               <S.Paragraph padding='0' noMargin fontSize='12px'>
                 {
-                  detectMobile.isMobile() 
-                    ? shortenSnippet(item.description) 
-                    : item.description
+                  detectMobile.isMobile()
+                    ? ''
+                    : shortenSnippet(item.description)
                 }
               </S.Paragraph>
             </S.Flex>
