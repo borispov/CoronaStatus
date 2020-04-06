@@ -303,6 +303,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      link: true,
       active: this.state.active === 'worldCases',
       bg: "transparent",
       fat: true,
@@ -317,6 +318,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      link: true,
       active: this.state.active === 'deathCases',
       bg: "transparent",
       fat: true,
@@ -327,10 +329,11 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onClick: () => this.present('deathCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 95
       },
       __self: this
     }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      link: true,
       active: this.state.active === 'newCases',
       bg: "transparent",
       hoverColor: "primaryDark",
@@ -341,7 +344,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onClick: () => this.present('newCases'),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 108
       },
       __self: this
     }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -352,13 +355,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 124
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 130
       },
       __self: this
     }, " Loading Charts ... "));
@@ -784,7 +787,7 @@ const SectionTitle = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h2
 const Link = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.a.withConfig({
   displayName: "InfoSection__Link",
   componentId: "sc-1anhjcp-3"
-})(["text-decoration:none;color:", ";font-weight:700 !important;font-family:'Rubik' !important;font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryDark);
+})(["text-decoration:none;color:", ";font-weight:500;font-family:'Rubik';font-size:18px;line-height:1.8;padding:6px 4px 2px 4px;transition:color 0.15s ease-in-out;&:hover{color:", ";}@media (max-width:768px){font-size:16px;}"], props => props.theme.primaryDark, props => props.theme.primaryLight);
 const Desc = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p.withConfig({
   displayName: "InfoSection__Desc",
   componentId: "sc-1anhjcp-4"
@@ -816,20 +819,20 @@ const mapDataToSection = (item, idx) => {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 94
     },
     __self: undefined
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 95
     },
     __self: undefined
   }, item.description));
@@ -840,13 +843,13 @@ const renderSection = secData => {
     key: ix,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx(SectionTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 103
     },
     __self: undefined
   }, it.category), it.data.map(mapDataToSection)));
@@ -884,7 +887,7 @@ const renderSection = secData => {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 138
       },
       __self: undefined
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -893,13 +896,13 @@ const renderSection = secData => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 143
     },
     __self: undefined
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 144
     },
     __self: undefined
   }, data && renderSection(data)));

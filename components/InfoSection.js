@@ -51,11 +51,15 @@ const SectionTitle = styled.h2`
 const Link = styled.a`
   text-decoration: none;
   color: ${props => props.theme.primaryDark};
-  font-weight: 700 !important;
-  font-family: 'Rubik' !important;
+  font-weight: 500;
+  font-family: 'Rubik';
   font-size: 18px;
   line-height: 1.8;
   padding: 6px 4px 2px 4px;
+  transition: color 0.15s ease-in-out;
+  &:hover {
+    color: ${props => props.theme.primaryLight};
+  }
   @media (max-width: 768px) {
     font-size: 16px;
   }

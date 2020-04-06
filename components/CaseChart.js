@@ -80,6 +80,7 @@ class CaseChart extends React.Component {
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
 
           <Button
+            link
             active={this.state.active === 'worldCases'} 
             bg='transparent' 
             fat 
@@ -92,6 +93,7 @@ class CaseChart extends React.Component {
           </Button>
 
           <Button 
+            link
             active={this.state.active === 'deathCases'} 
             bg='transparent' 
             fat
@@ -104,6 +106,7 @@ class CaseChart extends React.Component {
           </Button>
 
           <Button 
+            link
             active={this.state.active === 'newCases'} 
             bg='transparent' 
             hoverColor='primaryDark'
