@@ -13,7 +13,7 @@ const Col = styled.div`
   text-align: center;
   padding: 8px 10px;
   font-weight: 400;
-  flex: 0 0 20%;
+  flex: 1 1 20%;
   max-width: 20%;
   position: relative;
   width: 100%;
@@ -23,17 +23,17 @@ const Col = styled.div`
   color: ${props => props.theme.onPrimary};
   justify-content: center;
   @media (max-width: 768px) {
-    padding: 8px 12px;
+    padding: 8px 16px;
   }
 `
 
 const Country = styled.h3`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   align-self: center;
   color: ${props => props.theme.onPrimary};
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `
 

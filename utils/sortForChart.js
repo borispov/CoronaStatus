@@ -25,6 +25,7 @@ const sortForChart = (obj, theme) => {
   const labels = fObj.map(o => parseLabel(o.date))
   const deaths = fObj.map(o => zeroNull(o.total_deaths))
   const newCases = fObj.map(o => zeroNull(o.new_cases))
+  console.log(obj[0]);
   const label = obj[0].location
 
   const datasets = [

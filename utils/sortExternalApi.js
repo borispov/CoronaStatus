@@ -10,7 +10,7 @@ const parseLabel = label => {
   return d.getDate() + '.' + ('0' + (d.getMonth()+1)).toString()
 }
 
-const sortForChart = obj => {
+const sortForChart = (obj, theme) => {
 
   const zeroNull = c => c === null ? 0 : c
   const sortedObj = obj.sort((a,b) => new Date(a.date) - new Date(b.date))
@@ -42,15 +42,19 @@ const sortForChart = obj => {
       label: 'cases',
       data: cases,
       backgroundColor: '#2A4561',
-      // backgroundColor: 'rgb(235, 65, 15)',
-      borderColor: 'rgb(235, 65, 15)',
-      // borderColor: '#97D3ED',
+      borderColor: theme && theme.analogous || '#6200ee',
       strokeColor: "#ADFF2F",
       pointBorderColor: 'rgba(75,10,192,0)',
       pointBackgroundColor: '#fff',
       pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
-      pointRadius: 0,
       borderWidth: 5,
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointRadius: 1,
+      pointHitRadius: 10,
+
     }
   ]
 

@@ -687,13 +687,13 @@ var descriptionTextEn = 'This website makes use of public health data, specifica
 var Text = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
   displayName: "HeaderDescription__Text",
   componentId: "sc-110gwmc-0"
-})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:320px){max-width:88%;}"], function (props) {
+})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:350px){max-width:fit-content;}"], function (props) {
   return props.theme.text.primary;
 });
 var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "HeaderDescription__Wrap",
   componentId: "sc-110gwmc-1"
-})(["z-index:9999;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:320px;max-width:380px;}@media (max-width:320px){max-width:fit-content;}"]);
+})(["z-index:9999;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:100%;max-width:380px;}@media (max-width:320px){}"]);
 var Href = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
   displayName: "HeaderDescription__Href",
   componentId: "sc-110gwmc-2"
@@ -1184,7 +1184,7 @@ var Row = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "QuickStats__Col",
   componentId: "lmgi17-1"
-})(["text-align:center;padding:8px 10px;font-weight:400;flex:0 0 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 12px;}"], function (props) {
+})(["text-align:center;padding:8px 10px;font-weight:400;flex:1 1 20%;max-width:20%;position:relative;width:100%;display:flex;flex-direction:column;background:", ";color:", ";justify-content:center;@media (max-width:768px){padding:8px 16px;}"], function (props) {
   return props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.theme.onPrimary;
@@ -1192,7 +1192,7 @@ var Col = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
 var Country = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3.withConfig({
   displayName: "QuickStats__Country",
   componentId: "lmgi17-2"
-})(["font-size:18px;font-weight:bold;align-self:center;color:", ";@media (max-width:768px){font-size:14px;}"], function (props) {
+})(["font-size:16px;font-weight:bold;align-self:center;color:", ";@media (max-width:768px){font-size:12px;}"], function (props) {
   return props.theme.onPrimary;
 });
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
@@ -1461,7 +1461,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;}"], function (props) {
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
   return props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px';
@@ -1498,7 +1498,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 143
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1506,7 +1506,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 144
     },
     __self: this
   }), props.children);
@@ -55485,7 +55485,7 @@ var parseLabel = function parseLabel(label) {
   return d.getDate() + '.' + ('0' + (d.getMonth() + 1)).toString();
 };
 
-var sortForChart = function sortForChart(obj) {
+var sortForChart = function sortForChart(obj, theme) {
   var zeroNull = function zeroNull(c) {
     return c === null ? 0 : c;
   };
@@ -55527,15 +55527,18 @@ var sortForChart = function sortForChart(obj) {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    // backgroundColor: 'rgb(235, 65, 15)',
-    borderColor: 'rgb(235, 65, 15)',
-    // borderColor: '#97D3ED',
+    borderColor: theme && theme.analogous || '#6200ee',
     strokeColor: "#ADFF2F",
     pointBorderColor: 'rgba(75,10,192,0)',
     pointBackgroundColor: '#fff',
     pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
-    pointRadius: 0,
-    borderWidth: 5
+    borderWidth: 5,
+    borderCapStyle: 'butt',
+    borderDash: [],
+    borderDashOffset: 0.0,
+    borderJoinStyle: 'miter',
+    pointRadius: 1,
+    pointHitRadius: 10
   }];
   return {
     datasets: datasets,
@@ -55597,6 +55600,7 @@ var sortForChart = function sortForChart(obj, theme) {
   var newCases = fObj.map(function (o) {
     return zeroNull(o.new_cases);
   });
+  console.log(obj[0]);
   var label = obj[0].location;
   var datasets = [{
     label: 'new cases',
@@ -55867,7 +55871,7 @@ var capitalize = function capitalize(str) {
 };
 
 var parseCn = function parseCn(str) {
-  return str === 'usa' || str === 'Usa' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : str.toLowerCase();
+  return str === 'usa' || str === 'Usa' || str === 'United States' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : str.toLowerCase();
 };
 
 function getCountry(list) {

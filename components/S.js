@@ -111,7 +111,11 @@ const Btn = styled.button`
   @media (max-width: 450px) {
     font-size: 12px;
     font-weight: normal;
-    // padding: 1px 4px;
+    letter-spacing: 0.5px;
+  }
+  @media (max-width: 344px) {
+    padding: 2px 4px;
+    letter-spacing: 0.2px;
   }
 `
 

@@ -22,7 +22,8 @@ const GlobalStyle = createGlobalStyle`
   .Select {
     color: black !important;
     font-size: 17px;
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
+    z-index: 999999;
   }
 
 
