@@ -1,15 +1,15 @@
 import App from 'next/app'
 import Router from 'next/router'
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from './Global'
 import Link from 'next/link';
+import { useEffect, useState, useRef } from 'react'
+import { ThemeProvider } from 'styled-components'
 
+import useOutSide from '../utils/useOutSide'
+import GlobalStyle from './Global'
 import Header from '../components/Header'
 import { Button } from '../components/S'
-
 import Burger from '../components/Burger';
 import Menu from '../components/Menu';
-
 import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
@@ -26,41 +26,39 @@ const darkTheme = () => ({
   ...themes['dark'],
 })
 
-export default class MyApp extends App {
 
-  constructor(props) {
-    super(props)
-    this.myRef = React.createRef();
-  }
+export default (props) => {
+  const [theme, setTheme] = useState(lightTheme())
+  const [isHeb, setHeb] = useState(true)
+  const [menuOpen, setOpen] = useState(false)
 
-  state = {
-    theme: lightTheme(),
-    isHeb: true,
-    menuOpen: false
-  }
+  const toggleMenu    = () => setOpen(!menuOpen)
+  const toggleLang    = () => setHeb(!isHeb)
+  const setDarkTheme  = () => setTheme(setDarkTheme())
+  const setLightTheme = () => setTheme(setLightTheme())
 
-  toggleMenu    = () => this.setState({ menuOpen: !this.state.menuOpen })
-  toggleLang    = () => this.setState({ isHeb: !this.state.isHeb })
-  setDarkTheme  = () => this.setState(prevState => ({ ...prevState, theme: darkTheme() }))
-  setLightTheme = () => this.setState(prevState => ({ ...prevState, theme: lightTheme() }))
+  const node = useRef()
 
-  render() {
-    const { theme, isHeb }  = this.state
-    const displayLang       = isHeb ? 'English' : 'עברית'
-    const isLight           = theme.type === 'light'
-    const themeButton       = isLight
-      && <MoonIcon onClick={this.setDarkTheme} />
-      || <SunIcon onClick={this.setLightTheme} />
+  useOutSide(node, () => setOpen(false))
 
-    const { Component, pageProps } = this.props
+  const displayLang       = isHeb ? 'English' : 'עברית'
+  const isLight           = theme.type === 'light'
+  const themeButton       = isLight
+    && <MoonIcon onClick={setDarkTheme} />
+    || <SunIcon onClick={setLightTheme} />
 
-    return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle isHeb={isHeb}/>
-        <Header title='nCorona' isHeb={isHeb} closeMenu={this.closeMenu}>
-          <Burger setOpen={this.toggleMenu} open={this.state.menuOpen} />
-          <Menu setOpen={this.toggleMenu} open={this.state.menuOpen} >
-            <a onClick={isLight ? this.setDarkTheme : this.setLightTheme}>
+  const { Component, pageProps } = props
+
+
+  return (
+    <ThemeProvider theme={theme}>
+
+      <GlobalStyle isHeb={isHeb}/>
+      <Header title='nCorona' isHeb={isHeb} >
+        <div ref={node}>
+          <Burger setOpen={toggleMenu} open={menuOpen} />
+          <Menu setOpen={toggleMenu} open={menuOpen} >
+            <a onClick={isLight ?setDarkTheme :setLightTheme}>
               <span>{ isLight ? '🌒' : '🌞'}</span>
               {
                 isLight
@@ -68,7 +66,7 @@ export default class MyApp extends App {
                   : (isHeb && 'מצב יום' || 'Light Mode')
               }
             </a>
-            <a onClick={this.toggleLang}>
+            <a onClick={toggleLang}>
               <span>&#127760;</span>
               {displayLang}
             </a>
@@ -80,10 +78,11 @@ export default class MyApp extends App {
             </Link>
 
           </Menu>
+        </div>
 
-        </Header>
-        <Component {...pageProps} isHeb={isHeb}/>
-      </ThemeProvider>
-    )
-  }
+      </Header>
+      <Component {...pageProps} isHeb={isHeb}/>
+    </ThemeProvider>
+  )
+
 }

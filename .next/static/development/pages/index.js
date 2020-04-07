@@ -55992,7 +55992,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56015,5 +56015,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

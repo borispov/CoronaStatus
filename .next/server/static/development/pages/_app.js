@@ -2898,25 +2898,25 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
-/* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
-/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
-/* harmony import */ var _components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Icons/ThemeIcon */ "./components/Icons/ThemeIcon.js");
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_useOutSide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useOutSide */ "./utils/useOutSide.js");
+/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
+/* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
+/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Icons/ThemeIcon */ "./components/Icons/ThemeIcon.js");
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2941,165 +2941,161 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_12__["pageview"](url));
 
-const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['light']);
 
-const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_11__["themes"]['dark']);
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_13__["pageview"](url));
 
-class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
-  constructor(props) {
-    super(props);
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_12__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_12__["themes"]['light']);
 
-    _defineProperty(this, "state", {
-      theme: lightTheme(),
-      isHeb: true,
-      menuOpen: false
-    });
+const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_12__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_12__["themes"]['dark']);
 
-    _defineProperty(this, "toggleMenu", () => this.setState({
-      menuOpen: !this.state.menuOpen
-    }));
+/* harmony default export */ __webpack_exports__["default"] = (props => {
+  const {
+    0: theme,
+    1: setTheme
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(lightTheme());
+  const {
+    0: isHeb,
+    1: setHeb
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  const {
+    0: menuOpen,
+    1: setOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
-    _defineProperty(this, "toggleLang", () => this.setState({
-      isHeb: !this.state.isHeb
-    }));
+  const toggleMenu = () => setOpen(!menuOpen);
 
-    _defineProperty(this, "setDarkTheme", () => this.setState(prevState => _objectSpread({}, prevState, {
-      theme: darkTheme()
-    })));
+  const toggleLang = () => setHeb(!isHeb);
 
-    _defineProperty(this, "setLightTheme", () => this.setState(prevState => _objectSpread({}, prevState, {
-      theme: lightTheme()
-    })));
+  const setDarkTheme = () => setTheme(setDarkTheme());
 
-    this.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-  }
+  const setLightTheme = () => setTheme(setLightTheme());
 
-  render() {
-    const {
-      theme,
-      isHeb
-    } = this.state;
-    const displayLang = isHeb ? 'English' : 'עברית';
-    const isLight = theme.type === 'light';
+  const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_5__["default"])(node, () => setOpen(false));
+  const displayLang = isHeb ? 'English' : 'עברית';
+  const isLight = theme.type === 'light';
 
-    const themeButton = isLight && __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_10__["MoonIcon"], {
-      onClick: this.setDarkTheme,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_10__["SunIcon"], {
-      onClick: this.setLightTheme,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
-    });
+  const themeButton = isLight && __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_11__["MoonIcon"], {
+    onClick: setDarkTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_11__["SunIcon"], {
+    onClick: setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  });
 
-    const {
-      Component,
-      pageProps
-    } = this.props;
-    return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
-      theme: theme,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      isHeb: isHeb,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      title: "nCorona",
-      isHeb: isHeb,
-      closeMenu: this.closeMenu,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
-    }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      setOpen: this.toggleMenu,
-      open: this.state.menuOpen,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      setOpen: this.toggleMenu,
-      open: this.state.menuOpen,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
-    }, __jsx("a", {
-      onClick: isLight ? this.setDarkTheme : this.setLightTheme,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
-      onClick: this.toggleLang,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      href: "/News",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
-    }, __jsx("a", {
-      alt: "news",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
-    }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')))), __jsx(Component, _extends({}, pageProps, {
-      isHeb: isHeb,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85
-      },
-      __self: this
-    })));
-  }
-
-}
+  const {
+    Component,
+    pageProps
+  } = props;
+  return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
+    theme: theme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    isHeb: isHeb,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    title: "nCorona",
+    isHeb: isHeb,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }, __jsx("div", {
+    ref: node,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    setOpen: toggleMenu,
+    open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    setOpen: toggleMenu,
+    open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, __jsx("a", {
+    onClick: isLight ? setDarkTheme : setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
+    onClick: toggleLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/News",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "news",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News'))))), __jsx(Component, _extends({}, pageProps, {
+    isHeb: isHeb,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  })));
+});
 
 /***/ }),
 
@@ -3370,6 +3366,37 @@ const themes = {
     btnBg: '#344955'
   }
 };
+
+/***/ }),
+
+/***/ "./utils/useOutSide.js":
+/*!*****************************!*\
+  !*** ./utils/useOutSide.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = ((ref, handler) => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+
+      handler(event);
+    };
+
+    document.addEventListener('mousedown', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  }, [ref, handler]);
+});
 
 /***/ }),
 
