@@ -476,18 +476,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
 /* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_Table_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Table/Table */ "./components/Table/Table.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Table_Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Table/Table */ "./components/Table/Table.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/Statistics.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
- // import Link from 'next/link'
 
 
 
@@ -516,7 +512,7 @@ const Statistics = ({
       setLoading(true);
       const {
         data
-      } = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/countries/');
+      } = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('https://corona.lmao.ninja/countries/');
       setData(data.map(({
         countryInfo,
         country,
@@ -541,17 +537,17 @@ const Statistics = ({
   if (loading) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 45
     },
     __self: undefined
   }, " Loading Contents . . .");
 
-  const renderTable = rows && headers && __jsx(_components_Table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  const renderTable = rows && headers && __jsx(_components_Table_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
     headings: headers,
     rows: rows,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 48
     },
     __self: undefined
   });
@@ -561,14 +557,14 @@ const Statistics = ({
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
     txt: text,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 52
     },
     __self: undefined
   }), renderTable));

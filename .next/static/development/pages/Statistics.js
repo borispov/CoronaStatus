@@ -6416,18 +6416,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
 /* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Table_Table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Table/Table */ "./components/Table/Table.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_Table_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Table/Table */ "./components/Table/Table.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/Statistics.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-
- // import Link from 'next/link'
 
 
 
@@ -6461,7 +6458,7 @@ var Statistics = function Statistics(_ref) {
             case 0:
               setLoading(true);
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://corona.lmao.ninja/countries/'));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/countries/'));
 
             case 3:
               _ref2 = _context.sent;
@@ -6496,17 +6493,17 @@ var Statistics = function Statistics(_ref) {
   if (loading) return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 45
     },
     __self: this
   }, " Loading Contents . . .");
 
-  var renderTable = rows && headers && __jsx(_components_Table_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  var renderTable = rows && headers && __jsx(_components_Table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
     headings: headers,
     rows: rows,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 48
     },
     __self: this
   });
@@ -6516,14 +6513,14 @@ var Statistics = function Statistics(_ref) {
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 51
     },
     __self: this
   }, __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_3__["default"], {
     txt: text,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 52
     },
     __self: this
   }), renderTable));
