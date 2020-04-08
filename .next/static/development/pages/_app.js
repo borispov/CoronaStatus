@@ -8793,7 +8793,7 @@ var darkTheme = function darkTheme() {
       lineNumber: 79
     },
     __self: this
-  }, "\u2211"), isHeb && 'נתונים עדכניים' || 'Data'))))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }, "\u2211"), isHeb && 'נתונים' || 'Data'))))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
@@ -8941,7 +8941,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themes", function() { return themes; });
 var themes = {
   common: {
-    fontFamily: "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    fontFamily: "Rubik, Montserrat, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
     menuBorder: '#232F34',
     menuBg: '#344955',
     menuColor: '#4A6572',

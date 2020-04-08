@@ -77,7 +77,7 @@ export default (props) => {
             <Link href="/Statistics">
               <a alt="stats">
                 <span>&#8721;</span>
-                { isHeb && 'נתונים עדכניים' || 'Data' }
+                { isHeb && 'נתונים' || 'Data' }
               </a>
             </Link>
 

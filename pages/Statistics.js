@@ -22,7 +22,7 @@ const Statistics = ({ isHeb, news }) => {
   useEffect(() => {
       async function fetchData(){
         setLoading(true)
-        const { data } = await axios.get('https://corona.lmao.ninja/countries/')
+        const { data } = await axios.get('https://corona.lmao.ninja/countries?sort=cases')
 
         setData(data
           .map(({

@@ -27,7 +27,7 @@ const Div = styled.div`
     border-radius: 8px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 560px) {
     height: 40vh;
     margin-bottom: 48px;
     width: 100vw;
@@ -60,7 +60,7 @@ const sortForDisplay = dset => {
     : displayOnChart(dset)
 }
 
-const filterBy5 = (x, i) => !(i % 4)
+const filterBy5 = (x, i) => !(i % 8)
 const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
 
 const parseDatasets = (arrayOfSets, fill) => {
@@ -172,7 +172,8 @@ const LineChart = ( props, {theme} ) => {
         display: ctx => {
           let i = ctx.dataIndex
           if (ctx.dataset.label !== 'cases') return 0
-          return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
+          return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
+          // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: ctx => { return ctx.dataIndex === ctx.dataset.data.length -1 ? 'end' : 'end' },
         anchor: 'end',
@@ -184,7 +185,7 @@ const LineChart = ( props, {theme} ) => {
         },
         color: props.theme.color,
          labels: {
-           title: { font: { weight: 'bold', style: 'italic', family: 'RubiRubik' } }
+           title: { font: { weight: 'bold', style: 'italic', family: 'Rubik' } }
          }
        }
     }

@@ -940,7 +940,7 @@ react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.defaultFontFamil
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], ({
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:560px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], ({
   theme
 }) => theme.shadows[1]);
 const noChartDisplaySettings = {
@@ -974,7 +974,7 @@ const sortForDisplay = dset => {
   return dset.label !== 'cases' ? dontDisplayOnChart(dset) : displayOnChart(dset);
 };
 
-const filterBy5 = (x, i) => !(i % 4);
+const filterBy5 = (x, i) => !(i % 8);
 
 const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length - 1]);
 
@@ -1079,7 +1079,7 @@ const LineChart = (props, {
         display: ctx => {
           let i = ctx.dataIndex;
           if (ctx.dataset.label !== 'cases') return 0;
-          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 4);
+          return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === ctx.dataset.data.length - 1; // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: ctx => {
           return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'end' : 'end';
@@ -1097,7 +1097,7 @@ const LineChart = (props, {
             font: {
               weight: 'bold',
               style: 'italic',
-              family: 'RubiRubik'
+              family: 'Rubik'
             }
           }
         }
@@ -1107,7 +1107,7 @@ const LineChart = (props, {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 195
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -1118,7 +1118,7 @@ const LineChart = (props, {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 196
     },
     __self: undefined
   }));

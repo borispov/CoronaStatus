@@ -1,7 +1,7 @@
 export const themes = {
   common: {
     fontFamily:
-    "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    "Rubik, Montserrat, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
     menuBorder: '#232F34',
     menuBg: '#344955',
     menuColor: '#4A6572',

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -512,7 +512,7 @@ const Statistics = ({
       setLoading(true);
       const {
         data
-      } = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('https://corona.lmao.ninja/countries/');
+      } = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('https://corona.lmao.ninja/countries?sort=cases');
       setData(data.map(({
         countryInfo,
         country,
@@ -581,7 +581,7 @@ const Statistics = ({
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./pages/Statistics.js ***!
   \***********************************/

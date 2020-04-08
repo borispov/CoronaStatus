@@ -980,7 +980,7 @@ react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.defaultFontFamil
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], function (_ref) {
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:560px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], function (_ref) {
   var theme = _ref.theme;
   return theme.shadows[1];
 });
@@ -1019,7 +1019,7 @@ var sortForDisplay = function sortForDisplay(dset) {
 };
 
 var filterBy5 = function filterBy5(x, i) {
-  return !(i % 4);
+  return !(i % 8);
 };
 
 var subtractArray = function subtractArray(arr) {
@@ -1126,7 +1126,7 @@ var LineChart = function LineChart(props, _ref3) {
         display: function display(ctx) {
           var i = ctx.dataIndex;
           if (ctx.dataset.label !== 'cases') return 0;
-          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 4);
+          return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === ctx.dataset.data.length - 1; // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: function align(ctx) {
           return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'end' : 'end';
@@ -1144,7 +1144,7 @@ var LineChart = function LineChart(props, _ref3) {
             font: {
               weight: 'bold',
               style: 'italic',
-              family: 'RubiRubik'
+              family: 'Rubik'
             }
           }
         }
@@ -1154,7 +1154,7 @@ var LineChart = function LineChart(props, _ref3) {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 195
     },
     __self: this
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -1165,7 +1165,7 @@ var LineChart = function LineChart(props, _ref3) {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 196
     },
     __self: this
   }));

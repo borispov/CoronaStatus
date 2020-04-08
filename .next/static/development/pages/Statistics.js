@@ -6458,7 +6458,7 @@ var Statistics = function Statistics(_ref) {
             case 0:
               setLoading(true);
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/countries/'));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/countries?sort=cases'));
 
             case 3:
               _ref2 = _context.sent;
@@ -6537,7 +6537,7 @@ var Statistics = function Statistics(_ref) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FStatistics&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2FStatistics.js ***!
   \********************************************************************************************************************************************************/
@@ -6560,5 +6560,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Statistics.js.map
