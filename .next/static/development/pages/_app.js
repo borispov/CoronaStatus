@@ -8557,7 +8557,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Rubik';\n    z-index: 999999;\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Rubik';\n  }\n\n  h1 {\n    font-family: 'Rubik';\n    font-weight: 400;\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Rubik';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n  }\n\n  html, body {\n      position: relative;\n      min-height: 100%;\n      max-width: 100%;\n      font-size: 62.5%;\n      background-color: ", ";\n      color: ", ";\n      font-family: ", ";\n      direction: ", ";\n  }\n\n  .Select {\n    color: black !important;\n    font-size: 17px;\n    font-family: 'Rubik';\n    z-index: 999999;\n  }\n\n\n  .div.span.h3 {\n    font-family: 'Rubik';\n  }\n\n  h1 {\n    font-family: 'Rubik';\n    font-weight: 400;\n  }\n\n  h1,h2,h3,h4,h5,h6 {\n    margin-bottom: 0.5rem;\n    font-weight: 500;\n    line-height: 1.2;\n  }\n  h3 {\n    font-family: 'Rubik';\n    font-size: 1.75rem;\n  }\n\n  .loader-container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n    background-color: #ededed;\n  }\n\n  .loader {\n    max-width: 15rem;\n    width: 100%;\n    height: auto;\n    stroke-linecap: round;\n  }\n\n  circle {\n    fill: none;\n    stroke-width: 3.5;\n    animation-name: preloader;\n    animation-duration: 3s;\n    animation-iteration-count: infinite;\n    animation-timing-function: ease-in-out;\n    transform-origin: 170px 170px;\n    will-change: transform;\n\n    &:nth-of-type(1) {\n      stroke-dasharray: 550px;\n    }\n\n    &:nth-of-type(2) {\n      stroke-dasharray: 500px;\n    }\n\n    &:nth-of-type(3) {\n      stroke-dasharray: 450px;\n    }\n\n    &:nth-of-type(4) {\n      stroke-dasharray: 300px;\n    }\n\n    @for $i from 1 through 4 {\n      &:nth-of-type(#{$i}) {\n        animation-delay: -#{$i * 0.15}s;\n      }\n    }\n  }\n\n  img {\n    vertical-align: middle;\n  }\n\n  @keyframes preloader {\n    50% {\n      transform: rotate(360deg);\n    }\n  }\n\n\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -8667,11 +8667,11 @@ var darkTheme = function darkTheme() {
   };
 
   var setDarkTheme = function setDarkTheme() {
-    return setTheme(setDarkTheme());
+    return setTheme(darkTheme());
   };
 
   var setLightTheme = function setLightTheme() {
-    return setTheme(setLightTheme());
+    return setTheme(lightTheme());
   };
 
   var node = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])();
@@ -8680,37 +8680,20 @@ var darkTheme = function darkTheme() {
   });
   var displayLang = isHeb ? 'English' : 'עברית';
   var isLight = theme.type === 'light';
-
-  var themeButton = isLight && __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_13__["MoonIcon"], {
-    onClick: setDarkTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_13__["SunIcon"], {
-    onClick: setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  });
-
   var Component = props.Component,
       pageProps = props.pageProps;
   return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_6__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 51
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_8__["default"], {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 53
     },
     __self: this
   }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -8718,14 +8701,14 @@ var darkTheme = function darkTheme() {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 54
     },
     __self: this
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 55
     },
     __self: this
   }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -8733,7 +8716,7 @@ var darkTheme = function darkTheme() {
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 56
     },
     __self: this
   }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -8741,60 +8724,80 @@ var darkTheme = function darkTheme() {
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 57
     },
     __self: this
   }, __jsx("a", {
     onClick: isLight ? setDarkTheme : setLightTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 58
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 59
     },
     __self: this
   }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 66
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 67
     },
     __self: this
   }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/News",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 70
     },
     __self: this
   }, __jsx("a", {
     alt: "news",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 71
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 72
     },
     __self: this
-  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News'))))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/Statistics",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  }, __jsx("a", {
+    alt: "stats",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  }, "\u2211"), isHeb && 'נתונים עדכניים' || 'Data'))))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: this
   })));
@@ -8946,6 +8949,10 @@ var themes = {
     headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
+    dark: '#343a40',
+    blue: '#007bff',
+    danger: '#dc3545',
+    light: 'f8f9fa',
     secondary: '#303f9f',
     shadows: {
       0: "none",
@@ -8963,7 +8970,8 @@ var themes = {
       error: '#b00020',
       error2: '#ee5f02',
       transparent: 'transparent',
-      white: '#FFF'
+      white: '#FFF',
+      analogous: '#58045c'
     }
   },
   mobile: '660px',
@@ -9009,6 +9017,10 @@ var themes = {
     // primaryDark: '#303f9f',
     // primaryVariant: '#3700B3',
     // complementary: '#BC85F9',
+    purpleComp: '#BC85F9',
+    purpleVariant: '#3700B3',
+    purple: '#6646EE',
+    // Main Purple
     bgColor: '#F5F5F5',
     // bgColor: '#FFF',
     error: '#b00020',
@@ -9016,6 +9028,7 @@ var themes = {
     hover: 'rgba(0,0,0,0.4)',
     hoverOpacity: 0.04,
     active: 'rgba(0,0,0,0.54)',
+    active2: '#dc3545',
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
     successDefault: '#4caf50',

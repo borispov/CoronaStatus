@@ -34,8 +34,8 @@ export default (props) => {
 
   const toggleMenu    = () => setOpen(!menuOpen)
   const toggleLang    = () => setHeb(!isHeb)
-  const setDarkTheme  = () => setTheme(setDarkTheme())
-  const setLightTheme = () => setTheme(setLightTheme())
+  const setDarkTheme  = () => setTheme(darkTheme())
+  const setLightTheme = () => setTheme(lightTheme())
 
   const node = useRef()
 
@@ -43,9 +43,6 @@ export default (props) => {
 
   const displayLang       = isHeb ? 'English' : 'עברית'
   const isLight           = theme.type === 'light'
-  const themeButton       = isLight
-    && <MoonIcon onClick={setDarkTheme} />
-    || <SunIcon onClick={setLightTheme} />
 
   const { Component, pageProps } = props
 
@@ -58,7 +55,7 @@ export default (props) => {
         <div ref={node}>
           <Burger setOpen={toggleMenu} open={menuOpen} />
           <Menu setOpen={toggleMenu} open={menuOpen} >
-            <a onClick={isLight ?setDarkTheme :setLightTheme}>
+            <a onClick={isLight ?setDarkTheme : setLightTheme}>
               <span>{ isLight ? '🌒' : '🌞'}</span>
               {
                 isLight
@@ -74,6 +71,13 @@ export default (props) => {
               <a alt="news">
                 <span>&#128240;</span>
                 { isHeb && 'חדשות' || 'News' }
+              </a>
+            </Link>
+
+            <Link href="/Statistics">
+              <a alt="stats">
+                <span>&#8721;</span>
+                { isHeb && 'נתונים עדכניים' || 'Data' }
               </a>
             </Link>
 

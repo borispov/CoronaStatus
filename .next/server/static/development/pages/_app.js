@@ -2876,6 +2876,10 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
     }
   }
 
+  img {
+    vertical-align: middle;
+  }
+
   @keyframes preloader {
     50% {
       transform: rotate(360deg);
@@ -2967,31 +2971,14 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
 
   const toggleLang = () => setHeb(!isHeb);
 
-  const setDarkTheme = () => setTheme(setDarkTheme());
+  const setDarkTheme = () => setTheme(darkTheme());
 
-  const setLightTheme = () => setTheme(setLightTheme());
+  const setLightTheme = () => setTheme(lightTheme());
 
   const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_5__["default"])(node, () => setOpen(false));
   const displayLang = isHeb ? 'English' : 'עברית';
   const isLight = theme.type === 'light';
-
-  const themeButton = isLight && __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_11__["MoonIcon"], {
-    onClick: setDarkTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }) || __jsx(_components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_11__["SunIcon"], {
-    onClick: setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
-  });
-
   const {
     Component,
     pageProps
@@ -3000,14 +2987,14 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 53
     },
     __self: undefined
   }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3015,14 +3002,14 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3030,7 +3017,7 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 56
     },
     __self: undefined
   }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -3038,60 +3025,80 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 57
     },
     __self: undefined
   }, __jsx("a", {
     onClick: isLight ? setDarkTheme : setLightTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 59
     },
     __self: undefined
   }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 67
     },
     __self: undefined
   }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/News",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("a", {
     alt: "news",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 72
     },
     __self: undefined
-  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News'))))), __jsx(Component, _extends({}, pageProps, {
+  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/Statistics",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "stats",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, "\u2211"), isHeb && 'נתונים עדכניים' || 'Data'))))), __jsx(Component, _extends({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: undefined
   })));
@@ -3244,6 +3251,10 @@ const themes = {
     headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
+    dark: '#343a40',
+    blue: '#007bff',
+    danger: '#dc3545',
+    light: 'f8f9fa',
     secondary: '#303f9f',
     shadows: {
       0: "none",
@@ -3261,7 +3272,8 @@ const themes = {
       error: '#b00020',
       error2: '#ee5f02',
       transparent: 'transparent',
-      white: '#FFF'
+      white: '#FFF',
+      analogous: '#58045c'
     }
   },
   mobile: '660px',
@@ -3307,6 +3319,10 @@ const themes = {
     // primaryDark: '#303f9f',
     // primaryVariant: '#3700B3',
     // complementary: '#BC85F9',
+    purpleComp: '#BC85F9',
+    purpleVariant: '#3700B3',
+    purple: '#6646EE',
+    // Main Purple
     bgColor: '#F5F5F5',
     // bgColor: '#FFF',
     error: '#b00020',
@@ -3314,6 +3330,7 @@ const themes = {
     hover: 'rgba(0,0,0,0.4)',
     hoverOpacity: 0.04,
     active: 'rgba(0,0,0,0.54)',
+    active2: '#dc3545',
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
     successDefault: '#4caf50',

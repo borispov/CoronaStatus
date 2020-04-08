@@ -9,6 +9,12 @@ export const themes = {
     headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
+
+    dark: '#343a40',
+    blue: '#007bff',
+    danger: '#dc3545',
+    light: 'f8f9fa',
+
     secondary: '#303f9f',
 
     shadows: {
@@ -28,7 +34,8 @@ export const themes = {
       error: '#b00020',
       error2: '#ee5f02',
       transparent: 'transparent',
-      white: '#FFF'
+      white: '#FFF',
+      analogous: '#58045c'
     }
 
   },
@@ -87,6 +94,9 @@ export const themes = {
     // primaryVariant: '#3700B3',
 
     // complementary: '#BC85F9',
+    purpleComp: '#BC85F9',
+    purpleVariant: '#3700B3',
+    purple: '#6646EE', // Main Purple
 
     bgColor: '#F5F5F5',
     // bgColor: '#FFF',
@@ -96,6 +106,7 @@ export const themes = {
     hover: 'rgba(0,0,0,0.4)',
     hoverOpacity: 0.04,
     active: 'rgba(0,0,0,0.54)',
+    active2: '#dc3545',
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
 

@@ -1,5 +1,4 @@
 import styled, { withTheme } from 'styled-components'
-import { useState, useEffect } from 'react'
 import * as S from '../components/S'
 import axios from 'axios'
 import dateHeb from '../utils/dateHeb'

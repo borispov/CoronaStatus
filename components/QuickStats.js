@@ -52,14 +52,14 @@ export default ({ S, country, isHeb}) => {
           <Col style={{ borderRight: 'none', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
             <Country> {country} </Country>
           </Col>
-          <Col bg='primaryVariant' >
+          <Col bg='successDefault' >
             <Country>
               {S.cases}
               <br />
               <small>{isHeb ? 'נדבקים' : 'Infected'}</small>
             </Country>
           </Col>
-          <Col bg='successDefault'>
+          <Col bg='analogous'>
             <Country>
               {S.recovered}
               <br />

@@ -68,7 +68,8 @@ const CoronaApp = ({ isHeb, theme }) => {
                 isHeb={isHeb}
                 type='line'
                 labels={countryStats.labels}
-                data={countryStats.datasets.filter(a => a.label === 'cases')}
+                // data={countryStats.datasets.filter(a => a.label === 'cases')}
+                data={countryStats.datasets}
                 label={country || 'israel'}
                 fill={false}
                 stops={3}

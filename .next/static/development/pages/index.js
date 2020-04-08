@@ -85,23 +85,25 @@ var popKey = function popKey(o) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./S */ "./components/S.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Spinner */ "./components/Spinner.js");
+
 
 
 
@@ -111,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CaseChart.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
 
 
@@ -122,17 +124,17 @@ var baseURL = "https://nCorona.live/api/v1/alltime/";
 
 var worldTimeData = function worldTimeData(theme) {
   var data, dataRes;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function worldTimeData$(_context) {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default.a.async(function worldTimeData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(baseURL));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_11___default.a.get(baseURL));
 
         case 2:
           data = _context.sent;
           _context.next = 5;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_11__["default"])(data.data, theme));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default.a.awrap(Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_12__["default"])(data.data, theme));
 
         case 5:
           dataRes = _context.sent;
@@ -147,16 +149,16 @@ var worldTimeData = function worldTimeData(theme) {
 };
 
 var CaseChart = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(CaseChart, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(CaseChart, _React$Component);
 
   function CaseChart(props) {
     var _this;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CaseChart);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, CaseChart);
 
-    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CaseChart).call(this, props));
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(CaseChart).call(this, props));
 
-    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "present", function (val) {
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "present", function (val) {
       _this.setState({
         dataToPresent: val,
         active: val
@@ -177,11 +179,11 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CaseChart, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(CaseChart, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var timeStats, worldCases, deathCases, newCases, worldLabels;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.async(function componentDidMount$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default.a.async(function componentDidMount$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
@@ -190,7 +192,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
               });
               _context2.prev = 1;
               _context2.next = 4;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default.a.awrap(worldTimeData(this.props.theme));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default.a.awrap(worldTimeData(this.props.theme));
 
             case 4:
               timeStats = _context2.sent;
@@ -209,6 +211,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
                 worldCases: worldCases,
                 deathCases: deathCases,
                 newCases: newCases,
+                timeStats: timeStats,
                 worldLabels: worldLabels,
                 loading: false
               });
@@ -233,47 +236,45 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       if (this.state.loading) {
-        return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
+        return __jsx(_S__WEBPACK_IMPORTED_MODULE_10__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 67
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 67
           },
           __self: this
         }, "Loading Data . . ."));
       }
 
       if (this.state.error) {
-        return __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Container"], {
+        return __jsx(_S__WEBPACK_IMPORTED_MODULE_10__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 70
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 70
           },
           __self: this
         }, ' error occured:' + this.state.error));
       }
 
-      return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Paragraph"], {
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(_S__WEBPACK_IMPORTED_MODULE_10__["Paragraph"], {
         mw: "auto",
         center: true,
         secondary: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 75
         },
         __self: this
       }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -284,75 +285,26 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 81
         },
         __self: this
-      }, __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        link: true,
-        active: this.state.active === 'worldCases',
-        bg: "transparent",
-        fat: true,
-        hoverColor: "primaryDark",
-        outline: "primaryDark",
-        btnColor: "onBg",
-        medium: true,
-        onClick: function onClick() {
-          return _this2.present('worldCases');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        },
-        __self: this
-      }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        link: true,
-        active: this.state.active === 'deathCases',
-        bg: "transparent",
-        fat: true,
-        hoverColor: "primaryDark",
-        outline: "primaryDark",
-        btnColor: "onBg",
-        medium: true,
-        onClick: function onClick() {
-          return _this2.present('deathCases');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95
-        },
-        __self: this
-      }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        link: true,
-        active: this.state.active === 'newCases',
-        bg: "transparent",
-        hoverColor: "primaryDark",
-        fat: true,
-        outline: "primaryDark",
-        btnColor: "onBg",
-        medium: true,
-        onClick: function onClick() {
-          return _this2.present('newCases');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        },
-        __self: this
-      }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        legend: false,
         type: "line",
-        labels: this.state.worldLabels,
-        data: this.state[this.state.dataToPresent],
+        labels: this.state.worldLabels // data={this.state[this.state.dataToPresent]}
+        ,
+        data: [].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(this.state.worldCases), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(this.state.deathCases), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(this.state.newCases)),
         label: this.props.isHeb ? 'נתונים מהעולם' : 'Global',
         theme: this.props.theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 128
         },
         __self: this
       }) || __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 136
         },
         __self: this
       }, " Loading Charts ... "));
@@ -360,7 +312,7 @@ var CaseChart = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return CaseChart;
-}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (CaseChart);
 
@@ -525,10 +477,9 @@ var CoronaApp = function CoronaApp(_ref) {
   }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isHeb: isHeb,
     type: "line",
-    labels: countryStats.labels,
-    data: countryStats.datasets.filter(function (a) {
-      return a.label === 'cases';
-    }),
+    labels: countryStats.labels // data={countryStats.datasets.filter(a => a.label === 'cases')}
+    ,
+    data: countryStats.datasets,
     label: country || 'israel',
     fill: false,
     stops: 3,
@@ -544,7 +495,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 80
     },
     __self: this
   }), __jsx("form", {
@@ -556,7 +507,7 @@ var CoronaApp = function CoronaApp(_ref) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: this
   }, __jsx("label", {
@@ -566,7 +517,7 @@ var CoronaApp = function CoronaApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: this
   }, isHeb ? "\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4" : "Data For Country:"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -577,14 +528,14 @@ var CoronaApp = function CoronaApp(_ref) {
     placeholder: country || 'ישראל',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 93
     },
     __self: this
   })), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 102
     },
     __self: this
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -593,7 +544,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 107
     },
     __self: this
   }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -603,7 +554,7 @@ var CoronaApp = function CoronaApp(_ref) {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 113
     },
     __self: this
   })));
@@ -1009,7 +960,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./S */ "./components/S.js");
 
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
+
+var _noChartDisplaySettin,
+    _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
+
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -1021,37 +975,68 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.defaultFontFamily = "'PT Sans', sans-serif";
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.hover.mode = 'nearest';
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.hover.axis = 'xy';
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["defaults"].global.hover.intersect = false;
 var Div = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], function (_ref) {
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], function (_ref) {
   var theme = _ref.theme;
   return theme.shadows[1];
 });
+var noChartDisplaySettings = (_noChartDisplaySettin = {
+  // backgroundColor: 'transparent',
+  // strokeColor: 'transparent',
+  // borderColor: 'transparent',
+  showLine: false,
+  borderWidth: 0,
+  pointHitRadius: 0,
+  pointHoverRadius: 0,
+  pointHoverBorderWidth: 0,
+  pointRadius: 0
+}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "pointHitRadius", 0), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "fill", false), _noChartDisplaySettin);
+
+var cutCaseCount = function cutCaseCount(_ref2) {
+  var data = _ref2.data;
+  return data.length > 30 ? subtractArray(data) : data;
+};
+
+var displayOnChart = function displayOnChart(dset) {
+  return _objectSpread({}, dset, {
+    data: cutCaseCount(dset),
+    fill: false
+  });
+};
+
+var dontDisplayOnChart = function dontDisplayOnChart(dset) {
+  return _objectSpread({}, dset, {
+    data: cutCaseCount(dset)
+  }, noChartDisplaySettings);
+};
+
+var sortForDisplay = function sortForDisplay(dset) {
+  return dset.label !== 'cases' ? dontDisplayOnChart(dset) : displayOnChart(dset);
+};
 
 var filterBy5 = function filterBy5(x, i) {
   return !(i % 4);
 };
 
 var subtractArray = function subtractArray(arr) {
-  return arr.filter(filterBy5);
+  return arr.filter(filterBy5).concat(arr[arr.length - 1]);
 };
 
 var parseDatasets = function parseDatasets(arrayOfSets, fill) {
-  return arrayOfSets.map(function (set) {
-    return _objectSpread({}, set, {
-      data: set.data.length > 30 ? subtractArray(set.data) : set.data,
-      fill: fill || false
-    });
-  });
+  return arrayOfSets.map(sortForDisplay); // return arrayOfSets.map(set => ({
+  //   ...set,
+  //   data: set.data.length > 30 ? subtractArray(set.data) : set.data,
+  //   fill: fill || false,
+  // }))
 };
 
-var LineChart = function LineChart(props, _ref2) {
-  var theme = _ref2.theme;
+var LineChart = function LineChart(props, _ref3) {
+  var theme = _ref3.theme;
+  var chartRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
   var data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
@@ -1059,10 +1044,7 @@ var LineChart = function LineChart(props, _ref2) {
 
   var data = function data(canvas) {
     var ctx = canvas.getContext('2d');
-    var gradient = ctx.createLinearGradient(0, 0, 100, 0);
-    return _objectSpread({}, data2, {
-      background: gradient
-    });
+    return _objectSpread({}, data2);
   };
 
   var options = {
@@ -1071,36 +1053,50 @@ var LineChart = function LineChart(props, _ref2) {
     onAnimationComplete: function onAnimationComplete() {
       this.showTooltip(this.datasets[0].points, true);
     },
+    layout: {
+      padding: {
+        left: 5,
+        right: 15,
+        top: 15,
+        bottom: 15
+      }
+    },
     animation: {
       easing: 'easeInOutQuad',
-      duration: 100
+      duration: 999
     },
     scales: {
       xAxes: [{
         gridLines: {
+          backgroundColor: props.theme.analogous,
+          display: false,
           drawBorder: true,
           drawTicks: true,
           color: 'rgba(0, 0, 0, 0.05)',
           lineWidth: 1,
-          zeroLineWidth: 0.2
+          zeroLineWidth: 1
         }
       }],
       yAxes: [{
         ticks: {
+          display: true,
           maxTicksLimit: 6
         },
         gridLines: {
-          drawBorder: true,
+          backgroundColor: props.theme.primaryVariant,
+          display: false,
+          drawBorder: false,
+          // drawBorder: true,
           drawTicks: true,
-          zeroLineWidth: 0.2,
           color: 'rgba(0, 0, 0, 0.05)',
-          lineWidth: 1
+          lineWidth: 1,
+          zeroLineWidth: 1
         }
       }]
     },
     elements: {
       line: {
-        tension: 0.4
+        tension: 0.5
       }
     },
     legend: {
@@ -1108,20 +1104,40 @@ var LineChart = function LineChart(props, _ref2) {
       position: 'bottom'
     },
     tooltips: {
+      displayColors: true,
+      mode: 'index',
+      titleAlign: 'center',
+      position: 'nearest',
+      intersect: false,
+      bodySpacing: 4,
+      padding: 15,
       titleFontFamily: 'Rubik',
-      backgroundColor: 'rgba(20,20,20, 1)',
-      titleFontColor: '#f9f9f9'
+      backgroundColor: props.theme.dark,
+      titleFontColor: '#f9f9f9',
+      xPadding: 24,
+      yPadding: 14
+    },
+    hover: {
+      mode: 'index',
+      intersect: false
     },
     plugins: {
       datalabels: {
         display: function display(ctx) {
           var i = ctx.dataIndex;
-          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 5);
+          if (ctx.dataset.label !== 'cases') return 0;
+          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 4);
         },
         align: function align(ctx) {
-          return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'start' : 'end';
+          return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'end' : 'end';
         },
         anchor: 'end',
+        padding: {
+          left: 0,
+          right: -50,
+          top: -5,
+          bottom: 0
+        },
         color: props.theme.color,
         labels: {
           title: {
@@ -1138,7 +1154,7 @@ var LineChart = function LineChart(props, _ref2) {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 194
     },
     __self: this
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -1149,7 +1165,7 @@ var LineChart = function LineChart(props, _ref2) {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 195
     },
     __self: this
   }));
@@ -1241,7 +1257,7 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __self: this
   }, " ", country, " ")), __jsx(Col, {
-    bg: "primaryVariant",
+    bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55
@@ -1266,7 +1282,7 @@ var Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConf
     },
     __self: this
   }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
-    bg: "successDefault",
+    bg: "analogous",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 62
@@ -55560,6 +55576,9 @@ var sortForChart = function sortForChart(obj, theme) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+
 // meant for Line Chart Cases/Deaths Chart
 var firstWhole = function firstWhole(arr) {
   var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
@@ -55575,6 +55594,8 @@ var parseLabel = function parseLabel(label) {
 };
 
 var sortForChart = function sortForChart(obj, theme) {
+  var _ref;
+
   var zeroNull = function zeroNull(c) {
     return c === null ? 0 : c;
   };
@@ -55584,8 +55605,7 @@ var sortForChart = function sortForChart(obj, theme) {
   });
   var initCasesArray = sortedObj.map(function (o) {
     return o.total_cases;
-  }); // console.log(initCasesArray);
-
+  });
   var firstNumIndex = firstWhole(initCasesArray);
   var fObj = sortedObj.slice(firstNumIndex);
   var cases = fObj.map(function (o) {
@@ -55600,42 +55620,32 @@ var sortForChart = function sortForChart(obj, theme) {
   var newCases = fObj.map(function (o) {
     return zeroNull(o.new_cases);
   });
-  console.log(obj[0]);
   var label = obj[0].location;
   var datasets = [{
     label: 'new cases',
     data: newCases,
     backgroundColor: '#fc3111',
-    borderColor: '#fc3111',
-    strokeColor: '#301934',
+    borderColor: theme && theme.successDefault,
+    strokeColor: theme && theme.successDefault,
     pointRadius: 2,
     borderWidth: 4,
     fill: true
-  }, {
+  }, (_ref = {
     label: 'deaths',
     data: deaths,
-    backgroundColor: 'rgba(29,82,209,1) 100%)',
-    borderColor: '#b00020',
-    strokeColor: "rgba(222, 222, 34, 1)",
-    pointRadius: 1,
-    borderWidth: 4
-  }, {
+    backgroundColor: 'rgba(29,82,209,1) 100%)'
+  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "backgroundColor", '#333'), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "borderColor", theme && theme.blue), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "strokeColor", theme && theme.blue), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "pointRadius", 2), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "borderWidth", 4), _ref), {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    borderColor: theme && theme.analogous || '#6200ee',
-    strokeColor: "#ADFF2F",
+    borderColor: theme && theme.primaryLight || '#6200ee',
+    strokeColor: theme && theme.primaryLight || '#ADFF2F',
     borderWidth: 5,
     borderCapStyle: 'butt',
-    borderDash: [],
-    borderDashOffset: 0.0,
     borderJoinStyle: 'miter',
-    pointBorderWidth: 1,
     pointHoverRadius: 5,
-    pointHoverBackgroundColor: '#3700B3',
-    pointHoverBorderColor: '#3700B399',
     pointHoverBorderWidth: 2,
-    pointRadius: 1,
+    pointRadius: 2,
     pointHitRadius: 10
   }];
   return {
@@ -55992,7 +56002,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56015,5 +56025,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

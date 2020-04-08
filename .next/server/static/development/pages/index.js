@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -238,6 +238,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         worldCases,
         deathCases,
         newCases,
+        timeStats,
         worldLabels,
         loading: false
       });
@@ -254,13 +255,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 67
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 67
         },
         __self: this
       }, "Loading Data . . ."));
@@ -270,13 +271,13 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 70
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 70
         },
         __self: this
       }, ' error occured:' + this.state.error));
@@ -288,7 +289,7 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       secondary: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 75
       },
       __self: this
     }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
@@ -299,69 +300,26 @@ class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 81
       },
       __self: this
-    }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      link: true,
-      active: this.state.active === 'worldCases',
-      bg: "transparent",
-      fat: true,
-      hoverColor: "primaryDark",
-      outline: "primaryDark",
-      btnColor: "onBg",
-      medium: true,
-      onClick: () => this.present('worldCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }, this.props.isHeb && 'נדבקים' || 'Cases'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      link: true,
-      active: this.state.active === 'deathCases',
-      bg: "transparent",
-      fat: true,
-      hoverColor: "primaryDark",
-      outline: "primaryDark",
-      btnColor: "onBg",
-      medium: true,
-      onClick: () => this.present('deathCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95
-      },
-      __self: this
-    }, this.props.isHeb && 'מקרי מוות' || 'Deaths'), __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      link: true,
-      active: this.state.active === 'newCases',
-      bg: "transparent",
-      hoverColor: "primaryDark",
-      fat: true,
-      outline: "primaryDark",
-      btnColor: "onBg",
-      medium: true,
-      onClick: () => this.present('newCases'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108
-      },
-      __self: this
-    }, this.props.isHeb && 'מקרים חדשים' || 'New cases')), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      legend: false,
       type: "line",
-      labels: this.state.worldLabels,
-      data: this.state[this.state.dataToPresent],
+      labels: this.state.worldLabels // data={this.state[this.state.dataToPresent]}
+      ,
+      data: [...this.state.worldCases, ...this.state.deathCases, ...this.state.newCases],
       label: this.props.isHeb ? 'נתונים מהעולם' : 'Global',
       theme: this.props.theme,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 128
       },
       __self: this
     }) || __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 136
       },
       __self: this
     }, " Loading Charts ... "));
@@ -533,8 +491,9 @@ const CoronaApp = ({
   }, countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isHeb: isHeb,
     type: "line",
-    labels: countryStats.labels,
-    data: countryStats.datasets.filter(a => a.label === 'cases'),
+    labels: countryStats.labels // data={countryStats.datasets.filter(a => a.label === 'cases')}
+    ,
+    data: countryStats.datasets,
     label: country || 'israel',
     fill: false,
     stops: 3,
@@ -550,7 +509,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 80
     },
     __self: undefined
   }), __jsx("form", {
@@ -562,7 +521,7 @@ const CoronaApp = ({
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx("label", {
@@ -572,7 +531,7 @@ const CoronaApp = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: undefined
   }, isHeb ? `נתונים לפי מדינה` : `Data For Country:`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -583,14 +542,14 @@ const CoronaApp = ({
     placeholder: country || 'ישראל',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 93
     },
     __self: undefined
   })), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 102
     },
     __self: undefined
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -599,7 +558,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 107
     },
     __self: undefined
   }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -609,7 +568,7 @@ const CoronaApp = ({
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 113
     },
     __self: undefined
   })));
@@ -976,31 +935,61 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.defaultFontFamily = "'PT Sans', sans-serif";
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.mode = 'nearest';
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.axis = 'xy';
-react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["defaults"].global.hover.intersect = false;
 const Div = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "LineChart__Div",
   componentId: "sc-9esmyi-0"
-})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], ({
+})(["margin-top:32px;margin-left:auto;margin-right:auto;margin-bottom:48px;height:375px;text-align:center;width:80%;direction:rtl;> *{direction:rtl;}h1{text-shadow:", ";}canvas{background-color:#ededed;border-radius:8px;}@media (max-width:768px){height:40vh;margin-bottom:48px;width:100vw;max-width:100%;}"], ({
   theme
 }) => theme.shadows[1]);
+const noChartDisplaySettings = {
+  // backgroundColor: 'transparent',
+  // strokeColor: 'transparent',
+  // borderColor: 'transparent',
+  showLine: false,
+  borderWidth: 0,
+  pointHitRadius: 0,
+  pointHoverRadius: 0,
+  pointHoverBorderWidth: 0,
+  pointRadius: 0,
+  pointHitRadius: 0,
+  fill: false
+};
+
+const cutCaseCount = ({
+  data
+}) => data.length > 30 ? subtractArray(data) : data;
+
+const displayOnChart = dset => _objectSpread({}, dset, {
+  data: cutCaseCount(dset),
+  fill: false
+});
+
+const dontDisplayOnChart = dset => _objectSpread({}, dset, {
+  data: cutCaseCount(dset)
+}, noChartDisplaySettings);
+
+const sortForDisplay = dset => {
+  return dset.label !== 'cases' ? dontDisplayOnChart(dset) : displayOnChart(dset);
+};
 
 const filterBy5 = (x, i) => !(i % 4);
 
-const subtractArray = arr => arr.filter(filterBy5);
+const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length - 1]);
 
 const parseDatasets = (arrayOfSets, fill) => {
-  return arrayOfSets.map(set => _objectSpread({}, set, {
-    data: set.data.length > 30 ? subtractArray(set.data) : set.data,
-    fill: fill || false
-  }));
+  return arrayOfSets.map(sortForDisplay); // return arrayOfSets.map(set => ({
+  //   ...set,
+  //   data: set.data.length > 30 ? subtractArray(set.data) : set.data,
+  //   fill: fill || false,
+  // }))
 };
 
 const LineChart = (props, {
   theme
 }) => {
+  const chartRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
@@ -1008,10 +997,7 @@ const LineChart = (props, {
 
   const data = canvas => {
     const ctx = canvas.getContext('2d');
-    const gradient = ctx.createLinearGradient(0, 0, 100, 0);
-    return _objectSpread({}, data2, {
-      background: gradient
-    });
+    return _objectSpread({}, data2);
   };
 
   var options = {
@@ -1020,36 +1006,50 @@ const LineChart = (props, {
     onAnimationComplete: function () {
       this.showTooltip(this.datasets[0].points, true);
     },
+    layout: {
+      padding: {
+        left: 5,
+        right: 15,
+        top: 15,
+        bottom: 15
+      }
+    },
     animation: {
       easing: 'easeInOutQuad',
-      duration: 100
+      duration: 999
     },
     scales: {
       xAxes: [{
         gridLines: {
+          backgroundColor: props.theme.analogous,
+          display: false,
           drawBorder: true,
           drawTicks: true,
           color: 'rgba(0, 0, 0, 0.05)',
           lineWidth: 1,
-          zeroLineWidth: 0.2
+          zeroLineWidth: 1
         }
       }],
       yAxes: [{
         ticks: {
+          display: true,
           maxTicksLimit: 6
         },
         gridLines: {
-          drawBorder: true,
+          backgroundColor: props.theme.primaryVariant,
+          display: false,
+          drawBorder: false,
+          // drawBorder: true,
           drawTicks: true,
-          zeroLineWidth: 0.2,
           color: 'rgba(0, 0, 0, 0.05)',
-          lineWidth: 1
+          lineWidth: 1,
+          zeroLineWidth: 1
         }
       }]
     },
     elements: {
       line: {
-        tension: 0.4
+        tension: 0.5
       }
     },
     legend: {
@@ -1057,20 +1057,40 @@ const LineChart = (props, {
       position: 'bottom'
     },
     tooltips: {
+      displayColors: true,
+      mode: 'index',
+      titleAlign: 'center',
+      position: 'nearest',
+      intersect: false,
+      bodySpacing: 4,
+      padding: 15,
       titleFontFamily: 'Rubik',
-      backgroundColor: 'rgba(20,20,20, 1)',
-      titleFontColor: '#f9f9f9'
+      backgroundColor: props.theme.dark,
+      titleFontColor: '#f9f9f9',
+      xPadding: 24,
+      yPadding: 14
+    },
+    hover: {
+      mode: 'index',
+      intersect: false
     },
     plugins: {
       datalabels: {
         display: ctx => {
           let i = ctx.dataIndex;
-          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 5);
+          if (ctx.dataset.label !== 'cases') return 0;
+          return i === 0 || i === ctx.dataset.data.length - 1 || !(i % 4);
         },
         align: ctx => {
-          return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'start' : 'end';
+          return ctx.dataIndex === ctx.dataset.data.length - 1 ? 'end' : 'end';
         },
         anchor: 'end',
+        padding: {
+          left: 0,
+          right: -50,
+          top: -5,
+          bottom: 0
+        },
         color: props.theme.color,
         labels: {
           title: {
@@ -1087,7 +1107,7 @@ const LineChart = (props, {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 194
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -1098,7 +1118,7 @@ const LineChart = (props, {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 195
     },
     __self: undefined
   }));
@@ -1184,7 +1204,7 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
     },
     __self: undefined
   }, " ", country, " ")), __jsx(Col, {
-    bg: "primaryVariant",
+    bg: "successDefault",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55
@@ -1209,7 +1229,7 @@ const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
     },
     __self: undefined
   }, isHeb ? 'נדבקים' : 'Infected'))), __jsx(Col, {
-    bg: "successDefault",
+    bg: "analogous",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 62
@@ -1803,22 +1823,20 @@ const sortForChart = (obj, theme) => {
   const zeroNull = c => c === null ? 0 : c;
 
   const sortedObj = obj.sort((a, b) => new Date(a.date) - new Date(b.date));
-  const initCasesArray = sortedObj.map(o => o.total_cases); // console.log(initCasesArray);
-
+  const initCasesArray = sortedObj.map(o => o.total_cases);
   const firstNumIndex = firstWhole(initCasesArray);
   const fObj = sortedObj.slice(firstNumIndex);
   const cases = fObj.map(o => o.total_cases);
   const labels = fObj.map(o => parseLabel(o.date));
   const deaths = fObj.map(o => zeroNull(o.total_deaths));
   const newCases = fObj.map(o => zeroNull(o.new_cases));
-  console.log(obj[0]);
   const label = obj[0].location;
   const datasets = [{
     label: 'new cases',
     data: newCases,
     backgroundColor: '#fc3111',
-    borderColor: '#fc3111',
-    strokeColor: '#301934',
+    borderColor: theme && theme.successDefault,
+    strokeColor: theme && theme.successDefault,
     pointRadius: 2,
     borderWidth: 4,
     fill: true
@@ -1826,27 +1844,23 @@ const sortForChart = (obj, theme) => {
     label: 'deaths',
     data: deaths,
     backgroundColor: 'rgba(29,82,209,1) 100%)',
-    borderColor: '#b00020',
-    strokeColor: "rgba(222, 222, 34, 1)",
-    pointRadius: 1,
+    backgroundColor: '#333',
+    borderColor: theme && theme.blue,
+    strokeColor: theme && theme.blue,
+    pointRadius: 2,
     borderWidth: 4
   }, {
     label: 'cases',
     data: cases,
     backgroundColor: '#2A4561',
-    borderColor: theme && theme.analogous || '#6200ee',
-    strokeColor: "#ADFF2F",
+    borderColor: theme && theme.primaryLight || '#6200ee',
+    strokeColor: theme && theme.primaryLight || '#ADFF2F',
     borderWidth: 5,
     borderCapStyle: 'butt',
-    borderDash: [],
-    borderDashOffset: 0.0,
     borderJoinStyle: 'miter',
-    pointBorderWidth: 1,
     pointHoverRadius: 5,
-    pointHoverBackgroundColor: '#3700B3',
-    pointHoverBorderColor: '#3700B399',
     pointHoverBorderWidth: 2,
-    pointRadius: 1,
+    pointRadius: 2,
     pointHitRadius: 10
   }];
   return {
@@ -2069,7 +2083,7 @@ function useTodayStats(url, country) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

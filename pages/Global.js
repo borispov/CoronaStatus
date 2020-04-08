@@ -94,6 +94,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  img {
+    vertical-align: middle;
+  }
+
   @keyframes preloader {
     50% {
       transform: rotate(360deg);

@@ -51,6 +51,7 @@ class CaseChart extends React.Component {
         worldCases,
         deathCases,
         newCases,
+        timeStats,
         worldLabels,
         loading: false
       })
@@ -79,6 +80,7 @@ class CaseChart extends React.Component {
 
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
 
+      {/*
           <Button
             link
             active={this.state.active === 'worldCases'} 
@@ -118,13 +120,17 @@ class CaseChart extends React.Component {
               {this.props.isHeb && 'מקרים חדשים' || 'New cases'}
           </Button>
 
+  */}
+
         </div>
         {
           this.state.worldData &&
             <Chart 
+              legend={false}
               type='line'
               labels={this.state.worldLabels}
-              data={this.state[this.state.dataToPresent]}
+              // data={this.state[this.state.dataToPresent]}
+              data={[...this.state.worldCases, ...this.state.deathCases, ...this.state.newCases]}
               label={this.props.isHeb ? 'נתונים מהעולם' : 'Global'}
               theme={this.props.theme}
             /> || <div> Loading Charts ... </div>
