@@ -196,7 +196,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 const Flex = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__Flex",
   componentId: "sc-3vwmv4-0"
-})(["display:flex;flex-direction:", ";justify-content:", ";margin:", ";color:", ";align-items:", ";flex:", ";background:", ";padding:", ";@media (max-width:768px){flex-direction:", ";}"], props => props.column && 'column' || 'row', props => props.justify || 'center', props => props.margin || '0 2px', props => props.color || '', props => props.alignItems || '', props => props.flex, props => props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : '', props => props.padding, props => props.mRow ? 'row' : props.mCol ? 'column' : '');
+})(["display:flex;flex-direction:", ";justify-content:", ";margin:", ";color:", ";align-items:", ";flex:", ";background:", ";padding:", ";@media (max-width:768px){flex-direction:", ";}"], props => props.column && 'column' || 'row', props => props.justify || 'center', props => props.margin || '0 2px', props => props.color || '', props => props.alignItems || '', props => props.flex, props => props.bgColor === 'inverse' ? props.theme.color : props.bgColor === 'bg' ? props.theme.bgColor : '', props => props.padding, props => props.mRow ? 'row' : props.mCol ? 'column' : '');
 const Heading = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
   displayName: "S__Heading",
   componentId: "sc-3vwmv4-1"
@@ -220,7 +220,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -282,27 +282,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Cell = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.td.withConfig({
   displayName: "Cell",
   componentId: "h1tosf-0"
-})(["border:2px solid ", ";padding:10px 32px;font-size:16px;font-family:'Rubik';font-weight:", ";background:", ";color:", ";font-weight:500;span{padding-right:4px;margin-right:4px;}> *{padding:2px;}"], props => props.theme.error2 + '33', props => props.color === 'active2' && 'bold' || props.color === 'successDefault' && 'bold' || 500, props => props.theme.primaryDark, props => props.theme[props.color] || props.theme.onPrimary);
+})(["border:2px solid ", ";padding:10px 18px ", ";font-size:", ";max-width:200px;font-family:'Rubik';font-weight:", ";background:", ";color:", ";font-weight:500;span{padding-right:4px;margin-right:4px;}> *{padding:2px;}"], props => props.theme.error2 + '33', ({
+  country
+}) => country ? '10px 0' : '10px 18px', props => props.country ? '12px' : '14px', props => props.color === 'active2' && 'bold' || props.color === 'successDefault' && 'bold' || 500, props => props.theme.primaryDark, props => props.theme[props.color] || props.theme.onPrimary);
 const CellHeader = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.th.withConfig({
   displayName: "Cell__CellHeader",
   componentId: "h1tosf-1"
-})(["font-size:14px;font-weight:bold;border-color:1px solid ", ";box-shadow:", ";padding:12px 8px;position:sticky;top:0;background:", ";color:", ";"], props => props.theme.text.primary, props => props.theme.shadows[1], props => props.theme.primaryLight, props => props.theme.onPrimary);
+})(["font-size:14px;font-weight:bold;border-color:1px solid ", ";box-shadow:", ";padding:8px;position:sticky;top:0;background:", ";color:", ";"], props => props.theme.text.primary, props => props.theme.shadows[1], props => props.theme.primaryLight, props => props.theme.onPrimary);
 /* harmony default export */ __webpack_exports__["default"] = (({
   content,
   header,
-  cellColor
+  cellColor,
+  country
 }) => {
   const cellMarkup = header ? __jsx(CellHeader, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: undefined
   }, content) : __jsx(Cell, {
     color: cellColor,
+    country: country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: undefined
   }, content);
@@ -383,19 +387,20 @@ const colors = {
       return __jsx(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], {
         key: `${rowIndex}-${cellIndex}`,
         cellColor: colors[cellIndex] || 'onPrimary',
+        country: !cellIndex,
         content: cellIndex === 0 ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("img", {
           width: "24",
           height: "24",
           src: rows[rowIndex][cellIndex]['flag'],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 59
           },
           __self: undefined
         }), __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 60
           },
           __self: undefined
         }, rows[rowIndex][cellIndex]['country'])) : rows[rowIndex][cellIndex] // content={rows[rowIndex][cellIndex]}
@@ -414,7 +419,7 @@ const colors = {
     key: "heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: undefined
   }, headings.map(renderHeadingRow));
@@ -423,7 +428,7 @@ const colors = {
   return __jsx(DataTable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_3__["FadeIn"], {
@@ -431,31 +436,31 @@ const colors = {
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(ScrollTable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: undefined
   }, __jsx(Table, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: undefined
   }, theadMarkup), __jsx("tbody", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 90
     },
     __self: undefined
   }, tbodyMarkup)))));

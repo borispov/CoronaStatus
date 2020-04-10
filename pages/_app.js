@@ -77,6 +77,8 @@ export default (props) => {
               </a>
             </Link>
 
+    {/*
+    // This is Night Mode.. Currently disabled
             <a onClick={isLight ?setDarkTheme : setLightTheme}>
               <span>{ isLight ? '🌒' : '🌞'}</span>
               {
@@ -85,6 +87,7 @@ export default (props) => {
                 : (isHeb && 'מצב יום' || 'Light Mode')
               }
             </a>
+    */}
 
             <a onClick={toggleLang}>
               <span>&#127760;</span>

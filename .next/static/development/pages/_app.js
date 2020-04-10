@@ -143,7 +143,7 @@ var Header = function Header(_ref) {
       theme = _ref.theme,
       isHeb = _ref.isHeb,
       children = _ref.children;
-  var Tip = isHeb && 'תרומה לכפפות' || 'Gloves Tip';
+  var Tip = isHeb && 'טיפ לכפפות' || 'Gloves Tip';
   return __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["HeaderWrapper"], {
     __source: {
       fileName: _jsxFileName,
@@ -214,10 +214,14 @@ var Header = function Header(_ref) {
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    btnColor: "white",
     letterSpace: true,
     small: true,
-    bg: "error",
+    bg: "primaryVariant",
+    outline: "primaryLight",
+    fat: true,
     hoverUp: true,
+    hoverColor: "error2",
     link: true,
     __source: {
       fileName: _jsxFileName,
@@ -563,7 +567,7 @@ var Flex = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withCon
 }, function (props) {
   return props.flex;
 }, function (props) {
-  return props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : '';
+  return props.bgColor === 'inverse' ? props.theme.color : props.bgColor === 'bg' ? props.theme.bgColor : '';
 }, function (props) {
   return props.padding;
 }, function (props) {
@@ -641,7 +645,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
-  return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
+  return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white;
 }, function (props) {
   return props.outline ? "".concat(props.fat ? '2px' : '1px', " solid ").concat(props.theme[props.outline] || props.theme.primaryColor) : 'none';
 }, function (props) {
@@ -8570,7 +8574,7 @@ function _templateObject() {
 var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject(), function (props) {
   return props.theme.bgColor;
 }, function (props) {
-  return props.theme.color;
+  return props.theme.text.primary;
 }, function (props) {
   return props.theme.fontFamily;
 }, function (props) {
@@ -8799,36 +8803,23 @@ var darkTheme = function darkTheme() {
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
-    onClick: isLight ? setDarkTheme : setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: this
-  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 92
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 93
     },
     __self: this
   }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 101
     },
     __self: this
   })));
@@ -9087,9 +9078,10 @@ var themes = {
   dark: {
     type: 'dark',
     // primaryColor: '#BB86FC',
-    primaryColor: '#BC85F9',
+    // primaryColor: '#BC85F9',
     primaryDark: '#BB86FC',
     primaryVariant: '#3700B3',
+    primaryColor: '#8c385e',
     complementary: '#6646EE',
     bgColor: '#1B1B12',
     error: '#CF6679',
@@ -9099,7 +9091,7 @@ var themes = {
       main: '#4caf50',
       dark: '#388e3c'
     },
-    onPrimary: '#000',
+    onPrimary: '#FFF',
     onBg: '#FFF',
     onError: '#000',
     primaryHover: '#BF96FD',
@@ -9113,7 +9105,9 @@ var themes = {
     active: 'rgba(255,255,255,255.54)',
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
-    color: 'hsl(207, 0%, 87%)',
+    color: '#B8004B',
+    // color: '#8c385e',
+    // color: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',

@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
       max-width: 100%;
       font-size: 62.5%;
       background-color: ${props => props.theme.bgColor};
-      color: ${props => props.theme.color};
+      color: ${props => props.theme.text.primary};
       font-family: ${props => props.theme.fontFamily};
       direction: ${props => props.isHeb ? 'rtl' : ''};
   }

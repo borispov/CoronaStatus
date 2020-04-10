@@ -5,7 +5,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const Header = ({ title, theme, isHeb, children }) => {
-  const Tip = isHeb && 'תרומה לכפפות' || 'Gloves Tip'
+  const Tip = isHeb && 'טיפ לכפפות' || 'Gloves Tip'
   return (
     <HeaderWrapper>
         <FadeIn duration='0.4s'>
@@ -19,7 +19,7 @@ const Header = ({ title, theme, isHeb, children }) => {
               <NavItem>
                 <Link href='/Coffee'>
                   <a>
-                    <Button letterSpace small bg='error' hoverUp link>
+                    <Button btnColor="white" letterSpace small bg='primaryVariant' outline='primaryLight' fat hoverUp hoverColor='error2' link>
                       <i> <Coffee /> </i>
                       {Tip}
                     </Button>

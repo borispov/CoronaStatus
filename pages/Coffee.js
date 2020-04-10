@@ -190,13 +190,17 @@ export default withTheme(({ isHeb, theme }) => {
 
             <BoxFlex>
               <div>
-                <Button pointer hoverUp hoverColor='primaryLight' bg='primaryColor'>
-                  <a style={{textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">{isHeb ? 'עם ko-fi' : 'Support via ko-fi.com'}</a>
-                </Button>
+                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">
+                    <Button pointer link hoverUp hoverColor='primaryLight' bg='primaryColor'>
+                      {isHeb ? 'עם ko-fi' : 'via ko-fi.com (recommended)'}
+                    </Button>
+                  </a>
 
-                <Button pointer bg='primaryVariant' hoverUp hoverColor='primaryLight' >
-                  <a style={{textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">{isHeb ? 'עם PayPal' : 'Support via ko-fi.com'}</a>
-                </Button>
+                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={koFi + counter} target="_blank">
+                    <Button link pointer bg='primaryVariant' hoverUp hoverColor='primaryLight' >
+                      {isHeb ? 'עם PayPal' : 'PayPal Donate'}
+                    </Button>
+                  </a>
 
               </div>
 

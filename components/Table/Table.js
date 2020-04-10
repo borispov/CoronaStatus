@@ -51,6 +51,7 @@ export default ({ headings, theme, isHeb, rows }) => {
               <Cell
                 key={`${rowIndex}-${cellIndex}`}
                 cellColor={colors[cellIndex] || 'onPrimary'}
+                country={!cellIndex}
                 content={
                   cellIndex === 0 
                     ? (

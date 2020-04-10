@@ -41,7 +41,7 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   color: ${props => props.theme.onPrimary};
-  background: ${props => props.theme.primaryLight};
+  background: ${props => props.theme.primaryColor};
   font-size: 20px;
   padding: 4px 8px;
   margin-bottom: 8px;

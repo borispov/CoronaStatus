@@ -3,8 +3,9 @@ import styled, { withTheme } from 'styled-components'
 
 const Cell = styled.td`
   border: 2px solid ${props => props.theme.error2 + '33'};
-  padding: 10px 32px;
-  font-size: 16px;
+  padding: 10px 18px ${({ country }) => country ? '10px 0' : '10px 18px'};
+  font-size: ${props => props.country ? '12px' : '14px'};
+  max-width: 200px;
   font-family: 'Rubik';
   font-weight: ${props => props.color === 'active2' && 'bold' || props.color === 'successDefault' && 'bold' || 500};
   background: ${props => props.theme.primaryDark };
@@ -24,7 +25,7 @@ const CellHeader = styled.th`
   font-weight: bold;
   border-color: 1px solid ${props => props.theme.text.primary};
   box-shadow: ${props => props.theme.shadows[1]};
-  padding: 12px 8px;
+  padding: 8px;
   position: sticky;
   top: 0;
   background: ${props => props.theme.primaryLight};
@@ -33,14 +34,14 @@ const CellHeader = styled.th`
 
 
 
-export default ({ content, header, cellColor }) => {
+export default ({ content, header, cellColor, country }) => {
 
   const cellMarkup = header ? (
     <CellHeader>
       {content}
     </CellHeader>
   ) : (
-    <Cell color={cellColor}>
+    <Cell color={cellColor} country={country}>
       {content}
     </Cell>
   );

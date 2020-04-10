@@ -23,7 +23,7 @@ const Div = styled.div`
   }
 
   canvas {
-    background-color: #ededed;
+    // background-color: #ededed;
     border-radius: 8px;
   }
 

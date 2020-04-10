@@ -227,7 +227,7 @@ const Header = ({
   isHeb,
   children
 }) => {
-  const Tip = isHeb && 'תרומה לכפפות' || 'Gloves Tip';
+  const Tip = isHeb && 'טיפ לכפפות' || 'Gloves Tip';
   return __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["HeaderWrapper"], {
     __source: {
       fileName: _jsxFileName,
@@ -298,10 +298,14 @@ const Header = ({
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    btnColor: "white",
     letterSpace: true,
     small: true,
-    bg: "error",
+    bg: "primaryVariant",
+    outline: "primaryLight",
+    fat: true,
     hoverUp: true,
+    hoverColor: "error2",
     link: true,
     __source: {
       fileName: _jsxFileName,
@@ -626,7 +630,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 const Flex = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__Flex",
   componentId: "sc-3vwmv4-0"
-})(["display:flex;flex-direction:", ";justify-content:", ";margin:", ";color:", ";align-items:", ";flex:", ";background:", ";padding:", ";@media (max-width:768px){flex-direction:", ";}"], props => props.column && 'column' || 'row', props => props.justify || 'center', props => props.margin || '0 2px', props => props.color || '', props => props.alignItems || '', props => props.flex, props => props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : '', props => props.padding, props => props.mRow ? 'row' : props.mCol ? 'column' : '');
+})(["display:flex;flex-direction:", ";justify-content:", ";margin:", ";color:", ";align-items:", ";flex:", ";background:", ";padding:", ";@media (max-width:768px){flex-direction:", ";}"], props => props.column && 'column' || 'row', props => props.justify || 'center', props => props.margin || '0 2px', props => props.color || '', props => props.alignItems || '', props => props.flex, props => props.bgColor === 'inverse' ? props.theme.color : props.bgColor === 'bg' ? props.theme.bgColor : '', props => props.padding, props => props.mRow ? 'row' : props.mCol ? 'column' : '');
 const Heading = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
   displayName: "S__Heading",
   componentId: "sc-3vwmv4-1"
@@ -650,7 +654,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
+})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], props => props.radius ? props.radius : '4px', props => props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px', props => props.small ? '12px' : '16px', props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '');
 const LangBtn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Btn).withConfig({
   displayName: "S__LangBtn",
   componentId: "sc-3vwmv4-7"
@@ -2796,7 +2800,7 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
       max-width: 100%;
       font-size: 62.5%;
       background-color: ${props => props.theme.bgColor};
-      color: ${props => props.theme.color};
+      color: ${props => props.theme.text.primary};
       font-family: ${props => props.theme.fontFamily};
       direction: ${props => props.isHeb ? 'rtl' : ''};
   }
@@ -3100,36 +3104,23 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     },
     __self: undefined
   }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
-    onClick: isLight ? setDarkTheme : setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: undefined
-  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 93
     },
     __self: undefined
   }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, _extends({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 101
     },
     __self: undefined
   })));
@@ -3388,9 +3379,10 @@ const themes = {
   dark: {
     type: 'dark',
     // primaryColor: '#BB86FC',
-    primaryColor: '#BC85F9',
+    // primaryColor: '#BC85F9',
     primaryDark: '#BB86FC',
     primaryVariant: '#3700B3',
+    primaryColor: '#8c385e',
     complementary: '#6646EE',
     bgColor: '#1B1B12',
     error: '#CF6679',
@@ -3400,7 +3392,7 @@ const themes = {
       main: '#4caf50',
       dark: '#388e3c'
     },
-    onPrimary: '#000',
+    onPrimary: '#FFF',
     onBg: '#FFF',
     onError: '#000',
     primaryHover: '#BF96FD',
@@ -3414,7 +3406,9 @@ const themes = {
     active: 'rgba(255,255,255,255.54)',
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
-    color: 'hsl(207, 0%, 87%)',
+    color: '#B8004B',
+    // color: '#8c385e',
+    // color: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',

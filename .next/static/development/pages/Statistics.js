@@ -116,7 +116,7 @@ var Flex = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withCon
 }, function (props) {
   return props.flex;
 }, function (props) {
-  return props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : '';
+  return props.bgColor === 'inverse' ? props.theme.color : props.bgColor === 'bg' ? props.theme.bgColor : '';
 }, function (props) {
   return props.padding;
 }, function (props) {
@@ -194,7 +194,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
 }, function (props) {
-  return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary;
+  return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white;
 }, function (props) {
   return props.outline ? "".concat(props.fat ? '2px' : '1px', " solid ").concat(props.theme[props.outline] || props.theme.primaryColor) : 'none';
 }, function (props) {
@@ -296,8 +296,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Cell = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].td.withConfig({
   displayName: "Cell",
   componentId: "h1tosf-0"
-})(["border:2px solid ", ";padding:10px 32px;font-size:16px;font-family:'Rubik';font-weight:", ";background:", ";color:", ";font-weight:500;span{padding-right:4px;margin-right:4px;}> *{padding:2px;}"], function (props) {
+})(["border:2px solid ", ";padding:10px 18px ", ";font-size:", ";max-width:200px;font-family:'Rubik';font-weight:", ";background:", ";color:", ";font-weight:500;span{padding-right:4px;margin-right:4px;}> *{padding:2px;}"], function (props) {
   return props.theme.error2 + '33';
+}, function (_ref) {
+  var country = _ref.country;
+  return country ? '10px 0' : '10px 18px';
+}, function (props) {
+  return props.country ? '12px' : '14px';
 }, function (props) {
   return props.color === 'active2' && 'bold' || props.color === 'successDefault' && 'bold' || 500;
 }, function (props) {
@@ -308,7 +313,7 @@ var Cell = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].td.withConf
 var CellHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].th.withConfig({
   displayName: "Cell__CellHeader",
   componentId: "h1tosf-1"
-})(["font-size:14px;font-weight:bold;border-color:1px solid ", ";box-shadow:", ";padding:12px 8px;position:sticky;top:0;background:", ";color:", ";"], function (props) {
+})(["font-size:14px;font-weight:bold;border-color:1px solid ", ";box-shadow:", ";padding:8px;position:sticky;top:0;background:", ";color:", ";"], function (props) {
   return props.theme.text.primary;
 }, function (props) {
   return props.theme.shadows[1];
@@ -317,21 +322,23 @@ var CellHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].th.wi
 }, function (props) {
   return props.theme.onPrimary;
 });
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var content = _ref.content,
-      header = _ref.header,
-      cellColor = _ref.cellColor;
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref2) {
+  var content = _ref2.content,
+      header = _ref2.header,
+      cellColor = _ref2.cellColor,
+      country = _ref2.country;
   var cellMarkup = header ? __jsx(CellHeader, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }, content) : __jsx(Cell, {
     color: cellColor,
+    country: country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: this
   }, content);
@@ -413,19 +420,20 @@ var colors = {
       return __jsx(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], {
         key: "".concat(rowIndex, "-").concat(cellIndex),
         cellColor: colors[cellIndex] || 'onPrimary',
+        country: !cellIndex,
         content: cellIndex === 0 ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("img", {
           width: "24",
           height: "24",
           src: rows[rowIndex][cellIndex]['flag'],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 59
           },
           __self: this
         }), __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 60
           },
           __self: this
         }, rows[rowIndex][cellIndex]['country'])) : rows[rowIndex][cellIndex] // content={rows[rowIndex][cellIndex]}
@@ -444,7 +452,7 @@ var colors = {
     key: "heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: this
   }, headings.map(renderHeadingRow));
@@ -453,7 +461,7 @@ var colors = {
   return __jsx(DataTable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 85
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_3__["FadeIn"], {
@@ -461,31 +469,31 @@ var colors = {
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: this
   }, __jsx(ScrollTable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: this
   }, __jsx(Table, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 88
     },
     __self: this
   }, __jsx("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: this
   }, theadMarkup), __jsx("tbody", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 90
     },
     __self: this
   }, tbodyMarkup)))));

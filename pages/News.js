@@ -70,7 +70,7 @@ const Source = styled.h1`
 const Title = styled(S.Heading2)`
   font-weight: 700;
   font-family: 'Rubik';
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.color + 'ff'};
   @media (max-width: 768px) {
     max-width: fit-content;
   }

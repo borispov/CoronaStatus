@@ -8,7 +8,7 @@ export const Flex = styled.div`
   color: ${props => props.color || ''};
   align-items: ${props => props.alignItems || ''};
   flex: ${props => props.flex};
-  background: ${props => props.bgColor === 'inverse' ? props.theme.color : props.bGcolor === 'bg' ? props.theme.bgColor : ''};
+  background: ${props => props.bgColor === 'inverse' ? props.theme.color : props.bgColor === 'bg' ? props.theme.bgColor : ''};
   padding: ${props => props.padding};
   @media (max-width: 768px) {
     flex-direction: ${props => props.mRow ? 'row' : props.mCol ? 'column' : ''};
@@ -94,7 +94,7 @@ const Btn = styled.button`
     || '10px 14px'};
   font-size: ${props => props.small ? '12px' : '16px'};
   background: ${props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor};
-  color: ${props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.onPrimary};
+  color: ${props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white};
   border: ${props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none'};
   font-weight: ${props => props.bold && 'bold' || 'normal'};
   cursor: ${props => props.link ? 'pointer' : 'cursor'};

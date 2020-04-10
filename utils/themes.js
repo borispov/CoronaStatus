@@ -138,9 +138,10 @@ export const themes = {
     type: 'dark',
 
     // primaryColor: '#BB86FC',
-    primaryColor: '#BC85F9',
+    // primaryColor: '#BC85F9',
     primaryDark: '#BB86FC',
     primaryVariant: '#3700B3',
+    primaryColor: '#8c385e',
 
     complementary: '#6646EE',
 
@@ -154,7 +155,7 @@ export const themes = {
       dark: '#388e3c'
     },
 
-    onPrimary: '#000',
+    onPrimary: '#FFF',
     onBg: '#FFF',
     onError: '#000',
 
@@ -172,7 +173,9 @@ export const themes = {
     focus: 'rgba(0, 0, 0, 0.12)',
     focusOpacity: 0.12,
 
-    color: 'hsl(207, 0%, 87%)',
+    color: '#B8004B',
+    // color: '#8c385e',
+    // color: 'hsl(207, 0%, 87%)',
     boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
     categoryColor: '#CBD2D9',
     categoryHoverColor: '#9AA5B1',
