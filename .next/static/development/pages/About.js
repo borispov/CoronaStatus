@@ -153,7 +153,7 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
   return props.center ? 'center' : '';
 }, function (props) {
   return props.fontSize || '16px';
@@ -167,6 +167,8 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
   return props.padding || '';
 }, function (props) {
   return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
+}, function (props) {
+  return props.rtl ? 'rtl' : 'inherit';
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -220,7 +222,7 @@ var Button = function Button(props) {
   return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 144
     },
     __self: this
   }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -228,7 +230,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 145
     },
     __self: this
   }), props.children);
@@ -4277,17 +4279,23 @@ var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/About.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+ // const someHeader = `When I am not practicing web development and doing geeky stuff, I am usually concerned with either work or family. I am a father of a wonderful little girl whose at the moment of writing is 1y10m old, and a Husband with a lovely, supporting and loving wife who has been a part of assembling this project from day [0]. At work, I'm practicing as a social worker in the mental health field, a place that reminds me the importance of humility`
+
+var welcomeEng = 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.';
+var welcomeHeb = 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.';
+
+var lastPara = __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05E0\u05D5\u05E6\u05E8 \u05DE\u05EA\u05D5\u05DA \u05E6\u05D5\u05E8\u05DA \u05DC\u05DE\u05E7\u05D5\u05DD \u05DE\u05D0\u05D5\u05E8\u05D2\u05DF \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC \u05D4\u05DE\u05D9\u05D3\u05E2 \u05D4\u05D9\u05E7\u05E8 \u05D4\u05DE\u05D5\u05D6\u05E8\u05DD \u05DB\u05DC \u05D9\u05D5\u05DD \u05D1\u05E7\u05D1\u05D5\u05E6\u05D5\u05EA \u05D4\u05D5\u05D5\u05D0\u05D8\u05E1\u05D0\u05E4 \u05D4\u05E9\u05D5\u05E0\u05D5\u05EA \u05E9\u05DC\u05E0\u05D5 \u05D5\u05D4\u05D5\u05DC\u05DA \u05DC\u05D0\u05D9\u05D1\u05D5\u05D3 \u05DC\u05D0\u05D7\u05E8 \u05DE\u05E1\u05E4\u05E8 \u05D3\u05E7\u05D5\u05EA \u05D0\u05D5 \u05E9\u05E2\u05D5\u05EA \u05D1\u05DE\u05E7\u05E8\u05D4 \u05D4\u05D8\u05D5\u05D1. \u05E0\u05D5\u05E1\u05E3 \u05DC\u05DB\u05DA, \u05D4\u05D0\u05EA\u05E8 \u05DE\u05E1\u05E4\u05E7 \u05DE\u05E7\u05D5\u05DD \u05DC\u05D4\u05EA\u05E2\u05D3\u05DB\u05DF \u05D1\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D4\u05E8\u05DC\u05D5\u05D5\u05E0\u05D8\u05D9\u05D9\u05DD \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4 \u05D1\u05D0\u05E8\u05E5 \u05D5\u05D1\u05E2\u05D5\u05DC\u05DD, \u05D5\u05DE\u05E7\u05E0\u05D4 \u05D9\u05DB\u05D5\u05DC\u05EA \u05DC\u05E9\u05DC\u05D5\u05D8 \u05D1\u05DE\u05D9\u05E0\u05D5\u05DF \u05D4\u05D4\u05EA\u05E2\u05D3\u05DB\u05E0\u05D5\u05EA, \u05D5\u05D6\u05D0\u05EA \u05D1\u05DE\u05E7\u05D5\u05DD \u05DC\u05D3\u05D1\u05D5\u05E7 \u05D1\u05DE\u05E1\u05DA \u05D4\u05D8\u05DC\u05D5\u05D9\u05D6\u05D9\u05D4 \u05DE\u05D5\u05DC \u05D4\u05D7\u05D3\u05E9\u05D5\u05EA \u05D0\u05E9\u05E8 \u05DC\u05E2\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA \u05E8\u05E7 \u05DE\u05E2\u05DC\u05D5\u05EA \u05DC\u05D7\u05E6\u05D9\u05DD \u05DE\u05D9\u05D5\u05EA\u05E8\u05D9\u05DD \u05D5\u05D0\u05D5\u05D5\u05D9\u05E8\u05D4 \u05E9\u05DC\u05D9\u05DC\u05D9\u05EA \u05D1\u05D1\u05D9\u05EA.");
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var isHeb = _ref.isHeb;
-  var welcome = 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.';
+  var welcome = isHeb && welcomeHeb || welcomeEng;
   return __jsx("div", {
     style: {
       backgroundColor: '#d9d9d933'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 21
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["FadeIn"], {
@@ -4295,7 +4303,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 22
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
@@ -4305,7 +4313,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 23
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Heading"], {
@@ -4314,129 +4322,143 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 24
     },
     __self: this
   }, " Bonjour!"), __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
     txt: welcome,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 25
     },
     __self: this
   }), __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
     txt: 'This website is created by Boris Povolotsky',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, "All information provided is legal. The data is gathered through free sources like:", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }), " ", __jsx("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, "WHO"), ", ", __jsx("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, "worldometers"), ", ", __jsx("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, "ourwourldindata"), " and government health ministry websites.", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }), "Resources section is a handmade csv file shared between colleagues and people with valuable information to share. ", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }), "If you have something valuable to contribute to this list, please let me know via ", __jsx("a", {
-    href: "mailto:boristofu@gmail.com",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, " email "), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }), "If you like to contribute, say hi or leave feedback you can accomplish that either by ", __jsx("a", {
-    href: "https://ncorona.live/Coffee",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, "Supporting"), " or email. Let me know what you like and don't like. You can ", __jsx("a", {
-    href: "mailto:boristofu@gmail.com",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 27
     },
     __self: this
-  }, " Mail Me "), "."), __jsx("br", {
+  }), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
+    rtl: true,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: this
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }), __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    txt: 'A little bit about me',
+  }, isHeb ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\u05DB\u05DC \u05D4\u05DE\u05D9\u05D3\u05E2 \u05D4\u05DE\u05E1\u05E4\u05D5\u05E7 \u05D1\u05D0\u05EA\u05E8 \u05DE\u05D2\u05D9\u05E2 \u05DE\u05DE\u05E7\u05D5\u05E8\u05D5\u05EA \u05D7\u05D5\u05E7\u05D9\u05D9\u05DD \u05DB\u05D2\u05D5\u05DF:", __jsx("strong", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: this
-  }), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
+  }, "WHO.int, worldometers, ourwourldindata.org"), " \u05D5\u05DE\u05E7\u05D5\u05E8\u05D5\u05EA \u05DE\u05DE\u05E9\u05DC\u05EA\u05D9\u05D9\u05DD \u05E9\u05D5\u05E0\u05D9\u05DD.") : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "All information provided is legal. The data is gathered through free sources like:", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 34
     },
     __self: this
-  }, "When I am not practicing web development and doing geeky stuff, I am usually concerned with either work or family. I am a father of a wonderful little girl whose at the moment of writing is 1y10m old, and a Husband with a lovely, supporting and loving wife who has been a part of assembling this project from day [0]. At work, I'm practicing as a social worker in the mental health field, a place that reminds me the importance of humility."))));
+  }), " ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "WHO"), ", ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "worldometers"), ", ", __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "ourwourldindata"), " and government health ministry websites."), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }), isHeb ? 'מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין מכרים וקולגות בעלי מידע שימושי. אם תרצו להוסיף מידע למאגר כדי שיופיע כאן באתר, אנא צרו קשר' : 'Resources section is a handmade csv file shared between colleagues and people with valuable information to share.', __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }), isHeb ? 'אם בכלל, תרצו לקחת חלק בפרויקט ולתרום חלקכם, עשו זאת ע״י השארת פידבק, השארת טיפ דרך דף התרומה, נשמח לקבל הצעות ייעול או בקשות לפיצרים' : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "If you like to contribute, say hi or leave feedback you can accomplish that either by ", __jsx("a", {
+    href: "https://ncorona.live/Coffee",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: this
+  }, "Supporting"), " or email. Let me know what you like and don\\'t like. You can ", __jsx("a", {
+    href: "mailto:boristofu@gmail.com",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: this
+  }, " Mail Me ")), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }), isHeb && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\u05E0\u05D9\u05EA\u05DF \u05DC\u05D9\u05E6\u05D5\u05E8 \u05E7\u05E9\u05E8 \u05D3\u05E8\u05DA \u05D4\u05DE\u05D9\u05D9\u05DC: ", __jsx("a", {
+    href: "mailto:boristofu@gmail.com",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, "boristofu@gmail.com"))), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }), __jsx(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    txt: 'nCorona\'s BIO',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
+    rtl: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, isHeb ? lastPara : 'This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.'))));
 });
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!**********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FAbout&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2FAbout.js ***!
   \**********************************************************************************************************************************************/
@@ -4459,5 +4481,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=About.js.map

@@ -47,6 +47,7 @@ export const Paragraph = styled.p`
   line-height: ${props => props.lineHeight || 1.5};
   padding: ${props => props.padding || ''};
   color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
+  direction: ${props => props.rtl ? 'rtl' : 'inherit'};
   @media (max-width: 768px) {
     font-size: 12px;
     font-weight: 300;
