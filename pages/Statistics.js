@@ -3,6 +3,7 @@ import { Heading, Button, Paragraph, FadeIn, simpleWrapper, Container } from '..
 import HeaderDescription from '../components/HeaderDescription'
 import axios from 'axios'
 import Table from '../components/Table/Table'
+import Head from 'next/head'
 
 const baseURL = `https://corona.lmao.ninja/countries`
 
@@ -48,6 +49,9 @@ const Statistics = ({ isHeb, news }) => {
   const renderTable = rows && headers && <Table headings={headers} rows={rows} />
   return (
     <>
+    <Head>
+      <title>nCorona Stats</title>
+    </Head>
     <FadeIn duration="0.5s" delay="0.1s">
       <HeaderDescription txt={text} />
       {renderTable}

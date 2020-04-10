@@ -32,17 +32,17 @@ export default (props) => {
   const [isHeb, setHeb] = useState(true)
   const [menuOpen, setOpen] = useState(false)
 
+  const closeMenu     = () => setOpen(false)
   const toggleMenu    = () => setOpen(!menuOpen)
-  const toggleLang    = () => setHeb(!isHeb)
-  const setDarkTheme  = () => setTheme(darkTheme())
-  const setLightTheme = () => setTheme(lightTheme())
+  const toggleLang    = () => {closeMenu(), setHeb(!isHeb)}
+  const setDarkTheme  = () => {closeMenu(), setTheme(darkTheme())}
+  const setLightTheme = () => {closeMenu(), setTheme(lightTheme())}
 
-  const node = useRef()
+  const node          = useRef()
+  useOutSide(node, closeMenu)
 
-  useOutSide(node, () => setOpen(false))
-
-  const displayLang       = isHeb ? 'English' : 'עברית'
-  const isLight           = theme.type === 'light'
+  const displayLang   = isHeb ? 'English' : 'עברית'
+  const isLight       = theme.type === 'light'
 
   const { Component, pageProps } = props
 
@@ -55,31 +55,41 @@ export default (props) => {
         <div ref={node}>
           <Burger setOpen={toggleMenu} open={menuOpen} />
           <Menu setOpen={toggleMenu} open={menuOpen} >
-            <a onClick={isLight ?setDarkTheme : setLightTheme}>
-              <span>{ isLight ? '🌒' : '🌞'}</span>
-              {
-                isLight
-                  ? (isHeb && 'מצב לילה' || 'Dark Mode')
-                  : (isHeb && 'מצב יום' || 'Light Mode')
-              }
-            </a>
-            <a onClick={toggleLang}>
-              <span>&#127760;</span>
-              {displayLang}
-            </a>
+
             <Link href="/News">
-              <a alt="news">
+              <a alt="news" onClick={() => closeMenu()}>
                 <span>&#128240;</span>
                 { isHeb && 'חדשות' || 'News' }
               </a>
             </Link>
 
             <Link href="/Statistics">
-              <a alt="stats">
-                <span>&#8721;</span>
+              <a alt="stats" onClick={() => closeMenu()}>
+                <span>	&#128506;</span>
                 { isHeb && 'נתונים' || 'Data' }
               </a>
             </Link>
+
+            <Link href="/About">
+              <a alt="about" onClick={() => closeMenu()}>
+                <span>	&#128506;</span>
+                { isHeb && 'אודות' || 'About' }
+              </a>
+            </Link>
+
+            <a onClick={isLight ?setDarkTheme : setLightTheme}>
+              <span>{ isLight ? '🌒' : '🌞'}</span>
+              {
+                isLight
+                ? (isHeb && 'מצב לילה' || 'Dark Mode')
+                : (isHeb && 'מצב יום' || 'Light Mode')
+              }
+            </a>
+
+            <a onClick={toggleLang}>
+              <span>&#127760;</span>
+              {displayLang}
+            </a>
 
           </Menu>
         </div>

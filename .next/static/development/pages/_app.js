@@ -618,10 +618,8 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
-})(["background:", ";color:", ";direction:ltr;"], function (props) {
-  return props.theme.bgColor;
-}, function (props) {
-  return props.theme.color;
+})(["background:", ";direction:ltr;"], function (props) {
+  return props.theme.bg || props.theme.bgColor;
 });
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__Container",
@@ -8658,26 +8656,28 @@ var darkTheme = function darkTheme() {
       menuOpen = _useState3[0],
       setOpen = _useState3[1];
 
+  var closeMenu = function closeMenu() {
+    return setOpen(false);
+  };
+
   var toggleMenu = function toggleMenu() {
     return setOpen(!menuOpen);
   };
 
   var toggleLang = function toggleLang() {
-    return setHeb(!isHeb);
+    closeMenu(), setHeb(!isHeb);
   };
 
   var setDarkTheme = function setDarkTheme() {
-    return setTheme(darkTheme());
+    closeMenu(), setTheme(darkTheme());
   };
 
   var setLightTheme = function setLightTheme() {
-    return setTheme(lightTheme());
+    closeMenu(), setTheme(lightTheme());
   };
 
   var node = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])();
-  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_7__["default"])(node, function () {
-    return setOpen(false);
-  });
+  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_7__["default"])(node, closeMenu);
   var displayLang = isHeb ? 'English' : 'עברית';
   var isLight = theme.type === 'light';
   var Component = props.Component,
@@ -8727,77 +8727,106 @@ var darkTheme = function darkTheme() {
       lineNumber: 57
     },
     __self: this
-  }, __jsx("a", {
-    onClick: isLight ? setDarkTheme : setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, __jsx("span", {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/News",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59
     },
     __self: this
-  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
-    onClick: toggleLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    href: "/News",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
   }, __jsx("a", {
     alt: "news",
+    onClick: function onClick() {
+      return closeMenu();
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 60
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 61
     },
     __self: this
   }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 66
     },
     __self: this
   }, __jsx("a", {
     alt: "stats",
+    onClick: function onClick() {
+      return closeMenu();
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 67
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 68
     },
     __self: this
-  }, "\u2211"), isHeb && 'נתונים' || 'Data'))))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/About",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }, __jsx("a", {
+    alt: "about",
+    onClick: function onClick() {
+      return closeMenu();
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: this
+  }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
+    onClick: isLight ? setDarkTheme : setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
+    onClick: toggleLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 98
     },
     __self: this
   })));
@@ -8939,6 +8968,8 @@ var event = function event(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themes", function() { return themes; });
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
 var themes = {
   common: {
     fontFamily: "Rubik, Montserrat, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
@@ -8961,18 +8992,24 @@ var themes = {
       3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
       4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
     },
-    general: {
+    general: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      primaryDark: '#31000d',
+      primaryColor: '#5C0434',
+      primaryLight: 'rgb(124,54,92)',
+      primaryVariant: '#B8004B',
+      analogous: '#58045c',
+      grey: '#d2d2d2',
+      bgColor: '#F5F5F5',
       successDefault: '#4caf50',
-      primaryColor: '#6646EE',
-      primaryDark: '#303f9f',
-      primaryVariant: '#3700B3',
+      secondaryColor: '#6646EE',
+      secondaryDark: '#303f9f',
+      secondaryVariant: '#3700B3',
       complementary: '#BC85F9',
       error: '#b00020',
       error2: '#ee5f02',
       transparent: 'transparent',
-      white: '#FFF',
-      analogous: '#58045c'
-    }
+      white: '#FFF'
+    }, "analogous", '#58045c')
   },
   mobile: '660px',
   red: {

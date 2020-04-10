@@ -1123,17 +1123,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
         lineNumber: 32
       },
       __self: this
-    }), __jsx("meta", {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1, shrink-to-fit=no",
+    }), __jsx("title", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 33
       },
       __self: this
-    }), __jsx("meta", {
-      name: "description",
-      content: "This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+    }, "nCorona - Novel Coronavirus Statistics & Resources for Coping"), __jsx("meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, shrink-to-fit=no",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 34
@@ -1141,10 +1139,50 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       __self: this
     }), __jsx("meta", {
       name: "description",
-      content: "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D5\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD \u05D0\u05D5\u05D3\u05D5\u05EA \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05DB\u05DE\u05D5 \u05DB\u05DF \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC\u05DC \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8 \u05D4\u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9 \u05D5\u05DE\u05D9\u05D3\u05E2 \u05DE\u05DE\u05E9\u05E8\u05D3\u05D9 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA \u05DE\u05D4\u05E2\u05D5\u05DC\u05DD, \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05D5\u05D9\u05E2\u05D9\u05DC \u05DC\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05D4\u05DE\u05E6\u05D1 \u05DB\u05D2\u05D5\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD, \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05DE\u05E7\u05D5\u05D5\u05E0\u05D9\u05DD \u05D5\u05E2\u05D5\u05D3",
+      content: "This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 35
+      },
+      __self: this
+    }), __jsx("meta", {
+      name: "description",
+      content: "\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05D5\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD \u05D0\u05D5\u05D3\u05D5\u05EA \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05DB\u05DE\u05D5 \u05DB\u05DF \u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05E2\u05D1\u05D5\u05E8 \u05DB\u05DC\u05DC \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8 \u05D4\u05DB\u05D5\u05DC\u05DC \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9 \u05D5\u05DE\u05D9\u05D3\u05E2 \u05DE\u05DE\u05E9\u05E8\u05D3\u05D9 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA \u05DE\u05D4\u05E2\u05D5\u05DC\u05DD, \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05D5\u05D9\u05E2\u05D9\u05DC \u05DC\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05D4\u05DE\u05E6\u05D1 \u05DB\u05D2\u05D5\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD, \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05DE\u05E7\u05D5\u05D5\u05E0\u05D9\u05DD \u05D5\u05E2\u05D5\u05D3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }), __jsx("meta", {
+      property: "og:title",
+      content: "https://nCorona.live",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }), __jsx("meta", {
+      property: "og:description",
+      content: "COVID19 Novel Coronavirus live data & graphs covering total and daily deaths, recoveries, critical cases for each country as well as globally.",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }), __jsx("meta", {
+      property: "og:image",
+      content: "https://ncorona.live/apple-touch-icon.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }), __jsx("meta", {
+      property: "og:site_name",
+      content: "nCorona C19",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
       },
       __self: this
     }), __jsx("link", {
@@ -1153,7 +1191,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "https://ncorona.live/favicon.ico",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 42
       },
       __self: this
     }), __jsx("link", {
@@ -1162,7 +1200,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/apple-touch-icon.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 43
       },
       __self: this
     }), __jsx("link", {
@@ -1172,7 +1210,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/favicon-32x32.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 44
       },
       __self: this
     }), __jsx("link", {
@@ -1182,7 +1220,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/favicon-16x16.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 45
       },
       __self: this
     }), __jsx("link", {
@@ -1190,7 +1228,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       href: "/site.webmanifest",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 46
       },
       __self: this
     }), __jsx("link", {
@@ -1198,7 +1236,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 48
       },
       __self: this
     }), __jsx("script", {
@@ -1206,7 +1244,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       src: `https://www.googletagmanager.com/gtag/js?id=${_utils_gtag__WEBPACK_IMPORTED_MODULE_3__["GA_TRACKING_ID"]}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 50
       },
       __self: this
     }), __jsx("script", {
@@ -1222,25 +1260,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 54
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 67
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 68
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 69
       },
       __self: this
     })));

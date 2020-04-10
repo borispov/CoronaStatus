@@ -30,9 +30,14 @@ export default class extends Document {
           { this.props.styleTags }
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <meta charSet="utf-8" />
+          <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta name="description" content="This website provides updated Coronavirus statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc"/>
           <meta name="description" content="אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד"/>
+          <meta property="og:title" content="https://nCorona.live"/>
+          <meta property="og:description" content="COVID19 Novel Coronavirus live data & graphs covering total and daily deaths, recoveries, critical cases for each country as well as globally." />
+          <meta property="og:image" content="https://ncorona.live/apple-touch-icon.png" />
+          <meta property="og:site_name" content="nCorona C19" />
 
           <link rel="icon" type="image/x-icon" href="https://ncorona.live/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>

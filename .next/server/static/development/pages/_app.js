@@ -642,7 +642,7 @@ const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.wit
 const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
-})(["background:", ";color:", ";direction:ltr;"], props => props.theme.bgColor, props => props.theme.color);
+})(["background:", ";direction:ltr;"], props => props.theme.bg || props.theme.bgColor);
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
@@ -2967,16 +2967,24 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
     1: setOpen
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
+  const closeMenu = () => setOpen(false);
+
   const toggleMenu = () => setOpen(!menuOpen);
 
-  const toggleLang = () => setHeb(!isHeb);
+  const toggleLang = () => {
+    closeMenu(), setHeb(!isHeb);
+  };
 
-  const setDarkTheme = () => setTheme(darkTheme());
+  const setDarkTheme = () => {
+    closeMenu(), setTheme(darkTheme());
+  };
 
-  const setLightTheme = () => setTheme(lightTheme());
+  const setLightTheme = () => {
+    closeMenu(), setTheme(lightTheme());
+  };
 
   const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_5__["default"])(node, () => setOpen(false));
+  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_5__["default"])(node, closeMenu);
   const displayLang = isHeb ? 'English' : 'עברית';
   const isLight = theme.type === 'light';
   const {
@@ -3028,77 +3036,100 @@ const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE
       lineNumber: 57
     },
     __self: undefined
-  }, __jsx("a", {
-    onClick: isLight ? setDarkTheme : setLightTheme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, __jsx("span", {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/News",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59
     },
     __self: undefined
-  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
-    onClick: toggleLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: undefined
-  }, "\uD83C\uDF10"), displayLang), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/News",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
   }, __jsx("a", {
     alt: "news",
+    onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 61
     },
     __self: undefined
   }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx("a", {
     alt: "stats",
+    onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 68
     },
     __self: undefined
-  }, "\u2211"), isHeb && 'נתונים' || 'Data'))))), __jsx(Component, _extends({}, pageProps, {
+  }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/About",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "about",
+    onClick: () => closeMenu(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
+    onClick: isLight ? setDarkTheme : setLightTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: undefined
+  }, isLight ? '🌒' : '🌞'), isLight ? isHeb && 'מצב לילה' || 'Dark Mode' : isHeb && 'מצב יום' || 'Light Mode'), __jsx("a", {
+    onClick: toggleLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: undefined
+  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, _extends({}, pageProps, {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 98
     },
     __self: undefined
   })));
@@ -3264,10 +3295,17 @@ const themes = {
       4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
     },
     general: {
+      primaryDark: '#31000d',
+      primaryColor: '#5C0434',
+      primaryLight: 'rgb(124,54,92)',
+      primaryVariant: '#B8004B',
+      analogous: '#58045c',
+      grey: '#d2d2d2',
+      bgColor: '#F5F5F5',
       successDefault: '#4caf50',
-      primaryColor: '#6646EE',
-      primaryDark: '#303f9f',
-      primaryVariant: '#3700B3',
+      secondaryColor: '#6646EE',
+      secondaryDark: '#303f9f',
+      secondaryVariant: '#3700B3',
       complementary: '#BC85F9',
       error: '#b00020',
       error2: '#ee5f02',
