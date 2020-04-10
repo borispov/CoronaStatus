@@ -25,10 +25,10 @@ const colors = {
   0: 'onPrimary',
   1: 'successDefault',
   2: 'error2',
-  3: 'purpleComp',
-  4: 'error',
-  5: 'active2',
-  6: 'menuColor',
+  3: 'active2',
+  4: 'purpleComp',
+  5: 'error',
+  6: 'menuHover',
   7: 'menuColor'
 }
 

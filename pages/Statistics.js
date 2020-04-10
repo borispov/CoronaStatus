@@ -17,7 +17,7 @@ const Statistics = ({ isHeb, news }) => {
   const text = isHeb && hebHeader || engHeader
 
   const engHeaders = [ 'country', 'cases', 'active', 'recovered', 'critical', 'deaths', 'todayDeaths', 'todayCases']
-  const hebHeaders = [ 'מדינה', 'נדבקים', 'פעילים', 'החלימו', 'קריטי', 'מוות', 'מתו היום', 'מקרים חדשים' ]
+  const hebHeaders = [ 'מדינה', 'נדבקים', 'פעילים', 'מוות', 'החלימו', 'קריטי', 'מתו היום', 'מקרים חדשים' ]
   const headers = isHeb && hebHeaders || engHeaders
 
   useEffect(() => {
