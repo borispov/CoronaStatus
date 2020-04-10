@@ -53,7 +53,7 @@ export const StyledMenu = styled.nav`
     padding: 4px;
     cursor: pointer;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: 0.15rem;
     color: #F1F1F1;
     text-decoration: none;
