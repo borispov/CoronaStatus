@@ -18,17 +18,16 @@ export default ({ isHeb }) => {
   const welcome = isHeb && welcomeHeb || welcomeEng
 
   return (
-    <div style={{ backgroundColor: '#d9d9d933' }}>
+    <div>
       <FadeIn duration='0.2s' delay="0.1s">
-        <Container style={{ direction: 'ltr', marginBottom: '42px' }}>
+        <Container style={{ direction: 'ltr', marginBottom: '62px' }}>
           <Heading style={{ textAlign: 'center'}} > Bonjour!</Heading>
           <HeaderDescription txt={welcome} />
 
-          <HeaderDescription txt={'This website is created by Boris Povolotsky'} />
         
-        <Paragraph rtl>
+        <Paragraph rtl mw='820px' style={{ margin: '0 auto'}} >
           { isHeb ?
-            <>כל המידע המספוק באתר מגיע ממקורות חוקיים כגון:<strong>WHO.int, worldometers, ourwourldindata.org</strong> ומקורות ממשלתיים שונים.</>
+            <>כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים.</>
             : <>
               All information provided is legal.
               The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.
@@ -36,32 +35,33 @@ export default ({ isHeb }) => {
           }
           <br />
           { isHeb 
-              ? 'מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין מכרים וקולגות בעלי מידע שימושי. אם תרצו להוסיף מידע למאגר כדי שיופיע כאן באתר, אנא צרו קשר'
+              ? 'מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ.'
               : 'Resources section is a handmade csv file shared between colleagues and people with valuable information to share.'
           }
           <br />
-    { isHeb
-        ? 'אם בכלל, תרצו לקחת חלק בפרויקט ולתרום חלקכם, עשו זאת ע״י השארת פידבק, השארת טיפ דרך דף התרומה, נשמח לקבל הצעות ייעול או בקשות לפיצרים'
-        : <>If you like to contribute, say hi or leave feedback you can accomplish that either by <a href="https://ncorona.live/Coffee">Supporting</a> or email. Let me know what you like and don\'t like.
-        You can <a href="mailto:boristofu@gmail.com"> Mail Me </a></>
-    }
-    <br />
-    <br />
-    { isHeb && <>ניתן ליצור קשר דרך המייל: <a href="mailto:boristofu@gmail.com">boristofu@gmail.com</a></> }
-        </Paragraph>
-      <br />
-      <br />
-      <br />
-      <HeaderDescription txt={'nCorona\'s BIO'} />
-      <Paragraph rtl>
-    { isHeb 
-        ? lastPara
-        : 'This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.'
-    }
-      </Paragraph>
+          { isHeb
+              ? 'נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.'
+              : <>If you like to contribute, say hi or leave feedback you can accomplish that either by <a href="https://ncorona.live/Coffee">Supporting</a> or email. Let me know what you like and don\'t like.
+              You can <a href="mailto:nCoronaLive@gmail.com"> Mail Me </a></>
+          }
+          <br />
+          <br />
+          { isHeb && <>ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com">nCoronaLive@gmail.com</a></> }
+
+          <br />
+          <br />
+          <br />
+          <h1 style={{ textAlign: 'center' }} > nCorona's BIO</h1>
+          { isHeb 
+              ? lastPara
+              : 'This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.'
+          }
+          </Paragraph>
+          <br />
 
     </Container>
 
+    <HeaderDescription txt={'This website is created by Boris Povolotsky'} />
       </FadeIn>
     </div>
   )
