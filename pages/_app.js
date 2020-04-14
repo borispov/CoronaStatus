@@ -17,7 +17,10 @@ import * as gtag from '../utils/gtag'
 async function currentCountry(ip){
   return await axios
     .get(`https://extreme-ip-lookup.com/json/${ip}`)
-    .then(res => res.data.country)
+    .then(res => {
+      const country = res.data.country
+      return country === undefined ? 'israel' : country
+    })
     .catch(e => 'israel')
 }
 
@@ -36,6 +39,7 @@ const darkTheme = () => ({
 
 function MyApp ({ Component, pageProps, userLocation }) {
   const [theme, setTheme] = useState(lightTheme())
+  console.log(userLocation);
   const [isHeb, setHeb] = useState(userLocation === 'israel' || userLocation === 'Israel' ? true : false)
   const [menuOpen, setOpen] = useState(false)
 
@@ -111,6 +115,7 @@ function MyApp ({ Component, pageProps, userLocation }) {
 MyApp.getInitialProps = async (appContext) => {
   const ipAdress = appContext.ctx.req.connection.remoteAddress
   const ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress
+  console.log(ip);
   const userLocation = await currentCountry(ip)
   const appProps = await App.getInitialProps(appContext)
   return { ...appProps, userLocation}

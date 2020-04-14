@@ -189,13 +189,13 @@ export default ({ S, country, isHeb, yday, comparison=true}) => {
                 }
                 <span>
                   {
-                    comparison && country !== 'world' && country !== 'World' && `(${formatNumber(yday[k])})`
+                    comparison && yday && country !== 'world' && country !== 'World' && `(${formatNumber(yday[k])})`
                   }
                 </span>
               </Number>
               <br />
               {
-                comparison && <Percentage>
+                comparison && yday && <Percentage>
                 <span>{ calcDiff(S[k])(yday[k]) < 0 && "\u2B07" || '\u2B06' }</span>
                 %{ Math.abs(calcDiff(S[k])(yday[k]))} 
                 </Percentage>

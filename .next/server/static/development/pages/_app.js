@@ -2948,7 +2948,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 async function currentCountry(ip) {
-  return await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://extreme-ip-lookup.com/json/${ip}`).then(res => res.data.country).catch(e => 'israel');
+  return await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://extreme-ip-lookup.com/json/${ip}`).then(res => {
+    const country = res.data.country;
+    return country === undefined ? 'israel' : country;
+  }).catch(e => 'israel');
 }
 
 next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_13__["pageview"](url));
@@ -2966,6 +2969,7 @@ function MyApp({
     0: theme,
     1: setTheme
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(lightTheme());
+  console.log(userLocation);
   const {
     0: isHeb,
     1: setHeb
@@ -2999,14 +3003,14 @@ function MyApp({
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 59
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_7__["default"], {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 61
     },
     __self: this
   }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3014,14 +3018,14 @@ function MyApp({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     },
     __self: this
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 63
     },
     __self: this
   }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3029,7 +3033,7 @@ function MyApp({
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 64
     },
     __self: this
   }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -3037,14 +3041,14 @@ function MyApp({
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 65
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/News",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 67
     },
     __self: this
   }, __jsx("a", {
@@ -3052,20 +3056,20 @@ function MyApp({
     onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 68
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 69
     },
     __self: this
   }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 74
     },
     __self: this
   }, __jsx("a", {
@@ -3073,20 +3077,20 @@ function MyApp({
     onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 75
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 76
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: this
   }, __jsx("a", {
@@ -3094,26 +3098,26 @@ function MyApp({
     onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 82
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 83
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 100
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 101
     },
     __self: this
   }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, _extends({}, pageProps, {
@@ -3121,7 +3125,7 @@ function MyApp({
     userLocation: userLocation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 109
     },
     __self: this
   })));
@@ -3130,6 +3134,7 @@ function MyApp({
 MyApp.getInitialProps = async appContext => {
   const ipAdress = appContext.ctx.req.connection.remoteAddress;
   const ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress;
+  console.log(ip);
   const userLocation = await currentCountry(ip);
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {

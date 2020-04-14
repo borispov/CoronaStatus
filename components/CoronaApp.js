@@ -1,20 +1,23 @@
 import { useState } from 'react'
-import Stats from './Stats'
+import { withTheme } from 'styled-components'
+import Select from 'react-select'
+
 import useTime from '../utils/useTime'
 import useTodayStats from '../utils/useTodayStats'
 import useCountries from '../utils/useCountries'
-import Chart from './Chart'
+import useYday from '../utils/useYday'
+
 import { Container } from './S'
+import Stats from './Stats'
+import Chart from './Chart'
 import HeaderDescription from './HeaderDescription'
 import CaseChart from './CaseChart'
-import Select from 'react-select'
-import { withTheme } from 'styled-components'
 
-import cns from '../assets/cns'
+import countriesHebArray from '../assets/cns.js'
 
 const calcDiff = current => prev => current !== 0 ? ((current - prev) / 100) * 100 : 0
 
-const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal }) => {
+const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, worldTime }) => {
 
   const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState(userLocation)
@@ -23,10 +26,11 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal })
   const url = 'https://nCorona.live/api/v1/'
   const url2 = 'https://corona.lmao.ninja/countries/'
   const worldUrl = 'https://corona.lmao.ninja/all'
-
+  const v2 = 'https://corona.lmao.ninja/v2/countries/'
   const { countryStats } = useTime(country, theme)
   const { todayStats } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
+  const { yesterdayCn } = useYday(v2, country)
 
   const { countries } = useCountries()
 
@@ -73,19 +77,19 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal })
     setCountry(inputValue)
   }
 
+
   const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
-  // const selectOptions = countries &&
-  //   countries
-  //   .map((country, idx) => ({
-  //     value: country,
-  //     label: cns[idx]
-  //   }))
+
+  // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
+  //   ? countries.map(a => ({ value: a, label: a }))
+  //   : countries
+  //       .map((country, idx) => ({
+  //           value: country,
+  //           label: countriesHebArray[idx]
+  //         }))
 
   return (
     <div>
-    {/*
-      <HeaderDescription />
-      */}
 
       <Container>
 
@@ -151,12 +155,16 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal })
         לכל היותר שלושה ימים. הנתונים המוצגים מחוץ לגרפים משקפים את הזמן הנתון ברגע הנוכחי ומתעדכנים בערך אחת לחצי שעה.'
       />
 
-      <CaseChart
-        showWorld={showWorld} 
-        country={country}
-        isHeb={isHeb}
-        theme={theme}
-      />
+    <Chart
+      isHeb={isHeb}
+      type='line'
+      labels={worldTime.labels}
+      data={worldTime.datasets}
+      label={isHeb && 'עולם' || 'World'}
+      fill={false}
+      stops={3}
+      showLegend={true}
+    />
 
     </Container>
 

@@ -1,22 +1,22 @@
-import CoronaApp from '../components/CoronaApp'
-
 import axios from 'axios'
-import { FadeIn } from '../components/S'
-
-import InfoSection from '../components/InfoSection'
-import Footer from '../components/Footer'
-
 import Head from 'next/head'
 
+import CoronaApp from '../components/CoronaApp'
+import InfoSection from '../components/InfoSection'
+import Footer from '../components/Footer'
+import { FadeIn } from '../components/S'
 
-function IndexPage({ isHeb, userLocation, yesterdayCn, yesterdayGlobal}) {
+import useWorldData from '../utils/useWorldData'
+
+
+function IndexPage({ isHeb, userLocation, worldTime, yesterdayGlobal}) {
   return (
     <>
       <Head>
         <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
       </Head>
       <FadeIn delay="0.5s">
-        <CoronaApp isHeb={isHeb} userLocation={userLocation} yesterdayCn={yesterdayCn} yesterdayGlobal={yesterdayGlobal} />
+        <CoronaApp isHeb={isHeb} userLocation={userLocation} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
         <InfoSection />
       </FadeIn>
     </>
@@ -24,7 +24,9 @@ function IndexPage({ isHeb, userLocation, yesterdayCn, yesterdayGlobal}) {
 }
 
 IndexPage.getInitialProps = async (ctx) => {
-  const { data } = await axios.get('https://corona.lmao.ninja/v2/countries/israel?yesterday=true')
+
+  const worldTime = await useWorldData()
+
   const globalData = await axios.get('https://corona.lmao.ninja/v2/all?yesterday=true')
   const yesterdayGlobal = {
     active: globalData.data.active,
@@ -37,15 +39,7 @@ IndexPage.getInitialProps = async (ctx) => {
     affectedCountries: globalData.data.affectedCountries
   }
 
-  const yesterdayCn = {
-    active: data.active,
-    cases: data.cases,
-    todayCases: data.todayCases,
-    recovered: data.recovered,
-    deaths: data.deaths,
-    country: data.country
-  }
-  return {yesterdayCn, yesterdayGlobal }
+  return {yesterdayGlobal, worldTime}
 }
 
 export default IndexPage

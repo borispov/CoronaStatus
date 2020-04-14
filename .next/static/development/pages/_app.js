@@ -10492,7 +10492,8 @@ function currentCountry(ip) {
         case 0:
           _context.next = 2;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("https://extreme-ip-lookup.com/json/".concat(ip)).then(function (res) {
-            return res.data.country;
+            var country = res.data.country;
+            return country === undefined ? 'israel' : country;
           })["catch"](function (e) {
             return 'israel';
           }));
@@ -10528,6 +10529,8 @@ function MyApp(_ref) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(lightTheme()),
       theme = _useState[0],
       setTheme = _useState[1];
+
+  console.log(userLocation);
 
   var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(userLocation === 'israel' || userLocation === 'Israel' ? true : false),
       isHeb = _useState2[0],
@@ -10565,14 +10568,14 @@ function MyApp(_ref) {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 59
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_10__["default"], {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 61
     },
     __self: this
   }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -10580,14 +10583,14 @@ function MyApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     },
     __self: this
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 63
     },
     __self: this
   }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -10595,7 +10598,7 @@ function MyApp(_ref) {
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 64
     },
     __self: this
   }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -10603,14 +10606,14 @@ function MyApp(_ref) {
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 65
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/News",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 67
     },
     __self: this
   }, __jsx("a", {
@@ -10620,20 +10623,20 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 68
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 69
     },
     __self: this
   }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 74
     },
     __self: this
   }, __jsx("a", {
@@ -10643,20 +10646,20 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 75
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 76
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: this
   }, __jsx("a", {
@@ -10666,26 +10669,26 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 82
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 83
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 100
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 101
     },
     __self: this
   }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
@@ -10693,7 +10696,7 @@ function MyApp(_ref) {
     userLocation: userLocation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 109
     },
     __self: this
   })));
@@ -10707,21 +10710,22 @@ MyApp.getInitialProps = function _callee(appContext) {
         case 0:
           ipAdress = appContext.ctx.req.connection.remoteAddress;
           ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress;
-          _context2.next = 4;
+          console.log(ip);
+          _context2.next = 5;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(currentCountry(ip));
 
-        case 4:
+        case 5:
           userLocation = _context2.sent;
-          _context2.next = 7;
+          _context2.next = 8;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_4___default.a.getInitialProps(appContext));
 
-        case 7:
+        case 8:
           appProps = _context2.sent;
           return _context2.abrupt("return", _objectSpread({}, appProps, {
             userLocation: userLocation
           }));
 
-        case 9:
+        case 10:
         case "end":
           return _context2.stop();
       }

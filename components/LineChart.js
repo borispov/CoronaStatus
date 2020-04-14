@@ -145,7 +145,7 @@ const LineChart = ( props, {theme} ) => {
         }
     },
     legend: {
-      display: props.showLegend!==undefined?false:true,
+      display: props.showLegend && true,
       position: 'bottom'
     },
 

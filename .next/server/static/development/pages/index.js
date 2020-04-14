@@ -97,10 +97,14 @@ module.exports =
 /*!***********************!*\
   !*** ./assets/cns.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"אפגניסטן,אלבניה,אלג'יריה,אנדורה,אנגולה,אנגווילה,אנטיגואה וברבודה,ארגנטינה,ארמניה,ארובה,אוסטרליה,אוסטריה,אזרבייג'ן,איי בהאמה,בחריין,בנגלדש,ברבדוס,בלארוס,בלגיה,בליז,בנין,ברמודה,בהוטן,בוליביה,בונייר סינט אוסטטיוס וסבא,בוסניה והרצגובינה,בוצואנה,ברזיל,איי בתולה בריטיים,ברוניי,בולגריה,בורקינה פאסו,בורונדי,קמבודיה,קמרון,קנדה,קייפ ורדה,איי קיימן,הרפובליקה המרכז - אפריקאית,צ'אד,צ'ילה,חרסינה,קולומביה,קונגו,קוסטה ריקה,חוף השנהב,קרואטיה,קובה,קוראסאו,קפריסין,הרפובליקה הצ'כית,הרפובליקה הדמוקרטית של קונגו,דנמרק,ג'יבוטי,דומיניקה,הרפובליקה הדומיניקנית,אקוודור,מצרים,אל סלבדור,גיניאה המשוונית,אריתריאה,אסטוניה,אתיופיה,איי פארו,איי פוקלנד,פיג'י,פינלנד,צרפת,פולינזיה הצרפתית,גבון,גמביה,ג'ורג'יה,גרמניה,גאנה,גיברלטר,יוון,גרינלנד,גרנדה,גואם,גואטמלה,גרנסי,גינאה,גינאה ביסאו,גיאנה,האיטי,הונדורס,הונגריה,איסלנד,הודו,אינדונזיה,בינלאומי,איראן,עירק,אירלנד,האי מאן,ישראל,איטליה,ג'מייקה,יפן,ג'רזי,ירדן,קזחסטן,קניה,קוסובו,כווית,קירגיזסטן,לאוס,לטביה,לבנון,ליבריה,לוב,ליכטנשטיין,ליטא,לוקסמבורג,מקדוניה,מדגסקר,מלאווי,מלזיה,האיים המלדיביים,מלי,מלטה,מאוריטניה,מאוריציוס,מקסיקו,מולדובה,מונקו,מונגוליה,מונטנגרו,מונטסראט,מרוקו,מוזמביק,מיאנמר,נמיביה,נפאל,הולנד,קלדוניה החדשה,ניו זילנד,ניקרגואה,ניז'ר,ניגריה,איי מריאנה הצפוניים,נורווגיה,עומאן,פקיסטן,פלשתינה,פנמה,פפואה גינאה החדשה,פרגוואי,פרו,הפיליפינים,פולין,פורטוגל,פוארטו ריקו,קטאר,רומניה,רוסיה,רואנדה,סנט קיטס ונביס,סנט לוסיה,וינסנט הקדוש ו ה - גרנידיים,סן מרינו,סאו טומה ופרינסיפה,ערב הסעודית,סנגל,סרביה,סיישל,סיירה לאון,סינגפור,סנט מרטן (חלק הולנדי),סלובקיה,סלובניה,סומליה,דרום אפריקה,דרום קוריאה,דרום סודן,ספרד,סרי לנקה,סודן,סורינאם,סווזילנד,שבדיה,שוויץ,סוריה,טייוואן,טנזניה,תאילנד,טימור,ללכת,טרינידד וטובגו,תוניסיה,טורקיה,איי טורקס וקאיקוס,אוגנדה,אוקראינה,איחוד האמירויות הערביות,הממלכה המאוחדת,ארצות הברית,איי הבתולה של ארצות הברית,אורוגוואי,אוזבקיסטן,הוותיקן,ונצואלה,וייטנאם,עולם,תימן,זמביה,זימבבואה";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const txt = "אפגניסטן,אלבניה,אלג'יריה,אנדורה,אנגולה,אנגווילה,אנטיגואה וברבודה,ארגנטינה,ארמניה,ארובה,אוסטרליה,אוסטריה,אזרבייג'ן,איי בהאמה,בחריין,בנגלדש,ברבדוס,בלארוס,בלגיה,בליז,בנין,ברמודה,בהוטן,בוליביה,בונייר סינט אוסטטיוס וסבא,בוסניה והרצגובינה,בוצואנה,ברזיל,איי בתולה בריטיים,ברוניי,בולגריה,בורקינה פאסו,בורונדי,קמבודיה,קמרון,קנדה,קייפ ורדה,איי קיימן,הרפובליקה המרכז - אפריקאית,צ'אד,צ'ילה,חרסינה,קולומביה,קונגו,קוסטה ריקה,חוף השנהב,קרואטיה,קובה,קוראסאו,קפריסין,הרפובליקה הצ'כית,הרפובליקה הדמוקרטית של קונגו,דנמרק,ג'יבוטי,דומיניקה,הרפובליקה הדומיניקנית,אקוודור,מצרים,אל סלבדור,גיניאה המשוונית,אריתריאה,אסטוניה,אתיופיה,איי פארו,איי פוקלנד,פיג'י,פינלנד,צרפת,פולינזיה הצרפתית,גבון,גמביה,ג'ורג'יה,גרמניה,גאנה,גיברלטר,יוון,גרינלנד,גרנדה,גואם,גואטמלה,גרנסי,גינאה,גינאה ביסאו,גיאנה,האיטי,הונדורס,הונגריה,איסלנד,הודו,אינדונזיה,בינלאומי,איראן,עירק,אירלנד,האי מאן,ישראל,איטליה,ג'מייקה,יפן,ג'רזי,ירדן,קזחסטן,קניה,קוסובו,כווית,קירגיזסטן,לאוס,לטביה,לבנון,ליבריה,לוב,ליכטנשטיין,ליטא,לוקסמבורג,מקדוניה,מדגסקר,מלאווי,מלזיה,האיים המלדיביים,מלי,מלטה,מאוריטניה,מאוריציוס,מקסיקו,מולדובה,מונקו,מונגוליה,מונטנגרו,מונטסראט,מרוקו,מוזמביק,מיאנמר,נמיביה,נפאל,הולנד,קלדוניה החדשה,ניו זילנד,ניקרגואה,ניז'ר,ניגריה,איי מריאנה הצפוניים,נורווגיה,עומאן,פקיסטן,פלשתינה,פנמה,פפואה גינאה החדשה,פרגוואי,פרו,הפיליפינים,פולין,פורטוגל,פוארטו ריקו,קטאר,רומניה,רוסיה,רואנדה,סנט קיטס ונביס,סנט לוסיה,וינסנט הקדוש ו ה - גרנידיים,סן מרינו,סאו טומה ופרינסיפה,ערב הסעודית,סנגל,סרביה,סיישל,סיירה לאון,סינגפור,סנט מרטן,סלובקיה,סלובניה,סומליה,דרום אפריקה,דרום קוריאה,דרום סודן,ספרד,סרי לנקה,סודן,סורינאם,סווזילנד,שבדיה,שוויץ,סוריה,טייוואן,טנזניה,תאילנד,טימור,ללכת,טרינידד וטובגו,תוניסיה,טורקיה,איי טורקס וקאיקוס,אוגנדה,אוקראינה,איחוד האמירויות הערביות,הממלכה המאוחדת,ארצות הברית,איי הבתולה של ארצות הברית,אורוגוואי,אוזבקיסטן,הוותיקן,ונצואלה,וייטנאם,עולם,תימן,זמביה,זימבבואה";
+const countriesHeb = txt.split(',');
+/* harmony default export */ __webpack_exports__["default"] = (countriesHeb);
 
 /***/ }),
 
@@ -177,166 +181,10 @@ const popKey = o => Object.keys(o)[0];
 /*!*********************************!*\
   !*** ./components/CaseChart.js ***!
   \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CaseChart.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 
-
-
-
-
-const baseURL = `https://nCorona.live/api/v1/alltime/`;
-
-const worldTimeData = async theme => {
-  const data = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL);
-  const dataRes = await Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__["default"])(data.data, theme);
-  return dataRes;
-};
-
-class CaseChart extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    _defineProperty(this, "present", val => {
-      this.setState({
-        dataToPresent: val,
-        active: val
-      });
-    });
-
-    this.state = {
-      active: 'worldCases',
-      dataToPresent: 'worldCases',
-      worldData: [],
-      worldLabels: [],
-      worldCases: [],
-      deathCases: [],
-      newCases: [],
-      showWorld: true,
-      loading: false
-    };
-  }
-
-  async componentDidMount() {
-    this.setState({
-      loading: true
-    });
-
-    try {
-      const timeStats = await worldTimeData(this.props.theme);
-      const worldCases = timeStats && timeStats.datasets.filter(a => a.label === 'cases');
-      const deathCases = timeStats && timeStats.datasets.filter(a => a.label === 'deaths');
-      const newCases = timeStats && timeStats.datasets.filter(a => a.label === 'new cases');
-      const worldLabels = timeStats && timeStats.labels;
-      this.setState({
-        worldData: timeStats,
-        worldCases,
-        deathCases,
-        newCases,
-        timeStats,
-        worldLabels,
-        loading: false
-      });
-    } catch (err) {
-      this.setState({
-        loading: false,
-        error: err
-      });
-    }
-  }
-
-  render() {
-    if (this.state.loading) {
-      return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        },
-        __self: this
-      }, __jsx("h1", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        },
-        __self: this
-      }, "Loading Data . . ."));
-    }
-
-    if (this.state.error) {
-      return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, __jsx("h1", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, ' error occured:' + this.state.error));
-    }
-
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
-      mw: "auto",
-      center: true,
-      secondary: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, this.props.isHeb && 'להלן: שיעור התפשטות הנגיף בעולם לפי: מקרי מוות ומסרים מקרים חדשים ליום' || 'Growth Rate of the virus in the world, including deaths and new cases'), __jsx("div", {
-      style: {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        padding: '34px 32px 8px 32px'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    }), this.state.worldData && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      legend: false,
-      type: "line",
-      labels: this.state.worldLabels // data={this.state[this.state.dataToPresent]}
-      ,
-      data: [...this.state.worldCases, ...this.state.deathCases, ...this.state.newCases],
-      label: this.props.isHeb ? 'נתונים מהעולם' : 'Global',
-      theme: this.props.theme,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }) || __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }, " Loading Charts ... "));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (CaseChart);
 
 /***/ }),
 
@@ -394,23 +242,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
-/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-select */ "react-select");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _assets_cns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../assets/cns */ "./assets/cns.js");
-/* harmony import */ var _assets_cns__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_cns__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select */ "react-select");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
+/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
+/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
+/* harmony import */ var _utils_useYday__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useYday */ "./utils/useYday.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./S */ "./components/S.js");
+/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_CaseChart__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -430,8 +280,9 @@ const CoronaApp = ({
   isHeb,
   theme,
   userLocation,
-  yesterdayCn,
-  yesterdayGlobal
+  yesterdayC,
+  yesterdayGlobal,
+  worldTime
 }) => {
   const {
     0: showWorld,
@@ -448,16 +299,20 @@ const CoronaApp = ({
   const url = 'https://nCorona.live/api/v1/';
   const url2 = 'https://corona.lmao.ninja/countries/';
   const worldUrl = 'https://corona.lmao.ninja/all';
+  const v2 = 'https://corona.lmao.ninja/v2/countries/';
   const {
     countryStats
-  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_2__["default"])(country, theme);
+  } = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_3__["default"])(country, theme);
   const {
     todayStats
-  } = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_3__["default"])(url, country);
-  const worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_3__["default"])(url, 'world').todayStats;
+  } = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, country);
+  const worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, 'world').todayStats;
+  const {
+    yesterdayCn
+  } = Object(_utils_useYday__WEBPACK_IMPORTED_MODULE_6__["default"])(v2, country);
   const {
     countries
-  } = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  } = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_5__["default"])();
   const worldTodaySorted = worldToday && {
     cases: worldToday.cases,
     active: worldToday.active,
@@ -499,23 +354,24 @@ const CoronaApp = ({
   const selectOptions = countries && countries.map(a => ({
     value: a,
     label: a
-  })); // const selectOptions = countries &&
-  //   countries
-  //   .map((country, idx) => ({
-  //     value: country,
-  //     label: cns[idx]
-  //   }))
+  })); // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
+  //   ? countries.map(a => ({ value: a, label: a }))
+  //   : countries
+  //       .map((country, idx) => ({
+  //           value: country,
+  //           label: countriesHebArray[idx]
+  //         }))
 
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 92
     },
     __self: undefined
-  }, __jsx(_S__WEBPACK_IMPORTED_MODULE_6__["Container"], {
+  }, __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx("form", {
@@ -527,7 +383,7 @@ const CoronaApp = ({
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 96
     },
     __self: undefined
   }, __jsx("label", {
@@ -537,10 +393,10 @@ const CoronaApp = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 99
     },
     __self: undefined
-  }, isHeb ? `נתונים לפי מדינה` : `Data For Country:`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_9___default.a, {
+  }, isHeb ? `נתונים לפי מדינה` : `Data For Country:`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: 'Select',
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
@@ -548,20 +404,20 @@ const CoronaApp = ({
     placeholder: country || 'ישראל',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 104
     },
     __self: undefined
-  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
     cn: country || todayStats && todayStats.country,
     todayStats: todayStatsSorted,
     yesteryday: yesterdayStatsSorted,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 113
     },
     __self: undefined
-  }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
     isHeb: isHeb,
     type: "line",
     labels: countryStats.labels // data={countryStats.datasets.filter(a => a.label === 'cases')}
@@ -573,40 +429,44 @@ const CoronaApp = ({
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 131
     },
     __self: undefined
-  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
     cn: 'World',
     todayWorld: worldTodaySorted,
     yesteryday: yesterdayGlobalSorted,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 145
     },
     __self: undefined
-  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_10__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 152
     },
     __self: undefined
-  }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    showWorld: showWorld,
-    country: country,
+  }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
     isHeb: isHeb,
-    theme: theme,
+    type: "line",
+    labels: worldTime.labels,
+    data: worldTime.datasets,
+    label: isHeb && 'עולם' || 'World',
+    fill: false,
+    stops: 3,
+    showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 158
     },
     __self: undefined
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(styled_components__WEBPACK_IMPORTED_MODULE_10__["withTheme"])(CoronaApp));
+/* harmony default export */ __webpack_exports__["default"] = (Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["withTheme"])(CoronaApp));
 
 /***/ }),
 
@@ -1051,7 +911,7 @@ const LineChart = (props, {
       }
     },
     legend: {
-      display: props.showLegend !== undefined ? false : true,
+      display: props.showLegend && true,
       position: 'bottom'
     },
     tooltips: {
@@ -1265,13 +1125,13 @@ const putLabel = (heb, k) => heb && hebLbl(k) || engLbl(k);
         lineNumber: 190
       },
       __self: undefined
-    }, comparison && country !== 'world' && country !== 'World' && `(${formatNumber(yday[k])})`)), __jsx("br", {
+    }, comparison && yday && country !== 'world' && country !== 'World' && `(${formatNumber(yday[k])})`)), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 196
       },
       __self: undefined
-    }), comparison && __jsx(Percentage, {
+    }), comparison && yday && __jsx(Percentage, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 198
@@ -1465,14 +1325,15 @@ function Stats({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CoronaApp */ "./components/CoronaApp.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/CoronaApp */ "./components/CoronaApp.js");
 /* harmony import */ var _components_InfoSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/InfoSection */ "./components/InfoSection.js");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
+/* harmony import */ var _utils_useWorldData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/useWorldData */ "./utils/useWorldData.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1483,13 +1344,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 function IndexPage({
   isHeb,
   userLocation,
-  yesterdayCn,
+  worldTime,
   yesterdayGlobal
 }) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
@@ -1501,17 +1363,17 @@ function IndexPage({
       lineNumber: 16
     },
     __self: this
-  }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_3__["FadeIn"], {
+  }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_6__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: this
-  }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__["default"], {
     isHeb: isHeb,
     userLocation: userLocation,
-    yesterdayCn: yesterdayCn,
+    worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
@@ -1528,10 +1390,8 @@ function IndexPage({
 }
 
 IndexPage.getInitialProps = async ctx => {
-  const {
-    data
-  } = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://corona.lmao.ninja/v2/countries/israel?yesterday=true');
-  const globalData = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://corona.lmao.ninja/v2/all?yesterday=true');
+  const worldTime = await Object(_utils_useWorldData__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  const globalData = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://corona.lmao.ninja/v2/all?yesterday=true');
   const yesterdayGlobal = {
     active: globalData.data.active,
     critical: globalData.data.critical,
@@ -1542,17 +1402,9 @@ IndexPage.getInitialProps = async ctx => {
     country: globalData.data.country,
     affectedCountries: globalData.data.affectedCountries
   };
-  const yesterdayCn = {
-    active: data.active,
-    cases: data.cases,
-    todayCases: data.todayCases,
-    recovered: data.recovered,
-    deaths: data.deaths,
-    country: data.country
-  };
   return {
-    yesterdayCn,
-    yesterdayGlobal
+    yesterdayGlobal,
+    worldTime
   };
 };
 
@@ -1642,7 +1494,17 @@ const sortForChart = (obj, theme) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// meant for Line Chart Cases/Deaths Chart
+/* harmony import */ var _themes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./themes */ "./utils/themes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+const theme = _objectSpread({}, _themes__WEBPACK_IMPORTED_MODULE_0__["themes"]['common'], {}, _themes__WEBPACK_IMPORTED_MODULE_0__["themes"]['light']);
+
 const firstWhole = (arr, n = 0) => {
   if (arr[n] > 0) return n;
   if (arr[n] == undefined) return 0;
@@ -1655,7 +1517,7 @@ const parseLabel = label => {
   return d.getDate() + '.' + ('0' + (d.getMonth() + 1)).toString();
 };
 
-const sortForChart = (obj, theme) => {
+const sortForChart = obj => {
   const zeroNull = c => c === null ? 0 : c;
 
   const sortedObj = obj.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -1707,6 +1569,175 @@ const sortForChart = (obj, theme) => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (sortForChart);
+
+/***/ }),
+
+/***/ "./utils/themes.js":
+/*!*************************!*\
+  !*** ./utils/themes.js ***!
+  \*************************/
+/*! exports provided: themes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themes", function() { return themes; });
+const themes = {
+  common: {
+    fontFamily: "Rubik, Montserrat, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
+    menuBorder: '#232F34',
+    menuBg: '#344955',
+    menuColor: '#4A6572',
+    menuHover: '#F9AA33',
+    headerBg: '#364F9F',
+    white: '#FFF',
+    black: '#000',
+    kofi: '#FF5E5B',
+    dark: '#343a40',
+    blue: '#007bff',
+    danger: '#dc3545',
+    light: '#f8f9fa',
+    secondary: '#303f9f',
+    shadows: {
+      0: "none",
+      1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+      2: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+      3: "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+      4: "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)"
+    },
+    general: {
+      primaryDark: '#31000d',
+      primaryColor: '#5C0434',
+      primaryLight: 'rgb(124,54,92)',
+      primaryVariant: '#B8004B',
+      analogous: '#58045c',
+      grey: '#d2d2d2',
+      bgColor: '#F5F5F5',
+      successDefault: '#4caf50',
+      secondaryColor: '#6646EE',
+      secondaryDark: '#303f9f',
+      secondaryVariant: '#3700B3',
+      complementary: '#BC85F9',
+      error: '#b00020',
+      error2: '#ee5f02',
+      transparent: 'transparent',
+      white: '#FFF',
+      analogous: '#58045c',
+      CTA: '#d0021c',
+      CTAHOVER: '#8A0011'
+    }
+  },
+  mobile: '660px',
+  red: {
+    type: 'red',
+    primaryColor: '#5C0434',
+    primaryDark: '#31000d',
+    primaryVariant: '#B8004B',
+    primaryLight: '#8c385e',
+    complementary: '#045c2c',
+    bgColor: '#F5F5F5',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    onPrimary: '#000',
+    onBg: '#FFF',
+    onError: '#000',
+    color: 'hsl(207, 0%, 87%)',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    }
+  },
+  light: {
+    type: 'light',
+    CTAHOVER: '#8A0011',
+    text: {
+      primary: 'rgba(0,0,0,0.87)',
+      secondary: 'rgba(0,0,0,0.60)',
+      disabled: 'rgba(0,0,0,0.38)'
+    },
+    primaryDark: '#31000d',
+    primaryColor: '#5C0434',
+    // Red
+    // primaryLight: '#8c385e',
+    primaryLight: 'rgb(124,54,92)',
+    primaryVariant: '#B8004B',
+    analogous: '#58045c',
+    complementary: '#1d8c4a',
+    // primaryColor: '#6646EE', // Main Purple
+    // primaryDark: '#303f9f',
+    // primaryVariant: '#3700B3',
+    // complementary: '#BC85F9',
+    purpleComp: '#BC85F9',
+    purpleVariant: '#3700B3',
+    purple: '#6646EE',
+    // Main Purple
+    bgColor: '#F5F5F5',
+    // bgColor: '#FFF',
+    error: '#b00020',
+    error2: '#ee5f02',
+    hover: 'rgba(0,0,0,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(0,0,0,0.54)',
+    active2: '#dc3545',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    successDefault: '#4caf50',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    color: '#121212',
+    onPrimary: '#FFFFFF',
+    onBg: '#000000',
+    onError: '#FFFFFF',
+    boxShadow: '0.8rem 0.8rem 1.5rem gray',
+    btnBg: '#344955',
+    btnColor: '#fff'
+  },
+  dark: {
+    type: 'dark',
+    // primaryColor: '#BB86FC',
+    // primaryColor: '#BC85F9',
+    primaryDark: '#BB86FC',
+    primaryVariant: '#3700B3',
+    primaryColor: '#8c385e',
+    complementary: '#6646EE',
+    bgColor: '#1B1B12',
+    error: '#CF6679',
+    error2: '#ee5f02',
+    success: {
+      light: '#81c784',
+      main: '#4caf50',
+      dark: '#388e3c'
+    },
+    onPrimary: '#FFF',
+    onBg: '#FFF',
+    onError: '#000',
+    primaryHover: '#BF96FD',
+    text: {
+      primary: 'hsl(207, 0%, 87%)',
+      secondary: 'hsl(207, 0%, 60%)',
+      disabled: 'hsl(207, 0%, 38%)'
+    },
+    hover: 'rgba(255,255,255,0.4)',
+    hoverOpacity: 0.04,
+    active: 'rgba(255,255,255,255.54)',
+    focus: 'rgba(0, 0, 0, 0.12)',
+    focusOpacity: 0.12,
+    color: '#B8004B',
+    // color: '#8c385e',
+    // color: 'hsl(207, 0%, 87%)',
+    boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
+    categoryColor: '#CBD2D9',
+    categoryHoverColor: '#9AA5B1',
+    btnBg: '#344955'
+  }
+};
 
 /***/ }),
 
@@ -1916,6 +1947,106 @@ function useTodayStats(url, country) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (useTodayStats);
+
+/***/ }),
+
+/***/ "./utils/useWorldData.js":
+/*!*******************************!*\
+  !*** ./utils/useWorldData.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sortForChart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const baseURL = `https://nCorona.live/api/v1/alltime/`;
+
+const useWorldData = async () => {
+  const data = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(baseURL);
+  const dataRes = await Object(_sortForChart__WEBPACK_IMPORTED_MODULE_0__["default"])(data.data);
+  return dataRes;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useWorldData);
+
+/***/ }),
+
+/***/ "./utils/useYday.js":
+/*!**************************!*\
+  !*** ./utils/useYday.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useYday; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const isUSA = s => s === 'usa' || s === 'Usa' || s === 'United States';
+
+const isUK = str => str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain';
+
+const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+
+const parseCountry = country => isUSA(country) ? 'USA' : isUK(country) ? 'UK' : country;
+
+function useYday(url, country) {
+  const {
+    0: yesterdayCn,
+    1: setStats
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  const {
+    0: loading,
+    1: setLoading
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: error,
+    1: setError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    async function fetchData() {
+      setLoading(true);
+      setError();
+      const URL = url + parseCountry(country).toLowerCase();
+
+      try {
+        const {
+          data
+        } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + '?yesterday=true');
+        const yesterdayCn = {
+          active: data.active,
+          cases: data.cases,
+          todayCases: data.todayCases,
+          recovered: data.recovered,
+          deaths: data.deaths,
+          country: data.country
+        };
+        setStats(yesterdayCn);
+        setLoading(false);
+      } catch (e) {
+        setError(e);
+      }
+    }
+
+    fetchData();
+  }, [country]);
+  return {
+    yesterdayCn,
+    loading,
+    error
+  };
+}
 
 /***/ }),
 

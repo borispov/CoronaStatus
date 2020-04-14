@@ -1,4 +1,9 @@
-// meant for Line Chart Cases/Deaths Chart
+import { themes } from './themes'
+
+const theme = {
+  ...themes['common'],
+  ...themes['light']
+}
 
 const firstWhole = (arr, n = 0) => {
   if (arr[n] > 0) return n
@@ -12,7 +17,7 @@ const parseLabel = label => {
   return d.getDate() + '.' + ('0' + (d.getMonth()+1)).toString()
 }
 
-const sortForChart = (obj, theme) => {
+const sortForChart = (obj) => {
 
   const zeroNull = c => c === null ? 0 : c
   const sortedObj = obj.sort((a,b) => new Date(a.date) - new Date(b.date))
