@@ -10,10 +10,12 @@ export const themes = {
     white: '#FFF',
     black: '#000',
 
+    kofi: '#FF5E5B',
+
     dark: '#343a40',
     blue: '#007bff',
     danger: '#dc3545',
-    light: 'f8f9fa',
+    light: '#f8f9fa',
 
     secondary: '#303f9f',
 
@@ -42,7 +44,9 @@ export const themes = {
       error2: '#ee5f02',
       transparent: 'transparent',
       white: '#FFF',
-      analogous: '#58045c'
+      analogous: '#58045c',
+      CTA: '#d0021c',
+      CTAHOVER: '#8A0011'
     }
 
   },
@@ -81,6 +85,8 @@ export const themes = {
 
   light: {
     type: 'light',
+
+    CTAHOVER: '#8A0011',
 
     text: {
       primary: 'rgba(0,0,0,0.87)',

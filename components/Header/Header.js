@@ -5,7 +5,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const Header = ({ title, theme, isHeb, children }) => {
-  const Tip = isHeb && 'טיפ לכפפות' || 'Gloves Tip'
+  const Tip = isHeb && '- השאר טיפ ל' || 'Tip Jar'
   return (
     <HeaderWrapper>
         <FadeIn duration='0.4s'>
@@ -17,10 +17,18 @@ const Header = ({ title, theme, isHeb, children }) => {
               </Link>
               {children}
               <NavItem>
+                { isHeb && 
+                  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet"/>
+                }
                 <Link href='/Coffee'>
                   <a>
-                    <Button btnColor="white" letterSpace small bg='primaryVariant' outline='primaryLight' fat hoverUp hoverColor='error2' link>
-                      <i> <Coffee /> </i>
+                    <Button
+                        KoFi
+                        hoverUp
+                        hoverColor='error2'
+                        fontFamily={isHeb && 'Rubik' || 'Quicksand'}
+                      >
+                      <img height='36' style={{ height: '36px', border: '0px' }} src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
                       {Tip}
                     </Button>
                   </a>

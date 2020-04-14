@@ -9,9 +9,10 @@ const Menu = ({ children, open }) => {
       {x}
     </div>
   )
+
   return (
     <StyledMenu open={open}>
-      {renderItems}
+        {renderItems}
     </StyledMenu>
   )
 }

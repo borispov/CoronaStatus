@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
-
+import { normalize } from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize}
   *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   .Select {
     color: black !important;
     font-size: 17px;
-    font-family: 'Rubik';
+    font-family: 'Rubik, Arial';
     z-index: 999999;
   }
 

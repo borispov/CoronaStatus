@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+
+
 const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 const parseCn = str => {
   return str === 'usa' || str === 'Usa' || str === 'United States'

@@ -1,4 +1,4 @@
-import styled, { withTheme, keyframes } from 'styled-components'
+import styled, { withTheme, keyframes, css } from 'styled-components'
 
 export const Flex = styled.div`
   display: flex;
@@ -77,7 +77,7 @@ export const Container = styled.div`
     max-width: 1140px;
   }
   transition: all .5s cubic-bezier(.55,0,.1,1);
-  width: 85%;
+  // width: 85%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -87,16 +87,23 @@ export const Container = styled.div`
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
-  padding: ${props => props.small
-    && '.375rem .75rem' || props.medium
+  font-size: 16px;
+  padding: ${props => props.medium
     && '6px 9px' || props.big 
     && '14px'
-    || '10px 14px'};
-  font-size: ${props => props.small ? '12px' : '16px'};
-  background: ${props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor};
+    || '8px 10px'};
+
+  ${props => props.small && css`
+      font-size: 12px;
+      padding: 0rem 1rem;
+  `};
+
+
+  background: ${props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor};
   color: ${props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white};
   border: ${props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none'};
   font-weight: ${props => props.bold && 'bold' || 'normal'};
+  font-family: 'Rubik';
   cursor: ${props => props.link ? 'pointer' : 'cursor'};
   outline: none;
   line-height: 1.5;
@@ -118,33 +125,27 @@ const Btn = styled.button`
     padding: 2px 4px;
     letter-spacing: 0.2px;
   }
-`
 
-const LangBtn = styled(Btn)`
-  position: relative;
-  background: lightblue;
-  // background: ${props => props.theme.categoryColor};
-  // color: ${props => props.theme.color};
-  color: #111;
-  padding: 0.54rem 0.85rem;
-  font-size: 12px;
-  font-weight: 400;
-  font-family: 'Rubik';
-  outline: none;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  margin: 0 6px;
-  margin-left: 16px;
-  z-index: 1;
+  ${props => props.KoFi && 
+    css`
+      font-family: ${props.fontFamily};
+      font-weight: 700;
+      margin-left: 4px;
+      margin-right: 4px;
+      padding: 0 12px;
+      letter-spacing: 1.75px;
+      color: ${props => props.theme.white};
+      cursor: pointer;
+      background: ${props => props.theme.kofi};
+    `
+  };
+
 `
 
 export const Button = props => (
-  props.langBtn && 
-      <LangBtn {...props} >{props.children}</LangBtn>
-     || <Btn onClick={props.onClick} {...props}>
-      {props.children}
-    </Btn>
+  <Btn onClick={props.onClick} {...props}>
+    {props.children}
+  </Btn>
 )
 
 

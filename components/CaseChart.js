@@ -3,7 +3,6 @@ import { Button, Container, Paragraph } from './S'
 import axios from 'axios'
 import sortForChart from '../utils/sortForChart'
 import Chart from './Chart'
-import Spinner from './Spinner'
 
 const baseURL = `https://nCorona.live/api/v1/alltime/`
 
@@ -44,8 +43,6 @@ class CaseChart extends React.Component {
       const newCases = timeStats && timeStats.datasets.filter(a => a.label === 'new cases')
       const worldLabels = timeStats && timeStats.labels
 
-
-
       this.setState({
         worldData: timeStats,
         worldCases,
@@ -79,48 +76,6 @@ class CaseChart extends React.Component {
           </Paragraph>
 
         <div style={{display: 'flex', justifyContent: 'space-evenly', padding: '34px 32px 8px 32px'}}>
-
-      {/*
-          <Button
-            link
-            active={this.state.active === 'worldCases'} 
-            bg='transparent' 
-            fat 
-            hoverColor='primaryDark'
-            outline='primaryDark' 
-            btnColor='onBg' 
-            medium 
-            onClick={() => this.present('worldCases')}>
-              {this.props.isHeb && 'נדבקים' || 'Cases'}
-          </Button>
-
-          <Button 
-            link
-            active={this.state.active === 'deathCases'} 
-            bg='transparent' 
-            fat
-            hoverColor='primaryDark'
-            outline='primaryDark'
-            btnColor='onBg'
-            medium 
-            onClick={() => this.present('deathCases')}>
-              {this.props.isHeb && 'מקרי מוות' || 'Deaths'}
-          </Button>
-
-          <Button 
-            link
-            active={this.state.active === 'newCases'} 
-            bg='transparent' 
-            hoverColor='primaryDark'
-            fat 
-            outline='primaryDark'
-            btnColor='onBg'
-            medium 
-            onClick={() => this.present('newCases')}>
-              {this.props.isHeb && 'מקרים חדשים' || 'New cases'}
-          </Button>
-
-  */}
 
         </div>
         {

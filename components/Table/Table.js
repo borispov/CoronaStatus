@@ -8,6 +8,7 @@ const ScrollTable = styled.div`
 
 const DataTable = styled.div`
   max-width: 100%;
+  min-height: 100%;
 `
 
 const Table = styled.table`

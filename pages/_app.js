@@ -1,18 +1,25 @@
 import App from 'next/app'
 import Router from 'next/router'
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
+import axios from 'axios'
 
 import useOutSide from '../utils/useOutSide'
 import GlobalStyle from './Global'
 import Header from '../components/Header'
-import { Button } from '../components/S'
 import Burger from '../components/Burger';
 import Menu from '../components/Menu';
 import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
+
+async function currentCountry(){
+  return await axios
+    .get('https://extreme-ip-lookup.com/json/')
+    .then(res => res.data.country)
+    .catch(e => 'israel')
+}
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
@@ -27,9 +34,9 @@ const darkTheme = () => ({
 })
 
 
-export default (props) => {
+function MyApp ({ Component, pageProps, userLocation }) {
   const [theme, setTheme] = useState(lightTheme())
-  const [isHeb, setHeb] = useState(true)
+  const [isHeb, setHeb] = useState(userLocation === 'israel' || userLocation === 'Israel' ? true : false)
   const [menuOpen, setOpen] = useState(false)
 
   const closeMenu     = () => setOpen(false)
@@ -43,9 +50,6 @@ export default (props) => {
 
   const displayLang   = isHeb ? 'English' : 'עברית'
   const isLight       = theme.type === 'light'
-
-  const { Component, pageProps } = props
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -98,8 +102,16 @@ export default (props) => {
         </div>
 
       </Header>
-      <Component {...pageProps} isHeb={isHeb}/>
+      <Component {...pageProps} isHeb={isHeb} userLocation={userLocation}  />
     </ThemeProvider>
   )
-
 }
+
+
+MyApp.getInitialProps = async (appContext) => {
+  const userLocation = await currentCountry()
+  const appProps = await App.getInitialProps(appContext);
+  return { ...appProps, userLocation}
+}
+
+export default MyApp

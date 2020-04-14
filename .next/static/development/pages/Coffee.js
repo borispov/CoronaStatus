@@ -105,20 +105,20 @@ var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);width:85%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
   return props.textAlign && 'center';
 });
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";padding:", ";font-size:", ";background:", ";color:", ";border:", ";font-weight:", ";cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}"], function (props) {
+})(["border-radius:", ";font-size:16px;padding:", ";", ";background:", ";color:", ";border:", ";font-weight:", ";font-family:'Rubik';cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}", ";"], function (props) {
   return props.radius ? props.radius : '4px';
 }, function (props) {
-  return props.small && '.375rem .75rem' || props.medium && '6px 9px' || props.big && '14px' || '10px 14px';
+  return props.medium && '6px 9px' || props.big && '14px' || '8px 10px';
 }, function (props) {
-  return props.small ? '12px' : '16px';
+  return props.small && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-size:12px;padding:0rem 1rem;"]);
 }, function (props) {
-  return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme.primaryColor;
+  return props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor;
 }, function (props) {
   return props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white;
 }, function (props) {
@@ -139,31 +139,27 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
   return !props.active && props.hoverColor && props.theme[props.hoverColor];
 }, function (props) {
   return !props.active && props.hoverColor ? props.theme.onPrimary : '';
+}, function (props) {
+  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";"], props.fontFamily, function (props) {
+    return props.theme.white;
+  }, function (props) {
+    return props.theme.kofi;
+  });
 });
-var LangBtn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(Btn).withConfig({
-  displayName: "S__LangBtn",
-  componentId: "sc-3vwmv4-7"
-})(["position:relative;background:lightblue;color:#111;padding:0.54rem 0.85rem;font-size:12px;font-weight:400;font-family:'Rubik';outline:none;text-align:center;border:none;border-radius:6px;margin:0 6px;margin-left:16px;z-index:1;"]);
 var Button = function Button(props) {
-  return props.langBtn && __jsx(LangBtn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: this
-  }), props.children) || __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+  return __jsx(Btn, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     onClick: props.onClick
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 146
     },
     __self: this
   }), props.children);
 };
 var BaseAnimation = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__BaseAnimation",
-  componentId: "sc-3vwmv4-8"
+  componentId: "sc-3vwmv4-7"
 })(["   animation-duration:", ";animation-timing-function:", ";animation-delay:", ";animation-iteration-count:", ";animation-direction:", ";animation-fill-mode:", ";animation-play-state:", ";display:", ";"], function (props) {
   return props.duration;
 }, function (props) {
@@ -198,7 +194,7 @@ var fadeInAnimation = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["key
 });
 var FadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(BaseAnimation).withConfig({
   displayName: "S__FadeIn",
-  componentId: "sc-3vwmv4-9"
+  componentId: "sc-3vwmv4-8"
 })(["animation-name:", ";"], fadeInAnimation);
 
 /***/ }),
@@ -8138,7 +8134,7 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FCoffee&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2FCoffee.js ***!
   \************************************************************************************************************************************************/
@@ -8161,5 +8157,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Coffee.js.map

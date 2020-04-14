@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import Input from './Input'
+import { useState } from 'react'
 import Stats from './Stats'
 import useTime from '../utils/useTime'
 import useTodayStats from '../utils/useTodayStats'
@@ -11,11 +10,12 @@ import CaseChart from './CaseChart'
 import Select from 'react-select'
 import { withTheme } from 'styled-components'
 
+const calcDiff = current => prev => current !== 0 ? ((current - prev) / 100) * 100 : 0
 
-const CoronaApp = ({ isHeb, theme }) => {
+const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal }) => {
 
   const [showWorld, setShowWorld] = useState(true)
-  const [country, setCountry] = useState('')
+  const [country, setCountry] = useState(userLocation)
   const [inputValue, setInput] = useState('')
 
   const url = 'https://nCorona.live/api/v1/'
@@ -28,21 +28,39 @@ const CoronaApp = ({ isHeb, theme }) => {
 
   const { countries } = useCountries()
 
+
   const worldTodaySorted = worldToday &&
     {
-      active: worldToday.active,
       cases: worldToday.cases,
-      todayCases: worldToday.todayCases,
+      active: worldToday.active,
       recovered: worldToday.recovered,
-      deaths: worldToday.deaths
+      deaths: worldToday.deaths,
+      todayCases: worldToday.todayCases,
+      affectedCountries: yesterdayGlobal.affectedCountries
     } || ''
+
+  const yesterdayStatsSorted = yesterdayCn && {
+    cases: yesterdayCn.cases,
+    todayCases: yesterdayCn.todayCases,
+    recovered: yesterdayCn.recovered,
+    deaths: yesterdayCn.deaths,
+  } || ''
+
+  const yesterdayGlobalSorted = yesterdayGlobal && {
+    cases: yesterdayGlobal.cases,
+    active: yesterdayGlobal.active,
+    deaths: yesterdayGlobal.deaths,
+    todayCases: yesterdayGlobal.todayCases,
+    recovered: yesterdayGlobal.recovered,
+    affectedCountries: yesterdayGlobal.affectedCountries
+  } || ''
 
   const todayStatsSorted = todayStats && 
     {
       cases: todayStats.cases,
       todayCases: todayStats.todayCases,
       recovered: todayStats.recovered,
-      deaths: todayStats.deaths
+      deaths: todayStats.deaths,
     } || ''
 
   const handleChange = selected => {
@@ -57,10 +75,44 @@ const CoronaApp = ({ isHeb, theme }) => {
 
   return (
     <div>
+    {/*
       <HeaderDescription />
+      */}
 
       <Container>
 
+      <form 
+        style={{ maxWidth: '520px', margin: '54px auto 12px', textAlign: 'center'}}
+        onSubmit={handleSubmit}>
+        <label style={{fontSize: '16px', fontWeight: 'bold'}}>
+          { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
+        </label>
+
+
+        <Select
+          className={'Select'}
+          options={selectOptions}
+          value={country === 'Israel' && isHeb ? 'ישראל' : country}
+          onChange={handleChange}
+          placeholder={country || 'ישראל'}
+        />
+      </form>
+
+    <Stats
+      cn={country || todayStats && todayStats.country}
+      todayStats={todayStatsSorted}
+      yesteryday={yesterdayStatsSorted}
+      isHeb={isHeb}
+    />
+
+    {/*
+      <iframe 
+        style={{  width: "100%", height:"420px" }}
+        src="https://coronavirus.app/map?embed=true" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      />
+    */}
       {
         countryStats &&
           (
@@ -77,37 +129,18 @@ const CoronaApp = ({ isHeb, theme }) => {
               />
           )
       }
-      <Stats
-        cn={country || todayStats && todayStats.country}
-        todayStats={todayStatsSorted}
-        isHeb={isHeb}
-      />
-
-      <form 
-        style={{ maxWidth: '520px', margin: '54px auto', textAlign: 'center'}}
-        onSubmit={handleSubmit}>
-        <label style={{fontSize: '16px', fontWeight: 'bold'}}>
-          { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
-        </label>
-
-        <Select
-          className={'Select'}
-          options={selectOptions}
-          value={country}
-          onChange={handleChange}
-          placeholder={country || 'ישראל'}
-        />
-      </form>
-
-      <HeaderDescription 
-        txt='* גרפים המציגים את שיעור הצמיחה של נגיף הקורונה,
-        אינם מתעדכנים בזמן אמת ולכן אינם משקפים את היום הנוכחי. בדרך-כלל מתקיים פער של יום,
-        לכל היותר שלושה ימים. הנתונים המוצגים מחוץ לגרפים משקפים את הזמן הנתון ברגע הנוכחי ומתעדכנים בערך אחת לחצי שעה.'/>
 
       <Stats
         cn={'World'}
         todayWorld={worldTodaySorted}
+        yesteryday={yesterdayGlobalSorted}
         isHeb={isHeb}
+      />
+
+      <HeaderDescription 
+        txt='* גרפים המציגים את שיעור הצמיחה של נגיף הקורונה,
+        אינם מתעדכנים בזמן אמת ולכן אינם משקפים את היום הנוכחי. בדרך-כלל מתקיים פער של יום,
+        לכל היותר שלושה ימים. הנתונים המוצגים מחוץ לגרפים משקפים את הזמן הנתון ברגע הנוכחי ומתעדכנים בערך אחת לחצי שעה.'
       />
 
       <CaseChart

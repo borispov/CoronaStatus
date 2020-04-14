@@ -22,6 +22,9 @@ export const StyledBurger = styled.button`
   @media (max-width: 660px) {
     margin-top: 4px;
   }
+  @media (min-width: 961px) {
+    display: none;
+  }
 
   div {
     width: 3.2rem;
