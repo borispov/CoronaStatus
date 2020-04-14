@@ -10485,13 +10485,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-function currentCountry() {
+function currentCountry(ip) {
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function currentCountry$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("https://extreme-ip-lookup.com/json/".concat(ip)).then(function (res) {
             return res.data.country;
           })["catch"](function (e) {
             return 'israel';
@@ -10700,26 +10700,28 @@ function MyApp(_ref) {
 }
 
 MyApp.getInitialProps = function _callee(appContext) {
-  var userLocation, appProps;
+  var ipAdress, ip, userLocation, appProps;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          _context2.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(currentCountry());
+          ipAdress = appContext.ctx.req.connection.remoteAddress;
+          ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress;
+          _context2.next = 4;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(currentCountry(ip));
 
-        case 2:
+        case 4:
           userLocation = _context2.sent;
-          _context2.next = 5;
+          _context2.next = 7;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_4___default.a.getInitialProps(appContext));
 
-        case 5:
+        case 7:
           appProps = _context2.sent;
           return _context2.abrupt("return", _objectSpread({}, appProps, {
             userLocation: userLocation
           }));
 
-        case 7:
+        case 9:
         case "end":
           return _context2.stop();
       }

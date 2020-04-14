@@ -10,6 +10,8 @@ import CaseChart from './CaseChart'
 import Select from 'react-select'
 import { withTheme } from 'styled-components'
 
+import cns from '../assets/cns'
+
 const calcDiff = current => prev => current !== 0 ? ((current - prev) / 100) * 100 : 0
 
 const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal }) => {
@@ -72,6 +74,12 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayCn, yesterdayGlobal })
   }
 
   const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
+  // const selectOptions = countries &&
+  //   countries
+  //   .map((country, idx) => ({
+  //     value: country,
+  //     label: cns[idx]
+  //   }))
 
   return (
     <div>

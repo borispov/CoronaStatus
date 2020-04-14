@@ -14,9 +14,9 @@ import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
 
-async function currentCountry(){
+async function currentCountry(ip){
   return await axios
-    .get('https://extreme-ip-lookup.com/json/')
+    .get(`https://extreme-ip-lookup.com/json/${ip}`)
     .then(res => res.data.country)
     .catch(e => 'israel')
 }
@@ -109,8 +109,10 @@ function MyApp ({ Component, pageProps, userLocation }) {
 
 
 MyApp.getInitialProps = async (appContext) => {
-  const userLocation = await currentCountry()
-  const appProps = await App.getInitialProps(appContext);
+  const ipAdress = appContext.ctx.req.connection.remoteAddress
+  const ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress
+  const userLocation = await currentCountry(ip)
+  const appProps = await App.getInitialProps(appContext)
   return { ...appProps, userLocation}
 }
 

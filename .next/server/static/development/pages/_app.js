@@ -2947,8 +2947,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-async function currentCountry() {
-  return await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://extreme-ip-lookup.com/json/').then(res => res.data.country).catch(e => 'israel');
+async function currentCountry(ip) {
+  return await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://extreme-ip-lookup.com/json/${ip}`).then(res => res.data.country).catch(e => 'israel');
 }
 
 next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_13__["pageview"](url));
@@ -3128,7 +3128,9 @@ function MyApp({
 }
 
 MyApp.getInitialProps = async appContext => {
-  const userLocation = await currentCountry();
+  const ipAdress = appContext.ctx.req.connection.remoteAddress;
+  const ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress;
+  const userLocation = await currentCountry(ip);
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {
     userLocation

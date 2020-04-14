@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./assets/cns.js":
+/*!***********************!*\
+  !*** ./assets/cns.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+"אפגניסטן,אלבניה,אלג'יריה,אנדורה,אנגולה,אנגווילה,אנטיגואה וברבודה,ארגנטינה,ארמניה,ארובה,אוסטרליה,אוסטריה,אזרבייג'ן,איי בהאמה,בחריין,בנגלדש,ברבדוס,בלארוס,בלגיה,בליז,בנין,ברמודה,בהוטן,בוליביה,בונייר סינט אוסטטיוס וסבא,בוסניה והרצגובינה,בוצואנה,ברזיל,איי בתולה בריטיים,ברוניי,בולגריה,בורקינה פאסו,בורונדי,קמבודיה,קמרון,קנדה,קייפ ורדה,איי קיימן,הרפובליקה המרכז - אפריקאית,צ'אד,צ'ילה,חרסינה,קולומביה,קונגו,קוסטה ריקה,חוף השנהב,קרואטיה,קובה,קוראסאו,קפריסין,הרפובליקה הצ'כית,הרפובליקה הדמוקרטית של קונגו,דנמרק,ג'יבוטי,דומיניקה,הרפובליקה הדומיניקנית,אקוודור,מצרים,אל סלבדור,גיניאה המשוונית,אריתריאה,אסטוניה,אתיופיה,איי פארו,איי פוקלנד,פיג'י,פינלנד,צרפת,פולינזיה הצרפתית,גבון,גמביה,ג'ורג'יה,גרמניה,גאנה,גיברלטר,יוון,גרינלנד,גרנדה,גואם,גואטמלה,גרנסי,גינאה,גינאה ביסאו,גיאנה,האיטי,הונדורס,הונגריה,איסלנד,הודו,אינדונזיה,בינלאומי,איראן,עירק,אירלנד,האי מאן,ישראל,איטליה,ג'מייקה,יפן,ג'רזי,ירדן,קזחסטן,קניה,קוסובו,כווית,קירגיזסטן,לאוס,לטביה,לבנון,ליבריה,לוב,ליכטנשטיין,ליטא,לוקסמבורג,מקדוניה,מדגסקר,מלאווי,מלזיה,האיים המלדיביים,מלי,מלטה,מאוריטניה,מאוריציוס,מקסיקו,מולדובה,מונקו,מונגוליה,מונטנגרו,מונטסראט,מרוקו,מוזמביק,מיאנמר,נמיביה,נפאל,הולנד,קלדוניה החדשה,ניו זילנד,ניקרגואה,ניז'ר,ניגריה,איי מריאנה הצפוניים,נורווגיה,עומאן,פקיסטן,פלשתינה,פנמה,פפואה גינאה החדשה,פרגוואי,פרו,הפיליפינים,פולין,פורטוגל,פוארטו ריקו,קטאר,רומניה,רוסיה,רואנדה,סנט קיטס ונביס,סנט לוסיה,וינסנט הקדוש ו ה - גרנידיים,סן מרינו,סאו טומה ופרינסיפה,ערב הסעודית,סנגל,סרביה,סיישל,סיירה לאון,סינגפור,סנט מרטן (חלק הולנדי),סלובקיה,סלובניה,סומליה,דרום אפריקה,דרום קוריאה,דרום סודן,ספרד,סרי לנקה,סודן,סורינאם,סווזילנד,שבדיה,שוויץ,סוריה,טייוואן,טנזניה,תאילנד,טימור,ללכת,טרינידד וטובגו,תוניסיה,טורקיה,איי טורקס וקאיקוס,אוגנדה,אוקראינה,איחוד האמירויות הערביות,הממלכה המאוחדת,ארצות הברית,איי הבתולה של ארצות הברית,אורוגוואי,אוזבקיסטן,הוותיקן,ונצואלה,וייטנאם,עולם,תימן,זמביה,זימבבואה";
+
+/***/ }),
+
 /***/ "./components/Bar.js":
 /*!***************************!*\
   !*** ./components/Bar.js ***!
@@ -377,9 +388,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _assets_cns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../assets/cns */ "./assets/cns.js");
+/* harmony import */ var _assets_cns__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_cns__WEBPACK_IMPORTED_MODULE_11__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -475,17 +489,23 @@ var CoronaApp = function CoronaApp(_ref) {
       value: a,
       label: a
     };
-  });
+  }); // const selectOptions = countries &&
+  //   countries
+  //   .map((country, idx) => ({
+  //     value: country,
+  //     label: cns[idx]
+  //   }))
+
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 85
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 90
     },
     __self: this
   }, __jsx("form", {
@@ -497,7 +517,7 @@ var CoronaApp = function CoronaApp(_ref) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 92
     },
     __self: this
   }, __jsx("label", {
@@ -507,7 +527,7 @@ var CoronaApp = function CoronaApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 95
     },
     __self: this
   }, isHeb ? "\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4" : "Data For Country:"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -518,7 +538,7 @@ var CoronaApp = function CoronaApp(_ref) {
     placeholder: country || 'ישראל',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 100
     },
     __self: this
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -528,7 +548,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 109
     },
     __self: this
   }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -543,7 +563,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 127
     },
     __self: this
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -553,14 +573,14 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 141
     },
     __self: this
   }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_7__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 148
     },
     __self: this
   }), __jsx(_CaseChart__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -570,7 +590,7 @@ var CoronaApp = function CoronaApp(_ref) {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 154
     },
     __self: this
   })));

@@ -23,8 +23,8 @@ async function currentCountry(){
     .catch(e => 'israel')
 }
 
-function useTodayStats(url, country) {
-  const [ydayStats, setStats] = useState();
+function useYday(url, country) {
+  const [yesterdayCn, setStats] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -36,14 +36,15 @@ function useTodayStats(url, country) {
       let searchCountry = country || await currentCountry();
 
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + parsedCountry.toLowerCase()
+      const URL = url + parsedCountry.toLowerCase()
       // const URL = url + (country === 'world' ? '' : searchCountry)
       try {
         // const data = await fetch(URL)
         //     .then(res => res.json())
         //     .catch(err => setError(err))
-        const { data } = await axios.get(URL)
-        const relevant = {
+        const { data } = await axios.get(URL + '?yesterday=true')
+
+        const yesterdayCn = {
           active: data.active,
           cases: data.cases,
           todayCases: data.todayCases,
@@ -51,7 +52,10 @@ function useTodayStats(url, country) {
           deaths: data.deaths,
           country: data.country
         }
-        setStats(relevant)
+
+        console.log(yesterdayCn);
+
+        setStats(yesterdayCn)
         setLoading(false)
        } catch(e) {
         setError(e)
@@ -60,8 +64,8 @@ function useTodayStats(url, country) {
     fetchData();
   }, [country])
   return {
-    ydayStats, loading, error
+    yesterdayCn, loading, error
   }
 }
 
-export default useTodayStats;
+export default useYday;
