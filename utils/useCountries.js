@@ -8,12 +8,12 @@ function useCountries() {
   const [countries, setCountries] = useState()
 
   useEffect(() => {
-    async function fetchData() {
+    (async () => {
       setError()
       const { data } = await axios.get(baseURL)
-      setCountries(data.data)
-    }
-    fetchData()
+      const { countries } = data
+      setCountries(countries)
+    })()
   }, [])
 
   return {

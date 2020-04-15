@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Head from 'next/head'
+import { useEffect, useContext } from 'react'
 
 import CoronaApp from '../components/CoronaApp'
 import InfoSection from '../components/InfoSection'
@@ -7,16 +8,28 @@ import Footer from '../components/Footer'
 import { FadeIn } from '../components/S'
 
 import useWorldData from '../utils/useWorldData'
+import { ProxyContext } from '../context/proxy-context'
 
 
-function IndexPage({ isHeb, userLocation, worldTime, yesterdayGlobal}) {
+function IndexPage({ isHeb, newProxy, worldTime, yesterdayGlobal}) {
+
+  const [ proxy, setProxy] = useContext(ProxyContext)
+
+  useEffect(() => {
+    let ignore = false
+    if (newProxy && !ignore) {
+      setProxy(newProxy)
+    }
+    return () => { ignore: true }
+  }, [newProxy])
+
   return (
     <>
       <Head>
         <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
       </Head>
       <FadeIn delay="0.5s">
-        <CoronaApp isHeb={isHeb} userLocation={userLocation} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
+       <CoronaApp isHeb={isHeb} userLocation={proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
         <InfoSection />
       </FadeIn>
     </>

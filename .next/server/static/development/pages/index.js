@@ -284,6 +284,7 @@ const CoronaApp = ({
   yesterdayGlobal,
   worldTime
 }) => {
+  // const [hebCountry, setHebCountry] = useState(countryheb(country))
   const {
     0: showWorld,
     1: setShowWorld
@@ -297,7 +298,6 @@ const CoronaApp = ({
     1: setInput
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const url = 'https://nCorona.live/api/v1/';
-  const url2 = 'https://corona.lmao.ninja/countries/';
   const worldUrl = 'https://corona.lmao.ninja/all';
   const v2 = 'https://corona.lmao.ninja/v2/countries/';
   const {
@@ -343,6 +343,7 @@ const CoronaApp = ({
   } || '';
 
   const handleChange = selected => {
+    // setHebCountry(countryheb(selected.value))
     setCountry(selected.value);
   };
 
@@ -351,27 +352,37 @@ const CoronaApp = ({
     setCountry(inputValue);
   };
 
-  const selectOptions = countries && countries.map(a => ({
+  const countryheb = country => {
+    if (countries) {
+      let lowerCased = countries.map(a => a.toLowerCase());
+      let engIndex = lowerCased.indexOf(country);
+      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][engIndex];
+    }
+
+    return country;
+  }; // const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
+
+
+  const selectOptions = !countries ? {
+    value: 'null',
+    label: 'Loading List...'
+  } : !isHeb ? countries.map(a => ({
     value: a,
     label: a
-  })); // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
-  //   ? countries.map(a => ({ value: a, label: a }))
-  //   : countries
-  //       .map((country, idx) => ({
-  //           value: country,
-  //           label: countriesHebArray[idx]
-  //         }))
-
+  })) : countries.map((country, idx) => ({
+    value: country,
+    label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][idx]
+  }));
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx("form", {
@@ -383,7 +394,7 @@ const CoronaApp = ({
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 104
     },
     __self: undefined
   }, __jsx("label", {
@@ -393,7 +404,7 @@ const CoronaApp = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 108
     },
     __self: undefined
   }, isHeb ? `נתונים לפי מדינה` : `Data For Country:`), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -401,10 +412,10 @@ const CoronaApp = ({
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
     onChange: handleChange,
-    placeholder: country || 'ישראל',
+    placeholder: country && countryheb(country) || country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 113
     },
     __self: undefined
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -414,7 +425,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 122
     },
     __self: undefined
   }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -429,7 +440,7 @@ const CoronaApp = ({
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 140
     },
     __self: undefined
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -439,14 +450,14 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 154
     },
     __self: undefined
   }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_10__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 161
     },
     __self: undefined
   }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -460,7 +471,7 @@ const CoronaApp = ({
     showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 167
     },
     __self: undefined
   })));
@@ -1314,6 +1325,61 @@ function Stats({
 
 /***/ }),
 
+/***/ "./context/proxy-context.js":
+/*!**********************************!*\
+  !*** ./context/proxy-context.js ***!
+  \**********************************/
+/*! exports provided: ProxyContext, ProxyContextProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContext", function() { return ProxyContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContextProvider", function() { return ProxyContextProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/proxy-context.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ProxyContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const ProxyContextProvider = props => {
+  const initialState = {
+    ipAddress: 'localhost',
+    countryName: 'israel'
+  }; // Declare shareable proxy state
+
+  const {
+    0: proxy,
+    1: setProxy
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
+  const prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (proxy.countryName == 'israel') {
+      const localState = JSON.parse(localStorage.getItem('ip2proxy'));
+
+      if (localState) {
+        console.info('reading local storage');
+        prev.current = localState.ipAddress;
+        setProxy(localState);
+      }
+    } else if (prev.current !== proxy.ipAddress) {
+      console.info('writing local storage');
+      localStorage.setItem('ip2proxy', JSON.stringify(proxy));
+    }
+  }, [proxy]);
+  return __jsx(ProxyContext.Provider, {
+    value: [proxy, setProxy],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, props.children);
+};
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -1334,6 +1400,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 /* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
 /* harmony import */ var _utils_useWorldData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/useWorldData */ "./utils/useWorldData.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1345,45 +1412,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 function IndexPage({
   isHeb,
-  userLocation,
+  newProxy,
   worldTime,
   yesterdayGlobal
 }) {
+  const {
+    0: proxy,
+    1: setProxy
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_8__["ProxyContext"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    let ignore = false;
+
+    if (newProxy && !ignore) {
+      setProxy(newProxy);
+    }
+
+    return () => {
+      ignore: true;
+    };
+  }, [newProxy]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 28
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 29
     },
     __self: this
   }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_6__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 31
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__["default"], {
     isHeb: isHeb,
-    userLocation: userLocation,
+    userLocation: proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 32
     },
     __self: this
   }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 33
     },
     __self: this
   })));
@@ -1768,15 +1852,16 @@ function useCountries() {
     1: setCountries
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    async function fetchData() {
+    (async () => {
       setError();
       const {
         data
       } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(baseURL);
-      setCountries(data.data);
-    }
-
-    fetchData();
+      const {
+        countries
+      } = data;
+      setCountries(countries);
+    })();
   }, []);
   return {
     countries,
@@ -1913,12 +1998,9 @@ function useTodayStats(url, country) {
       setError();
       let searchCountry = country || (await currentCountry());
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + parsedCountry.toLowerCase(); // const URL = url + (country === 'world' ? '' : searchCountry)
+      const URL = url + 'today/' + parsedCountry.toLowerCase();
 
       try {
-        // const data = await fetch(URL)
-        //     .then(res => res.json())
-        //     .catch(err => setError(err))
         const {
           data
         } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL);

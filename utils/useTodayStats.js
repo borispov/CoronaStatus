@@ -36,14 +36,9 @@ function useTodayStats(url, country) {
       setLoading(true)
       setError()
       let searchCountry = country || await currentCountry();
-
       const parsedCountry = parseCn(searchCountry);
       const URL = url + 'today/' + parsedCountry.toLowerCase()
-      // const URL = url + (country === 'world' ? '' : searchCountry)
       try {
-        // const data = await fetch(URL)
-        //     .then(res => res.json())
-        //     .catch(err => setError(err))
         const { data } = await axios.get(URL)
         const relevant = {
           active: data.active,

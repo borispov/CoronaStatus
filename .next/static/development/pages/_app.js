@@ -729,6 +729,123 @@ var FadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(B
 
 /***/ }),
 
+/***/ "./components/proxy-view.js":
+/*!**********************************!*\
+  !*** ./components/proxy-view.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/proxy-view.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var ProxyView = function ProxyView() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_1__["ProxyContext"]),
+      proxy = _useContext[0];
+
+  var ipAddress = proxy.ipAddress,
+      countryName = proxy.countryName;
+  return __jsx("div", {
+    className: "box center",
+    style: {
+      fontSize: '18px',
+      textAlign: 'center',
+      padding: '12px',
+      margin: '0 auto',
+      width: '100%'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "IP Address : ", ipAddress, " "), __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Country : ", countryName, " ")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProxyView);
+
+/***/ }),
+
+/***/ "./context/proxy-context.js":
+/*!**********************************!*\
+  !*** ./context/proxy-context.js ***!
+  \**********************************/
+/*! exports provided: ProxyContext, ProxyContextProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContext", function() { return ProxyContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContextProvider", function() { return ProxyContextProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/proxy-context.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var ProxyContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ProxyContextProvider = function ProxyContextProvider(props) {
+  var initialState = {
+    ipAddress: 'localhost',
+    countryName: 'israel'
+  }; // Declare shareable proxy state
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
+      proxy = _useState[0],
+      setProxy = _useState[1];
+
+  var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (proxy.countryName == 'israel') {
+      var localState = JSON.parse(localStorage.getItem('ip2proxy'));
+
+      if (localState) {
+        console.info('reading local storage');
+        prev.current = localState.ipAddress;
+        setProxy(localState);
+      }
+    } else if (prev.current !== proxy.ipAddress) {
+      console.info('writing local storage');
+      localStorage.setItem('ip2proxy', JSON.stringify(proxy));
+    }
+  }, [proxy]);
+  return __jsx(ProxyContext.Provider, {
+    value: [proxy, setProxy],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, props.children);
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
@@ -10451,14 +10568,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _utils_useOutSide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/useOutSide */ "./utils/useOutSide.js");
-/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
-/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
-/* harmony import */ var _components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Icons/ThemeIcon */ "./components/Icons/ThemeIcon.js");
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var _components_proxy_view__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/proxy-view */ "./components/proxy-view.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+/* harmony import */ var _utils_useOutSide__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/useOutSide */ "./utils/useOutSide.js");
+/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
+/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/Icons/ThemeIcon */ "./components/Icons/ThemeIcon.js");
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
 
 
 
@@ -10485,16 +10604,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-function currentCountry(ip) {
+
+
+var getCountryFromData = function getCountryFromData(response) {
+  return response.data.country;
+};
+
+var currentCountry = function currentCountry(url) {
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function currentCountry$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("https://extreme-ip-lookup.com/json/".concat(ip)).then(function (res) {
-            var country = res.data.country;
-            return country === undefined ? 'israel' : country;
-          })["catch"](function (e) {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get(url).then(getCountryFromData)["catch"](function (e) {
             return 'israel';
           }));
 
@@ -10507,32 +10629,36 @@ function currentCountry(ip) {
       }
     }
   }, null, null, null, Promise);
-}
+}; // async function currentCountry(url){
+//   return await axios
+//     .get(url)
+//     .then( res => res.data.country)
+//     .catch(e => 'israel')
+// }
+
 
 next_router__WEBPACK_IMPORTED_MODULE_5___default.a.events.on('routeChangeComplete', function (url) {
-  return _utils_gtag__WEBPACK_IMPORTED_MODULE_16__["pageview"](url);
+  return _utils_gtag__WEBPACK_IMPORTED_MODULE_18__["pageview"](url);
 });
 
 var lightTheme = function lightTheme() {
-  return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_15__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_15__["themes"]['light']);
+  return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_17__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_17__["themes"]['light']);
 };
 
 var darkTheme = function darkTheme() {
-  return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_15__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_15__["themes"]['dark']);
+  return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_17__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_17__["themes"]['dark']);
 };
 
 function MyApp(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps,
-      userLocation = _ref.userLocation;
+      newProxy = _ref.newProxy;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(lightTheme()),
       theme = _useState[0],
       setTheme = _useState[1];
 
-  console.log(userLocation);
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(userLocation === 'israel' || userLocation === 'Israel' ? true : false),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(newProxy && newProxy.countryName === 'israel' ? true : false),
       isHeb = _useState2[0],
       setHeb = _useState2[1];
 
@@ -10561,59 +10687,65 @@ function MyApp(_ref) {
   };
 
   var node = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])();
-  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_9__["default"])(node, closeMenu);
+  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_11__["default"])(node, closeMenu);
   var displayLang = isHeb ? 'English' : 'עברית';
   var isLight = theme.type === 'light';
-  return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_7__["ThemeProvider"], {
-    theme: theme,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    isHeb: isHeb,
+  return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_10__["ProxyContextProvider"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 61
     },
     __self: this
-  }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_7__["ThemeProvider"], {
+    theme: theme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    isHeb: isHeb,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: this
+  }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_13__["default"], {
     title: "nCorona",
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 65
     },
     __self: this
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 66
     },
     __self: this
-  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_14__["default"], {
     setOpen: toggleMenu,
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 67
     },
     __self: this
-  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_15__["default"], {
     setOpen: toggleMenu,
     open: menuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 68
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/News",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 70
     },
     __self: this
   }, __jsx("a", {
@@ -10623,20 +10755,20 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 71
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 72
     },
     __self: this
   }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 77
     },
     __self: this
   }, __jsx("a", {
@@ -10646,20 +10778,20 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 78
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 79
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 84
     },
     __self: this
   }, __jsx("a", {
@@ -10669,68 +10801,105 @@ function MyApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 85
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 86
     },
     __self: this
   }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 103
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 104
     },
     __self: this
-  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
-    isHeb: isHeb,
-    userLocation: userLocation,
+  }, "\uD83C\uDF10"), displayLang)))), __jsx(_components_proxy_view__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 112
     },
     __self: this
-  })));
+  }), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+    isHeb: isHeb,
+    newProxy: newProxy,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: this
+  }))));
 }
 
 MyApp.getInitialProps = function _callee(appContext) {
-  var ipAdress, ip, userLocation, appProps;
+  var appProps, newProxy, proxyUrl, ipAddress, localAddresses, countryName, _newProxy;
+
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          ipAdress = appContext.ctx.req.connection.remoteAddress;
-          ip = ipAdress === '::1' || ipAdress === '127.0.0.1' || ipAdress === '0.0.0.0' ? 'localhost' : ipAdress;
-          console.log(ip);
-          _context2.next = 5;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(currentCountry(ip));
-
-        case 5:
-          userLocation = _context2.sent;
-          _context2.next = 8;
+          _context2.next = 2;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_4___default.a.getInitialProps(appContext));
 
-        case 8:
+        case 2:
           appProps = _context2.sent;
+          newProxy = null;
+
+          if (!(appContext.ctx && appContext.ctx.req)) {
+            _context2.next = 19;
+            break;
+          }
+
+          // grab client's ip address
+          ipAddress = appContext.ctx.req.headers['x-forwarded-for'] || appContext.ctx.req.connection.remoteAddress;
+          localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
+
+          if (!localAddresses.includes(ipAddress)) {
+            proxyUrl = "https://extreme-ip-lookup.com/json/".concat(ipAddress);
+          }
+
+          _context2.prev = 8;
+          _context2.next = 11;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(currentCountry(proxyUrl));
+
+        case 11:
+          countryName = _context2.sent;
+          _newProxy = {
+            countryName: countryName,
+            ipAddress: ipAddress
+          };
+          return _context2.abrupt("return", _objectSpread({
+            newProxy: _newProxy
+          }, appProps));
+
+        case 16:
+          _context2.prev = 16;
+          _context2.t0 = _context2["catch"](8);
+          return _context2.abrupt("return", _objectSpread({
+            errorCode: _context2.t0.code,
+            errorMessage: _context2.t0.message
+          }, appProps));
+
+        case 19:
           return _context2.abrupt("return", _objectSpread({}, appProps, {
-            userLocation: userLocation
+            newProxy: null
           }));
 
-        case 10:
+        case 20:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, null, Promise);
+  }, null, null, [[8, 16]], Promise);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);

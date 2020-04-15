@@ -197,6 +197,7 @@ var CoronaApp = function CoronaApp(_ref) {
       yesterdayGlobal = _ref.yesterdayGlobal,
       worldTime = _ref.worldTime;
 
+  // const [hebCountry, setHebCountry] = useState(countryheb(country))
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       showWorld = _useState[0],
       setShowWorld = _useState[1];
@@ -210,7 +211,6 @@ var CoronaApp = function CoronaApp(_ref) {
       setInput = _useState3[1];
 
   var url = 'https://nCorona.live/api/v1/';
-  var url2 = 'https://corona.lmao.ninja/countries/';
   var worldUrl = 'https://corona.lmao.ninja/all';
   var v2 = 'https://corona.lmao.ninja/v2/countries/';
 
@@ -258,6 +258,7 @@ var CoronaApp = function CoronaApp(_ref) {
   } || '';
 
   var handleChange = function handleChange(selected) {
+    // setHebCountry(countryheb(selected.value))
     setCountry(selected.value);
   };
 
@@ -266,29 +267,43 @@ var CoronaApp = function CoronaApp(_ref) {
     setCountry(inputValue);
   };
 
-  var selectOptions = countries && countries.map(function (a) {
+  var countryheb = function countryheb(country) {
+    if (countries) {
+      var lowerCased = countries.map(function (a) {
+        return a.toLowerCase();
+      });
+      var engIndex = lowerCased.indexOf(country);
+      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][engIndex];
+    }
+
+    return country;
+  }; // const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
+
+
+  var selectOptions = !countries ? {
+    value: 'null',
+    label: 'Loading List...'
+  } : !isHeb ? countries.map(function (a) {
     return {
       value: a,
       label: a
     };
-  }); // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
-  //   ? countries.map(a => ({ value: a, label: a }))
-  //   : countries
-  //       .map((country, idx) => ({
-  //           value: country,
-  //           label: countriesHebArray[idx]
-  //         }))
-
+  }) : countries.map(function (country, idx) {
+    return {
+      value: country,
+      label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][idx]
+    };
+  });
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 100
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 102
     },
     __self: this
   }, __jsx("form", {
@@ -300,7 +315,7 @@ var CoronaApp = function CoronaApp(_ref) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 104
     },
     __self: this
   }, __jsx("label", {
@@ -310,7 +325,7 @@ var CoronaApp = function CoronaApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 108
     },
     __self: this
   }, isHeb ? "\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4" : "Data For Country:"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -318,10 +333,10 @@ var CoronaApp = function CoronaApp(_ref) {
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
     onChange: handleChange,
-    placeholder: country || 'ישראל',
+    placeholder: country && countryheb(country) || country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 113
     },
     __self: this
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -331,7 +346,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 122
     },
     __self: this
   }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -346,7 +361,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 140
     },
     __self: this
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -356,14 +371,14 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 154
     },
     __self: this
   }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_10__["default"], {
     txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 161
     },
     __self: this
   }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -377,7 +392,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 167
     },
     __self: this
   })));
@@ -1437,6 +1452,61 @@ function Stats(_ref) {
     __self: this
   }));
 }
+
+/***/ }),
+
+/***/ "./context/proxy-context.js":
+/*!**********************************!*\
+  !*** ./context/proxy-context.js ***!
+  \**********************************/
+/*! exports provided: ProxyContext, ProxyContextProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContext", function() { return ProxyContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProxyContextProvider", function() { return ProxyContextProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/proxy-context.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var ProxyContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ProxyContextProvider = function ProxyContextProvider(props) {
+  var initialState = {
+    ipAddress: 'localhost',
+    countryName: 'israel'
+  }; // Declare shareable proxy state
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
+      proxy = _useState[0],
+      setProxy = _useState[1];
+
+  var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (proxy.countryName == 'israel') {
+      var localState = JSON.parse(localStorage.getItem('ip2proxy'));
+
+      if (localState) {
+        console.info('reading local storage');
+        prev.current = localState.ipAddress;
+        setProxy(localState);
+      }
+    } else if (prev.current !== proxy.ipAddress) {
+      console.info('writing local storage');
+      localStorage.setItem('ip2proxy', JSON.stringify(proxy));
+    }
+  }, [proxy]);
+  return __jsx(ProxyContext.Provider, {
+    value: [proxy, setProxy],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, props.children);
+};
 
 /***/ }),
 
@@ -55504,6 +55574,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 /* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
 /* harmony import */ var _utils_useWorldData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/useWorldData */ "./utils/useWorldData.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 
@@ -55516,44 +55587,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+
 function IndexPage(_ref) {
   var isHeb = _ref.isHeb,
-      userLocation = _ref.userLocation,
+      newProxy = _ref.newProxy,
       worldTime = _ref.worldTime,
       yesterdayGlobal = _ref.yesterdayGlobal;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_9__["ProxyContext"]),
+      proxy = _useContext[0],
+      setProxy = _useContext[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var ignore = false;
+
+    if (newProxy && !ignore) {
+      setProxy(newProxy);
+    }
+
+    return function () {
+      ignore: true;
+    };
+  }, [newProxy]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 28
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 29
     },
     __self: this
   }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_7__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 31
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_4__["default"], {
     isHeb: isHeb,
-    userLocation: userLocation,
+    userLocation: proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 32
     },
     __self: this
   }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 33
     },
     __self: this
   })));
@@ -55991,10 +56080,10 @@ function useCountries() {
       setCountries = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function fetchData() {
-      var _ref, data;
+    (function _callee() {
+      var _ref, data, countries;
 
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -56005,17 +56094,16 @@ function useCountries() {
             case 3:
               _ref = _context.sent;
               data = _ref.data;
-              setCountries(data.data);
+              countries = data.countries;
+              setCountries(countries);
 
-            case 6:
+            case 7:
             case "end":
               return _context.stop();
           }
         }
       }, null, null, null, Promise);
-    }
-
-    fetchData();
+    })();
   }, []);
   return {
     countries: countries,
@@ -56256,8 +56344,7 @@ function useTodayStats(url, country) {
             case 7:
               searchCountry = _context2.t0;
               parsedCountry = parseCn(searchCountry);
-              URL = url + 'today/' + parsedCountry.toLowerCase(); // const URL = url + (country === 'world' ? '' : searchCountry)
-
+              URL = url + 'today/' + parsedCountry.toLowerCase();
               _context2.prev = 10;
               _context2.next = 13;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL));

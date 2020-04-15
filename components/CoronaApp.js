@@ -19,12 +19,12 @@ const calcDiff = current => prev => current !== 0 ? ((current - prev) / 100) * 1
 
 const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, worldTime }) => {
 
+  // const [hebCountry, setHebCountry] = useState(countryheb(country))
   const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState(userLocation)
   const [inputValue, setInput] = useState('')
 
   const url = 'https://nCorona.live/api/v1/'
-  const url2 = 'https://corona.lmao.ninja/countries/'
   const worldUrl = 'https://corona.lmao.ninja/all'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
   const { countryStats } = useTime(country, theme)
@@ -70,6 +70,7 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
     } || ''
 
   const handleChange = selected => {
+    // setHebCountry(countryheb(selected.value))
     setCountry(selected.value)
   }
   const handleSubmit = e => {
@@ -77,16 +78,23 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
     setCountry(inputValue)
   }
 
+  const countryheb = country => {
+    if (countries) {
+      let lowerCased = countries.map(a => a.toLowerCase())
+      let engIndex = lowerCased.indexOf(country)
+      return countriesHebArray[engIndex]
+    }
+    return country
+  }
 
-  const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
-
-  // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
-  //   ? countries.map(a => ({ value: a, label: a }))
-  //   : countries
-  //       .map((country, idx) => ({
-  //           value: country,
-  //           label: countriesHebArray[idx]
-  //         }))
+  // const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
+  const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
+    ? countries.map(a => ({ value: a, label: a }))
+    : countries
+        .map((country, idx) => ({
+            value: country,
+            label: countriesHebArray[idx]
+          }))
 
   return (
     <div>
@@ -95,7 +103,8 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
 
       <form 
         style={{ maxWidth: '520px', margin: '54px auto 12px', textAlign: 'center'}}
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+      >
         <label style={{fontSize: '16px', fontWeight: 'bold'}}>
           { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
         </label>
@@ -106,7 +115,7 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
           options={selectOptions}
           value={country === 'Israel' && isHeb ? 'ישראל' : country}
           onChange={handleChange}
-          placeholder={country || 'ישראל'}
+          placeholder={country && countryheb(country) || country}
         />
       </form>
 
