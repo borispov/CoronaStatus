@@ -8,6 +8,7 @@ import React, {
 export const ProxyContext = createContext()
 
 export const ProxyContextProvider = (props) => {
+
     const initialState = {
         ipAddress: 'localhost',
         countryName: 'israel',

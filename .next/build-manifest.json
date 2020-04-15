@@ -12,6 +12,10 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/Coffee": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/Statistics": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"

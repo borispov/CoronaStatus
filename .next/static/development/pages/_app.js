@@ -838,7 +838,7 @@ var ProxyContextProvider = function ProxyContextProvider(props) {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
   }, props.children);
@@ -10658,7 +10658,7 @@ function MyApp(_ref) {
       theme = _useState[0],
       setTheme = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(newProxy && newProxy.countryName === 'israel' ? true : false),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false),
       isHeb = _useState2[0],
       setHeb = _useState2[1];
 
@@ -10823,26 +10823,19 @@ function MyApp(_ref) {
       lineNumber: 104
     },
     __self: this
-  }, "\uD83C\uDF10"), displayLang)))), __jsx(_components_proxy_view__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: this
-  }), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     isHeb: isHeb,
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 112
     },
     __self: this
   }))));
 }
 
 MyApp.getInitialProps = function _callee(appContext) {
-  var appProps, newProxy, proxyUrl, ipAddress, localAddresses, countryName, _newProxy;
-
+  var appProps, proxyUrl, req, ipAddress, localAddresses, countryName, newProxy;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -10852,15 +10845,15 @@ MyApp.getInitialProps = function _callee(appContext) {
 
         case 2:
           appProps = _context2.sent;
-          newProxy = null;
+          req = appContext.ctx && appContext.ctx.req;
 
-          if (!(appContext.ctx && appContext.ctx.req)) {
+          if (!req) {
             _context2.next = 19;
             break;
           }
 
           // grab client's ip address
-          ipAddress = appContext.ctx.req.headers['x-forwarded-for'] || appContext.ctx.req.connection.remoteAddress;
+          ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
           localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
 
           if (!localAddresses.includes(ipAddress)) {
@@ -10873,12 +10866,12 @@ MyApp.getInitialProps = function _callee(appContext) {
 
         case 11:
           countryName = _context2.sent;
-          _newProxy = {
+          newProxy = {
             countryName: countryName,
             ipAddress: ipAddress
           };
           return _context2.abrupt("return", _objectSpread({
-            newProxy: _newProxy
+            newProxy: newProxy
           }, appProps));
 
         case 16:

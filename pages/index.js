@@ -6,12 +6,14 @@ import CoronaApp from '../components/CoronaApp'
 import InfoSection from '../components/InfoSection'
 import Footer from '../components/Footer'
 import { FadeIn } from '../components/S'
-
 import useWorldData from '../utils/useWorldData'
+
 import { ProxyContext } from '../context/proxy-context'
 
 
 function IndexPage({ isHeb, newProxy, worldTime, yesterdayGlobal}) {
+
+  console.log(isHeb);
 
   const [ proxy, setProxy] = useContext(ProxyContext)
 

@@ -797,7 +797,7 @@ const ProxyContextProvider = props => {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: undefined
   }, props.children);
@@ -3098,7 +3098,7 @@ function MyApp({
   const {
     0: isHeb,
     1: setHeb
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(newProxy && newProxy.countryName === 'israel' ? true : false);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false);
   const {
     0: menuOpen,
     1: setOpen
@@ -3251,18 +3251,12 @@ function MyApp({
       lineNumber: 104
     },
     __self: this
-  }, "\uD83C\uDF10"), displayLang)))), __jsx(_components_proxy_view__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: this
-  }), __jsx(Component, _extends({}, pageProps, {
+  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, _extends({}, pageProps, {
     isHeb: isHeb,
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 112
     },
     __self: this
   }))));
@@ -3270,12 +3264,12 @@ function MyApp({
 
 MyApp.getInitialProps = async appContext => {
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(appContext);
-  let newProxy = null;
   let proxyUrl;
+  const req = appContext.ctx && appContext.ctx.req;
 
-  if (appContext.ctx && appContext.ctx.req) {
+  if (req) {
     // grab client's ip address
-    const ipAddress = appContext.ctx.req.headers['x-forwarded-for'] || appContext.ctx.req.connection.remoteAddress;
+    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
 
     if (!localAddresses.includes(ipAddress)) {

@@ -42,7 +42,7 @@ const darkTheme = () => ({
 function MyApp ({ Component, pageProps, newProxy }) {
 
   const [theme, setTheme] = useState(lightTheme())
-  const [isHeb, setHeb] = useState(newProxy && newProxy.countryName === 'israel' ? true : false)
+  const [isHeb, setHeb] = useState(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false)
   const [menuOpen, setOpen] = useState(false)
 
   const closeMenu     = () => setOpen(false)
@@ -109,7 +109,6 @@ function MyApp ({ Component, pageProps, newProxy }) {
           </div>
 
         </Header>
-        <ProxyView />
         <Component {...pageProps} isHeb={isHeb} newProxy={newProxy} />
       </ThemeProvider>
     </ProxyContextProvider>
@@ -119,12 +118,13 @@ function MyApp ({ Component, pageProps, newProxy }) {
 
 MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext)
-  let newProxy = null
   let proxyUrl
 
-  if (appContext.ctx && appContext.ctx.req) {
+  const req = appContext.ctx && appContext.ctx.req
+
+  if (req) {
     // grab client's ip address
-    const ipAddress = appContext.ctx.req.headers['x-forwarded-for'] || appContext.ctx.req.connection.remoteAddress
+    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
     const localAddresses = ['::1', '127.0.0.1', 'localhost']
     // Construct URL with IP ADDRESS
     if (!localAddresses.includes(ipAddress)) {
