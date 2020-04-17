@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.text.primary};
       font-family: ${props => props.theme.fontFamily};
-      direction: ${props => props.isHeb ? 'rtl' : ''};
+      direction: ${props => props.isHeb && 'rtl' || ''};
   }
 
   .Select {

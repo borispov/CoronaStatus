@@ -11594,7 +11594,7 @@ var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createG
 }, function (props) {
   return props.theme.fontFamily;
 }, function (props) {
-  return props.isHeb ? 'rtl' : '';
+  return props.isHeb && 'rtl' || '';
 });
 /* harmony default export */ __webpack_exports__["default"] = (GlobalStyle);
 
@@ -11695,10 +11695,6 @@ var lightTheme = function lightTheme() {
   return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_16__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_16__["themes"]['light']);
 };
 
-var darkTheme = function darkTheme() {
-  return _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_16__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_16__["themes"]['dark']);
-};
-
 function MyApp(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps,
@@ -11708,77 +11704,43 @@ function MyApp(_ref) {
       theme = _useState[0],
       setTheme = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false),
-      isHeb = _useState2[0],
-      setHeb = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
-      menuOpen = _useState3[0],
-      setOpen = _useState3[1];
-
-  var closeMenu = function closeMenu() {
-    return setOpen(false);
-  };
-
-  var toggleMenu = function toggleMenu() {
-    return setOpen(!menuOpen);
-  };
-
-  var toggleLang = function toggleLang() {
-    closeMenu(), setHeb(!isHeb);
-  };
-
-  var setDarkTheme = function setDarkTheme() {
-    closeMenu(), setTheme(darkTheme());
-  };
-
-  var setLightTheme = function setLightTheme() {
-    closeMenu(), setTheme(lightTheme());
-  };
-
-  var node = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])();
-  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_11__["default"])(node, closeMenu);
-  var displayLang = isHeb ? 'English' : 'עברית';
-  var isLight = theme.type === 'light';
   return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_10__["ProxyContextProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 35
     },
     __self: this
   }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_7__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 36
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 37
     },
     __self: this
   }), __jsx(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_9__["LocaleProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_18__["default"], {
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 40
     },
     __self: this
   }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
-    isHeb: isHeb,
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 41
     },
     __self: this
   }))))));

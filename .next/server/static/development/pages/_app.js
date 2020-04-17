@@ -3392,7 +3392,7 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.text.primary};
       font-family: ${props => props.theme.fontFamily};
-      direction: ${props => props.isHeb ? 'rtl' : ''};
+      direction: ${props => props.isHeb && 'rtl' || ''};
   }
 
   .Select {
@@ -3555,8 +3555,6 @@ next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplet
 
 const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['light']);
 
-const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['dark']);
-
 function MyApp({
   Component,
   pageProps,
@@ -3566,74 +3564,43 @@ function MyApp({
     0: theme,
     1: setTheme
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(lightTheme());
-  const {
-    0: isHeb,
-    1: setHeb
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false);
-  const {
-    0: menuOpen,
-    1: setOpen
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-
-  const closeMenu = () => setOpen(false);
-
-  const toggleMenu = () => setOpen(!menuOpen);
-
-  const toggleLang = () => {
-    closeMenu(), setHeb(!isHeb);
-  };
-
-  const setDarkTheme = () => {
-    closeMenu(), setTheme(darkTheme());
-  };
-
-  const setLightTheme = () => {
-    closeMenu(), setTheme(lightTheme());
-  };
-
-  const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_8__["default"])(node, closeMenu);
-  const displayLang = isHeb ? 'English' : 'עברית';
-  const isLight = theme.type === 'light';
   return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_7__["ProxyContextProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 35
     },
     __self: this
   }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 36
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 37
     },
     __self: this
   }), __jsx(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_6__["LocaleProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 38
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 40
     },
     __self: this
   }, __jsx(Component, _extends({}, pageProps, {
-    isHeb: isHeb,
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 41
     },
     __self: this
   }))))));

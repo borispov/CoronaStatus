@@ -26,73 +26,19 @@ const lightTheme = () => ({
   ...themes['light'],
 })
 
-const darkTheme = () => ({
-  ...themes['common'],
-  ...themes['dark'],
-})
-
 
 function MyApp ({ Component, pageProps, newProxy }) {
 
   const [theme, setTheme] = useState(lightTheme())
-  const [isHeb, setHeb] = useState(newProxy && newProxy.countryName.toLowerCase() === 'israel' ? true : false)
-  const [menuOpen, setOpen] = useState(false)
-
-  const closeMenu     = () => setOpen(false)
-  const toggleMenu    = () => setOpen(!menuOpen)
-  const toggleLang    = () => {closeMenu(), setHeb(!isHeb)}
-  const setDarkTheme  = () => {closeMenu(), setTheme(darkTheme())}
-  const setLightTheme = () => {closeMenu(), setTheme(lightTheme())}
-
-  const node          = useRef()
-  useOutSide(node, closeMenu)
-
-  const displayLang   = isHeb ? 'English' : 'עברית'
-  const isLight       = theme.type === 'light'
 
   return (
     <ProxyContextProvider>
       <ThemeProvider theme={theme}>
-        <GlobalStyle isHeb={isHeb}/>
+        <GlobalStyle />
         <LocaleProvider>
 
         <Layout newProxy={newProxy} >
-          {/* <Header title='nCorona' isHeb={isHeb} >
-            <div ref={node}>
-              <Burger setOpen={toggleMenu} open={menuOpen} />
-              <Menu setOpen={toggleMenu} open={menuOpen} >
-
-                <Link href="/News">
-                  <a alt="news" onClick={() => closeMenu()}>
-                    <span>&#128240;</span>
-                    { isHeb && 'חדשות' || 'News' }
-                  </a>
-                </Link>
-
-                <Link href="/Statistics">
-                  <a alt="stats" onClick={() => closeMenu()}>
-                    <span>	&#128506;</span>
-                    { isHeb && 'נתונים' || 'Data' }
-                  </a>
-                </Link>
-
-                <Link href="/About">
-                  <a alt="about" onClick={() => closeMenu()}>
-                    <span>	&#128506;</span>
-                    { isHeb && 'אודות' || 'About' }
-                  </a>
-                </Link>
-
-                <a onClick={toggleLang}>
-                  <span>&#127760;</span>
-                  {displayLang}
-                </a>
-
-              </Menu>
-            </div>
-
-              </Header> */}
-            <Component {...pageProps} isHeb={isHeb} newProxy={newProxy} />
+            <Component {...pageProps} newProxy={newProxy} />
           </Layout>
         </LocaleProvider>
 
