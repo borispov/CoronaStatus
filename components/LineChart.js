@@ -4,6 +4,8 @@ import 'chartjs-plugin-datalabels'
 import styled, { withTheme, keyframes }  from 'styled-components'
 import { FadeIn } from './S'
 
+import useTranslation from '../hooks/useTranslation'
+
 defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
 
 const Div = styled.div`
@@ -50,33 +52,28 @@ const noChartDisplaySettings = {
 }
 
 
-const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
-const displayOnChart = dset => ({ ...dset, data: cutCaseCount(dset), fill: false })
-const dontDisplayOnChart = dset => ({ ...dset, data: cutCaseCount(dset), ...noChartDisplaySettings })
 
-const sortForDisplay = dset => {
-  return dset.label !== 'cases'
-    ? dontDisplayOnChart(dset)
-    : displayOnChart(dset)
-}
 
+// if mobile, do by 8, if not do by 3
 const filterBy5 = (x, i) => !(i % 8)
 const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
 
-const parseDatasets = (arrayOfSets, fill) => {
-
-  return arrayOfSets.map(sortForDisplay)
-
-  // return arrayOfSets.map(set => ({
-  //   ...set,
-  //   data: set.data.length > 30 ? subtractArray(set.data) : set.data,
-  //   fill: fill || false,
-  // }))
-}
+const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
 
 const LineChart = ( props, {theme} ) => {
 
+  const { t } = useTranslation()
   const chartRef = useRef()
+
+  const displayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'), data: cutCaseCount(dset), fill: false })
+  const dontDisplayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'),data: cutCaseCount(dset), ...noChartDisplaySettings })
+  const parseDatasets = (arrayOfSets, fill) => arrayOfSets.map(sortForDisplay)
+  const sortForDisplay = dset => {
+    return (dset.label !== 'cases' && dset.label !== 'נדבקים')
+      ? dontDisplayOnChart(dset)
+      : displayOnChart(dset)
+  }
+
 
   const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,

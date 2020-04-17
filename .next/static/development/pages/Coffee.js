@@ -79,7 +79,7 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;};", ";"], function (props) {
   return props.center ? 'center' : '';
 }, function (props) {
   return props.fontSize || '16px';
@@ -94,7 +94,9 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 }, function (props) {
   return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
 }, function (props) {
-  return props.rtl ? 'rtl' : 'inherit';
+  return props.direction || 'inherit';
+}, function (props) {
+  return props.centered && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["margin:0 auto;"]);
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -105,7 +107,9 @@ var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+})(["direction:", ";@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+  return props.direction || '';
+}, function (props) {
   return props.textAlign && 'center';
 });
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
@@ -140,7 +144,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return !props.active && props.hoverColor ? props.theme.onPrimary : '';
 }, function (props) {
-  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";"], props.fontFamily, function (props) {
+  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, function (props) {
     return props.theme.white;
   }, function (props) {
     return props.theme.kofi;
@@ -152,7 +156,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 155
     },
     __self: this
   }), props.children);
@@ -196,6 +200,213 @@ var FadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(B
   displayName: "S__FadeIn",
   componentId: "sc-3vwmv4-8"
 })(["animation-name:", ";"], fadeInAnimation);
+
+/***/ }),
+
+/***/ "./context/LocaleContext.js":
+/*!**********************************!*\
+  !*** ./context/LocaleContext.js ***!
+  \**********************************/
+/*! exports provided: LocaleContext, LocaleProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleContext", function() { return LocaleContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleProvider", function() { return LocaleProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/LocaleContext.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var LocaleContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var LocaleProvider = function LocaleProvider(props) {
+  // Default Setting
+  var initialState = 'he';
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
+      locale = _useState[0],
+      setLocale = _useState[1];
+
+  var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (prev.current === undefined && locale === 'he') {
+      var readLocal = localStorage.getItem('locale');
+
+      if (readLocal !== 'he') {
+        setLocale(readLocal);
+        return;
+      } else {
+        setLocale(readLocal);
+      }
+    } else {
+      localStorage.setItem('locale', locale);
+      prev.current = locale;
+    }
+  }, [locale]);
+  return __jsx(LocaleContext.Provider, {
+    value: {
+      locale: locale,
+      setLocale: setLocale
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }, props.children);
+};
+
+/***/ }),
+
+/***/ "./hooks/useTranslation.js":
+/*!*********************************!*\
+  !*** ./hooks/useTranslation.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useTranslation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _locales_translations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../locales/translations */ "./locales/translations.js");
+var defaultLocale = 'he';
+
+
+
+function useTranslation() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__["LocaleContext"]),
+      locale = _useContext.locale;
+
+  var t = function t(key, key2) {
+    if (!key2) {
+      if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key]) {
+        console.warn("Translation '".concat(key, "' for locale '").concat(locale, "' not found."));
+        return;
+      }
+
+      return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key] || '';
+    }
+
+    if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key]) {
+      console.warn("Translation '".concat(key, "' for locale '").concat(locale, "' not found."));
+    }
+
+    return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key2][key] || '';
+  };
+
+  return {
+    t: t,
+    locale: locale
+  };
+}
+
+/***/ }),
+
+/***/ "./locales/translations.js":
+/*!*********************************!*\
+  !*** ./locales/translations.js ***!
+  \*********************************/
+/*! exports provided: strings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return strings; });
+var strings = {
+  he: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona! מידע עדכני על נגיף הקורונה',
+    metaDescription: 'אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד',
+    links: {
+      news: 'חדשות',
+      about: 'אודות',
+      statistics: 'נתונים'
+    },
+    labels: {
+      cases: 'מאומתים',
+      todayCases: 'מקרים חדשים',
+      deaths: 'נפטרו',
+      recovered: 'החלימו',
+      active: 'פעילים',
+      affectedCountries: 'מדינות נגועות'
+    },
+    chartLabels: {
+      'new cases': 'חדשים',
+      'cases': 'נדבקים',
+      'deaths': 'נפטרים'
+    },
+    coffeePage: {
+      heading: 'תודה רבה!',
+      description: 'שלום ותודה רבה לכם על כך שהנכם שוקלים לבצע תרומה עבור החזקת האתר הזה. אתר זה חינמי ופתוח לשימוש כלל הציבור. היני מודה לכם על זמנכם.',
+      farewell: 'שמרו על עצמכם ועל אהובכם',
+      instructions: ['תרומה דרך ממשק של ko-fi.com. הנכם תהיו מועברים לדף ה״קופי״ שלי, דרכו תוכלו להשאיר טיפ עם הודעה. שימו לב, ניתן לתרום ללא הרשמה! כשתועברו לדף של פייפאל ותתבקשו להירשם, ליחצו על כפתור ההרשמה - אתם תועברו לדף של ביצוע תשלום.', 'העברת טיפ ישירות דרך paypal. תוכלו לבחור כל סכום, אך ללא הודעה. \n* אני ממליץ להשתמש בממשק ko-fi.com. אפשרות התרומה דרך פייפאל מוצגת כאן עבור אלו שאינם מסתדרים עם תשלום דרך ko-fi.com'],
+      kofiButton: 'לתרום עם ko-fi.com',
+      paypalButton: 'לתרום עם PayPal',
+      error: 'אפילו זוג כפפות עולה יותר מדולר'
+    },
+    coronaApp: {
+      selectHeader: 'נתונים לפי מדינה:',
+      graphExplanation: "\u05D4\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D9\u05D9\u05EA\u05DB\u05DF \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D1\u05D9\u05DF \u05D9\u05D5\u05DD \u05DC\u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD.\n      \u05D4\u05DE\u05D9\u05D3\u05E2 \u05D4\u05DE\u05D5\u05E6\u05D2 \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05D9\u05E0\u05D5 \u05E2\u05D3\u05DB\u05E0\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05DF \u05DB\u05DC 15-30 \u05D3\u05E7\u05D5\u05EA."
+    },
+    tipButton: '- השאר טיפ ל',
+    tipFont: 'Rubik',
+    aboutPage: {
+      welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
+      overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
+      contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+    }
+  },
+  en: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona - C19 Data & Information for Raising awareness and coping techniques',
+    metaDescription: "nCorona provides updated Coronavirus informative statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+    links: {
+      news: 'News',
+      about: 'About',
+      statistics: 'Statistics'
+    },
+    labels: {
+      cases: 'Confirmed',
+      todayCases: 'New Cases',
+      deaths: 'Deaths',
+      recovered: 'Recovered',
+      active: 'Active',
+      affectedCountries: 'Infected Countries'
+    },
+    chartLabels: {
+      'new cases': 'new cases',
+      'cases': 'cases',
+      'deaths': 'deaths'
+    },
+    coffeePage: {
+      heading: 'Thank You!',
+      description: 'Hello and thank you for considering purchasing me a coffee in such unpleasant times. This website is free for all. As time allows, I\'ll keep updating and adding features.',
+      farewell: 'Take care of yourself and your beloved ones.',
+      instructions: [' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. '],
+      kofiButton: 'via ko-Fi.com',
+      paypalButton: 'via PayPal',
+      error: 'C\'mon Even a pair of gloves cost more than 1$...'
+    },
+    coronaApp: {
+      selectHeader: 'Data For Country: ',
+      graphExplanation: "The Data illustrates Novel Coronavirus growth rate, \n      there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes"
+    },
+    tipButton: 'Buy Me A Mask',
+    tipFont: 'Quicksand',
+    aboutPage: {
+      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: "<>All information provided is legal.\n              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>",
+      contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: "This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. \n      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, \n      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop."
+    }
+  }
+};
 
 /***/ }),
 
@@ -7799,6 +8010,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/Coffee.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -7806,9 +8018,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var paypalMe = 'https://paypal.me/BPov/';
 var paypalDonate = 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=boristofu%40gmail.com&item_name=donations+for+maintaining+informational+website+regarding+Coronavirus&currency_code=USD&source=url&amount=';
-var koFi = 'https://ko-fi.com/borispov/';
+var koFi = 'https://ko-fi.com/borispov';
 var Message = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_components_S__WEBPACK_IMPORTED_MODULE_1__["Heading"]).withConfig({
   displayName: "Coffee__Message",
   componentId: "wfmxm6-0"
@@ -7871,6 +8084,10 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
   var isHeb = _ref.isHeb,
       theme = _ref.theme;
 
+  var _useTranslation = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_4__["default"])(),
+      t = _useTranslation.t,
+      locale = _useTranslation.locale;
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(2),
       counter = _useState[0],
       setCounter = _useState[1];
@@ -7879,16 +8096,11 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
       error = _useState2[0],
       setError = _useState2[1];
 
-  var errorHeb = 'אפילו זוג כפפות עולה יותר מדולר';
-  var errorEng = 'C\'mon Even a pair of gloves cost more than 1$...';
-  var instructionsEng = [' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. '];
-  var instructionsHeb = ['תרומה דרך ממשק של ko-fi.com. הנכם תהיו מועברים לדף ה״קופי״ שלי, דרכו תוכלו להשאיר טיפ עם הודעה. שימו לב, ניתן לתרום ללא הרשמה! כשתועברו לדף של פייפאל ותתבקשו להירשם, ליחצו על כפתור ההרשמה - אתם תועברו לדף של ביצוע תשלום.', 'העברת טיפ ישירות דרך paypal. תוכלו לבחור כל סכום, אך ללא הודעה. \n* אני ממליץ להשתמש בממשק ko-fi.com. אפשרות התרומה דרך פייפאל מוצגת כאן עבור אלו שאינם מסתדרים עם תשלום דרך ko-fi.com'];
-
   var instructions = function instructions(ins) {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("ol", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139
+        lineNumber: 134
       },
       __self: this
     }, ins.map(function (opt, index) {
@@ -7896,14 +8108,14 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
         key: index + 'instruction',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 136
         },
         __self: this
       }, opt);
     })));
   };
 
-  var instructionToRender = isHeb && instructions(instructionsHeb) || instructions(instructionsEng);
+  var instructionToRender = instructions(t('instructions', 'coffeePage'));
 
   var handlePlusClick = function handlePlusClick(c) {
     setCounter(c + 1);
@@ -7926,14 +8138,15 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
   return __jsx("simpleWrapper", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 163
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     textAlign: true,
+    direction: locale === 'he' ? 'rtl' : 'ltr',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 164
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["FadeIn"], {
@@ -7941,38 +8154,41 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     delay: "0.1s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 165
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Heading"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 166
     },
     __self: this
-  }, isHeb && 'תודה רבה' || 'Thank You!'), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
+  }, t('heading', 'coffeePage')), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Paragraph"], {
     color: theme.color,
+    mw: "720px",
+    center: true,
+    centered: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 167
     },
     __self: this
-  }, isHeb ? hebText : engText), __jsx(Heading2, {
+  }, t('description', 'coffeePage')), __jsx(Heading2, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 170
     },
     __self: this
-  }, isHeb ? farewellHeb : farewellEng), __jsx(Box, {
+  }, t('farewell', 'coffeePage')), __jsx(Box, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 171
     },
     __self: this
   }, __jsx(BoxButtons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 172
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -7989,7 +8205,7 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     color: "white",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 173
     },
     __self: this
   }, "+"), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -8006,40 +8222,66 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     color: "white",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 174
     },
     __self: this
   }, "-"), __jsx(BoxCount, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 175
     },
     __self: this
   }, counter, "$")), __jsx(ErrorText, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 178
     },
     __self: this
-  }, error ? isHeb && errorHeb || errorEng : '')), __jsx(BoxButtons, {
+  }, error ? t('error', 'coffeePage') : '')), __jsx(BoxButtons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 184
     },
     __self: this
   }, __jsx(BoxFlex, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 186
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 187
     },
     __self: this
   }, __jsx("a", {
+    style: {
+      cursor: 'pointer',
+      padding: 'inherit',
+      margin: 'inherit',
+      textDecoration: 'none',
+      color: 'inherit'
+    },
+    href: koFi,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 189
+    },
+    __self: this
+  }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    pointer: true,
+    link: true,
+    hoverUp: true,
+    hoverColor: "primaryLight",
+    bg: "primaryColor",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 190
+    },
+    __self: this
+  }, t('kofiButton', 'coffeePage'))), __jsx("a", {
     style: {
       cursor: 'pointer',
       padding: 'inherit',
@@ -8051,33 +8293,7 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
-    },
-    __self: this
-  }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    pointer: true,
-    link: true,
-    hoverUp: true,
-    hoverColor: "primaryLight",
-    bg: "primaryColor",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 194
-    },
-    __self: this
-  }, isHeb ? 'עם ko-fi' : 'via ko-fi.com (recommended)')), __jsx("a", {
-    style: {
-      cursor: 'pointer',
-      padding: 'inherit',
-      margin: 'inherit',
-      textDecoration: 'none',
-      color: 'inherit'
-    },
-    href: koFi + counter,
-    target: "_blank",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 195
     },
     __self: this
   }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -8088,28 +8304,13 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     hoverColor: "primaryLight",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200
+      lineNumber: 196
     },
     __self: this
-  }, isHeb ? 'עם PayPal' : 'PayPal Donate'))), __jsx("div", {
+  }, t('paypalButton', 'coffeePage')))), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
-    },
-    __self: this
-  }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    pointer: true,
-    bg: "grey",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 208
-    },
-    __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 203
     },
     __self: this
   }, __jsx("a", {
@@ -8120,13 +8321,28 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 204
+    },
+    __self: this
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 205
+    },
+    __self: this
+  }, __jsx(_components_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    pointer: true,
+    bg: "grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 206
     },
     __self: this
   }, isHeb ? 'חזור' : 'Back')))))), __jsx(Text, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 216
     },
     __self: this
   }, instructionToRender))));
@@ -8134,7 +8350,7 @@ var farewellHeb = 'שמרו על עצמכם ועל אהובכם';
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FCoffee&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2FCoffee.js ***!
   \************************************************************************************************************************************************/
@@ -8157,5 +8373,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Coffee.js.map

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { withTheme } from 'styled-components'
 import Select from 'react-select'
 
-import useTime from '../utils/useTime'
-import useTodayStats from '../utils/useTodayStats'
-import useCountries from '../utils/useCountries'
-import useYday from '../utils/useYday'
+import useTime from '../hooks/useTime'
+import useTodayStats from '../hooks/useTodayStats'
+import useCountries from '../hooks/useCountries'
+import useYday from '../hooks/useYday'
+import useTranslation from '../hooks/useTranslation'
 
 import { Container } from './S'
 import Stats from './Stats'
@@ -17,7 +18,10 @@ import countriesHebArray from '../assets/cns.js'
 
 const calcDiff = current => prev => current !== 0 ? ((current - prev) / 100) * 100 : 0
 
-const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, worldTime }) => {
+const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime }) => {
+
+  const { t, locale } = useTranslation()
+  const isHeb = locale === 'he'
 
   // const [hebCountry, setHebCountry] = useState(countryheb(country))
   const [showWorld, setShowWorld] = useState(true)
@@ -106,7 +110,7 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
         onSubmit={handleSubmit}
       >
         <label style={{fontSize: '16px', fontWeight: 'bold'}}>
-          { isHeb ? `נתונים לפי מדינה` : `Data For Country:` }
+          {t('selectHeader', 'coronaApp')}
         </label>
 
 
@@ -158,10 +162,11 @@ const CoronaApp = ({ isHeb, theme, userLocation, yesterdayC, yesterdayGlobal, wo
         isHeb={isHeb}
       />
 
-      <HeaderDescription 
-        txt='* גרפים המציגים את שיעור הצמיחה של נגיף הקורונה,
-        אינם מתעדכנים בזמן אמת ולכן אינם משקפים את היום הנוכחי. בדרך-כלל מתקיים פער של יום,
-        לכל היותר שלושה ימים. הנתונים המוצגים מחוץ לגרפים משקפים את הזמן הנתון ברגע הנוכחי ומתעדכנים בערך אחת לחצי שעה.'
+      <HeaderDescription
+        explanation
+        secondary
+        direction={locale === 'he' ? 'rtl' : 'ltr'}
+        txt={'* ' + t('graphExplanation', 'coronaApp')}
       />
 
     <Chart

@@ -9,67 +9,55 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/HeaderDescription.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 var descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int';
-var Text = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
+var Text = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "HeaderDescription__Text",
   componentId: "sc-110gwmc-0"
-})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:350px){max-width:fit-content;}"], function (props) {
+})(["direction:", ";color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;font-style:", ";@media (max-width:768px){max-width:380px;}@media (max-width:350px){max-width:fit-content;}", ";"], function (props) {
+  return props.direction || '';
+}, function (props) {
   return props.theme.text.primary;
+}, function (props) {
+  return props.explanation && 'italic';
+}, function (props) {
+  return props.secondary && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-size:12px;color:props.theme.text.secondary;"]);
 });
-var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "HeaderDescription__Wrap",
   componentId: "sc-110gwmc-1"
 })(["z-index:9999;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:100%;max-width:380px;}@media (max-width:320px){}"]);
-var Href = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+var Href = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
   displayName: "HeaderDescription__Href",
   componentId: "sc-110gwmc-2"
 })(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], function (props) {
   return props.theme.primaryVariant;
-});
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var txt = _ref.txt;
-  var toShow = txt ? __jsx(Text, {
-    secondary: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }, txt) : __jsx(Text, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "This website makes use of public health data, specifically ", __jsx(Href, {
-    href: "https://www.ourworldindata.org",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "www.ourworldindata.org"), " and ", __jsx(Href, {
-    href: "https://WHO.int",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "WHO.int"));
+}); // <Text {...props}>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
+// </Text>
+//
+
+/* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 58
     },
     __self: this
-  }, toShow);
+  }, __jsx(Text, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), props.txt));
 });
 
 /***/ }),
@@ -153,7 +141,7 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;};", ";"], function (props) {
   return props.center ? 'center' : '';
 }, function (props) {
   return props.fontSize || '16px';
@@ -168,7 +156,9 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 }, function (props) {
   return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
 }, function (props) {
-  return props.rtl ? 'rtl' : 'inherit';
+  return props.direction || 'inherit';
+}, function (props) {
+  return props.centered && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["margin:0 auto;"]);
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -179,7 +169,9 @@ var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+})(["direction:", ";@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+  return props.direction || '';
+}, function (props) {
   return props.textAlign && 'center';
 });
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
@@ -214,7 +206,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return !props.active && props.hoverColor ? props.theme.onPrimary : '';
 }, function (props) {
-  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";"], props.fontFamily, function (props) {
+  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, function (props) {
     return props.theme.white;
   }, function (props) {
     return props.theme.kofi;
@@ -226,7 +218,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 155
     },
     __self: this
   }), props.children);
@@ -7104,7 +7096,7 @@ var Statistics = function Statistics(_ref) {
             case 0:
               setLoading(true);
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/countries?sort=cases'));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://corona.lmao.ninja/v2/countries?sort=cases'));
 
             case 3:
               _ref2 = _context.sent;
@@ -7195,7 +7187,7 @@ var Statistics = function Statistics(_ref) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FStatistics&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2FStatistics.js ***!
   \********************************************************************************************************************************************************/
@@ -7218,5 +7210,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Statistics.js.map

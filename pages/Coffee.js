@@ -3,9 +3,11 @@ import { Heading, Button, Paragraph, FadeIn, simpleWrapper, Container } from '..
 import styled, { withTheme } from 'styled-components'
 import Link from 'next/link'
 
+import useTranslation from '../hooks/useTranslation'
+
 const paypalMe = 'https://paypal.me/BPov/'
 const paypalDonate = 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=boristofu%40gmail.com&item_name=donations+for+maintaining+informational+website+regarding+Coronavirus&currency_code=USD&source=url&amount='
-const koFi = 'https://ko-fi.com/borispov/'
+const koFi = 'https://ko-fi.com/borispov'
 
 const Message = styled(Heading)`
   font-size: 16px;
@@ -119,19 +121,12 @@ const farewellHeb = 'שמרו על עצמכם ועל אהובכם'
 
 
 export default withTheme(({ isHeb, theme }) => {
+
+  const { t, locale } = useTranslation()
+
   const [counter, setCounter] = useState(2)
   const [error, setError] = useState(false)
 
-  const errorHeb = 'אפילו זוג כפפות עולה יותר מדולר'
-  const errorEng = 'C\'mon Even a pair of gloves cost more than 1$...'
-
-  const instructionsEng = [
-    ' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. ' ]
-
-  const instructionsHeb = [
-    'תרומה דרך ממשק של ko-fi.com. הנכם תהיו מועברים לדף ה״קופי״ שלי, דרכו תוכלו להשאיר טיפ עם הודעה. שימו לב, ניתן לתרום ללא הרשמה! כשתועברו לדף של פייפאל ותתבקשו להירשם, ליחצו על כפתור ההרשמה - אתם תועברו לדף של ביצוע תשלום.',
-    'העברת טיפ ישירות דרך paypal. תוכלו לבחור כל סכום, אך ללא הודעה. \n* אני ממליץ להשתמש בממשק ko-fi.com. אפשרות התרומה דרך פייפאל מוצגת כאן עבור אלו שאינם מסתדרים עם תשלום דרך ko-fi.com',
-  ]
 
   const instructions = (ins) => {
     return (
@@ -145,7 +140,7 @@ export default withTheme(({ isHeb, theme }) => {
     )
   }
 
-  const instructionToRender = isHeb && instructions(instructionsHeb) || instructions(instructionsEng)
+  const instructionToRender = instructions(t('instructions', 'coffeePage'))
 
   const handlePlusClick = c => {
     setCounter(c + 1)
@@ -166,13 +161,13 @@ export default withTheme(({ isHeb, theme }) => {
 
   return (
     <simpleWrapper>
-      <Container textAlign>
+      <Container textAlign direction={locale === 'he' ? 'rtl' : 'ltr'} >
         <FadeIn duration="0.5s" delay="0.1s">
-          <Heading>{ isHeb && 'תודה רבה' || 'Thank You!' }</Heading>
-          <Paragraph color={theme.color}>
-            { isHeb ? hebText : engText }
+          <Heading>{t('heading', 'coffeePage')}</Heading>
+          <Paragraph color={theme.color} mw='720px' center centered>
+            {t('description', 'coffeePage')}
           </Paragraph>
-          <Heading2>{isHeb ? farewellHeb : farewellEng}</Heading2>
+          <Heading2>{t('farewell', 'coffeePage')}</Heading2>
           <Box>
             <BoxButtons>
               <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
@@ -180,7 +175,7 @@ export default withTheme(({ isHeb, theme }) => {
               <BoxCount>{ counter }$</BoxCount>
             </BoxButtons>
 
-            <ErrorText>{error ? (isHeb && errorHeb || errorEng) : ''}</ErrorText>
+            <ErrorText>{error ? t('error', 'coffeePage') : ''}</ErrorText>
 
           {/*
             <Message fontSize='18px'>{!isHeb ? 'Minimum 2$ Coffee' : 'מינימום 2$ קפה שחור'}</Message>
@@ -190,28 +185,29 @@ export default withTheme(({ isHeb, theme }) => {
 
             <BoxFlex>
               <div>
-                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">
+  
+                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={koFi} target="_blank">
                     <Button pointer link hoverUp hoverColor='primaryLight' bg='primaryColor'>
-                      {isHeb ? 'עם ko-fi' : 'via ko-fi.com (recommended)'}
+                      {t('kofiButton', 'coffeePage')}
                     </Button>
                   </a>
 
-                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={koFi + counter} target="_blank">
+                  <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">
                     <Button link pointer bg='primaryVariant' hoverUp hoverColor='primaryLight' >
-                      {isHeb ? 'עם PayPal' : 'PayPal Donate'}
+                      {t('paypalButton', 'coffeePage')}
                     </Button>
                   </a>
 
               </div>
 
               <div>
-              <Button pointer bg='grey'>
-                <Link href="/">
-                  <a style={{textDecoration: 'none', color: '#797979', marginTop: '32px'}}>
-                  { isHeb ? 'חזור' : 'Back' }
-                </a>
+                <a style={{textDecoration: 'none', color: '#797979', marginTop: '32px'}}>
+                  <Link href="/">
+                    <Button pointer bg='grey'>
+                      { isHeb ? 'חזור' : 'Back' }
+                    </Button>
                 </Link>
-              </Button>
+              </a>
             </div>
 
             </BoxFlex>

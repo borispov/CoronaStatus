@@ -1,0 +1,54 @@
+webpackHotUpdate("static/development/pages/_app.js",{
+
+/***/ "./locales/translations.js":
+/*!*********************************!*\
+  !*** ./locales/translations.js ***!
+  \*********************************/
+/*! exports provided: strings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return strings; });
+var strings = {
+  he: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona! מידע עדכני על נגיף הקורונה',
+    metaDescription: 'אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד',
+    links: {
+      news: 'חדשות',
+      about: 'אודות',
+      statistics: 'נתונים'
+    },
+    labels: {
+      cases: 'מאומתים'
+    },
+    coffeePage: {
+      text: 'שלום ותודה רבה לכם על כך שהנכם שוקלים לבצע תרומה עבור החזקת האתר הזה. אתר זה חינמי ופתוח לשימוש כלל הציבור. היני מודה לכם על זמנכם.',
+      farewell: 'שמרו על עצמכם ועל אהובכם'
+    },
+    tipButton: '- השאר טיפ ל',
+    tipFont: 'Rubik'
+  },
+  en: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona - C19 Data & Information for Raising awareness and coping techniques',
+    metaDescription: "nCorona provides updated Coronavirus informative statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+    links: {
+      news: 'News',
+      about: 'About',
+      statistics: 'Statistics'
+    },
+    coffeePage: {
+      text: 'Hello and thank you for considering purchasing me a coffee in such unpleasant times. This website is free for all. As time allows, I\'ll keep updating and adding features.',
+      farewell: 'Take care of yourself and your beloved ones.'
+    },
+    tipButton: 'Buy Me A Mask',
+    tipFont: 'Quicksand'
+  }
+};
+
+/***/ })
+
+})
+//# sourceMappingURL=_app.js.73bcc9445c42ad142a2a.hot-update.js.map

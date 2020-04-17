@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int'
 
 const Text = styled.p`
+  direction: ${props => props.direction || ''};
   color: ${props => props.theme.text.primary};
   font-size: 14px;
   font-family: 'Open Sans';
@@ -10,6 +11,7 @@ const Text = styled.p`
   max-width: 520px;
   text-align: center;
   margin: 0 auto;
+  font-style: ${props => props.explanation && 'italic'};
   @media (max-width: 768px) {
     max-width: 380px;
   }
@@ -17,7 +19,10 @@ const Text = styled.p`
   @media (max-width: 350px) {
     max-width: fit-content;
   }
-
+  ${props => props.secondary && css`
+    font-size: 12px;
+    color: props.theme.text.secondary;
+  `};
 `
 
 const Wrap = styled.div`
@@ -45,13 +50,15 @@ const Href = styled.a`
   color: ${props => props.theme.primaryVariant};
 `
 
-export default ({ txt }) => {
-  const toShow = txt ? <Text secondary>{txt}</Text> :
-  <Text>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
-  </Text>
+// <Text {...props}>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
+// </Text>
+//
+export default (props) => {
   return (
-  <Wrap>
-    { toShow }
-  </Wrap>
+    <Wrap>
+      <Text {...props} >
+        { props.txt }
+      </Text>
+    </Wrap>
   )
 }

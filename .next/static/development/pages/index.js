@@ -155,20 +155,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-/* harmony import */ var _utils_useTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useTime */ "./utils/useTime.js");
-/* harmony import */ var _utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useTodayStats */ "./utils/useTodayStats.js");
-/* harmony import */ var _utils_useCountries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useCountries */ "./utils/useCountries.js");
-/* harmony import */ var _utils_useYday__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useYday */ "./utils/useYday.js");
-/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
-/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
-/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_CaseChart__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
+/* harmony import */ var _hooks_useTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useTime */ "./hooks/useTime.js");
+/* harmony import */ var _hooks_useTodayStats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useTodayStats */ "./hooks/useTodayStats.js");
+/* harmony import */ var _hooks_useCountries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useCountries */ "./hooks/useCountries.js");
+/* harmony import */ var _hooks_useYday__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useYday */ "./hooks/useYday.js");
+/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./S */ "./components/S.js");
+/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
+/* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
+/* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
+/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_CaseChart__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -190,14 +192,18 @@ var calcDiff = function calcDiff(current) {
 };
 
 var CoronaApp = function CoronaApp(_ref) {
-  var isHeb = _ref.isHeb,
-      theme = _ref.theme,
+  var theme = _ref.theme,
       userLocation = _ref.userLocation,
       yesterdayC = _ref.yesterdayC,
       yesterdayGlobal = _ref.yesterdayGlobal,
       worldTime = _ref.worldTime;
 
-  // const [hebCountry, setHebCountry] = useState(countryheb(country))
+  var _useTranslation = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_7__["default"])(),
+      t = _useTranslation.t,
+      locale = _useTranslation.locale;
+
+  var isHeb = locale === 'he'; // const [hebCountry, setHebCountry] = useState(countryheb(country))
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       showWorld = _useState[0],
       setShowWorld = _useState[1];
@@ -214,18 +220,18 @@ var CoronaApp = function CoronaApp(_ref) {
   var worldUrl = 'https://corona.lmao.ninja/all';
   var v2 = 'https://corona.lmao.ninja/v2/countries/';
 
-  var _useTime = Object(_utils_useTime__WEBPACK_IMPORTED_MODULE_3__["default"])(country, theme),
+  var _useTime = Object(_hooks_useTime__WEBPACK_IMPORTED_MODULE_3__["default"])(country, theme),
       countryStats = _useTime.countryStats;
 
-  var _useTodayStats = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, country),
+  var _useTodayStats = Object(_hooks_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, country),
       todayStats = _useTodayStats.todayStats;
 
-  var worldToday = Object(_utils_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, 'world').todayStats;
+  var worldToday = Object(_hooks_useTodayStats__WEBPACK_IMPORTED_MODULE_4__["default"])(url, 'world').todayStats;
 
-  var _useYday = Object(_utils_useYday__WEBPACK_IMPORTED_MODULE_6__["default"])(v2, country),
+  var _useYday = Object(_hooks_useYday__WEBPACK_IMPORTED_MODULE_6__["default"])(v2, country),
       yesterdayCn = _useYday.yesterdayCn;
 
-  var _useCountries = Object(_utils_useCountries__WEBPACK_IMPORTED_MODULE_5__["default"])(),
+  var _useCountries = Object(_hooks_useCountries__WEBPACK_IMPORTED_MODULE_5__["default"])(),
       countries = _useCountries.countries;
 
   var worldTodaySorted = worldToday && {
@@ -273,7 +279,7 @@ var CoronaApp = function CoronaApp(_ref) {
         return a.toLowerCase();
       });
       var engIndex = lowerCased.indexOf(country);
-      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][engIndex];
+      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][engIndex];
     }
 
     return country;
@@ -291,19 +297,19 @@ var CoronaApp = function CoronaApp(_ref) {
   }) : countries.map(function (country, idx) {
     return {
       value: country,
-      label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][idx]
+      label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][idx]
     };
   });
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 104
     },
     __self: this
-  }, __jsx(_S__WEBPACK_IMPORTED_MODULE_7__["Container"], {
+  }, __jsx(_S__WEBPACK_IMPORTED_MODULE_8__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 106
     },
     __self: this
   }, __jsx("form", {
@@ -315,7 +321,7 @@ var CoronaApp = function CoronaApp(_ref) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 108
     },
     __self: this
   }, __jsx("label", {
@@ -325,10 +331,10 @@ var CoronaApp = function CoronaApp(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 112
     },
     __self: this
-  }, isHeb ? "\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05DC\u05E4\u05D9 \u05DE\u05D3\u05D9\u05E0\u05D4" : "Data For Country:"), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, t('selectHeader', 'coronaApp')), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: 'Select',
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
@@ -336,20 +342,20 @@ var CoronaApp = function CoronaApp(_ref) {
     placeholder: country && countryheb(country) || country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 117
     },
     __self: this
-  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
     cn: country || todayStats && todayStats.country,
     todayStats: todayStatsSorted,
     yesteryday: yesterdayStatsSorted,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 126
     },
     __self: this
-  }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
     isHeb: isHeb,
     type: "line",
     labels: countryStats.labels // data={countryStats.datasets.filter(a => a.label === 'cases')}
@@ -361,27 +367,30 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 144
     },
     __self: this
-  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
     cn: 'World',
     todayWorld: worldTodaySorted,
     yesteryday: yesterdayGlobalSorted,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 158
     },
     __self: this
-  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    txt: "* \u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D0\u05D9\u05E0\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D9\u05D5\u05DD \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9. \u05D1\u05D3\u05E8\u05DA-\u05DB\u05DC\u05DC \u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D9\u05D5\u05DD, \u05DC\u05DB\u05DC \u05D4\u05D9\u05D5\u05EA\u05E8 \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD. \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05DE\u05D5\u05E6\u05D2\u05D9\u05DD \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E9\u05E7\u05E4\u05D9\u05DD \u05D0\u05EA \u05D4\u05D6\u05DE\u05DF \u05D4\u05E0\u05EA\u05D5\u05DF \u05D1\u05E8\u05D2\u05E2 \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05E2\u05E8\u05DA \u05D0\u05D7\u05EA \u05DC\u05D7\u05E6\u05D9 \u05E9\u05E2\u05D4.",
+  }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    explanation: true,
+    secondary: true,
+    direction: locale === 'he' ? 'rtl' : 'ltr',
+    txt: '* ' + t('graphExplanation', 'coronaApp'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 165
     },
     __self: this
-  }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
     isHeb: isHeb,
     type: "line",
     labels: worldTime.labels,
@@ -392,7 +401,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 172
     },
     __self: this
   })));
@@ -465,67 +474,55 @@ var Content = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.with
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/HeaderDescription.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 var descriptionTextEn = 'This website makes use of public health data, specifically www.ourworldindata.org and WHO.int';
-var Text = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
+var Text = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "HeaderDescription__Text",
   componentId: "sc-110gwmc-0"
-})(["color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;@media (max-width:768px){max-width:380px;}@media (max-width:350px){max-width:fit-content;}"], function (props) {
+})(["direction:", ";color:", ";font-size:14px;font-family:'Open Sans';line-height:1.5;max-width:520px;text-align:center;margin:0 auto;font-style:", ";@media (max-width:768px){max-width:380px;}@media (max-width:350px){max-width:fit-content;}", ";"], function (props) {
+  return props.direction || '';
+}, function (props) {
   return props.theme.text.primary;
+}, function (props) {
+  return props.explanation && 'italic';
+}, function (props) {
+  return props.secondary && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-size:12px;color:props.theme.text.secondary;"]);
 });
-var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+var Wrap = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "HeaderDescription__Wrap",
   componentId: "sc-110gwmc-1"
 })(["z-index:9999;position:relative;display:block;width:620px;max-width:620px;margin:0 auto 24px;@media (max-width:768px){width:100%;max-width:380px;}@media (max-width:320px){}"]);
-var Href = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+var Href = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
   displayName: "HeaderDescription__Href",
   componentId: "sc-110gwmc-2"
 })(["outline:none;text-decoration:none;font-weight:bold;color:", ";"], function (props) {
   return props.theme.primaryVariant;
-});
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var txt = _ref.txt;
-  var toShow = txt ? __jsx(Text, {
-    secondary: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }, txt) : __jsx(Text, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "This website makes use of public health data, specifically ", __jsx(Href, {
-    href: "https://www.ourworldindata.org",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "www.ourworldindata.org"), " and ", __jsx(Href, {
-    href: "https://WHO.int",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "WHO.int"));
+}); // <Text {...props}>This website makes use of public health data, specifically <Href href="https://www.ourworldindata.org">www.ourworldindata.org</Href> and <Href href="https://WHO.int">WHO.int</Href>
+// </Text>
+//
+
+/* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return __jsx(Wrap, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 58
     },
     __self: this
-  }, toShow);
+  }, __jsx(Text, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), props.txt));
 });
 
 /***/ }),
@@ -757,6 +754,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./S */ "./components/S.js");
+/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
 
 
 var _noChartDisplaySettin,
@@ -768,6 +766,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -792,29 +791,7 @@ var noChartDisplaySettings = (_noChartDisplaySettin = {
   pointHoverRadius: 0,
   pointHoverBorderWidth: 0,
   pointRadius: 0
-}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "pointHitRadius", 0), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "fill", false), _noChartDisplaySettin);
-
-var cutCaseCount = function cutCaseCount(_ref2) {
-  var data = _ref2.data;
-  return data.length > 30 ? subtractArray(data) : data;
-};
-
-var displayOnChart = function displayOnChart(dset) {
-  return _objectSpread({}, dset, {
-    data: cutCaseCount(dset),
-    fill: false
-  });
-};
-
-var dontDisplayOnChart = function dontDisplayOnChart(dset) {
-  return _objectSpread({}, dset, {
-    data: cutCaseCount(dset)
-  }, noChartDisplaySettings);
-};
-
-var sortForDisplay = function sortForDisplay(dset) {
-  return dset.label !== 'cases' ? dontDisplayOnChart(dset) : displayOnChart(dset);
-};
+}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "pointHitRadius", 0), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "fill", false), _noChartDisplaySettin); // if mobile, do by 8, if not do by 3
 
 var filterBy5 = function filterBy5(x, i) {
   return !(i % 8);
@@ -824,17 +801,42 @@ var subtractArray = function subtractArray(arr) {
   return arr.filter(filterBy5).concat(arr[arr.length - 1]);
 };
 
-var parseDatasets = function parseDatasets(arrayOfSets, fill) {
-  return arrayOfSets.map(sortForDisplay); // return arrayOfSets.map(set => ({
-  //   ...set,
-  //   data: set.data.length > 30 ? subtractArray(set.data) : set.data,
-  //   fill: fill || false,
-  // }))
+var cutCaseCount = function cutCaseCount(_ref2) {
+  var data = _ref2.data;
+  return data.length > 30 ? subtractArray(data) : data;
 };
 
 var LineChart = function LineChart(props, _ref3) {
   var theme = _ref3.theme;
+
+  var _useTranslation = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__["default"])(),
+      t = _useTranslation.t;
+
   var chartRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+
+  var displayOnChart = function displayOnChart(dset) {
+    return _objectSpread({}, dset, {
+      label: t(dset.label, 'chartLabels'),
+      data: cutCaseCount(dset),
+      fill: false
+    });
+  };
+
+  var dontDisplayOnChart = function dontDisplayOnChart(dset) {
+    return _objectSpread({}, dset, {
+      label: t(dset.label, 'chartLabels'),
+      data: cutCaseCount(dset)
+    }, noChartDisplaySettings);
+  };
+
+  var parseDatasets = function parseDatasets(arrayOfSets, fill) {
+    return arrayOfSets.map(sortForDisplay);
+  };
+
+  var sortForDisplay = function sortForDisplay(dset) {
+    return dset.label !== 'cases' && dset.label !== 'נדבקים' ? dontDisplayOnChart(dset) : displayOnChart(dset);
+  };
+
   var data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
@@ -952,7 +954,7 @@ var LineChart = function LineChart(props, _ref3) {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 192
     },
     __self: this
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -963,7 +965,7 @@ var LineChart = function LineChart(props, _ref3) {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 193
     },
     __self: this
   }));
@@ -973,10 +975,10 @@ var LineChart = function LineChart(props, _ref3) {
 
 /***/ }),
 
-/***/ "./components/QuickStats.js":
-/*!**********************************!*\
-  !*** ./components/QuickStats.js ***!
-  \**********************************/
+/***/ "./components/QuickStats/QuickStats.js":
+/*!*********************************************!*\
+  !*** ./components/QuickStats/QuickStats.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -984,39 +986,135 @@ var LineChart = function LineChart(props, _ref3) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./S */ "./components/S.js");
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats.js";
+/* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../S */ "./components/S.js");
+/* harmony import */ var _QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickStats.styled */ "./components/QuickStats/QuickStats.styled.js");
+/* harmony import */ var _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./QuickStats.utils */ "./components/QuickStats/QuickStats.utils.js");
+/* harmony import */ var _hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/useTranslation.js */ "./hooks/useTranslation.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/QuickStats/QuickStats.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// Styles
+
+ // utils
 
 
 
-var formatNumber = function formatNumber(x) {
-  return x.toString().split('').reverse().map(function (x, i) {
-    return i % 3 === 0 ? x + ',' : x;
-  }).reverse().join('').slice(0, -1);
-};
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var S = _ref.S,
+      country = _ref.country,
+      isHeb = _ref.isHeb,
+      yday = _ref.yday,
+      _ref$comparison = _ref.comparison,
+      comparison = _ref$comparison === void 0 ? true : _ref$comparison;
 
-var Column = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "QuickStats__Column",
-  componentId: "lmgi17-0"
+  var _useTranslation = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_4__["default"])(),
+      t = _useTranslation.t;
+
+  return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+    world: country.toLowerCase() === 'world',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, Object.keys(S).map(function (k, i) {
+    return __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Column"], {
+      key: i,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Header"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, " ", t(k, 'labels')), __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["InRow"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Number"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, S[k] && _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(S[k]), comparison && yday && country !== 'world' && country !== 'World' && __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, "(", _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(yday[k]), ")")), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }), comparison && yday && __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Percentage"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k]) < 0 && "\u2B07" || "\u2B06"), "%", Math.abs(_QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k])))));
+  })));
+});
+
+/***/ }),
+
+/***/ "./components/QuickStats/QuickStats.styled.js":
+/*!****************************************************!*\
+  !*** ./components/QuickStats/QuickStats.styled.js ***!
+  \****************************************************/
+/*! exports provided: Column, InRow, Row, Percentage, Header, Number */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Column", function() { return Column; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InRow", function() { return InRow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Row", function() { return Row; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Percentage", function() { return Percentage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Number", function() { return Number; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var Column = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "QuickStatsstyled__Column",
+  componentId: "fgl929-0"
 })(["display:flex;flex-flow:column wrap;direction:", ";align-items:start;width:100%;background:#fafafa;padding:16px 3em 12px;border-radius:2px;border-bottom:1px solid #e4e7eb;@media (min-width:660px){box-shadow:none;border:1px solid #e4e7eb;height:auto;flex:1 0 ", ";}&:last-child{border-bottom:none;}"], function (props) {
   return props.ltr ? 'ltr' : 'rtl';
 }, function (props) {
   return props.world ? '249px' : '235px';
 });
-var InRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "QuickStats__InRow",
-  componentId: "lmgi17-1"
+var InRow = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "QuickStatsstyled__InRow",
+  componentId: "fgl929-1"
 })(["display:flex;flex-flow:row wrap;font-weight:700;color:", ";justify-content:", ";width:100%;line-height:1.45;"], function (props) {
   return props.theme.primaryColor;
 }, function (props) {
   return props.justify || 'space-between';
 });
-var TheRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "QuickStats__TheRow",
-  componentId: "lmgi17-2"
+var Row = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "QuickStatsstyled__Row",
+  componentId: "fgl929-2"
 })(["display:flex;flex-flow:column wrap;justify-content:center;box-shadow:", ";margin-bottom:28px;border-radius:8px;border:1px solid #e4e7eb;margin-left:auto;margin-right:auto;@media (min-width:660px) and (max-width:920px){max-width:620px;flex-flow:", ";}@media (min-width:921px) and (max-width:1023px){max-width:", ";flex-flow:", ";}@media (min-width:1024px){max-width:1064px;flex-flow:", ";}"], function (props) {
   return props.theme.shadows[1];
 }, function (props) {
@@ -1028,33 +1126,43 @@ var TheRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withC
 }, function (props) {
   return props.world ? 'row wrap' : 'row wrap';
 });
-var Percentage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
-  displayName: "QuickStats__Percentage",
-  componentId: "lmgi17-3"
+var Percentage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
+  displayName: "QuickStatsstyled__Percentage",
+  componentId: "fgl929-3"
 })(["font-size:10px;font-weight:500;color:", ";align-self:flex-end;padding-bottom:2px;border-radius:12px;background:#DFF7EC;padding:0.5em 1em;span{font-family:'Verdana';background:#DFF7EC;color:", ";}@media (min-width:350px){font-size:12px;}"], function (props) {
   return props.theme.text.secondary;
 }, function (props) {
   return props.theme.primaryLight;
 });
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "QuickStats__Header",
-  componentId: "lmgi17-4"
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "QuickStatsstyled__Header",
+  componentId: "fgl929-4"
 })(["font-size:20px;font-weight:500;color:", ";width:auto;letter-spacing:0.1px;line-height:1.85;@media (min-width:660px) and (max-width:920px){font-size:12px;line-height:1.65;letter-spacing:0.025px;}@media (min-width:921px) and (max-width:1023px){font-size:14px;}@media (min-width:1024px){font-size:16x;}"], function (props) {
   return props.theme.text.primary;
 });
-var Number = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
-  displayName: "QuickStats__Number",
-  componentId: "lmgi17-5"
-})(["font-size:24px;font-weight:700;color:", ";letter-spacing:1.2px;font-family:'Montserrat';padding:0;margin:0;line-height:1.65;span{font-size:10px;font-family:'Verdana';letter-spacing:0px;color:#717171;margin-left:1em;margin-right:1em;margin-bottom:4px;}@media (min-width:660px) and (max-width:920px){h1{font-size:14px;line-height:1.65;letter-spacing:0.5px;}}@media (min-width:921px) and (max-width:1023px){h1{font-size:12px;letter-spacing:0.8px;}}@media (min-width:1024px){h1{font-size:16px;}}"], function (props) {
+var Number = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
+  displayName: "QuickStatsstyled__Number",
+  componentId: "fgl929-5"
+})(["font-size:24px;font-weight:700;color:", ";letter-spacing:0.4px;font-family:'Montserrat';padding:0;margin:0;line-height:1.65;span{font-size:10px;font-family:'Montserrat';letter-spacing:-0.2px;color:#717171;margin-left:1em;margin-right:1em;margin-bottom:4px;}@media (min-width:660px) and (max-width:920px){h1{font-size:14px;line-height:1.65;letter-spacing:0.5px;}}@media (min-width:921px) and (max-width:1023px){h1{font-size:12px;letter-spacing:0.8px;}}@media (min-width:1024px){h1{font-size:16px;}}"], function (props) {
   return props.theme.primaryVariant;
 });
 
-var isPercentDown = function isPercentDown(x) {
-  return x < 0;
-};
+/***/ }),
 
-var showPercent = function showPercent(x) {
-  return x !== 0;
+/***/ "./components/QuickStats/QuickStats.utils.js":
+/*!***************************************************!*\
+  !*** ./components/QuickStats/QuickStats.utils.js ***!
+  \***************************************************/
+/*! exports provided: F */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return F; });
+var formatNumber = function formatNumber(x) {
+  return x.toString().split('').reverse().map(function (x, i) {
+    return i % 3 === 0 ? x + ',' : x;
+  }).reverse().join('').slice(0, -1);
 };
 
 var calcDiff = function calcDiff(current) {
@@ -1064,118 +1172,10 @@ var calcDiff = function calcDiff(current) {
 }; // Percentage of increase = |100 - 150|/100 = 50/100 = 0.5 = 50%
 
 
-var labels = {
-  cases: {
-    heb: 'מאומתים',
-    eng: 'Confirmed'
-  },
-  todayCases: {
-    heb: 'מקרים חדשים',
-    eng: 'New Cases'
-  },
-  deaths: {
-    heb: 'נפטרו',
-    eng: 'Deaths'
-  },
-  recovered: {
-    heb: 'החלימו',
-    eng: 'Recovered'
-  },
-  active: {
-    heb: 'פעילים',
-    eng: 'Active'
-  },
-  affectedCountries: {
-    heb: 'מדינות נגועות',
-    eng: 'Infected Countries'
-  }
+var F = {
+  formatNumber: formatNumber,
+  calcDiff: calcDiff
 };
-
-var engLbl = function engLbl(k) {
-  return labels[k]['eng'];
-};
-
-var hebLbl = function hebLbl(k) {
-  return labels[k]['heb'];
-};
-
-var putLabel = function putLabel(heb, k) {
-  return heb && hebLbl(k) || engLbl(k);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var S = _ref.S,
-      country = _ref.country,
-      isHeb = _ref.isHeb,
-      yday = _ref.yday,
-      _ref$comparison = _ref.comparison,
-      comparison = _ref$comparison === void 0 ? true : _ref$comparison;
-  return __jsx(_S__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 177
-    },
-    __self: this
-  }, __jsx(TheRow, {
-    world: country.toLowerCase() === 'world',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 178
-    },
-    __self: this
-  }, Object.keys(S).map(function (k, i) {
-    return __jsx(Column, {
-      key: i,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 183
-      },
-      __self: this
-    }, __jsx(Header, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 184
-      },
-      __self: this
-    }, " ", putLabel(isHeb, k)), __jsx(InRow, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 185
-      },
-      __self: this
-    }, __jsx(Number, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 186
-      },
-      __self: this
-    }, S[k] && formatNumber(S[k]), __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 190
-      },
-      __self: this
-    }, comparison && yday && country !== 'world' && country !== 'World' && "(".concat(formatNumber(yday[k]), ")"))), __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 196
-      },
-      __self: this
-    }), comparison && yday && __jsx(Percentage, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 198
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 199
-      },
-      __self: this
-    }, calcDiff(S[k])(yday[k]) < 0 && "\u2B07" || "\u2B06"), "%", Math.abs(calcDiff(S[k])(yday[k])))));
-  })));
-});
 
 /***/ }),
 
@@ -1258,7 +1258,7 @@ var Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2.with
 var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], function (props) {
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;};", ";"], function (props) {
   return props.center ? 'center' : '';
 }, function (props) {
   return props.fontSize || '16px';
@@ -1273,7 +1273,9 @@ var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p.with
 }, function (props) {
   return props.secondary ? props.theme.text.secondary : props.theme.text.primary;
 }, function (props) {
-  return props.rtl ? 'rtl' : 'inherit';
+  return props.direction || 'inherit';
+}, function (props) {
+  return props.centered && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["margin:0 auto;"]);
 });
 var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__simpleWrapper",
@@ -1284,7 +1286,9 @@ var simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+})(["direction:", ";@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], function (props) {
+  return props.direction || '';
+}, function (props) {
   return props.textAlign && 'center';
 });
 var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
@@ -1319,7 +1323,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return !props.active && props.hoverColor ? props.theme.onPrimary : '';
 }, function (props) {
-  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";"], props.fontFamily, function (props) {
+  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, function (props) {
     return props.theme.white;
   }, function (props) {
     return props.theme.kofi;
@@ -1331,7 +1335,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 155
     },
     __self: this
   }), props.children);
@@ -1391,7 +1395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _QuickStats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickStats */ "./components/QuickStats.js");
+/* harmony import */ var _QuickStats_QuickStats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickStats/QuickStats */ "./components/QuickStats/QuickStats.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Stats.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1408,10 +1412,11 @@ function Stats(_ref) {
       todayStats = _ref.todayStats,
       isHeb = _ref.isHeb,
       yesteryday = _ref.yesteryday;
+  // console.log(todayWorld);
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 15
     },
     __self: this
   }, todayWorld && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", {
@@ -1421,37 +1426,94 @@ function Stats(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 19
     },
     __self: this
   }, isHeb && 'המצב הנוכחי ב' || 'Status for: ', __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
-  }, cn === 'World' && isHeb && 'עולם' || cn)), __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, cn === 'World' && isHeb && 'עולם' || cn)), __jsx(_QuickStats_QuickStats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     country: cn,
     yday: yesteryday,
     S: todayWorld,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 22
     },
     __self: this
-  })), todayStats && __jsx(_QuickStats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  })), todayStats && __jsx(_QuickStats_QuickStats__WEBPACK_IMPORTED_MODULE_2__["default"], {
     country: cn,
     yday: yesteryday,
     S: todayStats,
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 27
     },
     __self: this
   }));
 }
+
+/***/ }),
+
+/***/ "./context/LocaleContext.js":
+/*!**********************************!*\
+  !*** ./context/LocaleContext.js ***!
+  \**********************************/
+/*! exports provided: LocaleContext, LocaleProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleContext", function() { return LocaleContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleProvider", function() { return LocaleProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/LocaleContext.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var LocaleContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var LocaleProvider = function LocaleProvider(props) {
+  // Default Setting
+  var initialState = 'he';
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
+      locale = _useState[0],
+      setLocale = _useState[1];
+
+  var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (prev.current === undefined && locale === 'he') {
+      var readLocal = localStorage.getItem('locale');
+
+      if (readLocal !== 'he') {
+        setLocale(readLocal);
+        return;
+      } else {
+        setLocale(readLocal);
+      }
+    } else {
+      localStorage.setItem('locale', locale);
+      prev.current = locale;
+    }
+  }, [locale]);
+  return __jsx(LocaleContext.Provider, {
+    value: {
+      locale: locale,
+      setLocale: setLocale
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }, props.children);
+};
 
 /***/ }),
 
@@ -1506,6 +1568,702 @@ var ProxyContextProvider = function ProxyContextProvider(props) {
     },
     __self: this
   }, props.children);
+};
+
+/***/ }),
+
+/***/ "./hooks/useCountries.js":
+/*!*******************************!*\
+  !*** ./hooks/useCountries.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var baseURL = "https://nCorona.live/api/v1/countries";
+
+function useCountries() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      error = _useState[0],
+      setError = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      countries = _useState2[0],
+      setCountries = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    (function _callee() {
+      var _ref, data, countries;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setError();
+              _context.next = 3;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL));
+
+            case 3:
+              _ref = _context.sent;
+              data = _ref.data;
+              countries = data.countries;
+              setCountries(countries);
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, null, null, Promise);
+    })();
+  }, []);
+  return {
+    countries: countries,
+    error: error
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useCountries);
+
+/***/ }),
+
+/***/ "./hooks/useTime.js":
+/*!**************************!*\
+  !*** ./hooks/useTime.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var _utils_sortExternalApi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/sortExternalApi */ "./utils/sortExternalApi.js");
+
+
+
+
+
+var baseURL = "https://nCorona.live/api/v1/alltime/";
+var baseURLv2 = 'https://pomber.github.io/covid19/timeseries.json';
+
+function currentCountry() {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
+            return res.data.country;
+          })["catch"](function (e) {
+            return 'israel';
+          }));
+
+        case 2:
+          return _context.abrupt("return", _context.sent);
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+} // function useTime(loc, url = baseURL) {
+
+
+function useTime(loc) {
+  var theme = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      countryStats = _useState[0],
+      setCountryStats = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      error = _useState3[0],
+      setError = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      countries = _useState4[0],
+      setCountries = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData(cn) {
+      var country, URL, data, timeStats;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              setLoading(true);
+              setError();
+              _context2.t0 = loc;
+
+              if (_context2.t0) {
+                _context2.next = 7;
+                break;
+              }
+
+              _context2.next = 6;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry());
+
+            case 6:
+              _context2.t0 = _context2.sent;
+
+            case 7:
+              country = _context2.t0;
+              URL = baseURL + country;
+              _context2.next = 11;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL).then(function (res) {
+                return res.data;
+              })["catch"](function (err) {
+                return setError(err);
+              }));
+
+            case 11:
+              data = _context2.sent;
+              // const data = await axios.get(baseURLv2)
+              //   .then(res => res.data[country])
+              //   .catch(err => setError(err))
+              // const timeStats = sortExternalApi(data);
+              timeStats = Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_3__["default"])(data, theme);
+              setCountryStats(timeStats);
+              setLoading(false);
+
+            case 15:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, null, null, null, Promise);
+    }
+
+    fetchData(loc);
+  }, [loc]);
+  return {
+    countryStats: countryStats,
+    loading: loading,
+    error: error,
+    countries: countries
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useTime);
+
+/***/ }),
+
+/***/ "./hooks/useTodayStats.js":
+/*!********************************!*\
+  !*** ./hooks/useTodayStats.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var capitalize = function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+};
+
+var parseCn = function parseCn(str) {
+  return str === 'usa' || str === 'Usa' || str === 'United States' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : str.toLowerCase();
+};
+
+function getCountry(list) {
+  return function (queryCountry) {
+    return list.reduce(function (a, c) {
+      return c.country === queryCountry ? c : a;
+    }, {});
+  };
+}
+
+function currentCountry() {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
+            return res.data.country;
+          })["catch"](function (e) {
+            return 'israel';
+          }));
+
+        case 2:
+          return _context.abrupt("return", _context.sent);
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+function useTodayStats(url, country) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      todayStats = _useState[0],
+      setStats = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      error = _useState3[0],
+      setError = _useState3[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      var searchCountry, parsedCountry, URL, _ref, data, relevant;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              setLoading(true);
+              setError();
+              _context2.t0 = country;
+
+              if (_context2.t0) {
+                _context2.next = 7;
+                break;
+              }
+
+              _context2.next = 6;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry());
+
+            case 6:
+              _context2.t0 = _context2.sent;
+
+            case 7:
+              searchCountry = _context2.t0;
+              parsedCountry = parseCn(searchCountry);
+              URL = url + 'today/' + parsedCountry.toLowerCase();
+              _context2.prev = 10;
+              _context2.next = 13;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL));
+
+            case 13:
+              _ref = _context2.sent;
+              data = _ref.data;
+              relevant = {
+                active: data.active,
+                cases: data.cases,
+                todayCases: data.todayCases,
+                recovered: data.recovered,
+                deaths: data.deaths,
+                country: data.country
+              };
+              setStats(relevant);
+              setLoading(false);
+              _context2.next = 23;
+              break;
+
+            case 20:
+              _context2.prev = 20;
+              _context2.t1 = _context2["catch"](10);
+              setError(_context2.t1);
+
+            case 23:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, null, null, [[10, 20]], Promise);
+    }
+
+    fetchData();
+  }, [country]);
+  return {
+    todayStats: todayStats,
+    loading: loading,
+    error: error
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useTodayStats);
+
+/***/ }),
+
+/***/ "./hooks/useTranslation.js":
+/*!*********************************!*\
+  !*** ./hooks/useTranslation.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useTranslation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _locales_translations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../locales/translations */ "./locales/translations.js");
+var defaultLocale = 'he';
+
+
+
+function useTranslation() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__["LocaleContext"]),
+      locale = _useContext.locale;
+
+  var t = function t(key, key2) {
+    if (!key2) {
+      if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key]) {
+        console.warn("Translation '".concat(key, "' for locale '").concat(locale, "' not found."));
+        return;
+      }
+
+      return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key] || '';
+    }
+
+    if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key]) {
+      console.warn("Translation '".concat(key, "' for locale '").concat(locale, "' not found."));
+    }
+
+    return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key2][key] || '';
+  };
+
+  return {
+    t: t,
+    locale: locale
+  };
+}
+
+/***/ }),
+
+/***/ "./hooks/useWorldData.js":
+/*!*******************************!*\
+  !*** ./hooks/useWorldData.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_sortForChart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/sortForChart */ "./utils/sortForChart.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var baseURL = "https://nCorona.live/api/v1/alltime/";
+
+var useWorldData = function useWorldData() {
+  var data, dataRes;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function useWorldData$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL));
+
+        case 2:
+          data = _context.sent;
+          _context.next = 5;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_utils_sortForChart__WEBPACK_IMPORTED_MODULE_1__["default"])(data.data));
+
+        case 5:
+          dataRes = _context.sent;
+          console.log(dataRes);
+          return _context.abrupt("return", dataRes);
+
+        case 8:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useWorldData);
+
+/***/ }),
+
+/***/ "./hooks/useYday.js":
+/*!**************************!*\
+  !*** ./hooks/useYday.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useYday; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var isUSA = function isUSA(s) {
+  return s === 'usa' || s === 'Usa' || s === 'United States';
+};
+
+var isUK = function isUK(str) {
+  return str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain';
+};
+
+var capitalize = function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+};
+
+var parseCountry = function parseCountry(country) {
+  return isUSA(country) ? 'USA' : isUK(country) ? 'UK' : country;
+};
+
+function useYday(url, country) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      yesterdayCn = _useState[0],
+      setStats = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      error = _useState3[0],
+      setError = _useState3[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      var URL, _ref, data, _yesterdayCn;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setLoading(true);
+              setError();
+              URL = url + parseCountry(country).toLowerCase();
+              _context.prev = 3;
+              _context.next = 6;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL + '?yesterday=true'));
+
+            case 6:
+              _ref = _context.sent;
+              data = _ref.data;
+              _yesterdayCn = {
+                active: data.active,
+                cases: data.cases,
+                todayCases: data.todayCases,
+                recovered: data.recovered,
+                deaths: data.deaths,
+                country: data.country
+              };
+              setStats(_yesterdayCn);
+              setLoading(false);
+              _context.next = 16;
+              break;
+
+            case 13:
+              _context.prev = 13;
+              _context.t0 = _context["catch"](3);
+              setError(_context.t0);
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, null, [[3, 13]], Promise);
+    }
+
+    fetchData();
+  }, [country]);
+  return {
+    yesterdayCn: yesterdayCn,
+    loading: loading,
+    error: error
+  };
+}
+
+/***/ }),
+
+/***/ "./locales/getInitialLocale.js":
+/*!*************************************!*\
+  !*** ./locales/getInitialLocale.js ***!
+  \*************************************/
+/*! exports provided: getInitialLocale */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInitialLocale", function() { return getInitialLocale; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+
+var defaultLocale = 'he';
+
+
+var isLocale = function isLocale(str) {
+  return ['he', 'en'].some(function (locale) {
+    return str === locale;
+  });
+};
+
+function getInitialLocale(c) {
+  // preference from the previous session
+  var localSetting = localStorage.getItem('locale');
+
+  if (localSetting && isLocale(localSetting)) {
+    return localSetting;
+  }
+
+  var country = c;
+  console.log(country);
+
+  if (country === 'israel') {
+    return 'he';
+  } // the language setting of the browser
+
+
+  var _navigator$language$s = navigator.language.split('-'),
+      _navigator$language$s2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_navigator$language$s, 1),
+      browserSetting = _navigator$language$s2[0];
+
+  if (isLocale(browserSetting)) {
+    return browserSetting;
+  }
+
+  return defaultLocale;
+}
+
+/***/ }),
+
+/***/ "./locales/translations.js":
+/*!*********************************!*\
+  !*** ./locales/translations.js ***!
+  \*********************************/
+/*! exports provided: strings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return strings; });
+var strings = {
+  he: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona! מידע עדכני על נגיף הקורונה',
+    metaDescription: 'אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד',
+    links: {
+      news: 'חדשות',
+      about: 'אודות',
+      statistics: 'נתונים'
+    },
+    labels: {
+      cases: 'מאומתים',
+      todayCases: 'מקרים חדשים',
+      deaths: 'נפטרו',
+      recovered: 'החלימו',
+      active: 'פעילים',
+      affectedCountries: 'מדינות נגועות'
+    },
+    chartLabels: {
+      'new cases': 'חדשים',
+      'cases': 'נדבקים',
+      'deaths': 'נפטרים'
+    },
+    coffeePage: {
+      heading: 'תודה רבה!',
+      description: 'שלום ותודה רבה לכם על כך שהנכם שוקלים לבצע תרומה עבור החזקת האתר הזה. אתר זה חינמי ופתוח לשימוש כלל הציבור. היני מודה לכם על זמנכם.',
+      farewell: 'שמרו על עצמכם ועל אהובכם',
+      instructions: ['תרומה דרך ממשק של ko-fi.com. הנכם תהיו מועברים לדף ה״קופי״ שלי, דרכו תוכלו להשאיר טיפ עם הודעה. שימו לב, ניתן לתרום ללא הרשמה! כשתועברו לדף של פייפאל ותתבקשו להירשם, ליחצו על כפתור ההרשמה - אתם תועברו לדף של ביצוע תשלום.', 'העברת טיפ ישירות דרך paypal. תוכלו לבחור כל סכום, אך ללא הודעה. \n* אני ממליץ להשתמש בממשק ko-fi.com. אפשרות התרומה דרך פייפאל מוצגת כאן עבור אלו שאינם מסתדרים עם תשלום דרך ko-fi.com'],
+      kofiButton: 'לתרום עם ko-fi.com',
+      paypalButton: 'לתרום עם PayPal',
+      error: 'אפילו זוג כפפות עולה יותר מדולר'
+    },
+    coronaApp: {
+      selectHeader: 'נתונים לפי מדינה:',
+      graphExplanation: "\u05D4\u05D2\u05E8\u05E4\u05D9\u05DD \u05DE\u05E6\u05D9\u05D2\u05D9\u05DD \u05D0\u05EA \u05E9\u05D9\u05E2\u05D5\u05E8 \u05D4\u05E6\u05DE\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E0\u05D2\u05D9\u05E3 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4, \u05D0\u05D9\u05E0\u05DD \u05DE\u05EA\u05E2\u05D3\u05DB\u05E0\u05D9\u05DD \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\u05DC\u05DB\u05DF \u05D9\u05D9\u05EA\u05DB\u05DF \u05E4\u05E2\u05E8 \u05E9\u05DC \u05D1\u05D9\u05DF \u05D9\u05D5\u05DD \u05DC\u05E9\u05DC\u05D5\u05E9\u05D4 \u05D9\u05DE\u05D9\u05DD.\n      \u05D4\u05DE\u05D9\u05D3\u05E2 \u05D4\u05DE\u05D5\u05E6\u05D2 \u05DE\u05D7\u05D5\u05E5 \u05DC\u05D2\u05E8\u05E4\u05D9\u05DD \u05D4\u05D9\u05E0\u05D5 \u05E2\u05D3\u05DB\u05E0\u05D9 \u05D5\u05DE\u05EA\u05E2\u05D3\u05DB\u05DF \u05DB\u05DC 15-30 \u05D3\u05E7\u05D5\u05EA."
+    },
+    tipButton: '- השאר טיפ ל',
+    tipFont: 'Rubik',
+    aboutPage: {
+      welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
+      overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
+      contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+    }
+  },
+  en: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona - C19 Data & Information for Raising awareness and coping techniques',
+    metaDescription: "nCorona provides updated Coronavirus informative statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+    links: {
+      news: 'News',
+      about: 'About',
+      statistics: 'Statistics'
+    },
+    labels: {
+      cases: 'Confirmed',
+      todayCases: 'New Cases',
+      deaths: 'Deaths',
+      recovered: 'Recovered',
+      active: 'Active',
+      affectedCountries: 'Infected Countries'
+    },
+    chartLabels: {
+      'new cases': 'new cases',
+      'cases': 'cases',
+      'deaths': 'deaths'
+    },
+    coffeePage: {
+      heading: 'Thank You!',
+      description: 'Hello and thank you for considering purchasing me a coffee in such unpleasant times. This website is free for all. As time allows, I\'ll keep updating and adding features.',
+      farewell: 'Take care of yourself and your beloved ones.',
+      instructions: [' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. '],
+      kofiButton: 'via ko-Fi.com',
+      paypalButton: 'via PayPal',
+      error: 'C\'mon Even a pair of gloves cost more than 1$...'
+    },
+    coronaApp: {
+      selectHeader: 'Data For Country: ',
+      graphExplanation: "The Data illustrates Novel Coronavirus growth rate, \n      there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes"
+    },
+    tipButton: 'Buy Me A Mask',
+    tipFont: 'Quicksand',
+    aboutPage: {
+      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: "<>All information provided is legal.\n              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>",
+      contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: "This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. \n      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, \n      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop."
+    }
+  }
 };
 
 /***/ }),
@@ -1591,6 +2349,22 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
 
 /***/ }),
 
@@ -1689,6 +2463,64 @@ function _iterableToArray(iter) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
+function _iterableToArrayLimit(arr, i) {
+  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+    return;
+  }
+
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
@@ -1761,6 +2593,28 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
+/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
+
+
+
+function _slicedToArray(arr, i) {
+  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -55573,8 +56427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_InfoSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/InfoSection */ "./components/InfoSection.js");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 /* harmony import */ var _components_S__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/S */ "./components/S.js");
-/* harmony import */ var _utils_useWorldData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/useWorldData */ "./utils/useWorldData.js");
+/* harmony import */ var _hooks_useWorldData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hooks/useWorldData */ "./hooks/useWorldData.js");
 /* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../locales/getInitialLocale */ "./locales/getInitialLocale.js");
 
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/index.js";
 
@@ -55589,45 +56445,33 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+
 function IndexPage(_ref) {
   var isHeb = _ref.isHeb,
-      newProxy = _ref.newProxy,
       worldTime = _ref.worldTime,
       yesterdayGlobal = _ref.yesterdayGlobal;
-  console.log(isHeb);
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_9__["ProxyContext"]),
-      proxy = _useContext[0],
-      setProxy = _useContext[1];
+      proxy = _useContext[0];
 
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    var ignore = false;
-
-    if (newProxy && !ignore) {
-      setProxy(newProxy);
-    }
-
-    return function () {
-      ignore: true;
-    };
-  }, [newProxy]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 22
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 23
     },
     __self: this
   }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_7__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 25
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -55637,13 +56481,13 @@ function IndexPage(_ref) {
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 26
     },
     __self: this
   }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 27
     },
     __self: this
   })));
@@ -55656,7 +56500,7 @@ IndexPage.getInitialProps = function _callee(ctx) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_utils_useWorldData__WEBPACK_IMPORTED_MODULE_8__["default"])());
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_hooks_useWorldData__WEBPACK_IMPORTED_MODULE_8__["default"])());
 
         case 2:
           worldTime = _context.sent;
@@ -56051,501 +56895,7 @@ var themes = {
 
 /***/ }),
 
-/***/ "./utils/useCountries.js":
-/*!*******************************!*\
-  !*** ./utils/useCountries.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-var baseURL = "https://nCorona.live/api/v1/countries";
-
-function useCountries() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      error = _useState[0],
-      setError = _useState[1];
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      countries = _useState2[0],
-      setCountries = _useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    (function _callee() {
-      var _ref, data, countries;
-
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              setError();
-              _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL));
-
-            case 3:
-              _ref = _context.sent;
-              data = _ref.data;
-              countries = data.countries;
-              setCountries(countries);
-
-            case 7:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, null, null, null, Promise);
-    })();
-  }, []);
-  return {
-    countries: countries,
-    error: error
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (useCountries);
-
-/***/ }),
-
-/***/ "./utils/useTime.js":
-/*!**************************!*\
-  !*** ./utils/useTime.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _sortForChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var _sortExternalApi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sortExternalApi */ "./utils/sortExternalApi.js");
-
-
-
-
-
-var baseURL = "https://nCorona.live/api/v1/alltime/";
-var baseURLv2 = 'https://pomber.github.io/covid19/timeseries.json';
-
-function currentCountry() {
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
-            return res.data.country;
-          })["catch"](function (e) {
-            return 'israel';
-          }));
-
-        case 2:
-          return _context.abrupt("return", _context.sent);
-
-        case 3:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, null, null, null, Promise);
-} // function useTime(loc, url = baseURL) {
-
-
-function useTime(loc) {
-  var theme = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      countryStats = _useState[0],
-      setCountryStats = _useState[1];
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      error = _useState3[0],
-      setError = _useState3[1];
-
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      countries = _useState4[0],
-      setCountries = _useState4[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function fetchData(cn) {
-      var country, URL, data, timeStats;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              setLoading(true);
-              setError();
-              _context2.t0 = loc;
-
-              if (_context2.t0) {
-                _context2.next = 7;
-                break;
-              }
-
-              _context2.next = 6;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry());
-
-            case 6:
-              _context2.t0 = _context2.sent;
-
-            case 7:
-              country = _context2.t0;
-              URL = baseURL + country;
-              _context2.next = 11;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL).then(function (res) {
-                return res.data;
-              })["catch"](function (err) {
-                return setError(err);
-              }));
-
-            case 11:
-              data = _context2.sent;
-              // const data = await axios.get(baseURLv2)
-              //   .then(res => res.data[country])
-              //   .catch(err => setError(err))
-              // const timeStats = sortExternalApi(data);
-              timeStats = Object(_sortForChart__WEBPACK_IMPORTED_MODULE_3__["default"])(data, theme);
-              setCountryStats(timeStats);
-              setLoading(false);
-
-            case 15:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, null, null, null, Promise);
-    }
-
-    fetchData(loc);
-  }, [loc]);
-  return {
-    countryStats: countryStats,
-    loading: loading,
-    error: error,
-    countries: countries
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (useTime);
-
-/***/ }),
-
-/***/ "./utils/useTodayStats.js":
-/*!********************************!*\
-  !*** ./utils/useTodayStats.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-var capitalize = function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
-};
-
-var parseCn = function parseCn(str) {
-  return str === 'usa' || str === 'Usa' || str === 'United States' ? 'USA' : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain' ? 'UK' : str.toLowerCase();
-};
-
-function getCountry(list) {
-  return function (queryCountry) {
-    return list.reduce(function (a, c) {
-      return c.country === queryCountry ? c : a;
-    }, {});
-  };
-}
-
-function currentCountry() {
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://extreme-ip-lookup.com/json/').then(function (res) {
-            return res.data.country;
-          })["catch"](function (e) {
-            return 'israel';
-          }));
-
-        case 2:
-          return _context.abrupt("return", _context.sent);
-
-        case 3:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, null, null, null, Promise);
-}
-
-function useTodayStats(url, country) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      todayStats = _useState[0],
-      setStats = _useState[1];
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      error = _useState3[0],
-      setError = _useState3[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function fetchData() {
-      var searchCountry, parsedCountry, URL, _ref, data, relevant;
-
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              setLoading(true);
-              setError();
-              _context2.t0 = country;
-
-              if (_context2.t0) {
-                _context2.next = 7;
-                break;
-              }
-
-              _context2.next = 6;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry());
-
-            case 6:
-              _context2.t0 = _context2.sent;
-
-            case 7:
-              searchCountry = _context2.t0;
-              parsedCountry = parseCn(searchCountry);
-              URL = url + 'today/' + parsedCountry.toLowerCase();
-              _context2.prev = 10;
-              _context2.next = 13;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL));
-
-            case 13:
-              _ref = _context2.sent;
-              data = _ref.data;
-              relevant = {
-                active: data.active,
-                cases: data.cases,
-                todayCases: data.todayCases,
-                recovered: data.recovered,
-                deaths: data.deaths,
-                country: data.country
-              };
-              setStats(relevant);
-              setLoading(false);
-              _context2.next = 23;
-              break;
-
-            case 20:
-              _context2.prev = 20;
-              _context2.t1 = _context2["catch"](10);
-              setError(_context2.t1);
-
-            case 23:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, null, null, [[10, 20]], Promise);
-    }
-
-    fetchData();
-  }, [country]);
-  return {
-    todayStats: todayStats,
-    loading: loading,
-    error: error
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (useTodayStats);
-
-/***/ }),
-
-/***/ "./utils/useWorldData.js":
-/*!*******************************!*\
-  !*** ./utils/useWorldData.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sortForChart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sortForChart */ "./utils/sortForChart.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-var baseURL = "https://nCorona.live/api/v1/alltime/";
-
-var useWorldData = function useWorldData() {
-  var data, dataRes;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function useWorldData$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(baseURL));
-
-        case 2:
-          data = _context.sent;
-          _context.next = 5;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_sortForChart__WEBPACK_IMPORTED_MODULE_1__["default"])(data.data));
-
-        case 5:
-          dataRes = _context.sent;
-          return _context.abrupt("return", dataRes);
-
-        case 7:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, null, null, null, Promise);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (useWorldData);
-
-/***/ }),
-
-/***/ "./utils/useYday.js":
-/*!**************************!*\
-  !*** ./utils/useYday.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useYday; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-var isUSA = function isUSA(s) {
-  return s === 'usa' || s === 'Usa' || s === 'United States';
-};
-
-var isUK = function isUK(str) {
-  return str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain';
-};
-
-var capitalize = function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
-};
-
-var parseCountry = function parseCountry(country) {
-  return isUSA(country) ? 'USA' : isUK(country) ? 'UK' : country;
-};
-
-function useYday(url, country) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      yesterdayCn = _useState[0],
-      setStats = _useState[1];
-
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      error = _useState3[0],
-      setError = _useState3[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function fetchData() {
-      var URL, _ref, data, _yesterdayCn;
-
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              setLoading(true);
-              setError();
-              URL = url + parseCountry(country).toLowerCase();
-              _context.prev = 3;
-              _context.next = 6;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(URL + '?yesterday=true'));
-
-            case 6:
-              _ref = _context.sent;
-              data = _ref.data;
-              _yesterdayCn = {
-                active: data.active,
-                cases: data.cases,
-                todayCases: data.todayCases,
-                recovered: data.recovered,
-                deaths: data.deaths,
-                country: data.country
-              };
-              setStats(_yesterdayCn);
-              setLoading(false);
-              _context.next = 16;
-              break;
-
-            case 13:
-              _context.prev = 13;
-              _context.t0 = _context["catch"](3);
-              setError(_context.t0);
-
-            case 16:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, null, null, [[3, 13]], Promise);
-    }
-
-    fetchData();
-  }, [country]);
-  return {
-    yesterdayCn: yesterdayCn,
-    loading: loading,
-    error: error
-  };
-}
-
-/***/ }),
-
-/***/ 1:
+/***/ 3:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56568,5 +56918,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

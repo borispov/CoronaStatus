@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import QuickStats from './QuickStats'
+import QuickStats from './QuickStats/QuickStats'
 
 const Container = styled.div`
   max-width: 1140px;
@@ -8,6 +8,8 @@ const Container = styled.div`
 `
 
 export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryday }) {
+
+  // console.log(todayWorld);
 
   return (
     <Container>

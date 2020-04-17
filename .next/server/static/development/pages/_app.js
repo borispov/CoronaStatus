@@ -212,6 +212,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/useTranslation.js */ "./hooks/useTranslation.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Header/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -221,114 +222,113 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Header = ({
-  title,
   theme,
-  isHeb,
   children
 }) => {
-  const Tip = isHeb && '- השאר טיפ ל' || 'Tip Jar';
+  const {
+    t
+  } = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  const font = t('tipFont');
+  const text = t('tipButton');
   return __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["HeaderWrapper"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["FadeIn"], {
     duration: "0.4s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["HeaderTag"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Nav"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavList"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Logo"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 23
     },
     __self: undefined
   }, "n", __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["Span"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 23
     },
     __self: undefined
   }, "C"), "orona")), children, __jsx(_Header_styled__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 26
     },
     __self: undefined
-  }, isHeb && __jsx("link", {
-    href: "https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap",
-    rel: "stylesheet",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/Coffee",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 27
     },
     __self: undefined
   }, __jsx("a", {
+    style: {
+      textDecoration: 'none'
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 28
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     KoFi: true,
     hoverUp: true,
     hoverColor: "error2",
-    fontFamily: isHeb && 'Rubik' || 'Quicksand',
+    fontFamily: font,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("img", {
     height: "36",
     style: {
       height: '36px',
-      border: '0px'
+      border: '0px',
+      marginRight: '8px'
     },
     src: "./kofi.png",
     alt: "Buy Me A Coffee @ ko-fi.com",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 35
     },
     __self: undefined
-  }), Tip)))))))));
+  }), text)))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -502,6 +502,261 @@ module.exports = "data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0
 
 /***/ }),
 
+/***/ "./components/Layout.js":
+/*!******************************!*\
+  !*** ./components/Layout.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _hooks_useOutSide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hooks/useOutSide */ "./hooks/useOutSide.js");
+/* harmony import */ var _hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hooks/useTranslation.js */ "./hooks/useTranslation.js");
+/* harmony import */ var _locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../locales/getInitialLocale */ "./locales/getInitialLocale.js");
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Layout.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+ // Components
+
+
+
+ // Context & Hooks
+
+
+
+
+
+ // Functions for changing themes
+
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['light']);
+
+const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['dark']);
+
+const langs = ['he', 'en'];
+
+const Layout = ({
+  children,
+  newProxy
+}) => {
+  const {
+    t
+  } = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  const {
+    0: proxy,
+    1: setProxy
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_7__["ProxyContext"]);
+  const {
+    locale,
+    setLocale
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_8__["LocaleContext"]);
+  const {
+    0: ig,
+    1: setIgnore
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false); // Initiation of Context API's
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (locale && !ig) {
+      let loc = Object(_locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_11__["getInitialLocale"])(proxy && proxy.countryName);
+      setLocale(loc);
+    }
+
+    return () => {
+      setIgnore(true);
+    };
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    let ignore = false;
+
+    if (newProxy && !ignore) {
+      setProxy(newProxy);
+    }
+
+    return () => {
+      ignore: true;
+    };
+  }, [newProxy]); // setting locale. not  sure yet if I use it or context API only
+
+  const {
+    0: menuOpen,
+    1: setOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const closeMenu = () => setOpen(false);
+
+  const toggleMenu = () => setOpen(!menuOpen);
+
+  const toggleLang = () => {
+    closeMenu();
+    const newLocale = langs[+!langs.indexOf(locale)];
+    setLocale(newLocale);
+  };
+
+  const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_9__["default"])(node, closeMenu);
+  const displayLang = locale === 'he' ? 'English' : 'עברית';
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }, __jsx("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, t('metaTitle')), __jsx("meta", {
+    name: "description",
+    content: t('metaDescription'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }), __jsx("meta", {
+    name: "keywords",
+    content: t('metaKeywords'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  })), __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, __jsx("div", {
+    ref: node,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setOpen: toggleMenu,
+    open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    setOpen: toggleMenu,
+    open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/News",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "news",
+    onClick: () => closeMenu(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: undefined
+  }, "\uD83D\uDCF0"), t('news', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/Statistics",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "stats",
+    onClick: () => closeMenu(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: undefined
+  }, " \uD83D\uDDFA"), t('statistics', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/About",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "about",
+    onClick: () => closeMenu(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, " \uD83D\uDDFA"), t('about', 'links'))), __jsx("a", {
+    onClick: toggleLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123
+    },
+    __self: undefined
+  }, "\uD83C\uDF10"), displayLang)))), children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
 /***/ "./components/Menu/Menu.js":
 /*!*********************************!*\
   !*** ./components/Menu/Menu.js ***!
@@ -642,7 +897,7 @@ const Heading2 = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h2.wit
 const Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p.withConfig({
   displayName: "S__Paragraph",
   componentId: "sc-3vwmv4-3"
-})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;}"], props => props.center ? 'center' : '', props => props.fontSize || '16px', props => props.mw || 'fit-content', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.secondary ? props.theme.text.secondary : props.theme.text.primary, props => props.rtl ? 'rtl' : 'inherit');
+})(["text-align:", ";font-size:", ";max-width:", ";margin:", ";line-height:", ";padding:", ";color:", ";direction:", ";@media (max-width:768px){font-size:12px;font-weight:300;margin:0;};", ";"], props => props.center ? 'center' : '', props => props.fontSize || '16px', props => props.mw || 'fit-content', props => props.noMargin && '0' || '0', props => props.lineHeight || 1.5, props => props.padding || '', props => props.secondary ? props.theme.text.secondary : props.theme.text.primary, props => props.direction || 'inherit', props => props.centered && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["margin:0 auto;"]));
 const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__simpleWrapper",
   componentId: "sc-3vwmv4-4"
@@ -650,17 +905,17 @@ const simpleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.d
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "S__Container",
   componentId: "sc-3vwmv4-5"
-})(["@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], props => props.textAlign && 'center');
+})(["direction:", ";@media (max-width:576px){max-width:540px;max-width:100%;}@media (max-width:768px){}@media (max-width:992px){max-width:960px;}@media (min-width:1200px){max-width:1140px;}transition:all .5s cubic-bezier(.55,0,.1,1);padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;text-align:", ";"], props => props.direction || '', props => props.textAlign && 'center');
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";font-size:16px;padding:", ";", ";background:", ";color:", ";border:", ";font-weight:", ";font-family:'Rubik';cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}", ";"], props => props.radius ? props.radius : '4px', props => props.medium && '6px 9px' || props.big && '14px' || '8px 10px', props => props.small && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-size:12px;padding:0rem 1rem;"]), props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '', props => props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";"], props.fontFamily, props => props.theme.white, props => props.theme.kofi));
+})(["border-radius:", ";font-size:16px;padding:", ";", ";background:", ";color:", ";border:", ";font-weight:", ";font-family:'Rubik';cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}", ";"], props => props.radius ? props.radius : '4px', props => props.medium && '6px 9px' || props.big && '14px' || '8px 10px', props => props.small && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-size:12px;padding:0rem 1rem;"]), props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '', props => props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, props => props.theme.white, props => props.theme.kofi));
 const Button = props => __jsx(Btn, _extends({
   onClick: props.onClick
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 146
+    lineNumber: 155
   },
   __self: undefined
 }), props.children);
@@ -686,67 +941,59 @@ const FadeIn = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(BaseAnim
 
 /***/ }),
 
-/***/ "./components/proxy-view.js":
+/***/ "./context/LocaleContext.js":
 /*!**********************************!*\
-  !*** ./components/proxy-view.js ***!
+  !*** ./context/LocaleContext.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: LocaleContext, LocaleProvider */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleContext", function() { return LocaleContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocaleProvider", function() { return LocaleProvider; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
-var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/proxy-view.js";
+var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/context/LocaleContext.js";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-
-const ProxyView = () => {
+const LocaleContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const LocaleProvider = props => {
+  // Default Setting
+  const initialState = 'he';
   const {
-    0: proxy
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_1__["ProxyContext"]);
-  const {
-    ipAddress,
-    countryName
-  } = proxy;
-  return __jsx("div", {
-    className: "box center",
-    style: {
-      fontSize: '18px',
-      textAlign: 'center',
-      padding: '12px',
-      margin: '0 auto',
-      width: '100%'
+    0: locale,
+    1: setLocale
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
+  const prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (prev.current === undefined && locale === 'he') {
+      const readLocal = localStorage.getItem('locale');
+
+      if (readLocal !== 'he') {
+        setLocale(readLocal);
+        return;
+      } else {
+        setLocale(readLocal);
+      }
+    } else {
+      localStorage.setItem('locale', locale);
+      prev.current = locale;
+    }
+  }, [locale]);
+  return __jsx(LocaleContext.Provider, {
+    value: {
+      locale,
+      setLocale
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 32
     },
     __self: undefined
-  }, __jsx("ul", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, "IP Address : ", ipAddress, " "), __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, "Country : ", countryName, " ")));
+  }, props.children);
 };
-
-/* harmony default export */ __webpack_exports__["default"] = (ProxyView);
 
 /***/ }),
 
@@ -801,6 +1048,236 @@ const ProxyContextProvider = props => {
     },
     __self: undefined
   }, props.children);
+};
+
+/***/ }),
+
+/***/ "./hooks/useOutSide.js":
+/*!*****************************!*\
+  !*** ./hooks/useOutSide.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = ((ref, handler) => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+
+      handler(event);
+    };
+
+    document.addEventListener('mousedown', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  }, [ref, handler]);
+});
+
+/***/ }),
+
+/***/ "./hooks/useTranslation.js":
+/*!*********************************!*\
+  !*** ./hooks/useTranslation.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useTranslation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _locales_translations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../locales/translations */ "./locales/translations.js");
+const defaultLocale = 'he';
+
+
+
+function useTranslation() {
+  const {
+    locale
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_1__["LocaleContext"]);
+
+  const t = (key, key2) => {
+    if (!key2) {
+      if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key]) {
+        console.warn(`Translation '${key}' for locale '${locale}' not found.`);
+        return;
+      }
+
+      return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key] || '';
+    }
+
+    if (!_locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key]) {
+      console.warn(`Translation '${key}' for locale '${locale}' not found.`);
+    }
+
+    return _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][locale][key2][key] || _locales_translations__WEBPACK_IMPORTED_MODULE_2__["strings"][defaultLocale][key2][key] || '';
+  };
+
+  return {
+    t,
+    locale
+  };
+}
+
+/***/ }),
+
+/***/ "./locales/getInitialLocale.js":
+/*!*************************************!*\
+  !*** ./locales/getInitialLocale.js ***!
+  \*************************************/
+/*! exports provided: getInitialLocale */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInitialLocale", function() { return getInitialLocale; });
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+const defaultLocale = 'he';
+
+
+const isLocale = str => ['he', 'en'].some(locale => str === locale);
+
+function getInitialLocale(c) {
+  // preference from the previous session
+  const localSetting = localStorage.getItem('locale');
+
+  if (localSetting && isLocale(localSetting)) {
+    return localSetting;
+  }
+
+  const country = c;
+  console.log(country);
+
+  if (country === 'israel') {
+    return 'he';
+  } // the language setting of the browser
+
+
+  const [browserSetting] = navigator.language.split('-');
+
+  if (isLocale(browserSetting)) {
+    return browserSetting;
+  }
+
+  return defaultLocale;
+}
+
+/***/ }),
+
+/***/ "./locales/translations.js":
+/*!*********************************!*\
+  !*** ./locales/translations.js ***!
+  \*********************************/
+/*! exports provided: strings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return strings; });
+const strings = {
+  he: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona! מידע עדכני על נגיף הקורונה',
+    metaDescription: 'אתר זה כולל מידע ונתונים עדכניים אודות נגיף הקורונה, כמו כן כולל מידע שימושי עבור כלל הציבור הכולל מידע כללי ומידע ממשרדי הבריאות מהעולם, מידע שימושי ויעיל להתמודדות עם המצב כגון פעילויות עם הילדים, לימודים מקוונים ועוד',
+    links: {
+      news: 'חדשות',
+      about: 'אודות',
+      statistics: 'נתונים'
+    },
+    labels: {
+      cases: 'מאומתים',
+      todayCases: 'מקרים חדשים',
+      deaths: 'נפטרו',
+      recovered: 'החלימו',
+      active: 'פעילים',
+      affectedCountries: 'מדינות נגועות'
+    },
+    chartLabels: {
+      'new cases': 'חדשים',
+      'cases': 'נדבקים',
+      'deaths': 'נפטרים'
+    },
+    coffeePage: {
+      heading: 'תודה רבה!',
+      description: 'שלום ותודה רבה לכם על כך שהנכם שוקלים לבצע תרומה עבור החזקת האתר הזה. אתר זה חינמי ופתוח לשימוש כלל הציבור. היני מודה לכם על זמנכם.',
+      farewell: 'שמרו על עצמכם ועל אהובכם',
+      instructions: ['תרומה דרך ממשק של ko-fi.com. הנכם תהיו מועברים לדף ה״קופי״ שלי, דרכו תוכלו להשאיר טיפ עם הודעה. שימו לב, ניתן לתרום ללא הרשמה! כשתועברו לדף של פייפאל ותתבקשו להירשם, ליחצו על כפתור ההרשמה - אתם תועברו לדף של ביצוע תשלום.', 'העברת טיפ ישירות דרך paypal. תוכלו לבחור כל סכום, אך ללא הודעה. \n* אני ממליץ להשתמש בממשק ko-fi.com. אפשרות התרומה דרך פייפאל מוצגת כאן עבור אלו שאינם מסתדרים עם תשלום דרך ko-fi.com'],
+      kofiButton: 'לתרום עם ko-fi.com',
+      paypalButton: 'לתרום עם PayPal',
+      error: 'אפילו זוג כפפות עולה יותר מדולר'
+    },
+    coronaApp: {
+      selectHeader: 'נתונים לפי מדינה:',
+      graphExplanation: `הגרפים מציגים את שיעור הצמיחה של נגיף הקורונה, אינם מתעדכנים בזמן אמת ולכן ייתכן פער של בין יום לשלושה ימים.
+      המידע המוצג מחוץ לגרפים הינו עדכני ומתעדכן כל 15-30 דקות.`
+    },
+    tipButton: '- השאר טיפ ל',
+    tipFont: 'Rubik',
+    aboutPage: {
+      welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
+      overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
+      contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+    }
+  },
+  en: {
+    metaKeywords: "Coronavirus COVID19 C19 Pandemic Statistics Graphs Data Resources Information Prevention",
+    metaTitle: 'nCorona - C19 Data & Information for Raising awareness and coping techniques',
+    metaDescription: "nCorona provides updated Coronavirus informative statistics as well as a resourceful list that includes general information for the public, methods & techniques for coping, activities for individuals, families and children, etc",
+    links: {
+      news: 'News',
+      about: 'About',
+      statistics: 'Statistics'
+    },
+    labels: {
+      cases: 'Confirmed',
+      todayCases: 'New Cases',
+      deaths: 'Deaths',
+      recovered: 'Recovered',
+      active: 'Active',
+      affectedCountries: 'Infected Countries'
+    },
+    chartLabels: {
+      'new cases': 'new cases',
+      'cases': 'cases',
+      'deaths': 'deaths'
+    },
+    coffeePage: {
+      heading: 'Thank You!',
+      description: 'Hello and thank you for considering purchasing me a coffee in such unpleasant times. This website is free for all. As time allows, I\'ll keep updating and adding features.',
+      farewell: 'Take care of yourself and your beloved ones.',
+      instructions: [' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. '],
+      kofiButton: 'via ko-Fi.com',
+      paypalButton: 'via PayPal',
+      error: 'C\'mon Even a pair of gloves cost more than 1$...'
+    },
+    coronaApp: {
+      selectHeader: 'Data For Country: ',
+      graphExplanation: `The Data illustrates Novel Coronavirus growth rate, 
+      there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes`
+    },
+    tipButton: 'Buy Me A Mask',
+    tipFont: 'Quicksand',
+    aboutPage: {
+      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: `<>All information provided is legal.
+              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>`,
+      contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
+      bio: `This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. 
+      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, 
+      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.`
+    }
+  }
 };
 
 /***/ }),
@@ -3031,16 +3508,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_proxy_view__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/proxy-view */ "./components/proxy-view.js");
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
 /* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
-/* harmony import */ var _utils_useOutSide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/useOutSide */ "./utils/useOutSide.js");
+/* harmony import */ var _hooks_useOutSide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hooks/useOutSide */ "./hooks/useOutSide.js");
 /* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
 /* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
-/* harmony import */ var _components_Icons_ThemeIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Icons/ThemeIcon */ "./components/Icons/ThemeIcon.js");
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -3072,19 +3549,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const getCountryFromData = response => response.data.country;
 
-const currentCountry = async url => await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(url).then(getCountryFromData).catch(e => 'israel'); // async function currentCountry(url){
-//   return await axios
-//     .get(url)
-//     .then( res => res.data.country)
-//     .catch(e => 'israel')
-// }
+const currentCountry = async url => await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(url).then(getCountryFromData).catch(e => 'israel');
 
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_14__["pageview"](url));
 
-next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_15__["pageview"](url));
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['light']);
 
-const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_14__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_14__["themes"]['light']);
-
-const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_14__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_14__["themes"]['dark']);
+const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['dark']);
 
 function MyApp({
   Component,
@@ -3121,145 +3592,51 @@ function MyApp({
   };
 
   const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(_utils_useOutSide__WEBPACK_IMPORTED_MODULE_8__["default"])(node, closeMenu);
+  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_8__["default"])(node, closeMenu);
   const displayLang = isHeb ? 'English' : 'עברית';
   const isLight = theme.type === 'light';
   return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_7__["ProxyContextProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 54
     },
     __self: this
   }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 55
     },
     __self: this
   }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_9__["default"], {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 56
     },
     __self: this
-  }), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    title: "nCorona",
-    isHeb: isHeb,
+  }), __jsx(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_6__["LocaleProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 57
     },
     __self: this
-  }, __jsx("div", {
-    ref: node,
+  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 59
     },
     __self: this
-  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    setOpen: toggleMenu,
-    open: menuOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    setOpen: toggleMenu,
-    open: menuOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/News",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
-  }, __jsx("a", {
-    alt: "news",
-    onClick: () => closeMenu(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: this
-  }, "\uD83D\uDCF0"), isHeb && 'חדשות' || 'News')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/Statistics",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: this
-  }, __jsx("a", {
-    alt: "stats",
-    onClick: () => closeMenu(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: this
-  }, " \uD83D\uDDFA"), isHeb && 'נתונים' || 'Data')), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/About",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: this
-  }, __jsx("a", {
-    alt: "about",
-    onClick: () => closeMenu(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: this
-  }, " \uD83D\uDDFA"), isHeb && 'אודות' || 'About')), __jsx("a", {
-    onClick: toggleLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: this
-  }, "\uD83C\uDF10"), displayLang)))), __jsx(Component, _extends({}, pageProps, {
+  }, __jsx(Component, _extends({}, pageProps, {
     isHeb: isHeb,
     newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 95
     },
     __self: this
-  }))));
+  }))))));
 }
 
 MyApp.getInitialProps = async appContext => {
@@ -3572,37 +3949,6 @@ const themes = {
 
 /***/ }),
 
-/***/ "./utils/useOutSide.js":
-/*!*****************************!*\
-  !*** ./utils/useOutSide.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ __webpack_exports__["default"] = ((ref, handler) => {
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    const listener = event => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-
-      handler(event);
-    };
-
-    document.addEventListener('mousedown', listener);
-    return () => {
-      document.removeEventListener('mousedown', listener);
-    };
-  }, [ref, handler]);
-});
-
-/***/ }),
-
 /***/ 0:
 /*!****************************************!*\
   !*** multi private-next-pages/_app.js ***!
@@ -3623,6 +3969,17 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

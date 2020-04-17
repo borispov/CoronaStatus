@@ -6,24 +6,16 @@ import CoronaApp from '../components/CoronaApp'
 import InfoSection from '../components/InfoSection'
 import Footer from '../components/Footer'
 import { FadeIn } from '../components/S'
-import useWorldData from '../utils/useWorldData'
+import useWorldData from '../hooks/useWorldData'
 
 import { ProxyContext } from '../context/proxy-context'
+import { LocaleContext } from '../context/LocaleContext'
+import { getInitialLocale } from '../locales/getInitialLocale'
 
 
-function IndexPage({ isHeb, newProxy, worldTime, yesterdayGlobal}) {
+function IndexPage({ isHeb, worldTime, yesterdayGlobal}) {
 
-  console.log(isHeb);
-
-  const [ proxy, setProxy] = useContext(ProxyContext)
-
-  useEffect(() => {
-    let ignore = false
-    if (newProxy && !ignore) {
-      setProxy(newProxy)
-    }
-    return () => { ignore: true }
-  }, [newProxy])
+  const [proxy]  = useContext(ProxyContext)
 
   return (
     <>
@@ -41,7 +33,6 @@ function IndexPage({ isHeb, newProxy, worldTime, yesterdayGlobal}) {
 IndexPage.getInitialProps = async (ctx) => {
 
   const worldTime = await useWorldData()
-
   const globalData = await axios.get('https://corona.lmao.ninja/v2/all?yesterday=true')
   const yesterdayGlobal = {
     active: globalData.data.active,

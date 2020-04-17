@@ -47,13 +47,17 @@ export const Paragraph = styled.p`
   line-height: ${props => props.lineHeight || 1.5};
   padding: ${props => props.padding || ''};
   color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
-  direction: ${props => props.rtl ? 'rtl' : 'inherit'};
+  direction: ${props => props.direction || 'inherit'};
+  // direction: ${props => props.direction || props.rtl ? 'rtl' : 'inherit'};
   @media (max-width: 768px) {
     font-size: 12px;
     font-weight: 300;
     // overflow: hidden;
     margin: 0;
-  }
+  };
+  ${props => props.centered && css`
+      margin: 0 auto;
+  `};
 `
 
 export const simpleWrapper = styled.div`
@@ -63,6 +67,7 @@ export const simpleWrapper = styled.div`
 `
 
 export const Container = styled.div`
+  direction: ${props => props.direction || ''};
   @media (max-width: 576px) {
     max-width: 540px;
     max-width: 100%;
@@ -137,6 +142,10 @@ const Btn = styled.button`
       color: ${props => props.theme.white};
       cursor: pointer;
       background: ${props => props.theme.kofi};
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      border: none;
     `
   };
 

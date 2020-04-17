@@ -4,8 +4,15 @@ import { HeaderWrapper, HeaderTag, Nav, Span, NavList, NavItem, Logo } from './H
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Header = ({ title, theme, isHeb, children }) => {
-  const Tip = isHeb && '- השאר טיפ ל' || 'Tip Jar'
+import useTranslation from '../../hooks/useTranslation.js'
+
+const Header = ({ theme, children }) => {
+
+  const { t } = useTranslation()
+
+  const font = t('tipFont')
+  const text = t('tipButton')
+
   return (
     <HeaderWrapper>
         <FadeIn duration='0.4s'>
@@ -17,19 +24,16 @@ const Header = ({ title, theme, isHeb, children }) => {
               </Link>
               {children}
               <NavItem>
-                { isHeb && 
-                  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet"/>
-                }
                 <Link href='/Coffee'>
-                  <a>
+                  <a style={{textDecoration: 'none'}}>
                     <Button
                         KoFi
                         hoverUp
                         hoverColor='error2'
-                        fontFamily={isHeb && 'Rubik' || 'Quicksand'}
+                        fontFamily={font}
                       >
-                      <img height='36' style={{ height: '36px', border: '0px' }} src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
-                      {Tip}
+                      <img height='36' style={{ height: '36px', border: '0px', marginRight: '8px' }} src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
+                      {text}
                     </Button>
                   </a>
                 </Link>

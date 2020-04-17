@@ -1,30 +1,23 @@
 import App from 'next/app'
 import Router from 'next/router'
 import Link from 'next/link';
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import axios from 'axios'
 
-import ProxyView from '../components/proxy-view'
+import { LocaleProvider } from '../context/LocaleContext'
 import { ProxyContextProvider } from '../context/proxy-context'
-import useOutSide from '../utils/useOutSide'
+import useOutSide from '../hooks/useOutSide'
 import GlobalStyle from './Global'
 import Header from '../components/Header'
 import Burger from '../components/Burger';
 import Menu from '../components/Menu';
-import { MoonIcon, SunIcon, WorldIcon } from '../components/Icons/ThemeIcon'
 import { themes } from '../utils/themes'
 import * as gtag from '../utils/gtag'
+import Layout from '../components/Layout';
 
 const getCountryFromData = response => response.data.country
 const currentCountry = async (url) => await axios.get(url).then(getCountryFromData).catch(e => 'israel')
-
-// async function currentCountry(url){
-//   return await axios
-//     .get(url)
-//     .then( res => res.data.country)
-//     .catch(e => 'israel')
-// }
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
@@ -61,55 +54,48 @@ function MyApp ({ Component, pageProps, newProxy }) {
     <ProxyContextProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyle isHeb={isHeb}/>
+        <LocaleProvider>
 
-        <Header title='nCorona' isHeb={isHeb} >
-          <div ref={node}>
-            <Burger setOpen={toggleMenu} open={menuOpen} />
-            <Menu setOpen={toggleMenu} open={menuOpen} >
+        <Layout newProxy={newProxy} >
+          {/* <Header title='nCorona' isHeb={isHeb} >
+            <div ref={node}>
+              <Burger setOpen={toggleMenu} open={menuOpen} />
+              <Menu setOpen={toggleMenu} open={menuOpen} >
 
-              <Link href="/News">
-                <a alt="news" onClick={() => closeMenu()}>
-                  <span>&#128240;</span>
-                  { isHeb && 'חדשות' || 'News' }
+                <Link href="/News">
+                  <a alt="news" onClick={() => closeMenu()}>
+                    <span>&#128240;</span>
+                    { isHeb && 'חדשות' || 'News' }
+                  </a>
+                </Link>
+
+                <Link href="/Statistics">
+                  <a alt="stats" onClick={() => closeMenu()}>
+                    <span>	&#128506;</span>
+                    { isHeb && 'נתונים' || 'Data' }
+                  </a>
+                </Link>
+
+                <Link href="/About">
+                  <a alt="about" onClick={() => closeMenu()}>
+                    <span>	&#128506;</span>
+                    { isHeb && 'אודות' || 'About' }
+                  </a>
+                </Link>
+
+                <a onClick={toggleLang}>
+                  <span>&#127760;</span>
+                  {displayLang}
                 </a>
-              </Link>
 
-              <Link href="/Statistics">
-                <a alt="stats" onClick={() => closeMenu()}>
-                  <span>	&#128506;</span>
-                  { isHeb && 'נתונים' || 'Data' }
-                </a>
-              </Link>
+              </Menu>
+            </div>
 
-              <Link href="/About">
-                <a alt="about" onClick={() => closeMenu()}>
-                  <span>	&#128506;</span>
-                  { isHeb && 'אודות' || 'About' }
-                </a>
-              </Link>
+              </Header> */}
+            <Component {...pageProps} isHeb={isHeb} newProxy={newProxy} />
+          </Layout>
+        </LocaleProvider>
 
-      {/*
-      // This is Night Mode.. Currently disabled
-              <a onClick={isLight ?setDarkTheme : setLightTheme}>
-                <span>{ isLight ? '🌒' : '🌞'}</span>
-                {
-                  isLight
-                  ? (isHeb && 'מצב לילה' || 'Dark Mode')
-                  : (isHeb && 'מצב יום' || 'Light Mode')
-                }
-              </a>
-      */}
-
-              <a onClick={toggleLang}>
-                <span>&#127760;</span>
-                {displayLang}
-              </a>
-
-            </Menu>
-          </div>
-
-        </Header>
-        <Component {...pageProps} isHeb={isHeb} newProxy={newProxy} />
       </ThemeProvider>
     </ProxyContextProvider>
   )
@@ -119,7 +105,6 @@ function MyApp ({ Component, pageProps, newProxy }) {
 MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext)
   let proxyUrl
-
   const req = appContext.ctx && appContext.ctx.req
 
   if (req) {
