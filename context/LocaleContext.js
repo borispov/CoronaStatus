@@ -18,10 +18,11 @@ export const LocaleProvider = (props) => {
 
     if (prev.current === undefined && locale === 'he') {
       const readLocal = localStorage.getItem('locale')
-      if (readLocal !== 'he') {
-        setLocale(readLocal)
-        return
-      } else { setLocale(readLocal) }
+      if (readLocal !== 'he') { setLocale(readLocal) }
+      else { 
+        localStorage.setItem('locale', locale) 
+        setLocale(readLocal) 
+      }
     } else {
       localStorage.setItem('locale', locale)
       prev.current = locale
