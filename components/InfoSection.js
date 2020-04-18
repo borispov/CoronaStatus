@@ -4,6 +4,7 @@ import { Container } from './S'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  direction: rtl;
   text-align: none;
   display: flex;
   flex-wrap: wrap;
