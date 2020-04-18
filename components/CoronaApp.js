@@ -12,7 +12,6 @@ import { Container } from './S'
 import Stats from './Stats'
 import Chart from './Chart'
 import HeaderDescription from './HeaderDescription'
-import CaseChart from './CaseChart'
 
 import countriesHebArray from '../assets/cns.js'
 
@@ -23,14 +22,12 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   const { t, locale } = useTranslation()
   const isHeb = locale === 'he'
 
-  // const [hebCountry, setHebCountry] = useState(countryheb(country))
-  const [showWorld, setShowWorld] = useState(true)
   const [country, setCountry] = useState(userLocation)
   const [inputValue, setInput] = useState('')
 
   const url = 'https://nCorona.live/api/v1/'
-  const worldUrl = 'https://corona.lmao.ninja/all'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
+
   const { countryStats } = useTime(country, theme)
   const { todayStats } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
@@ -106,10 +103,10 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
       <Container>
 
       <form 
-        style={{ maxWidth: '520px', margin: '54px auto 12px', textAlign: 'center'}}
+        style={{ maxWidth: '520px', margin: '54px auto 12px', textAlign: 'center', direction: isHeb && 'rtl'}}
         onSubmit={handleSubmit}
       >
-        <label style={{fontSize: '16px', fontWeight: 'bold'}}>
+        <label style={{fontSize: '18px', padding: '2em', fontWeight: 'bold'}}>
           {t('selectHeader', 'coronaApp')}
         </label>
 
@@ -119,7 +116,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
           options={selectOptions}
           value={country === 'Israel' && isHeb ? 'ישראל' : country}
           onChange={handleChange}
-          placeholder={country && countryheb(country) || country}
+          placeholder={country && isHeb ? countryheb(country) : country}
         />
       </form>
 

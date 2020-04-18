@@ -4,6 +4,7 @@ import 'chartjs-plugin-datalabels'
 import styled, { withTheme, keyframes }  from 'styled-components'
 import { FadeIn } from './S'
 
+import useMobileDetect from '../utils/isMobile'
 import useTranslation from '../hooks/useTranslation'
 
 defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
@@ -52,20 +53,23 @@ const noChartDisplaySettings = {
 }
 
 
-
-
 // if mobile, do by 8, if not do by 3
-const filterBy5 = (x, i) => !(i % 8)
-const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
-
-const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
 
 const LineChart = ( props, {theme} ) => {
 
   const { t } = useTranslation()
   const chartRef = useRef()
 
-  const displayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'), data: cutCaseCount(dset), fill: false })
+  const showLastMonth = arr => arr.slice(Math.ceil(arr.length / 3.3))
+
+  const filterBy5 = (x, i) => useMobileDetect().isMobile() ? !(i % 8) : !(i % 2)
+  // const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
+
+  const subtractArray = arr => showLastMonth(arr)
+
+  const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
+
+  const displayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'), data: cutCaseCount(dset), fill: true })
   const dontDisplayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'),data: cutCaseCount(dset), ...noChartDisplaySettings })
   const parseDatasets = (arrayOfSets, fill) => arrayOfSets.map(sortForDisplay)
   const sortForDisplay = dset => {
@@ -78,10 +82,19 @@ const LineChart = ( props, {theme} ) => {
   const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
+
   };
 
   const data = canvas => {
     const ctx = canvas.getContext('2d')
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, props.theme.primaryColor);
+    gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
+
+    data2.datasets[2].fill = true
+    data2.datasets[2].backgroundColor = gradient
+
+    console.log(data2);
 
     return {
       ...data2,

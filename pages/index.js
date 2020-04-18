@@ -12,10 +12,20 @@ import { ProxyContext } from '../context/proxy-context'
 import { LocaleContext } from '../context/LocaleContext'
 import { getInitialLocale } from '../locales/getInitialLocale'
 
+const getCountryFromData = response => response.data.country
+const currentCountry = async (url) => await axios.get(url).then(getCountryFromData).catch(e => 'israel')
 
-function IndexPage({ isHeb, worldTime, yesterdayGlobal}) {
+function IndexPage({ worldTime, yesterdayGlobal, newProxy }) {
 
-  const [proxy]  = useContext(ProxyContext)
+  const [proxy, setProxy]  = useContext(ProxyContext)
+
+  useEffect(() => {
+    let ignore = false
+    if (newProxy && !ignore) {
+      setProxy(newProxy)
+    }
+    return () => { ignore: true }
+  }, [newProxy])
 
   return (
     <>
@@ -23,14 +33,14 @@ function IndexPage({ isHeb, worldTime, yesterdayGlobal}) {
         <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
       </Head>
       <FadeIn delay="0.5s">
-       <CoronaApp isHeb={isHeb} userLocation={proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
+       <CoronaApp userLocation={proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
         <InfoSection />
       </FadeIn>
     </>
   )
 }
 
-IndexPage.getInitialProps = async (ctx) => {
+IndexPage.getInitialProps = async ({ req }) => {
 
   const worldTime = await useWorldData()
   const globalData = await axios.get('https://corona.lmao.ninja/v2/all?yesterday=true')
@@ -45,7 +55,24 @@ IndexPage.getInitialProps = async (ctx) => {
     affectedCountries: globalData.data.affectedCountries
   }
 
-  return {yesterdayGlobal, worldTime}
+  if (req) {
+      const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+      const localAddresses = ['::1', '127.0.0.1', 'localhost']
+      // Construct URL with IP ADDRESS
+      const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null
+
+    try {
+      const countryName = await currentCountry('')
+      const newProxy = { countryName, ipAddress }
+      return { newProxy,  worldTime, yesterdayGlobal }
+    } catch(e) {
+      return { errorCode: e.code, errorMessage: e.message, yesterdayGlobal, worldTime }
+    }
+  }
+
+  console.log('WE ARE ALSOOOOOOOOOOO HERE');
+
+  return {yesterdayGlobal, worldTime, newProxy: null}
 }
 
 export default IndexPage

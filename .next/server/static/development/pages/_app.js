@@ -377,11 +377,11 @@ const NavItem = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.li.with
 const Span = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.span.withConfig({
   displayName: "Headerstyled__Span",
   componentId: "sc-1v2vfvs-5"
-})(["font-size:3.8rem;font-weight:bold;text-shadow:0 1px 9px rgba(15,0,115,0.6);color:", ";@media (max-width:580px){font-size:3.3rem;align-items:flex-end;}"], props => props.theme.error2);
+})(["font-size:3.5rem;font-weight:bold;text-shadow:0 1px 9px rgba(15,0,115,0.6);color:", ";@media (max-width:580px){font-size:3.3rem;align-items:flex-end;}"], props => props.theme.error2);
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "Headerstyled__Logo",
   componentId: "sc-1v2vfvs-6"
-})(["display:inline-block;margin-top:10px;color:", ";font-size:3.5rem;font-family:'Montserrat';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;font-family:'Montserrat';@media (max-width:580px){font-size:3rem;align-items:flex-end;}"], props => props.color || '#e6e6e6');
+})(["display:inline-block;margin-top:10px;color:", ";font-size:3.5rem;font-family:'Rubik';text-align:center;text-shadow:0 1px 35px rgba(5,35,10,0.2);cursor:pointer;@media (max-width:580px){font-size:3rem;align-items:flex-end;}"], props => props.color || '#e6e6e6');
 
 /***/ }),
 
@@ -511,24 +511,27 @@ module.exports = "data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
-/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
-/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
-/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
-/* harmony import */ var _hooks_useOutSide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hooks/useOutSide */ "./hooks/useOutSide.js");
-/* harmony import */ var _hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hooks/useTranslation.js */ "./hooks/useTranslation.js");
-/* harmony import */ var _locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../locales/getInitialLocale */ "./locales/getInitialLocale.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _hooks_useOutSide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hooks/useOutSide */ "./hooks/useOutSide.js");
+/* harmony import */ var _hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hooks/useTranslation.js */ "./hooks/useTranslation.js");
+/* harmony import */ var _locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../locales/getInitialLocale */ "./locales/getInitialLocale.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Layout.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -551,58 +554,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
  // Functions for changing themes
 
-const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['light']);
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['light']);
 
-const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_3__["themes"]['dark']);
+const darkTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_4__["themes"]['dark']);
 
 const langs = ['he', 'en'];
 
 const Layout = ({
-  children,
-  newProxy
+  children
 }) => {
   const {
     t
-  } = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  } = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
   const {
     0: proxy,
     1: setProxy
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_7__["ProxyContext"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_8__["ProxyContext"]);
   const {
     locale,
     setLocale
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_8__["LocaleContext"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_9__["LocaleContext"]);
   const {
     0: ig,
     1: setIgnore
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false); // Initiation of Context API's
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false); // Initiation of Context API's
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (locale && !ig) {
-      let loc = Object(_locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_11__["getInitialLocale"])(proxy && proxy.countryName);
+      let loc = Object(_locales_getInitialLocale__WEBPACK_IMPORTED_MODULE_12__["getInitialLocale"])(proxy && proxy.countryName);
       setLocale(loc);
     }
 
     return () => {
       setIgnore(true);
     };
-  }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    let ignore = false;
-
-    if (newProxy && !ignore) {
-      setProxy(newProxy);
-    }
-
-    return () => {
-      ignore: true;
-    };
-  }, [newProxy]); // setting locale. not  sure yet if I use it or context API only
+  }, []); // setting locale. not  sure yet if I use it or context API only
 
   const {
     0: menuOpen,
     1: setOpen
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
 
   const closeMenu = () => setOpen(false);
 
@@ -614,19 +605,19 @@ const Layout = ({
     setLocale(newLocale);
   };
 
-  const node = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_9__["default"])(node, closeMenu);
+  const node = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+  Object(_hooks_useOutSide__WEBPACK_IMPORTED_MODULE_10__["default"])(node, closeMenu);
   const displayLang = locale === 'he' ? 'English' : 'עברית';
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 65
     },
     __self: undefined
   }, t('metaTitle')), __jsx("meta", {
@@ -634,7 +625,7 @@ const Layout = ({
     content: t('metaDescription'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx("meta", {
@@ -642,47 +633,68 @@ const Layout = ({
     content: t('metaKeywords'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 67
     },
     __self: undefined
-  })), __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  })), __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("div", {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 72
     },
     __self: undefined
-  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_Burger__WEBPACK_IMPORTED_MODULE_5__["default"], {
     setOpen: toggleMenu,
     open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    setOpen: toggleMenu,
+    open: menuOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/News",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: undefined
+  }, __jsx("a", {
+    alt: "news",
+    onClick: () => closeMenu(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 83
     },
     __self: undefined
-  }), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    setOpen: toggleMenu,
-    open: menuOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/News",
+  }, "\uD83D\uDCF0"), t('news', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/Statistics",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 88
     },
     __self: undefined
   }, __jsx("a", {
-    alt: "news",
+    alt: "stats",
     onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
@@ -695,15 +707,15 @@ const Layout = ({
       lineNumber: 90
     },
     __self: undefined
-  }, "\uD83D\uDCF0"), t('news', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/Statistics",
+  }, " \uD83D\uDDFA"), t('statistics', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/About",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 95
     },
     __self: undefined
   }, __jsx("a", {
-    alt: "stats",
+    alt: "about",
     onClick: () => closeMenu(),
     __source: {
       fileName: _jsxFileName,
@@ -716,41 +728,48 @@ const Layout = ({
       lineNumber: 97
     },
     __self: undefined
-  }, " \uD83D\uDDFA"), t('statistics', 'links'))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/About",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102
-    },
-    __self: undefined
-  }, __jsx("a", {
-    alt: "about",
-    onClick: () => closeMenu(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: undefined
-  }, " \uD83D\uDDFA"), t('about', 'links'))), __jsx("a", {
+  }, " \uD83E\uDDD4"), t('about', 'links'))), __jsx("a", {
     onClick: toggleLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 116
     },
     __self: undefined
-  }, "\uD83C\uDF10"), displayLang)))), children));
+  }, "\uD83C\uDF10"), displayLang)))), __jsx("div", {
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["214878086", [menuOpen && `
+                filter: blur(${menuOpen ? '1px' : '0px'});
+                transition: all 500ms ease-in-out;
+                -webkit-transition: -webkit-filter 500ms linear;
+                }
+              `]]]) + " " + "AppContainer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124
+    },
+    __self: undefined
+  }, children, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "214878086",
+    dynamic: [menuOpen && `
+                filter: blur(${menuOpen ? '1px' : '0px'});
+                transition: all 500ms ease-in-out;
+                -webkit-transition: -webkit-filter 500ms linear;
+                }
+              `],
+    __self: undefined
+  }, `.AppContainer{${menuOpen && `
+                filter: blur(${menuOpen ? '1px' : '0px'});
+                transition: all 500ms ease-in-out;
+                -webkit-transition: -webkit-filter 500ms linear;
+                }
+              `};}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yYXlwby9EZXNrdG9wL1Byb2plY3Rvcy9Db3JvbmFTdGF0dXMvY29tcG9uZW50cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNkg2QixBQUlZLDZCQUFDIiwiZmlsZSI6Ii9Vc2Vycy9yYXlwby9EZXNrdG9wL1Byb2plY3Rvcy9Db3JvbmFTdGF0dXMvY29tcG9uZW50cy9MYXlvdXQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VFZmZlY3QsIHVzZVJlZiwgdXNlU3RhdGUsIHVzZUNvbnRleHQgfSBmcm9tICdyZWFjdCdcbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluayc7XG5cbmltcG9ydCB7IHRoZW1lcyB9IGZyb20gJy4uL3V0aWxzL3RoZW1lcydcblxuLy8gQ29tcG9uZW50c1xuaW1wb3J0IEJ1cmdlciBmcm9tICcuLi9jb21wb25lbnRzL0J1cmdlcic7XG5pbXBvcnQgTWVudSBmcm9tICcuLi9jb21wb25lbnRzL01lbnUnO1xuaW1wb3J0IEhlYWRlciBmcm9tICcuLi9jb21wb25lbnRzL0hlYWRlcidcblxuLy8gQ29udGV4dCAmIEhvb2tzXG5pbXBvcnQgeyBQcm94eUNvbnRleHQgfSBmcm9tICcuLi9jb250ZXh0L3Byb3h5LWNvbnRleHQnXG5pbXBvcnQgeyBMb2NhbGVDb250ZXh0IH0gZnJvbSAnLi4vY29udGV4dC9Mb2NhbGVDb250ZXh0J1xuaW1wb3J0IHVzZU91dFNpZGUgZnJvbSAnLi4vaG9va3MvdXNlT3V0U2lkZSdcbmltcG9ydCB1c2VUcmFuc2xhdGlvbiBmcm9tICcuLi9ob29rcy91c2VUcmFuc2xhdGlvbi5qcydcblxuaW1wb3J0IHsgZ2V0SW5pdGlhbExvY2FsZSB9IGZyb20gJy4uL2xvY2FsZXMvZ2V0SW5pdGlhbExvY2FsZSdcblxuXG4vLyBGdW5jdGlvbnMgZm9yIGNoYW5naW5nIHRoZW1lc1xuY29uc3QgbGlnaHRUaGVtZSA9ICgpID0+ICh7XG4gIC4uLnRoZW1lc1snY29tbW9uJ10sXG4gIC4uLnRoZW1lc1snbGlnaHQnXSxcbn0pXG5jb25zdCBkYXJrVGhlbWUgPSAoKSA9PiAoe1xuICAuLi50aGVtZXNbJ2NvbW1vbiddLFxuICAuLi50aGVtZXNbJ2RhcmsnXSxcbn0pXG5cbmNvbnN0IGxhbmdzID0gWyAnaGUnLCAnZW4nIF1cblxuY29uc3QgTGF5b3V0ID0gKHsgY2hpbGRyZW4gfSkgPT4ge1xuICBjb25zdCB7IHQgfSA9IHVzZVRyYW5zbGF0aW9uKClcblxuICBjb25zdCBbcHJveHksICBzZXRQcm94eSBdICA9IHVzZUNvbnRleHQoUHJveHlDb250ZXh0KVxuICBjb25zdCB7IGxvY2FsZSwgc2V0TG9jYWxlIH0gPSB1c2VDb250ZXh0KExvY2FsZUNvbnRleHQpXG5cbiAgY29uc3QgW2lnLCBzZXRJZ25vcmVdID0gdXNlU3RhdGUoZmFsc2UpXG5cblxuICAvLyBJbml0aWF0aW9uIG9mIENvbnRleHQgQVBJJ3NcbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAobG9jYWxlICYmICFpZykge1xuICAgICAgbGV0IGxvYyA9IGdldEluaXRpYWxMb2NhbGUocHJveHkgJiYgcHJveHkuY291bnRyeU5hbWUpXG4gICAgICBzZXRMb2NhbGUobG9jKVxuICAgIH1cbiAgICByZXR1cm4gKCkgPT4geyBzZXRJZ25vcmUodHJ1ZSkgfVxuICB9LCBbXSlcblxuXG4gIC8vIHNldHRpbmcgbG9jYWxlLiBub3QgIHN1cmUgeWV0IGlmIEkgdXNlIGl0IG9yIGNvbnRleHQgQVBJIG9ubHlcbiAgY29uc3QgW21lbnVPcGVuLCBzZXRPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKVxuXG4gIGNvbnN0IGNsb3NlTWVudSAgICAgPSAoKSA9PiBzZXRPcGVuKGZhbHNlKVxuICBjb25zdCB0b2dnbGVNZW51ICAgID0gKCkgPT4gc2V0T3BlbighbWVudU9wZW4pXG4gIGNvbnN0IHRvZ2dsZUxhbmcgICAgPSAoKSA9PiB7Y2xvc2VNZW51KCk7IGNvbnN0IG5ld0xvY2FsZSA9IGxhbmdzWyshbGFuZ3MuaW5kZXhPZihsb2NhbGUpXTsgc2V0TG9jYWxlKG5ld0xvY2FsZSl9XG4gIGNvbnN0IG5vZGUgICAgICAgICAgPSB1c2VSZWYoKVxuICB1c2VPdXRTaWRlKG5vZGUsIGNsb3NlTWVudSlcbiAgY29uc3QgZGlzcGxheUxhbmcgICA9IGxvY2FsZSA9PT0gJ2hlJyA/ICdFbmdsaXNoJyA6ICfXoteR16jXmdeqJ1xuXG4gIHJldHVybiAoXG4gICAgPD5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8dGl0bGU+e3QoJ21ldGFUaXRsZScpfTwvdGl0bGU+XG4gICAgICAgIDxtZXRhIG5hbWU9XCJkZXNjcmlwdGlvblwiIGNvbnRlbnQ9e3QoJ21ldGFEZXNjcmlwdGlvbicpfS8+XG4gICAgICAgIDxtZXRhIG5hbWU9XCJrZXl3b3Jkc1wiIGNvbnRlbnQ9e3QoJ21ldGFLZXl3b3JkcycpfS8+XG4gICAgICA8L0hlYWQ+XG4gICAgICA8PlxuICAgICAgICA8SGVhZGVyID5cblxuICAgICAgICAgIDxkaXYgcmVmPXtub2RlfT5cblxuICAgICAgICAgICAgey8qLS0tLS0tLS0gLy8vIEJ1cmdlciBNZW51ICYgTWVudSAvLy8gLS0tLS0tLS0tICovfVxuXG4gICAgICAgICAgICA8QnVyZ2VyIHNldE9wZW49e3RvZ2dsZU1lbnV9IG9wZW49e21lbnVPcGVufSAvPlxuICAgICAgICAgICAgPE1lbnUgc2V0T3Blbj17dG9nZ2xlTWVudX0gb3Blbj17bWVudU9wZW59ID5cblxuICAgICAgICAgICAgey8qLS0tLS0tLS0gLy8vIE5BViBMSU5LUyAvLy8gLS0tLS0tLS0tICovfVxuXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvTmV3c1wiPlxuICAgICAgICAgICAgICAgIDxhIGFsdD1cIm5ld3NcIiBvbkNsaWNrPXsoKSA9PiBjbG9zZU1lbnUoKX0+XG4gICAgICAgICAgICAgICAgICA8c3Bhbj4mIzEyODI0MDs8L3NwYW4+XG4gICAgICAgICAgICAgICAgICB7dCgnbmV3cycsICdsaW5rcycpfVxuICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPC9MaW5rPlxuXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvU3RhdGlzdGljc1wiPlxuICAgICAgICAgICAgICAgIDxhIGFsdD1cInN0YXRzXCIgb25DbGljaz17KCkgPT4gY2xvc2VNZW51KCl9PlxuICAgICAgICAgICAgICAgICAgPHNwYW4+XHQmIzEyODUwNjs8L3NwYW4+XG4gICAgICAgICAgICAgICAgICB7dCgnc3RhdGlzdGljcycsICdsaW5rcycpfVxuICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPC9MaW5rPlxuXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvQWJvdXRcIj5cbiAgICAgICAgICAgICAgICA8YSBhbHQ9XCJhYm91dFwiIG9uQ2xpY2s9eygpID0+IGNsb3NlTWVudSgpfT5cbiAgICAgICAgICAgICAgICAgIDxzcGFuPlx0JiMxMjk0OTI7PC9zcGFuPlxuICAgICAgICAgICAgICAgICAge3QoJ2Fib3V0JywgJ2xpbmtzJyl9XG4gICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICA8L0xpbms+XG5cbiAgICAgICAgICAgICAgey8qXG4gICAgICAgICAgICAgICAgICAgIC8vIE1FQU5UIEZPUiBOSUdIVCBNT0RFIC1cbiAgICAgICAgICAgICAgICAgICAgLy8gVGhpcyBpcyBOaWdodCBNb2RlLi4gQ3VycmVudGx5IGRpc2FibGVkXG4gICAgICAgICAgICAgICAgICAgICAgPGEgb25DbGljaz17aXNMaWdodCA/c2V0RGFya1RoZW1lIDogc2V0TGlnaHRUaGVtZX0+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj57IGlzTGlnaHQgPyAn8J+MkicgOiAn8J+Mnid9PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgICBpc0xpZ2h0XG4gICAgICAgICAgICAgICAgICAgICAgICAgID8gKGlzSGViICYmICfXntem15Eg15zXmdec15QnIHx8ICdEYXJrIE1vZGUnKVxuICAgICAgICAgICAgICAgICAgICAgICAgICA6IChpc0hlYiAmJiAn157XpteRINeZ15XXnScgfHwgJ0xpZ2h0IE1vZGUnKVxuICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgKi99XG5cbiAgICAgICAgICAgICAgPGEgb25DbGljaz17dG9nZ2xlTGFuZ30+XG4gICAgICAgICAgICAgICAgPHNwYW4+JiMxMjc3NjA7PC9zcGFuPlxuICAgICAgICAgICAgICAgIHtkaXNwbGF5TGFuZ31cbiAgICAgICAgICAgICAgPC9hPlxuXG4gICAgICAgICAgICA8L01lbnU+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPC9IZWFkZXI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQXBwQ29udGFpbmVyXCI+XG4gICAgICAgICAge2NoaWxkcmVufVxuICAgICAgICAgIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG4gICAgICAgICAgICAuQXBwQ29udGFpbmVyIHtcbiAgICAgICAgICAgICAgJHsgbWVudU9wZW4gJiYgYFxuICAgICAgICAgICAgICAgIGZpbHRlcjogYmx1cigke21lbnVPcGVuID8gJzFweCcgOiAnMHB4J30pO1xuICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IGFsbCA1MDBtcyBlYXNlLWluLW91dDtcbiAgICAgICAgICAgICAgICAtd2Via2l0LXRyYW5zaXRpb246IC13ZWJraXQtZmlsdGVyIDUwMG1zIGxpbmVhcjtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIGB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvPlxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IExheW91dFxuIl19 */
+/*@ sourceURL=/Users/raypo/Desktop/Projectos/CoronaStatus/components/Layout.js */`))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -819,7 +838,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 
-const openStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["@media (min-width:961px){display:none;}display:flex;flex-direction:column;justify-content:center;background:#3f172b;color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;opacity:", ";transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex:flex-direction:row;justify-content:flex-start;padding:10px 6px;text-align:right;@media (max-width:660px){margin:0 auto;padding:16px;text-align:center;}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){font-size:12px;}}a{padding:4px;cursor:pointer;font-size:18px;font-weight:500;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
+const openStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["@media (min-width:961px){display:none;}display:flex;flex-direction:column;justify-content:center;background:#3f172b;color:", ";height:auto;position:absolute;z-index:999;top:0;right:50%;direction:rtl;width:220px;border-bottom-left-radius:6px;border-bottom:2px solid;border-bottom-color:{$props => props.theme.menuBorder};border-bottom-right-radius:6px;border-top:none;transition:transform 0.22s ease-in-out;opacity:", ";transform:", " translateX(50%);@media (max-width:660px){width:100%;}.divv{z-index:9999;display:flex;justify-content:flex-start;width:100%;padding:16px 10px;text-align:right;@media (max-width:660px){width:250px;padding:3em;transform:translateX(-115px);}}span{margin-right:18px;margin-left:18px;font-size:12px;color:", ";@media (max-width:660px){padding:12px;font-size:18px;}}a{padding:4px;cursor:pointer;font-size:20px;font-weight:500;letter-spacing:0.15rem;color:#F1F1F1;text-decoration:none;transition:color 0.15s linear;@media (max-width:660px){font-size:22px;padding:12px;}&:hover{color:", ";}}"], props => props.theme.onPrimary, ({
   open
 }) => open ? '1' : '0', ({
   open
@@ -970,12 +989,9 @@ const LocaleProvider = props => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (prev.current === undefined && locale === 'he') {
       const readLocal = localStorage.getItem('locale');
-
-      if (readLocal !== 'he') {
-        setLocale(readLocal);
-        return;
-      } else {
-        setLocale(readLocal);
+      if (readLocal) setLocale(readLocal);else {
+        localStorage.setItem('locale', locale);
+        setLocale(locale);
       }
     } else {
       localStorage.setItem('locale', locale);
@@ -989,7 +1005,7 @@ const LocaleProvider = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   }, props.children);
@@ -1027,13 +1043,15 @@ const ProxyContextProvider = props => {
   const prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (proxy.countryName == 'israel') {
+    if (prev.current === undefined && proxy.countryName == 'israel') {
       const localState = JSON.parse(localStorage.getItem('ip2proxy'));
 
       if (localState) {
         console.info('reading local storage');
         prev.current = localState.ipAddress;
         setProxy(localState);
+      } else {
+        localStorage.setItem('ip2proxy', JSON.stringify(proxy));
       }
     } else if (prev.current !== proxy.ipAddress) {
       console.info('writing local storage');
@@ -1044,7 +1062,7 @@ const ProxyContextProvider = props => {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 39
     },
     __self: undefined
   }, props.children);
@@ -3502,22 +3520,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
-/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
-/* harmony import */ var _hooks_useOutSide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hooks/useOutSide */ "./hooks/useOutSide.js");
-/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Header */ "./components/Header/index.js");
-/* harmony import */ var _components_Burger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Burger */ "./components/Burger/index.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu/index.js");
-/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
-/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _context_LocaleContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/LocaleContext */ "./context/LocaleContext.js");
+/* harmony import */ var _context_proxy_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../context/proxy-context */ "./context/proxy-context.js");
+/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Global */ "./pages/Global.js");
+/* harmony import */ var _utils_themes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/themes */ "./utils/themes.js");
+/* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/gtag */ "./utils/gtag.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -3541,106 +3553,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_9__["pageview"](url));
 
-
-
-
-
-
-const getCountryFromData = response => response.data.country;
-
-const currentCountry = async url => await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(url).then(getCountryFromData).catch(e => 'israel');
-
-next_router__WEBPACK_IMPORTED_MODULE_2___default.a.events.on('routeChangeComplete', url => _utils_gtag__WEBPACK_IMPORTED_MODULE_14__["pageview"](url));
-
-const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_13__["themes"]['light']);
+const lightTheme = () => _objectSpread({}, _utils_themes__WEBPACK_IMPORTED_MODULE_8__["themes"]['common'], {}, _utils_themes__WEBPACK_IMPORTED_MODULE_8__["themes"]['light']);
 
 function MyApp({
   Component,
-  pageProps,
-  newProxy
+  pageProps
 }) {
   const {
     0: theme,
     1: setTheme
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(lightTheme());
-  return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_7__["ProxyContextProvider"], {
+  return __jsx(_context_proxy_context__WEBPACK_IMPORTED_MODULE_6__["ProxyContextProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 27
     },
     __self: this
-  }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
+  }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 28
     },
     __self: this
-  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_Global__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 29
     },
     __self: this
-  }), __jsx(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_6__["LocaleProvider"], {
+  }), __jsx(_context_LocaleContext__WEBPACK_IMPORTED_MODULE_5__["LocaleProvider"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 30
     },
     __self: this
-  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
-    newProxy: newProxy,
+  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 32
     },
     __self: this
   }, __jsx(Component, _extends({}, pageProps, {
-    newProxy: newProxy,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 33
     },
     __self: this
   }))))));
 }
-
-MyApp.getInitialProps = async appContext => {
-  const appProps = await next_app__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(appContext);
-  let proxyUrl;
-  const req = appContext.ctx && appContext.ctx.req;
-
-  if (req) {
-    // grab client's ip address
-    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    const localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
-
-    if (!localAddresses.includes(ipAddress)) {
-      proxyUrl = `https://extreme-ip-lookup.com/json/${ipAddress}`;
-    }
-
-    try {
-      const countryName = await currentCountry(proxyUrl);
-      const newProxy = {
-        countryName,
-        ipAddress
-      };
-      return _objectSpread({
-        newProxy
-      }, appProps);
-    } catch (e) {
-      return _objectSpread({
-        errorCode: e.code,
-        errorMessage: e.message
-      }, appProps);
-    }
-  }
-
-  return _objectSpread({}, appProps, {
-    newProxy: null
-  });
-};
 
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);
 
@@ -4002,6 +3965,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("styled-components");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 

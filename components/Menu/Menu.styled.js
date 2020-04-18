@@ -31,15 +31,15 @@ const openStyle = css`
 
   .divv {
     z-index: 9999;
-    display: flex:
-    flex-direction: row;
+    display: flex;
     justify-content: flex-start;
-    padding: 10px 6px;
+    width: 100%;
+    padding: 16px 10px;
     text-align: right;
     @media (max-width: 660px) {
-      margin: 0 auto;
-      padding: 16px;
-      text-align: center;
+      width: 250px;
+      padding: 3em;
+      transform: translateX(-115px);
     }
   }
 
@@ -50,21 +50,23 @@ const openStyle = css`
 
     color: ${props => props.theme.menuColor};
     @media (max-width: 660px) {
-      font-size: 12px;
+      padding: 12px;
+      font-size: 18px;
     }
   }
 
   a {
     padding: 4px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 0.15rem;
     color: #F1F1F1;
     text-decoration: none;
     transition: color 0.15s linear;
     @media (max-width: 660px) {
-      font-size: 12px;
+      font-size: 22px;
+      padding: 12px;
     }
 
     &:hover {

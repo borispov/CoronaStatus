@@ -30,7 +30,7 @@ const darkTheme = () => ({
 
 const langs = [ 'he', 'en' ]
 
-const Layout = ({ children, newProxy }) => {
+const Layout = ({ children }) => {
   const { t } = useTranslation()
 
   const [proxy,  setProxy ]  = useContext(ProxyContext)
@@ -48,13 +48,6 @@ const Layout = ({ children, newProxy }) => {
     return () => { setIgnore(true) }
   }, [])
 
-  useEffect(() => {
-    let ignore = false
-    if (newProxy && !ignore) {
-      setProxy(newProxy)
-    }
-    return () => { ignore: true }
-  }, [newProxy])
 
   // setting locale. not  sure yet if I use it or context API only
   const [menuOpen, setOpen] = useState(false)
@@ -101,7 +94,7 @@ const Layout = ({ children, newProxy }) => {
 
               <Link href="/About">
                 <a alt="about" onClick={() => closeMenu()}>
-                  <span>	&#128506;</span>
+                  <span>	&#129492;</span>
                   {t('about', 'links')}
                 </a>
               </Link>
@@ -127,9 +120,20 @@ const Layout = ({ children, newProxy }) => {
             </Menu>
           </div>
 
-
         </Header>
-        {children}
+        <div className="AppContainer">
+          {children}
+          <style jsx global>{`
+            .AppContainer {
+              ${ menuOpen && `
+                filter: blur(${menuOpen ? '1px' : '0px'});
+                transition: all 500ms ease-in-out;
+                -webkit-transition: -webkit-filter 500ms linear;
+                }
+              `}
+            }
+          `}</style>
+        </div>
       </>
     </>
   )

@@ -177,17 +177,6 @@ const popKey = o => Object.keys(o)[0];
 
 /***/ }),
 
-/***/ "./components/CaseChart.js":
-/*!*********************************!*\
-  !*** ./components/CaseChart.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "./components/Chart.js":
 /*!*****************************!*\
   !*** ./components/Chart.js ***!
@@ -255,13 +244,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
 /* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_CaseChart__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
+/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -289,12 +275,7 @@ const CoronaApp = ({
     t,
     locale
   } = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  const isHeb = locale === 'he'; // const [hebCountry, setHebCountry] = useState(countryheb(country))
-
-  const {
-    0: showWorld,
-    1: setShowWorld
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  const isHeb = locale === 'he';
   const {
     0: country,
     1: setCountry
@@ -304,7 +285,6 @@ const CoronaApp = ({
     1: setInput
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const url = 'https://nCorona.live/api/v1/';
-  const worldUrl = 'https://corona.lmao.ninja/all';
   const v2 = 'https://corona.lmao.ninja/v2/countries/';
   const {
     countryStats
@@ -362,7 +342,7 @@ const CoronaApp = ({
     if (countries) {
       let lowerCased = countries.map(a => a.toLowerCase());
       let engIndex = lowerCased.indexOf(country);
-      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][engIndex];
+      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][engIndex];
     }
 
     return country;
@@ -377,40 +357,42 @@ const CoronaApp = ({
     label: a
   })) : countries.map((country, idx) => ({
     value: country,
-    label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][idx]
+    label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][idx]
   }));
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_8__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx("form", {
     style: {
       maxWidth: '520px',
       margin: '54px auto 12px',
-      textAlign: 'center'
+      textAlign: 'center',
+      direction: isHeb && 'rtl'
     },
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx("label", {
     style: {
-      fontSize: '16px',
+      fontSize: '18px',
+      padding: '2em',
       fontWeight: 'bold'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 109
     },
     __self: undefined
   }, t('selectHeader', 'coronaApp')), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -418,10 +400,10 @@ const CoronaApp = ({
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
     onChange: handleChange,
-    placeholder: country && countryheb(country) || country,
+    placeholder: country && isHeb ? countryheb(country) : country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 114
     },
     __self: undefined
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -431,7 +413,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 123
     },
     __self: undefined
   }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -446,7 +428,7 @@ const CoronaApp = ({
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 141
     },
     __self: undefined
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -456,7 +438,7 @@ const CoronaApp = ({
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 155
     },
     __self: undefined
   }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -466,7 +448,7 @@ const CoronaApp = ({
     txt: '* ' + t('graphExplanation', 'coronaApp'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 162
     },
     __self: undefined
   }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -480,7 +462,7 @@ const CoronaApp = ({
     showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 169
     },
     __self: undefined
   })));
@@ -628,7 +610,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Wrapper",
   componentId: "sc-1anhjcp-0"
-})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Rubik;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
+})(["direction:rtl;text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Rubik;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
 const Section = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "InfoSection__Section",
   componentId: "sc-1anhjcp-1"
@@ -672,20 +654,20 @@ const mapDataToSection = (item, idx) => {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: undefined
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: undefined
   }, item.description));
@@ -696,13 +678,13 @@ const renderSection = secData => {
     key: ix,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx(SectionTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 104
     },
     __self: undefined
   }, it.category), it.data.map(mapDataToSection)));
@@ -740,7 +722,7 @@ const renderSection = secData => {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 139
       },
       __self: undefined
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -749,13 +731,13 @@ const renderSection = secData => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 144
     },
     __self: undefined
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 145
     },
     __self: undefined
   }, data && renderSection(data)));
@@ -781,7 +763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
+/* harmony import */ var _utils_isMobile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/isMobile */ "./utils/isMobile.js");
+/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/LineChart.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -791,6 +774,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -819,26 +803,29 @@ const noChartDisplaySettings = {
   fill: false
 }; // if mobile, do by 8, if not do by 3
 
-const filterBy5 = (x, i) => !(i % 8);
-
-const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length - 1]);
-
-const cutCaseCount = ({
-  data
-}) => data.length > 30 ? subtractArray(data) : data;
-
 const LineChart = (props, {
   theme
 }) => {
   const {
     t
-  } = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  } = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__["default"])();
   const chartRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  const showLastMonth = arr => arr.slice(Math.ceil(arr.length / 3.3));
+
+  const filterBy5 = (x, i) => Object(_utils_isMobile__WEBPACK_IMPORTED_MODULE_5__["default"])().isMobile() ? !(i % 8) : !(i % 2); // const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
+
+
+  const subtractArray = arr => showLastMonth(arr);
+
+  const cutCaseCount = ({
+    data
+  }) => data.length > 30 ? subtractArray(data) : data;
 
   const displayOnChart = dset => _objectSpread({}, dset, {
     label: t(dset.label, 'chartLabels'),
     data: cutCaseCount(dset),
-    fill: false
+    fill: true
   });
 
   const dontDisplayOnChart = dset => _objectSpread({}, dset, {
@@ -859,6 +846,12 @@ const LineChart = (props, {
 
   const data = canvas => {
     const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, props.theme.primaryColor);
+    gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
+    data2.datasets[2].fill = true;
+    data2.datasets[2].backgroundColor = gradient;
+    console.log(data2);
     return _objectSpread({}, data2);
   };
 
@@ -969,7 +962,7 @@ const LineChart = (props, {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 205
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -980,7 +973,7 @@ const LineChart = (props, {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 206
     },
     __self: undefined
   }));
@@ -1355,12 +1348,9 @@ const LocaleProvider = props => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (prev.current === undefined && locale === 'he') {
       const readLocal = localStorage.getItem('locale');
-
-      if (readLocal !== 'he') {
-        setLocale(readLocal);
-        return;
-      } else {
-        setLocale(readLocal);
+      if (readLocal) setLocale(readLocal);else {
+        localStorage.setItem('locale', locale);
+        setLocale(locale);
       }
     } else {
       localStorage.setItem('locale', locale);
@@ -1374,7 +1364,7 @@ const LocaleProvider = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   }, props.children);
@@ -1412,13 +1402,15 @@ const ProxyContextProvider = props => {
   const prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (proxy.countryName == 'israel') {
+    if (prev.current === undefined && proxy.countryName == 'israel') {
       const localState = JSON.parse(localStorage.getItem('ip2proxy'));
 
       if (localState) {
         console.info('reading local storage');
         prev.current = localState.ipAddress;
         setProxy(localState);
+      } else {
+        localStorage.setItem('ip2proxy', JSON.stringify(proxy));
       }
     } else if (prev.current !== proxy.ipAddress) {
       console.info('writing local storage');
@@ -1429,7 +1421,7 @@ const ProxyContextProvider = props => {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 39
     },
     __self: undefined
   }, props.children);
@@ -1981,53 +1973,70 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const getCountryFromData = response => response.data.country;
+
+const currentCountry = async url => await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(getCountryFromData).catch(e => 'israel');
+
 function IndexPage({
-  isHeb,
   worldTime,
-  yesterdayGlobal
+  yesterdayGlobal,
+  newProxy
 }) {
   const {
-    0: proxy
+    0: proxy,
+    1: setProxy
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_8__["ProxyContext"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    let ignore = false;
+
+    if (newProxy && !ignore) {
+      setProxy(newProxy);
+    }
+
+    return () => {
+      ignore: true;
+    };
+  }, [newProxy]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 32
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 33
     },
     __self: this
   }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_6__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 35
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    isHeb: isHeb,
     userLocation: proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 36
     },
     __self: this
   }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 37
     },
     __self: this
   })));
 }
 
-IndexPage.getInitialProps = async ctx => {
+IndexPage.getInitialProps = async ({
+  req
+}) => {
   const worldTime = await Object(_hooks_useWorldData__WEBPACK_IMPORTED_MODULE_7__["default"])();
   const globalData = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://corona.lmao.ninja/v2/all?yesterday=true');
   const yesterdayGlobal = {
@@ -2040,13 +2049,90 @@ IndexPage.getInitialProps = async ctx => {
     country: globalData.data.country,
     affectedCountries: globalData.data.affectedCountries
   };
+
+  if (req) {
+    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    const localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
+
+    const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null;
+
+    try {
+      const countryName = await currentCountry('');
+      const newProxy = {
+        countryName,
+        ipAddress
+      };
+      return {
+        newProxy,
+        worldTime,
+        yesterdayGlobal
+      };
+    } catch (e) {
+      return {
+        errorCode: e.code,
+        errorMessage: e.message,
+        yesterdayGlobal,
+        worldTime
+      };
+    }
+  }
+
+  console.log('WE ARE ALSOOOOOOOOOOO HERE');
   return {
     yesterdayGlobal,
-    worldTime
+    worldTime,
+    newProxy: null
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+
+/***/ }),
+
+/***/ "./utils/isMobile.js":
+/*!***************************!*\
+  !*** ./utils/isMobile.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const getMobileDetect = userAgent => {
+  const isAndroid = () => Boolean(userAgent.match(/Android/i));
+
+  const isIos = () => Boolean(userAgent.match(/iPhone|iPad|iPd/i));
+
+  const isOpera = () => Boolean(userAgent.match(/Opera Mini/));
+
+  const isWindows = () => Boolean(userAgent.match(/IEMobilei/));
+
+  const isSSR = () => Boolean(userAgent.match(/SSR/i));
+
+  const isMobile = () => Boolean(isAndroid() || isIos() || isOpera() || isWindows());
+
+  const isDesktop = () => Boolean(!isMobile() && !isSSR());
+
+  return {
+    isMobile,
+    isDesktop,
+    isAndroid,
+    isIos,
+    isSSR
+  };
+};
+
+const useMobileDetect = () => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {}, []);
+  const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
+  return getMobileDetect(userAgent);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useMobileDetect);
 
 /***/ }),
 

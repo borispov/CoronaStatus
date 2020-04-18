@@ -58,7 +58,7 @@ export const NavItem = styled.li`
   }
 `
 export const Span = styled.span`
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: bold;
   text-shadow: 0 1px 9px rgba(15,0,115,0.6);
   color: ${props => props.theme.error2};
@@ -73,11 +73,10 @@ export const Logo = styled.h1`
   margin-top: 10px;
   color: ${props => props.color || '#e6e6e6'} ;
   font-size: 3.5rem;
-  font-family: 'Montserrat';
+  font-family: 'Rubik';
   text-align: center;
   text-shadow: 0 1px 35px rgba(5, 35, 10, 0.2);
   cursor: pointer;
-  font-family: 'Montserrat';
 
   @media (max-width: 580px) {
     font-size: 3rem;

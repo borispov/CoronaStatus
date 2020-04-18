@@ -91,17 +91,6 @@ var popKey = function popKey(o) {
 
 /***/ }),
 
-/***/ "./components/CaseChart.js":
-/*!*********************************!*\
-  !*** ./components/CaseChart.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "./components/Chart.js":
 /*!*****************************!*\
   !*** ./components/Chart.js ***!
@@ -164,13 +153,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Stats */ "./components/Stats.js");
 /* harmony import */ var _Chart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Chart */ "./components/Chart.js");
 /* harmony import */ var _HeaderDescription__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HeaderDescription */ "./components/HeaderDescription.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CaseChart */ "./components/CaseChart.js");
-/* harmony import */ var _CaseChart__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_CaseChart__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
+/* harmony import */ var _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../assets/cns.js */ "./assets/cns.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/CoronaApp.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -202,22 +188,17 @@ var CoronaApp = function CoronaApp(_ref) {
       t = _useTranslation.t,
       locale = _useTranslation.locale;
 
-  var isHeb = locale === 'he'; // const [hebCountry, setHebCountry] = useState(countryheb(country))
+  var isHeb = locale === 'he';
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
-      showWorld = _useState[0],
-      setShowWorld = _useState[1];
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(userLocation),
+      country = _useState[0],
+      setCountry = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(userLocation),
-      country = _useState2[0],
-      setCountry = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      inputValue = _useState3[0],
-      setInput = _useState3[1];
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      inputValue = _useState2[0],
+      setInput = _useState2[1];
 
   var url = 'https://nCorona.live/api/v1/';
-  var worldUrl = 'https://corona.lmao.ninja/all';
   var v2 = 'https://corona.lmao.ninja/v2/countries/';
 
   var _useTime = Object(_hooks_useTime__WEBPACK_IMPORTED_MODULE_3__["default"])(country, theme),
@@ -279,7 +260,7 @@ var CoronaApp = function CoronaApp(_ref) {
         return a.toLowerCase();
       });
       var engIndex = lowerCased.indexOf(country);
-      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][engIndex];
+      return _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][engIndex];
     }
 
     return country;
@@ -297,41 +278,43 @@ var CoronaApp = function CoronaApp(_ref) {
   }) : countries.map(function (country, idx) {
     return {
       value: country,
-      label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_13__["default"][idx]
+      label: _assets_cns_js__WEBPACK_IMPORTED_MODULE_12__["default"][idx]
     };
   });
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 101
     },
     __self: this
   }, __jsx(_S__WEBPACK_IMPORTED_MODULE_8__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 103
     },
     __self: this
   }, __jsx("form", {
     style: {
       maxWidth: '520px',
       margin: '54px auto 12px',
-      textAlign: 'center'
+      textAlign: 'center',
+      direction: isHeb && 'rtl'
     },
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 105
     },
     __self: this
   }, __jsx("label", {
     style: {
-      fontSize: '16px',
+      fontSize: '18px',
+      padding: '2em',
       fontWeight: 'bold'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 109
     },
     __self: this
   }, t('selectHeader', 'coronaApp')), __jsx(react_select__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -339,10 +322,10 @@ var CoronaApp = function CoronaApp(_ref) {
     options: selectOptions,
     value: country === 'Israel' && isHeb ? 'ישראל' : country,
     onChange: handleChange,
-    placeholder: country && countryheb(country) || country,
+    placeholder: country && isHeb ? countryheb(country) : country,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 114
     },
     __self: this
   })), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -352,7 +335,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 123
     },
     __self: this
   }), countryStats && __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -367,7 +350,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 141
     },
     __self: this
   }), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -377,7 +360,7 @@ var CoronaApp = function CoronaApp(_ref) {
     isHeb: isHeb,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 155
     },
     __self: this
   }), __jsx(_HeaderDescription__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -387,7 +370,7 @@ var CoronaApp = function CoronaApp(_ref) {
     txt: '* ' + t('graphExplanation', 'coronaApp'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 162
     },
     __self: this
   }), __jsx(_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -401,7 +384,7 @@ var CoronaApp = function CoronaApp(_ref) {
     showLegend: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 169
     },
     __self: this
   })));
@@ -559,7 +542,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "InfoSection__Wrapper",
   componentId: "sc-1anhjcp-0"
-})(["text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Rubik;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
+})(["direction:rtl;text-align:none;display:flex;flex-wrap:wrap;justify-content:center;font-family:Rubik;margin-left:15px;margin-right:15px;margin-bottom:32px;@media (max-width:768px){flex-direction:column;align-content:center;}"]);
 var Section = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "InfoSection__Section",
   componentId: "sc-1anhjcp-1"
@@ -617,20 +600,20 @@ var mapDataToSection = function mapDataToSection(item, idx) {
     key: idx,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: this
   }, __jsx(Link, {
     href: item.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: this
   }, item.subject), __jsx(Desc, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: this
   }, item.description));
@@ -642,13 +625,13 @@ var renderSection = function renderSection(secData) {
       key: ix,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 103
       },
       __self: this
     }, __jsx(SectionTitle, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 104
       },
       __self: this
     }, it.category), it.data.map(mapDataToSection));
@@ -714,7 +697,7 @@ var renderSection = function renderSection(secData) {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 139
       },
       __self: this
     }, " Received Error Fetching Information ... Let Me Know About This: boristofu@gmail.com");
@@ -723,13 +706,13 @@ var renderSection = function renderSection(secData) {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 144
     },
     __self: this
   }, "Resources"), __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 145
     },
     __self: this
   }, data && renderSection(data)));
@@ -754,7 +737,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(chartjs_plugin_datalabels__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _S__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./S */ "./components/S.js");
-/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
+/* harmony import */ var _utils_isMobile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/isMobile */ "./utils/isMobile.js");
+/* harmony import */ var _hooks_useTranslation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hooks/useTranslation */ "./hooks/useTranslation.js");
 
 
 var _noChartDisplaySettin,
@@ -766,6 +750,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -793,32 +778,37 @@ var noChartDisplaySettings = (_noChartDisplaySettin = {
   pointRadius: 0
 }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "pointHitRadius", 0), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_noChartDisplaySettin, "fill", false), _noChartDisplaySettin); // if mobile, do by 8, if not do by 3
 
-var filterBy5 = function filterBy5(x, i) {
-  return !(i % 8);
-};
+var LineChart = function LineChart(props, _ref2) {
+  var theme = _ref2.theme;
 
-var subtractArray = function subtractArray(arr) {
-  return arr.filter(filterBy5).concat(arr[arr.length - 1]);
-};
-
-var cutCaseCount = function cutCaseCount(_ref2) {
-  var data = _ref2.data;
-  return data.length > 30 ? subtractArray(data) : data;
-};
-
-var LineChart = function LineChart(props, _ref3) {
-  var theme = _ref3.theme;
-
-  var _useTranslation = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_6__["default"])(),
+  var _useTranslation = Object(_hooks_useTranslation__WEBPACK_IMPORTED_MODULE_7__["default"])(),
       t = _useTranslation.t;
 
   var chartRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+
+  var showLastMonth = function showLastMonth(arr) {
+    return arr.slice(Math.ceil(arr.length / 3.3));
+  };
+
+  var filterBy5 = function filterBy5(x, i) {
+    return Object(_utils_isMobile__WEBPACK_IMPORTED_MODULE_6__["default"])().isMobile() ? !(i % 8) : !(i % 2);
+  }; // const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
+
+
+  var subtractArray = function subtractArray(arr) {
+    return showLastMonth(arr);
+  };
+
+  var cutCaseCount = function cutCaseCount(_ref3) {
+    var data = _ref3.data;
+    return data.length > 30 ? subtractArray(data) : data;
+  };
 
   var displayOnChart = function displayOnChart(dset) {
     return _objectSpread({}, dset, {
       label: t(dset.label, 'chartLabels'),
       data: cutCaseCount(dset),
-      fill: false
+      fill: true
     });
   };
 
@@ -844,6 +834,12 @@ var LineChart = function LineChart(props, _ref3) {
 
   var data = function data(canvas) {
     var ctx = canvas.getContext('2d');
+    var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, props.theme.primaryColor);
+    gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
+    data2.datasets[2].fill = true;
+    data2.datasets[2].backgroundColor = gradient;
+    console.log(data2);
     return _objectSpread({}, data2);
   };
 
@@ -954,7 +950,7 @@ var LineChart = function LineChart(props, _ref3) {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 205
     },
     __self: this
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -965,7 +961,7 @@ var LineChart = function LineChart(props, _ref3) {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 206
     },
     __self: this
   }));
@@ -1490,12 +1486,9 @@ var LocaleProvider = function LocaleProvider(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (prev.current === undefined && locale === 'he') {
       var readLocal = localStorage.getItem('locale');
-
-      if (readLocal !== 'he') {
-        setLocale(readLocal);
-        return;
-      } else {
-        setLocale(readLocal);
+      if (readLocal) setLocale(readLocal);else {
+        localStorage.setItem('locale', locale);
+        setLocale(locale);
       }
     } else {
       localStorage.setItem('locale', locale);
@@ -1509,7 +1502,7 @@ var LocaleProvider = function LocaleProvider(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: this
   }, props.children);
@@ -1547,13 +1540,15 @@ var ProxyContextProvider = function ProxyContextProvider(props) {
   var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (proxy.countryName == 'israel') {
+    if (prev.current === undefined && proxy.countryName == 'israel') {
       var localState = JSON.parse(localStorage.getItem('ip2proxy'));
 
       if (localState) {
         console.info('reading local storage');
         prev.current = localState.ipAddress;
         setProxy(localState);
+      } else {
+        localStorage.setItem('ip2proxy', JSON.stringify(proxy));
       }
     } else if (prev.current !== proxy.ipAddress) {
       console.info('writing local storage');
@@ -1564,7 +1559,7 @@ var ProxyContextProvider = function ProxyContextProvider(props) {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 39
     },
     __self: this
   }, props.children);
@@ -56446,68 +56441,105 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+var getCountryFromData = function getCountryFromData(response) {
+  return response.data.country;
+};
+
+var currentCountry = function currentCountry(url) {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function currentCountry$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(url).then(getCountryFromData)["catch"](function (e) {
+            return 'israel';
+          }));
+
+        case 2:
+          return _context.abrupt("return", _context.sent);
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+};
+
 function IndexPage(_ref) {
-  var isHeb = _ref.isHeb,
-      worldTime = _ref.worldTime,
-      yesterdayGlobal = _ref.yesterdayGlobal;
+  var worldTime = _ref.worldTime,
+      yesterdayGlobal = _ref.yesterdayGlobal,
+      newProxy = _ref.newProxy;
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_proxy_context__WEBPACK_IMPORTED_MODULE_9__["ProxyContext"]),
-      proxy = _useContext[0];
+      proxy = _useContext[0],
+      setProxy = _useContext[1];
 
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var ignore = false;
+
+    if (newProxy && !ignore) {
+      setProxy(newProxy);
+    }
+
+    return function () {
+      ignore: true;
+    };
+  }, [newProxy]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 32
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 33
     },
     __self: this
   }, "nCorona - Novel Coronavirus Statistics & Resources for Coping")), __jsx(_components_S__WEBPACK_IMPORTED_MODULE_7__["FadeIn"], {
     delay: "0.5s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 35
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    isHeb: isHeb,
     userLocation: proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 36
     },
     __self: this
   }), __jsx(_components_InfoSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 37
     },
     __self: this
   })));
 }
 
-IndexPage.getInitialProps = function _callee(ctx) {
-  var worldTime, globalData, yesterdayGlobal;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
+IndexPage.getInitialProps = function _callee(_ref2) {
+  var req, worldTime, globalData, yesterdayGlobal, ipAddress, localAddresses, proxyUrl, countryName, newProxy;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context2) {
     while (1) {
-      switch (_context.prev = _context.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
+          req = _ref2.req;
+          _context2.next = 3;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_hooks_useWorldData__WEBPACK_IMPORTED_MODULE_8__["default"])());
 
-        case 2:
-          worldTime = _context.sent;
-          _context.next = 5;
+        case 3:
+          worldTime = _context2.sent;
+          _context2.next = 6;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://corona.lmao.ninja/v2/all?yesterday=true'));
 
-        case 5:
-          globalData = _context.sent;
+        case 6:
+          globalData = _context2.sent;
           yesterdayGlobal = {
             active: globalData.data.active,
             critical: globalData.data.critical,
@@ -56518,20 +56550,120 @@ IndexPage.getInitialProps = function _callee(ctx) {
             country: globalData.data.country,
             affectedCountries: globalData.data.affectedCountries
           };
-          return _context.abrupt("return", {
+
+          if (!req) {
+            _context2.next = 23;
+            break;
+          }
+
+          ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+          localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
+
+          proxyUrl = !localAddresses.includes(ipAddress) && "https://extreme-ip-lookup.com/json/".concat(ipAddress) || null;
+          _context2.prev = 12;
+          _context2.next = 15;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry(''));
+
+        case 15:
+          countryName = _context2.sent;
+          newProxy = {
+            countryName: countryName,
+            ipAddress: ipAddress
+          };
+          return _context2.abrupt("return", {
+            newProxy: newProxy,
+            worldTime: worldTime,
+            yesterdayGlobal: yesterdayGlobal
+          });
+
+        case 20:
+          _context2.prev = 20;
+          _context2.t0 = _context2["catch"](12);
+          return _context2.abrupt("return", {
+            errorCode: _context2.t0.code,
+            errorMessage: _context2.t0.message,
             yesterdayGlobal: yesterdayGlobal,
             worldTime: worldTime
           });
 
-        case 8:
+        case 23:
+          console.log('WE ARE ALSOOOOOOOOOOO HERE');
+          return _context2.abrupt("return", {
+            yesterdayGlobal: yesterdayGlobal,
+            worldTime: worldTime,
+            newProxy: null
+          });
+
+        case 25:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
     }
-  }, null, null, null, Promise);
+  }, null, null, [[12, 20]], Promise);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+
+/***/ }),
+
+/***/ "./utils/isMobile.js":
+/*!***************************!*\
+  !*** ./utils/isMobile.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var getMobileDetect = function getMobileDetect(userAgent) {
+  var isAndroid = function isAndroid() {
+    return Boolean(userAgent.match(/Android/i));
+  };
+
+  var isIos = function isIos() {
+    return Boolean(userAgent.match(/iPhone|iPad|iPd/i));
+  };
+
+  var isOpera = function isOpera() {
+    return Boolean(userAgent.match(/Opera Mini/));
+  };
+
+  var isWindows = function isWindows() {
+    return Boolean(userAgent.match(/IEMobilei/));
+  };
+
+  var isSSR = function isSSR() {
+    return Boolean(userAgent.match(/SSR/i));
+  };
+
+  var isMobile = function isMobile() {
+    return Boolean(isAndroid() || isIos() || isOpera() || isWindows());
+  };
+
+  var isDesktop = function isDesktop() {
+    return Boolean(!isMobile() && !isSSR());
+  };
+
+  return {
+    isMobile: isMobile,
+    isDesktop: isDesktop,
+    isAndroid: isAndroid,
+    isIos: isIos,
+    isSSR: isSSR
+  };
+};
+
+var useMobileDetect = function useMobileDetect() {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {}, []);
+  var userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
+  return getMobileDetect(userAgent);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useMobileDetect);
 
 /***/ }),
 
@@ -56894,7 +57026,7 @@ var themes = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56917,5 +57049,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -20,12 +20,14 @@ export const ProxyContextProvider = (props) => {
 
     // Read and Write Proxy State to Local Storage
     useEffect(() => {
-        if (proxy.countryName == 'israel') {
+        if (prev.current === undefined && proxy.countryName == 'israel') {
             const localState = JSON.parse(localStorage.getItem('ip2proxy'))
             if (localState) {
                 console.info('reading local storage')
                 prev.current = localState.ipAddress
                 setProxy(localState)
+            } else {
+              localStorage.setItem('ip2proxy', JSON.stringify(proxy))
             }
         } else if (prev.current !== proxy.ipAddress) {
             console.info('writing local storage')
