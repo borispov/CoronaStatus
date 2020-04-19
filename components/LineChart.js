@@ -4,6 +4,7 @@ import 'chartjs-plugin-datalabels'
 import styled, { withTheme, keyframes }  from 'styled-components'
 import { FadeIn } from './S'
 
+import Spinner from './Spinner'
 import useMobileDetect from '../utils/isMobile'
 import useTranslation from '../hooks/useTranslation'
 
@@ -56,6 +57,12 @@ const noChartDisplaySettings = {
 // if mobile, do by 8, if not do by 3
 
 const LineChart = ( props, {theme} ) => {
+
+  if (props.loading) {
+    <Div>
+      <Spinner size='big' />
+    </Div>
+  }
 
   const { t } = useTranslation()
   const chartRef = useRef()
@@ -201,13 +208,13 @@ const LineChart = ( props, {theme} ) => {
 
   return (
       <Div>
-          <Line
-            label={props.label}
-            data={data}
-            width={100}
-            options={options}
-            // height={40}
-          />
+        <Line
+          label={props.label}
+          data={data}
+          width={100}
+          options={options}
+          // height={40}
+        />
       </Div>
   )
 }

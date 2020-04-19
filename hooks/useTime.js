@@ -18,7 +18,7 @@ async function currentCountry(){
 function useTime(loc, theme = {}) {
 
   const [countryStats, setCountryStats] = useState();
-  const [loading, setLoading] = useState(false);
+  const [countryGraphLoading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [countries, setCountries] = useState()
 
@@ -47,7 +47,7 @@ function useTime(loc, theme = {}) {
   }, [loc])
 
   return {
-    countryStats, loading, error, countries
+    countryStats, countryGraphLoading, error, countries
   }
 }
 

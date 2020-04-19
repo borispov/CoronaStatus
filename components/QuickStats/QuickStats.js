@@ -2,16 +2,16 @@
 import { Container } from '../S'
 import { Column, InRow, Row, Percentage, Header, Number } from './QuickStats.styled'
 
+import Spinner from '../Spinner'
 
 // utils
 import { F } from './QuickStats.utils'
 import useTranslation from '../../hooks/useTranslation.js'
 
 
-export default ({ S, country, isHeb, yday, comparison=true}) => {
+export default ({ loading, S, country, isHeb, yday, comparison=true}) => {
 
   const { t, locale } = useTranslation()
-
 
   const direction = locale === 'he' && 'rtl' || 'ltr'
 
@@ -21,6 +21,16 @@ export default ({ S, country, isHeb, yday, comparison=true}) => {
 
     {
       Object.keys(S).map((k,i) => {
+        if (loading) {
+          return (
+            <Column key={i}>
+              <Header> { t(k, 'labels') }</Header>
+              <InRow>
+                <Spinner size='med' />
+              </InRow>
+            </Column>
+          )
+        }
         return (
           <Column key={i} direction={direction} >
             <Header> { t(k, 'labels') }</Header>

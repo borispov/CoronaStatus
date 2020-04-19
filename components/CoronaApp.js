@@ -8,6 +8,7 @@ import useCountries from '../hooks/useCountries'
 import useYday from '../hooks/useYday'
 import useTranslation from '../hooks/useTranslation'
 
+import Spinner from './Spinner'
 import { Container } from './S'
 import Stats from './Stats'
 import Chart from './Chart'
@@ -28,8 +29,8 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   const url = 'https://nCorona.live/api/v1/'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
 
-  const { countryStats } = useTime(country, theme)
-  const { todayStats } = useTodayStats(url, country)
+  const { countryStats, countryGraphLoading } = useTime(country, theme)
+  const { todayStats, countryStatLoading } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
   const { yesterdayCn } = useYday(v2, country)
 
@@ -120,12 +121,13 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         />
       </form>
 
-    <Stats
-      cn={country || todayStats && todayStats.country}
-      todayStats={todayStatsSorted}
-      yesteryday={yesterdayStatsSorted}
-      isHeb={isHeb}
-    />
+      <Stats
+        loading={countryStatLoading}
+        cn={country || todayStats && todayStats.country}
+        todayStats={todayStatsSorted}
+        yesteryday={yesterdayStatsSorted}
+        isHeb={isHeb}
+      />
 
     {/*
       <iframe 
@@ -136,9 +138,15 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
       />
     */}
       {
-        countryStats &&
+        !countryStats 
+          &&
+            <Container textAlign>
+              <Spinner size='big' />
+            </Container>
+          ||
           (
               <Chart
+                loading={countryGraphLoading}
                 isHeb={isHeb}
                 type='line'
                 labels={countryStats.labels}

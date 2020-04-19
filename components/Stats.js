@@ -7,9 +7,8 @@ const Container = styled.div`
   text-align: center;
 `
 
-export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryday }) {
+export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryday, loading }) {
 
-  // console.log(todayWorld);
 
   return (
     <Container>
@@ -19,12 +18,12 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryd
           <h1 style={{fontSize: '20px', paddingTop: '18px'}}>
             {isHeb && 'המצב הנוכחי ב' || 'Status for: '}<span>{cn === 'World' && isHeb && 'עולם' || cn}</span>
           </h1>
-          <QuickStats country={cn} yday={yesteryday} S={todayWorld} isHeb={isHeb} />
+          <QuickStats loading={loading} country={cn} yday={yesteryday} S={todayWorld} isHeb={isHeb} />
         </>
       }
       {
         todayStats &&
-          <QuickStats country={cn} yday={yesteryday} S={todayStats} isHeb={isHeb}/>
+          <QuickStats loading={loading} country={cn} yday={yesteryday} S={todayStats} isHeb={isHeb}/>
       }
     </Container>
   )

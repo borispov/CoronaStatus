@@ -49,14 +49,18 @@ const GlobalStyle = createGlobalStyle`
 
   .loader-container {
     display: flex;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: #ededed;
+    transition: all 0.125s ease-in-out;
   }
 
   .loader {
     max-width: 15rem;
+    transition: all 0.125s ease-in-out;
+    margin: 0 auto;
     width: 100%;
     height: auto;
     stroke-linecap: round;

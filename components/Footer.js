@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   background: #202124;
   color: #6BA5ED;
   margin-top: -3.5rem;
+  @media (max-width: 660px) {
+    height: auto;
+  }
 `
 
 const Content = styled.div`

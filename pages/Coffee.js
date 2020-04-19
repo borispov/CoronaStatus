@@ -169,10 +169,10 @@ export default withTheme(({ isHeb, theme }) => {
           </Paragraph>
           <Heading2>{t('farewell', 'coffeePage')}</Heading2>
           <Box>
-            <BoxButtons>
-              <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
+            <BoxButtons style={{direction: 'ltr'}}>
               <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('minus')} radius='8px' bold link bgColor='#DC3545' color='white'>-</Button>
               <BoxCount>{ counter }$</BoxCount>
+              <Button bg='transparent' btnColor='onBg' outline onClick={() => handleClick('plus')} radius='8px' bold link bgColor='#218838' color='white'>+</Button>
             </BoxButtons>
 
             <ErrorText>{error ? t('error', 'coffeePage') : ''}</ErrorText>
