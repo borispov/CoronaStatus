@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   .Select {
     color: black !important;
-    font-size: 17px;
+    font-size: 16px;
     font-family: 'Rubik, Arial';
     z-index: 999999;
   }

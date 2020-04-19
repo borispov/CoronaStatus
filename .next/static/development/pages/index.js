@@ -403,47 +403,126 @@ var CoronaApp = function CoronaApp(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Footer.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "Footer__Wrapper",
   componentId: "u34t4c-0"
-})(["clear:both;position:fixed;bottom:0;height:3.5rem;width:50%;background:#202124;color:#6BA5ED;margin-top:-3.5rem;"]);
-var Content = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+})(["clear:both;position:fixed;bottom:0;height:3.5rem;width:100%;background:#202124;color:#6BA5ED;margin-top:-3.5rem;"]);
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "Footer__Content",
   componentId: "u34t4c-1"
-})(["text-align:center;"]);
+})(["text-align:center;"]); // <h1>DO THE FIVE. <small>Help stop coronavirus</small></h1>
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 21
     },
     __self: this
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 22
     },
     __self: this
   }, __jsx("h1", {
+    className: "jsx-3882710051",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 23
     },
     __self: this
-  }, "DO THE FIVE. ", __jsx("small", {
+  }, "DO THE FIVE: \xA0\xA0\xA0 ", __jsx("small", {
+    className: "jsx-3882710051",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 23
     },
     __self: this
-  }, "Help stop coronavirus"))));
+  }, __jsx("span", {
+    className: "jsx-3882710051" + " " + "letter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "STAY"), " ", __jsx("i", {
+    className: "jsx-3882710051",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "home"), " \xA0\xA0 ", __jsx("span", {
+    className: "jsx-3882710051" + " " + "letter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "KEEP"), " ", __jsx("i", {
+    className: "jsx-3882710051",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "distance"), " \xA0\xA0  ", __jsx("span", {
+    className: "jsx-3882710051" + " " + "letter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "WASH"), " ", __jsx("i", {
+    className: "jsx-3882710051",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "hands often"), " \xA0\xA0 ", __jsx("span", {
+    className: "jsx-3882710051" + " " + "letter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, " COVER"), " ", __jsx("i", {
+    className: "jsx-3882710051",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "your cough"), " \xA0\xA0   ", __jsx("span", {
+    className: "jsx-3882710051" + " " + 'letter',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "SICK?"), " ", __jsx("i", {
+    className: "jsx-3882710051",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "call ahead!")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3882710051",
+    __self: this
+  }, ".letter.jsx-3882710051{color:rgba(180,80,20,1);}small.jsx-3882710051{font-size:10px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yYXlwby9EZXNrdG9wL1Byb2plY3Rvcy9Db3JvbmFTdGF0dXMvY29tcG9uZW50cy9Gb290ZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0JjLEFBR2tDLEFBR1osZUFDakIsU0FIQSIsImZpbGUiOiIvVXNlcnMvcmF5cG8vRGVza3RvcC9Qcm9qZWN0b3MvQ29yb25hU3RhdHVzL2NvbXBvbmVudHMvRm9vdGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tICdzdHlsZWQtY29tcG9uZW50cydcblxuY29uc3QgV3JhcHBlciA9IHN0eWxlZC5kaXZgXG4gIGNsZWFyOiBib3RoO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMDtcbiAgaGVpZ2h0OiAzLjVyZW07XG4gIHdpZHRoOiAxMDAlO1xuICBiYWNrZ3JvdW5kOiAjMjAyMTI0O1xuICBjb2xvcjogIzZCQTVFRDtcbiAgbWFyZ2luLXRvcDogLTMuNXJlbTtcbmBcblxuY29uc3QgQ29udGVudCA9IHN0eWxlZC5kaXZgXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbmBcblxuLy8gPGgxPkRPIFRIRSBGSVZFLiA8c21hbGw+SGVscCBzdG9wIGNvcm9uYXZpcnVzPC9zbWFsbD48L2gxPlxuXG5leHBvcnQgZGVmYXVsdCAoKSA9PiAoXG4gIDxXcmFwcGVyPlxuICAgIDxDb250ZW50PlxuICAgICAgPGgxPkRPIFRIRSBGSVZFOiAmbmJzcDsmbmJzcDsmbmJzcDsgPHNtYWxsPjxzcGFuIGNsYXNzTmFtZT1cImxldHRlclwiPlNUQVk8L3NwYW4+IDxpPmhvbWU8L2k+ICZuYnNwOyZuYnNwOyA8c3BhbiBjbGFzc05hbWU9XCJsZXR0ZXJcIj5LRUVQPC9zcGFuPiA8aT5kaXN0YW5jZTwvaT4gJm5ic3A7Jm5ic3A7ICA8c3BhbiBjbGFzc05hbWU9XCJsZXR0ZXJcIj5XQVNIPC9zcGFuPiA8aT5oYW5kcyBvZnRlbjwvaT4gJm5ic3A7Jm5ic3A7IDxzcGFuIGNsYXNzTmFtZT1cImxldHRlclwiPiBDT1ZFUjwvc3Bhbj4gPGk+eW91ciBjb3VnaDwvaT4gJm5ic3A7Jm5ic3A7ICAgPHNwYW4gY2xhc3NOYW1lPSdsZXR0ZXInPlNJQ0s/PC9zcGFuPiA8aT5jYWxsIGFoZWFkITwvaT48L3NtYWxsPjwvaDE+XG4gICAgPC9Db250ZW50PlxuICA8c3R5bGUganN4PntgXG4gICAgLmxldHRlciB7XG4gICAgICBjb2xvcjogcmdiYSgxODAsIDgwLCAyMCwgMSk7XG4gICAgfVxuICAgIHNtYWxsIHtcbiAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICB9XG4gIGB9PC9zdHlsZT5cbiAgPC9XcmFwcGVyPlxuKVxuIl19 */\n/*@ sourceURL=/Users/raypo/Desktop/Projectos/CoronaStatus/components/Footer.js */"));
 });
 
 /***/ }),
@@ -839,7 +918,6 @@ var LineChart = function LineChart(props, _ref2) {
     gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
     data2.datasets[2].fill = true;
     data2.datasets[2].backgroundColor = gradient;
-    console.log(data2);
     return _objectSpread({}, data2);
   };
 
@@ -950,7 +1028,7 @@ var LineChart = function LineChart(props, _ref2) {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 203
     },
     __self: this
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
@@ -961,7 +1039,7 @@ var LineChart = function LineChart(props, _ref2) {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 204
     },
     __self: this
   }));
@@ -1004,69 +1082,74 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       comparison = _ref$comparison === void 0 ? true : _ref$comparison;
 
   var _useTranslation = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_4__["default"])(),
-      t = _useTranslation.t;
+      t = _useTranslation.t,
+      locale = _useTranslation.locale;
 
+  var direction = locale === 'he' && 'rtl' || 'ltr';
   return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 19
     },
     __self: this
   }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     world: country.toLowerCase() === 'world',
+    direction: direction,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 20
     },
     __self: this
   }, Object.keys(S).map(function (k, i) {
     return __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Column"], {
       key: i,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Header"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, " ", t(k, 'labels')), __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["InRow"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Number"], {
+      direction: direction,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
       },
       __self: this
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Header"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, " ", t(k, 'labels')), __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["InRow"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Number"], {
+      label: k,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
     }, S[k] && _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(S[k]), comparison && yday && country !== 'world' && country !== 'World' && __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 37
       },
       __self: this
     }, "(", _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(yday[k]), ")")), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 42
       },
       __self: this
     }), comparison && yday && __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Percentage"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 44
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 45
       },
       __self: this
     }, _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k]) < 0 && "\u2B07" || "\u2B06"), "%", Math.abs(_QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k])))));
@@ -1096,7 +1179,7 @@ var Column = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withC
   displayName: "QuickStatsstyled__Column",
   componentId: "fgl929-0"
 })(["display:flex;flex-flow:column wrap;direction:", ";align-items:start;width:100%;background:#fafafa;padding:16px 3em 12px;border-radius:2px;border-bottom:1px solid #e4e7eb;@media (min-width:660px){box-shadow:none;border:1px solid #e4e7eb;height:auto;flex:1 0 ", ";}&:last-child{border-bottom:none;}"], function (props) {
-  return props.ltr ? 'ltr' : 'rtl';
+  return props.direction ? props.direction : '';
 }, function (props) {
   return props.world ? '249px' : '235px';
 });
@@ -1111,7 +1194,9 @@ var InRow = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withCo
 var Row = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "QuickStatsstyled__Row",
   componentId: "fgl929-2"
-})(["display:flex;flex-flow:column wrap;justify-content:center;box-shadow:", ";margin-bottom:28px;border-radius:8px;border:1px solid #e4e7eb;margin-left:auto;margin-right:auto;@media (min-width:660px) and (max-width:920px){max-width:620px;flex-flow:", ";}@media (min-width:921px) and (max-width:1023px){max-width:", ";flex-flow:", ";}@media (min-width:1024px){max-width:1064px;flex-flow:", ";}"], function (props) {
+})(["direction:", ";display:flex;justify-content:center;flex-flow:column wrap;box-shadow:", ";margin-bottom:28px;border-radius:8px;border:1px solid #e4e7eb;margin-left:auto;margin-right:auto;@media (min-width:660px) and (max-width:920px){max-width:620px;flex-flow:", ";}@media (min-width:921px) and (max-width:1023px){max-width:", ";flex-flow:", ";}@media (min-width:1024px){max-width:1064px;flex-flow:", ";}"], function (props) {
+  return props.direction ? props.direction : '';
+}, function (props) {
   return props.theme.shadows[1];
 }, function (props) {
   return props.world ? 'row wrap' : 'row wrap';
@@ -1140,7 +1225,7 @@ var Number = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withCo
   displayName: "QuickStatsstyled__Number",
   componentId: "fgl929-5"
 })(["font-size:24px;font-weight:700;color:", ";letter-spacing:0.4px;font-family:'Montserrat';padding:0;margin:0;line-height:1.65;span{font-size:10px;font-family:'Montserrat';letter-spacing:-0.2px;color:#717171;margin-left:1em;margin-right:1em;margin-bottom:4px;}@media (min-width:660px) and (max-width:920px){h1{font-size:14px;line-height:1.65;letter-spacing:0.5px;}}@media (min-width:921px) and (max-width:1023px){h1{font-size:12px;letter-spacing:0.8px;}}@media (min-width:1024px){h1{font-size:16px;}}"], function (props) {
-  return props.theme.primaryVariant;
+  return props.label === 'recovered' ? props.theme.recovered : props.label === 'deaths' ? props.theme.purpleComp : props.label === 'todayCases' ? props.theme.error2 : props.theme.primaryColor;
 });
 
 /***/ }),
@@ -1319,7 +1404,7 @@ var Btn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withC
 }, function (props) {
   return !props.active && props.hoverColor ? props.theme.onPrimary : '';
 }, function (props) {
-  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, function (props) {
+  return props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;text-shadow:0 1px 1px rgba(34,34,34,0.05);box-shadow:1px 1px 0px rgba(0,0,0,0.2);@media (max-width:450px){padding:0px 12px;margin:0 2px;font-size:14px;border-radius:7px;}.kofitext{color:#fff !important;vertical-align:middle;letter-spacing:-0.15px!important;text-wrap:none;vertical-align:middle;line-height:33px !important;padding:0;text-align:center;text-decoration:none!important;text-shadow:0 1px 1px rgba(34,34,34,0.05);}"], props.fontFamily, function (props) {
     return props.theme.white;
   }, function (props) {
     return props.theme.kofi;
@@ -1331,7 +1416,7 @@ var Button = function Button(props) {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 175
     },
     __self: this
   }), props.children);
@@ -1487,7 +1572,7 @@ var LocaleProvider = function LocaleProvider(props) {
     if (prev.current === undefined && locale === 'he') {
       var readLocal = localStorage.getItem('locale');
       if (readLocal) setLocale(readLocal);else {
-        localStorage.setItem('locale', locale);
+        // localStorage.setItem('locale', locale)
         setLocale(locale);
       }
     } else {
@@ -1530,7 +1615,7 @@ var ProxyContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])()
 var ProxyContextProvider = function ProxyContextProvider(props) {
   var initialState = {
     ipAddress: 'localhost',
-    countryName: 'israel'
+    countryName: 'Nowhere'
   }; // Declare shareable proxy state
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
@@ -1540,26 +1625,37 @@ var ProxyContextProvider = function ProxyContextProvider(props) {
   var prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (prev.current === undefined && proxy.countryName == 'israel') {
+    if (proxy.countryName == 'Nowhere') {
       var localState = JSON.parse(localStorage.getItem('ip2proxy'));
 
       if (localState) {
         console.info('reading local storage');
         prev.current = localState.ipAddress;
         setProxy(localState);
-      } else {
-        localStorage.setItem('ip2proxy', JSON.stringify(proxy));
       }
     } else if (prev.current !== proxy.ipAddress) {
       console.info('writing local storage');
       localStorage.setItem('ip2proxy', JSON.stringify(proxy));
-    }
+    } // if (prev.current === undefined && proxy.countryName == 'israel') {
+    //     const localState = JSON.parse(localStorage.getItem('ip2proxy'))
+    //     if (localState) {
+    //         console.info('reading local storage')
+    //         prev.current = localState.ipAddress
+    //         setProxy(localState)
+    //     } else {
+    //       localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+    //     }
+    // } else if (prev.current !== proxy.ipAddress) {
+    //     console.info('writing local storage')
+    //     localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+    // }
+
   }, [proxy]);
   return __jsx(ProxyContext.Provider, {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 51
     },
     __self: this
   }, props.children);
@@ -2139,10 +2235,11 @@ function getInitialLocale(c) {
   }
 
   var country = c;
-  console.log(country);
 
-  if (country === 'israel') {
+  if (country === 'israel' || country === 'Nowhere') {
     return 'he';
+  } else {
+    return 'en';
   } // the language setting of the browser
 
 
@@ -2211,7 +2308,7 @@ var strings = {
       welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
       overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
       contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+      bio: "\u05D2\u05DD \u05D0\u05EA\u05DD \u05D9\u05DB\u05D5\u05DC\u05D9\u05DD \u05DC\u05E2\u05D6\u05D5\u05E8! \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05D0\u05D9\u05E0\u05D5 \u05DE\u05DE\u05D5\u05DE\u05DF \u05D5\u05DE\u05EA\u05E7\u05D9\u05D9\u05DD \u05E2\u05DC \u05DE\u05E9\u05D0\u05D1\u05D9\u05DD \u05DE\u05D5\u05D2\u05D1\u05DC\u05D9\u05DD \u05DE\u05D0\u05D5\u05D3, \u05D4\u05D6\u05DE\u05D9\u05E0\u05D5\u05EA \u05E9\u05DC\u05D9 \u05D5\u05D4\u05D9\u05DB\u05D5\u05DC\u05D5\u05EA \u05E9\u05DC\u05D9. \u05D0\u05D9\u05E0\u05D9 \u05DE\u05D4\u05E0\u05D3\u05E1 \u05EA\u05D5\u05DB\u05E0\u05D4 \u05D0\u05D5 \u05DE\u05E2\u05E6\u05D1 \u05D1\u05DE\u05E7\u05E6\u05D5\u05E2\u05D9. \n \u05D3\u05D1\u05E8 \u05E0\u05D5\u05E1\u05E3, \u05D4\u05DE\u05D5\u05D8\u05D9\u05D1\u05E6\u05D9\u05D4 \u05D4\u05E8\u05D0\u05E9\u05D5\u05E0\u05D9\u05EA \u05DC\u05D4\u05E7\u05DE\u05EA \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05D4\u05D9\u05D9\u05EA\u05D4 \u05D1\u05E0\u05D9\u05D9\u05EA \u05DE\u05D0\u05D2\u05E8 \u05DE\u05D9\u05D3\u05E2 \u05D7\u05E9\u05D5\u05D1 \u05D5\u05D9\u05E2\u05D9\u05DC \u05D1\u05DE\u05E7\u05D1\u05D9\u05DC \u05DC\u05D4\u05D6\u05E8\u05DE\u05EA \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D4\u05E2\u05D3\u05DB\u05E0\u05D9\u05D9\u05DD. \u05DC\u05DB\u05DF, \u05D0\u05DD \u05D0\u05EA\u05DD \u05D9\u05DB\u05D5\u05DC\u05D9\u05DD \u05DC\u05EA\u05E8\u05D5\u05DD \u05E4\u05D9\u05E1\u05EA \u05DE\u05D9\u05D3\u05E2 \u05DE\u05D5\u05E2\u05D9\u05DC\u05D4 \u05E9\u05D7\u05E9\u05D5\u05D1 \u05E9\u05D0\u05E0\u05E9\u05D9\u05DD \u05D9\u05D3\u05E2\u05D5 \u05E2\u05DC\u05D9\u05D4, \u05D0\u05EA\u05DD \u05D9\u05DB\u05D5\u05DC\u05D9\u05DD \u05DC\u05E2\u05D6\u05D5\u05E8!\n\n      <br /> </br />\n      <strong>\u05D4\u05E0\u05D4, \u05DB\u05DA \u05EA\u05D5\u05DB\u05DC\u05D5 \u05DC\u05E2\u05D6\u05D5\u05E8:</strong>\n \n      <ul style='listStyle: none'>\n      <li>\u05DE\u05E2\u05E6\u05D1 \u05D2\u05E8\u05E4\u05D9 - \u05D0\u05E4\u05D9\u05DC\u05D5 \u05E2\u05E6\u05D4 \u05DE\u05DE\u05D5\u05DE\u05D7\u05D4 \u05D9\u05DB\u05D5\u05DC\u05D4 \u05DC\u05E2\u05D6\u05D5\u05E8.</li>\n      <li>\u05DE\u05D0\u05D2\u05E8 \u05DE\u05D9\u05D3\u05E2 - \u05DB\u05DC \u05DE\u05D9\u05D3\u05E2 \u05E9\u05D9\u05DE\u05D5\u05E9\u05D9 \u05DC\u05D9\u05DE\u05D9\u05DD \u05D0\u05DC\u05D5 \u05D1\u05E9\u05E4\u05D4 \u05D4\u05E2\u05D1\u05E8\u05D9\u05EA/\u05D0\u05E0\u05D2\u05DC\u05D9\u05EA, \u05DC\u05D3\u05D5\u05D2\u05DE\u05D0: \u05D8\u05D9\u05E4\u05D9\u05DD \u05DC\u05E9\u05DE\u05D5\u05E8 \u05E2\u05DC \u05E7\u05D5\u05E8 \u05D4\u05E8\u05D5\u05D7 \u05E9\u05DC\u05DB\u05DD \u05D5\u05E2\u05D3\u05D9\u05D9\u05DF \u05DC\u05E9\u05DE\u05E8 \u05DE\u05E1\u05D2\u05E8\u05EA \u05D1\u05E8\u05D9\u05D0\u05D4 \u05D5\u05EA\u05E7\u05D9\u05E0\u05D9\u05DD \u05E2\u05DD \u05D4\u05D9\u05DC\u05D3\u05D9\u05DD</li>\n      <li>\u05D0\u05DD \u05E0\u05EA\u05E7\u05DC\u05EA\u05DD \u05D1\u05D1\u05D0\u05D2 \u05D0\u05D5 \u05EA\u05E7\u05DC\u05D4 - \u05D1\u05D1\u05E7\u05E9\u05D4, \u05EA\u05E4\u05E0\u05D5 \u05D1\u05DE\u05D9\u05D9\u05DC \u05D4\u05DE\u05D5\u05E6\u05D2 \u05DB\u05D0\u05DF \u05DC\u05DE\u05D8\u05D4 \u05D5\u05EA\u05D3\u05D5\u05D5\u05D7\u05D5. \u05D0\u05E0\u05D9 \u05E2\u05D5\u05D1\u05D3 \u05E2\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05DC\u05D1\u05D3 \u05D5\u05E7\u05E9\u05D4 \u05DC\u05E2\u05E7\u05D5\u05D1 \u05D0\u05D7\u05E8\u05D9 \u05D4\u05DB\u05DC</li>\n      <li>\u05DC\u05D1\u05E1\u05D5\u05E3, \u05E0\u05D9\u05EA\u05DF \u05DC\u05D4\u05D1\u05D9\u05E2 \u05D4\u05E2\u05E8\u05DB\u05D4 \u05D1\u05D0\u05DE\u05E6\u05E2\u05D5\u05EA \u05EA\u05E8\u05D5\u05DE\u05D4 \u05DC\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05D4\u05E7\u05D5\u05E8\u05D5\u05E0\u05D4. \u05EA\u05D5\u05DB\u05DC\u05D5 \u05DC\u05DC\u05D7\u05D5\u05E5 \u05E2\u05DC \u05D4\u05E7\u05D9\u05E9\u05D5\u05E8 <a href=\"/Coffee\" alt=\"\u05DC\u05EA\u05E8\u05D5\u05DD \u05DB\u05D0\u05DF\">\u05DB\u05D0\u05DF</a></li></ul>\n      \n      <p>\u05DC\u05DB\u05DC \u05E4\u05E0\u05D9\u05D9\u05D4, \u05E0\u05D9\u05EA\u05DF \u05DC\u05E4\u05E0\u05D5\u05EA \u05D1\u05DE\u05D9\u05D9\u05DC \u05DB\u05D0\u05DF: <a href=\"mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a></p>"
     }
   },
   en: {
@@ -2249,13 +2346,13 @@ var strings = {
       selectHeader: 'Data For Country: ',
       graphExplanation: "The Data illustrates Novel Coronavirus growth rate, \n      there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes"
     },
-    tipButton: 'Buy Me A Mask',
+    tipButton: 'Support Me',
     tipFont: 'Quicksand',
     aboutPage: {
-      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
-      overview: "<>All information provided is legal.\n              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>",
+      welcome: 'The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: "All information provided is legal.\n              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.",
       contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: "This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. \n      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, \n      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop."
+      bio: "You too, can help! This project is not sponsered and it's living on limited resources dependant on my availability and capabilities. I am not a Software Engineer in my occupation, nor am I a UX/UI designer. \n Another thing, the starting wheels of this project was the goal of providing useful resources along the data. So, if you can share something useful you think people MUST know, you can help! \n Here's a list of nCorona's necessities: \n \n      <ul style={{ listStyle: 'none' }}>\n      <li>* UX/UI - Even an expert's advice would suffice</li>\n      <li>* Resource Section - Anything useful in English/Hebrew, like guide how to keep your temper with your kids while maintaining order & healthy environment</li>\n      <li>* Testing/QA - We need bug reports and potentially someone to fix them. Currently this project lives in a private GitHub repo, but if someone wants to join in, you're welcome</li>\n      <li>* Last, but not least: Donation. You can support and show your appreciation, if you find nCorona project helpful</li></ul>"
     }
   }
 };
@@ -54376,6 +54473,35 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
 
 /***/ }),
 
+/***/ "./node_modules/string-hash/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/string-hash/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function hash(str) {
+  var hash = 5381,
+      i    = str.length;
+
+  while(i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i);
+  }
+
+  /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+   * integers. Since we want the results to be always positive, convert the
+   * signed int to an unsigned by doing an unsigned bitshift. */
+  return hash >>> 0;
+}
+
+module.exports = hash;
+
+
+/***/ }),
+
 /***/ "./node_modules/styled-components/dist/styled-components.browser.esm.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/styled-components/dist/styled-components.browser.esm.js ***!
@@ -56336,6 +56462,670 @@ if ( true && typeof window !== 'undefined') {
 
 /***/ }),
 
+/***/ "./node_modules/styled-jsx/dist/lib/stylesheet.js":
+/*!********************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/lib/stylesheet.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+Based on Glamor's sheet
+https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/sheet.js
+*/
+var isProd = typeof process !== 'undefined' && process.env && "development" === 'production';
+
+var isString = function isString(o) {
+  return Object.prototype.toString.call(o) === '[object String]';
+};
+
+var StyleSheet =
+/*#__PURE__*/
+function () {
+  function StyleSheet(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$name = _ref.name,
+        name = _ref$name === void 0 ? 'stylesheet' : _ref$name,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? isProd : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    invariant(isString(name), '`name` must be a string');
+    this._name = name;
+    this._deletedRulePlaceholder = "#" + name + "-deleted-rule____{}";
+    invariant(typeof optimizeForSpeed === 'boolean', '`optimizeForSpeed` must be a boolean');
+    this._optimizeForSpeed = optimizeForSpeed;
+    this._isBrowser = isBrowser;
+    this._serverSheet = undefined;
+    this._tags = [];
+    this._injected = false;
+    this._rulesCount = 0;
+    var node = this._isBrowser && document.querySelector('meta[property="csp-nonce"]');
+    this._nonce = node ? node.getAttribute('content') : null;
+  }
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.setOptimizeForSpeed = function setOptimizeForSpeed(bool) {
+    invariant(typeof bool === 'boolean', '`setOptimizeForSpeed` accepts a boolean');
+    invariant(this._rulesCount === 0, 'optimizeForSpeed cannot be when rules have already been inserted');
+    this.flush();
+    this._optimizeForSpeed = bool;
+    this.inject();
+  };
+
+  _proto.isOptimizeForSpeed = function isOptimizeForSpeed() {
+    return this._optimizeForSpeed;
+  };
+
+  _proto.inject = function inject() {
+    var _this = this;
+
+    invariant(!this._injected, 'sheet already injected');
+    this._injected = true;
+
+    if (this._isBrowser && this._optimizeForSpeed) {
+      this._tags[0] = this.makeStyleTag(this._name);
+      this._optimizeForSpeed = 'insertRule' in this.getSheet();
+
+      if (!this._optimizeForSpeed) {
+        if (!isProd) {
+          console.warn('StyleSheet: optimizeForSpeed mode not supported falling back to standard mode.');
+        }
+
+        this.flush();
+        this._injected = true;
+      }
+
+      return;
+    }
+
+    this._serverSheet = {
+      cssRules: [],
+      insertRule: function insertRule(rule, index) {
+        if (typeof index === 'number') {
+          _this._serverSheet.cssRules[index] = {
+            cssText: rule
+          };
+        } else {
+          _this._serverSheet.cssRules.push({
+            cssText: rule
+          });
+        }
+
+        return index;
+      },
+      deleteRule: function deleteRule(index) {
+        _this._serverSheet.cssRules[index] = null;
+      }
+    };
+  };
+
+  _proto.getSheetForTag = function getSheetForTag(tag) {
+    if (tag.sheet) {
+      return tag.sheet;
+    } // this weirdness brought to you by firefox
+
+
+    for (var i = 0; i < document.styleSheets.length; i++) {
+      if (document.styleSheets[i].ownerNode === tag) {
+        return document.styleSheets[i];
+      }
+    }
+  };
+
+  _proto.getSheet = function getSheet() {
+    return this.getSheetForTag(this._tags[this._tags.length - 1]);
+  };
+
+  _proto.insertRule = function insertRule(rule, index) {
+    invariant(isString(rule), '`insertRule` accepts only strings');
+
+    if (!this._isBrowser) {
+      if (typeof index !== 'number') {
+        index = this._serverSheet.cssRules.length;
+      }
+
+      this._serverSheet.insertRule(rule, index);
+
+      return this._rulesCount++;
+    }
+
+    if (this._optimizeForSpeed) {
+      var sheet = this.getSheet();
+
+      if (typeof index !== 'number') {
+        index = sheet.cssRules.length;
+      } // this weirdness for perf, and chrome's weird bug
+      // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
+
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        }
+
+        return -1;
+      }
+    } else {
+      var insertionPoint = this._tags[index];
+
+      this._tags.push(this.makeStyleTag(this._name, rule, insertionPoint));
+    }
+
+    return this._rulesCount++;
+  };
+
+  _proto.replaceRule = function replaceRule(index, rule) {
+    if (this._optimizeForSpeed || !this._isBrowser) {
+      var sheet = this._isBrowser ? this.getSheet() : this._serverSheet;
+
+      if (!rule.trim()) {
+        rule = this._deletedRulePlaceholder;
+      }
+
+      if (!sheet.cssRules[index]) {
+        // @TBD Should we throw an error?
+        return index;
+      }
+
+      sheet.deleteRule(index);
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        } // In order to preserve the indices we insert a deleteRulePlaceholder
+
+
+        sheet.insertRule(this._deletedRulePlaceholder, index);
+      }
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "old rule at index `" + index + "` not found");
+      tag.textContent = rule;
+    }
+
+    return index;
+  };
+
+  _proto.deleteRule = function deleteRule(index) {
+    if (!this._isBrowser) {
+      this._serverSheet.deleteRule(index);
+
+      return;
+    }
+
+    if (this._optimizeForSpeed) {
+      this.replaceRule(index, '');
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "rule at index `" + index + "` not found");
+      tag.parentNode.removeChild(tag);
+      this._tags[index] = null;
+    }
+  };
+
+  _proto.flush = function flush() {
+    this._injected = false;
+    this._rulesCount = 0;
+
+    if (this._isBrowser) {
+      this._tags.forEach(function (tag) {
+        return tag && tag.parentNode.removeChild(tag);
+      });
+
+      this._tags = [];
+    } else {
+      // simpler on server
+      this._serverSheet.cssRules = [];
+    }
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this2 = this;
+
+    if (!this._isBrowser) {
+      return this._serverSheet.cssRules;
+    }
+
+    return this._tags.reduce(function (rules, tag) {
+      if (tag) {
+        rules = rules.concat(Array.prototype.map.call(_this2.getSheetForTag(tag).cssRules, function (rule) {
+          return rule.cssText === _this2._deletedRulePlaceholder ? null : rule;
+        }));
+      } else {
+        rules.push(null);
+      }
+
+      return rules;
+    }, []);
+  };
+
+  _proto.makeStyleTag = function makeStyleTag(name, cssString, relativeToTag) {
+    if (cssString) {
+      invariant(isString(cssString), 'makeStyleTag acceps only strings as second parameter');
+    }
+
+    var tag = document.createElement('style');
+    if (this._nonce) tag.setAttribute('nonce', this._nonce);
+    tag.type = 'text/css';
+    tag.setAttribute("data-" + name, '');
+
+    if (cssString) {
+      tag.appendChild(document.createTextNode(cssString));
+    }
+
+    var head = document.head || document.getElementsByTagName('head')[0];
+
+    if (relativeToTag) {
+      head.insertBefore(tag, relativeToTag);
+    } else {
+      head.appendChild(tag);
+    }
+
+    return tag;
+  };
+
+  _createClass(StyleSheet, [{
+    key: "length",
+    get: function get() {
+      return this._rulesCount;
+    }
+  }]);
+
+  return StyleSheet;
+}();
+
+exports["default"] = StyleSheet;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheet: " + message + ".");
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/style.js":
+/*!***********************************************!*\
+  !*** ./node_modules/styled-jsx/dist/style.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.flush = flush;
+exports["default"] = void 0;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _stylesheetRegistry = _interopRequireDefault(__webpack_require__(/*! ./stylesheet-registry */ "./node_modules/styled-jsx/dist/stylesheet-registry.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+var styleSheetRegistry = new _stylesheetRegistry["default"]();
+
+var JSXStyle =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(JSXStyle, _Component);
+
+  function JSXStyle(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.prevProps = {};
+    return _this;
+  }
+
+  JSXStyle.dynamic = function dynamic(info) {
+    return info.map(function (tagInfo) {
+      var baseId = tagInfo[0];
+      var props = tagInfo[1];
+      return styleSheetRegistry.computeId(baseId, props);
+    }).join(' ');
+  } // probably faster than PureComponent (shallowEqual)
+  ;
+
+  var _proto = JSXStyle.prototype;
+
+  _proto.shouldComponentUpdate = function shouldComponentUpdate(otherProps) {
+    return this.props.id !== otherProps.id || // We do this check because `dynamic` is an array of strings or undefined.
+    // These are the computed values for dynamic styles.
+    String(this.props.dynamic) !== String(otherProps.dynamic);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    styleSheetRegistry.remove(this.props);
+  };
+
+  _proto.render = function render() {
+    // This is a workaround to make the side effect async safe in the "render" phase.
+    // See https://github.com/zeit/styled-jsx/pull/484
+    if (this.shouldComponentUpdate(this.prevProps)) {
+      // Updates
+      if (this.prevProps.id) {
+        styleSheetRegistry.remove(this.prevProps);
+      }
+
+      styleSheetRegistry.add(this.props);
+      this.prevProps = this.props;
+    }
+
+    return null;
+  };
+
+  return JSXStyle;
+}(_react.Component);
+
+exports["default"] = JSXStyle;
+
+function flush() {
+  var cssRules = styleSheetRegistry.cssRules();
+  styleSheetRegistry.flush();
+  return cssRules;
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/stylesheet-registry.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/stylesheet-registry.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _stringHash = _interopRequireDefault(__webpack_require__(/*! string-hash */ "./node_modules/string-hash/index.js"));
+
+var _stylesheet = _interopRequireDefault(__webpack_require__(/*! ./lib/stylesheet */ "./node_modules/styled-jsx/dist/lib/stylesheet.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var sanitize = function sanitize(rule) {
+  return rule.replace(/\/style/gi, '\\/style');
+};
+
+var StyleSheetRegistry =
+/*#__PURE__*/
+function () {
+  function StyleSheetRegistry(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$styleSheet = _ref.styleSheet,
+        styleSheet = _ref$styleSheet === void 0 ? null : _ref$styleSheet,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? false : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    this._sheet = styleSheet || new _stylesheet["default"]({
+      name: 'styled-jsx',
+      optimizeForSpeed: optimizeForSpeed
+    });
+
+    this._sheet.inject();
+
+    if (styleSheet && typeof optimizeForSpeed === 'boolean') {
+      this._sheet.setOptimizeForSpeed(optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    this._isBrowser = isBrowser;
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  }
+
+  var _proto = StyleSheetRegistry.prototype;
+
+  _proto.add = function add(props) {
+    var _this = this;
+
+    if (undefined === this._optimizeForSpeed) {
+      this._optimizeForSpeed = Array.isArray(props.children);
+
+      this._sheet.setOptimizeForSpeed(this._optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    if (this._isBrowser && !this._fromServer) {
+      this._fromServer = this.selectFromServer();
+      this._instancesCounts = Object.keys(this._fromServer).reduce(function (acc, tagName) {
+        acc[tagName] = 0;
+        return acc;
+      }, {});
+    }
+
+    var _this$getIdAndRules = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules.styleId,
+        rules = _this$getIdAndRules.rules; // Deduping: just increase the instances count.
+
+
+    if (styleId in this._instancesCounts) {
+      this._instancesCounts[styleId] += 1;
+      return;
+    }
+
+    var indices = rules.map(function (rule) {
+      return _this._sheet.insertRule(rule);
+    }) // Filter out invalid rules
+    .filter(function (index) {
+      return index !== -1;
+    });
+    this._indices[styleId] = indices;
+    this._instancesCounts[styleId] = 1;
+  };
+
+  _proto.remove = function remove(props) {
+    var _this2 = this;
+
+    var _this$getIdAndRules2 = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules2.styleId;
+
+    invariant(styleId in this._instancesCounts, "styleId: `" + styleId + "` not found");
+    this._instancesCounts[styleId] -= 1;
+
+    if (this._instancesCounts[styleId] < 1) {
+      var tagFromServer = this._fromServer && this._fromServer[styleId];
+
+      if (tagFromServer) {
+        tagFromServer.parentNode.removeChild(tagFromServer);
+        delete this._fromServer[styleId];
+      } else {
+        this._indices[styleId].forEach(function (index) {
+          return _this2._sheet.deleteRule(index);
+        });
+
+        delete this._indices[styleId];
+      }
+
+      delete this._instancesCounts[styleId];
+    }
+  };
+
+  _proto.update = function update(props, nextProps) {
+    this.add(nextProps);
+    this.remove(props);
+  };
+
+  _proto.flush = function flush() {
+    this._sheet.flush();
+
+    this._sheet.inject();
+
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this3 = this;
+
+    var fromServer = this._fromServer ? Object.keys(this._fromServer).map(function (styleId) {
+      return [styleId, _this3._fromServer[styleId]];
+    }) : [];
+
+    var cssRules = this._sheet.cssRules();
+
+    return fromServer.concat(Object.keys(this._indices).map(function (styleId) {
+      return [styleId, _this3._indices[styleId].map(function (index) {
+        return cssRules[index].cssText;
+      }).join(_this3._optimizeForSpeed ? '' : '\n')];
+    }) // filter out empty rules
+    .filter(function (rule) {
+      return Boolean(rule[1]);
+    }));
+  }
+  /**
+   * createComputeId
+   *
+   * Creates a function to compute and memoize a jsx id from a basedId and optionally props.
+   */
+  ;
+
+  _proto.createComputeId = function createComputeId() {
+    var cache = {};
+    return function (baseId, props) {
+      if (!props) {
+        return "jsx-" + baseId;
+      }
+
+      var propsToString = String(props);
+      var key = baseId + propsToString; // return `jsx-${hashString(`${baseId}-${propsToString}`)}`
+
+      if (!cache[key]) {
+        cache[key] = "jsx-" + (0, _stringHash["default"])(baseId + "-" + propsToString);
+      }
+
+      return cache[key];
+    };
+  }
+  /**
+   * createComputeSelector
+   *
+   * Creates a function to compute and memoize dynamic selectors.
+   */
+  ;
+
+  _proto.createComputeSelector = function createComputeSelector(selectoPlaceholderRegexp) {
+    if (selectoPlaceholderRegexp === void 0) {
+      selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g;
+    }
+
+    var cache = {};
+    return function (id, css) {
+      // Sanitize SSR-ed CSS.
+      // Client side code doesn't need to be sanitized since we use
+      // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+      if (!this._isBrowser) {
+        css = sanitize(css);
+      }
+
+      var idcss = id + css;
+
+      if (!cache[idcss]) {
+        cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+      }
+
+      return cache[idcss];
+    };
+  };
+
+  _proto.getIdAndRules = function getIdAndRules(props) {
+    var _this4 = this;
+
+    var css = props.children,
+        dynamic = props.dynamic,
+        id = props.id;
+
+    if (dynamic) {
+      var styleId = this.computeId(id, dynamic);
+      return {
+        styleId: styleId,
+        rules: Array.isArray(css) ? css.map(function (rule) {
+          return _this4.computeSelector(styleId, rule);
+        }) : [this.computeSelector(styleId, css)]
+      };
+    }
+
+    return {
+      styleId: this.computeId(id),
+      rules: Array.isArray(css) ? css : [css]
+    };
+  }
+  /**
+   * selectFromServer
+   *
+   * Collects style tags from the document with id __jsx-XXX
+   */
+  ;
+
+  _proto.selectFromServer = function selectFromServer() {
+    var elements = Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]'));
+    return elements.reduce(function (acc, element) {
+      var id = element.id.slice(2);
+      acc[id] = element;
+      return acc;
+    }, {});
+  };
+
+  return StyleSheetRegistry;
+}();
+
+exports["default"] = StyleSheetRegistry;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheetRegistry: " + message + ".");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/style.js":
+/*!******************************************!*\
+  !*** ./node_modules/styled-jsx/style.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/style */ "./node_modules/styled-jsx/dist/style.js")
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -56506,7 +57296,7 @@ function IndexPage(_ref) {
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    userLocation: proxy.countryName,
+    userLocation: newProxy && newProxy.countryName || proxy && proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
@@ -56520,11 +57310,17 @@ function IndexPage(_ref) {
       lineNumber: 37
     },
     __self: this
-  })));
+  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }));
 }
 
 IndexPage.getInitialProps = function _callee(_ref2) {
-  var req, worldTime, globalData, yesterdayGlobal, ipAddress, localAddresses, proxyUrl, countryName, newProxy;
+  var req, worldTime, globalData, yesterdayGlobal, localAddresses, ipAddress, proxyUrl, countryName, newProxy;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -56556,13 +57352,14 @@ IndexPage.getInitialProps = function _callee(_ref2) {
             break;
           }
 
-          ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-          localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
+          // const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+          localAddresses = ['::1', '127.0.0.1', 'localhost'];
+          ipAddress = '185.163.111.170'; // Construct URL with IP ADDRESS
 
           proxyUrl = !localAddresses.includes(ipAddress) && "https://extreme-ip-lookup.com/json/".concat(ipAddress) || null;
           _context2.prev = 12;
           _context2.next = 15;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry(''));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(currentCountry(proxyUrl));
 
         case 15:
           countryName = _context2.sent;
@@ -56587,14 +57384,13 @@ IndexPage.getInitialProps = function _callee(_ref2) {
           });
 
         case 23:
-          console.log('WE ARE ALSOOOOOOOOOOO HERE');
           return _context2.abrupt("return", {
             yesterdayGlobal: yesterdayGlobal,
             worldTime: worldTime,
             newProxy: null
           });
 
-        case 25:
+        case 24:
         case "end":
           return _context2.stop();
       }
@@ -56885,6 +57681,7 @@ var themes = {
     blue: '#007bff',
     danger: '#dc3545',
     light: '#f8f9fa',
+    recovered: '#11bd74',
     secondary: '#303f9f',
     shadows: {
       0: "none",
@@ -57026,7 +57823,7 @@ var themes = {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fraypo%2FDesktop%2FProjectos%2FCoronaStatus%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -57049,5 +57846,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -13,6 +13,7 @@ export const StyledBurger = styled.button`
   z-index: 10;
   transition: all 0.3s ease-in-out;
   margin-top: 12px;
+
   &:focus {
     outline: none;
   }
@@ -35,20 +36,24 @@ export const StyledBurger = styled.button`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-
+    @media (max-width: 660px) {
+      margin-top: 4px;
+      width: 22px;
+      height: 1.2px;
+    }
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(34deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
       box-shadow: ${props => props.theme.shadows[3]};
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      transform: ${({ open }) => open ? 'translateX(0px)' : 'translateX(0)'};
       box-shadow: ${props => props.theme.shadows[3]};
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-34deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
       box-shadow: ${props => props.theme.shadows[3]};
     }
   }

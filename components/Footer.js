@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   position: fixed;
   bottom: 0;
   height: 3.5rem;
-  width: 50%;
+  width: 100%;
   background: #202124;
   color: #6BA5ED;
   margin-top: -3.5rem;
@@ -15,10 +15,20 @@ const Content = styled.div`
   text-align: center;
 `
 
+// <h1>DO THE FIVE. <small>Help stop coronavirus</small></h1>
+
 export default () => (
   <Wrapper>
     <Content>
-      <h1>DO THE FIVE. <small>Help stop coronavirus</small></h1>
+      <h1>DO THE FIVE: &nbsp;&nbsp;&nbsp; <small><span className="letter">STAY</span> <i>home</i> &nbsp;&nbsp; <span className="letter">KEEP</span> <i>distance</i> &nbsp;&nbsp;  <span className="letter">WASH</span> <i>hands often</i> &nbsp;&nbsp; <span className="letter"> COVER</span> <i>your cough</i> &nbsp;&nbsp;   <span className='letter'>SICK?</span> <i>call ahead!</i></small></h1>
     </Content>
+  <style jsx>{`
+    .letter {
+      color: rgba(180, 80, 20, 1);
+    }
+    small {
+      font-size: 10px;
+    }
+  `}</style>
   </Wrapper>
 )

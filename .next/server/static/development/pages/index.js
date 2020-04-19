@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -481,47 +481,126 @@ const CoronaApp = ({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/raypo/Desktop/Projectos/CoronaStatus/components/Footer.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Footer__Wrapper",
   componentId: "u34t4c-0"
-})(["clear:both;position:fixed;bottom:0;height:3.5rem;width:50%;background:#202124;color:#6BA5ED;margin-top:-3.5rem;"]);
-const Content = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+})(["clear:both;position:fixed;bottom:0;height:3.5rem;width:100%;background:#202124;color:#6BA5ED;margin-top:-3.5rem;"]);
+const Content = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Footer__Content",
   componentId: "u34t4c-1"
-})(["text-align:center;"]);
+})(["text-align:center;"]); // <h1>DO THE FIVE. <small>Help stop coronavirus</small></h1>
+
 /* harmony default export */ __webpack_exports__["default"] = (() => __jsx(Wrapper, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 21
   },
   __self: undefined
 }, __jsx(Content, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 20
+    lineNumber: 22
   },
   __self: undefined
 }, __jsx("h1", {
+  className: "jsx-3882710051",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 21
+    lineNumber: 23
   },
   __self: undefined
-}, "DO THE FIVE. ", __jsx("small", {
+}, "DO THE FIVE: \xA0\xA0\xA0 ", __jsx("small", {
+  className: "jsx-3882710051",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 21
+    lineNumber: 23
   },
   __self: undefined
-}, "Help stop coronavirus")))));
+}, __jsx("span", {
+  className: "jsx-3882710051" + " " + "letter",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "STAY"), " ", __jsx("i", {
+  className: "jsx-3882710051",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "home"), " \xA0\xA0 ", __jsx("span", {
+  className: "jsx-3882710051" + " " + "letter",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "KEEP"), " ", __jsx("i", {
+  className: "jsx-3882710051",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "distance"), " \xA0\xA0  ", __jsx("span", {
+  className: "jsx-3882710051" + " " + "letter",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "WASH"), " ", __jsx("i", {
+  className: "jsx-3882710051",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "hands often"), " \xA0\xA0 ", __jsx("span", {
+  className: "jsx-3882710051" + " " + "letter",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, " COVER"), " ", __jsx("i", {
+  className: "jsx-3882710051",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "your cough"), " \xA0\xA0   ", __jsx("span", {
+  className: "jsx-3882710051" + " " + 'letter',
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "SICK?"), " ", __jsx("i", {
+  className: "jsx-3882710051",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "call ahead!")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  id: "3882710051",
+  __self: undefined
+}, ".letter.jsx-3882710051{color:rgba(180,80,20,1);}small.jsx-3882710051{font-size:10px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yYXlwby9EZXNrdG9wL1Byb2plY3Rvcy9Db3JvbmFTdGF0dXMvY29tcG9uZW50cy9Gb290ZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0JjLEFBR2tDLEFBR1osZUFDakIsU0FIQSIsImZpbGUiOiIvVXNlcnMvcmF5cG8vRGVza3RvcC9Qcm9qZWN0b3MvQ29yb25hU3RhdHVzL2NvbXBvbmVudHMvRm9vdGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tICdzdHlsZWQtY29tcG9uZW50cydcblxuY29uc3QgV3JhcHBlciA9IHN0eWxlZC5kaXZgXG4gIGNsZWFyOiBib3RoO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMDtcbiAgaGVpZ2h0OiAzLjVyZW07XG4gIHdpZHRoOiAxMDAlO1xuICBiYWNrZ3JvdW5kOiAjMjAyMTI0O1xuICBjb2xvcjogIzZCQTVFRDtcbiAgbWFyZ2luLXRvcDogLTMuNXJlbTtcbmBcblxuY29uc3QgQ29udGVudCA9IHN0eWxlZC5kaXZgXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbmBcblxuLy8gPGgxPkRPIFRIRSBGSVZFLiA8c21hbGw+SGVscCBzdG9wIGNvcm9uYXZpcnVzPC9zbWFsbD48L2gxPlxuXG5leHBvcnQgZGVmYXVsdCAoKSA9PiAoXG4gIDxXcmFwcGVyPlxuICAgIDxDb250ZW50PlxuICAgICAgPGgxPkRPIFRIRSBGSVZFOiAmbmJzcDsmbmJzcDsmbmJzcDsgPHNtYWxsPjxzcGFuIGNsYXNzTmFtZT1cImxldHRlclwiPlNUQVk8L3NwYW4+IDxpPmhvbWU8L2k+ICZuYnNwOyZuYnNwOyA8c3BhbiBjbGFzc05hbWU9XCJsZXR0ZXJcIj5LRUVQPC9zcGFuPiA8aT5kaXN0YW5jZTwvaT4gJm5ic3A7Jm5ic3A7ICA8c3BhbiBjbGFzc05hbWU9XCJsZXR0ZXJcIj5XQVNIPC9zcGFuPiA8aT5oYW5kcyBvZnRlbjwvaT4gJm5ic3A7Jm5ic3A7IDxzcGFuIGNsYXNzTmFtZT1cImxldHRlclwiPiBDT1ZFUjwvc3Bhbj4gPGk+eW91ciBjb3VnaDwvaT4gJm5ic3A7Jm5ic3A7ICAgPHNwYW4gY2xhc3NOYW1lPSdsZXR0ZXInPlNJQ0s/PC9zcGFuPiA8aT5jYWxsIGFoZWFkITwvaT48L3NtYWxsPjwvaDE+XG4gICAgPC9Db250ZW50PlxuICA8c3R5bGUganN4PntgXG4gICAgLmxldHRlciB7XG4gICAgICBjb2xvcjogcmdiYSgxODAsIDgwLCAyMCwgMSk7XG4gICAgfVxuICAgIHNtYWxsIHtcbiAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICB9XG4gIGB9PC9zdHlsZT5cbiAgPC9XcmFwcGVyPlxuKVxuIl19 */\n/*@ sourceURL=/Users/raypo/Desktop/Projectos/CoronaStatus/components/Footer.js */")));
 
 /***/ }),
 
@@ -851,7 +930,6 @@ const LineChart = (props, {
     gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
     data2.datasets[2].fill = true;
     data2.datasets[2].backgroundColor = gradient;
-    console.log(data2);
     return _objectSpread({}, data2);
   };
 
@@ -962,7 +1040,7 @@ const LineChart = (props, {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 203
     },
     __self: undefined
   }, __jsx(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
@@ -973,7 +1051,7 @@ const LineChart = (props, {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 204
     },
     __self: undefined
   }));
@@ -1015,69 +1093,74 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   comparison = true
 }) => {
   const {
-    t
+    t,
+    locale
   } = Object(_hooks_useTranslation_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  const direction = locale === 'he' && 'rtl' || 'ltr';
   return __jsx(_S__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     world: country.toLowerCase() === 'world',
+    direction: direction,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 20
     },
     __self: undefined
   }, Object.keys(S).map((k, i) => {
     return __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Column"], {
       key: i,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: undefined
-    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Header"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: undefined
-    }, " ", t(k, 'labels')), __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["InRow"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: undefined
-    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Number"], {
+      direction: direction,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
       },
       __self: undefined
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Header"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: undefined
+    }, " ", t(k, 'labels')), __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["InRow"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: undefined
+    }, __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Number"], {
+      label: k,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: undefined
     }, S[k] && _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(S[k]), comparison && yday && country !== 'world' && country !== 'World' && __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 37
       },
       __self: undefined
     }, "(", _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].formatNumber(yday[k]), ")")), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 42
       },
       __self: undefined
     }), comparison && yday && __jsx(_QuickStats_styled__WEBPACK_IMPORTED_MODULE_2__["Percentage"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 44
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 45
       },
       __self: undefined
     }, _QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k]) < 0 && "\u2B07" || '\u2B06'), "%", Math.abs(_QuickStats_utils__WEBPACK_IMPORTED_MODULE_3__["F"].calcDiff(S[k])(yday[k])))));
@@ -1107,7 +1190,7 @@ __webpack_require__.r(__webpack_exports__);
 const Column = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "QuickStatsstyled__Column",
   componentId: "fgl929-0"
-})(["display:flex;flex-flow:column wrap;direction:", ";align-items:start;width:100%;background:#fafafa;padding:16px 3em 12px;border-radius:2px;border-bottom:1px solid #e4e7eb;@media (min-width:660px){box-shadow:none;border:1px solid #e4e7eb;height:auto;flex:1 0 ", ";}&:last-child{border-bottom:none;}"], props => props.ltr ? 'ltr' : 'rtl', props => props.world ? '249px' : '235px');
+})(["display:flex;flex-flow:column wrap;direction:", ";align-items:start;width:100%;background:#fafafa;padding:16px 3em 12px;border-radius:2px;border-bottom:1px solid #e4e7eb;@media (min-width:660px){box-shadow:none;border:1px solid #e4e7eb;height:auto;flex:1 0 ", ";}&:last-child{border-bottom:none;}"], props => props.direction ? props.direction : '', props => props.world ? '249px' : '235px');
 const InRow = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "QuickStatsstyled__InRow",
   componentId: "fgl929-1"
@@ -1115,7 +1198,7 @@ const InRow = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withC
 const Row = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "QuickStatsstyled__Row",
   componentId: "fgl929-2"
-})(["display:flex;flex-flow:column wrap;justify-content:center;box-shadow:", ";margin-bottom:28px;border-radius:8px;border:1px solid #e4e7eb;margin-left:auto;margin-right:auto;@media (min-width:660px) and (max-width:920px){max-width:620px;flex-flow:", ";}@media (min-width:921px) and (max-width:1023px){max-width:", ";flex-flow:", ";}@media (min-width:1024px){max-width:1064px;flex-flow:", ";}"], props => props.theme.shadows[1], props => props.world ? 'row wrap' : 'row wrap', props => props.world ? '900px' : '620px', props => props.world ? 'row wrap' : 'row wrap', props => props.world ? 'row wrap' : 'row wrap');
+})(["direction:", ";display:flex;justify-content:center;flex-flow:column wrap;box-shadow:", ";margin-bottom:28px;border-radius:8px;border:1px solid #e4e7eb;margin-left:auto;margin-right:auto;@media (min-width:660px) and (max-width:920px){max-width:620px;flex-flow:", ";}@media (min-width:921px) and (max-width:1023px){max-width:", ";flex-flow:", ";}@media (min-width:1024px){max-width:1064px;flex-flow:", ";}"], props => props.direction ? props.direction : '', props => props.theme.shadows[1], props => props.world ? 'row wrap' : 'row wrap', props => props.world ? '900px' : '620px', props => props.world ? 'row wrap' : 'row wrap', props => props.world ? 'row wrap' : 'row wrap');
 const Percentage = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "QuickStatsstyled__Percentage",
   componentId: "fgl929-3"
@@ -1127,7 +1210,7 @@ const Header = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.with
 const Number = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
   displayName: "QuickStatsstyled__Number",
   componentId: "fgl929-5"
-})(["font-size:24px;font-weight:700;color:", ";letter-spacing:0.4px;font-family:'Montserrat';padding:0;margin:0;line-height:1.65;span{font-size:10px;font-family:'Montserrat';letter-spacing:-0.2px;color:#717171;margin-left:1em;margin-right:1em;margin-bottom:4px;}@media (min-width:660px) and (max-width:920px){h1{font-size:14px;line-height:1.65;letter-spacing:0.5px;}}@media (min-width:921px) and (max-width:1023px){h1{font-size:12px;letter-spacing:0.8px;}}@media (min-width:1024px){h1{font-size:16px;}}"], props => props.theme.primaryVariant);
+})(["font-size:24px;font-weight:700;color:", ";letter-spacing:0.4px;font-family:'Montserrat';padding:0;margin:0;line-height:1.65;span{font-size:10px;font-family:'Montserrat';letter-spacing:-0.2px;color:#717171;margin-left:1em;margin-right:1em;margin-bottom:4px;}@media (min-width:660px) and (max-width:920px){h1{font-size:14px;line-height:1.65;letter-spacing:0.5px;}}@media (min-width:921px) and (max-width:1023px){h1{font-size:12px;letter-spacing:0.8px;}}@media (min-width:1024px){h1{font-size:16px;}}"], props => props.label === 'recovered' ? props.theme.recovered : props.label === 'deaths' ? props.theme.purpleComp : props.label === 'todayCases' ? props.theme.error2 : props.theme.primaryColor);
 
 /***/ }),
 
@@ -1208,13 +1291,13 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.w
 const Btn = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "S__Btn",
   componentId: "sc-3vwmv4-6"
-})(["border-radius:", ";font-size:16px;padding:", ";", ";background:", ";color:", ";border:", ";font-weight:", ";font-family:'Rubik';cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}", ";"], props => props.radius ? props.radius : '4px', props => props.medium && '6px 9px' || props.big && '14px' || '8px 10px', props => props.small && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-size:12px;padding:0rem 1rem;"]), props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '', props => props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;"], props.fontFamily, props => props.theme.white, props => props.theme.kofi));
+})(["border-radius:", ";font-size:16px;padding:", ";", ";background:", ";color:", ";border:", ";font-weight:", ";font-family:'Rubik';cursor:", ";outline:none;line-height:1.5;margin:", ";box-shadow:", ";letter-spacing:", ";transition:all 0.3s ease-in-out;&:hover{transform:", ";background:", ";color:", ";}@media (max-width:450px){font-size:12px;font-weight:normal;letter-spacing:0.5px;}@media (max-width:344px){padding:2px 4px;letter-spacing:0.2px;}", ";"], props => props.radius ? props.radius : '4px', props => props.medium && '6px 9px' || props.big && '14px' || '8px 10px', props => props.small && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-size:12px;padding:0rem 1rem;"]), props => props.active && props.theme.primaryColor || props.bg && props.theme.general[props.bg] || props.theme[props.bg] || props.theme.primaryColor, props => props.active ? props.theme.onPrimary : props.btnColor && props.theme[props.btnColor] || props.theme.general.white, props => props.outline ? `${props.fat ? '2px' : '1px'} solid ${props.theme[props.outline] || props.theme.primaryColor}` : 'none', props => props.bold && 'bold' || 'normal', props => props.link ? 'pointer' : 'cursor', props => props.margin ? props.margin : '', props => props.theme.shadows[1], props => props.letterSpace ? '1.5px' : '0', props => props.hoverUp ? 'translateY(-5%)' : '', props => !props.active && props.hoverColor && props.theme[props.hoverColor], props => !props.active && props.hoverColor ? props.theme.onPrimary : '', props => props.KoFi && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["font-family:", ";font-weight:700;margin-left:4px;margin-right:4px;padding:0 12px;letter-spacing:1.75px;color:", ";cursor:pointer;background:", ";display:inline-flex;justify-content:space-around;align-items:center;border:none;text-shadow:0 1px 1px rgba(34,34,34,0.05);box-shadow:1px 1px 0px rgba(0,0,0,0.2);@media (max-width:450px){padding:0px 12px;margin:0 2px;font-size:14px;border-radius:7px;}.kofitext{color:#fff !important;vertical-align:middle;letter-spacing:-0.15px!important;text-wrap:none;vertical-align:middle;line-height:33px !important;padding:0;text-align:center;text-decoration:none!important;text-shadow:0 1px 1px rgba(34,34,34,0.05);}"], props.fontFamily, props => props.theme.white, props => props.theme.kofi));
 const Button = props => __jsx(Btn, _extends({
   onClick: props.onClick
 }, props, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 155
+    lineNumber: 175
   },
   __self: undefined
 }), props.children);
@@ -1349,7 +1432,7 @@ const LocaleProvider = props => {
     if (prev.current === undefined && locale === 'he') {
       const readLocal = localStorage.getItem('locale');
       if (readLocal) setLocale(readLocal);else {
-        localStorage.setItem('locale', locale);
+        // localStorage.setItem('locale', locale)
         setLocale(locale);
       }
     } else {
@@ -1392,7 +1475,7 @@ const ProxyContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])
 const ProxyContextProvider = props => {
   const initialState = {
     ipAddress: 'localhost',
-    countryName: 'israel'
+    countryName: 'Nowhere'
   }; // Declare shareable proxy state
 
   const {
@@ -1402,26 +1485,37 @@ const ProxyContextProvider = props => {
   const prev = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Read and Write Proxy State to Local Storage
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (prev.current === undefined && proxy.countryName == 'israel') {
+    if (proxy.countryName == 'Nowhere') {
       const localState = JSON.parse(localStorage.getItem('ip2proxy'));
 
       if (localState) {
         console.info('reading local storage');
         prev.current = localState.ipAddress;
         setProxy(localState);
-      } else {
-        localStorage.setItem('ip2proxy', JSON.stringify(proxy));
       }
     } else if (prev.current !== proxy.ipAddress) {
       console.info('writing local storage');
       localStorage.setItem('ip2proxy', JSON.stringify(proxy));
-    }
+    } // if (prev.current === undefined && proxy.countryName == 'israel') {
+    //     const localState = JSON.parse(localStorage.getItem('ip2proxy'))
+    //     if (localState) {
+    //         console.info('reading local storage')
+    //         prev.current = localState.ipAddress
+    //         setProxy(localState)
+    //     } else {
+    //       localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+    //     }
+    // } else if (prev.current !== proxy.ipAddress) {
+    //     console.info('writing local storage')
+    //     localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+    // }
+
   }, [proxy]);
   return __jsx(ProxyContext.Provider, {
     value: [proxy, setProxy],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 51
     },
     __self: undefined
   }, props.children);
@@ -1809,10 +1903,11 @@ function getInitialLocale(c) {
   }
 
   const country = c;
-  console.log(country);
 
-  if (country === 'israel') {
+  if (country === 'israel' || country === 'Nowhere') {
     return 'he';
+  } else {
+    return 'en';
   } // the language setting of the browser
 
 
@@ -1880,7 +1975,16 @@ const strings = {
       welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
       overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
       contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+      bio: `גם אתם יכולים לעזור! הפרויקט אינו ממומן ומתקיים על משאבים מוגבלים מאוד, הזמינות שלי והיכולות שלי. איני מהנדס תוכנה או מעצב במקצועי. \n דבר נוסף, המוטיבציה הראשונית להקמת הפרויקט הייתה בניית מאגר מידע חשוב ויעיל במקביל להזרמת הנתונים העדכניים. לכן, אם אתם יכולים לתרום פיסת מידע מועילה שחשוב שאנשים ידעו עליה, אתם יכולים לעזור!\n
+      <br /> </br />
+      <strong>הנה, כך תוכלו לעזור:</strong>\n 
+      <ul style='listStyle: none'>
+      <li>מעצב גרפי - אפילו עצה ממומחה יכולה לעזור.</li>
+      <li>מאגר מידע - כל מידע שימושי לימים אלו בשפה העברית/אנגלית, לדוגמא: טיפים לשמור על קור הרוח שלכם ועדיין לשמר מסגרת בריאה ותקינים עם הילדים</li>
+      <li>אם נתקלתם בבאג או תקלה - בבקשה, תפנו במייל המוצג כאן למטה ותדווחו. אני עובד על הפרויקט לבד וקשה לעקוב אחרי הכל</li>
+      <li>לבסוף, ניתן להביע הערכה באמצעות תרומה לפרויקט הקורונה. תוכלו ללחוץ על הקישור <a href="/Coffee" alt="לתרום כאן">כאן</a></li></ul>
+      
+      <p>לכל פנייה, ניתן לפנות במייל כאן: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a></p>`
     }
   },
   en: {
@@ -1919,16 +2023,19 @@ const strings = {
       graphExplanation: `The Data illustrates Novel Coronavirus growth rate, 
       there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes`
     },
-    tipButton: 'Buy Me A Mask',
+    tipButton: 'Support Me',
     tipFont: 'Quicksand',
     aboutPage: {
-      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
-      overview: `<>All information provided is legal.
-              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>`,
+      welcome: 'The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: `All information provided is legal.
+              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.`,
       contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: `This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. 
-      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, 
-      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.`
+      bio: `You too, can help! This project is not sponsered and it's living on limited resources dependant on my availability and capabilities. I am not a Software Engineer in my occupation, nor am I a UX/UI designer. \n Another thing, the starting wheels of this project was the goal of providing useful resources along the data. So, if you can share something useful you think people MUST know, you can help! \n Here's a list of nCorona's necessities: \n 
+      <ul style={{ listStyle: 'none' }}>
+      <li>* UX/UI - Even an expert's advice would suffice</li>
+      <li>* Resource Section - Anything useful in English/Hebrew, like guide how to keep your temper with your kids while maintaining order & healthy environment</li>
+      <li>* Testing/QA - We need bug reports and potentially someone to fix them. Currently this project lives in a private GitHub repo, but if someone wants to join in, you're welcome</li>
+      <li>* Last, but not least: Donation. You can support and show your appreciation, if you find nCorona project helpful</li></ul>`
     }
   }
 };
@@ -2017,7 +2124,7 @@ function IndexPage({
     },
     __self: this
   }, __jsx(_components_CoronaApp__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    userLocation: proxy.countryName,
+    userLocation: newProxy && newProxy.countryName || proxy && proxy.countryName,
     worldTime: worldTime,
     yesterdayGlobal: yesterdayGlobal,
     __source: {
@@ -2031,7 +2138,13 @@ function IndexPage({
       lineNumber: 37
     },
     __self: this
-  })));
+  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }));
 }
 
 IndexPage.getInitialProps = async ({
@@ -2051,13 +2164,14 @@ IndexPage.getInitialProps = async ({
   };
 
   if (req) {
-    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    const localAddresses = ['::1', '127.0.0.1', 'localhost']; // Construct URL with IP ADDRESS
+    // const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+    const localAddresses = ['::1', '127.0.0.1', 'localhost'];
+    const ipAddress = '185.163.111.170'; // Construct URL with IP ADDRESS
 
     const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null;
 
     try {
-      const countryName = await currentCountry('');
+      const countryName = await currentCountry(proxyUrl);
       const newProxy = {
         countryName,
         ipAddress
@@ -2077,7 +2191,6 @@ IndexPage.getInitialProps = async ({
     }
   }
 
-  console.log('WE ARE ALSOOOOOOOOOOO HERE');
   return {
     yesterdayGlobal,
     worldTime,
@@ -2321,6 +2434,7 @@ const themes = {
     blue: '#007bff',
     danger: '#dc3545',
     light: '#f8f9fa',
+    recovered: '#11bd74',
     secondary: '#303f9f',
     shadows: {
       0: "none",
@@ -2465,7 +2579,7 @@ const themes = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2551,6 +2665,17 @@ module.exports = require("react-select");
 /***/ (function(module, exports) {
 
 module.exports = require("styled-components");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ })
 

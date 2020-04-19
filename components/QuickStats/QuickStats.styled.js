@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Column = styled.div`
   display: flex;
   flex-flow: column wrap;
-  direction: ${props => props.ltr ? 'ltr' : 'rtl'};
+  direction: ${props => props.direction ? props.direction : ''};
   align-items: start;
   // justify-content: center;
 
@@ -38,9 +38,10 @@ export const InRow = styled.div`
 `
 
 export const Row = styled.div`
+  direction: ${props => props.direction ? props.direction : ''};
   display: flex;
-  flex-flow: column wrap;
   justify-content: center;
+  flex-flow: column wrap;
   box-shadow: ${props => props.theme.shadows[1]};
   margin-bottom: 28px;
   border-radius: 8px;
@@ -106,7 +107,14 @@ export const Header = styled.div`
 export const Number = styled.h1`
   font-size: 24px;
   font-weight: 700;
-  color: ${props => props.theme.primaryVariant};
+  color: ${props => props.label === 'recovered' 
+    ? props.theme.recovered
+    : props.label === 'deaths'
+      ? props.theme.purpleComp
+      : props.label === 'todayCases'
+        ? props.theme.error2
+        : props.theme.primaryColor
+  };
   letter-spacing: 0.4px;
   font-family: 'Montserrat';
   padding: 0;

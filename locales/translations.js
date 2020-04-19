@@ -51,7 +51,16 @@ export const strings = {
       welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
       overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
       contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: 'אתר זה נועד להוות מקום מאורגן עבור כל המידע המוזרם בקבוצות הוואטסאפ בימים אלו שנוטה ללכת לאיבוד לאחר מספר דקות. נוסף לכך, אתר זה מספק נתונים עדכניים של נגיף הקורונה בארץ ובעולם וזאת על מנת להקנות יכולת לשלוט במינון הצפייה בחדשות, להעלאת מודעות למצב ולחשיבות הקפדה על ההנחיות.'
+      bio: `גם אתם יכולים לעזור! הפרויקט אינו ממומן ומתקיים על משאבים מוגבלים מאוד, הזמינות שלי והיכולות שלי. איני מהנדס תוכנה או מעצב במקצועי. \n דבר נוסף, המוטיבציה הראשונית להקמת הפרויקט הייתה בניית מאגר מידע חשוב ויעיל במקביל להזרמת הנתונים העדכניים. לכן, אם אתם יכולים לתרום פיסת מידע מועילה שחשוב שאנשים ידעו עליה, אתם יכולים לעזור!\n
+      <br /> </br />
+      <strong>הנה, כך תוכלו לעזור:</strong>\n 
+      <ul style='listStyle: none'>
+      <li>מעצב גרפי - אפילו עצה ממומחה יכולה לעזור.</li>
+      <li>מאגר מידע - כל מידע שימושי לימים אלו בשפה העברית/אנגלית, לדוגמא: טיפים לשמור על קור הרוח שלכם ועדיין לשמר מסגרת בריאה ותקינים עם הילדים</li>
+      <li>אם נתקלתם בבאג או תקלה - בבקשה, תפנו במייל המוצג כאן למטה ותדווחו. אני עובד על הפרויקט לבד וקשה לעקוב אחרי הכל</li>
+      <li>לבסוף, ניתן להביע הערכה באמצעות תרומה לפרויקט הקורונה. תוכלו ללחוץ על הקישור <a href="/Coffee" alt="לתרום כאן">כאן</a></li></ul>
+      
+      <p>לכל פנייה, ניתן לפנות במייל כאן: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a></p>`
     }
 
   },
@@ -101,17 +110,20 @@ export const strings = {
       there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes`,
     },
 
-    tipButton: 'Buy Me A Mask',
+    tipButton: 'Support Me',
     tipFont: 'Quicksand',
 
     aboutPage: {
-      welcome: 'The goal of this project is to provide resources for people to cope with Coronavirus, be it link for online activities, important news, psychological methods to help with regulating anxiety and overwhelming emotions.',
-      overview: `<>All information provided is legal.
-              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.</>`,
+      welcome: 'The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions.',
+      overview: `All information provided is legal.
+              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.`,
       contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: `This website was created out of a need for an organized source of useful information nowadays, living in the shadow of Coronavirus. 
-      Plenty of useful shareable links are streamed through WhatsApp groups that are lost within minutes. Beside that, 
-      I find that having one place to look at and catch up with updated data regarding Covid19 casualties and recoveries is key to avoid unnecessary stress related with watching the News channels non-stop.`,
+      bio: `You too, can help! This project is not sponsered and it's living on limited resources dependant on my availability and capabilities. I am not a Software Engineer in my occupation, nor am I a UX/UI designer. \n Another thing, the starting wheels of this project was the goal of providing useful resources along the data. So, if you can share something useful you think people MUST know, you can help! \n Here's a list of nCorona's necessities: \n 
+      <ul style={{ listStyle: 'none' }}>
+      <li>* UX/UI - Even an expert's advice would suffice</li>
+      <li>* Resource Section - Anything useful in English/Hebrew, like guide how to keep your temper with your kids while maintaining order & healthy environment</li>
+      <li>* Testing/QA - We need bug reports and potentially someone to fix them. Currently this project lives in a private GitHub repo, but if someone wants to join in, you're welcome</li>
+      <li>* Last, but not least: Donation. You can support and show your appreciation, if you find nCorona project helpful</li></ul>`,
     },
 
   }

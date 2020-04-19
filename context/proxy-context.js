@@ -11,7 +11,7 @@ export const ProxyContextProvider = (props) => {
 
     const initialState = {
         ipAddress: 'localhost',
-        countryName: 'israel',
+        countryName: 'Nowhere',
     }
 
     // Declare shareable proxy state
@@ -20,19 +20,31 @@ export const ProxyContextProvider = (props) => {
 
     // Read and Write Proxy State to Local Storage
     useEffect(() => {
-        if (prev.current === undefined && proxy.countryName == 'israel') {
+         if (proxy.countryName == 'Nowhere') {
             const localState = JSON.parse(localStorage.getItem('ip2proxy'))
             if (localState) {
                 console.info('reading local storage')
                 prev.current = localState.ipAddress
                 setProxy(localState)
-            } else {
-              localStorage.setItem('ip2proxy', JSON.stringify(proxy))
             }
         } else if (prev.current !== proxy.ipAddress) {
             console.info('writing local storage')
             localStorage.setItem('ip2proxy', JSON.stringify(proxy))
         }
+
+        // if (prev.current === undefined && proxy.countryName == 'israel') {
+        //     const localState = JSON.parse(localStorage.getItem('ip2proxy'))
+        //     if (localState) {
+        //         console.info('reading local storage')
+        //         prev.current = localState.ipAddress
+        //         setProxy(localState)
+        //     } else {
+        //       localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+        //     }
+        // } else if (prev.current !== proxy.ipAddress) {
+        //     console.info('writing local storage')
+        //     localStorage.setItem('ip2proxy', JSON.stringify(proxy))
+        // }
     }, [proxy])
 
     return(

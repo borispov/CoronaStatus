@@ -33,13 +33,14 @@ export default () => {
           <div {...contact}></div>
           <br />
           <h1 style={{ textAlign: 'center' }} > nCorona's BIO</h1>
-          <div {...bio}></div>
+          <div className="bio" {...bio}></div>
           </Paragraph>
           <br />
 
+
     </Container>
 
-    <HeaderDescription secondary txt={'This website is created by Boris Povolotsky'} />
+        <HeaderDescription secondary txt={'This website is created by Boris Povolotsky'} />
       </FadeIn>
     </div>
   )

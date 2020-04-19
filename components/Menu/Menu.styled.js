@@ -15,7 +15,7 @@ const openStyle = css`
   z-index: 999;
   top: 0;
   right: 50%;
-  direction: rtl;
+  direction: ${props => props.locale === 'he' ? 'rtl' : 'ltr'};
   width: 220px;
   border-bottom-left-radius: 6px;
   border-bottom: 2px solid;
@@ -32,31 +32,25 @@ const openStyle = css`
   .divv {
     z-index: 9999;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
-    padding: 16px 10px;
-    text-align: right;
-    @media (max-width: 660px) {
-      width: 250px;
-      padding: 3em;
-      transform: translateX(-115px);
-    }
+    padding: 1em;
   }
 
   span {
-    margin-right: 18px;
-    margin-left: 18px;
     font-size: 12px;
-
     color: ${props => props.theme.menuColor};
     @media (max-width: 660px) {
-      padding: 12px;
       font-size: 18px;
+      padding: 0 ${({locale}) => locale == 'he' ? '0 0 1em' : '1em 0 0'};
     }
   }
 
   a {
-    padding: 4px;
+    display: flex;
+    justify-content: flex-start;
+    width: 150px;
+    padding: 1em;
     cursor: pointer;
     font-size: 20px;
     font-weight: 500;

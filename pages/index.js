@@ -33,9 +33,10 @@ function IndexPage({ worldTime, yesterdayGlobal, newProxy }) {
         <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
       </Head>
       <FadeIn delay="0.5s">
-       <CoronaApp userLocation={proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
+       <CoronaApp userLocation={newProxy && newProxy.countryName || proxy && proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
         <InfoSection />
       </FadeIn>
+    <Footer />
     </>
   )
 }
@@ -56,21 +57,20 @@ IndexPage.getInitialProps = async ({ req }) => {
   }
 
   if (req) {
-      const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+      // const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
       const localAddresses = ['::1', '127.0.0.1', 'localhost']
+      const ipAddress = '185.163.111.170'
       // Construct URL with IP ADDRESS
       const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null
 
     try {
-      const countryName = await currentCountry('')
+      const countryName = await currentCountry(proxyUrl)
       const newProxy = { countryName, ipAddress }
       return { newProxy,  worldTime, yesterdayGlobal }
     } catch(e) {
       return { errorCode: e.code, errorMessage: e.message, yesterdayGlobal, worldTime }
     }
   }
-
-  console.log('WE ARE ALSOOOOOOOOOOO HERE');
 
   return {yesterdayGlobal, worldTime, newProxy: null}
 }

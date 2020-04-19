@@ -20,7 +20,7 @@ export const LocaleProvider = (props) => {
       const readLocal = localStorage.getItem('locale')
       if (readLocal) setLocale(readLocal)
       else {
-        localStorage.setItem('locale', locale)
+        // localStorage.setItem('locale', locale)
         setLocale(locale)
       }
     } else {

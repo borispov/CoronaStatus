@@ -12,10 +12,12 @@ export function getInitialLocale(c){
   }
 
   const country = c
-  console.log(country);
-  if (country === 'israel') {
+  if (country === 'israel' || country === 'Nowhere') {
     return 'he'
+  } else {
+    return 'en'
   }
+
 
   // the language setting of the browser
   const [browserSetting] = navigator.language.split('-')

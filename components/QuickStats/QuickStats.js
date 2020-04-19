@@ -10,27 +10,30 @@ import useTranslation from '../../hooks/useTranslation.js'
 
 export default ({ S, country, isHeb, yday, comparison=true}) => {
 
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
+
+
+  const direction = locale === 'he' && 'rtl' || 'ltr'
 
   return (
-    <Container>
-      <Row world={country.toLowerCase() === 'world'}>
+    <Container >
+      <Row world={country.toLowerCase() === 'world'} direction={direction}>
 
     {
       Object.keys(S).map((k,i) => {
         return (
-          <Column key={i}>
+          <Column key={i} direction={direction} >
             <Header> { t(k, 'labels') }</Header>
             <InRow>
-              <Number>
+              <Number label={k}>
                 {
                   S[k] && F.formatNumber(S[k])
                 }
                 {
-                  comparison  
-                    && yday 
-                    && country !== 'world' 
-                    && country !== 'World' 
+                  comparison
+                    && yday
+                    && country !== 'world'
+                    && country !== 'World'
                     && <span>
                         ({F.formatNumber(yday[k])})
                        </span>

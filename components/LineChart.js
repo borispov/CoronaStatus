@@ -94,8 +94,6 @@ const LineChart = ( props, {theme} ) => {
     data2.datasets[2].fill = true
     data2.datasets[2].backgroundColor = gradient
 
-    console.log(data2);
-
     return {
       ...data2,
     }

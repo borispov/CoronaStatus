@@ -41,12 +41,13 @@ const Layout = ({ children }) => {
 
   // Initiation of Context API's
   useEffect(() => {
-    if (locale && !ig) {
-      let loc = getInitialLocale(proxy && proxy.countryName)
-      setLocale(loc)
-    }
-    return () => { setIgnore(true) }
-  }, [])
+      const ip2proxy = JSON.parse(localStorage.getItem('ip2proxy'))
+      const locationFromStorage = ip2proxy && ip2proxy.countryName
+        let loc = getInitialLocale(locationFromStorage)
+        setLocale(loc)
+
+    return () => {}
+  }, [proxy])
 
 
   // setting locale. not  sure yet if I use it or context API only

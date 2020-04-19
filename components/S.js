@@ -146,6 +146,26 @@ const Btn = styled.button`
       justify-content: space-around;
       align-items: center;
       border: none;
+      text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
+      box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+      @media (max-width: 450px) {
+        padding: 0px 12px;
+        margin: 0 2px;
+        font-size: 14px;
+        border-radius: 7px;
+      }
+      .kofitext {
+          color: #fff !important;
+          vertical-align: middle;
+          letter-spacing: -0.15px!important;
+          text-wrap: none;
+          vertical-align: middle;
+          line-height: 33px !important;
+          padding: 0;
+          text-align: center;
+          text-decoration: none!important;
+          text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
+      }
     `
   };
 
