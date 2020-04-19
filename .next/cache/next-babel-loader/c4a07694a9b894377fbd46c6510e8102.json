@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport Bar from './Bar';\nimport LineChart from './LineChart';\nexport default (function (props) {\n  var type = props.type;\n  var rend = type === 'bar' ? __jsx(Bar, props) : __jsx(LineChart, props);\n  return rend;\n});","map":null,"metadata":{},"sourceType":"module"}
