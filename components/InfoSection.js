@@ -19,6 +19,12 @@ const Wrapper = styled.div`
   }
 `
 
+// theme.primaryVariant + '22'
+// || cat === 'חינוך' &&theme.purpleComp + '66'
+// || cat === 'מידע כללי' &&theme.complementary + '44'
+// ||theme.succesDefault + '45'};
+// background: ${ ({ cat, theme }) => cat === 'בריאות' &&}
+//
 const Section = styled.div`
   border-radius: 4px;
   flex: 0 0 50%;
@@ -27,17 +33,41 @@ const Section = styled.div`
   width: 100%;
   border: 1px solid;
   border-color: ${props => props.theme.primaryColor};
-  background: ${props => props.theme.bgColor};
+  // background: ${props => props.theme.bgColor};
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 16px;
   margin-bottom: 16px;
+  background: ${props => 'linear-gradient(45deg, ' + props.theme.complementary +'AE' + ', ' + '#656565' + '11)'};
+  mix-blend-mode: darken;
+
+  img {
+    position: relative;
+    z-index: -9999;
+    height: 100%;
+    max-width: 100%;
+    opacity: 0.2;
+    background: rgba(149, 203, 13, 0.6);
+    mix-blend-mode: darken;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     flex: 0 0 100%;
     max-width: 85%;
   }
+`
+
+const SectionBg = styled.div`
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: -9999;
+  background-image: url(${props => props.bgUrl + '.jpg' || ''});
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.22;
 `
 
 const SectionTitle = styled.h2`
@@ -62,18 +92,19 @@ const Link = styled.a`
     color: ${props => props.theme.primaryLight};
   }
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 `
 
 const Desc = styled.p`
   font-size: 16px;
   line-height: 1.3;
-  color: ${props => props.theme.text.secondary};
+  color: ${props => props.theme.text.primary};
+  // color: ${props => props.theme.black};
   padding: 0 4px;
   padding-bottom: 12px;
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `
 
@@ -100,7 +131,9 @@ const mapDataToSection = (item, idx) => {
 
 const renderSection = secData => {
   return secData.map((it, ix) => (
-    <Section key={ix}>
+    <Section key={ix} cat={it.category} >
+    {console.log(it.category === 'מידע כללי')}
+      <SectionBg bgUrl={'./' + (it.category === 'מידע כללי' && 'info' || it.category)} />
       <SectionTitle>
         {it.category}
       </SectionTitle>
