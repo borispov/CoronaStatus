@@ -57,9 +57,8 @@ IndexPage.getInitialProps = async ({ req }) => {
   }
 
   if (req) {
-      // const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+      const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress
       const localAddresses = ['::1', '127.0.0.1', 'localhost']
-      const ipAddress = '185.163.111.170'
       // Construct URL with IP ADDRESS
       const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null
 
