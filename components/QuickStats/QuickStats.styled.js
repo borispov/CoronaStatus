@@ -6,11 +6,11 @@ export const Column = styled.div`
   flex-flow: column wrap;
   direction: ${props => props.direction ? props.direction : ''};
   align-items: start;
-  // justify-content: center;
 
   width: 100%;
   background: #fafafa;
-  padding: 16px 3em 12px;
+  // padding: 16px 3em 12px;
+  padding: 1em 1em .125em 1em;
   border-radius: 2px;
   border-bottom: 1px solid #e4e7eb;
 
@@ -53,7 +53,7 @@ export const Row = styled.div`
     flex-flow: ${props => props.world ? 'row wrap' : 'row wrap'};
   }
   @media (min-width: 921px) and (max-width: 1023px) {
-    max-width: ${props => props.world ? '900px' : '620px'};
+    max-width: ${props => props.world ? '620px' : '620px'};
     flex-flow: ${props => props.world ? 'row wrap' : 'row wrap'};
   }
   @media (min-width: 1024px) {
@@ -73,6 +73,7 @@ export const Percentage = styled.h1`
   padding: 0.5em 1em;
   span {
     font-family: 'Verdana';
+    font-size: 0.85rem;
     background: #DFF7EC;
     color: ${props => props.theme.primaryLight};
   }
@@ -105,8 +106,8 @@ export const Header = styled.div`
 `
 
 export const Number = styled.h1`
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: ${props => props.label === 'recovered' 
     ? props.theme.recovered
     : props.label === 'deaths'
@@ -116,37 +117,43 @@ export const Number = styled.h1`
         : props.theme.primaryColor
   };
   letter-spacing: 0.4px;
-  font-family: 'Montserrat';
+  font-family: 'Rubik';
   padding: 0;
   margin: 0;
   line-height: 1.65;
 
   span {
-    font-size: 10px;
-    font-family: 'Montserrat';
-    letter-spacing: -0.2px;
+    font-size: .75rem;
+    font-family: 'Rubik';
     color: #717171;
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 4px;
   }
 
+  @media (min-width: 660px) {
+    span {
+      font-size: .625rem;
+      letter-spacing: -0.2px;
+    }
+  }
+
   @media (min-width:660px) and (max-width: 920px) {
     h1 {
-      font-size: 14px;
+      font-size: 0.875rem;
       line-height: 1.65;
       letter-spacing: 0.5px;
     }
   }
   @media (min-width: 921px) and (max-width: 1023px) {
     h1 {
-      font-size: 12px;
-      letter-spacing: 0.8px;
+      font-size: 0.875rem;
+      letter-spacing: 0.6px;
     }
   }
   @media (min-width: 1024px) {
     h1 {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 `

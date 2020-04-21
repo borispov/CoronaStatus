@@ -19,11 +19,11 @@ const Header = ({ theme, children }) => {
         <HeaderTag>
           <Nav>
             <NavList>
-              <Link href="/">
-                <Logo>n<Span>C</Span>orona</Logo>
-              </Link>
-              {children}
-              <NavItem>
+                <Link href="/">
+                  <Logo>n<Span>C</Span>orona</Logo>
+                </Link>
+                {children}
+                <NavItem>
                 <Link href='/Coffee'>
                   <a style={{textDecoration: 'none'}}>
                     <Button

@@ -95,8 +95,9 @@ const LineChart = ( props, {theme} ) => {
   const data = canvas => {
     const ctx = canvas.getContext('2d')
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, props.theme.primaryColor);
-    gradient.addColorStop(1, 'rgba(184,40,50,0.45)');
+    gradient.addColorStop(0.4, props.theme.primaryColor);
+    gradient.addColorStop(0, (props.theme.primaryDark));
+    gradient.addColorStop(1, 'rgba(184,40,50,0.25)');
 
     data2.datasets[2].fill = true
     data2.datasets[2].backgroundColor = gradient

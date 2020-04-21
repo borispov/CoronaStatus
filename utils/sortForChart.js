@@ -29,6 +29,7 @@ const sortForChart = (obj) => {
   const labels = fObj.map(o => parseLabel(o.date))
   const deaths = fObj.map(o => zeroNull(o.total_deaths))
   const newCases = fObj.map(o => zeroNull(o.new_cases))
+  console.log(obj);
   const label = obj[0].location
 
   const datasets = [
@@ -39,7 +40,7 @@ const sortForChart = (obj) => {
       borderColor: theme && theme.successDefault,
       strokeColor: theme && theme.successDefault,
       pointRadius: 2,
-      borderWidth: 4,
+      borderWidth: 1,
       fill: true,
     },
     {
@@ -50,22 +51,22 @@ const sortForChart = (obj) => {
       borderColor: theme && theme.blue,
       strokeColor: theme && theme.blue,
       pointRadius: 2,
-      borderWidth: 4,
+      borderWidth: 1,
     },
     {
       label: 'cases',
       data: cases,
       backgroundColor: '#2A4561',
-      borderColor: theme && theme.primaryLight || '#6200ee',
-      strokeColor: theme && theme.primaryLight || '#ADFF2F',
-      borderWidth: 5,
+      borderColor: theme && theme.primaryVariant || '#6200ee',
+      strokeColor: theme && theme.primaryLight +'11' || '#ADFF2F',
+      borderWidth: 1,
 
       borderCapStyle: 'butt',
       borderJoinStyle: 'miter',
       pointHoverRadius: 5,
-      pointHoverBorderWidth: 2,
-      pointRadius: 2,
-      pointHitRadius: 10,
+      pointHoverBorderWidth: 3,
+      pointRadius: 1,
+      pointHitRadius: 1,
 
     }
   ]

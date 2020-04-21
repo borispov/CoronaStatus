@@ -10,7 +10,7 @@ export default function useYday(url, country) {
 
   const [yesterdayCn, setStats] = useState();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [ydayError, setError] = useState(false);
   useEffect(() => {
     async function fetchData() {
       setLoading(true)
@@ -35,6 +35,6 @@ export default function useYday(url, country) {
     fetchData();
   }, [country])
   return {
-    yesterdayCn, loading, error
+    yesterdayCn, loading, ydayError
   }
 }

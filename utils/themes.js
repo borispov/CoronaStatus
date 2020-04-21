@@ -1,11 +1,7 @@
 export const themes = {
   common: {
     fontFamily:
-    "Rubik, Montserrat, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
-    menuBorder: '#232F34',
-    menuBg: '#344955',
-    menuColor: '#4A6572',
-    menuHover: '#F9AA33',
+    "Rubik, Quicksand, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif",
     headerBg: '#364F9F',
     white: '#FFF',
     black: '#000',
@@ -18,6 +14,7 @@ export const themes = {
     light: '#f8f9fa',
     recovered: '#11bd74',
     secondary: '#303f9f',
+
     shadows: {
       0: "none",
       1: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
@@ -54,44 +51,15 @@ export const themes = {
 
   mobile: '660px',
 
-
-  red: {
-    type: 'red',
-    primaryColor: '#5C0434',
-    primaryDark: '#31000d',
-    primaryVariant: '#B8004B',
-    primaryLight: '#8c385e',
-    complementary: '#045c2c',
-
-    bgColor: '#F5F5F5',
-
-    text: {
-      primary: 'hsl(207, 0%, 87%)',
-      secondary: 'hsl(207, 0%, 60%)',
-      disabled: 'hsl(207, 0%, 38%)',
-    },
-
-    onPrimary: '#000',
-    onBg: '#FFF',
-    onError: '#000',
-    color: 'hsl(207, 0%, 87%)',
-
-    success: {
-      light: '#81c784',
-      main: '#4caf50',
-      dark: '#388e3c'
-    },
-
-  },
-
   light: {
     type: 'light',
 
     CTAHOVER: '#8A0011',
 
     text: {
-      primary: 'rgba(0,0,0,0.87)',
-      secondary: 'rgba(0,0,0,0.60)',
+      primary: 'hsl(0,0,13%)',
+      secondary: 'hsl(0,0,29%)',
+      // secondary: 'rgba(0,0,0,0.60)',
       disabled: 'rgba(0,0,0,0.38)'
     },
 
@@ -103,11 +71,7 @@ export const themes = {
     analogous: '#58045c',
 
     complementary: '#1d8c4a',
-    // primaryColor: '#6646EE', // Main Purple
-    // primaryDark: '#303f9f',
-    // primaryVariant: '#3700B3',
 
-    // complementary: '#BC85F9',
     purpleComp: '#BC85F9',
     purpleVariant: '#3700B3',
     purple: '#6646EE', // Main Purple
@@ -140,52 +104,5 @@ export const themes = {
     boxShadow: '0.8rem 0.8rem 1.5rem gray',
     btnBg: '#344955',
     btnColor: '#fff',
-  },
-  dark: {
-    type: 'dark',
-
-    // primaryColor: '#BB86FC',
-    // primaryColor: '#BC85F9',
-    primaryDark: '#BB86FC',
-    primaryVariant: '#3700B3',
-    primaryColor: '#8c385e',
-
-    complementary: '#6646EE',
-
-    bgColor: '#1B1B12',
-    error: '#CF6679',
-    error2: '#ee5f02',
-
-    success: {
-      light: '#81c784',
-      main: '#4caf50',
-      dark: '#388e3c'
-    },
-
-    onPrimary: '#FFF',
-    onBg: '#FFF',
-    onError: '#000',
-
-    primaryHover: '#BF96FD',
-
-    text: {
-      primary: 'hsl(207, 0%, 87%)',
-      secondary: 'hsl(207, 0%, 60%)',
-      disabled: 'hsl(207, 0%, 38%)',
-    },
-
-    hover: 'rgba(255,255,255,0.4)',
-    hoverOpacity: 0.04,
-    active: 'rgba(255,255,255,255.54)',
-    focus: 'rgba(0, 0, 0, 0.12)',
-    focusOpacity: 0.12,
-
-    color: '#B8004B',
-    // color: '#8c385e',
-    // color: 'hsl(207, 0%, 87%)',
-    boxShadow: '0.4rem 0.4rem 1.5rem #11111111',
-    categoryColor: '#CBD2D9',
-    categoryHoverColor: '#9AA5B1',
-    btnBg: '#344955',
   },
 }

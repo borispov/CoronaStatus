@@ -5,8 +5,7 @@ const descriptionTextEn = 'This website makes use of public health data, specifi
 const Text = styled.p`
   direction: ${props => props.direction || ''};
   color: ${props => props.theme.text.primary};
-  font-size: 14px;
-  font-family: 'Open Sans';
+  font-size: 0.85rem;
   line-height: 1.5;
   max-width: 520px;
   text-align: center;
@@ -19,8 +18,9 @@ const Text = styled.p`
   @media (max-width: 350px) {
     max-width: fit-content;
   }
+
   ${props => props.secondary && css`
-    font-size: 12px;
+    font-size: 0.725rem;
     color: props.theme.text.secondary;
   `};
 `

@@ -19,7 +19,7 @@ function useTime(loc, theme = {}) {
 
   const [countryStats, setCountryStats] = useState();
   const [countryGraphLoading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [countryGraphError, setError] = useState(false);
   const [countries, setCountries] = useState()
 
   useEffect(() => {
@@ -33,11 +33,12 @@ function useTime(loc, theme = {}) {
         .then(res => res.data)
         .catch(err => setError(err))
 
-      // const data = await axios.get(baseURLv2)
-      //   .then(res => res.data[country])
-      //   .catch(err => setError(err))
+      if (!data.length || !data) {
+        setError('Could Not Find Time Data For Country : ', loc)
+        setLoading(false)
+        return
+      }
 
-      // const timeStats = sortExternalApi(data);
       const timeStats = sortForChart(data, theme);
       setCountryStats(timeStats)
       setLoading(false)
@@ -47,7 +48,7 @@ function useTime(loc, theme = {}) {
   }, [loc])
 
   return {
-    countryStats, countryGraphLoading, error, countries
+    countryStats, countryGraphLoading, countryGraphError, countries
   }
 }
 

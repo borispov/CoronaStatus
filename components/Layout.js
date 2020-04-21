@@ -81,40 +81,23 @@ const Layout = ({ children }) => {
 
               <Link href="/News">
                 <a alt="news" onClick={() => closeMenu()}>
-                  <span>&#128240;</span>
                   {t('news', 'links')}
                 </a>
               </Link>
 
               <Link href="/Statistics">
                 <a alt="stats" onClick={() => closeMenu()}>
-                  <span>	&#128506;</span>
                   {t('statistics', 'links')}
                 </a>
               </Link>
 
               <Link href="/About">
                 <a alt="about" onClick={() => closeMenu()}>
-                  <span>	&#129492;</span>
                   {t('about', 'links')}
                 </a>
               </Link>
 
-              {/*
-                    // MEANT FOR NIGHT MODE -
-                    // This is Night Mode.. Currently disabled
-                      <a onClick={isLight ?setDarkTheme : setLightTheme}>
-                        <span>{ isLight ? '🌒' : '🌞'}</span>
-                        {
-                          isLight
-                          ? (isHeb && 'מצב לילה' || 'Dark Mode')
-                          : (isHeb && 'מצב יום' || 'Light Mode')
-                        }
-                      </a>
-              */}
-
               <a onClick={toggleLang}>
-                <span>&#127760;</span>
                 {displayLang}
               </a>
 

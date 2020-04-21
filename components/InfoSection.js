@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   font-family: Rubik;
   margin-left: 15px;
   margin-right: 15px;
-  margin-bottom: 32px;
+  margin-bottom: 6em;
   @media (max-width: 768px) {
     flex-direction: column;
     align-content: center;

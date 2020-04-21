@@ -16,7 +16,7 @@ const openStyle = css`
   top: 0;
   right: 50%;
   direction: ${props => props.locale === 'he' ? 'rtl' : 'ltr'};
-  width: 220px;
+  width: 440px;
   border-bottom-left-radius: 6px;
   border-bottom: 2px solid;
   border-bottom-color: {$props => props.theme.menuBorder};
@@ -24,9 +24,10 @@ const openStyle = css`
   border-top: none;
   transition: transform 0.22s ease-in-out;
   opacity: ${({ open }) => open ? '1' : '0'};
-  transform: ${({ open }) => open ?  'translateY(63px)' : 'translateY(-140%)'} translateX(50%);
+  transform: ${({ open }) => open ?  'translateY(38px)' : 'translateY(-140%)'} translateX(50%);
   @media (max-width: 660px) {
     width: 100%;
+    transform: ${({ open }) => open ?  'translateY(40px)' : 'translateY(-140%)'} translateX(50%);
   }
 
   .divv {
@@ -64,7 +65,7 @@ const openStyle = css`
     }
 
     &:hover {
-      color: ${({ theme }) => theme.menuHover};
+      color: ${({ theme }) => theme.kofi};
     }
   }
 
@@ -74,36 +75,34 @@ const closeStyle = css`
   @media (max-width: 960px) {
     display: none;
   }
-  display: flex;
-  width: auto;
-  flex-flow: row;
+  // width: auto;
   justify-content: flex-start;
   display: flex;
-  justify-content: space-around;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
 
   .divv {
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
 
     &:hover {
-      color: ${({ theme }) => theme.menuHover};
+      color: ${({ theme }) => theme.error2};
     }
   }
 
   a {
     font-family: 'Rubik';
-    padding: 0px 20px;
+    padding: 0 2em;
     text-decoration: none;
     color: ${props => props.theme.light};
     transition: all 0.15s ease-in-out;
+    font-size: 1rem;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.2) 1px 3px 0px rgba(0,0,0,0.46) 1px 4px 1px rgba(0,0,0,0.2);
+    position: relative;
 
     &:hover {
-      color: ${({ theme }) => theme.menuHover};
-      text-shadow: 1px 2px 3px rgba(0,0,0,0.2) 1px 3px 0px rgba(0,0,0,0.46) 1px 4px 1px rgba(0,0,0,0.2);
+      color: ${({ theme }) => theme.error2};
     }
-
   }
 
   span { display: none; }

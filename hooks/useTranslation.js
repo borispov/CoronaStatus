@@ -20,6 +20,7 @@ export default function useTranslation() {
     if (!strings[locale][key2][key]) {
       console.warn(`Translation '${key}' for locale '${locale}' not found.`)
     }
+
     return strings[locale][key2][key] || strings[defaultLocale][key2][key] || ''
   }
 

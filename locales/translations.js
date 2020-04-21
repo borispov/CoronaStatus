@@ -48,21 +48,16 @@ export const strings = {
     tipFont: 'Rubik',
 
     aboutPage: {
-      welcome: 'מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים.',
-      overview: '<p> כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.</p>',
-      contact: 'ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: `גם אתם יכולים לעזור! הפרויקט אינו ממומן ומתקיים על משאבים מוגבלים מאוד, הזמינות שלי והיכולות שלי. איני מהנדס תוכנה או מעצב במקצועי. \n דבר נוסף, המוטיבציה הראשונית להקמת הפרויקט הייתה בניית מאגר מידע חשוב ויעיל במקביל להזרמת הנתונים העדכניים. לכן, אם אתם יכולים לתרום פיסת מידע מועילה שחשוב שאנשים ידעו עליה, אתם יכולים לעזור!\n
-      <br /> </br />
-      <strong>הנה, כך תוכלו לעזור:</strong>\n 
-      <ul style='listStyle: none'>
-      <li>מעצב גרפי - אפילו עצה ממומחה יכולה לעזור.</li>
-      <li>מאגר מידע - כל מידע שימושי לימים אלו בשפה העברית/אנגלית, לדוגמא: טיפים לשמור על קור הרוח שלכם ועדיין לשמר מסגרת בריאה ותקינים עם הילדים</li>
-      <li>אם נתקלתם בבאג או תקלה - בבקשה, תפנו במייל המוצג כאן למטה ותדווחו. אני עובד על הפרויקט לבד וקשה לעקוב אחרי הכל</li>
-      <li>לבסוף, ניתן להביע הערכה באמצעות תרומה לפרויקט הקורונה. תוכלו ללחוץ על הקישור <a href="/Coffee" alt="לתרום כאן">כאן</a></li></ul>
-      
-      <p>לכל פנייה, ניתן לפנות במייל כאן: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a></p>`
+      welcome: `מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים. כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.`,
+      contact: `ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com"><i>nCoronaLive@gmail.com</i></a>`,
+      contributeMsg: "גם אתם יכולים לקחת חלק בפרויקט ולסייע בהעלאת המודעות ובהתמודדות עם משבר נגיף הקורונה. אם יש לכם רעיון כיצד ניתן לשפר את האתר, אנו נשמח לדעת! במידה ואתם רוצים לתמוך ולסייע, ניתן לעשות זאת באמצעות תרומה או על ידי לקיחת חלק בעשייה. כיצד תוכלו לקחת חלק? הנה ",
+      contributeList: [
+        "עיצוב - אם אתה מבין דבר או שניים בעיצוב, עצמך תעזור לעצב את האתר בצורה טובה יותר",
+        "מאגר מידע - במידה ויש ברשותכם מידע חיוני שיכול לסייע לאנשים בהתמודדות עם משבר הקורונה, זה יכול להיות כל דבר, למשל, טיפים ליצירת סדר יום בצל הקורונה, טיפים כיצד לשמר על אווירה כיפית עם הילדים, אך לשמור על גבולות בריאים...",
+        "קוד - אם אתם מפתחים אתרים ורוצים לתרום, צרו קשר.",
+        "תמיכה - אם האתר שימושי עבורכם והנכם רוצים להביע את תמיכתכם, ניתן לבצע תרומה. אפילו תרומה קטנה עוזרת עם עלויות הפרויקט כולו. ניתן לתרום <a href='https://ko-fi.com/borispov'>כאן</a>",
+      ],
     }
-
   },
 
   en: {
@@ -99,31 +94,30 @@ export const strings = {
       instructions: [
 ' via ko-fi.com, you can donate in 2$ increments and leave a message ( Feedback, Suggestions, Feature Request... ). ATTENTION: You can tip without registration to PayPal. Even if you are prompted with Sign up message instead of Pay with Credit Card, just click on sign up and it\'ll first let you to complete the transaction. '
       ],
-      kofiButton: 'via ko-Fi.com',
-      paypalButton: 'via PayPal',
-      error: 'C\'mon Even a pair of gloves cost more than 1$...'
+      kofiButton: "via ko-Fi.com",
+      paypalButton: "via PayPal",
+      error: "C'mon Even a pair of gloves cost more than 1$..."
     },
 
     coronaApp: {
-      selectHeader: 'Data For Country: ',
-      graphExplanation: `The Data illustrates Novel Coronavirus growth rate, 
+      selectHeader: "Data For Country: ",
+      graphExplanation: `The Data illustrates Novel Coronavirus growth rate,
       there is usually a difference of 1-3 days between the data shown and the current day. The stats shown outside the graphs are updated every 15-35 minutes`,
     },
 
-    tipButton: 'Support Me',
+    tipButton: `Support Me`,
     tipFont: 'Quicksand',
 
     aboutPage: {
-      welcome: 'The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions.',
-      overview: `All information provided is legal.
-              The data is gathered through free sources like:<br/> <strong>WHO</strong>, <strong>worldometers</strong>, <strong>ourwourldindata</strong> and government health ministry websites.`,
-      contact: 'You can contact me by email: <a href="mailto:nCoronaLive@gmail.com>nCoronaLive@gmail.com</a>',
-      bio: `You too, can help! This project is not sponsered and it's living on limited resources dependant on my availability and capabilities. I am not a Software Engineer in my occupation, nor am I a UX/UI designer. \n Another thing, the starting wheels of this project was the goal of providing useful resources along the data. So, if you can share something useful you think people MUST know, you can help! \n Here's a list of nCorona's necessities: \n 
-      <ul style={{ listStyle: 'none' }}>
-      <li>* UX/UI - Even an expert's advice would suffice</li>
-      <li>* Resource Section - Anything useful in English/Hebrew, like guide how to keep your temper with your kids while maintaining order & healthy environment</li>
-      <li>* Testing/QA - We need bug reports and potentially someone to fix them. Currently this project lives in a private GitHub repo, but if someone wants to join in, you're welcome</li>
-      <li>* Last, but not least: Donation. You can support and show your appreciation, if you find nCorona project helpful</li></ul>`,
+      welcome: `The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions. All data provided is delivered legally and is gathere via sources like: <strong>WHO.int</strong>,&nbsp; <strong>worldometers</strong>, <strong>ourwourldindata</strong>&nbsp; <strong>corona.ninja.lmao API</strong> and more.`,
+      contact: `You can contact us by email: <a href="mailto:nCoronaLive@gmail.com"><i>nCoronaLive@gmail.com</i></a>`,
+      contributeMsg: `You can be part of nCorona project and help raising awareness and aiding the community to cope with the daily challenges. You can let us know how you think we can make the project better, you can also support us with <a href="/Coffee"><i>donation</i></a> to help bear the costs. You can also take a part by doing`,
+      contributeList: [
+        "UX/UI - If you are an advanced/expert, your advice would help redesign the project better",
+        "Resources & Information - If you have valuable and useful in English/Hebrew, contact me. e.g, a guide for keeping your cool while maintaining healthy boundaries and fun with your kids.",
+        "Testing/QA - We need some help with CI/CD, testing and such..",
+        "Last, but not least - Donations. You can suppport by donating as little as 2$, every dollar matters as it helps mitigate the costs of everything that is involved with running and maintaining this project. \n So, if you find nCorona project useful, definitely consider making a donating"
+      ],
     },
 
   }

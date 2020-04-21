@@ -26,7 +26,7 @@ async function currentCountry(){
 function useTodayStats(url, country) {
   const [todayStats, setStats] = useState();
   const [countryStatLoading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [countryStatsError, setError] = useState(false);
 
   useEffect(() => {
 
@@ -55,7 +55,7 @@ function useTodayStats(url, country) {
     fetchData();
   }, [country])
   return {
-    todayStats, countryStatLoading, error
+    todayStats, countryStatLoading, countryStatsError
   }
 }
 

@@ -42,18 +42,18 @@ const sortForChart = (obj, theme) => {
       label: 'cases',
       data: cases,
       backgroundColor: '#2A4561',
-      borderColor: theme && theme.analogous || '#6200ee',
+      borderColor: theme && theme.primaryVariant || '#6200ee',
       strokeColor: "#ADFF2F",
       pointBorderColor: 'rgba(75,10,192,0)',
       pointBackgroundColor: '#fff',
       pointHoverBackgroundColor: 'rgba(45, 20, 19, 0)',
-      borderWidth: 5,
+      borderWidth: 1.5,
       borderCapStyle: 'butt',
       borderDash: [],
       borderDashOffset: 0.0,
       borderJoinStyle: 'miter',
       pointRadius: 1,
-      pointHitRadius: 10,
+      pointHitRadius: 3,
 
     }
   ]

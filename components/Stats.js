@@ -7,8 +7,7 @@ const Container = styled.div`
   text-align: center;
 `
 
-export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryday, loading }) {
-
+export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryday, loading, error, errorYday }) {
 
   return (
     <Container>
@@ -22,6 +21,7 @@ export default function Stats({ cn = '', todayWorld, todayStats, isHeb, yesteryd
         </>
       }
       {
+        !error && !errorYday &&
         todayStats &&
           <QuickStats loading={loading} country={cn} yday={yesteryday} S={todayStats} isHeb={isHeb}/>
       }

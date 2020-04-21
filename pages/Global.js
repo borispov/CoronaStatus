@@ -13,20 +13,45 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
       min-height: 100%;
       max-width: 100%;
-      font-size: 62.5%;
+      // font-size: 62.5%;
+      font-size: 16px !default;
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.text.primary};
       font-family: ${props => props.theme.fontFamily};
       direction: ${props => props.isHeb && 'rtl' || ''};
   }
 
-  .Select {
+  .react-select-container {
+    width: 350px;
+    margin: 0 auto;
     color: black !important;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Rubik, Arial';
     z-index: 999999;
   }
 
+  .react-select__control {
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 0 .5em;
+    box-shadow: inset 0 2px 4px 0px hsla(0, 0%, 0%, 0.08);
+  }
+
+  .react-select__menu-list {
+    background: ${props => props.theme.primaryColor + '14'};
+    font-family: Quicksand;
+    > * {
+      &:hover {
+        transition: all .3s ease-in-out;
+        background: ${props => props.theme.primaryVariant + '66'} !important;
+        color: white;
+      }
+    }
+  }
+
+  .react-select__control--is-focused {
+    background: ${props => props.theme.hoverColor} !important;
+  }
 
   .div.span.h3 {
     font-family: 'Rubik';
@@ -38,13 +63,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1,h2,h3,h4,h5,h6 {
-    margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
   }
   h3 {
     font-family: 'Rubik';
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .loader-container {
@@ -58,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .loader {
-    max-width: 15rem;
+    max-width: 10em;
     transition: all 0.125s ease-in-out;
     margin: 0 auto;
     width: 100%;

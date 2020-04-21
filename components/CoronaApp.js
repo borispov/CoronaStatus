@@ -29,13 +29,12 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   const url = 'https://nCorona.live/api/v1/'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
 
-  const { countryStats, countryGraphLoading } = useTime(country, theme)
-  const { todayStats, countryStatLoading } = useTodayStats(url, country)
+  const { countryStats, countryGraphLoading, countryGraphError } = useTime(country, theme)
+  const { todayStats, countryStatLoading, countryStatError } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
-  const { yesterdayCn } = useYday(v2, country)
+  const { yesterdayCn, ydayError } = useYday(v2, country)
 
   const { countries } = useCountries()
-
 
   const worldTodaySorted = worldToday &&
     {
@@ -47,7 +46,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
       affectedCountries: yesterdayGlobal.affectedCountries
     } || ''
 
-  const yesterdayStatsSorted = yesterdayCn && {
+  const yesterdayStatsSorted = !ydayError && yesterdayCn && {
     cases: yesterdayCn.cases,
     todayCases: yesterdayCn.todayCases,
     recovered: yesterdayCn.recovered,
@@ -113,7 +112,8 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
 
 
         <Select
-          className={'Select'}
+          className='react-select-container'
+          classNamePrefix="react-select"
           options={selectOptions}
           value={country === 'Israel' && isHeb ? 'ישראל' : country}
           onChange={handleChange}
@@ -121,13 +121,20 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         />
       </form>
 
-      <Stats
-        loading={countryStatLoading}
-        cn={country || todayStats && todayStats.country}
-        todayStats={todayStatsSorted}
-        yesteryday={yesterdayStatsSorted}
-        isHeb={isHeb}
-      />
+        {
+          countryStatError 
+            && <div> ERROR Fetching Over Time Data </div> 
+            ||
+            <Stats
+              loading={countryStatLoading}
+              cn={country || todayStats && todayStats.country}
+              todayStats={todayStatsSorted}
+              yesteryday={yesterdayStatsSorted}
+              isHeb={isHeb}
+              error={countryStatError}
+              errorYday={ydayError}
+            />
+        }
 
     {/*
       <iframe 
@@ -138,6 +145,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
       />
     */}
       {
+        countryGraphError && <Container style={{textAlign: 'center'}}> {countryGraphError}</Container> ||
         !countryStats 
           &&
             <Container textAlign>
@@ -156,6 +164,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
                 fill={false}
                 stops={3}
                 showLegend={false}
+                error={countryGraphError}
               />
           )
       }

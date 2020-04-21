@@ -16,14 +16,15 @@ export const Flex = styled.div`
 `
 
 export const Heading = styled.h1`
-  font-size: ${props => props.fontSize || '4.5rem'};
+  font-size: ${props => props.fontSize || '3rem'};
   color: ${props => props.color || props.theme.color};
-  font-family: ${props => props.font || 'Montserrat'};
+  font-family: ${props => props.font || 'Quicksand'};
+  font-weight: ${props => props.weight || '400'};
   line-height: 1.5;
 `
 
 export const Heading2 = styled.h2`
-  font-size: ${props => props.fontSize || '18px'};
+  font-size: ${props => props.fontSize || '1.125rem'};
   padding: ${props => props.padding || ''};
   color: ${props => props.color || props.theme.color};
   font-family: ${props => props.font || 'Montserrat'};
@@ -32,7 +33,7 @@ export const Heading2 = styled.h2`
   max-width: 100%;
   text-overflow: ${props => props.truncate && 'ellipsis'};
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 700;
     max-width: 100%;
     line-height: 1.45;
@@ -41,18 +42,15 @@ export const Heading2 = styled.h2`
 
 export const Paragraph = styled.p`
   text-align: ${props => props.center ? 'center' : ''};
-  font-size: ${props => props.fontSize || '16px'};
+  font-size: ${props => props.fontSize || '1rem'};
   max-width: ${props => props.mw || 'fit-content'};
   margin: ${props => props.noMargin && '0' || '0'};
   line-height: ${props => props.lineHeight || 1.5};
   padding: ${props => props.padding || ''};
   color: ${props => props.secondary ? props.theme.text.secondary : props.theme.text.primary};
   direction: ${props => props.direction || 'inherit'};
-  // direction: ${props => props.direction || props.rtl ? 'rtl' : 'inherit'};
   @media (max-width: 768px) {
-    font-size: 12px;
-    font-weight: 300;
-    // overflow: hidden;
+    font-size: 0.75rem;
     margin: 0;
   };
   ${props => props.centered && css`
@@ -92,15 +90,15 @@ export const Container = styled.div`
 
 const Btn = styled.button`
   border-radius: ${props => props.radius ? props.radius : '4px'};
-  font-size: 16px;
+  font-size: 1rem;
   padding: ${props => props.medium
-    && '6px 9px' || props.big 
-    && '14px'
-    || '8px 10px'};
+    && '0.375em 0.55em' || props.big 
+    && '0.875em'
+    || '.5em .625em'};
 
   ${props => props.small && css`
-      font-size: 12px;
-      padding: 0rem 1rem;
+      font-size: .75em;
+      padding: 0 1em;
   `};
 
 
@@ -122,12 +120,12 @@ const Btn = styled.button`
     color: ${props => !props.active && props.hoverColor ? props.theme.onPrimary : ''};
   }
   @media (max-width: 450px) {
-    font-size: 12px;
-    font-weight: normal;
+    font-size: 0.75rem;
     letter-spacing: 0.5px;
   }
   @media (max-width: 344px) {
     padding: 2px 4px;
+    padding: 0.125rem 0.25rem;
     letter-spacing: 0.2px;
   }
 
@@ -135,16 +133,16 @@ const Btn = styled.button`
     css`
       font-family: ${props.fontFamily};
       font-weight: 700;
-      margin-left: 4px;
-      margin-right: 4px;
-      padding: 0 12px;
+      padding: 0em 1em;
       letter-spacing: 1.75px;
       color: ${props => props.theme.white};
       cursor: pointer;
       background: ${props => props.theme.kofi};
+      // margin-top: .4em;
       display: inline-flex;
       justify-content: space-around;
       align-items: center;
+      align-self: end;
       border: none;
       text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
       box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);

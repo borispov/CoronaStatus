@@ -3,20 +3,16 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.div`
   direction: ltr;
   position: relative;
-  height: 64px;
   z-index: 1;
   width: 100%;
   background: linear-gradient(45deg, #5c0434, #000000d6);
   /* background: linear-gradient(45deg, ${props => props.theme.headerBg}, #000000d6); */
   margin: 0 auto;
-  margin-bottom: 48px;
   box-shadow: ${props => props.theme.shadows[4]};
 `
 
 export const HeaderTag = styled.header`
-  justify-content: space-between;
-  align-items: center;
-  max-width: 920px;
+  max-width: 60em;
   margin: 0 auto;
   @media (max-width: 580px) {
     margin-left: 12px;
@@ -32,25 +28,24 @@ export const Nav = styled.nav`
 `
 
 export const NavList = styled.ul`
+  height: 100%;
   justify-content: space-around;
   display: flex;
   align-items: center;
 `
 
 export const NavItem = styled.li`
-  margin-top: 10px;
-  margin-left: 40px;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   i {
-    width: 1.3rem;
+    width: 1.3em;
     margin: 2px 12px 0 0;
     display: inline-block;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   @media (max-width: 580px) {
@@ -58,28 +53,24 @@ export const NavItem = styled.li`
   }
 `
 export const Span = styled.span`
-  font-size: 3.5rem;
+  font-size: inherit;
   font-weight: bold;
   text-shadow: 0 1px 9px rgba(15,0,115,0.6);
   color: ${props => props.theme.error2};
-  @media (max-width: 580px) {
-    font-size: 3.3rem;
-    align-items: flex-end;
-  }
+  align-items: flex-end;
 `
 
 export const Logo = styled.h1`
-  display: inline-block;
-  margin-top: 10px;
   color: ${props => props.color || '#e6e6e6'} ;
-  font-size: 3.5rem;
+  font-size: 2.0rem;
   font-family: 'Rubik';
-  text-align: center;
   text-shadow: 0 1px 35px rgba(5, 35, 10, 0.2);
   cursor: pointer;
+  padding: 0;
+  margin: 0;
 
   @media (max-width: 580px) {
-    font-size: 3rem;
+    font-size: 2.0rem;
     align-items: flex-end;
   }
 
