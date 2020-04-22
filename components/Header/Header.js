@@ -1,14 +1,22 @@
+import { useContext } from 'react'
 import { Button, Container, FadeIn } from '../S'
 import { Coffee } from '../Icons/ThemeIcon'
-import { HeaderWrapper, HeaderTag, Nav, Span, NavList, NavItem, Logo } from './Header.styled'
+import { LangContainer, LangText, HeaderWrapper, HeaderTag, Nav, Span, NavList, NavItem, Logo } from './Header.styled'
 import Link from 'next/link'
 import styled from 'styled-components'
 
+import { LocaleContext } from '../../context/LocaleContext'
 import useTranslation from '../../hooks/useTranslation.js'
 
 const Header = ({ theme, children }) => {
 
+  const { locale, setLocale } = useContext(LocaleContext)
   const { t } = useTranslation()
+
+  const switchLangHandler = lang => {
+    locale !== lang && setLocale(lang)
+  }
+
 
   const font = t('tipFont')
   const text = t('tipButton')
@@ -22,11 +30,30 @@ const Header = ({ theme, children }) => {
                 <Link href="/">
                   <Logo>n<Span>C</Span>orona</Logo>
                 </Link>
-                {children}
                 <NavItem>
-                <Link href='/Coffee'>
-                  <a style={{textDecoration: 'none'}}>
-                    <Button
+                  {children}
+                </NavItem>
+                <NavItem>
+                  <LangContainer>
+                    <LangText 
+                      onClick={() => switchLangHandler('en')} 
+                      active={locale==='en'}
+                    >
+                      EN
+                    </LangText>
+                    <LangText 
+                      onClick={() => switchLangHandler('he')} 
+                      active={locale==='he'}
+                    >
+                      HE
+                    </LangText>
+                  </LangContainer>
+                </NavItem>
+                <NavItem kofi>
+                  <Link href='/Coffee'>
+                    <a style={{textDecoration: 'none'}}>
+                      <Button
+                        KoFi-NAV
                         KoFi
                         hoverUp
                         hoverColor='error2'
@@ -36,10 +63,10 @@ const Header = ({ theme, children }) => {
                       <span className="kofitext">
                         {text}
                       </span>
-                    </Button>
-                  </a>
-                </Link>
-              </NavItem>
+                      </Button>
+                    </a>
+                  </Link>
+                </NavItem>
             </NavList>
           </Nav>
         </HeaderTag>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 
 export const Column = styled.div`
@@ -9,21 +9,37 @@ export const Column = styled.div`
 
   width: 100%;
   background: #fafafa;
-  // padding: 16px 3em 12px;
   padding: 1em 1em .125em 1em;
   border-radius: 2px;
   border-bottom: 1px solid #e4e7eb;
-
-  @media (min-width: 660px) {
-    box-shadow: none;
-    border: 1px solid #e4e7eb;
-    height: auto;
-    flex: 1 0 ${props => props.world ? '249px' : '235px'};
-  }
-
   &:last-child {
     border-bottom: none;
   }
+
+  ${({ world }) => (!world) && css`
+    border: none;
+    border-left: 1px solid #e4e7eb;
+    border-bottom: 6px solid ${props => props.label === 'recovered' 
+      ? props.theme.recovered
+      : props.label === 'deaths'
+        ? props.theme.purpleComp
+        : props.label === 'todayCases'
+          ? props.theme.error2
+          : props.theme.primaryColor
+    } !important;
+    border-radius: 0px !important;
+    box-shadow: none;
+  `};
+
+  @media (min-width: 660px) {
+    box-shadow: none;
+    height: auto;
+    &:last-child {
+      border-left: none;
+    }
+    flex: 1 0 ${props => props.world ? '249px' : '235px'};
+  }
+
 
 `
 
@@ -42,10 +58,12 @@ export const Row = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  box-shadow: ${props => props.theme.shadows[1]};
+  box-shadow: ${props => props.theme.shadows[5]};
   margin-bottom: 28px;
   border-radius: 8px;
-  border: 1px solid #e4e7eb;
+  // border: 1px solid #e4e7eb;
+  border: none;
+  margin-top: 1.75em;
   margin-left: auto;
   margin-right: auto;
   @media (min-width:660px) and (max-width: 920px) {

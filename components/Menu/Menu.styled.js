@@ -78,7 +78,7 @@ const closeStyle = css`
   // width: auto;
   justify-content: flex-start;
   display: flex;
-  margin: 8px 0 0;
+  margin: 0.125rem 0 0;
 
   .divv {
     font-size: 1rem;
@@ -92,17 +92,40 @@ const closeStyle = css`
 
   a {
     font-family: 'Rubik';
-    padding: 0 2em;
-    text-decoration: none;
-    color: ${props => props.theme.light};
-    transition: all 0.15s ease-in-out;
     font-size: 1rem;
+    padding: 1rem 2em;
+    text-decoration: none;
+
+    color: ${props => props.theme.light};
     text-shadow: 1px 2px 3px rgba(0,0,0,0.2) 1px 3px 0px rgba(0,0,0,0.46) 1px 4px 1px rgba(0,0,0,0.2);
+    transition: all 0.15s ease-in-out;
     position: relative;
 
     &:hover {
       color: ${({ theme }) => theme.error2};
+
+      &:after {
+        transform: scale(1);
+      }
+
     }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: ${({ theme }) => theme.error2};
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      transition: all .2s ease-in-out
+    }
+
+
+
   }
 
   span { display: none; }

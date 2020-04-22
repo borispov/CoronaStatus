@@ -83,7 +83,7 @@ const WelcomeImage = styled.div`
   border: 1px solid ${props => props.theme.primaryVariant + '99'};
   border-radius: 14px;
   padding: 0.125em;
-  max-height: 480px;
+  height: 26em;
   img {
     width: 100%;
     height: 100%;
@@ -182,7 +182,7 @@ export default withTheme(() => {
   return (
     <Wrapper dir={dir} style={{marginLeft: '3%', marginRight: '3%'}}>
       <FadeIn duration='0.2s' delay="0.1s">
-        <Container style={{ marginBottom: '62px', marginTop: '10em' }}>
+        <Container style={{ marginBottom: '62px', marginTop: '6em' }}>
 
           <Grid>
             <Title dir={dir} >Alone, <br/> But Together</Title>

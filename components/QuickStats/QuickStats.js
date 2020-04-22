@@ -32,7 +32,7 @@ export default ({ loading, S, country, isHeb, yday, comparison=true}) => {
           )
         }
         return (
-          <Column key={i} direction={direction} >
+          <Column key={i} direction={direction} label={k} world={country.toLowerCase() === 'world'}>
             <Header> { t(k, 'labels') }</Header>
             <InRow>
               <Number label={k}>

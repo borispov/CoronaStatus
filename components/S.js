@@ -113,7 +113,7 @@ const Btn = styled.button`
   margin: ${props => props.margin ? props.margin : ''};
   box-shadow: ${props => props.theme.shadows[1]};
   letter-spacing: ${props => props.letterSpace ? '1.5px' : '0'};
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &: hover {
     transform: ${props => props.hoverUp ? 'translateY(-5%)': ''};
     background: ${props => !props.active && props.hoverColor && props.theme[props.hoverColor]};
@@ -131,41 +131,73 @@ const Btn = styled.button`
 
   ${props => props.KoFi && 
     css`
-      font-family: ${props.fontFamily};
-      font-weight: 700;
-      padding: 0em 1em;
-      letter-spacing: 1.75px;
-      color: ${props => props.theme.white};
-      cursor: pointer;
-      background: ${props => props.theme.kofi};
-      // margin-top: .4em;
-      display: inline-flex;
-      justify-content: space-around;
-      align-items: center;
-      align-self: end;
-      border: none;
-      text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
-      box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
       @media (max-width: 450px) {
         padding: 0px 12px;
         margin: 0 2px;
         font-size: 14px;
         border-radius: 7px;
       }
-      .kofitext {
-          color: #fff !important;
-          vertical-align: middle;
-          letter-spacing: -0.15px!important;
-          text-wrap: none;
-          vertical-align: middle;
-          line-height: 33px !important;
-          padding: 0;
-          text-align: center;
-          text-decoration: none!important;
-          text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
-      }
+      font-family: ${props.fontFamily || 'Quicksand'};
+      font-weight: 700;
+      padding: 0em 1em;
+      color: ${props => props.theme.white};
+      cursor: pointer;
+      background: ${props => props.theme.kofi};
+      border: none;
+      text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
+      box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
     `
   };
+
+  ${props => props['KoFi-NAV'] && css`
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      align-self: end;
+      letter-spacing: 1.75px;
+      .kofitext {
+        color: #fff !important;
+        vertical-align: middle;
+        letter-spacing: -0.15px!important;
+        text-wrap: none;
+        vertical-align: middle;
+        line-height: 33px !important;
+        padding: 0;
+        text-align: center;
+        text-decoration: none!important;
+        text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
+      }
+      @media (max-width: 660px) {
+        display: none;
+      }
+  `};
+
+  ${props => props['KoFi-ABS'] && css`
+      display: none;
+      @media (max-width: 660px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 2em;
+        bottom: 3.2em;
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
+        z-index: 9999;
+        box-shadow: ${({ theme }) => theme.shadows[1]};
+        font-weight: 600;
+        transition: all .125s ease 0s;
+        img {
+          margin: 0;
+          padding: 0;
+          height: 42px;
+          width: 42px;
+        }
+      }
+  `};
+
+
 
 `
 

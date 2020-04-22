@@ -26,6 +26,8 @@ const Div = styled.div`
     text-shadow: ${({ theme }) => theme.shadows[1]};
   }
 
+  box-shadow: inset 16px -16px 32px -32px hsla(0,0%,0%, 0.2);
+
   canvas {
     // background-color: #ededed;
     border-radius: 8px;

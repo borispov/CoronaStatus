@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import { themes } from '../utils/themes'
 
+import { Button } from './S'
+
 // Components
 import Burger from '../components/Burger';
 import Menu from '../components/Menu';
@@ -23,12 +25,6 @@ const lightTheme = () => ({
   ...themes['common'],
   ...themes['light'],
 })
-const darkTheme = () => ({
-  ...themes['common'],
-  ...themes['dark'],
-})
-
-const langs = [ 'he', 'en' ]
 
 const Layout = ({ children }) => {
   const { t } = useTranslation()
@@ -55,10 +51,8 @@ const Layout = ({ children }) => {
 
   const closeMenu     = () => setOpen(false)
   const toggleMenu    = () => setOpen(!menuOpen)
-  const toggleLang    = () => {closeMenu(); const newLocale = langs[+!langs.indexOf(locale)]; setLocale(newLocale)}
   const node          = useRef()
   useOutSide(node, closeMenu)
-  const displayLang   = locale === 'he' ? 'English' : 'עברית'
 
   return (
     <>
@@ -73,10 +67,8 @@ const Layout = ({ children }) => {
           <div ref={node}>
 
             {/*-------- /// Burger Menu & Menu /// --------- */}
-
             <Burger setOpen={toggleMenu} open={menuOpen} />
             <Menu setOpen={toggleMenu} open={menuOpen} >
-
             {/*-------- /// NAV LINKS /// --------- */}
 
               <Link href="/News">
@@ -97,15 +89,18 @@ const Layout = ({ children }) => {
                 </a>
               </Link>
 
-              <a onClick={toggleLang}>
-                {displayLang}
-              </a>
-
             </Menu>
           </div>
 
         </Header>
         <div className="AppContainer">
+          <Button
+            KoFi-ABS
+            KoFi
+            hoverUp
+            hoverColor='error2'>
+          <img src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
+          </Button>
           {children}
           <style jsx global>{`
             .AppContainer {

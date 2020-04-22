@@ -132,7 +132,6 @@ const mapDataToSection = (item, idx) => {
 const renderSection = secData => {
   return secData.map((it, ix) => (
     <Section key={ix} cat={it.category} >
-    {console.log(it.category === 'מידע כללי')}
       <SectionBg bgUrl={'./' + (it.category === 'מידע כללי' && 'info' || it.category)} />
       <SectionTitle>
         {it.category}
