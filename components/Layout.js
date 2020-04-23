@@ -94,13 +94,16 @@ const Layout = ({ children }) => {
 
         </Header>
         <div className="AppContainer">
-          <Button
-            KoFi-ABS
-            KoFi
-            hoverUp
-            hoverColor='error2'>
-          <img src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
-          </Button>
+
+          <Link href="/Coffee">
+            <Button
+              KoFi-ABS
+              KoFi
+              hoverUp
+              hoverColor='error2'>
+            <img src='./kofi.png' alt='Buy Me A Coffee @ ko-fi.com'/>
+            </Button>
+          </Link>
           {children}
           <style jsx global>{`
             .AppContainer {

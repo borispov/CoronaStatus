@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
   box-shadow: ${props => props.theme.shadows[4]};
   padding: 0.25em;
+  header: 40px;
 `
 
 export const HeaderTag = styled.header`
@@ -18,8 +19,7 @@ export const HeaderTag = styled.header`
   @media (max-width: 580px) {
     margin-left: 12px;
     margin-right: 12px;
-    align-items: flex-end;
-    padding-top: 4px;
+    // align-items: flex-end;
   }
 `
 
@@ -29,12 +29,11 @@ export const Nav = styled.nav`
 `
 
 export const NavList = styled.ul`
-  height: 100%;
   justify-content: space-around;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   @media only screen and (max-width: 660px) {
+    justify-content: space-between;
   }
 `
 
@@ -77,7 +76,7 @@ export const Logo = styled.h1`
   margin: 0;
 
   @media (max-width: 580px) {
-    font-size: 2.0rem;
+    font-size: 1.75rem;
     align-items: flex-end;
   }
 `
@@ -100,6 +99,7 @@ export const LangText = styled.div`
   align-self: center;
   position: relative;
   margin-left: .55em;
+  letter-spacing: 0.2px;
   cursor: pointer;
   &:after {
     content: '';
@@ -109,7 +109,7 @@ export const LangText = styled.div`
     left: 0;
     height: 2px;
     border-radius: 4px;
-    background: ${({ theme }) => theme.primaryVariant};
+    background: ${({ theme }) => theme.error2};
     opacity: ${({ active }) => active ? '1' : '0'};
     transition: opactiy .3s ease-in;
   }

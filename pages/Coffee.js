@@ -19,6 +19,25 @@ const Message = styled(Heading)`
   border-radius: 8px;
   margin-top: 28px;
 `
+const Title = styled(Heading)`
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  &:after {
+    content: '';
+    position: absolute;
+    height: 8px;
+    bottom: 0.2em;
+    z-index: -1;
+    left: -2px;
+    width: 100%;
+    transform: rotate(-1deg);
+    background: ${props => props.theme.primaryColor};
+  }
+`
+
 
 const Text = styled.p`
   text-align: start;
@@ -41,19 +60,14 @@ const Heading2 = styled(Heading)`
 const Box = styled.div`
   max-width: 620px;
   width: 100%;
-  padding: 12px;
+  padding: 1em;
   height: auto;
   margin: 0 auto;
   background: ${props => props.theme.bgColor}DD;
 `
 
 const BoxButtons = styled.div`
-  // direction: ltr;
-  margin: 6px;
-  padding: 8px;
-  > button {
-    margin-left: 12px;
-  }
+  padding: 1em;
 `
 
 const Flex = styled.div`
@@ -163,7 +177,7 @@ export default withTheme(({ isHeb, theme }) => {
     <simpleWrapper>
       <Container textAlign direction={locale === 'he' ? 'rtl' : 'ltr'} >
         <FadeIn duration="0.5s" delay="0.1s">
-          <Heading>{t('heading', 'coffeePage')}</Heading>
+          <Title>{t('heading', 'coffeePage')}</Title>
           <Paragraph color={theme.color} mw='720px' center centered>
             {t('description', 'coffeePage')}
           </Paragraph>
@@ -193,22 +207,24 @@ export default withTheme(({ isHeb, theme }) => {
                   </a>
 
                   <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">
-                    <Button link pointer bg='primaryVariant' hoverUp hoverColor='primaryLight' >
+                    <Button link pointer bg='transparent' btnColor='primaryVariant' hoverUp hoverColor='primaryLight' >
                       {t('paypalButton', 'coffeePage')}
                     </Button>
                   </a>
 
               </div>
 
+              {/*
               <div>
                 <a style={{textDecoration: 'none', color: '#797979', marginTop: '32px'}}>
                   <Link href="/">
                     <Button pointer bg='grey'>
                       { isHeb ? 'חזור' : 'Back' }
                     </Button>
-                </Link>
-              </a>
-            </div>
+                  </Link>
+                </a>
+              </div>
+              */}
 
             </BoxFlex>
           </BoxButtons>

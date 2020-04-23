@@ -33,6 +33,8 @@ const Header = ({ theme, children }) => {
                 <NavItem>
                   {children}
                 </NavItem>
+
+              <NavItem>
                 <NavItem>
                   <LangContainer>
                     <LangText 
@@ -67,6 +69,7 @@ const Header = ({ theme, children }) => {
                     </a>
                   </Link>
                 </NavItem>
+              </NavItem>
             </NavList>
           </Nav>
         </HeaderTag>

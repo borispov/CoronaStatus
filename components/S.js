@@ -60,7 +60,6 @@ export const Paragraph = styled.p`
 
 export const simpleWrapper = styled.div`
   background: ${props => props.theme.bg || props.theme.bgColor};
-  // color: ${props => props.theme.color};
   direction: ltr;
 `
 

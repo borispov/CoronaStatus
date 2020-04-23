@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  position: relative;
+  position: absolute;
+  top: .75em;
+  left: 50%;
+  transform-origin: 50% 50%;
+  transform: translateX(-2rem);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -17,10 +21,16 @@ export const StyledBurger = styled.button`
     outline: none;
   }
   &:hover {
-    transform: translateY(10%);
+    top: .65em;
   }
   @media (max-width: 660px) {
     margin-top: 0;
+    transform: translateX(-1.75rem);
+    left: auto;
+
+  }
+  @media (max-width: 320px) {
+    transform: translateX(-0.7rem);
   }
   @media (min-width: 961px) {
     display: none;
@@ -37,7 +47,7 @@ export const StyledBurger = styled.button`
     transform-origin: 1px;
     @media (max-width: 660px) {
       margin-top: .25em;
-      width: 1.65rem;
+      width: 1.75rem;
       height: 0.175rem;
     }
     :first-child {

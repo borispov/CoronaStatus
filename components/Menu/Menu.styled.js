@@ -24,7 +24,7 @@ const openStyle = css`
   border-top: none;
   transition: transform 0.22s ease-in-out;
   opacity: ${({ open }) => open ? '1' : '0'};
-  transform: ${({ open }) => open ?  'translateY(38px)' : 'translateY(-140%)'} translateX(50%);
+  transform: ${({ open }) => open ?  'translateY(40px)' : 'translateY(-140%)'} translateX(50%);
   @media (max-width: 660px) {
     width: 100%;
     transform: ${({ open }) => open ?  'translateY(40px)' : 'translateY(-140%)'} translateX(50%);
