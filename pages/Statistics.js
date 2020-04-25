@@ -53,7 +53,7 @@ const Statistics = ({ isHeb, news }) => {
       <title>nCorona Stats</title>
     </Head>
     <FadeIn duration="0.5s" delay="0.1s">
-      <HeaderDescription txt={text} />
+      <HeaderDescription txt={text} style={{ marginTop: '1rem' }} />
       {renderTable}
     </FadeIn>
 

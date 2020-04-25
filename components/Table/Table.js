@@ -3,7 +3,8 @@ import Cell from './Cell'
 import { FadeIn } from '../S'
 
 const ScrollTable = styled.div`
-  overflow-x: auto;
+  // overflow-x: auto;
+  overflow-y: auto;
 `
 
 const DataTable = styled.div`
@@ -17,8 +18,7 @@ const Table = styled.table`
   border-collapse: separate;
   margin: 0 auto;
   border-spacing: 0px;
-  background: #fff;
-  box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+  // box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
   width: auto;
 `
 
@@ -84,7 +84,7 @@ export default ({ headings, theme, isHeb, rows }) => {
 
     return (
       <DataTable>
-      <FadeIn duration="0.5s" delay="0.1s">
+      <FadeIn duration="0.2s" delay="0.1s">
         <ScrollTable>
           <Table>
             <thead>{theadMarkup}</thead>

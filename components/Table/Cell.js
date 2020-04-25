@@ -2,13 +2,13 @@ import styled, { withTheme } from 'styled-components'
 
 
 const Cell = styled.td`
-  border: 2px solid ${props => props.theme.error2 + '33'};
+  border: 1px solid ${props => props.theme.error2 + '33'};
   padding: 10px 18px ${({ country }) => country ? '10px 0' : '10px 18px'};
   font-size: ${props => props.country ? '12px' : '14px'};
   max-width: 200px;
   font-family: 'Rubik';
   font-weight: ${props => props.color === 'active2' && 'bold' || props.color === 'successDefault' && 'bold' || 500};
-  background: ${props => props.theme.primaryDark };
+  background: ${props => props.theme.dark };
   color: ${props => props.theme[props.color] || props.theme.onPrimary};
   font-weight: 500;
   span {
