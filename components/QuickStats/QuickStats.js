@@ -45,7 +45,11 @@ export default ({ loading, S, country, isHeb, yday, comparison=true}) => {
                     && country !== 'world'
                     && country !== 'World'
                     && <span>
-                        ({F.formatNumber(yday[k])})
+                      {
+                        direction === 'rtl'
+                          ? `(${F.formatNumber(yday[k])})`
+                          : `~${F.formatNumber(yday[k])}`
+                      }
                        </span>
                 }
               </Number>
