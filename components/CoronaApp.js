@@ -87,15 +87,21 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
     }
     return country
   }
+  
+  // THIS IS FOR ENGLISH LIST OF COUNTRIES ONLY
+  const selectOptions = 
+    !countries
+      ? { value: 'null', label: 'loading list...' }
+      : countries.map(a => ({ value: a, label: a }))
 
-  // const selectOptions = countries && countries.map(a => ({ value: a, label: a }))
-  const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
-    ? countries.map(a => ({ value: a, label: a }))
-    : countries
-        .map((country, idx) => ({
-            value: country,
-            label: countriesHebArray[idx]
-          }))
+  // THIS IS FOR ENG/HEB LIST OF COUNTRIES
+  // const selectOptions = !countries ? { value: 'null', label: 'Loading List...' } : !isHeb
+  //   ? countries.map(a => ({ value: a, label: a }))
+  //   : countries
+  //       .map((country, idx) => ({
+  //           value: country,
+  //           label: countriesHebArray[idx]
+  //         }))
 
   return (
     <div>
