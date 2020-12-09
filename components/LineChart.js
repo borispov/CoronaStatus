@@ -78,20 +78,28 @@ const LineChart = ( props, {theme} ) => {
 
   const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
 
+  let maxTodayValue = 0
+
+  // quick helpers for display/non-display data sets 
   const displayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'), data: cutCaseCount(dset), fill: true })
   const dontDisplayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'),data: cutCaseCount(dset), ...noChartDisplaySettings })
-  const parseDatasets = (arrayOfSets, fill) => arrayOfSets.map(sortForDisplay)
   const sortForDisplay = dset => {
-    return (dset.label !== 'cases' && dset.label !== 'נדבקים')
+    // return (dset.label !== 'cases' && dset.label !== 'נדבקים')
+    if (dset.label === 'new cases') {
+      maxTodayValue = Math.max.apply(Math, [].concat(...dset.data))
+      console.log(maxTodayValue)
+    }
+    return (dset.label !== 'new cases' && dset.label !== 'נדבקים חדשים')
       ? dontDisplayOnChart(dset)
       : displayOnChart(dset)
   }
+
+  const parseDatasets = (arrayOfSets, fill) => arrayOfSets.map(sortForDisplay)
 
 
   const data2 = {
     labels: props.labels.length > 30 ? subtractArray(props.labels) : props.labels,
     datasets: parseDatasets(props.data, props.fill)
-
   };
 
   const data = canvas => {
@@ -113,9 +121,9 @@ const LineChart = ( props, {theme} ) => {
   var options = {
     responsive: true,
     maintainAspectRatio: false,
-    onAnimationComplete: function(){
-      this.showTooltip(this.datasets[0].points, true)
-    },
+    // onAnimationComplete: function(){
+    //   this.showTooltip(this.datasets[0].points, true)
+    // },
     layout: {
       padding: {
         left: 5,
@@ -142,8 +150,11 @@ const LineChart = ( props, {theme} ) => {
         }],
         yAxes: [{
           ticks: {
+            max: maxTodayValue && maxTodayValue || 5000,
+            beginsAtZero: true,
+            min: 0,
             display: true,
-            maxTicksLimit: 6,
+            // maxTicksLimit: 6,
           },
             gridLines: {
                 backgroundColor: props.theme.primaryVariant,
@@ -189,8 +200,10 @@ const LineChart = ( props, {theme} ) => {
        datalabels: {
         display: ctx => {
           let i = ctx.dataIndex
-          if (ctx.dataset.label !== 'cases') return 0
-          return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
+          // if (ctx.dataset.label !== 'cases') return 0
+          if (ctx.dataset.label !== 'new cases') return 0
+          return true
+          // return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
           // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: ctx => { return ctx.dataIndex === ctx.dataset.data.length -1 ? 'end' : 'end' },
