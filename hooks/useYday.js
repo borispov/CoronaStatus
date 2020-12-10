@@ -6,7 +6,7 @@ const isUK = str => str === 'Uk' || str === 'England' || str === 'United Kingdom
 const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 const parseCountry = country => isUSA(country) ? 'USA' : isUK(country) ? 'UK' : country
 
-export default function useYday(url, country) {
+function useYday(url, country) {
 
   const [yesterdayCn, setStats] = useState();
   const [loading, setLoading] = useState(false);
@@ -38,3 +38,5 @@ export default function useYday(url, country) {
     yesterdayCn, loading, ydayError
   }
 }
+
+export default useYday

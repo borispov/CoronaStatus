@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default (ref, handler) => {
+const useOutside = (ref, handler) => {
   useEffect(() => {
     const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
@@ -16,3 +16,5 @@ export default (ref, handler) => {
   [ref, handler],
   );
 };
+
+export default useOutside

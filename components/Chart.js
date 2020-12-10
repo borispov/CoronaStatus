@@ -1,7 +1,7 @@
 import Bar from './Bar'
 import LineChart from './LineChart'
 
-export default (props) => {
+function Chart(props) {
   const { type } = props
 
   const rend = type === 'bar' 
@@ -10,3 +10,5 @@ export default (props) => {
 
   return rend
 }
+
+export default Chart

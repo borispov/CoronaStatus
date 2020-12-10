@@ -87,7 +87,6 @@ const LineChart = ( props, {theme} ) => {
     // return (dset.label !== 'cases' && dset.label !== 'נדבקים')
     if (dset.label === 'new cases') {
       maxTodayValue = Math.max.apply(Math, [].concat(...dset.data))
-      console.log(maxTodayValue)
     }
     return (dset.label !== 'new cases' && dset.label !== 'נדבקים חדשים')
       ? dontDisplayOnChart(dset)
