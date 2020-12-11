@@ -198,11 +198,13 @@ const LineChart = ( props, {theme} ) => {
     plugins: {
        datalabels: {
         display: ctx => {
+          // when dispalying new cases, I rather set it OFF
+          return false
           let i = ctx.dataIndex
           // if (ctx.dataset.label !== 'cases') return 0
           if (ctx.dataset.label !== 'new cases') return 0
-          return true
-          // return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
+          // return true
+          return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
           // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: ctx => { return ctx.dataIndex === ctx.dataset.data.length -1 ? 'end' : 'end' },
