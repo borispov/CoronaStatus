@@ -29,7 +29,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   const url = 'https://nCorona.live/api/v1/'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
 
-  const { countryStats, countryGraphLoading, countryGraphError } = useTime(country, theme)
+  // const { countryStats, countryGraphLoading, countryGraphError } = useTime(country, theme)
   const { todayStats, countryStatLoading, countryStatError } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
   const { yesterdayCn, ydayError } = useYday(v2, country)
@@ -150,6 +150,9 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
       />
     */}
+
+        {/*
+        // DISABLE GRAPHS UNTIL RELATED DB IS FIXED
       {
         countryGraphError && <Container style={{textAlign: 'center'}}> {countryGraphError}</Container> ||
         !countryStats 
@@ -174,6 +177,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
               />
           )
       }
+      */}
 
       <Stats
         cn={'World'}
@@ -189,6 +193,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         txt={'* ' + t('graphExplanation', 'coronaApp')}
       />
 
+        {/* DISABLE CHART UNTIL RELATED DB IS FIXED 
     <Chart
       isHeb={isHeb}
       type='line'
@@ -199,6 +204,8 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
       stops={3}
       showLegend={true}
     />
+
+  */}
 
     </Container>
 
