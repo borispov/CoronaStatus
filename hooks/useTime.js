@@ -28,21 +28,26 @@ function useTime(loc, theme = {}) {
 
       setLoading(true)
       setError()
-      const country = loc || await currentCountry()
-      const URL = baseURL + country
-      const data = await axios.get(URL)
-        .then(res => res.data)
-        .catch(err => setError(err))
 
-      if (!data|| !data.length) {
+      try {
+        const country = loc || await currentCountry()
+        const URL = baseURL + country
+        const data = await axios.get(URL)
+          .then(res => res.data)
+          .catch(err => setError(err))
+        console.log(data)
+        const timeStats = sortForChart(data, theme);
+        console.log('\there are time stats \n')
+        console.log(timeStats)
+        setCountryStats(timeStats)
+        setLoading(false)
+      } catch(e) {
         setError('Could Not Find Time Data For Country : ', loc)
         setLoading(false)
         return
       }
-
-      const timeStats = sortForChart(data, theme);
-      setCountryStats(timeStats)
-      setLoading(false)
+      // if (!data || !data.length) {
+      // }
     }
     fetchData(loc)
 

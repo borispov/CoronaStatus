@@ -88,9 +88,10 @@ const LineChart = ( props, {theme} ) => {
     if (dset.label === 'new cases') {
       maxTodayValue = Math.max.apply(Math, [].concat(...dset.data))
     }
-    return (dset.label !== 'new cases' && dset.label !== 'נדבקים חדשים')
-      ? dontDisplayOnChart(dset)
-      : displayOnChart(dset)
+    return displayOnChart(dset)
+    // return (dset.label !== 'new cases' && dset.label !== 'נדבקים חדשים')
+    //   ? dontDisplayOnChart(dset)
+    //   : displayOnChart(dset)
   }
 
   const parseDatasets = (arrayOfSets, fill) => arrayOfSets.map(sortForDisplay)
@@ -108,8 +109,8 @@ const LineChart = ( props, {theme} ) => {
     gradient.addColorStop(0, (props.theme.primaryDark));
     gradient.addColorStop(1, 'rgba(184,40,50,0.25)');
 
-    data2.datasets[2].fill = true
-    data2.datasets[2].backgroundColor = gradient
+    // data2.datasets[1].fill = true
+    // data2.datasets[1].backgroundColor = gradient
 
     return {
       ...data2,
@@ -139,7 +140,7 @@ const LineChart = ( props, {theme} ) => {
         xAxes: [{
             gridLines: {
                 backgroundColor: props.theme.analogous,
-                display: false,
+                display: true,
                 drawBorder: true,
                 drawTicks: true,
                 color: 'rgba(0, 0, 0, 0.05)',
@@ -150,10 +151,10 @@ const LineChart = ( props, {theme} ) => {
         yAxes: [{
           ticks: {
             max: maxTodayValue && maxTodayValue || 5000,
-            beginsAtZero: true,
-            min: 0,
+            beginsAtZero: false,
+            min: 750000,
             display: true,
-            // maxTicksLimit: 6,
+            maxTicksLimit: 6,
           },
             gridLines: {
                 backgroundColor: props.theme.primaryVariant,
@@ -193,7 +194,7 @@ const LineChart = ( props, {theme} ) => {
     },
     hover: {
       mode: 'index',
-      intersect: false,
+      intersect: true,
     },
     plugins: {
        datalabels: {
@@ -201,11 +202,8 @@ const LineChart = ( props, {theme} ) => {
           // when dispalying new cases, I rather set it OFF
           return false
           let i = ctx.dataIndex
-          // if (ctx.dataset.label !== 'cases') return 0
-          if (ctx.dataset.label !== 'new cases') return 0
-          // return true
+          if (ctx.dataset.label !== 'cases') return 0
           return i === Math.floor(ctx.dataset.data.length / 3) || i === Math.floor(ctx.dataset.data.length * 0.66) || i === (ctx.dataset.data.length - 1)
-          // return i === 0 || i === (ctx.dataset.data.length - 1) || !(i % 4)
         },
         align: ctx => { return ctx.dataIndex === ctx.dataset.data.length -1 ? 'end' : 'end' },
         anchor: 'end',

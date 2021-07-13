@@ -14,10 +14,46 @@ const firstWhole = (arr, n = 0) => {
 
 const parseLabel = label => {
   let d = new Date(label)
+  console.log(label)
   return d.getDate() + '.' + ('0' + (d.getMonth()+1)).toString()
 }
 
-const sortForChart = (obj) => {
+const sortForChart = obj => {
+  const { cases, deaths } = obj.timeline;
+  const labels = Object.keys(cases).map(parseLabel);
+  const label = obj.country;
+
+  const datasets = [
+    {
+      label: 'cases',
+      data: cases,
+      backgroundColor: '#fc3111',
+      borderColor: theme && theme.successDefault,
+      strokeColor: theme && theme.successDefault,
+      pointRadius: 2,
+      borderWidth: 1,
+      fill: true,
+    },
+    // {
+    //   label: 'deaths',
+    //   data: deaths,
+    //   backgroundColor: 'rgba(29,82,209,1) 100%)',
+    //   backgroundColor: '#333',
+    //   borderColor: theme && theme.blue,
+    //   strokeColor: theme && theme.blue,
+    //   pointRadius: 2,
+    //   borderWidth: 1,
+    // },
+
+  ];
+
+  return {
+    datasets, labels, label
+  }
+}
+
+
+const sortForChart2 = (obj) => {
 
   const zeroNull = c => c === null ? 0 : c
   const sortedObj = obj.sort((a,b) => new Date(a.date) - new Date(b.date))
