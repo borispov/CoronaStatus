@@ -33,7 +33,7 @@ function IndexPage({ worldTime, yesterdayGlobal, newProxy }) {
         <title>nCorona - Novel Coronavirus Statistics & Resources for Coping</title>
       </Head>
       <FadeIn delay="0.5s">
-       <CoronaApp userLocation={newProxy && newProxy.countryName || proxy && proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
+       <CoronaApp userLocation={newProxy && newProxy.countryName || proxy && proxy.countryName !== 'Nowhere' && proxy.countryName || 'israel' } worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
         {/* <InfoSection /> */}
 
       </FadeIn>
