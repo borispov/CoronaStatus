@@ -26,13 +26,16 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   const [country, setCountry] = useState(userLocation)
   const [inputValue, setInput] = useState('')
 
-  const url = 'https://nCorona.live/api/v1/'
+  // new API attempt
+  const url = `https://disease.sh/v3/covid-19/countries/`
+  // old API
+  // const url = 'https://nCorona.live/api/v1/'
   const v2 = 'https://corona.lmao.ninja/v2/countries/'
 
   const { countryStats, countryGraphLoading, countryGraphError } = useTime(country, theme)
   const { todayStats, countryStatLoading, countryStatError } = useTodayStats(url, country)
   const worldToday = useTodayStats(url, 'world').todayStats
-  const { yesterdayCn, ydayError } = useYday(v2, country)
+  const { yesterdayCn, ydayError } = useYday(url, country)
 
   const { countries } = useCountries()
 
@@ -89,7 +92,7 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
   }
   
   // THIS IS FOR ENGLISH LIST OF COUNTRIES ONLY
-  const selectOptions = 
+  const selectOptions =
     !countries
       ? { value: 'null', label: 'loading list...' }
       : countries.map(a => ({ value: a, label: a }))
@@ -142,15 +145,6 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
             />
         }
 
-    {/*
-      <iframe 
-        style={{  width: "100%", height:"420px" }}
-        src="https://coronavirus.app/map?embed=true" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      />
-    */}
-
       {
         countryGraphError && <Container style={{textAlign: 'center'}}> {countryGraphError}</Container> ||
         !countryStats 
@@ -190,16 +184,16 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         txt={'* ' + t('graphExplanation', 'coronaApp')}
       />
 
-    <Chart
-      isHeb={isHeb}
-      type='line'
-      labels={worldTime.labels}
-      data={worldTime.datasets}
-      label={isHeb && 'עולם' || 'World'}
-      fill={false}
-      stops={3}
-      showLegend={true}
-    />
+    {/* <Chart */}
+    {/*   isHeb={isHeb} */}
+    {/*   type='line' */}
+    {/*   labels={worldTime.labels} */}
+    {/*   data={worldTime.datasets} */}
+    {/*   label={isHeb && 'עולם' || 'World'} */}
+    {/*   fill={false} */}
+    {/*   stops={3} */}
+    {/*   showLegend={true} */}
+    {/* /> */}
 
     </Container>
 

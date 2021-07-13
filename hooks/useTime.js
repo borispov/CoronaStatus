@@ -4,8 +4,9 @@ import sortForChart from '../utils/sortForChart'
 import sortExternalApi from '../utils/sortExternalApi'
 
 
-const baseURL = `https://nCorona.live/api/v1/alltime/`
-const baseURLv2 = 'https://pomber.github.io/covid19/timeseries.json'
+// old api
+// const baseURL = `https://nCorona.live/api/v1/alltime/`
+const baseURL = `https://disease.sh/v3/covid-19/historical/`
 
 async function currentCountry(){
   return await axios
@@ -33,7 +34,7 @@ function useTime(loc, theme = {}) {
         .then(res => res.data)
         .catch(err => setError(err))
 
-      if (!data.length || !data) {
+      if (!data|| !data.length) {
         setError('Could Not Find Time Data For Country : ', loc)
         setLoading(false)
         return

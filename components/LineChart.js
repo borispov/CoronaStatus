@@ -8,7 +8,7 @@ import Spinner from './Spinner'
 import useMobileDetect from '../utils/isMobile'
 import useTranslation from '../hooks/useTranslation'
 
-defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+// defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
 
 const Div = styled.div`
   margin-top: 32px;

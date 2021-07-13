@@ -4,6 +4,8 @@ import axios from 'axios'
 import dateHeb from '../utils/dateHeb'
 import useMobileDetect from '../utils/isMobile'
 
+import getNews from '../utils/getNews'
+
 
 const sourceList = {
   maariv: 'מעריב', 
@@ -139,8 +141,14 @@ const News = ({ theme, isHeb, news }) => {
 
 News.getInitialProps = async ctx => {
 
-  const { data } = await axios.get('https://ncorona.live/api/v1/news/heb')
-  const news = data.data.sort((a,b) => new Date(b.date) - new Date(a.date))
+  // israelHayom and Maariv appears empty, I checked : it's because their news do not mention COVID stuff much.
+  const israelHayom = await getNews('israelHayom')
+  const maariv = await getNews('maariv')
+  const ynet = await getNews('ynet')
+  const data = [...maariv, ...ynet, ...israelHayom]
+  // used to fetch from my API Server..
+  // const { data } = await axios.get('https://ncorona.live/api/v1/news/heb')
+  const news = data.sort((a,b) => new Date(b.date) - new Date(a.date))
   return { news }
 }
 

@@ -4,9 +4,9 @@ import axios from 'axios'
 const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 const parseCn = str => {
   return str === 'usa' || str === 'Usa' || str === 'United States'
-    ? 'USA' 
+    ? 'USA'
       : str === 'Uk' || str === 'England' || str === 'United Kingdom' || str == 'great britain'
-    ? 'UK' 
+    ? 'UK'
     : str.toLowerCase();
 }
 
@@ -28,6 +28,7 @@ function useTodayStats(url, country) {
   const [countryStatLoading, setLoading] = useState(false);
   const [countryStatsError, setError] = useState(false);
 
+
   useEffect(() => {
 
     async function fetchData() {
@@ -35,7 +36,11 @@ function useTodayStats(url, country) {
       setError()
       let searchCountry = country || await currentCountry();
       const parsedCountry = parseCn(searchCountry);
-      const URL = url + 'today/' + parsedCountry.toLowerCase()
+
+      const URL = country === 'world'
+        ? `https://disease.sh/v3/covid-19/all`
+        : url + parsedCountry.toLowerCase()
+
       try {
         const { data } = await axios.get(URL)
         const relevant = {

@@ -1,19 +1,19 @@
-import axios from 'axios'
-import Head from 'next/head'
-import { useEffect, useContext } from 'react'
+import axios from 'axios';
+import Head from 'next/head';
+import { useEffect, useContext } from 'react';
 
-import CoronaApp from '../components/CoronaApp'
-import InfoSection from '../components/InfoSection'
-import Footer from '../components/Footer'
-import { FadeIn } from '../components/S'
-import useWorldData from '../hooks/useWorldData'
+import CoronaApp from '../components/CoronaApp';
+import InfoSection from '../components/InfoSection';
+import Footer from '../components/Footer';
+import { FadeIn } from '../components/S';
+// import useWorldData from '../hooks/useWorldData'
 
-import { ProxyContext } from '../context/proxy-context'
-import { LocaleContext } from '../context/LocaleContext'
-import { getInitialLocale } from '../locales/getInitialLocale'
+import { ProxyContext } from '../context/proxy-context';
+import { LocaleContext } from '../context/LocaleContext';
+import { getInitialLocale } from '../locales/getInitialLocale';
 
-const getCountryFromData = response => response.data.country
-const currentCountry = async (url) => await axios.get(url).then(getCountryFromData).catch(e => 'israel')
+const getCountryFromData = response => response.data.country;
+const currentCountry = async (url) => await axios.get(url).then(getCountryFromData).catch(e => 'israel');
 
 function IndexPage({ worldTime, yesterdayGlobal, newProxy }) {
 
@@ -34,17 +34,19 @@ function IndexPage({ worldTime, yesterdayGlobal, newProxy }) {
       </Head>
       <FadeIn delay="0.5s">
        <CoronaApp userLocation={newProxy && newProxy.countryName || proxy && proxy.countryName} worldTime={worldTime} yesterdayGlobal={yesterdayGlobal} />
-        <InfoSection />
+        {/* <InfoSection /> */}
+
       </FadeIn>
     <Footer />
     </>
   )
-}
+};
 
 IndexPage.getInitialProps = async ({ req }) => {
-
-  const worldTime = await useWorldData()
-  const globalData = await axios.get('https://corona.lmao.ninja/v2/all?yesterday=true')
+  // const worldTime = await useWorldData()
+  // const globalData = await axios.get('https://corona.lmao.ninja/v2/all?yesterday=true')
+  const worldTime = {}
+  const globalData = await axios.get('https://disease.sh/v3/covid-19/all?yesterday=true')
   const yesterdayGlobal = {
     active: globalData.data.active,
     critical: globalData.data.critical,
@@ -61,7 +63,6 @@ IndexPage.getInitialProps = async ({ req }) => {
       const localAddresses = ['::1', '127.0.0.1', 'localhost']
       // Construct URL with IP ADDRESS
       const proxyUrl = !localAddresses.includes(ipAddress) && `https://extreme-ip-lookup.com/json/${ipAddress}` || null
-
     try {
       const countryName = await currentCountry(proxyUrl)
       const newProxy = { countryName, ipAddress }
@@ -72,6 +73,6 @@ IndexPage.getInitialProps = async ({ req }) => {
   }
 
   return {yesterdayGlobal, worldTime, newProxy: null}
-}
+};
 
 export default IndexPage
