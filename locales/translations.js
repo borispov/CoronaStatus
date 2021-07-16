@@ -48,8 +48,8 @@ export const strings = {
     tipFont: 'Rubik',
 
     aboutPage: {
-      welcome: `מטרת הפרויקט הזה הינה לספק משאבים ומידע עבור אנשים להתמודדות יומיומית עם נגיף הקורונה והשלכותיו, היה זה בדמוי רעיונות ולינקים לפעילויות, חדשות חשובות, טכניקות לוויסות החרדה והתמודדות עם חוסר ודאות וחוסר אונים. כל המידע המסופק באתר מגיע ממקורות כגון: <strong><em><small>WHO.int, worldometers, ourwourldindata.org</small></em></strong> ואתרים ממשלתיים שונים. מאגר המידע מוזרם מקובץ csv שיתופי אשר עובר בין אנשים. אם ברשותכם מידע שתרצו לשתף, צרו קשר בכדי לקבל קישור לקובץ. נוסף לכך, הינכם מוזמנים לקחת חלק בפרויקט ולתרום את חלקיכם ע״י השארת פידבק, השארת טיפ דרך עמוד התרומה, או לעזור עם אחזקת האתר.`,
-      contact: `ניתן ליצור קשר דרך המייל: <a href="mailto:nCoronaLive@gmail.com"><i>nCoronaLive@gmail.com</i></a>`,
+      welcome: `הפרויקט אינו מתוחזק באופן פעיל יותר ולאחרונה עבר מספר שינויים על מנת לצמצם את התחזוקה השוטפת. האתר מציג מספר נתונים בסיסיים על מנת לאפשר דרך מעקב אחר התחלואה באופן פשוט ובסיסי. מי שמעוניין יכול לתרום, הפרויקט הינו קוד פתוח, ניתן להיכנס  <a href="https://github.com/borispov/coronastatus/">לכאן</a> בכדי לעיין בקוד.`,
+      contact: `ניתן ליצור קשר דרך המייל: <a href="mailto:rispovo@gmail.com"><i>rispovo@gmail.com</i></a>`,
       contributeMsg: "גם אתם יכולים לקחת חלק בפרויקט ולסייע בהעלאת המודעות ובהתמודדות עם משבר נגיף הקורונה. אם יש לכם רעיון כיצד ניתן לשפר את האתר, אנו נשמח לדעת! במידה ואתם רוצים לתמוך ולסייע, ניתן לעשות זאת באמצעות תרומה או על ידי לקיחת חלק בעשייה. כיצד תוכלו לקחת חלק? הנה ",
       contributeList: [
         "עיצוב - אם אתה מבין דבר או שניים בעיצוב, עצמך תעזור לעצב את האתר בצורה טובה יותר",
@@ -109,8 +109,8 @@ export const strings = {
     tipFont: 'Quicksand',
 
     aboutPage: {
-      welcome: `The goal of this project is to raise awareness and provide resources for people to cope with Coronavirus, in forms of: links for online activities, important news, crucial psychological methods to help with regulating anxiety and overwhelming emotions. All data provided is delivered legally and is gathere via sources like: <strong>WHO.int</strong>,&nbsp; <strong>worldometers</strong>, <strong>ourwourldindata</strong>&nbsp; <strong>corona.ninja.lmao API</strong> and more.`,
-      contact: `You can contact us by email: <a href="mailto:nCoronaLive@gmail.com"><i>nCoronaLive@gmail.com</i></a>`,
+      welcome: `This project is not longer actively maintained. It has been redesigned and reworked recently and was mainly made simpler to reduce future maintenance. It relies heavily on a free API from: <a href="https://disease.sh">https://disease.sh</a>. You're welcome to contribute if you'd like to. Probably could use some code refactoring to reduce clutter from previous iterations, as well as more elegant charts.`,
+      contact: `You can contact us by email: <a href="mailto:rispovo@gmail.com"><i>rispovo@gmail.com</i></a>`,
       contributeMsg: `You can be part of nCorona project and help raising awareness and aiding the community to cope with the daily challenges. You can let us know how you think we can make the project better, you can also support us with <a href="/Coffee"><i>donation</i></a> to help bear the costs. You can also take a part by doing`,
       contributeList: [
         "UX/UI - If you are an advanced/expert, your advice would help redesign the project better",

@@ -120,13 +120,15 @@ const CoronaApp = ({ theme, userLocation, yesterdayC, yesterdayGlobal, worldTime
         </label>
 
 
+        {/* value={country === 'Israel' && isHeb ? 'ישראל' : country} */}
+        {/* placeholder={country && isHeb ? countryheb(country) : country} */}
         <Select
           className='react-select-container'
           classNamePrefix="react-select"
           options={selectOptions}
-          value={country === 'Israel' && isHeb ? 'ישראל' : country}
+          value={country}
           onChange={handleChange}
-          placeholder={country && isHeb ? countryheb(country) : country}
+          placeholder={country}
         />
       </form>
 

@@ -142,10 +142,11 @@ const News = ({ theme, isHeb, news }) => {
 News.getInitialProps = async ctx => {
 
   // israelHayom and Maariv appears empty, I checked : it's because their news do not mention COVID stuff much.
-  const israelHayom = await getNews('israelHayom')
-  const maariv = await getNews('maariv')
+  // const israelHayom = await getNews('israelHayom')
+  // const maariv = await getNews('maariv')
   const ynet = await getNews('ynet')
-  const data = [...maariv, ...ynet, ...israelHayom]
+  // const data = [...maariv, ...ynet, ...israelHayom]
+  const data = [...ynet]
   // used to fetch from my API Server..
   // const { data } = await axios.get('https://ncorona.live/api/v1/news/heb')
   const news = data.sort((a,b) => new Date(b.date) - new Date(a.date))

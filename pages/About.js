@@ -66,7 +66,7 @@ const Welcome = styled.p`
   font-size: 1.18rem;
   line-height: 1.85;
   margin-bottom: 2em;
-  text-align: center;
+  text-align: auto;
   margin: 0 auto;
   word-spacing: 2.5px;
   margin-bottom: 1em;
@@ -79,11 +79,11 @@ const Welcome = styled.p`
 
 const WelcomeImage = styled.div`
   grid-area: image;
-  width: 100%;
+  width: 60%;
   border: 1px solid ${props => props.theme.primaryVariant + '99'};
   border-radius: 14px;
   padding: 0.125em;
-  height: 26em;
+  height: 12em;
   img {
     width: 100%;
     height: 100%;
@@ -92,6 +92,8 @@ const WelcomeImage = styled.div`
   }
 
   margin-bottom: 2.25em;
+  margin-left: auto;
+  margin-right: auto;
 
 `
 
@@ -117,11 +119,11 @@ const Message = styled.div`
   grid-area: msg;
   line-height: 1.65;
   color: ${({ theme }) => theme.text.secondary};
-  font-size: 1.15rem;
+  font-size: 1rem;
   a {
     color: ${({ theme }) => theme.error2};
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing;
     border-bottom: 2px solid ${({ theme }) => theme.error2};
     &:hover {
@@ -185,12 +187,13 @@ export default withTheme(() => {
         <Container style={{ marginBottom: '62px', marginTop: '6em' }}>
 
           <Grid>
-            <Title dir={dir} >Alone, <br/> But Together</Title>
+            <Title dir={dir}>About This Project</Title>
             <Welcome{ ...welcomeMsg }></Welcome>
             <WelcomeImage>
               <img src="./hands.jpg" />
             </WelcomeImage>
             <Line />
+            {/*
             <Message { ...contributeMsg}></Message>
 
               <List>
@@ -207,6 +210,7 @@ export default withTheme(() => {
                     })
                 }
               </List>
+              */}
               <Contact {...contact}></Contact>
           </Grid>
         </Container>

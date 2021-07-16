@@ -42,9 +42,6 @@ const Div = styled.div`
 `
 
 const noChartDisplaySettings = {
-  // backgroundColor: 'transparent',
-  // strokeColor: 'transparent',
-  // borderColor: 'transparent',
   showLine: false,
   borderWidth: 0,
   pointHitRadius: 0,
@@ -60,6 +57,10 @@ const noChartDisplaySettings = {
 
 const LineChart = ( props, {theme} ) => {
 
+  console.log("here are the labels: ")
+  console.log(props.labels)
+
+
   if (props.loading) {
     <Div>
       <Spinner size='big' />
@@ -72,19 +73,30 @@ const LineChart = ( props, {theme} ) => {
   const showLastMonth = arr => arr.slice(Math.ceil(arr.length / 3.3))
 
   const filterBy5 = (x, i) => useMobileDetect().isMobile() ? !(i % 8) : !(i % 2)
+
   // const subtractArray = arr => arr.filter(filterBy5).concat(arr[arr.length -1])
 
   const subtractArray = arr => showLastMonth(arr)
 
-  const cutCaseCount = ({ data}) => data.length > 30 ? subtractArray(data) : data
+  const cutCaseCount = ( data ) => data.length > 30 ? subtractArray(data) : data
 
   let maxTodayValue = 0
 
   // quick helpers for display/non-display data sets 
-  const displayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'), data: cutCaseCount(dset), fill: true })
+  //
+  const displayOnChart = dset => ({ 
+    ...dset, 
+    label: t(dset.label, 'chartLabels'), 
+    data: cutCaseCount(Object.values(dset.data)), 
+    fill: true
+  })
+
   const dontDisplayOnChart = dset => ({ ...dset, label: t(dset.label, 'chartLabels'),data: cutCaseCount(dset), ...noChartDisplaySettings })
+
   const sortForDisplay = dset => {
     // return (dset.label !== 'cases' && dset.label !== 'נדבקים')
+    // const labels = Object.keys(dset.data)
+    // const dataPoints = Object.values(dset.data)
     if (dset.label === 'new cases') {
       maxTodayValue = Math.max.apply(Math, [].concat(...dset.data))
     }
@@ -121,9 +133,6 @@ const LineChart = ( props, {theme} ) => {
   var options = {
     responsive: true,
     maintainAspectRatio: false,
-    // onAnimationComplete: function(){
-    //   this.showTooltip(this.datasets[0].points, true)
-    // },
     layout: {
       padding: {
         left: 5,

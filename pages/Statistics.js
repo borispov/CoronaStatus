@@ -5,7 +5,7 @@ import axios from 'axios'
 import Table from '../components/Table/Table'
 import Head from 'next/head'
 
-const baseURL = `https://corona.lmao.ninja/countries`
+const baseURL = 'https://disease.sh/v3/covid-19/countries?sort=cases'
 
 const Statistics = ({ isHeb, news }) => {
 
@@ -23,7 +23,7 @@ const Statistics = ({ isHeb, news }) => {
   useEffect(() => {
       async function fetchData(){
         setLoading(true)
-        const { data } = await axios.get('https://disease.sh/v3/covid-19/countries?sort=cases')
+        const { data } = await axios.get(baseURL)
 
         setData(data
           .map(({
@@ -61,12 +61,5 @@ const Statistics = ({ isHeb, news }) => {
   )
 
 }
-//
-// Statistics.getInitialProps = async ctx => {
-//     const data = await axios
-//       .get('https://corona.lmao.ninja/countries/')
-//     const news = data
-//     return news
-// }
 
 export default Statistics

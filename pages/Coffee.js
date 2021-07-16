@@ -206,11 +206,13 @@ export default withTheme(({ isHeb, theme }) => {
                     </Button>
                   </a>
 
+                {/*
                   <a style={{cursor: 'pointer', padding: 'inherit', margin:'inherit', textDecoration: 'none', color: 'inherit' }} href={paypalDonate + counter} target="_blank">
                     <Button link pointer bg='transparent' btnColor='primaryVariant' hoverUp hoverColor='primaryLight' >
                       {t('paypalButton', 'coffeePage')}
                     </Button>
                   </a>
+                */}
 
               </div>
 
