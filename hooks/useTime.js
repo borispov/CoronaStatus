@@ -35,10 +35,7 @@ function useTime(loc, theme = {}) {
         const data = await axios.get(URL)
           .then(res => res.data)
           .catch(err => setError(err))
-        console.log(data)
         const timeStats = sortForChart(data, theme);
-        console.log('\there are time stats \n')
-        console.log(timeStats)
         setCountryStats(timeStats)
         setLoading(false)
       } catch(e) {

@@ -57,10 +57,6 @@ const noChartDisplaySettings = {
 
 const LineChart = ( props, {theme} ) => {
 
-  console.log("here are the labels: ")
-  console.log(props.labels)
-
-
   if (props.loading) {
     <Div>
       <Spinner size='big' />

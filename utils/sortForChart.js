@@ -14,7 +14,6 @@ const firstWhole = (arr, n = 0) => {
 
 const parseLabel = label => {
   let d = new Date(label)
-  console.log(label)
   return d.getDate() + '.' + ('0' + (d.getMonth()+1)).toString()
 }
 
